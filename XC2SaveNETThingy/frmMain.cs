@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,7 +106,7 @@ namespace XC2SaveNETThingy
 
         private void LoadSaveFile(string path)
         {
-            SAVEDATA = new XC2Save(path);
+            SAVEDATA = new XC2Save(File.ReadAllBytes(path));
 
             
 
@@ -172,7 +173,96 @@ namespace XC2SaveNETThingy
 
             #endregion drivers
 
+            #region items
+
+            //uint32 Id : 13;
+            //uint32 Type : 6;
+            //uint32 Count : 10;
+            //uint32 Unk1 : 1;
+            //uint32 Equipped : 1;
+            //uint32 Unk2 : 1;
+            //gf_ElapseTime Time;
+            //uint32 Serial : 26;
+            //uint32 Unk3 : 6;
+            //dgvPcWpnChipBox.DataSource = SAVEDATA.ItemBox.PcWpnChipBox;
+            //dgvPcWpnChipBox.ColumnCount = 9;
+            //dgvPcWpnChipBox.AutoGenerateColumns = false;
+            //dgvPcWpnChipBox.AutoSize = true;
+
+            //DataGridViewColumn c = new DataGridViewTextBoxColumn();
+            //c.DataPropertyName = "Id";
+            //c.Name = "Item ID";
+            //dgvPcWpnChipBox.Columns.Add(c);
+
+            //dgvPcWpnChipBox.Columns[0].HeaderText = "Item ID";
+            //dgvPcWpnChipBox.Columns[1].HeaderText = "Type";
+            //dgvPcWpnChipBox.Columns[2].HeaderText = "Qty";
+            //dgvPcWpnChipBox.Columns[3].HeaderText = "Unk1";
+            //dgvPcWpnChipBox.Columns[4].HeaderText = "Equipped";
+            //dgvPcWpnChipBox.Columns[5].HeaderText = "Unk2";
+            //dgvPcWpnChipBox.Columns[6].HeaderText = "Time";
+            //dgvPcWpnChipBox.Columns[7].HeaderText = "Serial";
+            //dgvPcWpnChipBox.Columns[8].HeaderText = "Unk3";
+            //dgvPcWpnChipBox.Columns[0].DataPropertyName = "Id";
+
+            //SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox);
+            //SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox);
+            //SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox);
+            //SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox);
+            //SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox);
+            //SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox);
+            //SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox);
+            //SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox);
+            //SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox);
+            //SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox);
+            //SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox);
+            //SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox);
+            //SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, ItemBox.BOOSTERS);
+            //SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, ItemBox.HANA_ROLECPU);
+            //SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, ItemBox.HANA_ElementCores);
+            //SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox);
+            //SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox);
+            //SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox);
+
+
+            #endregion items
+
+
+
             Console.WriteLine("DONE");
+        }
+
+        private void SetupItemBox(DataGridView dgv, ItemBox.Item[] items, Dictionary<int, String> IdNames)
+        {
+
+            Array.Sort(items);
+            dgv.AutoGenerateColumns = false;
+            dgv.AutoSize = true;
+            dgv.DataSource = new BindingList<ItemBox.Item>(items);
+
+            //DataGridViewComboBoxColumn c = new DataGridViewComboBoxColumn();
+            //c.DataPropertyName = "Name";
+            //c.DataSource = new BindingSource(IdNames,);
+            //c.ValueMember = "Key";
+            //c.DisplayMember = "Value";
+            //dgv.Columns.Add(c);
+
+            dgv.Columns[0].HeaderText = "Item ID";
+            dgv.Columns[1].HeaderText = "Type";
+            dgv.Columns[2].HeaderText = "Qty";
+            dgv.Columns[3].HeaderText = "Unk1";
+            dgv.Columns[4].HeaderText = "Equipped";
+            dgv.Columns[5].HeaderText = "Unk2";
+            dgv.Columns[6].HeaderText = "Time";
+            dgv.Columns[7].HeaderText = "Serial";
+            dgv.Columns[8].HeaderText = "Unk3";
+
+
+
+
+
+
+
         }
 
         private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -183,6 +273,26 @@ namespace XC2SaveNETThingy
 
             txtPartyMemberField2.Text = m.field_2.ToString();
             txtPartyMemberField4.Text = m.field_4.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DialogResult result = sfdSaveFile.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Byte[] aaaa = SAVEDATA.ToRawData();
+
+                try
+                {
+                    File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message, "EXCEPTION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw ex;
+                }
+            }
         }
     }
 }

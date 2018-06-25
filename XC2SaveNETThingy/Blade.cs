@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace XC2SaveNETThingy
 {
-    public class GfDataBladeArts : IXC2SaveObject
+    public class BladeArts : IXC2SaveObject
     {
         public const int SIZE = 0xC;
 
-        public UInt16 Id;
-        public UInt16 RecastRev;
-        public UInt16 field_4;
-        public Byte field_6;
-        public Byte Level;
-        public Byte MaxLevel;
-        public Byte field_9;
-        public UInt16 field_A;
+        public UInt16 Id { get; set; }
+        public UInt16 RecastRev { get; set; }
+        public UInt16 field_4 { get; set; }
+        public Byte field_6 { get; set; }
+        public Byte Level { get; set; }
+        public Byte MaxLevel { get; set; }
+        public Byte field_9 { get; set; }
+        public UInt16 field_A { get; set; }
 
-        public GfDataBladeArts(Byte[] data)
+        public BladeArts(Byte[] data)
         {
             Id = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
             RecastRev = BitConverter.ToUInt16(data.GetByteSubArray(0x2, 2), 0);
@@ -45,21 +45,30 @@ namespace XC2SaveNETThingy
             result.Add(field_9);
             result.AddRange(BitConverter.GetBytes(field_A));
 
+            if (result.Count != SIZE)
+            {
+                string message = "BladeArts: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
+
             return result.ToArray();
         }
     }
 
-    public class GfDataBladeSkill : IXC2SaveObject
+    public class BladeSkill : IXC2SaveObject
     {
         public const int SIZE = 0x6;
 
-        public UInt16 Id;
-        public Byte field_2;
-        public Byte Level;
-        public Byte MaxLevel;
-        public Byte field_5;
+        public UInt16 Id { get; set; }
+        public Byte field_2 { get; set; }
+        public Byte Level { get; set; }
+        public Byte MaxLevel { get; set; }
+        public Byte field_5 { get; set; }
 
-        public GfDataBladeSkill(Byte[] data)
+        public BladeSkill(Byte[] data)
         {
             Id = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
             field_2 = data[2];
@@ -86,18 +95,18 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0x1C;
 
-        public UInt16 QuestID;
-        public UInt16 field_2;
-        public UInt32 Count;
-        public UInt32 MaxCount;
-        public UInt16 field_C;
-        public UInt16 StatsID;
-        public UInt16 TaskType;
-        public UInt16 Column;
-        public UInt16 Row;
-        public UInt16 BladeId;
-        public UInt16 AchievementId;
-        public UInt16 Alignment;
+        public UInt16 QuestID { get; set; }
+        public UInt16 field_2 { get; set; }
+        public UInt32 Count { get; set; }
+        public UInt32 MaxCount { get; set; }
+        public UInt16 field_C { get; set; }
+        public UInt16 StatsID { get; set; }
+        public UInt16 TaskType { get; set; }
+        public UInt16 Column { get; set; }
+        public UInt16 Row { get; set; }
+        public UInt16 BladeId { get; set; }
+        public UInt16 AchievementId { get; set; }
+        public UInt16 Alignment { get; set; }
 
         public AchieveQuest(Byte[] data)
         {
@@ -132,6 +141,15 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(AchievementId));
             result.AddRange(BitConverter.GetBytes(Alignment));
 
+            if (result.Count != SIZE)
+            {
+                string message = "AchieveQuest: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
+
             return result.ToArray();
         }
     }
@@ -140,9 +158,9 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0x90;
 
-        public UInt16 Id;
-        public UInt16 Alignment;
-        public AchieveQuest[] AchieveQuests;
+        public UInt16 Id { get; set; }
+        public UInt16 Alignment { get; set; }
+        public AchieveQuest[] AchieveQuests { get; set; }
 
         public AchieveInfo(Byte[] data)
         {
@@ -151,9 +169,7 @@ namespace XC2SaveNETThingy
 
             AchieveQuests = new AchieveQuest[5];
             for (int i = 0; i < AchieveQuests.Length; i++)
-            {
                 AchieveQuests[i] = new AchieveQuest(data.GetByteSubArray(4 + (i * AchieveQuest.SIZE), AchieveQuest.SIZE));
-            }
         }
 
         public Byte[] ToRawData()
@@ -164,8 +180,15 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(Alignment));
             
             foreach (AchieveQuest aq in AchieveQuests)
-            {
                 result.AddRange(aq.ToRawData());
+
+            if (result.Count != SIZE)
+            {
+                string message = "AchieveInfo: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
             }
 
             return result.ToArray();
@@ -176,12 +199,12 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0xC;
 
-        public UInt16 EnhanceId;
-        public UInt16 RecastRev;
-        public UInt16 ItemId;
-        public UInt16 field_6;
-        public ItemHandle16 field_8;
-        public ItemHandle16 field_A;
+        public UInt16 EnhanceId { get; set; }
+        public UInt16 RecastRev { get; set; }
+        public UInt16 ItemId { get; set; }
+        public UInt16 field_6 { get; set; }
+        public ItemHandle16 field_8 { get; set; }
+        public ItemHandle16 field_A { get; set; }
 
         public ArtsEnhance(Byte[] data)
         {
@@ -204,6 +227,15 @@ namespace XC2SaveNETThingy
             result.AddRange(field_8.ToRawData());
             result.AddRange(field_A.ToRawData());
 
+            if (result.Count != SIZE)
+            {
+                string message = "ArtsEnhance: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
+
             return result.ToArray();
         }
     };
@@ -218,12 +250,12 @@ namespace XC2SaveNETThingy
         //uint16 Skill1 : 1;
         //uint16 Skill2 : 1;
 
-        bool Specials0_Enabled;
-        bool Specials1_Enabled;
-        bool Specials2_Enabled;
-        bool Skill0_Enabled;
-        bool Skill1_Enabled;
-        bool Skill2_Enabled;
+        bool Specials0_Enabled { get; set; }
+        bool Specials1_Enabled { get; set; }
+        bool Specials2_Enabled { get; set; }
+        bool Skill0_Enabled { get; set; }
+        bool Skill1_Enabled { get; set; }
+        bool Skill2_Enabled { get; set; }
 
         public HanaCircuits(byte[] data)
         {
@@ -241,7 +273,7 @@ namespace XC2SaveNETThingy
             data += (Byte)(Specials0_Enabled ? 1 : 0);
             data += (Byte)((Specials1_Enabled ? 1 : 0) << 1);
             data += (Byte)((Specials2_Enabled ? 1 : 0) << 2);
-            data += (Byte)((Skill2_Enabled ? 1 : 0) << 3);
+            data += (Byte)((Skill0_Enabled ? 1 : 0) << 3);
             data += (Byte)((Skill1_Enabled ? 1 : 0) << 4);
             data += (Byte)((Skill2_Enabled ? 1 : 0) << 5);
 
@@ -265,14 +297,14 @@ namespace XC2SaveNETThingy
             { "OpenCircuits", 0x7A }
         };
 
-        public UInt16 RoleItem;
-        public UInt16 AtrItem;
-        public ArtsEnhance[] BArtsEnhance;
-        public ArtsEnhance[] NArts;
-        public UInt16[] Skills;
-        public ItemHandle32[] field_58;
-        public UInt16 PowerCapacity;
-        public HanaCircuits OpenCircuits;
+        public UInt16 RoleItem { get; set; }
+        public UInt16 AtrItem { get; set; }
+        public ArtsEnhance[] BArtsEnhance { get; set; }
+        public ArtsEnhance[] NArts { get; set; }
+        public UInt16[] Skills { get; set; }
+        public ItemHandle32[] field_58 { get; set; }
+        public UInt16 PowerCapacity { get; set; }
+        public HanaCircuits OpenCircuits { get; set; }
 
         public EquipHana(Byte[] data)
         {
@@ -281,27 +313,19 @@ namespace XC2SaveNETThingy
 
             BArtsEnhance = new ArtsEnhance[3];
             for (int i = 0; i < BArtsEnhance.Length; i++)
-            {
                 BArtsEnhance[i] = new ArtsEnhance(data.GetByteSubArray(LOC["BArtsEnhance"] + (i * ArtsEnhance.SIZE), ArtsEnhance.SIZE));
-            }
 
             NArts = new ArtsEnhance[3];
             for (int i = 0; i < NArts.Length; i++)
-            {
                 NArts[i] = new ArtsEnhance(data.GetByteSubArray(LOC["NArts"] + (i * ArtsEnhance.SIZE), ArtsEnhance.SIZE));
-            }
 
             Skills = new UInt16[6];
             for (int i = 0; i < Skills.Length; i++)
-            {
-                Skills[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Skills"], 2), 0);
-            }
+                Skills[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Skills"] + (i * 2), 2), 0);
 
             field_58 = new ItemHandle32[8];
             for (int i = 0; i < field_58.Length; i++)
-            {
                 field_58[i] = new ItemHandle32(data.GetByteSubArray(LOC["field_58"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
-            }
 
             PowerCapacity = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PowerCapacity"], 2), 0);
             OpenCircuits = new HanaCircuits(data.GetByteSubArray(LOC["OpenCircuits"], HanaCircuits.SIZE));
@@ -314,32 +338,24 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(RoleItem));
             result.AddRange(BitConverter.GetBytes(AtrItem));
 
-            for (int i = 0; i < BArtsEnhance.Length; i++)
-            {
-                result.AddRange(BArtsEnhance[i].ToRawData());
-            }
-            
-            for (int i = 0; i < NArts.Length; i++)
-            {
-                result.AddRange(NArts[i].ToRawData());
-            }
+            foreach (ArtsEnhance ae in BArtsEnhance)
+                result.AddRange(ae.ToRawData());
 
-            for (int i = 0; i < Skills.Length; i++)
-            {
-                result.AddRange(BitConverter.GetBytes(Skills[i]));
-            }
+            foreach (ArtsEnhance ae in NArts)
+                result.AddRange(ae.ToRawData());
 
-            for (int i = 0; i < field_58.Length; i++)
-            {
-                result.AddRange(field_58[i].ToRawData());
-            }
+            foreach (UInt16 u in Skills)
+                result.AddRange(BitConverter.GetBytes(u));
+
+            foreach (ItemHandle32 ih in field_58)
+                result.AddRange(ih.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(PowerCapacity));
             result.AddRange(OpenCircuits.ToRawData());
 
             if (result.Count != SIZE)
             {
-                string message = "Blade.HanaEquip: SIZE ALL WRONG!!!" + Environment.NewLine +
+                string message = "Blade.EquipHana: SIZE ALL WRONG!!!" + Environment.NewLine +
                     "Size should be " + SIZE + " bytes..." + Environment.NewLine +
                     "...but Size is " + result.Count + " bytes!";
 
@@ -354,124 +370,127 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0x8A4;
 
-        public UInt16 DataType;
-        public UInt16 Creator;
-        public UInt16 SetDriver;
-        public UInt16 BladeId;
-        public gf_ElapseTime BornTime;
-        public UInt32 BraveryPoints;
-        public UInt32 BraveryLevel;
-        public UInt32 TruthPoints;
-        public UInt32 TruthLevel;
-        public UInt32 CompassionPoints;
-        public UInt32 CompassionLevel;
-        public UInt32 JusticePoints;
-        public UInt32 JusticeLevel;
-        public UInt32 field_2C;
-        public Byte field_30;
-        public Byte[] gap_31;
-        public UInt32 TrustPoints;
-        public UInt32 TrustRank;
-        public GfDataBladeArts[] BArts;
-        public GfDataBladeArts[] NArts;
-        public UInt16 BArtExId;
-        public UInt16 BladeArtsExH;
-        public UInt16 field_88;
-        public UInt16 field_8A;
-        public Byte field_8C;
-        public Byte gap_8D;
-        public UInt16 field_8E;
-        public UInt16 BArtEx2Id;
-        public UInt16 BladeArtsEx2H;
-        public UInt16 field_94;
-        public UInt16 field_96;
-        public Byte field_98;
-        public Byte gap_99;
-        public UInt16 field_9A;
-        public GfDataBladeSkill[] BladeSkills;
-        public GfDataBladeSkill[] FieldSkills;
-        public Byte[] ExtraParts2;
-        public AchieveInfo[] BArtsAchieve;
-        public AchieveInfo[] BSkillsAchievement;
-        public AchieveInfo[] FSkillsAchievement;
-        public AchieveInfo KeyAchievement;
-        public UInt16 KeyReleaseLevel;
-        public UInt16 FavoriteCategory0;
-        public UInt16 FavoriteItem0;
-        public UInt16 FavoriteCategory0Unlocked;
-        public UInt16 FavoriteItem0Unlocked;
-        public UInt16 FavoriteCategory1;
-        public UInt16 FavoriteItem1;
-        public UInt16 FavoriteCategory1Unlocked;
-        public UInt16 FavoriteItem1Unlocked;
-        public Byte[] gap676 = new Byte[2];
-        public UInt32 field_678;
-        public UInt16 field_67C;
-        public Byte[] gap67E = new Byte[2];
-        public UInt64 field_680;
-        public UInt32 field_688;
-        public EquipHana HanaEquip;
-        public Byte Race;
-        public Byte Gender;
-        public UInt16 Still;
-        public PaddedString16 ModelResourceName;
-        public PaddedString16 Model2Name;
-        public PaddedString16 MotionResourceName;
-        public PaddedString16 Motion2Name;
-        public PaddedString16 AddMotionName;
-        public PaddedString16 VoiceName;
-        public PaddedString16 ClipEvent;
-        public PaddedString16 Com_SE;
-        public PaddedString16 EffectResourceName;
-        public PaddedString16 Com_Vo;
-        public PaddedString16 CenterBone;
-        public PaddedString16 CamBone;
-        public PaddedString32 SeResourceName;
-        public Byte BladeSize;
-        public Byte WeaponType;
-        public Byte OrbNum;
-        public Byte Atr;
-        public Byte Personality;
-        public Byte ExtraParts;
-        public Byte EyeRot;
-        public Byte gap_827;
-        public UInt16 CoolTime;
-        public UInt16 Condition;
-        public UInt16 DefWeapon;
-        public UInt16 ChestHeight;
-        public UInt16 LandingHeight;
-        public UInt16 RareNameId;
-        public UInt16 CommonNameId;
-        public UInt16 Scale;
-        public UInt16 WpnScale;
-        public UInt16 OffsetID;
-        public UInt16 CollisionId;
-        public Byte PArmor;
-        public Byte EArmor;
-        public Byte HpMaxRev;
-        public Byte StrengthRev;
-        public Byte PowEtherRev;
-        public Byte DexRev;
-        public Byte AgilityRev;
-        public Byte LuckRev;
-        public Byte QuestRace;
-        public Byte ReleaseLock;
-        public Byte FootStep;
-        public Byte FootStepEffect;
-        public UInt16 KizunaLinkSet;
-        public UInt16 NormalTalk;
-        public UInt16 gap_84E;
-        public UInt32 CreateEventID;
-        public UInt16 MountPoint;
-        public UInt16 MountObject;
-        public Byte[] Name = new Byte[64]; // max len 64 bytes, strange garbage bytes after string
-        public UInt32 NameLength;
-        public Int16 CommonBladeIndex;
-        public Byte EnableEngageRex;
-        public Byte BladeReleaseStatus;
-        public Byte isUnselect;
-        public Byte AffinityChartStatus;
-        public UInt16 field_8A2;
+        public UInt16 DataType { get; set; }
+        public UInt16 Creator { get; set; }
+        public UInt16 SetDriver { get; set; }
+        public UInt16 BladeId { get; set; }
+        public ElapseTime BornTime { get; set; }
+        public UInt32 BraveryPoints { get; set; }
+        public UInt32 BraveryLevel { get; set; }
+        public UInt32 TruthPoints { get; set; }
+        public UInt32 TruthLevel { get; set; }
+        public UInt32 CompassionPoints { get; set; }
+        public UInt32 CompassionLevel { get; set; }
+        public UInt32 JusticePoints { get; set; }
+        public UInt32 JusticeLevel { get; set; }
+        public UInt32 field_2C { get; set; }
+        public Byte field_30 { get; set; }
+        public Byte[] gap_31 { get; set; }
+        public UInt32 TrustPoints { get; set; }
+        public UInt32 TrustRank { get; set; }
+        public BladeArts[] BArts { get; set; }
+        public BladeArts[] NArts { get; set; }
+        public UInt16 BArtExId { get; set; }
+        public UInt16 BladeArtsExH { get; set; }
+        public UInt16 field_88 { get; set; }
+        public UInt16 field_8A { get; set; }
+        public Byte field_8C { get; set; }
+        public Byte gap_8D { get; set; }
+        public UInt16 field_8E { get; set; }
+        public UInt16 BArtEx2Id { get; set; }
+        public UInt16 BladeArtsEx2H { get; set; }
+        public UInt16 field_94 { get; set; }
+        public UInt16 field_96 { get; set; }
+        public Byte field_98 { get; set; }
+        public Byte gap_99 { get; set; }
+        public UInt16 field_9A { get; set; }
+        public BladeSkill[] BladeSkills { get; set; }
+        public BladeSkill[] FieldSkills { get; set; }
+        public Byte[] ExtraParts2 { get; set; }
+        public AchieveInfo[] BArtsAchieve { get; set; }
+        public AchieveInfo[] BSkillsAchievement { get; set; }
+        public AchieveInfo[] FSkillsAchievement { get; set; }
+        public AchieveInfo KeyAchievement { get; set; }
+        public UInt16 KeyReleaseLevel { get; set; }
+        public UInt16 FavoriteCategory0 { get; set; }
+        public UInt16 FavoriteItem0 { get; set; }
+        public UInt16 FavoriteCategory0Unlocked { get; set; }
+        public UInt16 FavoriteItem0Unlocked { get; set; }
+        public UInt16 FavoriteCategory1 { get; set; }
+        public UInt16 FavoriteItem1 { get; set; }
+        public UInt16 FavoriteCategory1Unlocked { get; set; }
+        public UInt16 FavoriteItem1Unlocked { get; set; }
+        public Byte[] gap676 { get; set; }
+        public UInt32 field_678 { get; set; }
+        public UInt16 field_67C { get; set; }
+        public Byte[] gap67E { get; set; }
+        public UInt64 field_680 { get; set; }
+        public UInt32 field_688 { get; set; }
+        public EquipHana HanaEquip { get; set; }
+        public Byte Race { get; set; }
+        public Byte Gender { get; set; }
+        public UInt16 Still { get; set; }
+        public PaddedString16 ModelResourceName { get; set; }
+        public PaddedString16 Model2Name { get; set; }
+        public PaddedString16 MotionResourceName { get; set; }
+        public PaddedString16 Motion2Name { get; set; }
+        public PaddedString16 AddMotionName { get; set; }
+        public PaddedString16 VoiceName { get; set; }
+        //public PaddedString16 ClipEvent { get; set; }
+        public Byte[] ClipEvent { get; set; }
+        //public PaddedString16 Com_SE { get; set; }
+        public Byte[] Com_SE { get; set; }
+        public PaddedString16 EffectResourceName { get; set; }
+        //public PaddedString16 Com_Vo { get; set; }
+        public Byte[] Com_Vo { get; set; }
+        public PaddedString16 CenterBone { get; set; }
+        public PaddedString16 CamBone { get; set; }
+        public PaddedString32 SeResourceName { get; set; }
+        public Byte BladeSize { get; set; }
+        public Byte WeaponType { get; set; }
+        public Byte OrbNum { get; set; }
+        public Byte Atr { get; set; }
+        public Byte Personality { get; set; }
+        public Byte ExtraParts { get; set; }
+        public Byte EyeRot { get; set; }
+        public Byte gap_827 { get; set; }
+        public UInt16 CoolTime { get; set; }
+        public UInt16 Condition { get; set; }
+        public UInt16 DefWeapon { get; set; }
+        public UInt16 ChestHeight { get; set; }
+        public UInt16 LandingHeight { get; set; }
+        public UInt16 RareNameId { get; set; }
+        public UInt16 CommonNameId { get; set; }
+        public UInt16 Scale { get; set; }
+        public UInt16 WpnScale { get; set; }
+        public UInt16 OffsetID { get; set; }
+        public UInt16 CollisionId { get; set; }
+        public Byte PArmor { get; set; }
+        public Byte EArmor { get; set; }
+        public Byte HpMaxRev { get; set; }
+        public Byte StrengthRev { get; set; }
+        public Byte PowEtherRev { get; set; }
+        public Byte DexRev { get; set; }
+        public Byte AgilityRev { get; set; }
+        public Byte LuckRev { get; set; }
+        public Byte QuestRace { get; set; }
+        public Byte ReleaseLock { get; set; }
+        public Byte FootStep { get; set; }
+        public Byte FootStepEffect { get; set; }
+        public UInt16 KizunaLinkSet { get; set; }
+        public UInt16 NormalTalk { get; set; }
+        public UInt16 gap_84E { get; set; }
+        public UInt32 CreateEventID { get; set; }
+        public UInt16 MountPoint { get; set; }
+        public UInt16 MountObject { get; set; }
+        public Byte[] Name { get; set; } // max len 64 bytes, strange garbage bytes after string
+        public UInt32 NameLength { get; set; }
+        public Int16 CommonBladeIndex { get; set; }
+        public Byte EnableEngageRex { get; set; }
+        public Byte BladeReleaseStatus { get; set; }
+        public Byte isUnselect { get; set; }
+        public Byte AffinityChartStatus { get; set; }
+        public UInt16 field_8A2 { get; set; }
 
         private static Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
@@ -601,7 +620,7 @@ namespace XC2SaveNETThingy
             Creator = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Creator"], 2), 0);
             SetDriver = BitConverter.ToUInt16(data.GetByteSubArray(LOC["SetDriver"], 2), 0);
             BladeId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeId"], 2), 0);
-            BornTime =new gf_ElapseTime(data.GetByteSubArray(LOC["BornTime"], 4));
+            BornTime =new ElapseTime(data.GetByteSubArray(LOC["BornTime"], 4));
             BraveryPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BraveryPoints"], 4), 0);
             BraveryLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BraveryLevel"], 4), 0);
             TruthPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TruthPoints"], 4), 0);
@@ -612,21 +631,17 @@ namespace XC2SaveNETThingy
             JusticeLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticeLevel"], 4), 0);
             field_2C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_2C"], 4), 0);
             field_30 = data[LOC["field_30"]];
-
-            gap_31 = new Byte[3];
-            for (int i = 0; i < gap_31.Length; i++)
-                gap_31[i] = data[LOC["gap_31"] + i];
-
+            gap_31 = data.GetByteSubArray(LOC["gap_31"], 3);
             TrustPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustPoints"], 4), 0);
             TrustRank = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustRank"], 4), 0);
 
-            BArts = new GfDataBladeArts[3];
+            BArts = new BladeArts[3];
             for (int i = 0; i < BArts.Length; i++)
-                BArts[i] = new GfDataBladeArts(data.GetByteSubArray(LOC["BArts"] + i, GfDataBladeArts.SIZE));
+                BArts[i] = new BladeArts(data.GetByteSubArray(LOC["BArts"] + (i * BladeArts.SIZE), BladeArts.SIZE));
 
-            NArts = new GfDataBladeArts[3];
+            NArts = new BladeArts[3];
             for (int i = 0; i < NArts.Length; i++)
-                NArts[i] = new GfDataBladeArts(data.GetByteSubArray(LOC["NArts"] + i, GfDataBladeArts.SIZE));
+                NArts[i] = new BladeArts(data.GetByteSubArray(LOC["NArts"] + (i * BladeArts.SIZE), BladeArts.SIZE));
 
             BArtExId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtExId"], 2), 0);
             BladeArtsExH = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsExH"], 2), 0);
@@ -643,29 +658,29 @@ namespace XC2SaveNETThingy
             gap_99 = data[LOC["gap_99"]];
             field_9A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_9A"], 2), 0);
 
-            BladeSkills = new GfDataBladeSkill[3];
+            BladeSkills = new BladeSkill[3];
             for (int i = 0; i < BladeSkills.Length; i++)
-                BladeSkills[i] = new GfDataBladeSkill(data.GetByteSubArray(LOC["BladeSkills"] + i, GfDataBladeSkill.SIZE));
+                BladeSkills[i] = new BladeSkill(data.GetByteSubArray(LOC["BladeSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
 
-            FieldSkills = new GfDataBladeSkill[3];
+            FieldSkills = new BladeSkill[3];
             for (int i = 0; i < FieldSkills.Length; i++)
-                FieldSkills[i] = new GfDataBladeSkill(data.GetByteSubArray(LOC["FieldSkills"] + i, GfDataBladeSkill.SIZE));
+                FieldSkills[i] = new BladeSkill(data.GetByteSubArray(LOC["FieldSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
 
             ExtraParts2 = new Byte[4];
             for (int i = 0; i < ExtraParts2.Length; i++)
-                ExtraParts2[i] = data[LOC["ExtraParts2"]];
+                ExtraParts2[i] = data[LOC["ExtraParts2"] + i];
 
             BArtsAchieve = new AchieveInfo[3];
             for (int i = 0; i < BArtsAchieve.Length; i++)
-                BArtsAchieve[i] = new AchieveInfo(data.GetByteSubArray(LOC["BArtsAchieve"], AchieveInfo.SIZE));
+                BArtsAchieve[i] = new AchieveInfo(data.GetByteSubArray(LOC["BArtsAchieve"] + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
 
             BSkillsAchievement = new AchieveInfo[3];
             for (int i = 0; i < BSkillsAchievement.Length; i++)
-                BSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray(LOC["BSkillsAchievement"], AchieveInfo.SIZE));
+                BSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray(LOC["BSkillsAchievement"] + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
 
             FSkillsAchievement = new AchieveInfo[3];
             for (int i = 0; i < FSkillsAchievement.Length; i++)
-                FSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray(LOC["FSkillsAchievement"], AchieveInfo.SIZE));
+                FSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray(LOC["FSkillsAchievement"] + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
 
             KeyAchievement = new AchieveInfo(data.GetByteSubArray(LOC["KeyAchievement"], AchieveInfo.SIZE));
             KeyReleaseLevel = BitConverter.ToUInt16(data.GetByteSubArray(LOC["KeyReleaseLevel"], 2), 0);
@@ -677,18 +692,10 @@ namespace XC2SaveNETThingy
             FavoriteItem1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1"], 2), 0);
             FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0);
             FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0);
-
-            gap676 = new Byte[2];
-            for (int i = 0; i < gap676.Length; i++)
-                gap676[i] = data[LOC["gap676"] + i];
-
+            gap676 = data.GetByteSubArray(LOC["gap676"], 2);
             field_678 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_678"], 4), 0);
             field_67C = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_67C"], 2), 0);
-
-            gap67E = new Byte[2];
-            for (int i = 0; i < gap67E.Length; i++)
-                gap67E[i] = data[LOC["gap67E"] + i];
-
+            gap67E = data.GetByteSubArray(LOC["gap67E"], 2);
             field_680 = BitConverter.ToUInt64(data.GetByteSubArray(LOC["field_680"], 8), 0);
             field_688 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_688"], 4), 0);
             HanaEquip = new EquipHana(data.GetByteSubArray(LOC["HanaEquip"], EquipHana.SIZE));
@@ -701,14 +708,21 @@ namespace XC2SaveNETThingy
             Motion2Name = new PaddedString16(data.GetByteSubArray(LOC["Motion2Name"], PaddedString16.SIZE));
             AddMotionName = new PaddedString16(data.GetByteSubArray(LOC["AddMotionName"], PaddedString16.SIZE));
             VoiceName = new PaddedString16(data.GetByteSubArray(LOC["VoiceName"], PaddedString16.SIZE));
-            ClipEvent = new PaddedString16(data.GetByteSubArray(LOC["ClipEvent"], PaddedString16.SIZE));
-            Com_SE = new PaddedString16(data.GetByteSubArray(LOC["Com_SE"], PaddedString16.SIZE));
+
+            //ClipEvent = new PaddedString16(data.GetByteSubArray(LOC["ClipEvent"], PaddedString16.SIZE));
+            ClipEvent = data.GetByteSubArray(LOC["ClipEvent"], 0x14);
+
+            //Com_SE = new PaddedString16(data.GetByteSubArray(LOC["Com_SE"], PaddedString16.SIZE));
+            Com_SE = data.GetByteSubArray(LOC["Com_SE"], 0x14);
+
             EffectResourceName = new PaddedString16(data.GetByteSubArray(LOC["EffectResourceName"], PaddedString16.SIZE));
-            Com_Vo = new PaddedString16(data.GetByteSubArray(LOC["Com_Vo"], PaddedString16.SIZE));
+
+            //Com_Vo = new PaddedString16(data.GetByteSubArray(LOC["Com_Vo"], PaddedString16.SIZE));
+            Com_Vo = data.GetByteSubArray(LOC["Com_Vo"], 0x14);
+
             CenterBone = new PaddedString16(data.GetByteSubArray(LOC["CenterBone"], PaddedString16.SIZE));
             CamBone = new PaddedString16(data.GetByteSubArray(LOC["CamBone"], PaddedString16.SIZE));
             SeResourceName = new PaddedString32(data.GetByteSubArray(LOC["SeResourceName"], PaddedString32.SIZE));
-
             BladeSize = data[LOC["BladeSize"]];
             WeaponType = data[LOC["WeaponType"]];
             OrbNum = data[LOC["OrbNum"]];
@@ -746,11 +760,7 @@ namespace XC2SaveNETThingy
             CreateEventID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CreateEventID"], 4), 0);
             MountPoint = BitConverter.ToUInt16(data.GetByteSubArray(LOC["MountPoint"], 2), 0);
             MountObject = BitConverter.ToUInt16(data.GetByteSubArray(LOC["MountObject"], 2), 0);
-
-            Name = new Byte[64]; // max len 64 bytes, strange value bytes in padding after string
-            for (int i = 0; i < Name.Length; i++)
-                Name[i] = data[LOC["Name"] + i];
-
+            Name = data.GetByteSubArray(LOC["Name"], 64); // max len 64 bytes, strange value bytes in padding after string
             NameLength = BitConverter.ToUInt16(data.GetByteSubArray(LOC["NameLength"], 4), 0);
             CommonBladeIndex = BitConverter.ToInt16(data.GetByteSubArray(LOC["CommonBladeIndex"], 2), 0);
             EnableEngageRex = data[LOC["EnableEngageRex"]];
@@ -779,18 +789,15 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(JusticeLevel));
             result.AddRange(BitConverter.GetBytes(field_2C));
             result.Add(field_30);
-
-            for (int i = 0; i < gap_31.Length; i++)
-                result.Add(gap_31[i]);
-
+            result.AddRange(gap_31);
             result.AddRange(BitConverter.GetBytes(TrustPoints));
             result.AddRange(BitConverter.GetBytes(TrustRank));
 
-            for (int i = 0; i < BArts.Length; i++)
-                result.AddRange(BArts[i].ToRawData());
+            foreach (BladeArts ba in BArts)
+                result.AddRange(ba.ToRawData());
 
-            for (int i = 0; i < NArts.Length; i++)
-                result.AddRange(NArts[i].ToRawData());
+            foreach (BladeArts ba in NArts)
+                result.AddRange(ba.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(BArtExId));
             result.AddRange(BitConverter.GetBytes(BladeArtsExH));
@@ -807,23 +814,22 @@ namespace XC2SaveNETThingy
             result.Add(gap_99);
             result.AddRange(BitConverter.GetBytes(field_9A));
 
-            for (int i = 0; i < BladeSkills.Length; i++)
-                result.AddRange(BladeSkills[i].ToRawData());
-            
-            for (int i = 0; i < FieldSkills.Length; i++)
-                result.AddRange(FieldSkills[i].ToRawData());
+            foreach (BladeSkill bs in BladeSkills)
+                result.AddRange(bs.ToRawData());
 
-            for (int i = 0; i < ExtraParts2.Length; i++)
-                result.Add(ExtraParts2[i]);
+            foreach (BladeSkill bs in FieldSkills)
+                result.AddRange(bs.ToRawData());
 
-            for (int i = 0; i < BArtsAchieve.Length; i++)
-                result.AddRange(BArtsAchieve[i].ToRawData());
-            
-            for (int i = 0; i < BSkillsAchievement.Length; i++)
-                result.AddRange(BSkillsAchievement[i].ToRawData());
+            result.AddRange(ExtraParts2);
 
-            for (int i = 0; i < FSkillsAchievement.Length; i++)
-                result.AddRange(FSkillsAchievement[i].ToRawData());
+            foreach (AchieveInfo ai in BArtsAchieve)
+                result.AddRange(ai.ToRawData());
+
+            foreach (AchieveInfo ai in BSkillsAchievement)
+                result.AddRange(ai.ToRawData());
+
+            foreach (AchieveInfo ai in FSkillsAchievement)
+                result.AddRange(ai.ToRawData());
 
             result.AddRange(KeyAchievement.ToRawData());
             result.AddRange(BitConverter.GetBytes(KeyReleaseLevel));
@@ -835,16 +841,10 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(FavoriteItem1));
             result.AddRange(BitConverter.GetBytes(FavoriteCategory1Unlocked));
             result.AddRange(BitConverter.GetBytes(FavoriteItem1Unlocked));
-            
-            for (int i = 0; i < gap676.Length; i++)
-                result.Add(gap676[i]);
-
+            result.AddRange(gap676);
             result.AddRange(BitConverter.GetBytes(field_678));
             result.AddRange(BitConverter.GetBytes(field_67C));
-
-            for (int i = 0; i < gap67E.Length; i++)
-                result.Add(gap67E[i]);
-
+            result.AddRange(gap67E);
             result.AddRange(BitConverter.GetBytes(field_680));
             result.AddRange(BitConverter.GetBytes(field_688));
             result.AddRange(HanaEquip.ToRawData());
@@ -857,10 +857,13 @@ namespace XC2SaveNETThingy
             result.AddRange(Motion2Name.ToRawData());
             result.AddRange(AddMotionName.ToRawData());
             result.AddRange(VoiceName.ToRawData());
-            result.AddRange(ClipEvent.ToRawData());
-            result.AddRange(Com_SE.ToRawData());
+            //result.AddRange(ClipEvent.ToRawData());
+            result.AddRange(ClipEvent);
+            //result.AddRange(Com_SE.ToRawData());
+            result.AddRange(Com_SE);
             result.AddRange(EffectResourceName.ToRawData());
-            result.AddRange(Com_Vo.ToRawData());
+            //result.AddRange(Com_Vo.ToRawData());
+            result.AddRange(Com_Vo);
             result.AddRange(CenterBone.ToRawData());
             result.AddRange(CamBone.ToRawData());
             result.AddRange(SeResourceName.ToRawData());
@@ -901,10 +904,7 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CreateEventID));
             result.AddRange(BitConverter.GetBytes(MountPoint));
             result.AddRange(BitConverter.GetBytes(MountObject));
-            
-            for (int i = 0; i < Name.Length; i++)
-                result.Add(Name[i]);
-
+            result.AddRange(Name);
             result.AddRange(BitConverter.GetBytes(NameLength));
             result.AddRange(BitConverter.GetBytes(CommonBladeIndex));
             result.Add(EnableEngageRex);
@@ -930,10 +930,9 @@ namespace XC2SaveNETThingy
             string str = "";
 
             for (int i = 0; i < NameLength; i++)
-                str += Name[i];
+                str += (char)Name[i];
 
             return str;
         }
-
     }
 }

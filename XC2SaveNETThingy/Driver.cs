@@ -38,20 +38,20 @@ namespace XC2SaveNETThingy
             { 2, "In Mercenary Team" }
         };
 
-        public class GfDataDriverSkill : IXC2SaveObject
+        public class DriverSkill : IXC2SaveObject
         {
             public const int SIZE = 0xA;
-            public UInt16[] Columns = new UInt16[3];
-            public Int16 RowNum;
-            public UInt16 Level;
 
-            public GfDataDriverSkill(Byte[] data)
+            public UInt16[] Columns { get; set; }
+            public Int16 RowNum { get; set; }
+            public UInt16 Level { get; set; }
+
+            public DriverSkill(Byte[] data)
             {
                 Columns = new UInt16[3];
                 for (int i = 0; i < Columns.Length; i++)
-                {
                     Columns[i] = BitConverter.ToUInt16(data.GetByteSubArray(i * 2, 2), 0);
-                }
+
                 RowNum = BitConverter.ToInt16(data.GetByteSubArray(0x6, 2), 0);
                 Level = BitConverter.ToUInt16(data.GetByteSubArray(0x8, 2), 0);
             }
@@ -60,11 +60,20 @@ namespace XC2SaveNETThingy
             {
                 List<Byte> result = new List<byte>();
 
-                for (int i = 0; i < Columns.Length; i++)
-                    result.AddRange(BitConverter.GetBytes(Columns[i]));
+                foreach (UInt16 u in Columns)
+                    result.AddRange(BitConverter.GetBytes(u));
 
                 result.AddRange(BitConverter.GetBytes(RowNum));
                 result.AddRange(BitConverter.GetBytes(Level));
+
+                if (result.Count != SIZE)
+                {
+                    string message = "DriverSkill: SIZE ALL WRONG!!!" + Environment.NewLine +
+                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                    "...but Size is " + result.Count + " bytes!";
+
+                    throw new Exception(message);
+                }
 
                 return result.ToArray();
             }
@@ -105,17 +114,16 @@ namespace XC2SaveNETThingy
 
             public const int SIZE = 0x14;
 
-            public UInt32[] ArtIds;
-            public int WeaponPoints;
-            public int TotalWeaponPoints;
+            public UInt32[] ArtIds { get; set; }
+            public int WeaponPoints { get; set; }
+            public int TotalWeaponPoints { get; set; }
 
             public Weapon(Byte[] data)
             {
                 ArtIds = new UInt32[3];
                 for (int i = 0; i < ArtIds.Length; i++)
-                {
                     ArtIds[i] = BitConverter.ToUInt32(data.GetByteSubArray(i * 4, 4), 0);
-                }
+
                 WeaponPoints = BitConverter.ToInt32(data.GetByteSubArray(0xC, 4), 0);
                 TotalWeaponPoints = BitConverter.ToInt32(data.GetByteSubArray(0x10, 4), 0);
             }
@@ -124,24 +132,34 @@ namespace XC2SaveNETThingy
             {
                 List<Byte> result = new List<Byte>();
 
-                for (int i = 0; i < ArtIds.Length; i++)
-                    result.AddRange(BitConverter.GetBytes(ArtIds[i]));
+                foreach (UInt32 u in ArtIds)
+                    result.AddRange(BitConverter.GetBytes(u));
 
                 result.AddRange(BitConverter.GetBytes(WeaponPoints));
                 result.AddRange(BitConverter.GetBytes(TotalWeaponPoints));
+
+                if (result.Count != SIZE)
+                {
+                    string message = "Weapon: SIZE ALL WRONG!!!" + Environment.NewLine +
+                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                    "...but Size is " + result.Count + " bytes!";
+
+                    throw new Exception(message);
+                }
 
                 return result.ToArray();
             }
         }
 
-        public class SDataPouch : IXC2SaveObject
+        public class Pouch : IXC2SaveObject
         {
             public const int SIZE = 0x8;
-            float Time;
-            UInt16 ItemId;
-            UInt16 IsEnabled;
 
-            public SDataPouch(Byte[] data)
+            float Time { get; set; }
+            UInt16 ItemId { get; set; }
+            UInt16 IsEnabled { get; set; }
+
+            public Pouch(Byte[] data)
             {
                 Time = BitConverter.ToSingle(data.GetByteSubArray(0, 4), 0);
                 ItemId = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
@@ -155,6 +173,15 @@ namespace XC2SaveNETThingy
                 result.AddRange(BitConverter.GetBytes(Time));
                 result.AddRange(BitConverter.GetBytes(ItemId));
                 result.AddRange(BitConverter.GetBytes(IsEnabled));
+
+                if (result.Count != SIZE)
+                {
+                    string message = "Pouch: SIZE ALL WRONG!!!" + Environment.NewLine +
+                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                    "...but Size is " + result.Count + " bytes!";
+
+                    throw new Exception(message);
+                }
 
                 return result.ToArray();
             }
@@ -209,57 +236,57 @@ namespace XC2SaveNETThingy
             { "AccessoryId1", 0x580 },
             { "gap_582", 0x582 },
             { "PouchInfo", 0x584 },
-            { "gap_field_59A", 0x59A }
+            { "gap_field_59C", 0x59C }
         };
 
-        public UInt32 BraveryPoints;
-        public UInt32 BraveryLevel;
-        public UInt32 TruthPoints;
-        public UInt32 TruthLevel;
-        public UInt32 CompassionPoints;
-        public UInt32 CompassionLevel;
-        public UInt32 JusticePoints;
-        public UInt32 JusticeLevel;
-        public UInt16 IsActive;
-        public UInt16 DriverId;
-        public Int16 SetBlade;
-        public UInt16[] EquippedBlades = new UInt16[3];
-        public UInt32 gap_2C;
-        public GfDataDriverSkill[] SkillsRound1 = new GfDataDriverSkill[5];
-        public GfDataDriverSkill[] SkillsRound2 = new GfDataDriverSkill[5];
-        public UInt16 Level;
-        public UInt16 HpMax;
-        public UInt16 Strength;
-        public UInt16 PowEther;
-        public UInt16 Dex;
-        public UInt16 Agility;
-        public UInt16 Luck;
-        public UInt16 PArmor;
-        public UInt16 EArmor;
-        public Byte CritRate;
-        public Byte GuardRate;
-        public UInt32 field_A8;
-        public Byte[] gap_AC = new Byte[3];
-        public Byte field_AF;
-        public UInt32 Exp;
-        public UInt32 BattleExp;
-        public UInt32 SkillPoints;
-        public UInt32 TotalSkillPoints;
-        public Weapon[] Weapons = new Weapon[27];
-        public Byte[] gap_2DC = new Byte[12];
-        public UInt16 AccessoryId2;
-        public Byte[] gap_2EA = new Byte[2];
-        public ItemHandle AccessoryHandle2;
-        public Byte[] DriverArtLevels = new Byte[525];
-        public Byte[] gap_4FD = new Byte[119];
-        public ItemHandle AccessoryHandle0;
-        public UInt16 AccessoryId0;
-        public UInt16 gap_57A;
-        public ItemHandle AccessoryHandle1;
-        public UInt16 AccessoryId1;
-        public UInt16 gap_582;
-        public SDataPouch[] PouchInfo = new SDataPouch[3];
-        public Byte[] gap_field_59A = new Byte[3];
+        public UInt32 BraveryPoints { get; set; }
+        public UInt32 BraveryLevel { get; set; }
+        public UInt32 TruthPoints { get; set; }
+        public UInt32 TruthLevel { get; set; }
+        public UInt32 CompassionPoints { get; set; }
+        public UInt32 CompassionLevel { get; set; }
+        public UInt32 JusticePoints { get; set; }
+        public UInt32 JusticeLevel { get; set; }
+        public UInt16 IsActive { get; set; }
+        public UInt16 DriverId { get; set; }
+        public Int16 SetBlade { get; set; }
+        public UInt16[] EquippedBlades { get; set; }
+        public UInt32 gap_2C { get; set; }
+        public DriverSkill[] SkillsRound1 { get; set; }
+        public DriverSkill[] SkillsRound2 { get; set; }
+        public UInt16 Level { get; set; }
+        public UInt16 HpMax { get; set; }
+        public UInt16 Strength { get; set; }
+        public UInt16 PowEther { get; set; }
+        public UInt16 Dex { get; set; }
+        public UInt16 Agility { get; set; }
+        public UInt16 Luck { get; set; }
+        public UInt16 PArmor { get; set; }
+        public UInt16 EArmor { get; set; }
+        public Byte CritRate { get; set; }
+        public Byte GuardRate { get; set; }
+        public UInt32 field_A8 { get; set; }
+        public Byte[] gap_AC { get; set; }
+        public Byte field_AF { get; set; }
+        public UInt32 Exp { get; set; }
+        public UInt32 BattleExp { get; set; }
+        public UInt32 SkillPoints { get; set; }
+        public UInt32 TotalSkillPoints { get; set; }
+        public Weapon[] Weapons { get; set; }
+        public Byte[] gap_2DC { get; set; }
+        public UInt16 AccessoryId2 { get; set; }
+        public Byte[] gap_2EA { get; set; }
+        public ItemHandle AccessoryHandle2 { get; set; }
+        public Byte[] DriverArtLevels { get; set; }
+        public Byte[] gap_4FD { get; set; }
+        public ItemHandle AccessoryHandle0 { get; set; }
+        public UInt16 AccessoryId0 { get; set; }
+        public UInt16 gap_57A { get; set; }
+        public ItemHandle AccessoryHandle1 { get; set; }
+        public UInt16 AccessoryId1 { get; set; }
+        public UInt16 gap_582 { get; set; }
+        public Pouch[] PouchInfo { get; set; }
+        public Byte[] gap_field_59C { get; set; }
 
         public Driver(Byte[] data)
         {
@@ -281,13 +308,13 @@ namespace XC2SaveNETThingy
 
             gap_2C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["gap_2C"], 4), 0);
 
-            SkillsRound1 = new GfDataDriverSkill[5];
+            SkillsRound1 = new DriverSkill[5];
             for (int i = 0; i < SkillsRound1.Length; i++)
-                SkillsRound1[i] = new GfDataDriverSkill(data.GetByteSubArray(LOC["SkillsRound1"] + (i * GfDataDriverSkill.SIZE), GfDataDriverSkill.SIZE));
+                SkillsRound1[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound1"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
 
-            SkillsRound2 = new GfDataDriverSkill[5];
+            SkillsRound2 = new DriverSkill[5];
             for (int i = 0; i < SkillsRound2.Length; i++)
-                SkillsRound2[i] = new GfDataDriverSkill(data.GetByteSubArray(LOC["SkillsRound2"] + (i * GfDataDriverSkill.SIZE), GfDataDriverSkill.SIZE));
+                SkillsRound2[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound2"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
 
             Level = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Level"], 2), 0);
             HpMax = BitConverter.ToUInt16(data.GetByteSubArray(LOC["HpMax"], 2), 0);
@@ -301,11 +328,7 @@ namespace XC2SaveNETThingy
             CritRate = data[LOC["CritRate"]];
             GuardRate = data[LOC["GuardRate"]];
             field_A8 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_A8"], 4), 0);
-
-            gap_AC = new Byte[3];
-            for (int i = 0; i < gap_AC.Length; i++)
-                gap_AC[i] = data[LOC["gap_AC"] + i];
-
+            gap_AC = data.GetByteSubArray(LOC["gap_AC"], 3);
             field_AF = data[LOC["field_AF"]];
             Exp = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Exp"], 4), 0);
             BattleExp = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BattleExp"], 4), 0);
@@ -316,26 +339,12 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < Weapons.Length; i++)
                 Weapons[i] = new Weapon(data.GetByteSubArray(LOC["Weapons"] + (i * Weapon.SIZE), Weapon.SIZE));
 
-            gap_2DC = new Byte[12];
-            for (int i = 0; i < gap_2DC.Length; i++)
-                gap_2DC[i] = data[LOC["gap_2DC"] + i];
-
+            gap_2DC = data.GetByteSubArray(LOC["gap_2DC"], 12);
             AccessoryId2 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId2"], 2), 0);
-
-            gap_2EA = new Byte[2];
-            for (int i = 0; i < gap_2EA.Length; i++)
-                gap_2EA[i] = data[LOC["gap_2EA"] + i];
-
+            gap_2EA = data.GetByteSubArray(LOC["gap_2EA"], 2);
             AccessoryHandle2 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle2"], ItemHandle32.SIZE));
-
-            DriverArtLevels = new Byte[525];
-            for (int i = 0; i < DriverArtLevels.Length; i++)
-                DriverArtLevels[i] = data[LOC["DriverArtLevels"] + i];
-
-            gap_4FD = new Byte[119];
-            for (int i = 0; i < gap_4FD.Length; i++)
-                gap_4FD[i] = data[LOC["gap_4FD"] + i];
-
+            DriverArtLevels = data.GetByteSubArray(LOC["DriverArtLevels"], 525);
+            gap_4FD = data.GetByteSubArray(LOC["gap_4FD"], 119);
             AccessoryHandle0 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle0"], ItemHandle32.SIZE));
             AccessoryId0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId0"], 2), 0);
             gap_57A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["gap_57A"], 2), 0);
@@ -343,13 +352,11 @@ namespace XC2SaveNETThingy
             AccessoryId1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId1"], 2), 0);
             gap_582 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["gap_582"], 2), 0);
 
-            PouchInfo = new SDataPouch[3];
+            PouchInfo = new Pouch[3];
             for (int i = 0; i < PouchInfo.Length; i++)
-                PouchInfo[i] = new SDataPouch(data.GetByteSubArray(LOC["PouchInfo"] + (i * SDataPouch.SIZE), SDataPouch.SIZE));
+                PouchInfo[i] = new Pouch(data.GetByteSubArray(LOC["PouchInfo"] + (i * Pouch.SIZE), Pouch.SIZE));
 
-            gap_field_59A = new Byte[4];
-            for (int i = 0; i < gap_field_59A.Length; i++)
-                gap_field_59A[i] = data[LOC["gap_field_59A"] + i];
+            gap_field_59C = data.GetByteSubArray(LOC["gap_field_59C"], 4);
         }
 
         public Byte[] ToRawData()
@@ -368,17 +375,16 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(DriverId));
             result.AddRange(BitConverter.GetBytes(SetBlade));
 
-            for (int i = 0; i < EquippedBlades.Length; i++)
-                result.AddRange(BitConverter.GetBytes(EquippedBlades[i]));
+            foreach (UInt16 u in EquippedBlades)
+                result.AddRange(BitConverter.GetBytes(u));
 
             result.AddRange(BitConverter.GetBytes(gap_2C));
 
-            for (int i = 0; i < SkillsRound1.Length; i++)
-                result.AddRange(SkillsRound1[i].ToRawData());
+            foreach (DriverSkill ds in SkillsRound1)
+                result.AddRange(ds.ToRawData());
 
-            for (int i = 0; i < SkillsRound2.Length; i++)
-                result.AddRange(SkillsRound2[i].ToRawData());
-
+            foreach (DriverSkill ds in SkillsRound2)
+                result.AddRange(ds.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(Level));
             result.AddRange(BitConverter.GetBytes(HpMax));
@@ -392,35 +398,22 @@ namespace XC2SaveNETThingy
             result.Add(CritRate);
             result.Add(GuardRate);
             result.AddRange(BitConverter.GetBytes(field_A8));
-
-            for (int i = 0; i < gap_AC.Length; i++)
-                result.Add(gap_AC[i]);
-
+            result.AddRange(gap_AC);
             result.Add(field_AF);
             result.AddRange(BitConverter.GetBytes(Exp));
             result.AddRange(BitConverter.GetBytes(BattleExp));
             result.AddRange(BitConverter.GetBytes(SkillPoints));
             result.AddRange(BitConverter.GetBytes(TotalSkillPoints));
 
-            for (int i = 0; i < Weapons.Length; i++)
-                result.AddRange(Weapons[i].ToRawData());
+            foreach (Weapon w in Weapons)
+                result.AddRange(w.ToRawData());
 
-            for (int i = 0; i < gap_2DC.Length; i++)
-                result.Add(gap_2DC[i]);
-
+            result.AddRange(gap_2DC);
             result.AddRange(BitConverter.GetBytes(AccessoryId2));
-
-            for (int i = 0; i < gap_2EA.Length; i++)
-                result.Add(gap_2EA[i]);
-
+            result.AddRange(gap_2EA);
             result.AddRange(AccessoryHandle2.ToRawData());
-
-            for (int i = 0; i < DriverArtLevels.Length; i++)
-                result.Add(DriverArtLevels[i]);
-
-            for (int i = 0; i < gap_4FD.Length; i++)
-                result.Add(gap_4FD[i]);
-
+            result.AddRange(DriverArtLevels);
+            result.AddRange(gap_4FD);
             result.AddRange(AccessoryHandle0.ToRawData());
             result.AddRange(BitConverter.GetBytes(AccessoryId0));
             result.AddRange(BitConverter.GetBytes(gap_57A));
@@ -428,11 +421,19 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(AccessoryId1));
             result.AddRange(BitConverter.GetBytes(gap_582));
 
-            for (int i = 0; i < PouchInfo.Length; i++)
-                result.AddRange(PouchInfo[i].ToRawData());
+            foreach (Pouch p in PouchInfo)
+                result.AddRange(p.ToRawData());
 
-            for (int i = 0; i < gap_field_59A.Length; i++)
-                result.Add(gap_field_59A[i]);
+            result.AddRange(gap_field_59C);
+
+            if (result.Count != SIZE)
+            {
+                string message = "Driver: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
 
             return result.ToArray();
         }

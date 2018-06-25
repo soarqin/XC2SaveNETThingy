@@ -13,12 +13,9 @@ namespace XC2SaveNETThingy
             Byte[] value = new Byte[length];
 
             for (int i = 0; i < value.Length; i++)
-            {
                 value[i] = data[startLoc + i];
-            }
 
             return value;
         }
-
     }
 }

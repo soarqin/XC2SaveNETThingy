@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,6 +83,17 @@
             this.lblsg_field_3A = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.txtPartyMemberField4 = new System.Windows.Forms.TextBox();
+            this.txtPartyMemberField2 = new System.Windows.Forms.TextBox();
+            this.cbxPartyMemberDriver = new System.Windows.Forms.ComboBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.cbxPartyMembers = new System.Windows.Forms.ComboBox();
+            this.cbxPartyLeader = new System.Windows.Forms.ComboBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.tabDrivers = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txtDriverWeaponArtId3 = new System.Windows.Forms.TextBox();
@@ -166,24 +177,54 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.cbxDrivers = new System.Windows.Forms.ComboBox();
-            this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.cbxPartyLeader = new System.Windows.Forms.ComboBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.cbxPartyMembers = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.cbxPartyMemberDriver = new System.Windows.Forms.ComboBox();
-            this.txtPartyMemberField2 = new System.Windows.Forms.TextBox();
-            this.txtPartyMemberField4 = new System.Windows.Forms.TextBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPcWpnChipBox = new System.Windows.Forms.TabPage();
+            this.dgvPcWpnChipBox = new System.Windows.Forms.DataGridView();
+            this.tabPcEquipBox = new System.Windows.Forms.TabPage();
+            this.dgvPcEquipBox = new System.Windows.Forms.DataGridView();
+            this.tabEquipOrbBox = new System.Windows.Forms.TabPage();
+            this.dgvEquipOrbBox = new System.Windows.Forms.DataGridView();
+            this.tabSalvageBox = new System.Windows.Forms.TabPage();
+            this.dgvSalvageBox = new System.Windows.Forms.DataGridView();
+            this.tabPreciousBox = new System.Windows.Forms.TabPage();
+            this.dgvPreciousBox = new System.Windows.Forms.DataGridView();
+            this.tabInfoBox = new System.Windows.Forms.TabPage();
+            this.dgvInfoBox = new System.Windows.Forms.DataGridView();
+            this.tabEventBox = new System.Windows.Forms.TabPage();
+            this.dgvEventBox = new System.Windows.Forms.DataGridView();
+            this.tabCollectionListBox = new System.Windows.Forms.TabPage();
+            this.dgvCollectionListBox = new System.Windows.Forms.DataGridView();
+            this.tabTreasureBox = new System.Windows.Forms.TabPage();
+            this.dgvTreasureBox = new System.Windows.Forms.DataGridView();
+            this.tabEmptyOrbBox = new System.Windows.Forms.TabPage();
+            this.dgvEmptyOrbBox = new System.Windows.Forms.DataGridView();
+            this.tabFavoriteBox = new System.Windows.Forms.TabPage();
+            this.dgvFavoriteBox = new System.Windows.Forms.DataGridView();
+            this.tabCrystalListBox = new System.Windows.Forms.TabPage();
+            this.dgvCrystalListBox = new System.Windows.Forms.DataGridView();
+            this.tabBoosterBox = new System.Windows.Forms.TabPage();
+            this.dgvBoosterBox = new System.Windows.Forms.DataGridView();
+            this.tabHanaRoleBox = new System.Windows.Forms.TabPage();
+            this.dgvHanaRoleBox = new System.Windows.Forms.DataGridView();
+            this.tabHanaAtrBox = new System.Windows.Forms.TabPage();
+            this.dgvHanaAtrBox = new System.Windows.Forms.DataGridView();
+            this.tabHanaArtsBox = new System.Windows.Forms.TabPage();
+            this.dgvHanaArtsBox = new System.Windows.Forms.DataGridView();
+            this.tabHanaNArtsBox = new System.Windows.Forms.TabPage();
+            this.dgvHanaNArtsBox = new System.Windows.Forms.DataGridView();
+            this.tabHanaAssistBox = new System.Windows.Forms.TabPage();
+            this.dgvHanaAssistBox = new System.Windows.Forms.DataGridView();
+            this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.tabDrivers.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -193,19 +234,55 @@
             this.groupBox7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPcWpnChipBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
+            this.tabPcEquipBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).BeginInit();
+            this.tabEquipOrbBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipOrbBox)).BeginInit();
+            this.tabSalvageBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalvageBox)).BeginInit();
+            this.tabPreciousBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreciousBox)).BeginInit();
+            this.tabInfoBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBox)).BeginInit();
+            this.tabEventBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEventBox)).BeginInit();
+            this.tabCollectionListBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).BeginInit();
+            this.tabTreasureBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).BeginInit();
+            this.tabEmptyOrbBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).BeginInit();
+            this.tabFavoriteBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).BeginInit();
+            this.tabCrystalListBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCrystalListBox)).BeginInit();
+            this.tabBoosterBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoosterBox)).BeginInit();
+            this.tabHanaRoleBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaRoleBox)).BeginInit();
+            this.tabHanaAtrBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAtrBox)).BeginInit();
+            this.tabHanaArtsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaArtsBox)).BeginInit();
+            this.tabHanaNArtsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).BeginInit();
+            this.tabHanaAssistBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnLoad
             // 
-            this.button1.Location = new System.Drawing.Point(101, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLoad.Location = new System.Drawing.Point(101, 12);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 0;
+            this.btnLoad.Text = "button1";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -720,6 +797,109 @@
             this.tabMain.Size = new System.Drawing.Size(1110, 542);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.groupBox12);
+            this.groupBox11.Controls.Add(this.cbxPartyLeader);
+            this.groupBox11.Controls.Add(this.label63);
+            this.groupBox11.Location = new System.Drawing.Point(507, 29);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(269, 204);
+            this.groupBox11.TabIndex = 32;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Party";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.txtPartyMemberField4);
+            this.groupBox12.Controls.Add(this.txtPartyMemberField2);
+            this.groupBox12.Controls.Add(this.cbxPartyMemberDriver);
+            this.groupBox12.Controls.Add(this.label66);
+            this.groupBox12.Controls.Add(this.label65);
+            this.groupBox12.Controls.Add(this.label64);
+            this.groupBox12.Controls.Add(this.cbxPartyMembers);
+            this.groupBox12.Location = new System.Drawing.Point(10, 61);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(231, 137);
+            this.groupBox12.TabIndex = 2;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Members:";
+            // 
+            // txtPartyMemberField4
+            // 
+            this.txtPartyMemberField4.Location = new System.Drawing.Point(74, 105);
+            this.txtPartyMemberField4.Name = "txtPartyMemberField4";
+            this.txtPartyMemberField4.Size = new System.Drawing.Size(100, 20);
+            this.txtPartyMemberField4.TabIndex = 6;
+            // 
+            // txtPartyMemberField2
+            // 
+            this.txtPartyMemberField2.Location = new System.Drawing.Point(74, 78);
+            this.txtPartyMemberField2.Name = "txtPartyMemberField2";
+            this.txtPartyMemberField2.Size = new System.Drawing.Size(100, 20);
+            this.txtPartyMemberField2.TabIndex = 5;
+            // 
+            // cbxPartyMemberDriver
+            // 
+            this.cbxPartyMemberDriver.FormattingEnabled = true;
+            this.cbxPartyMemberDriver.Location = new System.Drawing.Point(74, 46);
+            this.cbxPartyMemberDriver.Name = "cbxPartyMemberDriver";
+            this.cbxPartyMemberDriver.Size = new System.Drawing.Size(121, 21);
+            this.cbxPartyMemberDriver.TabIndex = 4;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(7, 103);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(41, 13);
+            this.label66.TabIndex = 3;
+            this.label66.Text = "field_4:";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(7, 82);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(41, 13);
+            this.label65.TabIndex = 2;
+            this.label65.Text = "field_2:";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(7, 55);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(38, 13);
+            this.label64.TabIndex = 1;
+            this.label64.Text = "Driver:";
+            // 
+            // cbxPartyMembers
+            // 
+            this.cbxPartyMembers.FormattingEnabled = true;
+            this.cbxPartyMembers.Location = new System.Drawing.Point(7, 20);
+            this.cbxPartyMembers.Name = "cbxPartyMembers";
+            this.cbxPartyMembers.Size = new System.Drawing.Size(121, 21);
+            this.cbxPartyMembers.TabIndex = 0;
+            this.cbxPartyMembers.SelectedIndexChanged += new System.EventHandler(this.cbxPartyMembers_SelectedIndexChanged);
+            // 
+            // cbxPartyLeader
+            // 
+            this.cbxPartyLeader.FormattingEnabled = true;
+            this.cbxPartyLeader.Location = new System.Drawing.Point(56, 20);
+            this.cbxPartyLeader.Name = "cbxPartyLeader";
+            this.cbxPartyLeader.Size = new System.Drawing.Size(121, 21);
+            this.cbxPartyLeader.TabIndex = 1;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(7, 23);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(43, 13);
+            this.label63.TabIndex = 0;
+            this.label63.Text = "Leader:";
             // 
             // tabDrivers
             // 
@@ -1484,10 +1664,6 @@
             this.cbxDrivers.TabIndex = 0;
             this.cbxDrivers.SelectedIndexChanged += new System.EventHandler(this.cbxDrivers_SelectedIndexChanged);
             // 
-            // ofdSaveFile
-            // 
-            this.ofdSaveFile.FileName = "openFileDialog1";
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
@@ -1500,6 +1676,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -1508,116 +1685,451 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox11
+            // tabControl2
             // 
-            this.groupBox11.Controls.Add(this.groupBox12);
-            this.groupBox11.Controls.Add(this.cbxPartyLeader);
-            this.groupBox11.Controls.Add(this.label63);
-            this.groupBox11.Location = new System.Drawing.Point(507, 29);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(269, 204);
-            this.groupBox11.TabIndex = 32;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Party";
+            this.tabControl2.Controls.Add(this.tabPcWpnChipBox);
+            this.tabControl2.Controls.Add(this.tabPcEquipBox);
+            this.tabControl2.Controls.Add(this.tabEquipOrbBox);
+            this.tabControl2.Controls.Add(this.tabSalvageBox);
+            this.tabControl2.Controls.Add(this.tabPreciousBox);
+            this.tabControl2.Controls.Add(this.tabInfoBox);
+            this.tabControl2.Controls.Add(this.tabEventBox);
+            this.tabControl2.Controls.Add(this.tabCollectionListBox);
+            this.tabControl2.Controls.Add(this.tabTreasureBox);
+            this.tabControl2.Controls.Add(this.tabEmptyOrbBox);
+            this.tabControl2.Controls.Add(this.tabFavoriteBox);
+            this.tabControl2.Controls.Add(this.tabCrystalListBox);
+            this.tabControl2.Controls.Add(this.tabBoosterBox);
+            this.tabControl2.Controls.Add(this.tabHanaRoleBox);
+            this.tabControl2.Controls.Add(this.tabHanaAtrBox);
+            this.tabControl2.Controls.Add(this.tabHanaArtsBox);
+            this.tabControl2.Controls.Add(this.tabHanaNArtsBox);
+            this.tabControl2.Controls.Add(this.tabHanaAssistBox);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1104, 536);
+            this.tabControl2.TabIndex = 0;
             // 
-            // label63
+            // tabPcWpnChipBox
             // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(7, 23);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(43, 13);
-            this.label63.TabIndex = 0;
-            this.label63.Text = "Leader:";
+            this.tabPcWpnChipBox.Controls.Add(this.dgvPcWpnChipBox);
+            this.tabPcWpnChipBox.Location = new System.Drawing.Point(4, 22);
+            this.tabPcWpnChipBox.Name = "tabPcWpnChipBox";
+            this.tabPcWpnChipBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPcWpnChipBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPcWpnChipBox.TabIndex = 0;
+            this.tabPcWpnChipBox.Text = "PcWpnChipBox";
+            this.tabPcWpnChipBox.UseVisualStyleBackColor = true;
             // 
-            // cbxPartyLeader
+            // dgvPcWpnChipBox
             // 
-            this.cbxPartyLeader.FormattingEnabled = true;
-            this.cbxPartyLeader.Location = new System.Drawing.Point(56, 20);
-            this.cbxPartyLeader.Name = "cbxPartyLeader";
-            this.cbxPartyLeader.Size = new System.Drawing.Size(121, 21);
-            this.cbxPartyLeader.TabIndex = 1;
+            this.dgvPcWpnChipBox.AllowUserToAddRows = false;
+            this.dgvPcWpnChipBox.AllowUserToDeleteRows = false;
+            this.dgvPcWpnChipBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPcWpnChipBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPcWpnChipBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvPcWpnChipBox.Name = "dgvPcWpnChipBox";
+            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvPcWpnChipBox.TabIndex = 0;
             // 
-            // groupBox12
+            // tabPcEquipBox
             // 
-            this.groupBox12.Controls.Add(this.txtPartyMemberField4);
-            this.groupBox12.Controls.Add(this.txtPartyMemberField2);
-            this.groupBox12.Controls.Add(this.cbxPartyMemberDriver);
-            this.groupBox12.Controls.Add(this.label66);
-            this.groupBox12.Controls.Add(this.label65);
-            this.groupBox12.Controls.Add(this.label64);
-            this.groupBox12.Controls.Add(this.cbxPartyMembers);
-            this.groupBox12.Location = new System.Drawing.Point(10, 61);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(231, 137);
-            this.groupBox12.TabIndex = 2;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Members:";
+            this.tabPcEquipBox.Controls.Add(this.dgvPcEquipBox);
+            this.tabPcEquipBox.Location = new System.Drawing.Point(4, 22);
+            this.tabPcEquipBox.Name = "tabPcEquipBox";
+            this.tabPcEquipBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPcEquipBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPcEquipBox.TabIndex = 1;
+            this.tabPcEquipBox.Text = "PcEquipBox";
+            this.tabPcEquipBox.UseVisualStyleBackColor = true;
             // 
-            // cbxPartyMembers
+            // dgvPcEquipBox
             // 
-            this.cbxPartyMembers.FormattingEnabled = true;
-            this.cbxPartyMembers.Location = new System.Drawing.Point(7, 20);
-            this.cbxPartyMembers.Name = "cbxPartyMembers";
-            this.cbxPartyMembers.Size = new System.Drawing.Size(121, 21);
-            this.cbxPartyMembers.TabIndex = 0;
-            this.cbxPartyMembers.SelectedIndexChanged += new System.EventHandler(this.cbxPartyMembers_SelectedIndexChanged);
+            this.dgvPcEquipBox.AllowUserToAddRows = false;
+            this.dgvPcEquipBox.AllowUserToDeleteRows = false;
+            this.dgvPcEquipBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPcEquipBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPcEquipBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvPcEquipBox.Name = "dgvPcEquipBox";
+            this.dgvPcEquipBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvPcEquipBox.TabIndex = 0;
             // 
-            // label64
+            // tabEquipOrbBox
             // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(7, 55);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(38, 13);
-            this.label64.TabIndex = 1;
-            this.label64.Text = "Driver:";
+            this.tabEquipOrbBox.Controls.Add(this.dgvEquipOrbBox);
+            this.tabEquipOrbBox.Location = new System.Drawing.Point(4, 22);
+            this.tabEquipOrbBox.Name = "tabEquipOrbBox";
+            this.tabEquipOrbBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEquipOrbBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEquipOrbBox.TabIndex = 2;
+            this.tabEquipOrbBox.Text = "EquipOrbBox";
+            this.tabEquipOrbBox.UseVisualStyleBackColor = true;
             // 
-            // label65
+            // dgvEquipOrbBox
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(7, 82);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(41, 13);
-            this.label65.TabIndex = 2;
-            this.label65.Text = "field_2:";
+            this.dgvEquipOrbBox.AllowUserToAddRows = false;
+            this.dgvEquipOrbBox.AllowUserToDeleteRows = false;
+            this.dgvEquipOrbBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEquipOrbBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
+            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEquipOrbBox.TabIndex = 0;
             // 
-            // label66
+            // tabSalvageBox
             // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(7, 103);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(41, 13);
-            this.label66.TabIndex = 3;
-            this.label66.Text = "field_4:";
+            this.tabSalvageBox.Controls.Add(this.dgvSalvageBox);
+            this.tabSalvageBox.Location = new System.Drawing.Point(4, 22);
+            this.tabSalvageBox.Name = "tabSalvageBox";
+            this.tabSalvageBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSalvageBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabSalvageBox.TabIndex = 3;
+            this.tabSalvageBox.Text = "SalvageBox";
+            this.tabSalvageBox.UseVisualStyleBackColor = true;
             // 
-            // cbxPartyMemberDriver
+            // dgvSalvageBox
             // 
-            this.cbxPartyMemberDriver.FormattingEnabled = true;
-            this.cbxPartyMemberDriver.Location = new System.Drawing.Point(74, 46);
-            this.cbxPartyMemberDriver.Name = "cbxPartyMemberDriver";
-            this.cbxPartyMemberDriver.Size = new System.Drawing.Size(121, 21);
-            this.cbxPartyMemberDriver.TabIndex = 4;
+            this.dgvSalvageBox.AllowUserToAddRows = false;
+            this.dgvSalvageBox.AllowUserToDeleteRows = false;
+            this.dgvSalvageBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvSalvageBox.Name = "dgvSalvageBox";
+            this.dgvSalvageBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvSalvageBox.TabIndex = 0;
             // 
-            // txtPartyMemberField2
+            // tabPreciousBox
             // 
-            this.txtPartyMemberField2.Location = new System.Drawing.Point(74, 78);
-            this.txtPartyMemberField2.Name = "txtPartyMemberField2";
-            this.txtPartyMemberField2.Size = new System.Drawing.Size(100, 20);
-            this.txtPartyMemberField2.TabIndex = 5;
+            this.tabPreciousBox.Controls.Add(this.dgvPreciousBox);
+            this.tabPreciousBox.Location = new System.Drawing.Point(4, 22);
+            this.tabPreciousBox.Name = "tabPreciousBox";
+            this.tabPreciousBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPreciousBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPreciousBox.TabIndex = 4;
+            this.tabPreciousBox.Text = "PreciousBox";
+            this.tabPreciousBox.UseVisualStyleBackColor = true;
             // 
-            // txtPartyMemberField4
+            // dgvPreciousBox
             // 
-            this.txtPartyMemberField4.Location = new System.Drawing.Point(74, 105);
-            this.txtPartyMemberField4.Name = "txtPartyMemberField4";
-            this.txtPartyMemberField4.Size = new System.Drawing.Size(100, 20);
-            this.txtPartyMemberField4.TabIndex = 6;
+            this.dgvPreciousBox.AllowUserToAddRows = false;
+            this.dgvPreciousBox.AllowUserToDeleteRows = false;
+            this.dgvPreciousBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPreciousBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPreciousBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvPreciousBox.Name = "dgvPreciousBox";
+            this.dgvPreciousBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvPreciousBox.TabIndex = 0;
+            // 
+            // tabInfoBox
+            // 
+            this.tabInfoBox.Controls.Add(this.dgvInfoBox);
+            this.tabInfoBox.Location = new System.Drawing.Point(4, 22);
+            this.tabInfoBox.Name = "tabInfoBox";
+            this.tabInfoBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInfoBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabInfoBox.TabIndex = 5;
+            this.tabInfoBox.Text = "InfoBox";
+            this.tabInfoBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvInfoBox
+            // 
+            this.dgvInfoBox.AllowUserToAddRows = false;
+            this.dgvInfoBox.AllowUserToDeleteRows = false;
+            this.dgvInfoBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvInfoBox.Name = "dgvInfoBox";
+            this.dgvInfoBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvInfoBox.TabIndex = 0;
+            // 
+            // tabEventBox
+            // 
+            this.tabEventBox.Controls.Add(this.dgvEventBox);
+            this.tabEventBox.Location = new System.Drawing.Point(4, 22);
+            this.tabEventBox.Name = "tabEventBox";
+            this.tabEventBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEventBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEventBox.TabIndex = 6;
+            this.tabEventBox.Text = "EventBox";
+            this.tabEventBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvEventBox
+            // 
+            this.dgvEventBox.AllowUserToAddRows = false;
+            this.dgvEventBox.AllowUserToDeleteRows = false;
+            this.dgvEventBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvEventBox.Name = "dgvEventBox";
+            this.dgvEventBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEventBox.TabIndex = 0;
+            // 
+            // tabCollectionListBox
+            // 
+            this.tabCollectionListBox.Controls.Add(this.dgvCollectionListBox);
+            this.tabCollectionListBox.Location = new System.Drawing.Point(4, 22);
+            this.tabCollectionListBox.Name = "tabCollectionListBox";
+            this.tabCollectionListBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCollectionListBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabCollectionListBox.TabIndex = 7;
+            this.tabCollectionListBox.Text = "CollectionListBox";
+            this.tabCollectionListBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvCollectionListBox
+            // 
+            this.dgvCollectionListBox.AllowUserToAddRows = false;
+            this.dgvCollectionListBox.AllowUserToDeleteRows = false;
+            this.dgvCollectionListBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCollectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCollectionListBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvCollectionListBox.Name = "dgvCollectionListBox";
+            this.dgvCollectionListBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvCollectionListBox.TabIndex = 0;
+            // 
+            // tabTreasureBox
+            // 
+            this.tabTreasureBox.Controls.Add(this.dgvTreasureBox);
+            this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
+            this.tabTreasureBox.Name = "tabTreasureBox";
+            this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTreasureBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabTreasureBox.TabIndex = 8;
+            this.tabTreasureBox.Text = "TreasureBox";
+            this.tabTreasureBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvTreasureBox
+            // 
+            this.dgvTreasureBox.AllowUserToAddRows = false;
+            this.dgvTreasureBox.AllowUserToDeleteRows = false;
+            this.dgvTreasureBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvTreasureBox.Name = "dgvTreasureBox";
+            this.dgvTreasureBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvTreasureBox.TabIndex = 0;
+            // 
+            // tabEmptyOrbBox
+            // 
+            this.tabEmptyOrbBox.Controls.Add(this.dgvEmptyOrbBox);
+            this.tabEmptyOrbBox.Location = new System.Drawing.Point(4, 22);
+            this.tabEmptyOrbBox.Name = "tabEmptyOrbBox";
+            this.tabEmptyOrbBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmptyOrbBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEmptyOrbBox.TabIndex = 9;
+            this.tabEmptyOrbBox.Text = "EmptyOrbBox";
+            this.tabEmptyOrbBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmptyOrbBox
+            // 
+            this.dgvEmptyOrbBox.AllowUserToAddRows = false;
+            this.dgvEmptyOrbBox.AllowUserToDeleteRows = false;
+            this.dgvEmptyOrbBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
+            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEmptyOrbBox.TabIndex = 0;
+            // 
+            // tabFavoriteBox
+            // 
+            this.tabFavoriteBox.Controls.Add(this.dgvFavoriteBox);
+            this.tabFavoriteBox.Location = new System.Drawing.Point(4, 22);
+            this.tabFavoriteBox.Name = "tabFavoriteBox";
+            this.tabFavoriteBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFavoriteBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabFavoriteBox.TabIndex = 10;
+            this.tabFavoriteBox.Text = "FavoriteBox";
+            this.tabFavoriteBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvFavoriteBox
+            // 
+            this.dgvFavoriteBox.AllowUserToAddRows = false;
+            this.dgvFavoriteBox.AllowUserToDeleteRows = false;
+            this.dgvFavoriteBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFavoriteBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFavoriteBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvFavoriteBox.Name = "dgvFavoriteBox";
+            this.dgvFavoriteBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvFavoriteBox.TabIndex = 0;
+            // 
+            // tabCrystalListBox
+            // 
+            this.tabCrystalListBox.Controls.Add(this.dgvCrystalListBox);
+            this.tabCrystalListBox.Location = new System.Drawing.Point(4, 22);
+            this.tabCrystalListBox.Name = "tabCrystalListBox";
+            this.tabCrystalListBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCrystalListBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabCrystalListBox.TabIndex = 11;
+            this.tabCrystalListBox.Text = "CrystalListBox";
+            this.tabCrystalListBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvCrystalListBox
+            // 
+            this.dgvCrystalListBox.AllowUserToAddRows = false;
+            this.dgvCrystalListBox.AllowUserToDeleteRows = false;
+            this.dgvCrystalListBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvCrystalListBox.Name = "dgvCrystalListBox";
+            this.dgvCrystalListBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvCrystalListBox.TabIndex = 0;
+            // 
+            // tabBoosterBox
+            // 
+            this.tabBoosterBox.Controls.Add(this.dgvBoosterBox);
+            this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
+            this.tabBoosterBox.Name = "tabBoosterBox";
+            this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBoosterBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabBoosterBox.TabIndex = 12;
+            this.tabBoosterBox.Text = "BoosterBox";
+            this.tabBoosterBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvBoosterBox
+            // 
+            this.dgvBoosterBox.AllowUserToAddRows = false;
+            this.dgvBoosterBox.AllowUserToDeleteRows = false;
+            this.dgvBoosterBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvBoosterBox.Name = "dgvBoosterBox";
+            this.dgvBoosterBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvBoosterBox.TabIndex = 0;
+            // 
+            // tabHanaRoleBox
+            // 
+            this.tabHanaRoleBox.Controls.Add(this.dgvHanaRoleBox);
+            this.tabHanaRoleBox.Location = new System.Drawing.Point(4, 22);
+            this.tabHanaRoleBox.Name = "tabHanaRoleBox";
+            this.tabHanaRoleBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHanaRoleBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaRoleBox.TabIndex = 13;
+            this.tabHanaRoleBox.Text = "HanaRoleBox";
+            this.tabHanaRoleBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvHanaRoleBox
+            // 
+            this.dgvHanaRoleBox.AllowUserToAddRows = false;
+            this.dgvHanaRoleBox.AllowUserToDeleteRows = false;
+            this.dgvHanaRoleBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
+            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaRoleBox.TabIndex = 0;
+            // 
+            // tabHanaAtrBox
+            // 
+            this.tabHanaAtrBox.Controls.Add(this.dgvHanaAtrBox);
+            this.tabHanaAtrBox.Location = new System.Drawing.Point(4, 22);
+            this.tabHanaAtrBox.Name = "tabHanaAtrBox";
+            this.tabHanaAtrBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHanaAtrBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaAtrBox.TabIndex = 14;
+            this.tabHanaAtrBox.Text = "HanaAtrBox";
+            this.tabHanaAtrBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvHanaAtrBox
+            // 
+            this.dgvHanaAtrBox.AllowUserToAddRows = false;
+            this.dgvHanaAtrBox.AllowUserToDeleteRows = false;
+            this.dgvHanaAtrBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
+            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaAtrBox.TabIndex = 0;
+            // 
+            // tabHanaArtsBox
+            // 
+            this.tabHanaArtsBox.Controls.Add(this.dgvHanaArtsBox);
+            this.tabHanaArtsBox.Location = new System.Drawing.Point(4, 22);
+            this.tabHanaArtsBox.Name = "tabHanaArtsBox";
+            this.tabHanaArtsBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHanaArtsBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaArtsBox.TabIndex = 15;
+            this.tabHanaArtsBox.Text = "HanaArtsBox";
+            this.tabHanaArtsBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvHanaArtsBox
+            // 
+            this.dgvHanaArtsBox.AllowUserToAddRows = false;
+            this.dgvHanaArtsBox.AllowUserToDeleteRows = false;
+            this.dgvHanaArtsBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
+            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaArtsBox.TabIndex = 0;
+            // 
+            // tabHanaNArtsBox
+            // 
+            this.tabHanaNArtsBox.Controls.Add(this.dgvHanaNArtsBox);
+            this.tabHanaNArtsBox.Location = new System.Drawing.Point(4, 22);
+            this.tabHanaNArtsBox.Name = "tabHanaNArtsBox";
+            this.tabHanaNArtsBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHanaNArtsBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaNArtsBox.TabIndex = 16;
+            this.tabHanaNArtsBox.Text = "HanaNArtsBox";
+            this.tabHanaNArtsBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvHanaNArtsBox
+            // 
+            this.dgvHanaNArtsBox.AllowUserToAddRows = false;
+            this.dgvHanaNArtsBox.AllowUserToDeleteRows = false;
+            this.dgvHanaNArtsBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
+            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaNArtsBox.TabIndex = 0;
+            // 
+            // tabHanaAssistBox
+            // 
+            this.tabHanaAssistBox.Controls.Add(this.dgvHanaAssistBox);
+            this.tabHanaAssistBox.Location = new System.Drawing.Point(4, 22);
+            this.tabHanaAssistBox.Name = "tabHanaAssistBox";
+            this.tabHanaAssistBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHanaAssistBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaAssistBox.TabIndex = 17;
+            this.tabHanaAssistBox.Text = "HanaAssistBox";
+            this.tabHanaAssistBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvHanaAssistBox
+            // 
+            this.dgvHanaAssistBox.AllowUserToAddRows = false;
+            this.dgvHanaAssistBox.AllowUserToDeleteRows = false;
+            this.dgvHanaAssistBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
+            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaAssistBox.TabIndex = 0;
+            // 
+            // ofdSaveFile
+            // 
+            this.ofdSaveFile.FileName = "openFileDialog1";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(242, 11);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 33;
+            this.btnSave.Text = "button2";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 634);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLoad);
             this.Name = "frmMain";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1628,6 +2140,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.tabDrivers.ResumeLayout(false);
             this.tabDrivers.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -1645,17 +2161,51 @@
             this.groupBox4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPcWpnChipBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
+            this.tabPcEquipBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).EndInit();
+            this.tabEquipOrbBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipOrbBox)).EndInit();
+            this.tabSalvageBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalvageBox)).EndInit();
+            this.tabPreciousBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreciousBox)).EndInit();
+            this.tabInfoBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBox)).EndInit();
+            this.tabEventBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEventBox)).EndInit();
+            this.tabCollectionListBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).EndInit();
+            this.tabTreasureBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).EndInit();
+            this.tabEmptyOrbBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).EndInit();
+            this.tabFavoriteBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).EndInit();
+            this.tabCrystalListBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCrystalListBox)).EndInit();
+            this.tabBoosterBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBoosterBox)).EndInit();
+            this.tabHanaRoleBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaRoleBox)).EndInit();
+            this.tabHanaAtrBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAtrBox)).EndInit();
+            this.tabHanaArtsBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaArtsBox)).EndInit();
+            this.tabHanaNArtsBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).EndInit();
+            this.tabHanaAssistBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -1807,6 +2357,45 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPcWpnChipBox;
+        private System.Windows.Forms.DataGridView dgvPcWpnChipBox;
+        private System.Windows.Forms.TabPage tabPcEquipBox;
+        private System.Windows.Forms.DataGridView dgvPcEquipBox;
+        private System.Windows.Forms.TabPage tabEquipOrbBox;
+        private System.Windows.Forms.TabPage tabSalvageBox;
+        private System.Windows.Forms.TabPage tabPreciousBox;
+        private System.Windows.Forms.TabPage tabInfoBox;
+        private System.Windows.Forms.TabPage tabEventBox;
+        private System.Windows.Forms.TabPage tabCollectionListBox;
+        private System.Windows.Forms.TabPage tabTreasureBox;
+        private System.Windows.Forms.TabPage tabEmptyOrbBox;
+        private System.Windows.Forms.TabPage tabFavoriteBox;
+        private System.Windows.Forms.TabPage tabCrystalListBox;
+        private System.Windows.Forms.TabPage tabBoosterBox;
+        private System.Windows.Forms.TabPage tabHanaRoleBox;
+        private System.Windows.Forms.TabPage tabHanaAtrBox;
+        private System.Windows.Forms.TabPage tabHanaArtsBox;
+        private System.Windows.Forms.TabPage tabHanaNArtsBox;
+        private System.Windows.Forms.TabPage tabHanaAssistBox;
+        private System.Windows.Forms.DataGridView dgvEquipOrbBox;
+        private System.Windows.Forms.DataGridView dgvSalvageBox;
+        private System.Windows.Forms.DataGridView dgvPreciousBox;
+        private System.Windows.Forms.DataGridView dgvInfoBox;
+        private System.Windows.Forms.DataGridView dgvEventBox;
+        private System.Windows.Forms.DataGridView dgvCollectionListBox;
+        private System.Windows.Forms.DataGridView dgvTreasureBox;
+        private System.Windows.Forms.DataGridView dgvEmptyOrbBox;
+        private System.Windows.Forms.DataGridView dgvFavoriteBox;
+        private System.Windows.Forms.DataGridView dgvCrystalListBox;
+        private System.Windows.Forms.DataGridView dgvBoosterBox;
+        private System.Windows.Forms.DataGridView dgvHanaRoleBox;
+        private System.Windows.Forms.DataGridView dgvHanaAtrBox;
+        private System.Windows.Forms.DataGridView dgvHanaArtsBox;
+        private System.Windows.Forms.DataGridView dgvHanaNArtsBox;
+        private System.Windows.Forms.DataGridView dgvHanaAssistBox;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.SaveFileDialog sfdSaveFile;
     }
 }
 
