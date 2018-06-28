@@ -38,6 +38,15 @@ namespace XC2SaveNETThingy
             { 2, "In Mercenary Team" }
         };
 
+        public static readonly Dictionary<int, string> SETBLADE = new Dictionary<int, string>()
+        {
+            { -1, "(none)" },
+            { 0, "1st Blade" },
+            { 1, "2nd Blade" },
+            { 2, "3rd Blade" },
+            { 3, "Unknown (Mythra, Rex only?)" }
+        };
+
         public class DriverSkill : IXC2SaveObject
         {
             public const int SIZE = 0xA;

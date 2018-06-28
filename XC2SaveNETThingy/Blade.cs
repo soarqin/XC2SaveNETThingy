@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace XC2SaveNETThingy
 {
-    public class BladeArts : IXC2SaveObject
+    public class BladeArt : IXC2SaveObject
     {
         public const int SIZE = 0xC;
 
-        public UInt16 Id { get; set; }
+        public UInt16 ID { get; set; }
         public UInt16 RecastRev { get; set; }
         public UInt16 field_4 { get; set; }
         public Byte field_6 { get; set; }
@@ -20,9 +17,9 @@ namespace XC2SaveNETThingy
         public Byte field_9 { get; set; }
         public UInt16 field_A { get; set; }
 
-        public BladeArts(Byte[] data)
+        public BladeArt(Byte[] data)
         {
-            Id = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
+            ID = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
             RecastRev = BitConverter.ToUInt16(data.GetByteSubArray(0x2, 2), 0);
             field_4 = BitConverter.ToUInt16(data.GetByteSubArray(0x4, 2), 0);
             field_6 = data[0x6];
@@ -36,7 +33,7 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<Byte>();
 
-            result.AddRange(BitConverter.GetBytes(Id));
+            result.AddRange(BitConverter.GetBytes(ID));
             result.AddRange(BitConverter.GetBytes(RecastRev));
             result.AddRange(BitConverter.GetBytes(field_4));
             result.Add(field_6);
@@ -58,11 +55,53 @@ namespace XC2SaveNETThingy
         }
     }
 
+    public class BArt : BladeArt
+    {
+        Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
+        {
+            { 0, "0" }
+        };
+
+        public BArt(Byte[] data) : base(data) { }
+
+        public override string ToString()
+        {
+            return ID.ToString();
+        }
+    }
+
+    public class NArt : BladeArt
+    {
+        Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
+        {
+            { 0, "(none)" },
+            { 1, "Critical Up" },
+            { 2, "Accuracy Up" },
+            { 3, "Arts Plus" },
+            { 4, "Recharge Boost" },
+            { 5, "Absorb Damage" },
+            { 6, "Nullify Reaction" },
+            { 7, "Debuff Cancel" },
+            { 8, "Back Attack Up" },
+            { 9, "Draw Aggro" },
+        };
+
+        public NArt(Byte[] data) : base(data) { }
+
+        public override string ToString()
+        {
+            if (NAMES.ContainsKey(ID))
+                return ID.ToString() + ": " + NAMES[ID];
+            else
+                return ID.ToString();
+        }
+    }
+
     public class BladeSkill : IXC2SaveObject
     {
         public const int SIZE = 0x6;
 
-        public UInt16 Id { get; set; }
+        public UInt16 ID { get; set; }
         public Byte field_2 { get; set; }
         public Byte Level { get; set; }
         public Byte MaxLevel { get; set; }
@@ -70,7 +109,7 @@ namespace XC2SaveNETThingy
 
         public BladeSkill(Byte[] data)
         {
-            Id = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
+            ID = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
             field_2 = data[2];
             Level = data[3];
             MaxLevel = data[4];
@@ -81,13 +120,253 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<byte>();
 
-            result.AddRange(BitConverter.GetBytes(Id));
+            result.AddRange(BitConverter.GetBytes(ID));
             result.Add(field_2);
             result.Add(Level);
             result.Add(MaxLevel);
             result.Add(field_5);
 
             return result.ToArray();
+        }
+
+        public override string ToString()
+        {
+            return ID.ToString();
+        }
+    }
+
+    public class BattleSkill : BladeSkill
+    {
+        private Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
+        {
+            { 0, "(none)" },
+            { 1, "Purifying Flames" },
+            { 2, "Resplendence" },
+            { 3, "Flaming Edge" },
+            { 4, "Foresight" },
+            { 5, "Lightspeed Flurry" },
+            { 6, "Glint" },
+            { 7, "" },
+            { 8, "" },
+            { 9, "" },
+            { 10, "Celestial Gift" },
+            { 11, "River's Blessing" },
+            { 12, "Howl of Calm" },
+            { 13, "Noponic Iron" },
+            { 14, "Guard Shift" },
+            { 15, "Emergency Mode" },
+            { 16, "Velocity Cutter" },
+            { 17, "Flash Counter" },
+            { 18, "Flash Boost" },
+            { 19, "Reflection" },
+            { 20, "Nanomachine Repair" },
+            { 21, "Overclock" },
+            { 22, "Sickle" },
+            { 23, "Storm and Stress" },
+            { 24, "Swoop" },
+            { 25, "War Pyre" },
+            { 26, "Firewalker" },
+            { 27, "Dance of the Flames" },
+            { 28, "Quickest Purple" },
+            { 29, "Thunderblast" },
+            { 30, "Sudden Spark" },
+            { 31, "Sea of Plenty" },
+            { 32, "Instant Regen" },
+            { 33, "Cellular Stimulus" },
+            { 34, "Serene Heart" },
+            { 35, "Like Water" },
+            { 36, "Enlightenment" },
+            { 37, "Got the Guts" },
+            { 38, "Fierce Fervor" },
+            { 39, "Light of Justice" },
+            { 40, "The Prenatural" },
+            { 41, "Power Unleashed" },
+            { 42, "Critical Strike" },
+            { 43, "" },
+            { 44, "" },
+            { 45, "" },
+            { 46, "Violence Machine" },
+            { 47, "Void Lance" },
+            { 48, "Overture of Blood" },
+            { 49, "Razor-Sharl Iolite" },
+            { 50, "Tanzanite Pursuer" },
+            { 51, "Tiger's Eye Wrecker" },
+            { 52, "FTL" },
+            { 53, "IMD" },
+            { 54, "FAS" },
+            { 55, "Tasty Snack" },
+            { 56, "Look Out!" },
+            { 57, "Twang!" },
+            { 58, "Kaiser Zone" },
+            { 59, "Regal Presence" },
+            { 60, "Gold Effect" },
+            { 61, "" },
+            { 62, "" },
+            { 63, "" },
+            { 64, "" },
+            { 65, "" },
+            { 66, "" },
+            { 67, "The Awakened (Power)" },
+            { 68, "The Awakened (Skill)" },
+            { 69, "Brimming Pep" },
+            { 70, "Aerial Flashdance" },
+            { 71, "Conviction" },
+            { 72, "Steadfast" },
+            { 73, "Defender" },
+            { 74, "Silent Spear" },
+            { 75, "Battle Plus" },
+            { 76, "Stop Thinking" },
+            { 77, "Walking Joy" },
+            { 78, "Potion Hoarder" },
+            { 79, "All For Love" },
+            { 80, "Pain of Longing" },
+            { 81, "Vendetta" },
+            { 82, "Snow Charm" },
+            { 83, "Beary Healing" },
+            { 84, "Hide and Seek" },
+            { 85, "Tranquil Guard" },
+            { 86, "Last Line in Defence" },
+            { 87, "Flowers of War" },
+            { 88, "Restorative Fusion" },
+            { 89, "Synthe4sis Lore" },
+            { 90, "Wild Familiars" },
+            { 91, "Economicanimal" },
+            { 92, "Entitled Entourage" },
+            { 93, "Financial Settlement" },
+            { 94, "Space-Tea-Time" },
+            { 95, "Sympathy" },
+            { 96, "Not Part of the Plan" },
+            { 97, "" },
+            { 98, "" },
+            { 99, "" },
+            { 100, "Sparky Girl" },
+            { 101, "Zappy Girl" },
+            { 102, "Clangy Girl" },
+            { 103, "Carnage" },
+            { 104, "The Indomitable" },
+            { 105, "Greatest Warrior" },
+            { 106, "Did I Do That?" },
+            { 107, "Doesn't Ring a Bell" },
+            { 108, "Surprise!" },
+            { 109, "The Coming of Spring" },
+            { 110, "Blossomfall" },
+            { 111, "White Lilies" },
+            { 112, "" },
+            { 113, "" },
+            { 114, "" },
+            { 115, "" },
+            { 116, "" },
+            { 117, "" },
+            { 118, "Spotlight" },
+            { 119, "Fireworks" },
+            { 120, "Opportunist" },
+            { 121, "" },
+            { 122, "" },
+            { 123, "" },
+            { 124, "Transmigration" },
+            { 125, "Dead Zone" },
+            { 126, "Endless Cycle" },
+            { 127, "Fatal Blow" },
+            { 128, "Fury" },
+            { 129, "Sanguine Steel" },
+            { 130, "" },
+            { 131, "" },
+            { 132, "" },
+            { 133, "Swift Kitty" },
+            { 134, "Now You See Me..." },
+            { 135, "Quick Prep" },
+            { 136, "" },
+            { 137, "" },
+            { 138, "" },
+            { 139, "" },
+            { 140, "" },
+        };
+        public BattleSkill(Byte[] data) : base(data) { }
+
+        public override string ToString()
+        {
+            if (NAMES.ContainsKey(ID))
+                return ID.ToString() + ": " + NAMES[ID];
+            else
+                return ID.ToString();
+        }
+    }
+
+    public class FieldSkill : BladeSkill
+    {
+        private Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
+        {
+            { 0, "(none)" },
+            { 1, "" },
+            { 2, "Forestry" },
+            { 3, "Botany" },
+            { 4, "Agronomy" },
+            { 5, "Entomology" },
+            { 6, "Ichthyology" },
+            { 7, "Mineralogy" },
+            { 8, "" },
+            { 9, "Salgaving Mastery" },
+            { 10, "Fire Mastery" },
+            { 11, "Water Mastery" },
+            { 12, "Earth Mastery" },
+            { 13, "Wind Mastery" },
+            { 14, "Electric Mastery" },
+            { 15, "Ice Mastery" },
+            { 16, "Dark Mastery" },
+            { 17, "Light Mastery" },
+            { 18, "Lockpicking" },
+            { 19, "Keen Eye" },
+            { 20, "Leaping" },
+            { 21, "Superstrength" },
+            { 22, "Focus" },
+            { 23, "Ancient Wisdom" },
+            { 24, "Nopon Wisdom" },
+            { 25, "Fortitude" },
+            { 26, "Cooking" },
+            { 27, "Miasma Dispersal" },
+            { 28, "Passionate Soul" },
+            { 29, "Justice-Loving Soul" },
+            { 30, "Kind Soul" },
+            { 31, "" },
+            { 32, "Patissier" },
+            { 33, "Cavalier Attitude" },
+            { 34, "Fleet of Foot" },
+            { 35, "Beguiling Charms" },
+            { 36, "" },
+            { 37, "Chivalry" },
+            { 38, "Girls' Talk" },
+            { 39, "Clairvoyant Eye" },
+            { 40, "Harmony" },
+            { 41, "Titan Weapon Wisdom" },
+            { 42, "Phonex Linguistics" },
+            { 43, "Dumpling Pro" },
+            { 44, "" },
+            { 45, "Mastery of Thunder" },
+            { 46, "Birdbrain" },
+            { 47, "" },
+            { 48, "" },
+            { 49, "Weaving" },
+            { 50, "Prospecting" },
+            { 51, "Icecraft" },
+            { 52, "" },
+            { 53, "" },
+            { 54, "" },
+            { 55, "" },
+            { 56, "" },
+            { 57, "Eye for Beauty" },
+            { 58, "" },
+            { 59, "" },
+            { 60, "" },
+        };
+
+        public FieldSkill(Byte[] data) : base(data) { }
+
+        public override string ToString()
+        {
+            if (NAMES.ContainsKey(ID))
+                return ID.ToString() + ": " + NAMES[ID];
+            else
+                return ID.ToString();
         }
     }
 
@@ -199,33 +478,49 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0xC;
 
-        public UInt16 EnhanceId { get; set; }
+        private static readonly Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
+        {
+            {0, "(none)" },
+        };
+
+        public UInt16 EnhanceID { get; set; }
         public UInt16 RecastRev { get; set; }
-        public UInt16 ItemId { get; set; }
-        public UInt16 field_6 { get; set; }
-        public ItemHandle16 field_8 { get; set; }
-        public ItemHandle16 field_A { get; set; }
+        public UInt16 ItemID { get; set; }
+        public UInt16 Unk_0x06 { get; set; }
+        public ItemHandle16 Unk_0x08 { get; set; }
+        public ItemHandle16 Unk_0x0A { get; set; }
+
+        public string Name
+        {
+            get
+            {
+                if (NAMES.ContainsKey(EnhanceID))
+                    return EnhanceID.ToString() + ": " + NAMES[EnhanceID];
+                else
+                    return EnhanceID.ToString();
+            }
+        }
 
         public ArtsEnhance(Byte[] data)
         {
-            EnhanceId = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
+            EnhanceID = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
             RecastRev = BitConverter.ToUInt16(data.GetByteSubArray(0x2, 2), 0);
-            ItemId = BitConverter.ToUInt16(data.GetByteSubArray(0x4, 2), 0);
-            field_6 = BitConverter.ToUInt16(data.GetByteSubArray(0x6, 2), 0);
-            field_8 = new ItemHandle16(data.GetByteSubArray(0x8, ItemHandle16.SIZE));
-            field_A = new ItemHandle16(data.GetByteSubArray(0xA, ItemHandle16.SIZE));
+            ItemID = BitConverter.ToUInt16(data.GetByteSubArray(0x4, 2), 0);
+            Unk_0x06 = BitConverter.ToUInt16(data.GetByteSubArray(0x6, 2), 0);
+            Unk_0x08 = new ItemHandle16(data.GetByteSubArray(0x8, ItemHandle16.SIZE));
+            Unk_0x0A = new ItemHandle16(data.GetByteSubArray(0xA, ItemHandle16.SIZE));
         }
 
         public Byte[] ToRawData()
         {
             List<Byte> result = new List<Byte>();
 
-            result.AddRange(BitConverter.GetBytes(EnhanceId));
+            result.AddRange(BitConverter.GetBytes(EnhanceID));
             result.AddRange(BitConverter.GetBytes(RecastRev));
-            result.AddRange(BitConverter.GetBytes(ItemId));
-            result.AddRange(BitConverter.GetBytes(field_6));
-            result.AddRange(field_8.ToRawData());
-            result.AddRange(field_A.ToRawData());
+            result.AddRange(BitConverter.GetBytes(ItemID));
+            result.AddRange(BitConverter.GetBytes(Unk_0x06));
+            result.AddRange(Unk_0x08.ToRawData());
+            result.AddRange(Unk_0x0A.ToRawData());
 
             if (result.Count != SIZE)
             {
@@ -237,6 +532,11 @@ namespace XC2SaveNETThingy
             }
 
             return result.ToArray();
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     };
 
@@ -250,12 +550,12 @@ namespace XC2SaveNETThingy
         //uint16 Skill1 : 1;
         //uint16 Skill2 : 1;
 
-        bool Specials0_Enabled { get; set; }
-        bool Specials1_Enabled { get; set; }
-        bool Specials2_Enabled { get; set; }
-        bool Skill0_Enabled { get; set; }
-        bool Skill1_Enabled { get; set; }
-        bool Skill2_Enabled { get; set; }
+        public bool Specials0_Enabled { get; set; }
+        public bool Specials1_Enabled { get; set; }
+        public bool Specials2_Enabled { get; set; }
+        public bool Skill0_Enabled { get; set; }
+        public bool Skill1_Enabled { get; set; }
+        public bool Skill2_Enabled { get; set; }
 
         public HanaCircuits(byte[] data)
         {
@@ -281,7 +581,7 @@ namespace XC2SaveNETThingy
         }
     };
 
-    public class EquipHana : IXC2SaveObject
+    public class PoppiSwapData : IXC2SaveObject
     {
         public const int SIZE = 0x7c;
 
@@ -306,7 +606,7 @@ namespace XC2SaveNETThingy
         public UInt16 PowerCapacity { get; set; }
         public HanaCircuits OpenCircuits { get; set; }
 
-        public EquipHana(Byte[] data)
+        public PoppiSwapData(Byte[] data)
         {
             RoleItem = BitConverter.ToUInt16(data.GetByteSubArray(LOC["RoleItem"], 2), 0);
             AtrItem = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AtrItem"], 2), 0);
@@ -355,7 +655,7 @@ namespace XC2SaveNETThingy
 
             if (result.Count != SIZE)
             {
-                string message = "Blade.EquipHana: SIZE ALL WRONG!!!" + Environment.NewLine +
+                string message = "Blade.Poppiswap: SIZE ALL WRONG!!!" + Environment.NewLine +
                     "Size should be " + SIZE + " bytes..." + Environment.NewLine +
                     "...but Size is " + result.Count + " bytes!";
 
@@ -368,6 +668,27 @@ namespace XC2SaveNETThingy
 
     public class Blade : IXC2SaveObject
     {
+        public static readonly Dictionary<UInt32, string> TrustRanks = new Dictionary<UInt32, string>()
+        {
+            { 0, "(none)" },
+            { 1, "E" },
+            { 2, "D" },
+            { 3, "C" },
+            { 4, "B" },
+            { 5, "A" },
+            { 6, "S" },
+            { 7, "S1" },
+            { 8, "S2" },
+            { 9, "S3" },
+            { 10, "S4" },
+            { 11, "S5" },
+            { 12, "S6" },
+            { 13, "S7" },
+            { 14, "S8" },
+            { 15, "S9" },
+            { 16, "S+" },
+        };
+
         public const int SIZE = 0x8A4;
 
         public UInt16 DataType { get; set; }
@@ -388,8 +709,8 @@ namespace XC2SaveNETThingy
         public Byte[] gap_31 { get; set; }
         public UInt32 TrustPoints { get; set; }
         public UInt32 TrustRank { get; set; }
-        public BladeArts[] BArts { get; set; }
-        public BladeArts[] NArts { get; set; }
+        public BArt[] BArts { get; set; }
+        public NArt[] NArts { get; set; }
         public UInt16 BArtExId { get; set; }
         public UInt16 BladeArtsExH { get; set; }
         public UInt16 field_88 { get; set; }
@@ -404,8 +725,8 @@ namespace XC2SaveNETThingy
         public Byte field_98 { get; set; }
         public Byte gap_99 { get; set; }
         public UInt16 field_9A { get; set; }
-        public BladeSkill[] BladeSkills { get; set; }
-        public BladeSkill[] FieldSkills { get; set; }
+        public BattleSkill[] BattleSkills { get; set; }
+        public FieldSkill[] FieldSkills { get; set; }
         public Byte[] ExtraParts2 { get; set; }
         public AchieveInfo[] BArtsAchieve { get; set; }
         public AchieveInfo[] BSkillsAchievement { get; set; }
@@ -426,7 +747,7 @@ namespace XC2SaveNETThingy
         public Byte[] gap67E { get; set; }
         public UInt64 field_680 { get; set; }
         public UInt32 field_688 { get; set; }
-        public EquipHana HanaEquip { get; set; }
+        public PoppiSwapData Poppiswap { get; set; }
         public Byte Race { get; set; }
         public Byte Gender { get; set; }
         public UInt16 Still { get; set; }
@@ -635,13 +956,13 @@ namespace XC2SaveNETThingy
             TrustPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustPoints"], 4), 0);
             TrustRank = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustRank"], 4), 0);
 
-            BArts = new BladeArts[3];
+            BArts = new BArt[3];
             for (int i = 0; i < BArts.Length; i++)
-                BArts[i] = new BladeArts(data.GetByteSubArray(LOC["BArts"] + (i * BladeArts.SIZE), BladeArts.SIZE));
+                BArts[i] = new BArt(data.GetByteSubArray(LOC["BArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
 
-            NArts = new BladeArts[3];
+            NArts = new NArt[3];
             for (int i = 0; i < NArts.Length; i++)
-                NArts[i] = new BladeArts(data.GetByteSubArray(LOC["NArts"] + (i * BladeArts.SIZE), BladeArts.SIZE));
+                NArts[i] = new NArt(data.GetByteSubArray(LOC["NArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
 
             BArtExId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtExId"], 2), 0);
             BladeArtsExH = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsExH"], 2), 0);
@@ -658,13 +979,13 @@ namespace XC2SaveNETThingy
             gap_99 = data[LOC["gap_99"]];
             field_9A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_9A"], 2), 0);
 
-            BladeSkills = new BladeSkill[3];
-            for (int i = 0; i < BladeSkills.Length; i++)
-                BladeSkills[i] = new BladeSkill(data.GetByteSubArray(LOC["BladeSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
+            BattleSkills = new BattleSkill[3];
+            for (int i = 0; i < BattleSkills.Length; i++)
+                BattleSkills[i] = new BattleSkill(data.GetByteSubArray(LOC["BladeSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
 
-            FieldSkills = new BladeSkill[3];
+            FieldSkills = new FieldSkill[3];
             for (int i = 0; i < FieldSkills.Length; i++)
-                FieldSkills[i] = new BladeSkill(data.GetByteSubArray(LOC["FieldSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
+                FieldSkills[i] = new FieldSkill(data.GetByteSubArray(LOC["FieldSkills"] + (i * BladeSkill.SIZE), BladeSkill.SIZE));
 
             ExtraParts2 = new Byte[4];
             for (int i = 0; i < ExtraParts2.Length; i++)
@@ -698,7 +1019,7 @@ namespace XC2SaveNETThingy
             gap67E = data.GetByteSubArray(LOC["gap67E"], 2);
             field_680 = BitConverter.ToUInt64(data.GetByteSubArray(LOC["field_680"], 8), 0);
             field_688 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_688"], 4), 0);
-            HanaEquip = new EquipHana(data.GetByteSubArray(LOC["HanaEquip"], EquipHana.SIZE));
+            Poppiswap = new PoppiSwapData(data.GetByteSubArray(LOC["HanaEquip"], PoppiSwapData.SIZE));
             Race = data[LOC["Race"]];
             Gender = data[LOC["Gender"]];
             Still = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Still"], 2), 0);
@@ -793,10 +1114,10 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(TrustPoints));
             result.AddRange(BitConverter.GetBytes(TrustRank));
 
-            foreach (BladeArts ba in BArts)
+            foreach (BladeArt ba in BArts)
                 result.AddRange(ba.ToRawData());
 
-            foreach (BladeArts ba in NArts)
+            foreach (BladeArt ba in NArts)
                 result.AddRange(ba.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(BArtExId));
@@ -814,7 +1135,7 @@ namespace XC2SaveNETThingy
             result.Add(gap_99);
             result.AddRange(BitConverter.GetBytes(field_9A));
 
-            foreach (BladeSkill bs in BladeSkills)
+            foreach (BladeSkill bs in BattleSkills)
                 result.AddRange(bs.ToRawData());
 
             foreach (BladeSkill bs in FieldSkills)
@@ -847,7 +1168,7 @@ namespace XC2SaveNETThingy
             result.AddRange(gap67E);
             result.AddRange(BitConverter.GetBytes(field_680));
             result.AddRange(BitConverter.GetBytes(field_688));
-            result.AddRange(HanaEquip.ToRawData());
+            result.AddRange(Poppiswap.ToRawData());
             result.Add(Race);
             result.Add(Gender);
             result.AddRange(BitConverter.GetBytes(Still));
@@ -929,10 +1250,11 @@ namespace XC2SaveNETThingy
         {
             string str = "";
 
-            for (int i = 0; i < NameLength; i++)
-                str += (char)Name[i];
+            str = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
+            //for (int i = 0; i < NameLength; i++)
+            //    str += (char)Name[i];
 
-            return str;
+            return BladeId + ": " + str;
         }
     }
 }

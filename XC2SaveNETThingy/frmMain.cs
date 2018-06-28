@@ -26,9 +26,8 @@ namespace XC2SaveNETThingy
             if (DialogResult == DialogResult.OK)
             {
                 LoadSaveFile(ofdSaveFile.FileName);
+                tabControl1.Enabled = true;
             }
-
-           
         }
 
         private void cbxDrivers_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,13 +69,21 @@ namespace XC2SaveNETThingy
             else
                 cbxDriverIsActive.SelectedIndex = 0;
 
+            nudDriverBlade1.Value = d.EquippedBlades[0];
+
+            cbxDriverBlade1.DataSource = SAVEDATA.Blades;
+            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.First(b => b.BladeId == d.EquippedBlades[0]);
+            //cbxDriverBlade2.DataSource = SAVEDATA.Blades;
+            //cbxDriverBlade3.DataSource = SAVEDATA.Blades;
+
+            //txtDriverBlade1.Text = d.EquippedBlades[0].ToString();
             
-
-
-            txtDriverBlade1.Text = d.EquippedBlades[0].ToString();
             txtDriverBlade2.Text = d.EquippedBlades[1].ToString();
             txtDriverBlade3.Text = d.EquippedBlades[2].ToString();
-            txtDriverSetBlade.Text = d.SetBlade.ToString();
+            nudDriverSetBlade.Value = d.SetBlade;
+
+
+            cbxDriverSetBlade.SelectedItem = new KeyValuePair<int, string>(d.SetBlade, Driver.SETBLADE[d.SetBlade]);
 
             //cbxWeapons.DataSource = d.Weapons;
             //cbxWeapons.SelectedIndex = 0;
@@ -88,7 +95,9 @@ namespace XC2SaveNETThingy
             cbxDriverIsActive.ValueMember = "Key";
             cbxDriverIsActive.DataSource = Driver.STATUS.ToList();
 
-            
+            cbxDriverSetBlade.DisplayMember = "Value";
+            cbxDriverSetBlade.ValueMember = "Key";
+            cbxDriverSetBlade.DataSource = Driver.SETBLADE.ToList();
         }
 
         private void cbxWeapons_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,7 +135,7 @@ namespace XC2SaveNETThingy
             txtTimeMSecond.Text = SAVEDATA.Time.MSecond.ToString();
             txtTimeUnkA.Text = SAVEDATA.Time.UnkA.ToString();
 
-            txtMoney.Text = SAVEDATA.Money.ToString();
+            nudMoney.Value = SAVEDATA.Money;
 
             lblsg_field_18.Text = SAVEDATA.sg_field_18.ToString();
             lblsg_field_1C.Text = SAVEDATA.sg_field_1C.ToString();
@@ -146,14 +155,17 @@ namespace XC2SaveNETThingy
             cbxPartyLeader.DataSource = new BindingSource(Driver.IDNAMES, null);
             cbxPartyLeader.ValueMember = "Key";
             cbxPartyLeader.DisplayMember = "Value";
-            cbxPartyLeader.SelectedValue = SAVEDATA.Party.PartyLeader;
+            cbxPartyLeader.SelectedIndex = (int)SAVEDATA.Party.PartyLeader;
 
+            for (int i = 0; i < SAVEDATA.Party.Members.Length; i++)
+                cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
+
+            cbxPartyMembers.SelectedIndex = 0;
+            
             cbxPartyMemberDriver.DataSource = new BindingSource(Driver.IDNAMES, null);
             cbxPartyMemberDriver.ValueMember = "Key";
             cbxPartyMemberDriver.DisplayMember = "Value";
-
-            cbxPartyMembers.DataSource = SAVEDATA.Party.Members;
-            cbxPartyMembers.DisplayMember = "";
+            cbxPartyMemberDriver.SelectedIndex = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId;
 
             #endregion main
 
@@ -172,6 +184,13 @@ namespace XC2SaveNETThingy
 
 
             #endregion drivers
+
+            #region blades
+
+            lbxBlades.DataSource = SAVEDATA.Blades;
+            lbxBlades.SelectedIndex = 0;
+
+            #endregion blades
 
             #region items
 
@@ -257,12 +276,6 @@ namespace XC2SaveNETThingy
             dgv.Columns[7].HeaderText = "Serial";
             dgv.Columns[8].HeaderText = "Unk3";
 
-
-
-
-
-
-
         }
 
         private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,8 +284,8 @@ namespace XC2SaveNETThingy
             XC2Save.PartyMember m = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex];
             cbxPartyMemberDriver.SelectedValue = m.DriverId;
 
-            txtPartyMemberField2.Text = m.field_2.ToString();
-            txtPartyMemberField4.Text = m.field_4.ToString();
+            nudPartyMemberUnk_0x02.Value = m.Unk_0x02;
+            nudPartyMemberUnk_0x04.Value = m.Unk_0x04;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -293,6 +306,188 @@ namespace XC2SaveNETThingy
                     throw ex;
                 }
             }
+        }
+
+        private void LoadBlade(int index)
+        {
+            if (SAVEDATA != null)
+            {
+                Blade b = SAVEDATA.Blades[index];
+
+                nudBladeDataType.Value = b.DataType;
+                nudBladeCreator.Value = b.Creator;
+                nudBladeSetDriver.Value = b.SetDriver;
+                nudBladeID.Value = b.BladeId;
+                nudBladeRace.Value = b.Race;
+                nudBladeGender.Value = b.Gender;
+                nudBladeStill.Value = b.Still;
+
+                nudBladeResonatedTimeHour.Value = b.BornTime.Hours;
+                nudBladeResonatedTimeMinute.Value = b.BornTime.Minutes;
+                nudBladeResonatedTimeSecond.Value = b.BornTime.Seconds;
+
+                nudBladeBraveryLevel.Value = b.BraveryLevel;
+                nudBladeBraveryPoints.Value = b.BraveryPoints;
+                nudBladeTruthLevel.Value = b.TruthLevel;
+                nudBladeTruthPoints.Value = b.TruthPoints;
+                nudBladeCompassionLevel.Value = b.CompassionLevel;
+                nudBladeCompassionPoints.Value = b.CompassionPoints;
+                nudBladeJusticeLevel.Value = b.JusticeLevel;
+                nudBladeJusticePoints.Value = b.JusticePoints;
+
+                nudBladeTrustPoints.Value = b.TrustPoints;
+                nudBladeTrustRank.Value = b.TrustRank;
+                nudBladeBArtExId.Value = b.BArtExId;
+                nudBladeBladeArtsExH.Value = b.BladeArtsExH;
+                nudBladeBArtEx2Id.Value = b.BladeArtsEx2H;
+
+                cbxBladeBArts.DataSource = b.BArts;
+                cbxBladeNArts.DataSource = b.NArts;
+                cbxBladeBladeSkills.DataSource = b.BattleSkills;
+                cbxBladeFieldSkills.DataSource = b.FieldSkills;
+
+                cbxBladeBArts.SelectedIndex = 0;
+                cbxBladeNArts.SelectedIndex = 0;
+                cbxBladeBladeSkills.SelectedIndex = 0;
+                cbxBladeFieldSkills.SelectedIndex = 0;
+
+                cbxBladeTrustRank.DataSource = new BindingSource(Blade.TrustRanks, null);
+                cbxBladeTrustRank.DisplayMember = "Value";
+
+                cbxBladeTrustRank.SelectedIndex = (int)b.TrustRank;
+
+                nudBladeKeyReleaseLevel.Value = b.KeyReleaseLevel;
+                nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
+                nudBladeFavoriteItem0.Value = b.FavoriteItem0;
+                nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
+                nudBladeFavoriteItem1.Value = b.FavoriteItem1;
+
+                nudBladeFavoriteCategory0Unlocked.Value = b.FavoriteCategory0Unlocked;
+                nudBladeFavoriteItem0Unlocked.Value = b.FavoriteItem0Unlocked;
+                nudBladeFavoriteCategory1Unlocked.Value = b.FavoriteCategory1Unlocked;
+                nudBladeFavoriteItem1Unlocked.Value = b.FavoriteItem1Unlocked;
+
+                nudBladePoppiswapRoleItem.Value = b.Poppiswap.RoleItem;
+                nudBladePoppiswapAtrItem.Value = b.Poppiswap.AtrItem;
+                nudBladePoppiswapPowerCapacity.Value = b.Poppiswap.PowerCapacity;
+
+                cbxBladePoppiswapBArts.DataSource = b.Poppiswap.BArtsEnhance;
+                cbxBladePoppiswapBArts.SelectedIndex = 0;
+
+                chkBladePoppiswapSpecials0Enabled.Checked = b.Poppiswap.OpenCircuits.Specials0_Enabled;
+                chkBladePoppiswapSpecials1Enabled.Checked = b.Poppiswap.OpenCircuits.Specials1_Enabled;
+                chkBladePoppiswapSpecials2Enabled.Checked = b.Poppiswap.OpenCircuits.Specials2_Enabled;
+                chkBladePoppiswapSkill0Enabled.Checked = b.Poppiswap.OpenCircuits.Skill0_Enabled;
+                chkBladePoppiswapSkill1Enabled.Checked = b.Poppiswap.OpenCircuits.Skill1_Enabled;
+                chkBladePoppiswapSkill2Enabled.Checked = b.Poppiswap.OpenCircuits.Skill2_Enabled;
+
+            }
+        }
+
+        private void cbxBladeBArts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BladeArt ba = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[cbxBladeBArts.SelectedIndex];
+
+            nudBladeBArtID.Value = ba.ID;
+            nudBladeBArtRecastRev.Value = ba.RecastRev;
+            nudBladeBArtLevel.Value = ba.Level;
+            nudBladeBArtMaxLevel.Value = ba.MaxLevel;
+        }
+
+        private void cbxBladeNArts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BladeArt ba = SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[cbxBladeNArts.SelectedIndex];
+
+            nudBladeNArtID.Value = ba.ID;
+            nudBladeNArtRecastRev.Value = ba.RecastRev;
+            nudBladeNArtLevel.Value = ba.Level;
+            nudBladeNArtMaxLevel.Value = ba.MaxLevel;
+        }
+
+        private void cbxBladeBladeSkills_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BladeSkill bs = SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[cbxBladeBladeSkills.SelectedIndex];
+
+            nudBladeBladeSkillID.Value = bs.ID;
+            nudBladeBladeSkillLevel.Value = bs.Level;
+            nudBladeBladeSkillMaxLevel.Value = bs.MaxLevel;
+        }
+
+        private void cbxBladeFieldSkills_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BladeSkill bs = SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[cbxBladeFieldSkills.SelectedIndex];
+
+            nudBladeFieldSkillID.Value = bs.ID;
+            nudBladeFieldSkillLevel.Value = bs.Level;
+            nudBladeFieldSkillMaxLevel.Value = bs.MaxLevel;
+        }
+
+        private void cbxBladeTrustRank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbxBlades.DataSource != null)
+                nudBladeTrustRank.Value = cbxBladeTrustRank.SelectedIndex;
+        }
+
+        private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadBlade(lbxBlades.SelectedIndex);
+        }
+
+        private void cbxBladePoppiswapBArts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArtsEnhance ae = SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[cbxBladePoppiswapBArts.SelectedIndex];
+
+            nudBladePoppiswapBArtsEnhanceID.Value = ae.EnhanceID;
+            nudBladePoppiswapBArtsEnhanceRecastRev.Value = ae.RecastRev;
+            nudBladePoppiswapBArtsEnhanceItemID.Value = ae.ItemID;
+        }
+
+        #region Misc
+
+        private void nudMoney_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Money = (UInt32)nudMoney.Value;
+        }
+
+        #region party
+
+        private void cbxPartyLeader_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.PartyLeader = (UInt32)cbxPartyLeader.SelectedIndex;
+        }
+        private void cbxPartyMemberDriver_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId = (UInt16)cbxPartyMemberDriver.SelectedIndex;
+        }
+        private void nudPartyMemberUnk_0x02_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].Unk_0x02 = (UInt16)nudPartyMemberUnk_0x02.Value;
+        }
+        private void nudPartyMemberUnk_0x04_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].Unk_0x04 = (UInt16)nudPartyMemberUnk_0x04.Value;
+        }
+
+
+        #endregion party
+
+        #endregion Misc
+
+        private void nudDriverSetBlade_ValueChanged(object sender, EventArgs e)
+        {
+            Int16 value = (Int16)nudDriverSetBlade.Value;
+            SAVEDATA.Drivers[cbxDrivers.SelectedIndex].SetBlade = value;
+            cbxDriverSetBlade.SelectedItem = new KeyValuePair<int, string>(value, Driver.SETBLADE[value]);
+        }
+
+        private void cbxDriverSetBlade_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverSetBlade.Value = Driver.SETBLADE.First(kv => kv.Equals(cbxDriverSetBlade.SelectedItem)).Key;
+        }
+
+        private void nudDriverBlade1_ValueChanged(object sender, EventArgs e)
+        {
+            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.BladeId == (UInt16)nudDriverBlade1.Value);
         }
     }
 }

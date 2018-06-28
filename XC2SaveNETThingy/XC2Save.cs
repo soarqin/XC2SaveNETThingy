@@ -122,7 +122,7 @@ namespace XC2SaveNETThingy
             }
         };
 
-        public class gf_RealTime : IXC2SaveObject
+        public class RealTime : IXC2SaveObject
         {
             public const int SIZE = 0x8;
             // 13 bits
@@ -161,7 +161,7 @@ namespace XC2SaveNETThingy
             public Byte UnkA { get; set; }
             private const int UNKA_BITS = 6;
 
-            public gf_RealTime(Byte[] data)
+            public RealTime(Byte[] data)
             {
                 UInt64 value = BitConverter.ToUInt64(data, 0);
 
@@ -204,14 +204,14 @@ namespace XC2SaveNETThingy
             public const int SIZE = 0x6;
 
             public UInt16 DriverId { get; set; }
-            public UInt16 field_2 { get; set; }
-            public UInt16 field_4 { get; set; }
+            public UInt16 Unk_0x02 { get; set; }
+            public UInt16 Unk_0x04 { get; set; }
 
             public PartyMember(Byte[] data)
             {
                 DriverId = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
-                field_2 = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
-                field_4 = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
+                Unk_0x02 = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
+                Unk_0x04 = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
             }
 
             public Byte[] ToRawData()
@@ -219,8 +219,8 @@ namespace XC2SaveNETThingy
                 List<Byte> result = new List<byte>();
 
                 result.AddRange(BitConverter.GetBytes(DriverId));
-                result.AddRange(BitConverter.GetBytes(field_2));
-                result.AddRange(BitConverter.GetBytes(field_4));
+                result.AddRange(BitConverter.GetBytes(Unk_0x02));
+                result.AddRange(BitConverter.GetBytes(Unk_0x04));
 
                 if (result.Count != SIZE)
                 {
@@ -232,6 +232,11 @@ namespace XC2SaveNETThingy
                 }
 
                 return result.ToArray();
+            }
+
+            public override string ToString()
+            {
+                return Driver.IDNAMES[DriverId];
             }
         }
 
@@ -858,7 +863,7 @@ namespace XC2SaveNETThingy
 
         public UInt32 Magic { get; }
         public UInt32 ss_field_4 { get; set; }
-        public gf_RealTime Time { get; set; }
+        public RealTime Time { get; set; }
         public UInt32 Money { get; set; }
         public UInt32 MapJumpId { get; set; }
         public UInt32 sg_field_18 { get; set; }
@@ -907,7 +912,7 @@ namespace XC2SaveNETThingy
         public UInt32 CoinCount { get; set; }
         public UInt32[] SavedEnemyHp { get; set; }
         public UInt32 field_10AD74 { get; set; }
-        public gf_RealTime Time2 { get; set; }
+        public RealTime Time2 { get; set; }
         public float CameraHeight { get; set; }
         public Minigame TigerTigerData { get; set; }
         public float CameraYaw { get; set; }
@@ -933,7 +938,7 @@ namespace XC2SaveNETThingy
         {
             Magic = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Magic"], 4), 0);
             ss_field_4 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ss_field_4"], 4), 0);
-            Time = new gf_RealTime(data.GetByteSubArray(LOC["Time"], gf_RealTime.SIZE));
+            Time = new RealTime(data.GetByteSubArray(LOC["Time"], RealTime.SIZE));
             Money = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Money"], 4), 0);
             MapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MapJumpId"], 4), 0);
             sg_field_18 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_18"], 4), 0);
@@ -1010,7 +1015,7 @@ namespace XC2SaveNETThingy
                 SavedEnemyHp[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SavedEnemyHp"] + (i * 4), 4), 0);
 
             field_10AD74 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_10AD74"], 4), 0);
-            Time2 = new gf_RealTime(data.GetByteSubArray(LOC["Time2"], gf_RealTime.SIZE));
+            Time2 = new RealTime(data.GetByteSubArray(LOC["Time2"], RealTime.SIZE));
             CameraHeight = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraHeight"], 4), 0);
             TigerTigerData = new Minigame(data.GetByteSubArray(LOC["TigerTigerData"], Minigame.SIZE));
             CameraYaw = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraYaw"], 4), 0);
