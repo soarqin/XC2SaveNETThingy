@@ -44,24 +44,209 @@ namespace XC2SaveNETThingy
             { 0, "1st Blade" },
             { 1, "2nd Blade" },
             { 2, "3rd Blade" },
-            { 3, "Unknown (Mythra, Rex only?)" }
+            { 3, "Unknown (Mythra+Rex only?)" }
+        };
+
+        public static readonly Dictionary<UInt16, string> DRIVER_SKILLS = new Dictionary<UInt16, string>()
+        {
+            { 0, "(none)" },
+            { 1, "Reflex Response" },
+            { 2, "Rapid Attack II" },
+            { 3, "Picture of Health" },
+            { 4, "Lively Lad" },
+            { 5, "Topple Champ" },
+            { 6, "Fight or Flight" },
+            { 7, "Eyes on the Prize" },
+            { 8, "Combat Boost" },
+            { 9, "Child of Steel" },
+            { 10, "Relentless Spirit" },
+            { 11, "Rapid Attack I" },
+            { 12, "Muscle Builder" },
+            { 13, "Combo Enhance" },
+            { 14, "Arts Chain" },
+            { 15, "Drive to Win" },
+            { 16, "Shadow Strike" },
+            { 17, "Prediction" },
+            { 18, "Inherit Muscle" },
+            { 19, "Pre-empt Moves" },
+            { 20, "Heart Recharge" },
+            { 21, "Ether Studies" },
+            { 22, "Rescue" },
+            { 23, "Gramps' Blessing" },
+            { 24, "Rapid Attack III" },
+            { 25, "Untimate Relay" },
+            { 26, "Further Ether Studies" },
+            { 27, "Cheer Up" },
+            { 28, "Herbalism" },
+            { 29, "Solidarity" },
+            { 30, "Gramps' Auspices" },
+            { 31, "Catgirl" },
+            { 32, "Big Cat" },
+            { 33, "Feral Awakening III" },
+            { 34, "Natural Selection" },
+            { 35, "Hard Hitter" },
+            { 36, "Focused Technique" },
+            { 37, "Wild Life" },
+            { 38, "Tigergirl" },
+            { 39, "Sore Loser" },
+            { 40, "Adrenaline" },
+            { 41, "Kinetic Vision" },
+            { 42, "Feral Awakening II" },
+            { 43, "Tooth and Claw" },
+            { 44, "Panther Pounce" },
+            { 45, "Bestial Pursuit" },
+            { 46, "Lithe Strength" },
+            { 47, "Tiger's Eye" },
+            { 48, "Transmit Power" },
+            { 49, "Bear Knuckles" },
+            { 50, "Road to Victory" },
+            { 51, "Soothing Hand" },
+            { 52, "Ether Talent" },
+            { 53, "Herb Synthesis" },
+            { 54, "Mutual Happiness" },
+            { 55, "Feral Awakening I" },
+            { 56, "Chance Recovery" },
+            { 57, "Lucky Cat" },
+            { 58, "Cheer Leader" },
+            { 59, "Inner Strength" },
+            { 60, "Lady of Luck" },
+            { 61, "Raring to Go I" },
+            { 62, "Spongy Bod" },
+            { 63, "Health Bomb" },
+            { 64, "Super Spongy Bod" },
+            { 65, "Grin and Bear It" },
+            { 66, "Keen Recovery" },
+            { 67, "Restless Foot" },
+            { 68, "Nopon Topple Arts" },
+            { 69, "Look Over There!" },
+            { 70, "Super Restless Foot" },
+            { 71, "Good With Hands" },
+            { 72, "Raring to Go III" },
+            { 73, "Tiger Muscles" },
+            { 74, "Nopon Chain Arts" },
+            { 75, "Crazy With Hands" },
+            { 76, "Forced Initiative" },
+            { 77, "Nopon Chain Boost" },
+            { 78, "Inherit Protein" },
+            { 79, "Poppi Care" },
+            { 80, "Mood Maker" },
+            { 81, "Luckypon" },
+            { 82, "Placebo" },
+            { 83, "Raring to Go II" },
+            { 84, "Double-Luckypon" },
+            { 85, "Rapture" },
+            { 86, "Nopon Rescue Service" },
+            { 87, "Hidden Talent" },
+            { 88, "Hope for the Best" },
+            { 89, "Team Mascot" },
+            { 90, "Burgeoning Talent...?" },
+            { 91, "Tough Nut" },
+            { 92, "Veteran" },
+            { 93, "Guardian" },
+            { 94, "Muscle Accelerator II" },
+            { 95, "Last Man Standing" },
+            { 96, "Power Lift" },
+            { 97, "Quick Muscles" },
+            { 98, "Recuperation" },
+            { 99, "Pumped Dodge" },
+            { 100, "Physical Fitness" },
+            { 101, "10,000 Push-Ups" },
+            { 102, "Burly Chain" },
+            { 103, "Muscle Accelerator I" },
+            { 104, "Beefcake Flurry" },
+            { 105, "Elite Muscles" },
+            { 106, "Knack for Battle" },
+            { 107, "Anything for a Mate" },
+            { 108, "Dependable Guy" },
+            { 109, "Honed to Perfection" },
+            { 110, "World's Stringest Man" },
+            { 111, "Ether Powder" },
+            { 112, "Muscle Accelerator III" },
+            { 113, "Big Strong Hands" },
+            { 114, "Ether Muscle" },
+            { 115, "Serious Recovery" },
+            { 116, "Thank the Heavens" },
+            { 117, "Booming Aid" },
+            { 118, "Buff Buff" },
+            { 119, "Higher Powers" },
+            { 120, "Greatest Work" },
+            { 121, "Imperial Footwork" },
+            { 122, "Basic Discipline" },
+            { 123, "Initiave II" },
+            { 124, "Martial Prowess" },
+            { 125, "Ultimate Footwork" },
+            { 126, "Instant Chain" },
+            { 127, "Survival Training" },
+            { 128, "Warrior's Resolve" },
+            { 129, "Life's Flow" },
+            { 130, "Imperial Pride" },
+            { 131, "Arts Relay" },
+            { 132, "Initiave I" },
+            { 133, "Vigilance" },
+            { 134, "Physical Discipline" },
+            { 135, "Imperial Pursuit" },
+            { 136, "Silent Bloodshed" },
+            { 137, "Blade Alliance" },
+            { 138, "Cool Focus" },
+            { 139, "Battle Stance" },
+            { 140, "Legendary Skill" },
+            { 141, "Etherology" },
+            { 142, "Alchemy" },
+            { 143, "Charmed Life" },
+            { 144, "Imperial First AId" },
+            { 145, "Initiave III" },
+            { 146, "Inspiration" },
+            { 147, "Ultimate Etherology" },
+            { 148, "Divination" },
+            { 149, "Cheer Master" },
+            { 150, "Golden Opportunity" },
+            { 151, "Adamant Heart" },
+            { 152, "Flash Step" },
+            { 153, "Mach Prep II" },
+            { 154, "Critical Pro" },
+            { 155, "Air Extender" },
+            { 156, "Natural Healing" },
+            { 157, "Heart of Gold" },
+            { 158, "Zeal Heal" },
+            { 159, "Fleetfoot Flit" },
+            { 160, "Second Wind" },
+            { 161, "Mach Prep I" },
+            { 162, "Brawn over Brain" },
+            { 163, "Camraderie" },
+            { 164, "Herculean Strength" },
+            { 165, "Move Chaining" },
+            { 166, "Feindish Pursuit" },
+            { 167, "Professional Hit" },
+            { 168, "Hotshot Hit" },
+            { 169, "Obsidian Slash" },
+            { 170, "A Hero's Work" },
+            { 171, "Lucky Duck" },
+            { 172, "Ether Prodigy" },
+            { 173, "Tantal Courage" },
+            { 174, "Mach Prep III" },
+            { 175, "Histrionic Hero" },
+            { 176, "Ether Autarch" },
+            { 177, "Medicinal Maestro" },
+            { 178, "Unleash Shining Justice" },
+            { 179, "Raucous Cheer" },
+            { 180, "As One" }
         };
 
         public class DriverSkill : IXC2SaveObject
         {
             public const int SIZE = 0xA;
 
-            public UInt16[] Columns { get; set; }
-            public Int16 RowNum { get; set; }
+            public UInt16[] IDs { get; set; }
+            public Int16 ColumnNo { get; set; }
             public UInt16 Level { get; set; }
 
             public DriverSkill(Byte[] data)
             {
-                Columns = new UInt16[3];
-                for (int i = 0; i < Columns.Length; i++)
-                    Columns[i] = BitConverter.ToUInt16(data.GetByteSubArray(i * 2, 2), 0);
+                IDs = new UInt16[3];
+                for (int i = 0; i < IDs.Length; i++)
+                    IDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(i * 2, 2), 0);
 
-                RowNum = BitConverter.ToInt16(data.GetByteSubArray(0x6, 2), 0);
+                ColumnNo = BitConverter.ToInt16(data.GetByteSubArray(0x6, 2), 0);
                 Level = BitConverter.ToUInt16(data.GetByteSubArray(0x8, 2), 0);
             }
 
@@ -69,10 +254,10 @@ namespace XC2SaveNETThingy
             {
                 List<Byte> result = new List<byte>();
 
-                foreach (UInt16 u in Columns)
+                foreach (UInt16 u in IDs)
                     result.AddRange(BitConverter.GetBytes(u));
 
-                result.AddRange(BitConverter.GetBytes(RowNum));
+                result.AddRange(BitConverter.GetBytes(ColumnNo));
                 result.AddRange(BitConverter.GetBytes(Level));
 
                 if (result.Count != SIZE)
@@ -257,29 +442,29 @@ namespace XC2SaveNETThingy
         public UInt32 JusticePoints { get; set; }
         public UInt32 JusticeLevel { get; set; }
         public UInt16 IsActive { get; set; }
-        public UInt16 DriverId { get; set; }
+        public UInt16 ID { get; set; }
         public Int16 SetBlade { get; set; }
         public UInt16[] EquippedBlades { get; set; }
         public UInt32 gap_2C { get; set; }
-        public DriverSkill[] SkillsRound1 { get; set; }
-        public DriverSkill[] SkillsRound2 { get; set; }
+        public DriverSkill[] OvertSkills { get; set; }
+        public DriverSkill[] HiddenSkills { get; set; }
         public UInt16 Level { get; set; }
-        public UInt16 HpMax { get; set; }
+        public UInt16 HP { get; set; }
         public UInt16 Strength { get; set; }
-        public UInt16 PowEther { get; set; }
-        public UInt16 Dex { get; set; }
+        public UInt16 Ether { get; set; }
+        public UInt16 Dexterity { get; set; }
         public UInt16 Agility { get; set; }
         public UInt16 Luck { get; set; }
-        public UInt16 PArmor { get; set; }
-        public UInt16 EArmor { get; set; }
-        public Byte CritRate { get; set; }
+        public UInt16 PhysDef { get; set; }
+        public UInt16 EtherDef { get; set; }
+        public Byte CriticalRate { get; set; }
         public Byte GuardRate { get; set; }
         public UInt32 field_A8 { get; set; }
         public Byte[] gap_AC { get; set; }
         public Byte field_AF { get; set; }
-        public UInt32 Exp { get; set; }
+        public UInt32 BonusExp { get; set; }
         public UInt32 BattleExp { get; set; }
-        public UInt32 SkillPoints { get; set; }
+        public UInt32 CurrentSkillPoints { get; set; }
         public UInt32 TotalSkillPoints { get; set; }
         public Weapon[] Weapons { get; set; }
         public Byte[] gap_2DC { get; set; }
@@ -308,7 +493,7 @@ namespace XC2SaveNETThingy
             JusticePoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticePoints"], 4), 0);
             JusticeLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticeLevel"], 4), 0);
             IsActive = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0);
-            DriverId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["DriverId"], 2), 0);
+            ID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["DriverId"], 2), 0);
             SetBlade = BitConverter.ToInt16(data.GetByteSubArray(LOC["SetBlade"], 2), 0);
 
             EquippedBlades = new UInt16[3];
@@ -317,31 +502,31 @@ namespace XC2SaveNETThingy
 
             gap_2C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["gap_2C"], 4), 0);
 
-            SkillsRound1 = new DriverSkill[5];
-            for (int i = 0; i < SkillsRound1.Length; i++)
-                SkillsRound1[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound1"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
+            OvertSkills = new DriverSkill[5];
+            for (int i = 0; i < OvertSkills.Length; i++)
+                OvertSkills[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound1"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
 
-            SkillsRound2 = new DriverSkill[5];
-            for (int i = 0; i < SkillsRound2.Length; i++)
-                SkillsRound2[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound2"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
+            HiddenSkills = new DriverSkill[5];
+            for (int i = 0; i < HiddenSkills.Length; i++)
+                HiddenSkills[i] = new DriverSkill(data.GetByteSubArray(LOC["SkillsRound2"] + (i * DriverSkill.SIZE), DriverSkill.SIZE));
 
             Level = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Level"], 2), 0);
-            HpMax = BitConverter.ToUInt16(data.GetByteSubArray(LOC["HpMax"], 2), 0);
+            HP = BitConverter.ToUInt16(data.GetByteSubArray(LOC["HpMax"], 2), 0);
             Strength = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Strength"], 2), 0);
-            PowEther = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PowEther"], 2), 0);
-            Dex = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Dex"], 2), 0);
+            Ether = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PowEther"], 2), 0);
+            Dexterity = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Dex"], 2), 0);
             Agility = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Agility"], 2), 0);
             Luck = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Luck"], 2), 0);
-            PArmor = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PArmor"], 2), 0);
-            EArmor = BitConverter.ToUInt16(data.GetByteSubArray(LOC["EArmor"], 2), 0);
-            CritRate = data[LOC["CritRate"]];
+            PhysDef = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PArmor"], 2), 0);
+            EtherDef = BitConverter.ToUInt16(data.GetByteSubArray(LOC["EArmor"], 2), 0);
+            CriticalRate = data[LOC["CritRate"]];
             GuardRate = data[LOC["GuardRate"]];
             field_A8 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_A8"], 4), 0);
             gap_AC = data.GetByteSubArray(LOC["gap_AC"], 3);
             field_AF = data[LOC["field_AF"]];
-            Exp = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Exp"], 4), 0);
+            BonusExp = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Exp"], 4), 0);
             BattleExp = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BattleExp"], 4), 0);
-            SkillPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SkillPoints"], 4), 0);
+            CurrentSkillPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SkillPoints"], 4), 0);
             TotalSkillPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TotalSkillPoints"], 4), 0);
 
             Weapons = new Weapon[27];
@@ -381,7 +566,7 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(JusticePoints));
             result.AddRange(BitConverter.GetBytes(JusticeLevel));
             result.AddRange(BitConverter.GetBytes(IsActive));
-            result.AddRange(BitConverter.GetBytes(DriverId));
+            result.AddRange(BitConverter.GetBytes(ID));
             result.AddRange(BitConverter.GetBytes(SetBlade));
 
             foreach (UInt16 u in EquippedBlades)
@@ -389,29 +574,29 @@ namespace XC2SaveNETThingy
 
             result.AddRange(BitConverter.GetBytes(gap_2C));
 
-            foreach (DriverSkill ds in SkillsRound1)
+            foreach (DriverSkill ds in OvertSkills)
                 result.AddRange(ds.ToRawData());
 
-            foreach (DriverSkill ds in SkillsRound2)
+            foreach (DriverSkill ds in HiddenSkills)
                 result.AddRange(ds.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(Level));
-            result.AddRange(BitConverter.GetBytes(HpMax));
+            result.AddRange(BitConverter.GetBytes(HP));
             result.AddRange(BitConverter.GetBytes(Strength));
-            result.AddRange(BitConverter.GetBytes(PowEther));
-            result.AddRange(BitConverter.GetBytes(Dex));
+            result.AddRange(BitConverter.GetBytes(Ether));
+            result.AddRange(BitConverter.GetBytes(Dexterity));
             result.AddRange(BitConverter.GetBytes(Agility));
             result.AddRange(BitConverter.GetBytes(Luck));
-            result.AddRange(BitConverter.GetBytes(PArmor));
-            result.AddRange(BitConverter.GetBytes(EArmor));
-            result.Add(CritRate);
+            result.AddRange(BitConverter.GetBytes(PhysDef));
+            result.AddRange(BitConverter.GetBytes(EtherDef));
+            result.Add(CriticalRate);
             result.Add(GuardRate);
             result.AddRange(BitConverter.GetBytes(field_A8));
             result.AddRange(gap_AC);
             result.Add(field_AF);
-            result.AddRange(BitConverter.GetBytes(Exp));
+            result.AddRange(BitConverter.GetBytes(BonusExp));
             result.AddRange(BitConverter.GetBytes(BattleExp));
-            result.AddRange(BitConverter.GetBytes(SkillPoints));
+            result.AddRange(BitConverter.GetBytes(CurrentSkillPoints));
             result.AddRange(BitConverter.GetBytes(TotalSkillPoints));
 
             foreach (Weapon w in Weapons)
@@ -449,8 +634,8 @@ namespace XC2SaveNETThingy
 
         public override string ToString()
         {
-            if (IDNAMES.ContainsKey(DriverId))
-                return IDNAMES[DriverId];
+            if (IDNAMES.ContainsKey(ID))
+                return ID + ": " + IDNAMES[ID];
             else
                 return "INVALID ID";
         }
