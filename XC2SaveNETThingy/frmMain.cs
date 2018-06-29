@@ -13,7 +13,8 @@ namespace XC2SaveNETThingy
 {
     public partial class frmMain : Form
     {
-        XC2Save SAVEDATA;
+        private XC2Save SAVEDATA;
+        private bool IsReloadingDrivers = false;
 
         public frmMain()
         {
@@ -32,7 +33,8 @@ namespace XC2SaveNETThingy
 
         private void lbxDrivers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadDriver(lbxDrivers.SelectedIndex);
+            if (!(IsReloadingDrivers))
+                LoadDriver(lbxDrivers.SelectedIndex);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -121,11 +123,12 @@ namespace XC2SaveNETThingy
             //cbxDriverID.DataSource = SAVEDATA.Drivers;
             //cbxDriverID.SelectedIndex = 0;
 
-            //lbxDrivers.DataSource = SAVEDATA.Drivers;
-            //lbxDrivers.SelectedIndex = 0;
+            lbxDrivers.DataSource = SAVEDATA.Drivers;
+            lbxDrivers.SelectedIndex = 0;
 
             RefreshDriverList();
-            lbxDrivers.SelectedIndex = 0;
+
+            //lbxDrivers.SelectedIndex = 0;
 
 
             cbxWeapons.DataSource = Driver.Weapon.NAMES.ToList();
@@ -260,13 +263,18 @@ namespace XC2SaveNETThingy
 
         private void RefreshDriverList()
         {
+            IsReloadingDrivers = true;
             int index = lbxDrivers.SelectedIndex;
-            lbxDrivers.BeginUpdate();
-            lbxDrivers.Items.Clear();
-            for (int i = 0; i < SAVEDATA.Drivers.Length; i++)
-                lbxDrivers.Items.Add(SAVEDATA.Drivers[i].ToString());
-            lbxDrivers.SelectedIndex = index;
-            lbxDrivers.EndUpdate();
+
+            lbxDrivers.DataSource = null;
+            lbxDrivers.DataSource = SAVEDATA.Drivers;
+
+            if (lbxDrivers.SelectedIndex != index)
+                lbxDrivers.SelectedIndex = index;
+            if (lbxDrivers.SelectedIndex < 0)
+                lbxDrivers.SelectedIndex = 0;
+
+            IsReloadingDrivers = false;
         }
 
         private void LoadDriver(int index)
@@ -280,7 +288,10 @@ namespace XC2SaveNETThingy
             cbxDriverID.DataSource = new BindingSource(Driver.IDNAMES, null);
             cbxDriverID.ValueMember = "Key";
             cbxDriverID.DisplayMember = "Value";
-            cbxDriverID.SelectedIndex = d.ID;
+            if (Driver.IDNAMES.ContainsKey(d.ID))
+                cbxDriverID.SelectedIndex = d.ID;
+            else
+                cbxDriverID.SelectedIndex = 0;
 
             nudDriverLevel.Value = d.Level;
             nudDriverHpMax.Value = d.HP;
@@ -332,112 +343,10 @@ namespace XC2SaveNETThingy
 
             cbxDriverSetBlade.SelectedItem = new KeyValuePair<int, string>(d.SetBlade, Driver.SETBLADE[d.SetBlade]);
 
-
-        
-            nudDriverOvertSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0];
-            nudDriverOvertSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1];
-            nudDriverOvertSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2];
-
-            nudDriverOvertSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0];
-            nudDriverOvertSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1];
-            nudDriverOvertSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2];
-
-            nudDriverOvertSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0];
-            nudDriverOvertSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1];
-            nudDriverOvertSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2];
-
-            nudDriverOvertSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0];
-            nudDriverOvertSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1];
-            nudDriverOvertSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2];
-
-            nudDriverOvertSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0];
-            nudDriverOvertSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1];
-            nudDriverOvertSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2];
-
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c1r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c1r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c1r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c2r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c2r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c2r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c3r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c3r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c3r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c4r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c4r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c4r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c5r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c5r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverOvertSkill_c5r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2]);
-
-            nudDriverOvertSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].ColumnNo;
-            nudDriverOvertSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].ColumnNo;
-            nudDriverOvertSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].ColumnNo;
-            nudDriverOvertSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].ColumnNo;
-            nudDriverOvertSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].ColumnNo;
-
-            nudDriverOvertSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].Level;
-            nudDriverOvertSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].Level;
-            nudDriverOvertSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].Level;
-            nudDriverOvertSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].Level;
-            nudDriverOvertSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].Level;
+            dsgbxDriverOvertSkills.SkillSet = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills;
+            dsgbxDriverHiddenSkills.SkillSet = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills;
 
 
-            nudDriverHiddenSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0];
-            nudDriverHiddenSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1];
-            nudDriverHiddenSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2];
-
-            nudDriverHiddenSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0];
-            nudDriverHiddenSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1];
-            nudDriverHiddenSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2];
-
-            nudDriverHiddenSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0];
-            nudDriverHiddenSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1];
-            nudDriverHiddenSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2];
-
-            nudDriverHiddenSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0];
-            nudDriverHiddenSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1];
-            nudDriverHiddenSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2];
-
-            nudDriverHiddenSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0];
-            nudDriverHiddenSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1];
-            nudDriverHiddenSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2];
-
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c1r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c1r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c1r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c2r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c2r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c2r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c3r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c3r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c3r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c4r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c4r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c4r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2]);
-
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c5r1, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c5r2, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1]);
-            CreateDriverSkillComboBox(cbxDriverHiddenSkill_c5r3, SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2]);
-
-            nudDriverHiddenSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].ColumnNo;
-            nudDriverHiddenSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].ColumnNo;
-            nudDriverHiddenSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].ColumnNo;
-            nudDriverHiddenSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].ColumnNo;
-            nudDriverHiddenSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].ColumnNo;
-
-            nudDriverHiddenSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].Level;
-            nudDriverHiddenSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].Level;
-            nudDriverHiddenSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level;
-            nudDriverHiddenSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level;
-            nudDriverHiddenSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level;
 
         }
 
@@ -667,9 +576,8 @@ namespace XC2SaveNETThingy
 
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].ID = did;
             cbxDriverID.SelectedItem = SAVEDATA.Drivers.FirstOrDefault(d => d.ID.Equals(did));
-            
+
             RefreshDriverList();
-            
         }
 
         private void cbxDriverBlade2_SelectionChangeCommitted(object sender, EventArgs e)
@@ -795,6 +703,17 @@ namespace XC2SaveNETThingy
         private void nudDriverJusticePoints_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].JusticePoints = (UInt32)nudDriverJusticePoints.Value;
+        }
+
+        private void dsgbxDriverOvertSkills_Leave(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills = dsgbxDriverOvertSkills.SkillSet;
+            Console.WriteLine("MAD SKILLZ SAVED");
+        }
+
+        private void dsgbxDriverHiddenSkills_Leave(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills = dsgbxDriverHiddenSkills.SkillSet;
         }
     }
 }

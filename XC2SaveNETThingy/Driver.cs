@@ -237,7 +237,7 @@ namespace XC2SaveNETThingy
             public const int SIZE = 0xA;
 
             public UInt16[] IDs { get; set; }
-            public Int16 ColumnNo { get; set; }
+            public UInt16 ColumnNo { get; set; }
             public UInt16 Level { get; set; }
 
             public DriverSkill(Byte[] data)
@@ -246,7 +246,7 @@ namespace XC2SaveNETThingy
                 for (int i = 0; i < IDs.Length; i++)
                     IDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(i * 2, 2), 0);
 
-                ColumnNo = BitConverter.ToInt16(data.GetByteSubArray(0x6, 2), 0);
+                ColumnNo = BitConverter.ToUInt16(data.GetByteSubArray(0x6, 2), 0);
                 Level = BitConverter.ToUInt16(data.GetByteSubArray(0x8, 2), 0);
             }
 
