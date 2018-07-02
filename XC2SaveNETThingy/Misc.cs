@@ -113,10 +113,10 @@ namespace XC2SaveNETThingy
 
     public abstract class ItemHandle : IXC2SaveObject
     {
-        public Byte Type;
+        public Byte Type { get; set; }
         protected const int TYPE_BITS = 6;
 
-        public UInt32 Serial;
+        public UInt32 Serial { get; set; }
 
         protected ItemHandle(Byte[] data, int size)
         {

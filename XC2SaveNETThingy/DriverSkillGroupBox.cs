@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XC2SaveNETThingy
@@ -147,14 +141,6 @@ namespace XC2SaveNETThingy
                 return 0;
         }
 
-        private UInt16 SanitizeNudValue(int value)
-        {
-            if (value < 0 || value > 65535)
-                return 0;
-            else
-                return (UInt16)value;
-        }
-
 
 
         private void nudDriverSkill_c1r1_ValueChanged(object sender, EventArgs e)
@@ -294,77 +280,77 @@ namespace XC2SaveNETThingy
 
         private void cbxDriverSkill_c1r1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c1r1.Value = SanitizeNudValue(cbxDriverSkill_c1r1.SelectedIndex);
+            nudDriverSkill_c1r1.Value = cbxDriverSkill_c1r1.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c1r2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c1r2.Value = SanitizeNudValue(cbxDriverSkill_c1r2.SelectedIndex);
+            nudDriverSkill_c1r2.Value = cbxDriverSkill_c1r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c1r3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c1r3.Value = SanitizeNudValue(cbxDriverSkill_c1r3.SelectedIndex);
+            nudDriverSkill_c1r3.Value = cbxDriverSkill_c1r3.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c2r1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c2r1.Value = SanitizeNudValue(cbxDriverSkill_c2r1.SelectedIndex);
+            nudDriverSkill_c2r1.Value = cbxDriverSkill_c2r1.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c2r2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c2r2.Value = SanitizeNudValue(cbxDriverSkill_c2r2.SelectedIndex);
+            nudDriverSkill_c2r2.Value = cbxDriverSkill_c2r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c2r3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c2r2.Value = SanitizeNudValue(cbxDriverSkill_c2r2.SelectedIndex);
+            nudDriverSkill_c2r2.Value = cbxDriverSkill_c2r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c3r1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c3r1.Value = SanitizeNudValue(cbxDriverSkill_c3r1.SelectedIndex);
+            nudDriverSkill_c3r1.Value = cbxDriverSkill_c3r1.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c3r2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c3r2.Value = SanitizeNudValue(cbxDriverSkill_c3r2.SelectedIndex);
+            nudDriverSkill_c3r2.Value = cbxDriverSkill_c3r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c3r3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c3r3.Value = SanitizeNudValue(cbxDriverSkill_c3r3.SelectedIndex);
+            nudDriverSkill_c3r3.Value = cbxDriverSkill_c3r3.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c4r1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c4r1.Value = SanitizeNudValue(cbxDriverSkill_c4r1.SelectedIndex);
+            nudDriverSkill_c4r1.Value = cbxDriverSkill_c4r1.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c4r2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c4r2.Value = SanitizeNudValue(cbxDriverSkill_c4r2.SelectedIndex);
+            nudDriverSkill_c4r2.Value = cbxDriverSkill_c4r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c4r3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c4r3.Value = SanitizeNudValue(cbxDriverSkill_c4r3.SelectedIndex);
+            nudDriverSkill_c4r3.Value = cbxDriverSkill_c4r3.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c5r1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c5r1.Value = SanitizeNudValue(cbxDriverSkill_c5r1.SelectedIndex);
+            nudDriverSkill_c5r1.Value = cbxDriverSkill_c5r1.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c5r2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c5r2.Value = SanitizeNudValue(cbxDriverSkill_c5r2.SelectedIndex);
+            nudDriverSkill_c5r2.Value = cbxDriverSkill_c5r2.SelectedIndex.SanitizeUInt16();
         }
 
         private void cbxDriverSkill_c5r3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSkill_c5r3.Value = SanitizeNudValue(cbxDriverSkill_c5r3.SelectedIndex);
+            nudDriverSkill_c5r3.Value = cbxDriverSkill_c5r3.SelectedIndex.SanitizeUInt16();
         }
 
         private void nudDriverSkill_c1_ColumnNo_ValueChanged(object sender, EventArgs e)

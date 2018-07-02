@@ -298,6 +298,46 @@ namespace XC2SaveNETThingy
 
             public string Name { get { return ToString(); } }
 
+            // janky properties to allow DataGridView to access Time sub-properties
+            public UInt32 Time_Hours
+            {
+                get
+                {
+                    return Time.Hours;
+                }
+
+                set
+                {
+                    Time.Hours = value;
+                }
+            }
+
+            public Byte Time_Minutes
+            {
+                get
+                {
+                    return Time.Minutes;
+                }
+
+                set
+                {
+                    Time.Minutes = value;
+                }
+            }
+
+            public Byte Time_Seconds
+            {
+                get
+                {
+                    return Time.Seconds;
+                }
+
+                set
+                {
+                    Time.Seconds = value;
+                }
+            }
+
 
             public Item(Byte[] data)
             {

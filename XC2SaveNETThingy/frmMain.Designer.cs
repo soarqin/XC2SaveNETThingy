@@ -95,6 +95,141 @@
             this.cbxPartyLeader = new System.Windows.Forms.ComboBox();
             this.label63 = new System.Windows.Forms.Label();
             this.tabDrivers = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lbxDrivers = new System.Windows.Forms.ListBox();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabDriversMisc = new System.Windows.Forms.TabPage();
+            this.groupBox34 = new System.Windows.Forms.GroupBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.cbxDriverID = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cbxDriverIsActive = new System.Windows.Forms.ComboBox();
+            this.nudDriverID = new System.Windows.Forms.NumericUpDown();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.label123 = new System.Windows.Forms.Label();
+            this.nudDriverPouchesTime = new System.Windows.Forms.NumericUpDown();
+            this.label122 = new System.Windows.Forms.Label();
+            this.nudDriverPouchesItemID = new System.Windows.Forms.NumericUpDown();
+            this.label121 = new System.Windows.Forms.Label();
+            this.chkDriverPouchesIsUnlocked = new System.Windows.Forms.CheckBox();
+            this.cbxDriverPouches = new System.Windows.Forms.ComboBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.groupBox33 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverAccessoryType = new System.Windows.Forms.ComboBox();
+            this.cbxDriverAccessory3ID = new System.Windows.Forms.ComboBox();
+            this.label130 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory3Serial = new System.Windows.Forms.NumericUpDown();
+            this.label131 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory3Type = new System.Windows.Forms.NumericUpDown();
+            this.label132 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory3ID = new System.Windows.Forms.NumericUpDown();
+            this.groupBox32 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverAccessory2Type = new System.Windows.Forms.ComboBox();
+            this.cbxDriverAccessory2ID = new System.Windows.Forms.ComboBox();
+            this.label127 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory2Serial = new System.Windows.Forms.NumericUpDown();
+            this.label128 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory2Type = new System.Windows.Forms.NumericUpDown();
+            this.label129 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory2ID = new System.Windows.Forms.NumericUpDown();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverAccessory1Type = new System.Windows.Forms.ComboBox();
+            this.cbxDriverAccessory1ID = new System.Windows.Forms.ComboBox();
+            this.label124 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory1Serial = new System.Windows.Forms.NumericUpDown();
+            this.label125 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory1Type = new System.Windows.Forms.NumericUpDown();
+            this.label126 = new System.Windows.Forms.Label();
+            this.nudDriverAccessory1ID = new System.Windows.Forms.NumericUpDown();
+            this.groupBox28 = new System.Windows.Forms.GroupBox();
+            this.nudDriverArtLevel = new System.Windows.Forms.NumericUpDown();
+            this.label52 = new System.Windows.Forms.Label();
+            this.cbxDriverArt = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.nudDriverArtID = new System.Windows.Forms.NumericUpDown();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverWeaponArtId3 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverWeaponArtId2 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverWeaponArtId1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverTotalWeaponPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArtId3 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArtId2 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArtId1 = new System.Windows.Forms.NumericUpDown();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.cbxDriverWeapons = new System.Windows.Forms.ComboBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverBonusExp = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverGuardRate = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverCriticalRate = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverEtherDef = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverPhysDef = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverLuck = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverAgility = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverDexterity = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverEther = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverStrength = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverHpMax = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverLevel = new System.Windows.Forms.NumericUpDown();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverBlade3 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverBlade2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverBlade3 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverBlade2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverBlade1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverBlade1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverSetBlade = new System.Windows.Forms.ComboBox();
+            this.nudDriverSetBlade = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.nudDriverJusticePoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverJusticeLevel = new System.Windows.Forms.NumericUpDown();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.nudDriverCompassionPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverCompassionLevel = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.nudDriverBraveryPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverBraveryLevel = new System.Windows.Forms.NumericUpDown();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.nudDriverTruthPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverTruthLevel = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tabDriversSkills = new System.Windows.Forms.TabPage();
             this.tabBlades = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbxBlades = new System.Windows.Forms.ListBox();
@@ -239,7 +374,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPcWpnChipBox = new System.Windows.Forms.TabPage();
-            this.dgvPcWpnChipBox = new System.Windows.Forms.DataGridView();
             this.tabPcEquipBox = new System.Windows.Forms.TabPage();
             this.dgvPcEquipBox = new System.Windows.Forms.DataGridView();
             this.tabEquipOrbBox = new System.Windows.Forms.TabPage();
@@ -277,96 +411,9 @@
             this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lbxDrivers = new System.Windows.Forms.ListBox();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabDriversMisc = new System.Windows.Forms.TabPage();
-            this.nudDriverID = new System.Windows.Forms.NumericUpDown();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.txtDriverWeaponArtId3 = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.txtDriverWeaponArtId2 = new System.Windows.Forms.TextBox();
-            this.txtDriverTotalWeaponPoints = new System.Windows.Forms.TextBox();
-            this.txtDriverWeaponArtId1 = new System.Windows.Forms.TextBox();
-            this.txtDriverWeaponPoints = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.cbxWeapons = new System.Windows.Forms.ComboBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBonusExp = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverGuardRate = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverCriticalRate = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverEtherDef = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverPhysDef = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverLuck = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverAgility = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverDexterity = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverEther = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverStrength = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverHpMax = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverLevel = new System.Windows.Forms.NumericUpDown();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.cbxDriverIsActive = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.cbxDriverBlade3 = new System.Windows.Forms.ComboBox();
-            this.cbxDriverBlade2 = new System.Windows.Forms.ComboBox();
-            this.nudDriverBlade3 = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBlade2 = new System.Windows.Forms.NumericUpDown();
-            this.cbxDriverBlade1 = new System.Windows.Forms.ComboBox();
-            this.nudDriverBlade1 = new System.Windows.Forms.NumericUpDown();
-            this.cbxDriverSetBlade = new System.Windows.Forms.ComboBox();
-            this.nudDriverSetBlade = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.nudDriverJusticePoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverJusticeLevel = new System.Windows.Forms.NumericUpDown();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.nudDriverCompassionPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverCompassionLevel = new System.Windows.Forms.NumericUpDown();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.nudDriverBraveryPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBraveryLevel = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.nudDriverTruthPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverTruthLevel = new System.Windows.Forms.NumericUpDown();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cbxDriverID = new System.Windows.Forms.ComboBox();
-            this.tabDriversSkills = new System.Windows.Forms.TabPage();
-            this.dsgbxDriverOvertSkills = new XC2SaveNETThingy.DriverSkillGroupBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dsgbxDriverHiddenSkills = new XC2SaveNETThingy.DriverSkillGroupBox();
+            this.dsgbxDriverOvertSkills = new XC2SaveNETThingy.DriverSkillGroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -377,6 +424,74 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x04)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x02)).BeginInit();
             this.tabDrivers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabDriversMisc.SuspendLayout();
+            this.groupBox34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).BeginInit();
+            this.groupBox30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPouchesTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPouchesItemID)).BeginInit();
+            this.groupBox29.SuspendLayout();
+            this.groupBox33.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3ID)).BeginInit();
+            this.groupBox32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2ID)).BeginInit();
+            this.groupBox31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1ID)).BeginInit();
+            this.groupBox28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverArtLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverArtID)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId1)).BeginInit();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPhysDef)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLuck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAgility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverDexterity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEther)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverStrength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHpMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLevel)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverSetBlade)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticePoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticeLevel)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionLevel)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryLevel)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).BeginInit();
+            this.tabDriversSkills.SuspendLayout();
             this.tabBlades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -453,8 +568,6 @@
             this.tabBladeUnknown.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPcWpnChipBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
             this.tabPcEquipBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).BeginInit();
             this.tabEquipOrbBox.SuspendLayout();
@@ -489,54 +602,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).BeginInit();
             this.tabHanaAssistBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            this.tabDriversMisc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).BeginInit();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPhysDef)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLuck)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAgility)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverDexterity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEther)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverStrength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHpMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLevel)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverSetBlade)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticePoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticeLevel)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionLevel)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryLevel)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).BeginInit();
-            this.tabDriversSkills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(101, 12);
+            this.btnLoad.Location = new System.Drawing.Point(23, 7);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 0;
@@ -1009,11 +1083,12 @@
             this.tabControl1.Controls.Add(this.tabDrivers);
             this.tabControl1.Controls.Add(this.tabBlades);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(12, 54);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1118, 568);
+            this.tabControl1.Size = new System.Drawing.Size(1142, 607);
             this.tabControl1.TabIndex = 32;
             // 
             // tabMain
@@ -1048,7 +1123,7 @@
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMain.Size = new System.Drawing.Size(1110, 542);
+            this.tabMain.Size = new System.Drawing.Size(1134, 581);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
             // 
@@ -1189,9 +1264,1550 @@
             this.tabDrivers.Location = new System.Drawing.Point(4, 22);
             this.tabDrivers.Name = "tabDrivers";
             this.tabDrivers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDrivers.Size = new System.Drawing.Size(1110, 542);
+            this.tabDrivers.Size = new System.Drawing.Size(1134, 581);
             this.tabDrivers.TabIndex = 1;
             this.tabDrivers.Text = "Drivers";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lbxDrivers);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.tabControl4);
+            this.splitContainer2.Size = new System.Drawing.Size(1128, 575);
+            this.splitContainer2.SplitterDistance = 168;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // lbxDrivers
+            // 
+            this.lbxDrivers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxDrivers.FormattingEnabled = true;
+            this.lbxDrivers.Location = new System.Drawing.Point(0, 0);
+            this.lbxDrivers.Name = "lbxDrivers";
+            this.lbxDrivers.Size = new System.Drawing.Size(168, 575);
+            this.lbxDrivers.TabIndex = 0;
+            this.lbxDrivers.SelectedIndexChanged += new System.EventHandler(this.lbxDrivers_SelectedIndexChanged);
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabDriversMisc);
+            this.tabControl4.Controls.Add(this.tabDriversSkills);
+            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl4.Location = new System.Drawing.Point(0, 0);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(956, 575);
+            this.tabControl4.TabIndex = 0;
+            // 
+            // tabDriversMisc
+            // 
+            this.tabDriversMisc.Controls.Add(this.groupBox34);
+            this.tabDriversMisc.Controls.Add(this.groupBox30);
+            this.tabDriversMisc.Controls.Add(this.groupBox29);
+            this.tabDriversMisc.Controls.Add(this.groupBox28);
+            this.tabDriversMisc.Controls.Add(this.groupBox10);
+            this.tabDriversMisc.Controls.Add(this.groupBox9);
+            this.tabDriversMisc.Controls.Add(this.groupBox8);
+            this.tabDriversMisc.Controls.Add(this.groupBox3);
+            this.tabDriversMisc.Location = new System.Drawing.Point(4, 22);
+            this.tabDriversMisc.Name = "tabDriversMisc";
+            this.tabDriversMisc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriversMisc.Size = new System.Drawing.Size(948, 549);
+            this.tabDriversMisc.TabIndex = 0;
+            this.tabDriversMisc.Text = "Misc";
+            this.tabDriversMisc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox34
+            // 
+            this.groupBox34.Controls.Add(this.label51);
+            this.groupBox34.Controls.Add(this.cbxDriverID);
+            this.groupBox34.Controls.Add(this.label39);
+            this.groupBox34.Controls.Add(this.cbxDriverIsActive);
+            this.groupBox34.Controls.Add(this.nudDriverID);
+            this.groupBox34.Location = new System.Drawing.Point(6, 6);
+            this.groupBox34.Name = "groupBox34";
+            this.groupBox34.Size = new System.Drawing.Size(221, 78);
+            this.groupBox34.TabIndex = 45;
+            this.groupBox34.TabStop = false;
+            this.groupBox34.Text = "Driver";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(6, 16);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(52, 13);
+            this.label51.TabIndex = 37;
+            this.label51.Text = "Driver ID:";
+            // 
+            // cbxDriverID
+            // 
+            this.cbxDriverID.FormattingEnabled = true;
+            this.cbxDriverID.Location = new System.Drawing.Point(112, 12);
+            this.cbxDriverID.Name = "cbxDriverID";
+            this.cbxDriverID.Size = new System.Drawing.Size(103, 21);
+            this.cbxDriverID.TabIndex = 30;
+            this.cbxDriverID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverID_SelectionChangeCommitted);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 42);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(51, 13);
+            this.label39.TabIndex = 34;
+            this.label39.Text = "Is Active:";
+            // 
+            // cbxDriverIsActive
+            // 
+            this.cbxDriverIsActive.FormattingEnabled = true;
+            this.cbxDriverIsActive.Location = new System.Drawing.Point(63, 39);
+            this.cbxDriverIsActive.Name = "cbxDriverIsActive";
+            this.cbxDriverIsActive.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverIsActive.TabIndex = 35;
+            // 
+            // nudDriverID
+            // 
+            this.nudDriverID.Location = new System.Drawing.Point(63, 13);
+            this.nudDriverID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverID.Name = "nudDriverID";
+            this.nudDriverID.Size = new System.Drawing.Size(43, 20);
+            this.nudDriverID.TabIndex = 41;
+            this.nudDriverID.ValueChanged += new System.EventHandler(this.nudDriverID_ValueChanged);
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Controls.Add(this.label123);
+            this.groupBox30.Controls.Add(this.nudDriverPouchesTime);
+            this.groupBox30.Controls.Add(this.label122);
+            this.groupBox30.Controls.Add(this.nudDriverPouchesItemID);
+            this.groupBox30.Controls.Add(this.label121);
+            this.groupBox30.Controls.Add(this.chkDriverPouchesIsUnlocked);
+            this.groupBox30.Controls.Add(this.cbxDriverPouches);
+            this.groupBox30.Controls.Add(this.label67);
+            this.groupBox30.Location = new System.Drawing.Point(227, 137);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(253, 123);
+            this.groupBox30.TabIndex = 44;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "Pouches";
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(201, 93);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(27, 13);
+            this.label123.TabIndex = 7;
+            this.label123.Text = "sec.";
+            // 
+            // nudDriverPouchesTime
+            // 
+            this.nudDriverPouchesTime.DecimalPlaces = 7;
+            this.nudDriverPouchesTime.Location = new System.Drawing.Point(75, 91);
+            this.nudDriverPouchesTime.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudDriverPouchesTime.Name = "nudDriverPouchesTime";
+            this.nudDriverPouchesTime.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverPouchesTime.TabIndex = 6;
+            this.nudDriverPouchesTime.ValueChanged += new System.EventHandler(this.nudDriverPouchesTime_ValueChanged);
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(7, 93);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(54, 13);
+            this.label122.TabIndex = 5;
+            this.label122.Text = "Time Left:";
+            // 
+            // nudDriverPouchesItemID
+            // 
+            this.nudDriverPouchesItemID.Location = new System.Drawing.Point(75, 65);
+            this.nudDriverPouchesItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverPouchesItemID.Name = "nudDriverPouchesItemID";
+            this.nudDriverPouchesItemID.Size = new System.Drawing.Size(53, 20);
+            this.nudDriverPouchesItemID.TabIndex = 4;
+            this.nudDriverPouchesItemID.ValueChanged += new System.EventHandler(this.nudDriverPouchesItemID_ValueChanged);
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Location = new System.Drawing.Point(7, 70);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(44, 13);
+            this.label121.TabIndex = 3;
+            this.label121.Text = "Item ID:";
+            // 
+            // chkDriverPouchesIsUnlocked
+            // 
+            this.chkDriverPouchesIsUnlocked.AutoSize = true;
+            this.chkDriverPouchesIsUnlocked.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkDriverPouchesIsUnlocked.Location = new System.Drawing.Point(6, 47);
+            this.chkDriverPouchesIsUnlocked.Name = "chkDriverPouchesIsUnlocked";
+            this.chkDriverPouchesIsUnlocked.Size = new System.Drawing.Size(83, 17);
+            this.chkDriverPouchesIsUnlocked.TabIndex = 2;
+            this.chkDriverPouchesIsUnlocked.Text = "Is Unlocked";
+            this.chkDriverPouchesIsUnlocked.UseVisualStyleBackColor = true;
+            this.chkDriverPouchesIsUnlocked.CheckedChanged += new System.EventHandler(this.chkDriverPouchesIsUnlocked_CheckedChanged);
+            // 
+            // cbxDriverPouches
+            // 
+            this.cbxDriverPouches.FormattingEnabled = true;
+            this.cbxDriverPouches.Location = new System.Drawing.Point(75, 20);
+            this.cbxDriverPouches.Name = "cbxDriverPouches";
+            this.cbxDriverPouches.Size = new System.Drawing.Size(156, 21);
+            this.cbxDriverPouches.TabIndex = 1;
+            this.cbxDriverPouches.SelectedIndexChanged += new System.EventHandler(this.cbxDriverPouches_SelectedIndexChanged);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(7, 23);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(41, 13);
+            this.label67.TabIndex = 0;
+            this.label67.Text = "Pouch:";
+            // 
+            // groupBox29
+            // 
+            this.groupBox29.Controls.Add(this.groupBox33);
+            this.groupBox29.Controls.Add(this.groupBox32);
+            this.groupBox29.Controls.Add(this.groupBox31);
+            this.groupBox29.Location = new System.Drawing.Point(511, 231);
+            this.groupBox29.Name = "groupBox29";
+            this.groupBox29.Size = new System.Drawing.Size(385, 293);
+            this.groupBox29.TabIndex = 43;
+            this.groupBox29.TabStop = false;
+            this.groupBox29.Text = "Accessories";
+            // 
+            // groupBox33
+            // 
+            this.groupBox33.Controls.Add(this.cbxDriverAccessoryType);
+            this.groupBox33.Controls.Add(this.cbxDriverAccessory3ID);
+            this.groupBox33.Controls.Add(this.label130);
+            this.groupBox33.Controls.Add(this.nudDriverAccessory3Serial);
+            this.groupBox33.Controls.Add(this.label131);
+            this.groupBox33.Controls.Add(this.nudDriverAccessory3Type);
+            this.groupBox33.Controls.Add(this.label132);
+            this.groupBox33.Controls.Add(this.nudDriverAccessory3ID);
+            this.groupBox33.Location = new System.Drawing.Point(6, 195);
+            this.groupBox33.Name = "groupBox33";
+            this.groupBox33.Size = new System.Drawing.Size(373, 87);
+            this.groupBox33.TabIndex = 8;
+            this.groupBox33.TabStop = false;
+            this.groupBox33.Text = "Accessory 3";
+            // 
+            // cbxDriverAccessoryType
+            // 
+            this.cbxDriverAccessoryType.FormattingEnabled = true;
+            this.cbxDriverAccessoryType.Location = new System.Drawing.Point(196, 37);
+            this.cbxDriverAccessoryType.Name = "cbxDriverAccessoryType";
+            this.cbxDriverAccessoryType.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessoryType.TabIndex = 7;
+            // 
+            // cbxDriverAccessory3ID
+            // 
+            this.cbxDriverAccessory3ID.FormattingEnabled = true;
+            this.cbxDriverAccessory3ID.Location = new System.Drawing.Point(196, 18);
+            this.cbxDriverAccessory3ID.Name = "cbxDriverAccessory3ID";
+            this.cbxDriverAccessory3ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory3ID.TabIndex = 6;
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Location = new System.Drawing.Point(20, 20);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(44, 13);
+            this.label130.TabIndex = 0;
+            this.label130.Text = "Item ID:";
+            // 
+            // nudDriverAccessory3Serial
+            // 
+            this.nudDriverAccessory3Serial.Location = new System.Drawing.Point(70, 58);
+            this.nudDriverAccessory3Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory3Serial.Name = "nudDriverAccessory3Serial";
+            this.nudDriverAccessory3Serial.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory3Serial.TabIndex = 5;
+            this.nudDriverAccessory3Serial.ValueChanged += new System.EventHandler(this.nudDriverAccessory3Serial_ValueChanged);
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Location = new System.Drawing.Point(22, 40);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(34, 13);
+            this.label131.TabIndex = 1;
+            this.label131.Text = "Type:";
+            // 
+            // nudDriverAccessory3Type
+            // 
+            this.nudDriverAccessory3Type.Location = new System.Drawing.Point(70, 38);
+            this.nudDriverAccessory3Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory3Type.Name = "nudDriverAccessory3Type";
+            this.nudDriverAccessory3Type.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory3Type.TabIndex = 4;
+            this.nudDriverAccessory3Type.ValueChanged += new System.EventHandler(this.nudDriverAccessory3Type_ValueChanged);
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.Location = new System.Drawing.Point(20, 60);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(36, 13);
+            this.label132.TabIndex = 2;
+            this.label132.Text = "Serial:";
+            // 
+            // nudDriverAccessory3ID
+            // 
+            this.nudDriverAccessory3ID.Location = new System.Drawing.Point(70, 18);
+            this.nudDriverAccessory3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory3ID.Name = "nudDriverAccessory3ID";
+            this.nudDriverAccessory3ID.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory3ID.TabIndex = 3;
+            this.nudDriverAccessory3ID.ValueChanged += new System.EventHandler(this.nudDriverAccessory3ID_ValueChanged);
+            // 
+            // groupBox32
+            // 
+            this.groupBox32.Controls.Add(this.cbxDriverAccessory2Type);
+            this.groupBox32.Controls.Add(this.cbxDriverAccessory2ID);
+            this.groupBox32.Controls.Add(this.label127);
+            this.groupBox32.Controls.Add(this.nudDriverAccessory2Serial);
+            this.groupBox32.Controls.Add(this.label128);
+            this.groupBox32.Controls.Add(this.nudDriverAccessory2Type);
+            this.groupBox32.Controls.Add(this.label129);
+            this.groupBox32.Controls.Add(this.nudDriverAccessory2ID);
+            this.groupBox32.Location = new System.Drawing.Point(6, 104);
+            this.groupBox32.Name = "groupBox32";
+            this.groupBox32.Size = new System.Drawing.Size(373, 87);
+            this.groupBox32.TabIndex = 8;
+            this.groupBox32.TabStop = false;
+            this.groupBox32.Text = "Accessory 2";
+            // 
+            // cbxDriverAccessory2Type
+            // 
+            this.cbxDriverAccessory2Type.FormattingEnabled = true;
+            this.cbxDriverAccessory2Type.Location = new System.Drawing.Point(196, 37);
+            this.cbxDriverAccessory2Type.Name = "cbxDriverAccessory2Type";
+            this.cbxDriverAccessory2Type.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory2Type.TabIndex = 7;
+            // 
+            // cbxDriverAccessory2ID
+            // 
+            this.cbxDriverAccessory2ID.FormattingEnabled = true;
+            this.cbxDriverAccessory2ID.Location = new System.Drawing.Point(196, 18);
+            this.cbxDriverAccessory2ID.Name = "cbxDriverAccessory2ID";
+            this.cbxDriverAccessory2ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory2ID.TabIndex = 6;
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(20, 20);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(44, 13);
+            this.label127.TabIndex = 0;
+            this.label127.Text = "Item ID:";
+            // 
+            // nudDriverAccessory2Serial
+            // 
+            this.nudDriverAccessory2Serial.Location = new System.Drawing.Point(70, 58);
+            this.nudDriverAccessory2Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory2Serial.Name = "nudDriverAccessory2Serial";
+            this.nudDriverAccessory2Serial.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory2Serial.TabIndex = 5;
+            this.nudDriverAccessory2Serial.ValueChanged += new System.EventHandler(this.nudDriverAccessory2Serial_ValueChanged);
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(22, 40);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(34, 13);
+            this.label128.TabIndex = 1;
+            this.label128.Text = "Type:";
+            // 
+            // nudDriverAccessory2Type
+            // 
+            this.nudDriverAccessory2Type.Location = new System.Drawing.Point(70, 38);
+            this.nudDriverAccessory2Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory2Type.Name = "nudDriverAccessory2Type";
+            this.nudDriverAccessory2Type.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory2Type.TabIndex = 4;
+            this.nudDriverAccessory2Type.ValueChanged += new System.EventHandler(this.nudDriverAccessory2Type_ValueChanged);
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(20, 60);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(36, 13);
+            this.label129.TabIndex = 2;
+            this.label129.Text = "Serial:";
+            // 
+            // nudDriverAccessory2ID
+            // 
+            this.nudDriverAccessory2ID.Location = new System.Drawing.Point(70, 18);
+            this.nudDriverAccessory2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory2ID.Name = "nudDriverAccessory2ID";
+            this.nudDriverAccessory2ID.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory2ID.TabIndex = 3;
+            this.nudDriverAccessory2ID.ValueChanged += new System.EventHandler(this.nudDriverAccessory2ID_ValueChanged);
+            // 
+            // groupBox31
+            // 
+            this.groupBox31.Controls.Add(this.cbxDriverAccessory1Type);
+            this.groupBox31.Controls.Add(this.cbxDriverAccessory1ID);
+            this.groupBox31.Controls.Add(this.label124);
+            this.groupBox31.Controls.Add(this.nudDriverAccessory1Serial);
+            this.groupBox31.Controls.Add(this.label125);
+            this.groupBox31.Controls.Add(this.nudDriverAccessory1Type);
+            this.groupBox31.Controls.Add(this.label126);
+            this.groupBox31.Controls.Add(this.nudDriverAccessory1ID);
+            this.groupBox31.Location = new System.Drawing.Point(6, 13);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Size = new System.Drawing.Size(373, 87);
+            this.groupBox31.TabIndex = 6;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "Accessory 1";
+            // 
+            // cbxDriverAccessory1Type
+            // 
+            this.cbxDriverAccessory1Type.FormattingEnabled = true;
+            this.cbxDriverAccessory1Type.Location = new System.Drawing.Point(196, 37);
+            this.cbxDriverAccessory1Type.Name = "cbxDriverAccessory1Type";
+            this.cbxDriverAccessory1Type.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory1Type.TabIndex = 7;
+            // 
+            // cbxDriverAccessory1ID
+            // 
+            this.cbxDriverAccessory1ID.FormattingEnabled = true;
+            this.cbxDriverAccessory1ID.Location = new System.Drawing.Point(196, 18);
+            this.cbxDriverAccessory1ID.Name = "cbxDriverAccessory1ID";
+            this.cbxDriverAccessory1ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory1ID.TabIndex = 6;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(20, 20);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(44, 13);
+            this.label124.TabIndex = 0;
+            this.label124.Text = "Item ID:";
+            // 
+            // nudDriverAccessory1Serial
+            // 
+            this.nudDriverAccessory1Serial.Location = new System.Drawing.Point(70, 58);
+            this.nudDriverAccessory1Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory1Serial.Name = "nudDriverAccessory1Serial";
+            this.nudDriverAccessory1Serial.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory1Serial.TabIndex = 5;
+            this.nudDriverAccessory1Serial.ValueChanged += new System.EventHandler(this.nudDriverAccessory1Serial_ValueChanged);
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Location = new System.Drawing.Point(22, 40);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(34, 13);
+            this.label125.TabIndex = 1;
+            this.label125.Text = "Type:";
+            // 
+            // nudDriverAccessory1Type
+            // 
+            this.nudDriverAccessory1Type.Location = new System.Drawing.Point(70, 38);
+            this.nudDriverAccessory1Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory1Type.Name = "nudDriverAccessory1Type";
+            this.nudDriverAccessory1Type.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory1Type.TabIndex = 4;
+            this.nudDriverAccessory1Type.ValueChanged += new System.EventHandler(this.nudDriverAccessory1Type_ValueChanged);
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Location = new System.Drawing.Point(20, 60);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(36, 13);
+            this.label126.TabIndex = 2;
+            this.label126.Text = "Serial:";
+            // 
+            // nudDriverAccessory1ID
+            // 
+            this.nudDriverAccessory1ID.Location = new System.Drawing.Point(70, 18);
+            this.nudDriverAccessory1ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverAccessory1ID.Name = "nudDriverAccessory1ID";
+            this.nudDriverAccessory1ID.Size = new System.Drawing.Size(120, 20);
+            this.nudDriverAccessory1ID.TabIndex = 3;
+            this.nudDriverAccessory1ID.ValueChanged += new System.EventHandler(this.nudDriverAccessory1ID_ValueChanged);
+            // 
+            // groupBox28
+            // 
+            this.groupBox28.Controls.Add(this.nudDriverArtLevel);
+            this.groupBox28.Controls.Add(this.label52);
+            this.groupBox28.Controls.Add(this.cbxDriverArt);
+            this.groupBox28.Controls.Add(this.label38);
+            this.groupBox28.Controls.Add(this.nudDriverArtID);
+            this.groupBox28.Location = new System.Drawing.Point(511, 163);
+            this.groupBox28.Name = "groupBox28";
+            this.groupBox28.Size = new System.Drawing.Size(385, 67);
+            this.groupBox28.TabIndex = 42;
+            this.groupBox28.TabStop = false;
+            this.groupBox28.Text = "Driver Art Levels";
+            // 
+            // nudDriverArtLevel
+            // 
+            this.nudDriverArtLevel.Location = new System.Drawing.Point(63, 41);
+            this.nudDriverArtLevel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudDriverArtLevel.Name = "nudDriverArtLevel";
+            this.nudDriverArtLevel.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverArtLevel.TabIndex = 4;
+            this.nudDriverArtLevel.ValueChanged += new System.EventHandler(this.nudDriverArtLevel_ValueChanged);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 43);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(52, 13);
+            this.label52.TabIndex = 3;
+            this.label52.Text = "Art Level:";
+            // 
+            // cbxDriverArt
+            // 
+            this.cbxDriverArt.FormattingEnabled = true;
+            this.cbxDriverArt.Location = new System.Drawing.Point(118, 14);
+            this.cbxDriverArt.Name = "cbxDriverArt";
+            this.cbxDriverArt.Size = new System.Drawing.Size(261, 21);
+            this.cbxDriverArt.TabIndex = 2;
+            this.cbxDriverArt.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverArt_SelectionChangeCommitted);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 16);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(37, 13);
+            this.label38.TabIndex = 1;
+            this.label38.Text = "Art ID:";
+            // 
+            // nudDriverArtID
+            // 
+            this.nudDriverArtID.Location = new System.Drawing.Point(63, 14);
+            this.nudDriverArtID.Maximum = new decimal(new int[] {
+            525,
+            0,
+            0,
+            0});
+            this.nudDriverArtID.Name = "nudDriverArtID";
+            this.nudDriverArtID.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverArtID.TabIndex = 0;
+            this.nudDriverArtID.ValueChanged += new System.EventHandler(this.nudDriverArtID_ValueChanged);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.cbxDriverWeaponArtId3);
+            this.groupBox10.Controls.Add(this.cbxDriverWeaponArtId2);
+            this.groupBox10.Controls.Add(this.cbxDriverWeaponArtId1);
+            this.groupBox10.Controls.Add(this.nudDriverTotalWeaponPoints);
+            this.groupBox10.Controls.Add(this.nudDriverWeaponPoints);
+            this.groupBox10.Controls.Add(this.nudDriverWeaponArtId3);
+            this.groupBox10.Controls.Add(this.nudDriverWeaponArtId2);
+            this.groupBox10.Controls.Add(this.nudDriverWeaponArtId1);
+            this.groupBox10.Controls.Add(this.label62);
+            this.groupBox10.Controls.Add(this.label61);
+            this.groupBox10.Controls.Add(this.label60);
+            this.groupBox10.Controls.Add(this.label59);
+            this.groupBox10.Controls.Add(this.cbxDriverWeapons);
+            this.groupBox10.Controls.Add(this.label57);
+            this.groupBox10.Controls.Add(this.label58);
+            this.groupBox10.Location = new System.Drawing.Point(511, 6);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(385, 151);
+            this.groupBox10.TabIndex = 40;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Set Driver Arts";
+            // 
+            // cbxDriverWeaponArtId3
+            // 
+            this.cbxDriverWeaponArtId3.FormattingEnabled = true;
+            this.cbxDriverWeaponArtId3.Location = new System.Drawing.Point(117, 79);
+            this.cbxDriverWeaponArtId3.Name = "cbxDriverWeaponArtId3";
+            this.cbxDriverWeaponArtId3.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArtId3.TabIndex = 19;
+            this.cbxDriverWeaponArtId3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArtId3_SelectionChangeCommitted);
+            // 
+            // cbxDriverWeaponArtId2
+            // 
+            this.cbxDriverWeaponArtId2.FormattingEnabled = true;
+            this.cbxDriverWeaponArtId2.Location = new System.Drawing.Point(117, 59);
+            this.cbxDriverWeaponArtId2.Name = "cbxDriverWeaponArtId2";
+            this.cbxDriverWeaponArtId2.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArtId2.TabIndex = 18;
+            this.cbxDriverWeaponArtId2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArtId2_SelectionChangeCommitted);
+            // 
+            // cbxDriverWeaponArtId1
+            // 
+            this.cbxDriverWeaponArtId1.FormattingEnabled = true;
+            this.cbxDriverWeaponArtId1.Location = new System.Drawing.Point(117, 39);
+            this.cbxDriverWeaponArtId1.Name = "cbxDriverWeaponArtId1";
+            this.cbxDriverWeaponArtId1.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArtId1.TabIndex = 17;
+            this.cbxDriverWeaponArtId1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArtId1_SelectionChangeCommitted);
+            // 
+            // nudDriverTotalWeaponPoints
+            // 
+            this.nudDriverTotalWeaponPoints.Location = new System.Drawing.Point(118, 124);
+            this.nudDriverTotalWeaponPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTotalWeaponPoints.Name = "nudDriverTotalWeaponPoints";
+            this.nudDriverTotalWeaponPoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverTotalWeaponPoints.TabIndex = 16;
+            this.nudDriverTotalWeaponPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalWeaponPoints_ValueChanged);
+            // 
+            // nudDriverWeaponPoints
+            // 
+            this.nudDriverWeaponPoints.Location = new System.Drawing.Point(118, 105);
+            this.nudDriverWeaponPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponPoints.Name = "nudDriverWeaponPoints";
+            this.nudDriverWeaponPoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverWeaponPoints.TabIndex = 15;
+            this.nudDriverWeaponPoints.ValueChanged += new System.EventHandler(this.nudDriverWeaponPoints_ValueChanged);
+            // 
+            // nudDriverWeaponArtId3
+            // 
+            this.nudDriverWeaponArtId3.Location = new System.Drawing.Point(63, 79);
+            this.nudDriverWeaponArtId3.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArtId3.Name = "nudDriverWeaponArtId3";
+            this.nudDriverWeaponArtId3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArtId3.TabIndex = 14;
+            this.nudDriverWeaponArtId3.ValueChanged += new System.EventHandler(this.nudDriverWeaponArtId3_ValueChanged);
+            // 
+            // nudDriverWeaponArtId2
+            // 
+            this.nudDriverWeaponArtId2.Location = new System.Drawing.Point(63, 59);
+            this.nudDriverWeaponArtId2.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArtId2.Name = "nudDriverWeaponArtId2";
+            this.nudDriverWeaponArtId2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArtId2.TabIndex = 13;
+            this.nudDriverWeaponArtId2.ValueChanged += new System.EventHandler(this.nudDriverWeaponArtId2_ValueChanged);
+            // 
+            // nudDriverWeaponArtId1
+            // 
+            this.nudDriverWeaponArtId1.Location = new System.Drawing.Point(63, 39);
+            this.nudDriverWeaponArtId1.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArtId1.Name = "nudDriverWeaponArtId1";
+            this.nudDriverWeaponArtId1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArtId1.TabIndex = 12;
+            this.nudDriverWeaponArtId1.ValueChanged += new System.EventHandler(this.nudDriverWeaponArtId1_ValueChanged);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(6, 16);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(51, 13);
+            this.label62.TabIndex = 11;
+            this.label62.Text = "Weapon:";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(6, 126);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(110, 13);
+            this.label61.TabIndex = 5;
+            this.label61.Text = "Total Weapon Points:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(6, 107);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(83, 13);
+            this.label60.TabIndex = 4;
+            this.label60.Text = "Weapon Points:";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(6, 79);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(30, 13);
+            this.label59.TabIndex = 3;
+            this.label59.Text = "ID 3:";
+            // 
+            // cbxDriverWeapons
+            // 
+            this.cbxDriverWeapons.FormattingEnabled = true;
+            this.cbxDriverWeapons.Location = new System.Drawing.Point(63, 13);
+            this.cbxDriverWeapons.Name = "cbxDriverWeapons";
+            this.cbxDriverWeapons.Size = new System.Drawing.Size(155, 21);
+            this.cbxDriverWeapons.TabIndex = 0;
+            this.cbxDriverWeapons.SelectedIndexChanged += new System.EventHandler(this.cbxDriverWeapons_SelectedIndexChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(6, 41);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(30, 13);
+            this.label57.TabIndex = 1;
+            this.label57.Text = "ID 1:";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(6, 60);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(30, 13);
+            this.label58.TabIndex = 2;
+            this.label58.Text = "ID 2:";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.nudDriverTotalSkillPoints);
+            this.groupBox9.Controls.Add(this.nudDriverCurrentSkillPoints);
+            this.groupBox9.Controls.Add(this.nudDriverBattleExp);
+            this.groupBox9.Controls.Add(this.nudDriverBonusExp);
+            this.groupBox9.Controls.Add(this.nudDriverGuardRate);
+            this.groupBox9.Controls.Add(this.nudDriverCriticalRate);
+            this.groupBox9.Controls.Add(this.nudDriverEtherDef);
+            this.groupBox9.Controls.Add(this.nudDriverPhysDef);
+            this.groupBox9.Controls.Add(this.nudDriverLuck);
+            this.groupBox9.Controls.Add(this.nudDriverAgility);
+            this.groupBox9.Controls.Add(this.nudDriverDexterity);
+            this.groupBox9.Controls.Add(this.nudDriverEther);
+            this.groupBox9.Controls.Add(this.nudDriverStrength);
+            this.groupBox9.Controls.Add(this.nudDriverHpMax);
+            this.groupBox9.Controls.Add(this.nudDriverLevel);
+            this.groupBox9.Controls.Add(this.label56);
+            this.groupBox9.Controls.Add(this.label55);
+            this.groupBox9.Controls.Add(this.label54);
+            this.groupBox9.Controls.Add(this.label53);
+            this.groupBox9.Controls.Add(this.label50);
+            this.groupBox9.Controls.Add(this.label48);
+            this.groupBox9.Controls.Add(this.label49);
+            this.groupBox9.Controls.Add(this.label47);
+            this.groupBox9.Controls.Add(this.label46);
+            this.groupBox9.Controls.Add(this.label45);
+            this.groupBox9.Controls.Add(this.label42);
+            this.groupBox9.Controls.Add(this.label41);
+            this.groupBox9.Controls.Add(this.label44);
+            this.groupBox9.Controls.Add(this.label43);
+            this.groupBox9.Controls.Add(this.label40);
+            this.groupBox9.Location = new System.Drawing.Point(6, 95);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(209, 418);
+            this.groupBox9.TabIndex = 36;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Stats";
+            // 
+            // nudDriverTotalSkillPoints
+            // 
+            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(103, 380);
+            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
+            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverTotalSkillPoints.TabIndex = 38;
+            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
+            // 
+            // nudDriverCurrentSkillPoints
+            // 
+            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(102, 354);
+            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
+            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverCurrentSkillPoints.TabIndex = 37;
+            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
+            // 
+            // nudDriverBattleExp
+            // 
+            this.nudDriverBattleExp.Location = new System.Drawing.Point(102, 328);
+            this.nudDriverBattleExp.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBattleExp.Name = "nudDriverBattleExp";
+            this.nudDriverBattleExp.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverBattleExp.TabIndex = 36;
+            this.nudDriverBattleExp.ValueChanged += new System.EventHandler(this.nudDriverBattleExp_ValueChanged);
+            // 
+            // nudDriverBonusExp
+            // 
+            this.nudDriverBonusExp.Location = new System.Drawing.Point(103, 300);
+            this.nudDriverBonusExp.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBonusExp.Name = "nudDriverBonusExp";
+            this.nudDriverBonusExp.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverBonusExp.TabIndex = 35;
+            this.nudDriverBonusExp.ValueChanged += new System.EventHandler(this.nudDriverBonusExp_ValueChanged);
+            // 
+            // nudDriverGuardRate
+            // 
+            this.nudDriverGuardRate.Location = new System.Drawing.Point(109, 274);
+            this.nudDriverGuardRate.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudDriverGuardRate.Name = "nudDriverGuardRate";
+            this.nudDriverGuardRate.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverGuardRate.TabIndex = 34;
+            this.nudDriverGuardRate.ValueChanged += new System.EventHandler(this.nudDriverGuardRate_ValueChanged);
+            // 
+            // nudDriverCriticalRate
+            // 
+            this.nudDriverCriticalRate.Location = new System.Drawing.Point(109, 247);
+            this.nudDriverCriticalRate.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudDriverCriticalRate.Name = "nudDriverCriticalRate";
+            this.nudDriverCriticalRate.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverCriticalRate.TabIndex = 33;
+            this.nudDriverCriticalRate.ValueChanged += new System.EventHandler(this.nudDriverCriticalRate_ValueChanged);
+            // 
+            // nudDriverEtherDef
+            // 
+            this.nudDriverEtherDef.Location = new System.Drawing.Point(89, 222);
+            this.nudDriverEtherDef.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverEtherDef.Name = "nudDriverEtherDef";
+            this.nudDriverEtherDef.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverEtherDef.TabIndex = 32;
+            this.nudDriverEtherDef.ValueChanged += new System.EventHandler(this.nudDriverEtherDef_ValueChanged);
+            // 
+            // nudDriverPhysDef
+            // 
+            this.nudDriverPhysDef.Location = new System.Drawing.Point(89, 196);
+            this.nudDriverPhysDef.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverPhysDef.Name = "nudDriverPhysDef";
+            this.nudDriverPhysDef.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverPhysDef.TabIndex = 31;
+            this.nudDriverPhysDef.ValueChanged += new System.EventHandler(this.nudDriverPhysDef_ValueChanged);
+            // 
+            // nudDriverLuck
+            // 
+            this.nudDriverLuck.Location = new System.Drawing.Point(89, 169);
+            this.nudDriverLuck.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverLuck.Name = "nudDriverLuck";
+            this.nudDriverLuck.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverLuck.TabIndex = 30;
+            this.nudDriverLuck.ValueChanged += new System.EventHandler(this.nudDriverLuck_ValueChanged);
+            // 
+            // nudDriverAgility
+            // 
+            this.nudDriverAgility.Location = new System.Drawing.Point(89, 144);
+            this.nudDriverAgility.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverAgility.Name = "nudDriverAgility";
+            this.nudDriverAgility.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverAgility.TabIndex = 29;
+            this.nudDriverAgility.ValueChanged += new System.EventHandler(this.nudDriverAgility_ValueChanged);
+            // 
+            // nudDriverDexterity
+            // 
+            this.nudDriverDexterity.Location = new System.Drawing.Point(89, 118);
+            this.nudDriverDexterity.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverDexterity.Name = "nudDriverDexterity";
+            this.nudDriverDexterity.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverDexterity.TabIndex = 28;
+            this.nudDriverDexterity.ValueChanged += new System.EventHandler(this.nudDriverDexterity_ValueChanged);
+            // 
+            // nudDriverEther
+            // 
+            this.nudDriverEther.Location = new System.Drawing.Point(89, 91);
+            this.nudDriverEther.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverEther.Name = "nudDriverEther";
+            this.nudDriverEther.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverEther.TabIndex = 27;
+            this.nudDriverEther.ValueChanged += new System.EventHandler(this.nudDriverEther_ValueChanged);
+            // 
+            // nudDriverStrength
+            // 
+            this.nudDriverStrength.Location = new System.Drawing.Point(89, 66);
+            this.nudDriverStrength.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverStrength.Name = "nudDriverStrength";
+            this.nudDriverStrength.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverStrength.TabIndex = 26;
+            this.nudDriverStrength.ValueChanged += new System.EventHandler(this.nudDriverStrength_ValueChanged);
+            // 
+            // nudDriverHpMax
+            // 
+            this.nudDriverHpMax.Location = new System.Drawing.Point(89, 34);
+            this.nudDriverHpMax.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHpMax.Name = "nudDriverHpMax";
+            this.nudDriverHpMax.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverHpMax.TabIndex = 25;
+            this.nudDriverHpMax.ValueChanged += new System.EventHandler(this.nudDriverHpMax_ValueChanged);
+            // 
+            // nudDriverLevel
+            // 
+            this.nudDriverLevel.Location = new System.Drawing.Point(89, 13);
+            this.nudDriverLevel.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverLevel.Name = "nudDriverLevel";
+            this.nudDriverLevel.Size = new System.Drawing.Size(62, 20);
+            this.nudDriverLevel.TabIndex = 24;
+            this.nudDriverLevel.ValueChanged += new System.EventHandler(this.nudDriverLevel_ValueChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(8, 382);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(88, 13);
+            this.label56.TabIndex = 20;
+            this.label56.Text = "Total Skill Points:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(8, 356);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(98, 13);
+            this.label55.TabIndex = 19;
+            this.label55.Text = "Current Skill Points:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(8, 330);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(58, 13);
+            this.label54.TabIndex = 18;
+            this.label54.Text = "Battle Exp:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(8, 304);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(61, 13);
+            this.label53.TabIndex = 17;
+            this.label53.Text = "Bonus Exp:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(8, 275);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(65, 13);
+            this.label50.TabIndex = 7;
+            this.label50.Text = "Guard Rate:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(8, 223);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(58, 13);
+            this.label48.TabIndex = 12;
+            this.label48.Text = "Ether Def.:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(8, 249);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(67, 13);
+            this.label49.TabIndex = 7;
+            this.label49.Text = "Critical Rate:";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(8, 198);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(72, 13);
+            this.label47.TabIndex = 11;
+            this.label47.Text = "Physical Def.:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(8, 171);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(34, 13);
+            this.label46.TabIndex = 11;
+            this.label46.Text = "Luck:";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(7, 145);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(37, 13);
+            this.label45.TabIndex = 10;
+            this.label45.Text = "Agility:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(7, 119);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(54, 13);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "Dexterity: ";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(7, 41);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(48, 13);
+            this.label41.TabIndex = 2;
+            this.label41.Text = "Max HP:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(7, 93);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(35, 13);
+            this.label44.TabIndex = 8;
+            this.label44.Text = "Ether:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(7, 67);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(50, 13);
+            this.label43.TabIndex = 6;
+            this.label43.Text = "Strength:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(7, 15);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(39, 13);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "Level: ";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.cbxDriverBlade3);
+            this.groupBox8.Controls.Add(this.cbxDriverBlade2);
+            this.groupBox8.Controls.Add(this.nudDriverBlade3);
+            this.groupBox8.Controls.Add(this.nudDriverBlade2);
+            this.groupBox8.Controls.Add(this.cbxDriverBlade1);
+            this.groupBox8.Controls.Add(this.nudDriverBlade1);
+            this.groupBox8.Controls.Add(this.cbxDriverSetBlade);
+            this.groupBox8.Controls.Add(this.nudDriverSetBlade);
+            this.groupBox8.Controls.Add(this.label37);
+            this.groupBox8.Controls.Add(this.label36);
+            this.groupBox8.Controls.Add(this.label35);
+            this.groupBox8.Controls.Add(this.label34);
+            this.groupBox8.Location = new System.Drawing.Point(233, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(231, 125);
+            this.groupBox8.TabIndex = 32;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Equipped Blades";
+            // 
+            // cbxDriverBlade3
+            // 
+            this.cbxDriverBlade3.FormattingEnabled = true;
+            this.cbxDriverBlade3.Location = new System.Drawing.Point(104, 58);
+            this.cbxDriverBlade3.Name = "cbxDriverBlade3";
+            this.cbxDriverBlade3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverBlade3.TabIndex = 17;
+            this.cbxDriverBlade3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade3_SelectionChangeCommitted);
+            // 
+            // cbxDriverBlade2
+            // 
+            this.cbxDriverBlade2.FormattingEnabled = true;
+            this.cbxDriverBlade2.Location = new System.Drawing.Point(104, 38);
+            this.cbxDriverBlade2.Name = "cbxDriverBlade2";
+            this.cbxDriverBlade2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverBlade2.TabIndex = 16;
+            this.cbxDriverBlade2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade2_SelectionChangeCommitted);
+            // 
+            // nudDriverBlade3
+            // 
+            this.nudDriverBlade3.Location = new System.Drawing.Point(59, 58);
+            this.nudDriverBlade3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverBlade3.Name = "nudDriverBlade3";
+            this.nudDriverBlade3.Size = new System.Drawing.Size(47, 20);
+            this.nudDriverBlade3.TabIndex = 15;
+            this.nudDriverBlade3.ValueChanged += new System.EventHandler(this.nudDriverBlade3_ValueChanged);
+            // 
+            // nudDriverBlade2
+            // 
+            this.nudDriverBlade2.Location = new System.Drawing.Point(59, 38);
+            this.nudDriverBlade2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverBlade2.Name = "nudDriverBlade2";
+            this.nudDriverBlade2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverBlade2.TabIndex = 14;
+            this.nudDriverBlade2.ValueChanged += new System.EventHandler(this.nudDriverBlade2_ValueChanged);
+            // 
+            // cbxDriverBlade1
+            // 
+            this.cbxDriverBlade1.FormattingEnabled = true;
+            this.cbxDriverBlade1.Location = new System.Drawing.Point(104, 18);
+            this.cbxDriverBlade1.Name = "cbxDriverBlade1";
+            this.cbxDriverBlade1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverBlade1.TabIndex = 12;
+            this.cbxDriverBlade1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade1_SelectionChangeCommitted);
+            // 
+            // nudDriverBlade1
+            // 
+            this.nudDriverBlade1.Location = new System.Drawing.Point(59, 18);
+            this.nudDriverBlade1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverBlade1.Name = "nudDriverBlade1";
+            this.nudDriverBlade1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverBlade1.TabIndex = 13;
+            this.nudDriverBlade1.ValueChanged += new System.EventHandler(this.nudDriverBlade1_ValueChanged);
+            // 
+            // cbxDriverSetBlade
+            // 
+            this.cbxDriverSetBlade.FormattingEnabled = true;
+            this.cbxDriverSetBlade.Location = new System.Drawing.Point(104, 95);
+            this.cbxDriverSetBlade.Name = "cbxDriverSetBlade";
+            this.cbxDriverSetBlade.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverSetBlade.TabIndex = 9;
+            this.cbxDriverSetBlade.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverSetBlade_SelectionChangeCommitted);
+            // 
+            // nudDriverSetBlade
+            // 
+            this.nudDriverSetBlade.Location = new System.Drawing.Point(69, 96);
+            this.nudDriverSetBlade.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.nudDriverSetBlade.Name = "nudDriverSetBlade";
+            this.nudDriverSetBlade.Size = new System.Drawing.Size(36, 20);
+            this.nudDriverSetBlade.TabIndex = 8;
+            this.nudDriverSetBlade.ValueChanged += new System.EventHandler(this.nudDriverSetBlade_ValueChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(7, 98);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(56, 13);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "Set Blade:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(7, 59);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(46, 13);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Blade 3:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 41);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(46, 13);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Blade 2:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(7, 23);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(46, 13);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Blade 1:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Controls.Add(this.groupBox7);
+            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.groupBox6);
+            this.groupBox3.Location = new System.Drawing.Point(227, 264);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(259, 182);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ideas";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.nudDriverJusticePoints);
+            this.groupBox5.Controls.Add(this.nudDriverJusticeLevel);
+            this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.label29);
+            this.groupBox5.Location = new System.Drawing.Point(6, 136);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(247, 40);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Justice";
+            // 
+            // nudDriverJusticePoints
+            // 
+            this.nudDriverJusticePoints.Location = new System.Drawing.Point(141, 13);
+            this.nudDriverJusticePoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverJusticePoints.Name = "nudDriverJusticePoints";
+            this.nudDriverJusticePoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverJusticePoints.TabIndex = 18;
+            this.nudDriverJusticePoints.ValueChanged += new System.EventHandler(this.nudDriverJusticePoints_ValueChanged);
+            // 
+            // nudDriverJusticeLevel
+            // 
+            this.nudDriverJusticeLevel.Location = new System.Drawing.Point(48, 14);
+            this.nudDriverJusticeLevel.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverJusticeLevel.Name = "nudDriverJusticeLevel";
+            this.nudDriverJusticeLevel.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverJusticeLevel.TabIndex = 17;
+            this.nudDriverJusticeLevel.ValueChanged += new System.EventHandler(this.nudDriverJusticeLevel_ValueChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 16);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(36, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Level:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(96, 16);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(39, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Points:";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.nudDriverCompassionPoints);
+            this.groupBox7.Controls.Add(this.nudDriverCompassionLevel);
+            this.groupBox7.Controls.Add(this.label32);
+            this.groupBox7.Controls.Add(this.label33);
+            this.groupBox7.Location = new System.Drawing.Point(6, 97);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(247, 40);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Compassion";
+            // 
+            // nudDriverCompassionPoints
+            // 
+            this.nudDriverCompassionPoints.Location = new System.Drawing.Point(141, 12);
+            this.nudDriverCompassionPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverCompassionPoints.Name = "nudDriverCompassionPoints";
+            this.nudDriverCompassionPoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverCompassionPoints.TabIndex = 17;
+            this.nudDriverCompassionPoints.ValueChanged += new System.EventHandler(this.nudDriverCompassionPoints_ValueChanged);
+            // 
+            // nudDriverCompassionLevel
+            // 
+            this.nudDriverCompassionLevel.Location = new System.Drawing.Point(48, 13);
+            this.nudDriverCompassionLevel.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverCompassionLevel.Name = "nudDriverCompassionLevel";
+            this.nudDriverCompassionLevel.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverCompassionLevel.TabIndex = 16;
+            this.nudDriverCompassionLevel.ValueChanged += new System.EventHandler(this.nudDriverCompassionLevel_ValueChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 16);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(36, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Level:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(96, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(39, 13);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Points:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.nudDriverBraveryPoints);
+            this.groupBox4.Controls.Add(this.nudDriverBraveryLevel);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Location = new System.Drawing.Point(6, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(247, 40);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Bravery";
+            // 
+            // nudDriverBraveryPoints
+            // 
+            this.nudDriverBraveryPoints.Location = new System.Drawing.Point(141, 14);
+            this.nudDriverBraveryPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBraveryPoints.Name = "nudDriverBraveryPoints";
+            this.nudDriverBraveryPoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverBraveryPoints.TabIndex = 15;
+            this.nudDriverBraveryPoints.ValueChanged += new System.EventHandler(this.nudDriverBraveryPoints_ValueChanged);
+            // 
+            // nudDriverBraveryLevel
+            // 
+            this.nudDriverBraveryLevel.Location = new System.Drawing.Point(48, 14);
+            this.nudDriverBraveryLevel.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBraveryLevel.Name = "nudDriverBraveryLevel";
+            this.nudDriverBraveryLevel.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverBraveryLevel.TabIndex = 14;
+            this.nudDriverBraveryLevel.ValueChanged += new System.EventHandler(this.nudDriverBraveryLevel_ValueChanged);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 16);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(36, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Level:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(96, 16);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Points:";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.nudDriverTruthPoints);
+            this.groupBox6.Controls.Add(this.nudDriverTruthLevel);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Location = new System.Drawing.Point(6, 58);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(247, 40);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Truth";
+            // 
+            // nudDriverTruthPoints
+            // 
+            this.nudDriverTruthPoints.Location = new System.Drawing.Point(141, 13);
+            this.nudDriverTruthPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTruthPoints.Name = "nudDriverTruthPoints";
+            this.nudDriverTruthPoints.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverTruthPoints.TabIndex = 16;
+            this.nudDriverTruthPoints.ValueChanged += new System.EventHandler(this.nudDriverTruthPoints_ValueChanged);
+            // 
+            // nudDriverTruthLevel
+            // 
+            this.nudDriverTruthLevel.Location = new System.Drawing.Point(48, 13);
+            this.nudDriverTruthLevel.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTruthLevel.Name = "nudDriverTruthLevel";
+            this.nudDriverTruthLevel.Size = new System.Drawing.Size(42, 20);
+            this.nudDriverTruthLevel.TabIndex = 15;
+            this.nudDriverTruthLevel.ValueChanged += new System.EventHandler(this.nudDriverTruthLevel_ValueChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 16);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(36, 13);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Level:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(96, 16);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(39, 13);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "Points:";
+            // 
+            // tabDriversSkills
+            // 
+            this.tabDriversSkills.Controls.Add(this.dsgbxDriverHiddenSkills);
+            this.tabDriversSkills.Controls.Add(this.dsgbxDriverOvertSkills);
+            this.tabDriversSkills.Location = new System.Drawing.Point(4, 22);
+            this.tabDriversSkills.Name = "tabDriversSkills";
+            this.tabDriversSkills.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriversSkills.Size = new System.Drawing.Size(948, 549);
+            this.tabDriversSkills.TabIndex = 1;
+            this.tabDriversSkills.Text = "Skills";
+            this.tabDriversSkills.UseVisualStyleBackColor = true;
             // 
             // tabBlades
             // 
@@ -1200,7 +2816,7 @@
             this.tabBlades.Location = new System.Drawing.Point(4, 22);
             this.tabBlades.Name = "tabBlades";
             this.tabBlades.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBlades.Size = new System.Drawing.Size(1110, 542);
+            this.tabBlades.Size = new System.Drawing.Size(1134, 581);
             this.tabBlades.TabIndex = 2;
             this.tabBlades.Text = "Blades";
             // 
@@ -1217,8 +2833,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl3);
-            this.splitContainer1.Size = new System.Drawing.Size(1104, 536);
-            this.splitContainer1.SplitterDistance = 165;
+            this.splitContainer1.Size = new System.Drawing.Size(1128, 575);
+            this.splitContainer1.SplitterDistance = 168;
             this.splitContainer1.TabIndex = 0;
             // 
             // lbxBlades
@@ -1227,7 +2843,7 @@
             this.lbxBlades.FormattingEnabled = true;
             this.lbxBlades.Location = new System.Drawing.Point(0, 0);
             this.lbxBlades.Name = "lbxBlades";
-            this.lbxBlades.Size = new System.Drawing.Size(165, 536);
+            this.lbxBlades.Size = new System.Drawing.Size(168, 575);
             this.lbxBlades.TabIndex = 0;
             this.lbxBlades.SelectedIndexChanged += new System.EventHandler(this.lbxBlades_SelectedIndexChanged);
             // 
@@ -1241,7 +2857,7 @@
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(935, 536);
+            this.tabControl3.Size = new System.Drawing.Size(956, 575);
             this.tabControl3.TabIndex = 1;
             // 
             // tabBladeMisc
@@ -1293,7 +2909,7 @@
             this.tabBladeMisc.Location = new System.Drawing.Point(4, 22);
             this.tabBladeMisc.Name = "tabBladeMisc";
             this.tabBladeMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeMisc.Size = new System.Drawing.Size(927, 510);
+            this.tabBladeMisc.Size = new System.Drawing.Size(948, 549);
             this.tabBladeMisc.TabIndex = 0;
             this.tabBladeMisc.Text = "Misc";
             this.tabBladeMisc.UseVisualStyleBackColor = true;
@@ -2011,7 +3627,7 @@
             this.tabBladeArtsSkills.Location = new System.Drawing.Point(4, 22);
             this.tabBladeArtsSkills.Name = "tabBladeArtsSkills";
             this.tabBladeArtsSkills.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeArtsSkills.Size = new System.Drawing.Size(927, 510);
+            this.tabBladeArtsSkills.Size = new System.Drawing.Size(948, 549);
             this.tabBladeArtsSkills.TabIndex = 1;
             this.tabBladeArtsSkills.Text = "Arts/Skills";
             this.tabBladeArtsSkills.UseVisualStyleBackColor = true;
@@ -2375,7 +3991,7 @@
             this.tabBladePoppiswap.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswap.Name = "tabBladePoppiswap";
             this.tabBladePoppiswap.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladePoppiswap.Size = new System.Drawing.Size(927, 510);
+            this.tabBladePoppiswap.Size = new System.Drawing.Size(948, 549);
             this.tabBladePoppiswap.TabIndex = 3;
             this.tabBladePoppiswap.Text = "Poppiswap";
             this.tabBladePoppiswap.UseVisualStyleBackColor = true;
@@ -2636,7 +4252,7 @@
             this.tabBladeUnknown.Location = new System.Drawing.Point(4, 22);
             this.tabBladeUnknown.Name = "tabBladeUnknown";
             this.tabBladeUnknown.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeUnknown.Size = new System.Drawing.Size(927, 510);
+            this.tabBladeUnknown.Size = new System.Drawing.Size(948, 549);
             this.tabBladeUnknown.TabIndex = 2;
             this.tabBladeUnknown.Text = "Unknown";
             this.tabBladeUnknown.UseVisualStyleBackColor = true;
@@ -2764,7 +4380,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1110, 542);
+            this.tabPage2.Size = new System.Drawing.Size(1134, 581);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2793,30 +4409,19 @@
             this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1104, 536);
+            this.tabControl2.Size = new System.Drawing.Size(1128, 575);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPcWpnChipBox
             // 
-            this.tabPcWpnChipBox.Controls.Add(this.dgvPcWpnChipBox);
+            this.tabPcWpnChipBox.AutoScroll = true;
             this.tabPcWpnChipBox.Location = new System.Drawing.Point(4, 22);
             this.tabPcWpnChipBox.Name = "tabPcWpnChipBox";
             this.tabPcWpnChipBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPcWpnChipBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPcWpnChipBox.Size = new System.Drawing.Size(1120, 549);
             this.tabPcWpnChipBox.TabIndex = 0;
             this.tabPcWpnChipBox.Text = "PcWpnChipBox";
             this.tabPcWpnChipBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvPcWpnChipBox
-            // 
-            this.dgvPcWpnChipBox.AllowUserToAddRows = false;
-            this.dgvPcWpnChipBox.AllowUserToDeleteRows = false;
-            this.dgvPcWpnChipBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPcWpnChipBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPcWpnChipBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvPcWpnChipBox.Name = "dgvPcWpnChipBox";
-            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1090, 504);
-            this.dgvPcWpnChipBox.TabIndex = 0;
             // 
             // tabPcEquipBox
             // 
@@ -2824,7 +4429,7 @@
             this.tabPcEquipBox.Location = new System.Drawing.Point(4, 22);
             this.tabPcEquipBox.Name = "tabPcEquipBox";
             this.tabPcEquipBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPcEquipBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPcEquipBox.Size = new System.Drawing.Size(1120, 549);
             this.tabPcEquipBox.TabIndex = 1;
             this.tabPcEquipBox.Text = "PcEquipBox";
             this.tabPcEquipBox.UseVisualStyleBackColor = true;
@@ -2837,7 +4442,7 @@
             this.dgvPcEquipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcEquipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcEquipBox.Name = "dgvPcEquipBox";
-            this.dgvPcEquipBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvPcEquipBox.TabIndex = 0;
             // 
             // tabEquipOrbBox
@@ -2846,7 +4451,7 @@
             this.tabEquipOrbBox.Location = new System.Drawing.Point(4, 22);
             this.tabEquipOrbBox.Name = "tabEquipOrbBox";
             this.tabEquipOrbBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEquipOrbBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEquipOrbBox.Size = new System.Drawing.Size(1120, 549);
             this.tabEquipOrbBox.TabIndex = 2;
             this.tabEquipOrbBox.Text = "EquipOrbBox";
             this.tabEquipOrbBox.UseVisualStyleBackColor = true;
@@ -2859,7 +4464,7 @@
             this.dgvEquipOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
-            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEquipOrbBox.TabIndex = 0;
             // 
             // tabSalvageBox
@@ -2868,7 +4473,7 @@
             this.tabSalvageBox.Location = new System.Drawing.Point(4, 22);
             this.tabSalvageBox.Name = "tabSalvageBox";
             this.tabSalvageBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSalvageBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabSalvageBox.Size = new System.Drawing.Size(1120, 549);
             this.tabSalvageBox.TabIndex = 3;
             this.tabSalvageBox.Text = "SalvageBox";
             this.tabSalvageBox.UseVisualStyleBackColor = true;
@@ -2881,7 +4486,7 @@
             this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
             this.dgvSalvageBox.Name = "dgvSalvageBox";
-            this.dgvSalvageBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvSalvageBox.TabIndex = 0;
             // 
             // tabPreciousBox
@@ -2890,7 +4495,7 @@
             this.tabPreciousBox.Location = new System.Drawing.Point(4, 22);
             this.tabPreciousBox.Name = "tabPreciousBox";
             this.tabPreciousBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPreciousBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabPreciousBox.Size = new System.Drawing.Size(1120, 549);
             this.tabPreciousBox.TabIndex = 4;
             this.tabPreciousBox.Text = "PreciousBox";
             this.tabPreciousBox.UseVisualStyleBackColor = true;
@@ -2903,7 +4508,7 @@
             this.dgvPreciousBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreciousBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPreciousBox.Name = "dgvPreciousBox";
-            this.dgvPreciousBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvPreciousBox.TabIndex = 0;
             // 
             // tabInfoBox
@@ -2912,7 +4517,7 @@
             this.tabInfoBox.Location = new System.Drawing.Point(4, 22);
             this.tabInfoBox.Name = "tabInfoBox";
             this.tabInfoBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfoBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabInfoBox.Size = new System.Drawing.Size(1120, 549);
             this.tabInfoBox.TabIndex = 5;
             this.tabInfoBox.Text = "InfoBox";
             this.tabInfoBox.UseVisualStyleBackColor = true;
@@ -2925,7 +4530,7 @@
             this.dgvInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInfoBox.Location = new System.Drawing.Point(3, 3);
             this.dgvInfoBox.Name = "dgvInfoBox";
-            this.dgvInfoBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvInfoBox.TabIndex = 0;
             // 
             // tabEventBox
@@ -2934,7 +4539,7 @@
             this.tabEventBox.Location = new System.Drawing.Point(4, 22);
             this.tabEventBox.Name = "tabEventBox";
             this.tabEventBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEventBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEventBox.Size = new System.Drawing.Size(1120, 549);
             this.tabEventBox.TabIndex = 6;
             this.tabEventBox.Text = "EventBox";
             this.tabEventBox.UseVisualStyleBackColor = true;
@@ -2947,7 +4552,7 @@
             this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEventBox.Name = "dgvEventBox";
-            this.dgvEventBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEventBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEventBox.TabIndex = 0;
             // 
             // tabCollectionListBox
@@ -2956,7 +4561,7 @@
             this.tabCollectionListBox.Location = new System.Drawing.Point(4, 22);
             this.tabCollectionListBox.Name = "tabCollectionListBox";
             this.tabCollectionListBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCollectionListBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabCollectionListBox.Size = new System.Drawing.Size(1120, 549);
             this.tabCollectionListBox.TabIndex = 7;
             this.tabCollectionListBox.Text = "CollectionListBox";
             this.tabCollectionListBox.UseVisualStyleBackColor = true;
@@ -2969,7 +4574,7 @@
             this.dgvCollectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCollectionListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCollectionListBox.Name = "dgvCollectionListBox";
-            this.dgvCollectionListBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvCollectionListBox.TabIndex = 0;
             // 
             // tabTreasureBox
@@ -2978,7 +4583,7 @@
             this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
             this.tabTreasureBox.Name = "tabTreasureBox";
             this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreasureBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 549);
             this.tabTreasureBox.TabIndex = 8;
             this.tabTreasureBox.Text = "TreasureBox";
             this.tabTreasureBox.UseVisualStyleBackColor = true;
@@ -2991,7 +4596,7 @@
             this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
             this.dgvTreasureBox.Name = "dgvTreasureBox";
-            this.dgvTreasureBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvTreasureBox.TabIndex = 0;
             // 
             // tabEmptyOrbBox
@@ -3000,7 +4605,7 @@
             this.tabEmptyOrbBox.Location = new System.Drawing.Point(4, 22);
             this.tabEmptyOrbBox.Name = "tabEmptyOrbBox";
             this.tabEmptyOrbBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmptyOrbBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabEmptyOrbBox.Size = new System.Drawing.Size(1120, 549);
             this.tabEmptyOrbBox.TabIndex = 9;
             this.tabEmptyOrbBox.Text = "EmptyOrbBox";
             this.tabEmptyOrbBox.UseVisualStyleBackColor = true;
@@ -3013,7 +4618,7 @@
             this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
-            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEmptyOrbBox.TabIndex = 0;
             // 
             // tabFavoriteBox
@@ -3022,7 +4627,7 @@
             this.tabFavoriteBox.Location = new System.Drawing.Point(4, 22);
             this.tabFavoriteBox.Name = "tabFavoriteBox";
             this.tabFavoriteBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFavoriteBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabFavoriteBox.Size = new System.Drawing.Size(1120, 549);
             this.tabFavoriteBox.TabIndex = 10;
             this.tabFavoriteBox.Text = "FavoriteBox";
             this.tabFavoriteBox.UseVisualStyleBackColor = true;
@@ -3035,7 +4640,7 @@
             this.dgvFavoriteBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFavoriteBox.Location = new System.Drawing.Point(3, 3);
             this.dgvFavoriteBox.Name = "dgvFavoriteBox";
-            this.dgvFavoriteBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvFavoriteBox.TabIndex = 0;
             // 
             // tabCrystalListBox
@@ -3044,7 +4649,7 @@
             this.tabCrystalListBox.Location = new System.Drawing.Point(4, 22);
             this.tabCrystalListBox.Name = "tabCrystalListBox";
             this.tabCrystalListBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCrystalListBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabCrystalListBox.Size = new System.Drawing.Size(1120, 549);
             this.tabCrystalListBox.TabIndex = 11;
             this.tabCrystalListBox.Text = "CrystalListBox";
             this.tabCrystalListBox.UseVisualStyleBackColor = true;
@@ -3057,7 +4662,7 @@
             this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCrystalListBox.Name = "dgvCrystalListBox";
-            this.dgvCrystalListBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvCrystalListBox.TabIndex = 0;
             // 
             // tabBoosterBox
@@ -3066,7 +4671,7 @@
             this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
             this.tabBoosterBox.Name = "tabBoosterBox";
             this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoosterBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 549);
             this.tabBoosterBox.TabIndex = 12;
             this.tabBoosterBox.Text = "BoosterBox";
             this.tabBoosterBox.UseVisualStyleBackColor = true;
@@ -3079,8 +4684,10 @@
             this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
             this.dgvBoosterBox.Name = "dgvBoosterBox";
-            this.dgvBoosterBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvBoosterBox.TabIndex = 0;
+            this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoosterBox_CellValueChanged);
+            this.dgvBoosterBox.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvBoosterBox_EditingControlShowing);
             // 
             // tabHanaRoleBox
             // 
@@ -3088,7 +4695,7 @@
             this.tabHanaRoleBox.Location = new System.Drawing.Point(4, 22);
             this.tabHanaRoleBox.Name = "tabHanaRoleBox";
             this.tabHanaRoleBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHanaRoleBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaRoleBox.Size = new System.Drawing.Size(1120, 549);
             this.tabHanaRoleBox.TabIndex = 13;
             this.tabHanaRoleBox.Text = "HanaRoleBox";
             this.tabHanaRoleBox.UseVisualStyleBackColor = true;
@@ -3101,7 +4708,7 @@
             this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
-            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaRoleBox.TabIndex = 0;
             // 
             // tabHanaAtrBox
@@ -3110,7 +4717,7 @@
             this.tabHanaAtrBox.Location = new System.Drawing.Point(4, 22);
             this.tabHanaAtrBox.Name = "tabHanaAtrBox";
             this.tabHanaAtrBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHanaAtrBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaAtrBox.Size = new System.Drawing.Size(1120, 549);
             this.tabHanaAtrBox.TabIndex = 14;
             this.tabHanaAtrBox.Text = "HanaAtrBox";
             this.tabHanaAtrBox.UseVisualStyleBackColor = true;
@@ -3123,7 +4730,7 @@
             this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
-            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaAtrBox.TabIndex = 0;
             // 
             // tabHanaArtsBox
@@ -3132,7 +4739,7 @@
             this.tabHanaArtsBox.Location = new System.Drawing.Point(4, 22);
             this.tabHanaArtsBox.Name = "tabHanaArtsBox";
             this.tabHanaArtsBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHanaArtsBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaArtsBox.Size = new System.Drawing.Size(1120, 549);
             this.tabHanaArtsBox.TabIndex = 15;
             this.tabHanaArtsBox.Text = "HanaArtsBox";
             this.tabHanaArtsBox.UseVisualStyleBackColor = true;
@@ -3145,7 +4752,7 @@
             this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
-            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaArtsBox.TabIndex = 0;
             // 
             // tabHanaNArtsBox
@@ -3154,7 +4761,7 @@
             this.tabHanaNArtsBox.Location = new System.Drawing.Point(4, 22);
             this.tabHanaNArtsBox.Name = "tabHanaNArtsBox";
             this.tabHanaNArtsBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHanaNArtsBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaNArtsBox.Size = new System.Drawing.Size(1120, 549);
             this.tabHanaNArtsBox.TabIndex = 16;
             this.tabHanaNArtsBox.Text = "HanaNArtsBox";
             this.tabHanaNArtsBox.UseVisualStyleBackColor = true;
@@ -3167,7 +4774,7 @@
             this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
-            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaNArtsBox.TabIndex = 0;
             // 
             // tabHanaAssistBox
@@ -3176,7 +4783,7 @@
             this.tabHanaAssistBox.Location = new System.Drawing.Point(4, 22);
             this.tabHanaAssistBox.Name = "tabHanaAssistBox";
             this.tabHanaAssistBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHanaAssistBox.Size = new System.Drawing.Size(1096, 510);
+            this.tabHanaAssistBox.Size = new System.Drawing.Size(1120, 549);
             this.tabHanaAssistBox.TabIndex = 17;
             this.tabHanaAssistBox.Text = "HanaAssistBox";
             this.tabHanaAssistBox.UseVisualStyleBackColor = true;
@@ -3189,7 +4796,7 @@
             this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
-            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1090, 504);
+            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaAssistBox.TabIndex = 0;
             // 
             // ofdSaveFile
@@ -3198,7 +4805,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(242, 11);
+            this.btnSave.Location = new System.Drawing.Point(138, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 33;
@@ -3206,1005 +4813,24 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // splitContainer2
+            // splitContainer3
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer2.Panel1
+            // splitContainer3.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.lbxDrivers);
+            this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
+            this.splitContainer3.Panel1.Controls.Add(this.btnSave);
             // 
-            // splitContainer2.Panel2
+            // splitContainer3.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.tabControl4);
-            this.splitContainer2.Size = new System.Drawing.Size(1104, 536);
-            this.splitContainer2.SplitterDistance = 165;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // lbxDrivers
-            // 
-            this.lbxDrivers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxDrivers.FormattingEnabled = true;
-            this.lbxDrivers.Location = new System.Drawing.Point(0, 0);
-            this.lbxDrivers.Name = "lbxDrivers";
-            this.lbxDrivers.Size = new System.Drawing.Size(165, 536);
-            this.lbxDrivers.TabIndex = 0;
-            this.lbxDrivers.SelectedIndexChanged += new System.EventHandler(this.lbxDrivers_SelectedIndexChanged);
-            // 
-            // tabControl4
-            // 
-            this.tabControl4.Controls.Add(this.tabDriversMisc);
-            this.tabControl4.Controls.Add(this.tabDriversSkills);
-            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl4.Location = new System.Drawing.Point(0, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(935, 536);
-            this.tabControl4.TabIndex = 0;
-            // 
-            // tabDriversMisc
-            // 
-            this.tabDriversMisc.Controls.Add(this.nudDriverID);
-            this.tabDriversMisc.Controls.Add(this.groupBox10);
-            this.tabDriversMisc.Controls.Add(this.label51);
-            this.tabDriversMisc.Controls.Add(this.groupBox9);
-            this.tabDriversMisc.Controls.Add(this.cbxDriverIsActive);
-            this.tabDriversMisc.Controls.Add(this.label39);
-            this.tabDriversMisc.Controls.Add(this.groupBox8);
-            this.tabDriversMisc.Controls.Add(this.groupBox3);
-            this.tabDriversMisc.Controls.Add(this.cbxDriverID);
-            this.tabDriversMisc.Location = new System.Drawing.Point(4, 22);
-            this.tabDriversMisc.Name = "tabDriversMisc";
-            this.tabDriversMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriversMisc.Size = new System.Drawing.Size(927, 510);
-            this.tabDriversMisc.TabIndex = 0;
-            this.tabDriversMisc.Text = "Misc";
-            this.tabDriversMisc.UseVisualStyleBackColor = true;
-            // 
-            // nudDriverID
-            // 
-            this.nudDriverID.Location = new System.Drawing.Point(69, 29);
-            this.nudDriverID.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverID.Name = "nudDriverID";
-            this.nudDriverID.Size = new System.Drawing.Size(43, 20);
-            this.nudDriverID.TabIndex = 41;
-            this.nudDriverID.ValueChanged += new System.EventHandler(this.nudDriverID_ValueChanged);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.txtDriverWeaponArtId3);
-            this.groupBox10.Controls.Add(this.label62);
-            this.groupBox10.Controls.Add(this.txtDriverWeaponArtId2);
-            this.groupBox10.Controls.Add(this.txtDriverTotalWeaponPoints);
-            this.groupBox10.Controls.Add(this.txtDriverWeaponArtId1);
-            this.groupBox10.Controls.Add(this.txtDriverWeaponPoints);
-            this.groupBox10.Controls.Add(this.label61);
-            this.groupBox10.Controls.Add(this.label60);
-            this.groupBox10.Controls.Add(this.label59);
-            this.groupBox10.Controls.Add(this.cbxWeapons);
-            this.groupBox10.Controls.Add(this.label57);
-            this.groupBox10.Controls.Add(this.label58);
-            this.groupBox10.Location = new System.Drawing.Point(511, 15);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(225, 159);
-            this.groupBox10.TabIndex = 40;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Driver Arts";
-            // 
-            // txtDriverWeaponArtId3
-            // 
-            this.txtDriverWeaponArtId3.Location = new System.Drawing.Point(118, 75);
-            this.txtDriverWeaponArtId3.Name = "txtDriverWeaponArtId3";
-            this.txtDriverWeaponArtId3.Size = new System.Drawing.Size(100, 20);
-            this.txtDriverWeaponArtId3.TabIndex = 10;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(6, 16);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(51, 13);
-            this.label62.TabIndex = 11;
-            this.label62.Text = "Weapon:";
-            // 
-            // txtDriverWeaponArtId2
-            // 
-            this.txtDriverWeaponArtId2.Location = new System.Drawing.Point(118, 57);
-            this.txtDriverWeaponArtId2.Name = "txtDriverWeaponArtId2";
-            this.txtDriverWeaponArtId2.Size = new System.Drawing.Size(100, 20);
-            this.txtDriverWeaponArtId2.TabIndex = 9;
-            // 
-            // txtDriverTotalWeaponPoints
-            // 
-            this.txtDriverTotalWeaponPoints.Location = new System.Drawing.Point(118, 127);
-            this.txtDriverTotalWeaponPoints.Name = "txtDriverTotalWeaponPoints";
-            this.txtDriverTotalWeaponPoints.Size = new System.Drawing.Size(100, 20);
-            this.txtDriverTotalWeaponPoints.TabIndex = 10;
-            // 
-            // txtDriverWeaponArtId1
-            // 
-            this.txtDriverWeaponArtId1.Location = new System.Drawing.Point(118, 39);
-            this.txtDriverWeaponArtId1.Name = "txtDriverWeaponArtId1";
-            this.txtDriverWeaponArtId1.Size = new System.Drawing.Size(100, 20);
-            this.txtDriverWeaponArtId1.TabIndex = 8;
-            // 
-            // txtDriverWeaponPoints
-            // 
-            this.txtDriverWeaponPoints.Location = new System.Drawing.Point(118, 101);
-            this.txtDriverWeaponPoints.Name = "txtDriverWeaponPoints";
-            this.txtDriverWeaponPoints.Size = new System.Drawing.Size(100, 20);
-            this.txtDriverWeaponPoints.TabIndex = 9;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(6, 130);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(110, 13);
-            this.label61.TabIndex = 5;
-            this.label61.Text = "Total Weapon Points:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(6, 104);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(83, 13);
-            this.label60.TabIndex = 4;
-            this.label60.Text = "Weapon Points:";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(6, 82);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(30, 13);
-            this.label59.TabIndex = 3;
-            this.label59.Text = "ID 3:";
-            // 
-            // cbxWeapons
-            // 
-            this.cbxWeapons.FormattingEnabled = true;
-            this.cbxWeapons.Location = new System.Drawing.Point(118, 13);
-            this.cbxWeapons.Name = "cbxWeapons";
-            this.cbxWeapons.Size = new System.Drawing.Size(100, 21);
-            this.cbxWeapons.TabIndex = 0;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(6, 46);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(30, 13);
-            this.label57.TabIndex = 1;
-            this.label57.Text = "ID 1:";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(6, 64);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(30, 13);
-            this.label58.TabIndex = 2;
-            this.label58.Text = "ID 2:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(9, 31);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(52, 13);
-            this.label51.TabIndex = 37;
-            this.label51.Text = "Driver ID:";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.nudDriverTotalSkillPoints);
-            this.groupBox9.Controls.Add(this.nudDriverCurrentSkillPoints);
-            this.groupBox9.Controls.Add(this.nudDriverBattleExp);
-            this.groupBox9.Controls.Add(this.nudDriverBonusExp);
-            this.groupBox9.Controls.Add(this.nudDriverGuardRate);
-            this.groupBox9.Controls.Add(this.nudDriverCriticalRate);
-            this.groupBox9.Controls.Add(this.nudDriverEtherDef);
-            this.groupBox9.Controls.Add(this.nudDriverPhysDef);
-            this.groupBox9.Controls.Add(this.nudDriverLuck);
-            this.groupBox9.Controls.Add(this.nudDriverAgility);
-            this.groupBox9.Controls.Add(this.nudDriverDexterity);
-            this.groupBox9.Controls.Add(this.nudDriverEther);
-            this.groupBox9.Controls.Add(this.nudDriverStrength);
-            this.groupBox9.Controls.Add(this.nudDriverHpMax);
-            this.groupBox9.Controls.Add(this.nudDriverLevel);
-            this.groupBox9.Controls.Add(this.label56);
-            this.groupBox9.Controls.Add(this.label55);
-            this.groupBox9.Controls.Add(this.label54);
-            this.groupBox9.Controls.Add(this.label53);
-            this.groupBox9.Controls.Add(this.label50);
-            this.groupBox9.Controls.Add(this.label48);
-            this.groupBox9.Controls.Add(this.label49);
-            this.groupBox9.Controls.Add(this.label47);
-            this.groupBox9.Controls.Add(this.label46);
-            this.groupBox9.Controls.Add(this.label45);
-            this.groupBox9.Controls.Add(this.label42);
-            this.groupBox9.Controls.Add(this.label41);
-            this.groupBox9.Controls.Add(this.label44);
-            this.groupBox9.Controls.Add(this.label43);
-            this.groupBox9.Controls.Add(this.label40);
-            this.groupBox9.Location = new System.Drawing.Point(12, 86);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(209, 418);
-            this.groupBox9.TabIndex = 36;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Stats";
-            // 
-            // nudDriverTotalSkillPoints
-            // 
-            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(103, 380);
-            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
-            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverTotalSkillPoints.TabIndex = 38;
-            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
-            // 
-            // nudDriverCurrentSkillPoints
-            // 
-            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(102, 354);
-            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
-            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverCurrentSkillPoints.TabIndex = 37;
-            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
-            // 
-            // nudDriverBattleExp
-            // 
-            this.nudDriverBattleExp.Location = new System.Drawing.Point(102, 328);
-            this.nudDriverBattleExp.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBattleExp.Name = "nudDriverBattleExp";
-            this.nudDriverBattleExp.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverBattleExp.TabIndex = 36;
-            this.nudDriverBattleExp.ValueChanged += new System.EventHandler(this.nudDriverBattleExp_ValueChanged);
-            // 
-            // nudDriverBonusExp
-            // 
-            this.nudDriverBonusExp.Location = new System.Drawing.Point(103, 300);
-            this.nudDriverBonusExp.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBonusExp.Name = "nudDriverBonusExp";
-            this.nudDriverBonusExp.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverBonusExp.TabIndex = 35;
-            this.nudDriverBonusExp.ValueChanged += new System.EventHandler(this.nudDriverBonusExp_ValueChanged);
-            // 
-            // nudDriverGuardRate
-            // 
-            this.nudDriverGuardRate.Location = new System.Drawing.Point(109, 274);
-            this.nudDriverGuardRate.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudDriverGuardRate.Name = "nudDriverGuardRate";
-            this.nudDriverGuardRate.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverGuardRate.TabIndex = 34;
-            this.nudDriverGuardRate.ValueChanged += new System.EventHandler(this.nudDriverGuardRate_ValueChanged);
-            // 
-            // nudDriverCriticalRate
-            // 
-            this.nudDriverCriticalRate.Location = new System.Drawing.Point(109, 247);
-            this.nudDriverCriticalRate.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudDriverCriticalRate.Name = "nudDriverCriticalRate";
-            this.nudDriverCriticalRate.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverCriticalRate.TabIndex = 33;
-            this.nudDriverCriticalRate.ValueChanged += new System.EventHandler(this.nudDriverCriticalRate_ValueChanged);
-            // 
-            // nudDriverEtherDef
-            // 
-            this.nudDriverEtherDef.Location = new System.Drawing.Point(89, 222);
-            this.nudDriverEtherDef.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverEtherDef.Name = "nudDriverEtherDef";
-            this.nudDriverEtherDef.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverEtherDef.TabIndex = 32;
-            this.nudDriverEtherDef.ValueChanged += new System.EventHandler(this.nudDriverEtherDef_ValueChanged);
-            // 
-            // nudDriverPhysDef
-            // 
-            this.nudDriverPhysDef.Location = new System.Drawing.Point(89, 196);
-            this.nudDriverPhysDef.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverPhysDef.Name = "nudDriverPhysDef";
-            this.nudDriverPhysDef.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverPhysDef.TabIndex = 31;
-            this.nudDriverPhysDef.ValueChanged += new System.EventHandler(this.nudDriverPhysDef_ValueChanged);
-            // 
-            // nudDriverLuck
-            // 
-            this.nudDriverLuck.Location = new System.Drawing.Point(89, 169);
-            this.nudDriverLuck.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverLuck.Name = "nudDriverLuck";
-            this.nudDriverLuck.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverLuck.TabIndex = 30;
-            this.nudDriverLuck.ValueChanged += new System.EventHandler(this.nudDriverLuck_ValueChanged);
-            // 
-            // nudDriverAgility
-            // 
-            this.nudDriverAgility.Location = new System.Drawing.Point(89, 144);
-            this.nudDriverAgility.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverAgility.Name = "nudDriverAgility";
-            this.nudDriverAgility.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverAgility.TabIndex = 29;
-            this.nudDriverAgility.ValueChanged += new System.EventHandler(this.nudDriverAgility_ValueChanged);
-            // 
-            // nudDriverDexterity
-            // 
-            this.nudDriverDexterity.Location = new System.Drawing.Point(89, 118);
-            this.nudDriverDexterity.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverDexterity.Name = "nudDriverDexterity";
-            this.nudDriverDexterity.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverDexterity.TabIndex = 28;
-            this.nudDriverDexterity.ValueChanged += new System.EventHandler(this.nudDriverDexterity_ValueChanged);
-            // 
-            // nudDriverEther
-            // 
-            this.nudDriverEther.Location = new System.Drawing.Point(89, 91);
-            this.nudDriverEther.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverEther.Name = "nudDriverEther";
-            this.nudDriverEther.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverEther.TabIndex = 27;
-            this.nudDriverEther.ValueChanged += new System.EventHandler(this.nudDriverEther_ValueChanged);
-            // 
-            // nudDriverStrength
-            // 
-            this.nudDriverStrength.Location = new System.Drawing.Point(89, 66);
-            this.nudDriverStrength.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverStrength.Name = "nudDriverStrength";
-            this.nudDriverStrength.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverStrength.TabIndex = 26;
-            this.nudDriverStrength.ValueChanged += new System.EventHandler(this.nudDriverStrength_ValueChanged);
-            // 
-            // nudDriverHpMax
-            // 
-            this.nudDriverHpMax.Location = new System.Drawing.Point(89, 34);
-            this.nudDriverHpMax.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverHpMax.Name = "nudDriverHpMax";
-            this.nudDriverHpMax.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverHpMax.TabIndex = 25;
-            this.nudDriverHpMax.ValueChanged += new System.EventHandler(this.nudDriverHpMax_ValueChanged);
-            // 
-            // nudDriverLevel
-            // 
-            this.nudDriverLevel.Location = new System.Drawing.Point(89, 13);
-            this.nudDriverLevel.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverLevel.Name = "nudDriverLevel";
-            this.nudDriverLevel.Size = new System.Drawing.Size(62, 20);
-            this.nudDriverLevel.TabIndex = 24;
-            this.nudDriverLevel.ValueChanged += new System.EventHandler(this.nudDriverLevel_ValueChanged);
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(8, 382);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(88, 13);
-            this.label56.TabIndex = 20;
-            this.label56.Text = "Total Skill Points:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(8, 356);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(98, 13);
-            this.label55.TabIndex = 19;
-            this.label55.Text = "Current Skill Points:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(8, 330);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(58, 13);
-            this.label54.TabIndex = 18;
-            this.label54.Text = "Battle Exp:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(8, 304);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(61, 13);
-            this.label53.TabIndex = 17;
-            this.label53.Text = "Bonus Exp:";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(8, 275);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(65, 13);
-            this.label50.TabIndex = 7;
-            this.label50.Text = "Guard Rate:";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(8, 223);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(58, 13);
-            this.label48.TabIndex = 12;
-            this.label48.Text = "Ether Def.:";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(8, 249);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(67, 13);
-            this.label49.TabIndex = 7;
-            this.label49.Text = "Critical Rate:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(8, 198);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(72, 13);
-            this.label47.TabIndex = 11;
-            this.label47.Text = "Physical Def.:";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(8, 171);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(34, 13);
-            this.label46.TabIndex = 11;
-            this.label46.Text = "Luck:";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(7, 145);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(37, 13);
-            this.label45.TabIndex = 10;
-            this.label45.Text = "Agility:";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(7, 119);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(54, 13);
-            this.label42.TabIndex = 4;
-            this.label42.Text = "Dexterity: ";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(7, 41);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(48, 13);
-            this.label41.TabIndex = 2;
-            this.label41.Text = "Max HP:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(7, 93);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(35, 13);
-            this.label44.TabIndex = 8;
-            this.label44.Text = "Ether:";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(7, 67);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(50, 13);
-            this.label43.TabIndex = 6;
-            this.label43.Text = "Strength:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(7, 15);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(39, 13);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "Level: ";
-            // 
-            // cbxDriverIsActive
-            // 
-            this.cbxDriverIsActive.FormattingEnabled = true;
-            this.cbxDriverIsActive.Location = new System.Drawing.Point(69, 55);
-            this.cbxDriverIsActive.Name = "cbxDriverIsActive";
-            this.cbxDriverIsActive.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverIsActive.TabIndex = 35;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(12, 58);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(51, 13);
-            this.label39.TabIndex = 34;
-            this.label39.Text = "Is Active:";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.cbxDriverBlade3);
-            this.groupBox8.Controls.Add(this.cbxDriverBlade2);
-            this.groupBox8.Controls.Add(this.nudDriverBlade3);
-            this.groupBox8.Controls.Add(this.nudDriverBlade2);
-            this.groupBox8.Controls.Add(this.cbxDriverBlade1);
-            this.groupBox8.Controls.Add(this.nudDriverBlade1);
-            this.groupBox8.Controls.Add(this.cbxDriverSetBlade);
-            this.groupBox8.Controls.Add(this.nudDriverSetBlade);
-            this.groupBox8.Controls.Add(this.label37);
-            this.groupBox8.Controls.Add(this.label36);
-            this.groupBox8.Controls.Add(this.label35);
-            this.groupBox8.Controls.Add(this.label34);
-            this.groupBox8.Location = new System.Drawing.Point(246, 203);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(231, 125);
-            this.groupBox8.TabIndex = 32;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Equipped Blades";
-            // 
-            // cbxDriverBlade3
-            // 
-            this.cbxDriverBlade3.FormattingEnabled = true;
-            this.cbxDriverBlade3.Location = new System.Drawing.Point(104, 58);
-            this.cbxDriverBlade3.Name = "cbxDriverBlade3";
-            this.cbxDriverBlade3.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverBlade3.TabIndex = 17;
-            this.cbxDriverBlade3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade3_SelectionChangeCommitted);
-            // 
-            // cbxDriverBlade2
-            // 
-            this.cbxDriverBlade2.FormattingEnabled = true;
-            this.cbxDriverBlade2.Location = new System.Drawing.Point(104, 38);
-            this.cbxDriverBlade2.Name = "cbxDriverBlade2";
-            this.cbxDriverBlade2.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverBlade2.TabIndex = 16;
-            this.cbxDriverBlade2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade2_SelectionChangeCommitted);
-            // 
-            // nudDriverBlade3
-            // 
-            this.nudDriverBlade3.Location = new System.Drawing.Point(59, 58);
-            this.nudDriverBlade3.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverBlade3.Name = "nudDriverBlade3";
-            this.nudDriverBlade3.Size = new System.Drawing.Size(47, 20);
-            this.nudDriverBlade3.TabIndex = 15;
-            this.nudDriverBlade3.ValueChanged += new System.EventHandler(this.nudDriverBlade3_ValueChanged);
-            // 
-            // nudDriverBlade2
-            // 
-            this.nudDriverBlade2.Location = new System.Drawing.Point(59, 38);
-            this.nudDriverBlade2.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverBlade2.Name = "nudDriverBlade2";
-            this.nudDriverBlade2.Size = new System.Drawing.Size(48, 20);
-            this.nudDriverBlade2.TabIndex = 14;
-            this.nudDriverBlade2.ValueChanged += new System.EventHandler(this.nudDriverBlade2_ValueChanged);
-            // 
-            // cbxDriverBlade1
-            // 
-            this.cbxDriverBlade1.FormattingEnabled = true;
-            this.cbxDriverBlade1.Location = new System.Drawing.Point(104, 18);
-            this.cbxDriverBlade1.Name = "cbxDriverBlade1";
-            this.cbxDriverBlade1.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverBlade1.TabIndex = 12;
-            this.cbxDriverBlade1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverBlade1_SelectionChangeCommitted);
-            // 
-            // nudDriverBlade1
-            // 
-            this.nudDriverBlade1.Location = new System.Drawing.Point(59, 18);
-            this.nudDriverBlade1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudDriverBlade1.Name = "nudDriverBlade1";
-            this.nudDriverBlade1.Size = new System.Drawing.Size(48, 20);
-            this.nudDriverBlade1.TabIndex = 13;
-            this.nudDriverBlade1.ValueChanged += new System.EventHandler(this.nudDriverBlade1_ValueChanged);
-            // 
-            // cbxDriverSetBlade
-            // 
-            this.cbxDriverSetBlade.FormattingEnabled = true;
-            this.cbxDriverSetBlade.Location = new System.Drawing.Point(104, 95);
-            this.cbxDriverSetBlade.Name = "cbxDriverSetBlade";
-            this.cbxDriverSetBlade.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverSetBlade.TabIndex = 9;
-            this.cbxDriverSetBlade.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverSetBlade_SelectionChangeCommitted);
-            // 
-            // nudDriverSetBlade
-            // 
-            this.nudDriverSetBlade.Location = new System.Drawing.Point(69, 96);
-            this.nudDriverSetBlade.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.nudDriverSetBlade.Name = "nudDriverSetBlade";
-            this.nudDriverSetBlade.Size = new System.Drawing.Size(36, 20);
-            this.nudDriverSetBlade.TabIndex = 8;
-            this.nudDriverSetBlade.ValueChanged += new System.EventHandler(this.nudDriverSetBlade_ValueChanged);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(7, 98);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(56, 13);
-            this.label37.TabIndex = 6;
-            this.label37.Text = "Set Blade:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(7, 59);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(46, 13);
-            this.label36.TabIndex = 2;
-            this.label36.Text = "Blade 3:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(7, 41);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(46, 13);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "Blade 2:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(7, 23);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(46, 13);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Blade 1:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Controls.Add(this.groupBox7);
-            this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.groupBox6);
-            this.groupBox3.Location = new System.Drawing.Point(246, 15);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(259, 182);
-            this.groupBox3.TabIndex = 31;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Ideas";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.nudDriverJusticePoints);
-            this.groupBox5.Controls.Add(this.nudDriverJusticeLevel);
-            this.groupBox5.Controls.Add(this.label28);
-            this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Location = new System.Drawing.Point(6, 136);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(247, 40);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Justice";
-            // 
-            // nudDriverJusticePoints
-            // 
-            this.nudDriverJusticePoints.Location = new System.Drawing.Point(141, 13);
-            this.nudDriverJusticePoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverJusticePoints.Name = "nudDriverJusticePoints";
-            this.nudDriverJusticePoints.Size = new System.Drawing.Size(100, 20);
-            this.nudDriverJusticePoints.TabIndex = 18;
-            this.nudDriverJusticePoints.ValueChanged += new System.EventHandler(this.nudDriverJusticePoints_ValueChanged);
-            // 
-            // nudDriverJusticeLevel
-            // 
-            this.nudDriverJusticeLevel.Location = new System.Drawing.Point(48, 14);
-            this.nudDriverJusticeLevel.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverJusticeLevel.Name = "nudDriverJusticeLevel";
-            this.nudDriverJusticeLevel.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverJusticeLevel.TabIndex = 17;
-            this.nudDriverJusticeLevel.ValueChanged += new System.EventHandler(this.nudDriverJusticeLevel_ValueChanged);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 16);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(36, 13);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Level:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(96, 16);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(39, 13);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "Points:";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.nudDriverCompassionPoints);
-            this.groupBox7.Controls.Add(this.nudDriverCompassionLevel);
-            this.groupBox7.Controls.Add(this.label32);
-            this.groupBox7.Controls.Add(this.label33);
-            this.groupBox7.Location = new System.Drawing.Point(6, 97);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(247, 40);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Compassion";
-            // 
-            // nudDriverCompassionPoints
-            // 
-            this.nudDriverCompassionPoints.Location = new System.Drawing.Point(141, 12);
-            this.nudDriverCompassionPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverCompassionPoints.Name = "nudDriverCompassionPoints";
-            this.nudDriverCompassionPoints.Size = new System.Drawing.Size(100, 20);
-            this.nudDriverCompassionPoints.TabIndex = 17;
-            this.nudDriverCompassionPoints.ValueChanged += new System.EventHandler(this.nudDriverCompassionPoints_ValueChanged);
-            // 
-            // nudDriverCompassionLevel
-            // 
-            this.nudDriverCompassionLevel.Location = new System.Drawing.Point(48, 13);
-            this.nudDriverCompassionLevel.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverCompassionLevel.Name = "nudDriverCompassionLevel";
-            this.nudDriverCompassionLevel.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverCompassionLevel.TabIndex = 16;
-            this.nudDriverCompassionLevel.ValueChanged += new System.EventHandler(this.nudDriverCompassionLevel_ValueChanged);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(6, 16);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(36, 13);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Level:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(96, 16);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(39, 13);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "Points:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.nudDriverBraveryPoints);
-            this.groupBox4.Controls.Add(this.nudDriverBraveryLevel);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Location = new System.Drawing.Point(6, 19);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(247, 40);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Bravery";
-            // 
-            // nudDriverBraveryPoints
-            // 
-            this.nudDriverBraveryPoints.Location = new System.Drawing.Point(141, 14);
-            this.nudDriverBraveryPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBraveryPoints.Name = "nudDriverBraveryPoints";
-            this.nudDriverBraveryPoints.Size = new System.Drawing.Size(100, 20);
-            this.nudDriverBraveryPoints.TabIndex = 15;
-            this.nudDriverBraveryPoints.ValueChanged += new System.EventHandler(this.nudDriverBraveryPoints_ValueChanged);
-            // 
-            // nudDriverBraveryLevel
-            // 
-            this.nudDriverBraveryLevel.Location = new System.Drawing.Point(48, 14);
-            this.nudDriverBraveryLevel.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBraveryLevel.Name = "nudDriverBraveryLevel";
-            this.nudDriverBraveryLevel.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverBraveryLevel.TabIndex = 14;
-            this.nudDriverBraveryLevel.ValueChanged += new System.EventHandler(this.nudDriverBraveryLevel_ValueChanged);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 16);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(36, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Level:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(96, 16);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(39, 13);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Points:";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.nudDriverTruthPoints);
-            this.groupBox6.Controls.Add(this.nudDriverTruthLevel);
-            this.groupBox6.Controls.Add(this.label30);
-            this.groupBox6.Controls.Add(this.label31);
-            this.groupBox6.Location = new System.Drawing.Point(6, 58);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(247, 40);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Truth";
-            // 
-            // nudDriverTruthPoints
-            // 
-            this.nudDriverTruthPoints.Location = new System.Drawing.Point(141, 13);
-            this.nudDriverTruthPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverTruthPoints.Name = "nudDriverTruthPoints";
-            this.nudDriverTruthPoints.Size = new System.Drawing.Size(100, 20);
-            this.nudDriverTruthPoints.TabIndex = 16;
-            this.nudDriverTruthPoints.ValueChanged += new System.EventHandler(this.nudDriverTruthPoints_ValueChanged);
-            // 
-            // nudDriverTruthLevel
-            // 
-            this.nudDriverTruthLevel.Location = new System.Drawing.Point(48, 13);
-            this.nudDriverTruthLevel.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverTruthLevel.Name = "nudDriverTruthLevel";
-            this.nudDriverTruthLevel.Size = new System.Drawing.Size(42, 20);
-            this.nudDriverTruthLevel.TabIndex = 15;
-            this.nudDriverTruthLevel.ValueChanged += new System.EventHandler(this.nudDriverTruthLevel_ValueChanged);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 16);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(36, 13);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Level:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(96, 16);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(39, 13);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "Points:";
-            // 
-            // cbxDriverID
-            // 
-            this.cbxDriverID.FormattingEnabled = true;
-            this.cbxDriverID.Location = new System.Drawing.Point(118, 28);
-            this.cbxDriverID.Name = "cbxDriverID";
-            this.cbxDriverID.Size = new System.Drawing.Size(103, 21);
-            this.cbxDriverID.TabIndex = 30;
-            this.cbxDriverID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverID_SelectionChangeCommitted);
-            // 
-            // tabDriversSkills
-            // 
-            this.tabDriversSkills.Controls.Add(this.dsgbxDriverHiddenSkills);
-            this.tabDriversSkills.Controls.Add(this.dsgbxDriverOvertSkills);
-            this.tabDriversSkills.Location = new System.Drawing.Point(4, 22);
-            this.tabDriversSkills.Name = "tabDriversSkills";
-            this.tabDriversSkills.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriversSkills.Size = new System.Drawing.Size(927, 510);
-            this.tabDriversSkills.TabIndex = 1;
-            this.tabDriversSkills.Text = "Skills";
-            this.tabDriversSkills.UseVisualStyleBackColor = true;
-            // 
-            // dsgbxDriverOvertSkills
-            // 
-            this.dsgbxDriverOvertSkills.Location = new System.Drawing.Point(6, 6);
-            this.dsgbxDriverOvertSkills.Name = "dsgbxDriverOvertSkills";
-            this.dsgbxDriverOvertSkills.Size = new System.Drawing.Size(921, 150);
-            this.dsgbxDriverOvertSkills.SkillSet = null;
-            this.dsgbxDriverOvertSkills.TabIndex = 100;
-            this.dsgbxDriverOvertSkills.Title = "Overt Skills";
-            this.dsgbxDriverOvertSkills.Leave += new System.EventHandler(this.dsgbxDriverOvertSkills_Leave);
+            this.splitContainer3.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
+            this.splitContainer3.SplitterDistance = 48;
+            this.splitContainer3.TabIndex = 34;
             // 
             // dsgbxDriverHiddenSkills
             // 
@@ -4216,17 +4842,25 @@
             this.dsgbxDriverHiddenSkills.Title = "Hidden Skills";
             this.dsgbxDriverHiddenSkills.Leave += new System.EventHandler(this.dsgbxDriverHiddenSkills_Leave);
             // 
+            // dsgbxDriverOvertSkills
+            // 
+            this.dsgbxDriverOvertSkills.Location = new System.Drawing.Point(6, 6);
+            this.dsgbxDriverOvertSkills.Name = "dsgbxDriverOvertSkills";
+            this.dsgbxDriverOvertSkills.Size = new System.Drawing.Size(921, 150);
+            this.dsgbxDriverOvertSkills.SkillSet = null;
+            this.dsgbxDriverOvertSkills.TabIndex = 100;
+            this.dsgbxDriverOvertSkills.Title = "Overt Skills";
+            this.dsgbxDriverOvertSkills.Leave += new System.EventHandler(this.dsgbxDriverOvertSkills_Leave);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 634);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnLoad);
+            this.ClientSize = new System.Drawing.Size(1142, 659);
+            this.Controls.Add(this.splitContainer3);
             this.Name = "frmMain";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "XC2SaveNETThingy";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -4242,6 +4876,87 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x04)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x02)).EndInit();
             this.tabDrivers.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            this.tabDriversMisc.ResumeLayout(false);
+            this.groupBox34.ResumeLayout(false);
+            this.groupBox34.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).EndInit();
+            this.groupBox30.ResumeLayout(false);
+            this.groupBox30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPouchesTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPouchesItemID)).EndInit();
+            this.groupBox29.ResumeLayout(false);
+            this.groupBox33.ResumeLayout(false);
+            this.groupBox33.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory3ID)).EndInit();
+            this.groupBox32.ResumeLayout(false);
+            this.groupBox32.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory2ID)).EndInit();
+            this.groupBox31.ResumeLayout(false);
+            this.groupBox31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAccessory1ID)).EndInit();
+            this.groupBox28.ResumeLayout(false);
+            this.groupBox28.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverArtLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverArtID)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId1)).EndInit();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPhysDef)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLuck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAgility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverDexterity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEther)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverStrength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHpMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLevel)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverSetBlade)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticePoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticeLevel)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionLevel)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryLevel)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).EndInit();
+            this.tabDriversSkills.ResumeLayout(false);
             this.tabBlades.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -4328,8 +5043,6 @@
             this.tabBladeUnknown.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            this.tabPcWpnChipBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
             this.tabPcEquipBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).EndInit();
             this.tabEquipOrbBox.ResumeLayout(false);
@@ -4364,57 +5077,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).EndInit();
             this.tabHanaAssistBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).EndInit();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            this.tabDriversMisc.ResumeLayout(false);
-            this.tabDriversMisc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).EndInit();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverPhysDef)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLuck)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverAgility)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverDexterity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverEther)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverStrength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHpMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverLevel)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBlade1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverSetBlade)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticePoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverJusticeLevel)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCompassionLevel)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBraveryLevel)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).EndInit();
-            this.tabDriversSkills.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -4489,7 +5155,6 @@
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPcWpnChipBox;
-        private System.Windows.Forms.DataGridView dgvPcWpnChipBox;
         private System.Windows.Forms.TabPage tabPcEquipBox;
         private System.Windows.Forms.DataGridView dgvPcEquipBox;
         private System.Windows.Forms.TabPage tabEquipOrbBox;
@@ -4675,16 +5340,11 @@
         private System.Windows.Forms.TabPage tabDriversMisc;
         private System.Windows.Forms.NumericUpDown nudDriverID;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox txtDriverWeaponArtId3;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox txtDriverWeaponArtId2;
-        private System.Windows.Forms.TextBox txtDriverTotalWeaponPoints;
-        private System.Windows.Forms.TextBox txtDriverWeaponArtId1;
-        private System.Windows.Forms.TextBox txtDriverWeaponPoints;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.ComboBox cbxWeapons;
+        private System.Windows.Forms.ComboBox cbxDriverWeapons;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label51;
@@ -4760,6 +5420,59 @@
         private System.Windows.Forms.ListBox lbxDrivers;
         private DriverSkillGroupBox dsgbxDriverOvertSkills;
         private DriverSkillGroupBox dsgbxDriverHiddenSkills;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId1;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId3;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId2;
+        private System.Windows.Forms.NumericUpDown nudDriverTotalWeaponPoints;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponPoints;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArtId1;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArtId3;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArtId2;
+        private System.Windows.Forms.GroupBox groupBox28;
+        private System.Windows.Forms.NumericUpDown nudDriverArtLevel;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox cbxDriverArt;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.NumericUpDown nudDriverArtID;
+        private System.Windows.Forms.GroupBox groupBox29;
+        private System.Windows.Forms.GroupBox groupBox30;
+        private System.Windows.Forms.NumericUpDown nudDriverPouchesTime;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.NumericUpDown nudDriverPouchesItemID;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.CheckBox chkDriverPouchesIsUnlocked;
+        private System.Windows.Forms.ComboBox cbxDriverPouches;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory1Serial;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory1Type;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory1ID;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.GroupBox groupBox33;
+        private System.Windows.Forms.ComboBox cbxDriverAccessoryType;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory3ID;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory3Serial;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory3Type;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory3ID;
+        private System.Windows.Forms.GroupBox groupBox32;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory2Type;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory2ID;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory2Serial;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory2Type;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.NumericUpDown nudDriverAccessory2ID;
+        private System.Windows.Forms.GroupBox groupBox31;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory1Type;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory1ID;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.GroupBox groupBox34;
     }
 }
 

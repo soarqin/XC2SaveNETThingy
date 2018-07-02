@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("XC2SaveNETThingy")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Save Editor for Xenoblade Chronicles 2")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("damysteryman")]
 [assembly: AssemblyProduct("XC2SaveNETThingy")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright ©  2018 damysteryman")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

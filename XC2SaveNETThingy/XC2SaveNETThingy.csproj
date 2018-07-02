@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataGridViewNumericUpDownElements, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataGridViewNumericUpDownElements.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blade.cs" />
+    <Compile Include="DataGridViewColumnFactory.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="DriverSkillGroupBox.cs">
       <SubType>UserControl</SubType>
@@ -60,6 +65,12 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemBox.cs" />
+    <Compile Include="ItemEditPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemEditPanel.Designer.cs">
+      <DependentUpon>ItemEditPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="IXC2SaveObject.cs" />
     <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
@@ -71,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemEditPanel.resx">
+      <DependentUpon>ItemEditPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
