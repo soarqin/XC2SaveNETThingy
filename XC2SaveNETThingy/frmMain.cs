@@ -900,13 +900,11 @@ namespace XC2SaveNETThingy
                 switch (e.ColumnIndex)
                 {
                     case 0:
-                        //((DataGridViewComboBoxCell)(dgv.Rows[e.RowIndex].Cells[1])).Value = dgv.Rows[e.RowIndex].Cells[0].Value;
+                        ((DataGridViewComboBoxCell)(dgv.Rows[e.RowIndex].Cells[1])).Value = int.Parse(dgv.Rows[e.RowIndex].Cells[0].Value.ToString());
                         break;
 
                     case 1:
-                        //DataGridViewComboBoxCell.ObjectCollection a = ((DataGridViewComboBoxColumn)(dgv.Columns[1])).Items;
-                        //int b = (int)((DataRowView)a[1]).Row.ItemArray[0];
-                        //dgv.Rows[e.RowIndex].Cells[0].Value = ((DataGridViewComboBoxColumn)(dgv.Columns[1])).Items;
+                        dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
                         break;
                 }
 
