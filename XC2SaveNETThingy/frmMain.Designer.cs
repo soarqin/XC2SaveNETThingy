@@ -82,6 +82,7 @@
             this.lblsg_field_3A = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
+            this.lblPlayTime = new System.Windows.Forms.Label();
             this.nudMoney = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -230,11 +231,137 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabDriversSkills = new System.Windows.Forms.TabPage();
+            this.gbxDriverHiddenSkills = new System.Windows.Forms.GroupBox();
+            this.nudDriverHiddenSkill_c5_Level = new System.Windows.Forms.NumericUpDown();
+            this.label146 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c5_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label147 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c4_Level = new System.Windows.Forms.NumericUpDown();
+            this.label148 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c4_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label149 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c3_Level = new System.Windows.Forms.NumericUpDown();
+            this.label150 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c3_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label151 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c2_Level = new System.Windows.Forms.NumericUpDown();
+            this.label152 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c2_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label153 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c1_Level = new System.Windows.Forms.NumericUpDown();
+            this.label154 = new System.Windows.Forms.Label();
+            this.nudDriverHiddenSkill_c1_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label155 = new System.Windows.Forms.Label();
+            this.label156 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.cbxDriverHiddenSkill_c5r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c5r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c5r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c5r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c5r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c5r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c4r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c4r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c4r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c4r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c4r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c4r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c3r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c3r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c3r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c3r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c3r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c3r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c2r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c2r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c2r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c2r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c2r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c2r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c1r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c1r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c1r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c1r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverHiddenSkill_c1r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverHiddenSkill_c1r3 = new System.Windows.Forms.NumericUpDown();
+            this.gbxDriverOvertSkills = new System.Windows.Forms.GroupBox();
+            this.nudDriverOvertSkill_c5_Level = new System.Windows.Forms.NumericUpDown();
+            this.label133 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c5_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label134 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c4_Level = new System.Windows.Forms.NumericUpDown();
+            this.label135 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c4_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label136 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c3_Level = new System.Windows.Forms.NumericUpDown();
+            this.label137 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c3_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label138 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c2_Level = new System.Windows.Forms.NumericUpDown();
+            this.label139 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c2_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label140 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c1_Level = new System.Windows.Forms.NumericUpDown();
+            this.label141 = new System.Windows.Forms.Label();
+            this.nudDriverOvertSkill_c1_ColumnNo = new System.Windows.Forms.NumericUpDown();
+            this.label142 = new System.Windows.Forms.Label();
+            this.label143 = new System.Windows.Forms.Label();
+            this.label144 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.cbxDriverOvertSkill_c5r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c5r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c5r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c5r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c5r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c5r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c4r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c4r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c4r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c4r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c4r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c4r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c3r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c3r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c3r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c3r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c3r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c3r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c2r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c2r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c2r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c2r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c2r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c2r3 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c1r3 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c1r1 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c1r2 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c1r2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxDriverOvertSkill_c1r1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverOvertSkill_c1r3 = new System.Windows.Forms.NumericUpDown();
+            this.tabDriversUnknown = new System.Windows.Forms.TabPage();
+            this.groupBox42 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x059C = new Be.Windows.Forms.HexBox();
+            this.groupBox41 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x0582 = new Be.Windows.Forms.HexBox();
+            this.groupBox40 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x057A = new Be.Windows.Forms.HexBox();
+            this.groupBox39 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x04FE = new Be.Windows.Forms.HexBox();
+            this.groupBox38 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x02EA = new Be.Windows.Forms.HexBox();
+            this.groupBox37 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x02DC = new Be.Windows.Forms.HexBox();
+            this.groupBox36 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x00A8 = new Be.Windows.Forms.HexBox();
+            this.groupBox35 = new System.Windows.Forms.GroupBox();
+            this.hbxDriverUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabBlades = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbxBlades = new System.Windows.Forms.ListBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabBladeMisc = new System.Windows.Forms.TabPage();
+            this.nudBladeCommonBladeIndex = new System.Windows.Forms.NumericUpDown();
             this.nudBladeStill = new System.Windows.Forms.NumericUpDown();
             this.nudBladeGender = new System.Windows.Forms.NumericUpDown();
             this.nudBladeRace = new System.Windows.Forms.NumericUpDown();
@@ -371,9 +498,10 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabItems = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPcWpnChipBox = new System.Windows.Forms.TabPage();
+            this.dgvPcWpnChipBox = new System.Windows.Forms.DataGridView();
             this.tabPcEquipBox = new System.Windows.Forms.TabPage();
             this.dgvPcEquipBox = new System.Windows.Forms.DataGridView();
             this.tabEquipOrbBox = new System.Windows.Forms.TabPage();
@@ -412,8 +540,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.dsgbxDriverHiddenSkills = new XC2SaveNETThingy.DriverSkillGroupBox();
-            this.dsgbxDriverOvertSkills = new XC2SaveNETThingy.DriverSkillGroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -492,6 +619,67 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).BeginInit();
             this.tabDriversSkills.SuspendLayout();
+            this.gbxDriverHiddenSkills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r3)).BeginInit();
+            this.gbxDriverOvertSkills.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1_Level)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1_ColumnNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r3)).BeginInit();
+            this.tabDriversUnknown.SuspendLayout();
+            this.groupBox42.SuspendLayout();
+            this.groupBox41.SuspendLayout();
+            this.groupBox40.SuspendLayout();
+            this.groupBox39.SuspendLayout();
+            this.groupBox38.SuspendLayout();
+            this.groupBox37.SuspendLayout();
+            this.groupBox36.SuspendLayout();
+            this.groupBox35.SuspendLayout();
             this.tabBlades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -499,6 +687,7 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabBladeMisc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeCommonBladeIndex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeStill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeRace)).BeginInit();
@@ -566,8 +755,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapAtrItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).BeginInit();
             this.tabBladeUnknown.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabItems.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPcWpnChipBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
             this.tabPcEquipBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).BeginInit();
             this.tabEquipOrbBox.SuspendLayout();
@@ -1082,7 +1273,7 @@
             this.tabControl1.Controls.Add(this.tabMain);
             this.tabControl1.Controls.Add(this.tabDrivers);
             this.tabControl1.Controls.Add(this.tabBlades);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabItems);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -1094,6 +1285,7 @@
             // tabMain
             // 
             this.tabMain.BackColor = System.Drawing.SystemColors.Control;
+            this.tabMain.Controls.Add(this.lblPlayTime);
             this.tabMain.Controls.Add(this.nudMoney);
             this.tabMain.Controls.Add(this.groupBox11);
             this.tabMain.Controls.Add(this.groupBox1);
@@ -1126,6 +1318,15 @@
             this.tabMain.Size = new System.Drawing.Size(1134, 581);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
+            // 
+            // lblPlayTime
+            // 
+            this.lblPlayTime.AutoSize = true;
+            this.lblPlayTime.Location = new System.Drawing.Point(713, 331);
+            this.lblPlayTime.Name = "lblPlayTime";
+            this.lblPlayTime.Size = new System.Drawing.Size(60, 13);
+            this.lblPlayTime.TabIndex = 34;
+            this.lblPlayTime.Text = "lblPlayTime";
             // 
             // nudMoney
             // 
@@ -1271,6 +1472,8 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(3, 3);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -1299,6 +1502,7 @@
             // 
             this.tabControl4.Controls.Add(this.tabDriversMisc);
             this.tabControl4.Controls.Add(this.tabDriversSkills);
+            this.tabControl4.Controls.Add(this.tabDriversUnknown);
             this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl4.Location = new System.Drawing.Point(0, 0);
             this.tabControl4.Name = "tabControl4";
@@ -1372,6 +1576,7 @@
             this.cbxDriverIsActive.Name = "cbxDriverIsActive";
             this.cbxDriverIsActive.Size = new System.Drawing.Size(121, 21);
             this.cbxDriverIsActive.TabIndex = 35;
+            this.cbxDriverIsActive.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverIsActive_SelectionChangeCommitted);
             // 
             // nudDriverID
             // 
@@ -2799,8 +3004,8 @@
             // 
             // tabDriversSkills
             // 
-            this.tabDriversSkills.Controls.Add(this.dsgbxDriverHiddenSkills);
-            this.tabDriversSkills.Controls.Add(this.dsgbxDriverOvertSkills);
+            this.tabDriversSkills.Controls.Add(this.gbxDriverHiddenSkills);
+            this.tabDriversSkills.Controls.Add(this.gbxDriverOvertSkills);
             this.tabDriversSkills.Location = new System.Drawing.Point(4, 22);
             this.tabDriversSkills.Name = "tabDriversSkills";
             this.tabDriversSkills.Padding = new System.Windows.Forms.Padding(3);
@@ -2808,6 +3013,1421 @@
             this.tabDriversSkills.TabIndex = 1;
             this.tabDriversSkills.Text = "Skills";
             this.tabDriversSkills.UseVisualStyleBackColor = true;
+            // 
+            // gbxDriverHiddenSkills
+            // 
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c5_Level);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label146);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c5_ColumnNo);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label147);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c4_Level);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label148);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c4_ColumnNo);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label149);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c3_Level);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label150);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c3_ColumnNo);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label151);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c2_Level);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label152);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c2_ColumnNo);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label153);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c1_Level);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label154);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c1_ColumnNo);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label155);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label156);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label157);
+            this.gbxDriverHiddenSkills.Controls.Add(this.label158);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c5r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c5r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c5r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c5r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c5r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c5r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c4r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c4r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c4r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c4r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c4r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c4r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c3r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c3r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c3r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c3r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c3r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c3r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c2r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c2r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c2r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c2r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c2r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c2r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c1r3);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c1r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c1r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c1r2);
+            this.gbxDriverHiddenSkills.Controls.Add(this.cbxDriverHiddenSkill_c1r1);
+            this.gbxDriverHiddenSkills.Controls.Add(this.nudDriverHiddenSkill_c1r3);
+            this.gbxDriverHiddenSkills.Location = new System.Drawing.Point(6, 156);
+            this.gbxDriverHiddenSkills.Name = "gbxDriverHiddenSkills";
+            this.gbxDriverHiddenSkills.Size = new System.Drawing.Size(915, 144);
+            this.gbxDriverHiddenSkills.TabIndex = 103;
+            this.gbxDriverHiddenSkills.TabStop = false;
+            this.gbxDriverHiddenSkills.Text = "Hidden Skills";
+            // 
+            // nudDriverHiddenSkill_c5_Level
+            // 
+            this.nudDriverHiddenSkill_c5_Level.Location = new System.Drawing.Point(829, 112);
+            this.nudDriverHiddenSkill_c5_Level.Name = "nudDriverHiddenSkill_c5_Level";
+            this.nudDriverHiddenSkill_c5_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c5_Level.TabIndex = 98;
+            this.nudDriverHiddenSkill_c5_Level.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c5_Level_ValueChanged);
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.Location = new System.Drawing.Point(761, 114);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(36, 13);
+            this.label146.TabIndex = 97;
+            this.label146.Text = "Level:";
+            // 
+            // nudDriverHiddenSkill_c5_ColumnNo
+            // 
+            this.nudDriverHiddenSkill_c5_ColumnNo.Location = new System.Drawing.Point(829, 86);
+            this.nudDriverHiddenSkill_c5_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c5_ColumnNo.Name = "nudDriverHiddenSkill_c5_ColumnNo";
+            this.nudDriverHiddenSkill_c5_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c5_ColumnNo.TabIndex = 96;
+            this.nudDriverHiddenSkill_c5_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c5_ColumnNo_ValueChanged);
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Location = new System.Drawing.Point(761, 88);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(62, 13);
+            this.label147.TabIndex = 95;
+            this.label147.Text = "Column No:";
+            // 
+            // nudDriverHiddenSkill_c4_Level
+            // 
+            this.nudDriverHiddenSkill_c4_Level.Location = new System.Drawing.Point(657, 112);
+            this.nudDriverHiddenSkill_c4_Level.Name = "nudDriverHiddenSkill_c4_Level";
+            this.nudDriverHiddenSkill_c4_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c4_Level.TabIndex = 94;
+            this.nudDriverHiddenSkill_c4_Level.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c4_Level_ValueChanged);
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Location = new System.Drawing.Point(589, 114);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(36, 13);
+            this.label148.TabIndex = 93;
+            this.label148.Text = "Level:";
+            // 
+            // nudDriverHiddenSkill_c4_ColumnNo
+            // 
+            this.nudDriverHiddenSkill_c4_ColumnNo.Location = new System.Drawing.Point(657, 86);
+            this.nudDriverHiddenSkill_c4_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c4_ColumnNo.Name = "nudDriverHiddenSkill_c4_ColumnNo";
+            this.nudDriverHiddenSkill_c4_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c4_ColumnNo.TabIndex = 92;
+            this.nudDriverHiddenSkill_c4_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c4_ColumnNo_ValueChanged);
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Location = new System.Drawing.Point(589, 88);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(62, 13);
+            this.label149.TabIndex = 91;
+            this.label149.Text = "Column No:";
+            // 
+            // nudDriverHiddenSkill_c3_Level
+            // 
+            this.nudDriverHiddenSkill_c3_Level.Location = new System.Drawing.Point(488, 112);
+            this.nudDriverHiddenSkill_c3_Level.Name = "nudDriverHiddenSkill_c3_Level";
+            this.nudDriverHiddenSkill_c3_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c3_Level.TabIndex = 90;
+            this.nudDriverHiddenSkill_c3_Level.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c3_Level_ValueChanged);
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Location = new System.Drawing.Point(420, 114);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(36, 13);
+            this.label150.TabIndex = 89;
+            this.label150.Text = "Level:";
+            // 
+            // nudDriverHiddenSkill_c3_ColumnNo
+            // 
+            this.nudDriverHiddenSkill_c3_ColumnNo.Location = new System.Drawing.Point(488, 86);
+            this.nudDriverHiddenSkill_c3_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c3_ColumnNo.Name = "nudDriverHiddenSkill_c3_ColumnNo";
+            this.nudDriverHiddenSkill_c3_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c3_ColumnNo.TabIndex = 88;
+            this.nudDriverHiddenSkill_c3_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c3_ColumnNo_ValueChanged);
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.Location = new System.Drawing.Point(420, 88);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(62, 13);
+            this.label151.TabIndex = 87;
+            this.label151.Text = "Column No:";
+            // 
+            // nudDriverHiddenSkill_c2_Level
+            // 
+            this.nudDriverHiddenSkill_c2_Level.Location = new System.Drawing.Point(321, 112);
+            this.nudDriverHiddenSkill_c2_Level.Name = "nudDriverHiddenSkill_c2_Level";
+            this.nudDriverHiddenSkill_c2_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c2_Level.TabIndex = 86;
+            this.nudDriverHiddenSkill_c2_Level.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c2_Level_ValueChanged);
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Location = new System.Drawing.Point(253, 114);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(36, 13);
+            this.label152.TabIndex = 85;
+            this.label152.Text = "Level:";
+            // 
+            // nudDriverHiddenSkill_c2_ColumnNo
+            // 
+            this.nudDriverHiddenSkill_c2_ColumnNo.Location = new System.Drawing.Point(321, 86);
+            this.nudDriverHiddenSkill_c2_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c2_ColumnNo.Name = "nudDriverHiddenSkill_c2_ColumnNo";
+            this.nudDriverHiddenSkill_c2_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c2_ColumnNo.TabIndex = 84;
+            this.nudDriverHiddenSkill_c2_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c2_ColumnNo_ValueChanged);
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.Location = new System.Drawing.Point(253, 88);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(62, 13);
+            this.label153.TabIndex = 83;
+            this.label153.Text = "Column No:";
+            // 
+            // nudDriverHiddenSkill_c1_Level
+            // 
+            this.nudDriverHiddenSkill_c1_Level.Location = new System.Drawing.Point(151, 112);
+            this.nudDriverHiddenSkill_c1_Level.Name = "nudDriverHiddenSkill_c1_Level";
+            this.nudDriverHiddenSkill_c1_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c1_Level.TabIndex = 82;
+            this.nudDriverHiddenSkill_c1_Level.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c1_Level_ValueChanged);
+            // 
+            // label154
+            // 
+            this.label154.AutoSize = true;
+            this.label154.Location = new System.Drawing.Point(83, 114);
+            this.label154.Name = "label154";
+            this.label154.Size = new System.Drawing.Size(36, 13);
+            this.label154.TabIndex = 81;
+            this.label154.Text = "Level:";
+            // 
+            // nudDriverHiddenSkill_c1_ColumnNo
+            // 
+            this.nudDriverHiddenSkill_c1_ColumnNo.Location = new System.Drawing.Point(151, 86);
+            this.nudDriverHiddenSkill_c1_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c1_ColumnNo.Name = "nudDriverHiddenSkill_c1_ColumnNo";
+            this.nudDriverHiddenSkill_c1_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverHiddenSkill_c1_ColumnNo.TabIndex = 80;
+            this.nudDriverHiddenSkill_c1_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c1_ColumnNo_ValueChanged);
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Location = new System.Drawing.Point(83, 88);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(62, 13);
+            this.label155.TabIndex = 79;
+            this.label155.Text = "Column No:";
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(6, 22);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(41, 13);
+            this.label156.TabIndex = 78;
+            this.label156.Text = "Row 3:";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(6, 42);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(41, 13);
+            this.label157.TabIndex = 77;
+            this.label157.Text = "Row 2:";
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Location = new System.Drawing.Point(6, 62);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(41, 13);
+            this.label158.TabIndex = 76;
+            this.label158.Text = "Row 1:";
+            // 
+            // cbxDriverHiddenSkill_c5r3
+            // 
+            this.cbxDriverHiddenSkill_c5r3.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c5r3.Location = new System.Drawing.Point(788, 19);
+            this.cbxDriverHiddenSkill_c5r3.Name = "cbxDriverHiddenSkill_c5r3";
+            this.cbxDriverHiddenSkill_c5r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c5r3.TabIndex = 75;
+            this.cbxDriverHiddenSkill_c5r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c5r3_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c5r1
+            // 
+            this.nudDriverHiddenSkill_c5r1.Location = new System.Drawing.Point(741, 59);
+            this.nudDriverHiddenSkill_c5r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c5r1.Name = "nudDriverHiddenSkill_c5r1";
+            this.nudDriverHiddenSkill_c5r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c5r1.TabIndex = 70;
+            this.nudDriverHiddenSkill_c5r1.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c5r1_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c5r2
+            // 
+            this.cbxDriverHiddenSkill_c5r2.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c5r2.Location = new System.Drawing.Point(788, 39);
+            this.cbxDriverHiddenSkill_c5r2.Name = "cbxDriverHiddenSkill_c5r2";
+            this.cbxDriverHiddenSkill_c5r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c5r2.TabIndex = 74;
+            this.cbxDriverHiddenSkill_c5r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c5r2_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c5r2
+            // 
+            this.nudDriverHiddenSkill_c5r2.Location = new System.Drawing.Point(741, 39);
+            this.nudDriverHiddenSkill_c5r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c5r2.Name = "nudDriverHiddenSkill_c5r2";
+            this.nudDriverHiddenSkill_c5r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c5r2.TabIndex = 71;
+            this.nudDriverHiddenSkill_c5r2.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c5r2_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c5r1
+            // 
+            this.cbxDriverHiddenSkill_c5r1.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c5r1.Location = new System.Drawing.Point(788, 59);
+            this.cbxDriverHiddenSkill_c5r1.Name = "cbxDriverHiddenSkill_c5r1";
+            this.cbxDriverHiddenSkill_c5r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c5r1.TabIndex = 73;
+            this.cbxDriverHiddenSkill_c5r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c5r1_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c5r3
+            // 
+            this.nudDriverHiddenSkill_c5r3.Location = new System.Drawing.Point(741, 19);
+            this.nudDriverHiddenSkill_c5r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c5r3.Name = "nudDriverHiddenSkill_c5r3";
+            this.nudDriverHiddenSkill_c5r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c5r3.TabIndex = 72;
+            this.nudDriverHiddenSkill_c5r3.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c5r3_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c4r3
+            // 
+            this.cbxDriverHiddenSkill_c4r3.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c4r3.Location = new System.Drawing.Point(619, 19);
+            this.cbxDriverHiddenSkill_c4r3.Name = "cbxDriverHiddenSkill_c4r3";
+            this.cbxDriverHiddenSkill_c4r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c4r3.TabIndex = 69;
+            this.cbxDriverHiddenSkill_c4r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c4r3_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c4r1
+            // 
+            this.nudDriverHiddenSkill_c4r1.Location = new System.Drawing.Point(572, 59);
+            this.nudDriverHiddenSkill_c4r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c4r1.Name = "nudDriverHiddenSkill_c4r1";
+            this.nudDriverHiddenSkill_c4r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c4r1.TabIndex = 64;
+            this.nudDriverHiddenSkill_c4r1.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c4r1_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c4r2
+            // 
+            this.cbxDriverHiddenSkill_c4r2.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c4r2.Location = new System.Drawing.Point(619, 39);
+            this.cbxDriverHiddenSkill_c4r2.Name = "cbxDriverHiddenSkill_c4r2";
+            this.cbxDriverHiddenSkill_c4r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c4r2.TabIndex = 68;
+            this.cbxDriverHiddenSkill_c4r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c4r2_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c4r2
+            // 
+            this.nudDriverHiddenSkill_c4r2.Location = new System.Drawing.Point(572, 39);
+            this.nudDriverHiddenSkill_c4r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c4r2.Name = "nudDriverHiddenSkill_c4r2";
+            this.nudDriverHiddenSkill_c4r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c4r2.TabIndex = 65;
+            this.nudDriverHiddenSkill_c4r2.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c4r2_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c4r1
+            // 
+            this.cbxDriverHiddenSkill_c4r1.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c4r1.Location = new System.Drawing.Point(619, 59);
+            this.cbxDriverHiddenSkill_c4r1.Name = "cbxDriverHiddenSkill_c4r1";
+            this.cbxDriverHiddenSkill_c4r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c4r1.TabIndex = 67;
+            this.cbxDriverHiddenSkill_c4r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c4r1_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c4r3
+            // 
+            this.nudDriverHiddenSkill_c4r3.Location = new System.Drawing.Point(572, 19);
+            this.nudDriverHiddenSkill_c4r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c4r3.Name = "nudDriverHiddenSkill_c4r3";
+            this.nudDriverHiddenSkill_c4r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c4r3.TabIndex = 66;
+            this.nudDriverHiddenSkill_c4r3.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c4r3_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c3r3
+            // 
+            this.cbxDriverHiddenSkill_c3r3.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c3r3.Location = new System.Drawing.Point(450, 19);
+            this.cbxDriverHiddenSkill_c3r3.Name = "cbxDriverHiddenSkill_c3r3";
+            this.cbxDriverHiddenSkill_c3r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c3r3.TabIndex = 63;
+            this.cbxDriverHiddenSkill_c3r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c3r3_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c3r1
+            // 
+            this.nudDriverHiddenSkill_c3r1.Location = new System.Drawing.Point(403, 59);
+            this.nudDriverHiddenSkill_c3r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c3r1.Name = "nudDriverHiddenSkill_c3r1";
+            this.nudDriverHiddenSkill_c3r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c3r1.TabIndex = 58;
+            this.nudDriverHiddenSkill_c3r1.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c3r1_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c3r2
+            // 
+            this.cbxDriverHiddenSkill_c3r2.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c3r2.Location = new System.Drawing.Point(450, 39);
+            this.cbxDriverHiddenSkill_c3r2.Name = "cbxDriverHiddenSkill_c3r2";
+            this.cbxDriverHiddenSkill_c3r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c3r2.TabIndex = 62;
+            this.cbxDriverHiddenSkill_c3r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c3r2_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c3r2
+            // 
+            this.nudDriverHiddenSkill_c3r2.Location = new System.Drawing.Point(403, 39);
+            this.nudDriverHiddenSkill_c3r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c3r2.Name = "nudDriverHiddenSkill_c3r2";
+            this.nudDriverHiddenSkill_c3r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c3r2.TabIndex = 59;
+            this.nudDriverHiddenSkill_c3r2.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c3r2_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c3r1
+            // 
+            this.cbxDriverHiddenSkill_c3r1.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c3r1.Location = new System.Drawing.Point(450, 59);
+            this.cbxDriverHiddenSkill_c3r1.Name = "cbxDriverHiddenSkill_c3r1";
+            this.cbxDriverHiddenSkill_c3r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c3r1.TabIndex = 61;
+            this.cbxDriverHiddenSkill_c3r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c3r1_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c3r3
+            // 
+            this.nudDriverHiddenSkill_c3r3.Location = new System.Drawing.Point(403, 19);
+            this.nudDriverHiddenSkill_c3r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c3r3.Name = "nudDriverHiddenSkill_c3r3";
+            this.nudDriverHiddenSkill_c3r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c3r3.TabIndex = 60;
+            this.nudDriverHiddenSkill_c3r3.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c3r3_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c2r3
+            // 
+            this.cbxDriverHiddenSkill_c2r3.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c2r3.Location = new System.Drawing.Point(281, 19);
+            this.cbxDriverHiddenSkill_c2r3.Name = "cbxDriverHiddenSkill_c2r3";
+            this.cbxDriverHiddenSkill_c2r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c2r3.TabIndex = 57;
+            this.cbxDriverHiddenSkill_c2r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c2r3_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c2r1
+            // 
+            this.nudDriverHiddenSkill_c2r1.Location = new System.Drawing.Point(234, 59);
+            this.nudDriverHiddenSkill_c2r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c2r1.Name = "nudDriverHiddenSkill_c2r1";
+            this.nudDriverHiddenSkill_c2r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c2r1.TabIndex = 52;
+            this.nudDriverHiddenSkill_c2r1.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c2r1_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c2r2
+            // 
+            this.cbxDriverHiddenSkill_c2r2.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c2r2.Location = new System.Drawing.Point(281, 39);
+            this.cbxDriverHiddenSkill_c2r2.Name = "cbxDriverHiddenSkill_c2r2";
+            this.cbxDriverHiddenSkill_c2r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c2r2.TabIndex = 56;
+            this.cbxDriverHiddenSkill_c2r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c2r2_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c2r2
+            // 
+            this.nudDriverHiddenSkill_c2r2.Location = new System.Drawing.Point(234, 39);
+            this.nudDriverHiddenSkill_c2r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c2r2.Name = "nudDriverHiddenSkill_c2r2";
+            this.nudDriverHiddenSkill_c2r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c2r2.TabIndex = 53;
+            this.nudDriverHiddenSkill_c2r2.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c2r2_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c2r1
+            // 
+            this.cbxDriverHiddenSkill_c2r1.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c2r1.Location = new System.Drawing.Point(281, 59);
+            this.cbxDriverHiddenSkill_c2r1.Name = "cbxDriverHiddenSkill_c2r1";
+            this.cbxDriverHiddenSkill_c2r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c2r1.TabIndex = 55;
+            this.cbxDriverHiddenSkill_c2r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c2r1_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c2r3
+            // 
+            this.nudDriverHiddenSkill_c2r3.Location = new System.Drawing.Point(234, 19);
+            this.nudDriverHiddenSkill_c2r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c2r3.Name = "nudDriverHiddenSkill_c2r3";
+            this.nudDriverHiddenSkill_c2r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c2r3.TabIndex = 54;
+            this.nudDriverHiddenSkill_c2r3.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c2r3_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c1r3
+            // 
+            this.cbxDriverHiddenSkill_c1r3.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c1r3.Location = new System.Drawing.Point(112, 19);
+            this.cbxDriverHiddenSkill_c1r3.Name = "cbxDriverHiddenSkill_c1r3";
+            this.cbxDriverHiddenSkill_c1r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c1r3.TabIndex = 51;
+            this.cbxDriverHiddenSkill_c1r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c1r3_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c1r1
+            // 
+            this.nudDriverHiddenSkill_c1r1.Location = new System.Drawing.Point(65, 59);
+            this.nudDriverHiddenSkill_c1r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c1r1.Name = "nudDriverHiddenSkill_c1r1";
+            this.nudDriverHiddenSkill_c1r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c1r1.TabIndex = 46;
+            this.nudDriverHiddenSkill_c1r1.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c1r1_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c1r2
+            // 
+            this.cbxDriverHiddenSkill_c1r2.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c1r2.Location = new System.Drawing.Point(112, 39);
+            this.cbxDriverHiddenSkill_c1r2.Name = "cbxDriverHiddenSkill_c1r2";
+            this.cbxDriverHiddenSkill_c1r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c1r2.TabIndex = 50;
+            this.cbxDriverHiddenSkill_c1r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c1r2_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c1r2
+            // 
+            this.nudDriverHiddenSkill_c1r2.Location = new System.Drawing.Point(65, 39);
+            this.nudDriverHiddenSkill_c1r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c1r2.Name = "nudDriverHiddenSkill_c1r2";
+            this.nudDriverHiddenSkill_c1r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c1r2.TabIndex = 47;
+            this.nudDriverHiddenSkill_c1r2.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c1r2_ValueChanged);
+            // 
+            // cbxDriverHiddenSkill_c1r1
+            // 
+            this.cbxDriverHiddenSkill_c1r1.FormattingEnabled = true;
+            this.cbxDriverHiddenSkill_c1r1.Location = new System.Drawing.Point(112, 59);
+            this.cbxDriverHiddenSkill_c1r1.Name = "cbxDriverHiddenSkill_c1r1";
+            this.cbxDriverHiddenSkill_c1r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverHiddenSkill_c1r1.TabIndex = 49;
+            this.cbxDriverHiddenSkill_c1r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverHiddenSkill_c1r1_SelectionChangeCommitted);
+            // 
+            // nudDriverHiddenSkill_c1r3
+            // 
+            this.nudDriverHiddenSkill_c1r3.Location = new System.Drawing.Point(65, 19);
+            this.nudDriverHiddenSkill_c1r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverHiddenSkill_c1r3.Name = "nudDriverHiddenSkill_c1r3";
+            this.nudDriverHiddenSkill_c1r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverHiddenSkill_c1r3.TabIndex = 48;
+            this.nudDriverHiddenSkill_c1r3.ValueChanged += new System.EventHandler(this.nudDriverHiddenSkill_c1r3_ValueChanged);
+            // 
+            // gbxDriverOvertSkills
+            // 
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c5_Level);
+            this.gbxDriverOvertSkills.Controls.Add(this.label133);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c5_ColumnNo);
+            this.gbxDriverOvertSkills.Controls.Add(this.label134);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c4_Level);
+            this.gbxDriverOvertSkills.Controls.Add(this.label135);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c4_ColumnNo);
+            this.gbxDriverOvertSkills.Controls.Add(this.label136);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c3_Level);
+            this.gbxDriverOvertSkills.Controls.Add(this.label137);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c3_ColumnNo);
+            this.gbxDriverOvertSkills.Controls.Add(this.label138);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c2_Level);
+            this.gbxDriverOvertSkills.Controls.Add(this.label139);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c2_ColumnNo);
+            this.gbxDriverOvertSkills.Controls.Add(this.label140);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c1_Level);
+            this.gbxDriverOvertSkills.Controls.Add(this.label141);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c1_ColumnNo);
+            this.gbxDriverOvertSkills.Controls.Add(this.label142);
+            this.gbxDriverOvertSkills.Controls.Add(this.label143);
+            this.gbxDriverOvertSkills.Controls.Add(this.label144);
+            this.gbxDriverOvertSkills.Controls.Add(this.label145);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c5r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c5r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c5r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c5r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c5r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c5r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c4r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c4r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c4r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c4r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c4r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c4r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c3r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c3r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c3r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c3r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c3r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c3r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c2r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c2r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c2r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c2r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c2r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c2r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c1r3);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c1r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c1r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c1r2);
+            this.gbxDriverOvertSkills.Controls.Add(this.cbxDriverOvertSkill_c1r1);
+            this.gbxDriverOvertSkills.Controls.Add(this.nudDriverOvertSkill_c1r3);
+            this.gbxDriverOvertSkills.Location = new System.Drawing.Point(6, 6);
+            this.gbxDriverOvertSkills.Name = "gbxDriverOvertSkills";
+            this.gbxDriverOvertSkills.Size = new System.Drawing.Size(915, 144);
+            this.gbxDriverOvertSkills.TabIndex = 102;
+            this.gbxDriverOvertSkills.TabStop = false;
+            this.gbxDriverOvertSkills.Text = "Overt Skills";
+            // 
+            // nudDriverOvertSkill_c5_Level
+            // 
+            this.nudDriverOvertSkill_c5_Level.Location = new System.Drawing.Point(829, 112);
+            this.nudDriverOvertSkill_c5_Level.Name = "nudDriverOvertSkill_c5_Level";
+            this.nudDriverOvertSkill_c5_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c5_Level.TabIndex = 98;
+            this.nudDriverOvertSkill_c5_Level.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c5_Level_ValueChanged);
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(761, 114);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(36, 13);
+            this.label133.TabIndex = 97;
+            this.label133.Text = "Level:";
+            // 
+            // nudDriverOvertSkill_c5_ColumnNo
+            // 
+            this.nudDriverOvertSkill_c5_ColumnNo.Location = new System.Drawing.Point(829, 86);
+            this.nudDriverOvertSkill_c5_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c5_ColumnNo.Name = "nudDriverOvertSkill_c5_ColumnNo";
+            this.nudDriverOvertSkill_c5_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c5_ColumnNo.TabIndex = 96;
+            this.nudDriverOvertSkill_c5_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c5_ColumnNo_ValueChanged);
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(761, 88);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(62, 13);
+            this.label134.TabIndex = 95;
+            this.label134.Text = "Column No:";
+            // 
+            // nudDriverOvertSkill_c4_Level
+            // 
+            this.nudDriverOvertSkill_c4_Level.Location = new System.Drawing.Point(657, 112);
+            this.nudDriverOvertSkill_c4_Level.Name = "nudDriverOvertSkill_c4_Level";
+            this.nudDriverOvertSkill_c4_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c4_Level.TabIndex = 94;
+            this.nudDriverOvertSkill_c4_Level.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c4_Level_ValueChanged);
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(589, 114);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(36, 13);
+            this.label135.TabIndex = 93;
+            this.label135.Text = "Level:";
+            // 
+            // nudDriverOvertSkill_c4_ColumnNo
+            // 
+            this.nudDriverOvertSkill_c4_ColumnNo.Location = new System.Drawing.Point(657, 86);
+            this.nudDriverOvertSkill_c4_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c4_ColumnNo.Name = "nudDriverOvertSkill_c4_ColumnNo";
+            this.nudDriverOvertSkill_c4_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c4_ColumnNo.TabIndex = 92;
+            this.nudDriverOvertSkill_c4_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c4_ColumnNo_ValueChanged);
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(589, 88);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(62, 13);
+            this.label136.TabIndex = 91;
+            this.label136.Text = "Column No:";
+            // 
+            // nudDriverOvertSkill_c3_Level
+            // 
+            this.nudDriverOvertSkill_c3_Level.Location = new System.Drawing.Point(488, 112);
+            this.nudDriverOvertSkill_c3_Level.Name = "nudDriverOvertSkill_c3_Level";
+            this.nudDriverOvertSkill_c3_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c3_Level.TabIndex = 90;
+            this.nudDriverOvertSkill_c3_Level.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c3_Level_ValueChanged);
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Location = new System.Drawing.Point(420, 114);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(36, 13);
+            this.label137.TabIndex = 89;
+            this.label137.Text = "Level:";
+            // 
+            // nudDriverOvertSkill_c3_ColumnNo
+            // 
+            this.nudDriverOvertSkill_c3_ColumnNo.Location = new System.Drawing.Point(488, 86);
+            this.nudDriverOvertSkill_c3_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c3_ColumnNo.Name = "nudDriverOvertSkill_c3_ColumnNo";
+            this.nudDriverOvertSkill_c3_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c3_ColumnNo.TabIndex = 88;
+            this.nudDriverOvertSkill_c3_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c3_ColumnNo_ValueChanged);
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(420, 88);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(62, 13);
+            this.label138.TabIndex = 87;
+            this.label138.Text = "Column No:";
+            // 
+            // nudDriverOvertSkill_c2_Level
+            // 
+            this.nudDriverOvertSkill_c2_Level.Location = new System.Drawing.Point(321, 112);
+            this.nudDriverOvertSkill_c2_Level.Name = "nudDriverOvertSkill_c2_Level";
+            this.nudDriverOvertSkill_c2_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c2_Level.TabIndex = 86;
+            this.nudDriverOvertSkill_c2_Level.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c2_Level_ValueChanged);
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Location = new System.Drawing.Point(253, 114);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(36, 13);
+            this.label139.TabIndex = 85;
+            this.label139.Text = "Level:";
+            // 
+            // nudDriverOvertSkill_c2_ColumnNo
+            // 
+            this.nudDriverOvertSkill_c2_ColumnNo.Location = new System.Drawing.Point(321, 86);
+            this.nudDriverOvertSkill_c2_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c2_ColumnNo.Name = "nudDriverOvertSkill_c2_ColumnNo";
+            this.nudDriverOvertSkill_c2_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c2_ColumnNo.TabIndex = 84;
+            this.nudDriverOvertSkill_c2_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c2_ColumnNo_ValueChanged);
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Location = new System.Drawing.Point(253, 88);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(62, 13);
+            this.label140.TabIndex = 83;
+            this.label140.Text = "Column No:";
+            // 
+            // nudDriverOvertSkill_c1_Level
+            // 
+            this.nudDriverOvertSkill_c1_Level.Location = new System.Drawing.Point(151, 112);
+            this.nudDriverOvertSkill_c1_Level.Name = "nudDriverOvertSkill_c1_Level";
+            this.nudDriverOvertSkill_c1_Level.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c1_Level.TabIndex = 82;
+            this.nudDriverOvertSkill_c1_Level.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c1_Level_ValueChanged);
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(83, 114);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(36, 13);
+            this.label141.TabIndex = 81;
+            this.label141.Text = "Level:";
+            // 
+            // nudDriverOvertSkill_c1_ColumnNo
+            // 
+            this.nudDriverOvertSkill_c1_ColumnNo.Location = new System.Drawing.Point(151, 86);
+            this.nudDriverOvertSkill_c1_ColumnNo.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c1_ColumnNo.Name = "nudDriverOvertSkill_c1_ColumnNo";
+            this.nudDriverOvertSkill_c1_ColumnNo.Size = new System.Drawing.Size(61, 20);
+            this.nudDriverOvertSkill_c1_ColumnNo.TabIndex = 80;
+            this.nudDriverOvertSkill_c1_ColumnNo.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c1_ColumnNo_ValueChanged);
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Location = new System.Drawing.Point(83, 88);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(62, 13);
+            this.label142.TabIndex = 79;
+            this.label142.Text = "Column No:";
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Location = new System.Drawing.Point(6, 22);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(41, 13);
+            this.label143.TabIndex = 78;
+            this.label143.Text = "Row 3:";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Location = new System.Drawing.Point(6, 42);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(41, 13);
+            this.label144.TabIndex = 77;
+            this.label144.Text = "Row 2:";
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Location = new System.Drawing.Point(6, 62);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(41, 13);
+            this.label145.TabIndex = 76;
+            this.label145.Text = "Row 1:";
+            // 
+            // cbxDriverOvertSkill_c5r3
+            // 
+            this.cbxDriverOvertSkill_c5r3.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c5r3.Location = new System.Drawing.Point(788, 19);
+            this.cbxDriverOvertSkill_c5r3.Name = "cbxDriverOvertSkill_c5r3";
+            this.cbxDriverOvertSkill_c5r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c5r3.TabIndex = 75;
+            this.cbxDriverOvertSkill_c5r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c5r3_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c5r1
+            // 
+            this.nudDriverOvertSkill_c5r1.Location = new System.Drawing.Point(741, 59);
+            this.nudDriverOvertSkill_c5r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c5r1.Name = "nudDriverOvertSkill_c5r1";
+            this.nudDriverOvertSkill_c5r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c5r1.TabIndex = 70;
+            this.nudDriverOvertSkill_c5r1.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c5r1_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c5r2
+            // 
+            this.cbxDriverOvertSkill_c5r2.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c5r2.Location = new System.Drawing.Point(788, 39);
+            this.cbxDriverOvertSkill_c5r2.Name = "cbxDriverOvertSkill_c5r2";
+            this.cbxDriverOvertSkill_c5r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c5r2.TabIndex = 74;
+            this.cbxDriverOvertSkill_c5r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c5r2_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c5r2
+            // 
+            this.nudDriverOvertSkill_c5r2.Location = new System.Drawing.Point(741, 39);
+            this.nudDriverOvertSkill_c5r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c5r2.Name = "nudDriverOvertSkill_c5r2";
+            this.nudDriverOvertSkill_c5r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c5r2.TabIndex = 71;
+            this.nudDriverOvertSkill_c5r2.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c5r2_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c5r1
+            // 
+            this.cbxDriverOvertSkill_c5r1.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c5r1.Location = new System.Drawing.Point(788, 59);
+            this.cbxDriverOvertSkill_c5r1.Name = "cbxDriverOvertSkill_c5r1";
+            this.cbxDriverOvertSkill_c5r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c5r1.TabIndex = 73;
+            this.cbxDriverOvertSkill_c5r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c5r1_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c5r3
+            // 
+            this.nudDriverOvertSkill_c5r3.Location = new System.Drawing.Point(741, 19);
+            this.nudDriverOvertSkill_c5r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c5r3.Name = "nudDriverOvertSkill_c5r3";
+            this.nudDriverOvertSkill_c5r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c5r3.TabIndex = 72;
+            this.nudDriverOvertSkill_c5r3.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c5r3_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c4r3
+            // 
+            this.cbxDriverOvertSkill_c4r3.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c4r3.Location = new System.Drawing.Point(619, 19);
+            this.cbxDriverOvertSkill_c4r3.Name = "cbxDriverOvertSkill_c4r3";
+            this.cbxDriverOvertSkill_c4r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c4r3.TabIndex = 69;
+            this.cbxDriverOvertSkill_c4r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c4r3_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c4r1
+            // 
+            this.nudDriverOvertSkill_c4r1.Location = new System.Drawing.Point(572, 59);
+            this.nudDriverOvertSkill_c4r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c4r1.Name = "nudDriverOvertSkill_c4r1";
+            this.nudDriverOvertSkill_c4r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c4r1.TabIndex = 64;
+            this.nudDriverOvertSkill_c4r1.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c4r1_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c4r2
+            // 
+            this.cbxDriverOvertSkill_c4r2.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c4r2.Location = new System.Drawing.Point(619, 39);
+            this.cbxDriverOvertSkill_c4r2.Name = "cbxDriverOvertSkill_c4r2";
+            this.cbxDriverOvertSkill_c4r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c4r2.TabIndex = 68;
+            this.cbxDriverOvertSkill_c4r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c4r2_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c4r2
+            // 
+            this.nudDriverOvertSkill_c4r2.Location = new System.Drawing.Point(572, 39);
+            this.nudDriverOvertSkill_c4r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c4r2.Name = "nudDriverOvertSkill_c4r2";
+            this.nudDriverOvertSkill_c4r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c4r2.TabIndex = 65;
+            this.nudDriverOvertSkill_c4r2.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c4r2_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c4r1
+            // 
+            this.cbxDriverOvertSkill_c4r1.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c4r1.Location = new System.Drawing.Point(619, 59);
+            this.cbxDriverOvertSkill_c4r1.Name = "cbxDriverOvertSkill_c4r1";
+            this.cbxDriverOvertSkill_c4r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c4r1.TabIndex = 67;
+            this.cbxDriverOvertSkill_c4r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c4r1_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c4r3
+            // 
+            this.nudDriverOvertSkill_c4r3.Location = new System.Drawing.Point(572, 19);
+            this.nudDriverOvertSkill_c4r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c4r3.Name = "nudDriverOvertSkill_c4r3";
+            this.nudDriverOvertSkill_c4r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c4r3.TabIndex = 66;
+            this.nudDriverOvertSkill_c4r3.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c4r3_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c3r3
+            // 
+            this.cbxDriverOvertSkill_c3r3.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c3r3.Location = new System.Drawing.Point(450, 19);
+            this.cbxDriverOvertSkill_c3r3.Name = "cbxDriverOvertSkill_c3r3";
+            this.cbxDriverOvertSkill_c3r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c3r3.TabIndex = 63;
+            this.cbxDriverOvertSkill_c3r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c3r3_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c3r1
+            // 
+            this.nudDriverOvertSkill_c3r1.Location = new System.Drawing.Point(403, 59);
+            this.nudDriverOvertSkill_c3r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c3r1.Name = "nudDriverOvertSkill_c3r1";
+            this.nudDriverOvertSkill_c3r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c3r1.TabIndex = 58;
+            this.nudDriverOvertSkill_c3r1.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c3r1_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c3r2
+            // 
+            this.cbxDriverOvertSkill_c3r2.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c3r2.Location = new System.Drawing.Point(450, 39);
+            this.cbxDriverOvertSkill_c3r2.Name = "cbxDriverOvertSkill_c3r2";
+            this.cbxDriverOvertSkill_c3r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c3r2.TabIndex = 62;
+            this.cbxDriverOvertSkill_c3r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c3r2_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c3r2
+            // 
+            this.nudDriverOvertSkill_c3r2.Location = new System.Drawing.Point(403, 39);
+            this.nudDriverOvertSkill_c3r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c3r2.Name = "nudDriverOvertSkill_c3r2";
+            this.nudDriverOvertSkill_c3r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c3r2.TabIndex = 59;
+            this.nudDriverOvertSkill_c3r2.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c3r2_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c3r1
+            // 
+            this.cbxDriverOvertSkill_c3r1.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c3r1.Location = new System.Drawing.Point(450, 59);
+            this.cbxDriverOvertSkill_c3r1.Name = "cbxDriverOvertSkill_c3r1";
+            this.cbxDriverOvertSkill_c3r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c3r1.TabIndex = 61;
+            this.cbxDriverOvertSkill_c3r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c3r1_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c3r3
+            // 
+            this.nudDriverOvertSkill_c3r3.Location = new System.Drawing.Point(403, 19);
+            this.nudDriverOvertSkill_c3r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c3r3.Name = "nudDriverOvertSkill_c3r3";
+            this.nudDriverOvertSkill_c3r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c3r3.TabIndex = 60;
+            this.nudDriverOvertSkill_c3r3.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c3r3_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c2r3
+            // 
+            this.cbxDriverOvertSkill_c2r3.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c2r3.Location = new System.Drawing.Point(281, 19);
+            this.cbxDriverOvertSkill_c2r3.Name = "cbxDriverOvertSkill_c2r3";
+            this.cbxDriverOvertSkill_c2r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c2r3.TabIndex = 57;
+            this.cbxDriverOvertSkill_c2r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c2r3_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c2r1
+            // 
+            this.nudDriverOvertSkill_c2r1.Location = new System.Drawing.Point(234, 59);
+            this.nudDriverOvertSkill_c2r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c2r1.Name = "nudDriverOvertSkill_c2r1";
+            this.nudDriverOvertSkill_c2r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c2r1.TabIndex = 52;
+            this.nudDriverOvertSkill_c2r1.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c2r1_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c2r2
+            // 
+            this.cbxDriverOvertSkill_c2r2.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c2r2.Location = new System.Drawing.Point(281, 39);
+            this.cbxDriverOvertSkill_c2r2.Name = "cbxDriverOvertSkill_c2r2";
+            this.cbxDriverOvertSkill_c2r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c2r2.TabIndex = 56;
+            this.cbxDriverOvertSkill_c2r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c2r2_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c2r2
+            // 
+            this.nudDriverOvertSkill_c2r2.Location = new System.Drawing.Point(234, 39);
+            this.nudDriverOvertSkill_c2r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c2r2.Name = "nudDriverOvertSkill_c2r2";
+            this.nudDriverOvertSkill_c2r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c2r2.TabIndex = 53;
+            this.nudDriverOvertSkill_c2r2.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c2r2_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c2r1
+            // 
+            this.cbxDriverOvertSkill_c2r1.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c2r1.Location = new System.Drawing.Point(281, 59);
+            this.cbxDriverOvertSkill_c2r1.Name = "cbxDriverOvertSkill_c2r1";
+            this.cbxDriverOvertSkill_c2r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c2r1.TabIndex = 55;
+            this.cbxDriverOvertSkill_c2r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c2r1_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c2r3
+            // 
+            this.nudDriverOvertSkill_c2r3.Location = new System.Drawing.Point(234, 19);
+            this.nudDriverOvertSkill_c2r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c2r3.Name = "nudDriverOvertSkill_c2r3";
+            this.nudDriverOvertSkill_c2r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c2r3.TabIndex = 54;
+            this.nudDriverOvertSkill_c2r3.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c2r3_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c1r3
+            // 
+            this.cbxDriverOvertSkill_c1r3.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c1r3.Location = new System.Drawing.Point(112, 19);
+            this.cbxDriverOvertSkill_c1r3.Name = "cbxDriverOvertSkill_c1r3";
+            this.cbxDriverOvertSkill_c1r3.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c1r3.TabIndex = 51;
+            this.cbxDriverOvertSkill_c1r3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c1r3_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c1r1
+            // 
+            this.nudDriverOvertSkill_c1r1.Location = new System.Drawing.Point(65, 59);
+            this.nudDriverOvertSkill_c1r1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c1r1.Name = "nudDriverOvertSkill_c1r1";
+            this.nudDriverOvertSkill_c1r1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c1r1.TabIndex = 46;
+            this.nudDriverOvertSkill_c1r1.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c1r1_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c1r2
+            // 
+            this.cbxDriverOvertSkill_c1r2.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c1r2.Location = new System.Drawing.Point(112, 39);
+            this.cbxDriverOvertSkill_c1r2.Name = "cbxDriverOvertSkill_c1r2";
+            this.cbxDriverOvertSkill_c1r2.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c1r2.TabIndex = 50;
+            this.cbxDriverOvertSkill_c1r2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c1r2_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c1r2
+            // 
+            this.nudDriverOvertSkill_c1r2.Location = new System.Drawing.Point(65, 39);
+            this.nudDriverOvertSkill_c1r2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c1r2.Name = "nudDriverOvertSkill_c1r2";
+            this.nudDriverOvertSkill_c1r2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c1r2.TabIndex = 47;
+            this.nudDriverOvertSkill_c1r2.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c1r2_ValueChanged);
+            // 
+            // cbxDriverOvertSkill_c1r1
+            // 
+            this.cbxDriverOvertSkill_c1r1.FormattingEnabled = true;
+            this.cbxDriverOvertSkill_c1r1.Location = new System.Drawing.Point(112, 59);
+            this.cbxDriverOvertSkill_c1r1.Name = "cbxDriverOvertSkill_c1r1";
+            this.cbxDriverOvertSkill_c1r1.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverOvertSkill_c1r1.TabIndex = 49;
+            this.cbxDriverOvertSkill_c1r1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverOvertSkill_c1r1_SelectionChangeCommitted);
+            // 
+            // nudDriverOvertSkill_c1r3
+            // 
+            this.nudDriverOvertSkill_c1r3.Location = new System.Drawing.Point(65, 19);
+            this.nudDriverOvertSkill_c1r3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudDriverOvertSkill_c1r3.Name = "nudDriverOvertSkill_c1r3";
+            this.nudDriverOvertSkill_c1r3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverOvertSkill_c1r3.TabIndex = 48;
+            this.nudDriverOvertSkill_c1r3.ValueChanged += new System.EventHandler(this.nudDriverOvertSkill_c1r3_ValueChanged);
+            // 
+            // tabDriversUnknown
+            // 
+            this.tabDriversUnknown.AutoScroll = true;
+            this.tabDriversUnknown.Controls.Add(this.groupBox42);
+            this.tabDriversUnknown.Controls.Add(this.groupBox41);
+            this.tabDriversUnknown.Controls.Add(this.groupBox40);
+            this.tabDriversUnknown.Controls.Add(this.groupBox39);
+            this.tabDriversUnknown.Controls.Add(this.groupBox38);
+            this.tabDriversUnknown.Controls.Add(this.groupBox37);
+            this.tabDriversUnknown.Controls.Add(this.groupBox36);
+            this.tabDriversUnknown.Controls.Add(this.groupBox35);
+            this.tabDriversUnknown.Location = new System.Drawing.Point(4, 22);
+            this.tabDriversUnknown.Name = "tabDriversUnknown";
+            this.tabDriversUnknown.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriversUnknown.Size = new System.Drawing.Size(948, 549);
+            this.tabDriversUnknown.TabIndex = 2;
+            this.tabDriversUnknown.Text = "Unknown";
+            this.tabDriversUnknown.UseVisualStyleBackColor = true;
+            // 
+            // groupBox42
+            // 
+            this.groupBox42.Controls.Add(this.hbxDriverUnk_0x059C);
+            this.groupBox42.Location = new System.Drawing.Point(6, 630);
+            this.groupBox42.Name = "groupBox42";
+            this.groupBox42.Size = new System.Drawing.Size(216, 67);
+            this.groupBox42.TabIndex = 154;
+            this.groupBox42.TabStop = false;
+            this.groupBox42.Text = "Unk_0x059C";
+            // 
+            // hbxDriverUnk_0x059C
+            // 
+            this.hbxDriverUnk_0x059C.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x059C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x059C.LineInfoVisible = true;
+            this.hbxDriverUnk_0x059C.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x059C.Name = "hbxDriverUnk_0x059C";
+            this.hbxDriverUnk_0x059C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x059C.Size = new System.Drawing.Size(204, 41);
+            this.hbxDriverUnk_0x059C.TabIndex = 151;
+            // 
+            // groupBox41
+            // 
+            this.groupBox41.Controls.Add(this.hbxDriverUnk_0x0582);
+            this.groupBox41.Location = new System.Drawing.Point(6, 557);
+            this.groupBox41.Name = "groupBox41";
+            this.groupBox41.Size = new System.Drawing.Size(170, 67);
+            this.groupBox41.TabIndex = 155;
+            this.groupBox41.TabStop = false;
+            this.groupBox41.Text = "Unk_0x0582";
+            // 
+            // hbxDriverUnk_0x0582
+            // 
+            this.hbxDriverUnk_0x0582.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x0582.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x0582.LineInfoVisible = true;
+            this.hbxDriverUnk_0x0582.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x0582.Name = "hbxDriverUnk_0x0582";
+            this.hbxDriverUnk_0x0582.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x0582.Size = new System.Drawing.Size(156, 41);
+            this.hbxDriverUnk_0x0582.TabIndex = 151;
+            // 
+            // groupBox40
+            // 
+            this.groupBox40.Controls.Add(this.hbxDriverUnk_0x057A);
+            this.groupBox40.Location = new System.Drawing.Point(6, 484);
+            this.groupBox40.Name = "groupBox40";
+            this.groupBox40.Size = new System.Drawing.Size(170, 67);
+            this.groupBox40.TabIndex = 154;
+            this.groupBox40.TabStop = false;
+            this.groupBox40.Text = "Unk_0x057A";
+            // 
+            // hbxDriverUnk_0x057A
+            // 
+            this.hbxDriverUnk_0x057A.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x057A.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x057A.LineInfoVisible = true;
+            this.hbxDriverUnk_0x057A.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x057A.Name = "hbxDriverUnk_0x057A";
+            this.hbxDriverUnk_0x057A.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x057A.Size = new System.Drawing.Size(156, 41);
+            this.hbxDriverUnk_0x057A.TabIndex = 151;
+            // 
+            // groupBox39
+            // 
+            this.groupBox39.Controls.Add(this.hbxDriverUnk_0x04FE);
+            this.groupBox39.Location = new System.Drawing.Point(6, 298);
+            this.groupBox39.Name = "groupBox39";
+            this.groupBox39.Size = new System.Drawing.Size(483, 180);
+            this.groupBox39.TabIndex = 154;
+            this.groupBox39.TabStop = false;
+            this.groupBox39.Text = "Unk_0x04FE";
+            // 
+            // hbxDriverUnk_0x04FE
+            // 
+            this.hbxDriverUnk_0x04FE.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x04FE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x04FE.LineInfoVisible = true;
+            this.hbxDriverUnk_0x04FE.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x04FE.Name = "hbxDriverUnk_0x04FE";
+            this.hbxDriverUnk_0x04FE.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x04FE.Size = new System.Drawing.Size(470, 154);
+            this.hbxDriverUnk_0x04FE.TabIndex = 151;
+            // 
+            // groupBox38
+            // 
+            this.groupBox38.Controls.Add(this.hbxDriverUnk_0x02EA);
+            this.groupBox38.Location = new System.Drawing.Point(6, 225);
+            this.groupBox38.Name = "groupBox38";
+            this.groupBox38.Size = new System.Drawing.Size(170, 67);
+            this.groupBox38.TabIndex = 153;
+            this.groupBox38.TabStop = false;
+            this.groupBox38.Text = "Unk_0x02EA";
+            // 
+            // hbxDriverUnk_0x02EA
+            // 
+            this.hbxDriverUnk_0x02EA.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x02EA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x02EA.LineInfoVisible = true;
+            this.hbxDriverUnk_0x02EA.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x02EA.Name = "hbxDriverUnk_0x02EA";
+            this.hbxDriverUnk_0x02EA.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x02EA.Size = new System.Drawing.Size(156, 41);
+            this.hbxDriverUnk_0x02EA.TabIndex = 151;
+            // 
+            // groupBox37
+            // 
+            this.groupBox37.Controls.Add(this.hbxDriverUnk_0x02DC);
+            this.groupBox37.Location = new System.Drawing.Point(6, 152);
+            this.groupBox37.Name = "groupBox37";
+            this.groupBox37.Size = new System.Drawing.Size(411, 67);
+            this.groupBox37.TabIndex = 154;
+            this.groupBox37.TabStop = false;
+            this.groupBox37.Text = "Unk_0x02DC";
+            // 
+            // hbxDriverUnk_0x02DC
+            // 
+            this.hbxDriverUnk_0x02DC.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x02DC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x02DC.LineInfoVisible = true;
+            this.hbxDriverUnk_0x02DC.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x02DC.Name = "hbxDriverUnk_0x02DC";
+            this.hbxDriverUnk_0x02DC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x02DC.Size = new System.Drawing.Size(398, 41);
+            this.hbxDriverUnk_0x02DC.TabIndex = 151;
+            // 
+            // groupBox36
+            // 
+            this.groupBox36.Controls.Add(this.hbxDriverUnk_0x00A8);
+            this.groupBox36.Location = new System.Drawing.Point(6, 79);
+            this.groupBox36.Name = "groupBox36";
+            this.groupBox36.Size = new System.Drawing.Size(313, 67);
+            this.groupBox36.TabIndex = 153;
+            this.groupBox36.TabStop = false;
+            this.groupBox36.Text = "Unk_0x00A8";
+            // 
+            // hbxDriverUnk_0x00A8
+            // 
+            this.hbxDriverUnk_0x00A8.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x00A8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x00A8.LineInfoVisible = true;
+            this.hbxDriverUnk_0x00A8.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x00A8.Name = "hbxDriverUnk_0x00A8";
+            this.hbxDriverUnk_0x00A8.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x00A8.Size = new System.Drawing.Size(300, 41);
+            this.hbxDriverUnk_0x00A8.TabIndex = 151;
+            // 
+            // groupBox35
+            // 
+            this.groupBox35.Controls.Add(this.hbxDriverUnk_0x002C);
+            this.groupBox35.Location = new System.Drawing.Point(6, 6);
+            this.groupBox35.Name = "groupBox35";
+            this.groupBox35.Size = new System.Drawing.Size(216, 67);
+            this.groupBox35.TabIndex = 152;
+            this.groupBox35.TabStop = false;
+            this.groupBox35.Text = "Unk_0x002C";
+            // 
+            // hbxDriverUnk_0x002C
+            // 
+            this.hbxDriverUnk_0x002C.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x002C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x002C.LineInfoVisible = true;
+            this.hbxDriverUnk_0x002C.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x002C.Name = "hbxDriverUnk_0x002C";
+            this.hbxDriverUnk_0x002C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x002C.Size = new System.Drawing.Size(204, 41);
+            this.hbxDriverUnk_0x002C.TabIndex = 151;
             // 
             // tabBlades
             // 
@@ -2823,6 +4443,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -2862,6 +4484,7 @@
             // 
             // tabBladeMisc
             // 
+            this.tabBladeMisc.Controls.Add(this.nudBladeCommonBladeIndex);
             this.tabBladeMisc.Controls.Add(this.nudBladeStill);
             this.tabBladeMisc.Controls.Add(this.nudBladeGender);
             this.tabBladeMisc.Controls.Add(this.nudBladeRace);
@@ -2913,6 +4536,23 @@
             this.tabBladeMisc.TabIndex = 0;
             this.tabBladeMisc.Text = "Misc";
             this.tabBladeMisc.UseVisualStyleBackColor = true;
+            // 
+            // nudBladeCommonBladeIndex
+            // 
+            this.nudBladeCommonBladeIndex.Location = new System.Drawing.Point(100, 434);
+            this.nudBladeCommonBladeIndex.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.nudBladeCommonBladeIndex.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.nudBladeCommonBladeIndex.Name = "nudBladeCommonBladeIndex";
+            this.nudBladeCommonBladeIndex.Size = new System.Drawing.Size(120, 20);
+            this.nudBladeCommonBladeIndex.TabIndex = 127;
             // 
             // nudBladeStill
             // 
@@ -3557,6 +5197,7 @@
             this.nudBladeSetDriver.Name = "nudBladeSetDriver";
             this.nudBladeSetDriver.Size = new System.Drawing.Size(49, 20);
             this.nudBladeSetDriver.TabIndex = 72;
+            this.nudBladeSetDriver.ValueChanged += new System.EventHandler(this.nudBladeSetDriver_ValueChanged);
             // 
             // nudBladeCreator
             // 
@@ -3569,6 +5210,7 @@
             this.nudBladeCreator.Name = "nudBladeCreator";
             this.nudBladeCreator.Size = new System.Drawing.Size(49, 20);
             this.nudBladeCreator.TabIndex = 71;
+            this.nudBladeCreator.ValueChanged += new System.EventHandler(this.nudBladeCreator_ValueChanged);
             // 
             // nudBladeDataType
             // 
@@ -3581,6 +5223,7 @@
             this.nudBladeDataType.Name = "nudBladeDataType";
             this.nudBladeDataType.Size = new System.Drawing.Size(49, 20);
             this.nudBladeDataType.TabIndex = 70;
+            this.nudBladeDataType.ValueChanged += new System.EventHandler(this.nudBladeDataType_ValueChanged);
             // 
             // label71
             // 
@@ -4374,16 +6017,16 @@
             this.label80.TabIndex = 105;
             this.label80.Text = "Unk_0x2C:";
             // 
-            // tabPage2
+            // tabItems
             // 
-            this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1134, 581);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabItems.Controls.Add(this.tabControl2);
+            this.tabItems.Location = new System.Drawing.Point(4, 22);
+            this.tabItems.Name = "tabItems";
+            this.tabItems.Padding = new System.Windows.Forms.Padding(3);
+            this.tabItems.Size = new System.Drawing.Size(1134, 581);
+            this.tabItems.TabIndex = 3;
+            this.tabItems.Text = "Items";
+            this.tabItems.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
@@ -4415,6 +6058,7 @@
             // tabPcWpnChipBox
             // 
             this.tabPcWpnChipBox.AutoScroll = true;
+            this.tabPcWpnChipBox.Controls.Add(this.dgvPcWpnChipBox);
             this.tabPcWpnChipBox.Location = new System.Drawing.Point(4, 22);
             this.tabPcWpnChipBox.Name = "tabPcWpnChipBox";
             this.tabPcWpnChipBox.Padding = new System.Windows.Forms.Padding(3);
@@ -4422,6 +6066,16 @@
             this.tabPcWpnChipBox.TabIndex = 0;
             this.tabPcWpnChipBox.Text = "PcWpnChipBox";
             this.tabPcWpnChipBox.UseVisualStyleBackColor = true;
+            // 
+            // dgvPcWpnChipBox
+            // 
+            this.dgvPcWpnChipBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPcWpnChipBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPcWpnChipBox.Location = new System.Drawing.Point(3, 3);
+            this.dgvPcWpnChipBox.Name = "dgvPcWpnChipBox";
+            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvPcWpnChipBox.TabIndex = 0;
+            this.dgvPcWpnChipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPcEquipBox
             // 
@@ -4444,6 +6098,7 @@
             this.dgvPcEquipBox.Name = "dgvPcEquipBox";
             this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvPcEquipBox.TabIndex = 0;
+            this.dgvPcEquipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabEquipOrbBox
             // 
@@ -4466,6 +6121,7 @@
             this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
             this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEquipOrbBox.TabIndex = 0;
+            this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabSalvageBox
             // 
@@ -4488,6 +6144,7 @@
             this.dgvSalvageBox.Name = "dgvSalvageBox";
             this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvSalvageBox.TabIndex = 0;
+            this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPreciousBox
             // 
@@ -4510,6 +6167,7 @@
             this.dgvPreciousBox.Name = "dgvPreciousBox";
             this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvPreciousBox.TabIndex = 0;
+            this.dgvPreciousBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabInfoBox
             // 
@@ -4532,6 +6190,7 @@
             this.dgvInfoBox.Name = "dgvInfoBox";
             this.dgvInfoBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvInfoBox.TabIndex = 0;
+            this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabEventBox
             // 
@@ -4554,6 +6213,7 @@
             this.dgvEventBox.Name = "dgvEventBox";
             this.dgvEventBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEventBox.TabIndex = 0;
+            this.dgvEventBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabCollectionListBox
             // 
@@ -4576,6 +6236,7 @@
             this.dgvCollectionListBox.Name = "dgvCollectionListBox";
             this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvCollectionListBox.TabIndex = 0;
+            this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabTreasureBox
             // 
@@ -4598,6 +6259,7 @@
             this.dgvTreasureBox.Name = "dgvTreasureBox";
             this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvTreasureBox.TabIndex = 0;
+            this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabEmptyOrbBox
             // 
@@ -4620,6 +6282,7 @@
             this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
             this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvEmptyOrbBox.TabIndex = 0;
+            this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabFavoriteBox
             // 
@@ -4642,6 +6305,7 @@
             this.dgvFavoriteBox.Name = "dgvFavoriteBox";
             this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvFavoriteBox.TabIndex = 0;
+            this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabCrystalListBox
             // 
@@ -4664,6 +6328,7 @@
             this.dgvCrystalListBox.Name = "dgvCrystalListBox";
             this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvCrystalListBox.TabIndex = 0;
+            this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabBoosterBox
             // 
@@ -4686,8 +6351,7 @@
             this.dgvBoosterBox.Name = "dgvBoosterBox";
             this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvBoosterBox.TabIndex = 0;
-            this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoosterBox_CellValueChanged);
-            this.dgvBoosterBox.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvBoosterBox_EditingControlShowing);
+            this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabHanaRoleBox
             // 
@@ -4710,6 +6374,7 @@
             this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
             this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaRoleBox.TabIndex = 0;
+            this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabHanaAtrBox
             // 
@@ -4732,6 +6397,7 @@
             this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
             this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaAtrBox.TabIndex = 0;
+            this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabHanaArtsBox
             // 
@@ -4754,6 +6420,7 @@
             this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
             this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaArtsBox.TabIndex = 0;
+            this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabHanaNArtsBox
             // 
@@ -4776,6 +6443,7 @@
             this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
             this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaNArtsBox.TabIndex = 0;
+            this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabHanaAssistBox
             // 
@@ -4798,6 +6466,7 @@
             this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
             this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 543);
             this.dgvHanaAssistBox.TabIndex = 0;
+            this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // ofdSaveFile
             // 
@@ -4816,12 +6485,14 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.button1);
             this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
             this.splitContainer3.Panel1.Controls.Add(this.btnSave);
             // 
@@ -4832,25 +6503,15 @@
             this.splitContainer3.SplitterDistance = 48;
             this.splitContainer3.TabIndex = 34;
             // 
-            // dsgbxDriverHiddenSkills
+            // button1
             // 
-            this.dsgbxDriverHiddenSkills.Location = new System.Drawing.Point(6, 156);
-            this.dsgbxDriverHiddenSkills.Name = "dsgbxDriverHiddenSkills";
-            this.dsgbxDriverHiddenSkills.Size = new System.Drawing.Size(921, 150);
-            this.dsgbxDriverHiddenSkills.SkillSet = null;
-            this.dsgbxDriverHiddenSkills.TabIndex = 101;
-            this.dsgbxDriverHiddenSkills.Title = "Hidden Skills";
-            this.dsgbxDriverHiddenSkills.Leave += new System.EventHandler(this.dsgbxDriverHiddenSkills_Leave);
-            // 
-            // dsgbxDriverOvertSkills
-            // 
-            this.dsgbxDriverOvertSkills.Location = new System.Drawing.Point(6, 6);
-            this.dsgbxDriverOvertSkills.Name = "dsgbxDriverOvertSkills";
-            this.dsgbxDriverOvertSkills.Size = new System.Drawing.Size(921, 150);
-            this.dsgbxDriverOvertSkills.SkillSet = null;
-            this.dsgbxDriverOvertSkills.TabIndex = 100;
-            this.dsgbxDriverOvertSkills.Title = "Overt Skills";
-            this.dsgbxDriverOvertSkills.Leave += new System.EventHandler(this.dsgbxDriverOvertSkills_Leave);
+            this.button1.Location = new System.Drawing.Point(260, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmMain
             // 
@@ -4957,6 +6618,69 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).EndInit();
             this.tabDriversSkills.ResumeLayout(false);
+            this.gbxDriverHiddenSkills.ResumeLayout(false);
+            this.gbxDriverHiddenSkills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c4r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c3r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c2r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c1r3)).EndInit();
+            this.gbxDriverOvertSkills.ResumeLayout(false);
+            this.gbxDriverOvertSkills.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1_Level)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1_ColumnNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c5r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c4r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c3r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c2r3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverOvertSkill_c1r3)).EndInit();
+            this.tabDriversUnknown.ResumeLayout(false);
+            this.groupBox42.ResumeLayout(false);
+            this.groupBox41.ResumeLayout(false);
+            this.groupBox40.ResumeLayout(false);
+            this.groupBox39.ResumeLayout(false);
+            this.groupBox38.ResumeLayout(false);
+            this.groupBox37.ResumeLayout(false);
+            this.groupBox36.ResumeLayout(false);
+            this.groupBox35.ResumeLayout(false);
             this.tabBlades.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -4965,6 +6689,7 @@
             this.tabControl3.ResumeLayout(false);
             this.tabBladeMisc.ResumeLayout(false);
             this.tabBladeMisc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeCommonBladeIndex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeStill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeRace)).EndInit();
@@ -5041,8 +6766,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).EndInit();
             this.tabBladeUnknown.ResumeLayout(false);
             this.tabBladeUnknown.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.tabItems.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPcWpnChipBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
             this.tabPcEquipBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).EndInit();
             this.tabEquipOrbBox.ResumeLayout(false);
@@ -5143,7 +6870,7 @@
         private System.Windows.Forms.TabPage tabMain;
         private System.Windows.Forms.OpenFileDialog ofdSaveFile;
         private System.Windows.Forms.TabPage tabBlades;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabItems;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.ComboBox cbxPartyLeader;
         private System.Windows.Forms.Label label63;
@@ -5418,8 +7145,6 @@
         private System.Windows.Forms.ComboBox cbxDriverID;
         private System.Windows.Forms.TabPage tabDriversSkills;
         private System.Windows.Forms.ListBox lbxDrivers;
-        private DriverSkillGroupBox dsgbxDriverOvertSkills;
-        private DriverSkillGroupBox dsgbxDriverHiddenSkills;
         private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId1;
         private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId3;
         private System.Windows.Forms.NumericUpDown nudDriverWeaponArtId2;
@@ -5473,6 +7198,135 @@
         private System.Windows.Forms.ComboBox cbxDriverAccessory1ID;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.GroupBox groupBox34;
+        private System.Windows.Forms.DataGridView dgvPcWpnChipBox;
+        private System.Windows.Forms.TabPage tabDriversUnknown;
+        private System.Windows.Forms.NumericUpDown nudBladeCommonBladeIndex;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x002C;
+        private System.Windows.Forms.GroupBox groupBox36;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x00A8;
+        private System.Windows.Forms.GroupBox groupBox35;
+        private System.Windows.Forms.GroupBox groupBox37;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x02DC;
+        private System.Windows.Forms.GroupBox groupBox38;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x02EA;
+        private System.Windows.Forms.GroupBox groupBox39;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x04FE;
+        private System.Windows.Forms.GroupBox groupBox40;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x057A;
+        private System.Windows.Forms.GroupBox groupBox42;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x059C;
+        private System.Windows.Forms.GroupBox groupBox41;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x0582;
+        private System.Windows.Forms.GroupBox gbxDriverOvertSkills;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c5_Level;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c5_ColumnNo;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c4_Level;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c4_ColumnNo;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c3_Level;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c3_ColumnNo;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c2_Level;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c2_ColumnNo;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c1_Level;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c1_ColumnNo;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c5r3;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c5r1;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c5r2;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c5r2;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c5r1;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c5r3;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c4r3;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c4r1;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c4r2;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c4r2;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c4r1;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c4r3;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c3r3;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c3r1;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c3r2;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c3r2;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c3r1;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c3r3;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c2r3;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c2r1;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c2r2;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c2r2;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c2r1;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c2r3;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c1r3;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c1r1;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c1r2;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c1r2;
+        private System.Windows.Forms.ComboBox cbxDriverOvertSkill_c1r1;
+        private System.Windows.Forms.NumericUpDown nudDriverOvertSkill_c1r3;
+        private System.Windows.Forms.GroupBox gbxDriverHiddenSkills;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c5_Level;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c5_ColumnNo;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c4_Level;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c4_ColumnNo;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c3_Level;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c3_ColumnNo;
+        private System.Windows.Forms.Label label151;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c2_Level;
+        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c2_ColumnNo;
+        private System.Windows.Forms.Label label153;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1_Level;
+        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1_ColumnNo;
+        private System.Windows.Forms.Label label155;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c5r3;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c5r1;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c5r2;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c5r2;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c5r1;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c5r3;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c4r3;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c4r1;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c4r2;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c4r2;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c4r1;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c4r3;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c3r3;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c3r1;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c3r2;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c3r2;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c3r1;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c3r3;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c2r3;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c2r1;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c2r2;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c2r2;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c2r1;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c2r3;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c1r3;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r1;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c1r2;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r2;
+        private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c1r1;
+        private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblPlayTime;
     }
 }
 

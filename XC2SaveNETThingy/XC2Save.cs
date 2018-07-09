@@ -236,7 +236,7 @@ namespace XC2SaveNETThingy
 
             public override string ToString()
             {
-                return Driver.IDNAMES[DriverId];
+                return (string)XC2Data.Drivers().Select("Name WHERE ID = " + DriverId)[0][0];
             }
         }
 
@@ -1045,7 +1045,7 @@ namespace XC2SaveNETThingy
             sg_field_11769C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_11769C"], 4), 0);
         }
 
-        public byte[] ToRawData()
+        public virtual byte[] ToRawData()
         {
             List<Byte> result = new List<byte>();
 
@@ -1159,6 +1159,55 @@ namespace XC2SaveNETThingy
             }
 
             return result.ToArray();
+        }
+    }
+
+    public class XC2Save150 : XC2Save, IXC2SaveObject
+    {
+        public new const int SIZE = 0x126D90;
+        public Byte[] Unk_0x1176A0 { get; set; }
+
+        public XC2Save150(Byte[] data) : base(data)
+        {
+            Unk_0x1176A0 = data.GetByteSubArray(0x1176A0, SIZE - XC2Save.SIZE);
+        }
+
+        public override Byte[] ToRawData()
+        {
+            List<Byte> result = new List<Byte>();
+
+            result.AddRange(base.ToRawData());
+            result.AddRange(Unk_0x1176A0);
+
+            return result.ToArray();
+        }
+    }
+
+    public static class XC2SaveParser
+    {
+        public static XC2Save Deserialize(Byte[] data)
+        {
+            switch (data.Length)
+            {
+                case XC2Save.SIZE:
+                    Console.WriteLine("XC2Save (old) detected.");
+                    return new XC2Save(data);
+
+                case XC2Save150.SIZE:
+                    Console.WriteLine("XC2Save150 detected.");
+                    return new XC2Save150(data);
+
+                default:
+                    string message = "Given save data has incorrect filesize!" + Environment.NewLine +
+                        Environment.NewLine +
+                        "Expected Size:" + Environment.NewLine +
+                        String.Format("0x{0:X} for old save data.", XC2Save.SIZE) + Environment.NewLine +
+                        String.Format("0x{0:X} for ver 1.5.0 save data.", XC2Save150.SIZE) + Environment.NewLine +
+                        Environment.NewLine +
+                        "Actual Size: 0x" + data.Length.ToString("X") + Environment.NewLine +
+                        "Data has not been loaded.";
+                    throw new Exception(message);
+            }
         }
     }
 }

@@ -1251,8 +1251,6 @@ namespace XC2SaveNETThingy
             string str = "";
 
             str = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
-            //for (int i = 0; i < NameLength; i++)
-            //    str += (char)Name[i];
 
             return BladeId + ": " + str;
         }

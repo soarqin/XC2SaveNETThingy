@@ -1,0 +1,9 @@
+-- Script Date: 8/07/2018 6:29 PM  - ErikEJ.SqlCeScripting version 3.5.2.75
+DROP TABLE IF EXISIS [Items];
+CREATE TABLE [Items] (
+  [ID] INTEGER  NOT NULL UNIQUE
+, [Name] text NOT NULL
+, [ItemTypeID] INTEGER  NOT NULL
+, CONSTRAINT [PK_Items] PRIMARY KEY ([ID])
+, FOREIGN KEY ([ItemTypeID]) REFERENCES [ItemTypes] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION
+);

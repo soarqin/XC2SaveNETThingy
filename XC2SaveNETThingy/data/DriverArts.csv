@@ -1,0 +1,527 @@
+ID;Name;WeaponID;DriverID
+0;(none);0;0
+1;Normal Attack 1;1;1
+2;Normal Attack 2;1;1
+3;Normal Attack 3;1;1
+4;Sword Bash;1;1
+5;Double Spinning Edge;1;1
+6;Anchor Shot;1;1
+7;Rolling Smash;1;1
+8;Normal Attack 1;2;1
+9;Normal Attack 2;2;1
+10;Normal Attack 3;2;1
+11;Saber Slash;2;1
+12;Redemption;2;1
+13;Hydro Blast;2;1
+14;Water Flower;2;1
+15;Normal Attack 1;3;1
+16;Normal Attack 2;3;1
+17;Normal Attack 3;3;1
+18;Normal Attack 1;3;2
+19;Normal Attack 2;3;2
+20;Normal Attack 3;3;2
+21;Normal Attack 1;3;6
+22;Normal Attack 2;3;6
+23;Normal Attack 3;3;6
+24;Normal Attack 1;3;3
+25;Normal Attack 2;3;3
+26;Normal Attack 3;3;3
+27;Wide Slash;3;1
+28;Strong Saucer;3;1
+29;Eightfold Edge;3;1
+30;Spin of Bravery;3;1
+31;Butterfly Blade;3;2
+32;Jaguar Slash;3;2
+33;Gemini Loop;3;2
+34;Healing Halo;3;2
+35;Halo Strike;3;6
+36;Inferno Wheel;3;6
+37;Twin Moonblade;3;6
+38;Revolution Flash;3;6
+39;Rapid Twist;3;3
+40;Clear Divide;3;3
+41;Righteous Guillotine;3;3
+42;Shredder Spiral;3;3
+43;Normal Attack 1;4;4
+44;Normal Attack 2;4;4
+45;Normal Attack 3;4;4
+46;Steady Drill;4;4
+47;Big Boost;4;4
+48;Spinning Cutter;4;4
+49;Rigid Shield;4;4
+50;Normal Attack 1;5;4
+51;Normal Attack 2;5;4
+52;Normal Attack 3;5;4
+53;Pow-Pow Cannon;5;4
+54;Dented Shield;5;4
+55;Scattershot;5;4
+56;Booming Buster;5;4
+57;Normal Attack 1;6;4
+58;Normal Attack 2;6;4
+59;Normal Attack 3;6;4
+60;Swooshing Slash;6;4
+61;Speedy Sword;6;4
+62;Boom-Boom Laser;6;4
+63;Steady Beam;6;4
+64;Normal Attack 1;7;1
+65;Normal Attack 2;7;1
+66;Normal Attack 3;7;1
+67;Normal Attack 1;7;6
+68;Normal Attack 2;7;6
+69;Normal Attack 3;7;6
+70;Heat Rush;7;1
+71;Storm Spin;7;1
+72;Blazing Whip;7;1
+73;Phantom Flame;7;1
+74;Azure II: Hellfire;7;6
+75;Azure II: Radiance;7;6
+76;Azure II: Blaze;7;6
+77;Azure II: Judgement;7;6
+78;Normal Attack 1;8;1
+79;Normal Attack 2;8;1
+80;Normal Attack 3;8;1
+81;Normal Attack 1;8;3
+82;Normal Attack 2;8;3
+83;Normal Attack 3;8;3
+84;Upper Edge;8;1
+85;Big Impact;8;1
+86;Electro Buster;8;1
+87;Voltiac Slash;8;1
+88;Stratospheric Tunder;8;3
+89;Dynamic Spark Sword;8;3
+90;Overload Thunder Beam;8;3
+91;ULFS Max;8;3
+92;Normal Attack 1;9;1
+93;Normal Attack 2;9;1
+94;Normal Attack 3;9;1
+95;Normal Attack 1;9;5
+96;Normal Attack 2;9;5
+97;Normal Attack 3;9;5
+98;Cyclone Smash;9;1
+99;Wild Scythe;9;1
+100;Wing Smash;9;1
+101;Vortex Edge;9;1
+102;Muscle Slash;9;5
+103;Fast Twitch;9;5
+104;Muscle Uppercut;9;5
+105;Mega Muscle;9;5
+106;Normal Attack 1;10;1
+107;Normal Attack 2;10;1
+108;Normal Attack 3;10;1
+109;Normal Attack 1;10;2
+110;Normal Attack 2;10;2
+111;Normal Attack 3;10;2
+112;Normal Attack 1;10;6
+113;Normal Attack 2;10;6
+114;Normal Attack 3;10;6
+115;Normal Attack 1;10;3
+116;Normal Attack 2;10;3
+117;Normal Attack 3;10;3
+118;Strong Smash;10;1
+119;Axe Twist;10;1
+120;Power Swipe;10;1
+121;Bold Tackle;10;1
+122;Brutal Blade;10;2
+123;Rhino Assault;10;2
+124;Bear Smash;10;2
+125;Shadow Slice;10;2
+126;Rock Cleaver;10;6
+127;Admiral Waltz;10;6
+128;Gale Blade;10;6
+129;Rising Dragon;10;6
+130;Spinning Elbow;10;3
+131;Triumphal Axe;10;3
+132;Raging Charge;10;3
+133;Berserker Slash;10;3
+134;Normal Attack 1;11;1
+135;Normal Attack 2;11;1
+136;Normal Attack 3;11;1
+137;Normal Attack 1;11;2
+138;Normal Attack 2;11;2
+139;Normal Attack 3;11;2
+140;Normal Attack 1;11;6
+141;Normal Attack 2;11;6
+142;Normal Attack 3;11;6
+143;Normal Attack 1;11;3
+144;Normal Attack 2;11;3
+145;Normal Attack 3;11;3
+146;Strong Horn;11;1
+147;Power Spike;11;1
+148;Heavy Hitter;11;1
+149;Feral Spin;11;1
+150;Vulture Peck;11;2
+151;Gyro Break;11;2
+152;Raptor Raid;11;2
+153;Discus Glaive;11;2
+154;Crown Splitter;11;6
+155;Spiral Uppercut;11;6
+156;Twin Dragons;11;6
+157;Windmill;11;6
+158;Brutal Swing;11;3
+159;Meteor Lance;11;3
+160;Powerhouse Smash;11;3
+161;Supersonic Spin;11;3
+162;Normal Attack 1;12;1
+163;Normal Attack 2;12;1
+164;Normal Attack 3;12;1
+165;Normal Attack 1;12;2
+166;Normal Attack 2;12;2
+167;Normal Attack 3;12;2
+168;Normal Attack 1;12;6
+169;Normal Attack 2;12;6
+170;Normal Attack 3;12;6
+171;Normal Attack 1;12;3
+172;Normal Attack 2;12;3
+173;Normal Attack 3;12;3
+174;Daring Shot;12;1
+175;Armor Crusher;12;1
+176;Grenade Launcher;12;1
+177;Wild Volley;12;1
+178;Breach Shot;12;2
+179;Leopard Blow;12;2
+180;Cattle Driver;12;2
+181;Pulse Fire;12;2
+182;Ogre Slam;12;6
+183;Woodcutter;12;6
+184;Touch-Me-Not;12;6
+185;Mist Buster;12;6
+186;Burst Gunner;12;3
+187;Haywire Chainshot;12;3
+188;Blowback Cannon;12;3
+189;Laserpoint Bazooka;12;3
+190;Normal Attack 1;13;1
+191;Normal Attack 2;13;1
+192;Normal Attack 3;13;1
+193;Normal Attack 1;13;2
+194;Normal Attack 2;13;2
+195;Normal Attack 3;13;2
+196;Normal Attack 1;13;6
+197;Normal Attack 2;13;6
+198;Normal Attack 3;13;6
+199;Normal Attack 1;13;3
+200;Normal Attack 2;13;3
+201;Normal Attack 3;13;3
+202;Iron Wall;13;1
+203;Diving Swing;13;1
+204;Power Hammer;13;1
+205;Mighty Beat;13;1
+206;Rumbling Smash;13;2
+207;Elephant Press;13;2
+208;Buckler Slam;13;2
+209;Hammerhead;13;2
+210;Vajra Blow;13;6
+211;Battle Top;13;6
+212;Mountain Crusher;13;6
+213;Decimator;13;6
+214;Brawl Swing;13;3
+215;Behemoth Uppercut;13;3
+216;Detonation Blow;13;3
+217;Impregnable Shield;13;3
+218;Normal Attack 1;14;1
+219;Normal Attack 2;14;1
+220;Normal Attack 3;14;1
+221;Normal Attack 1;14;2
+222;Normal Attack 2;14;2
+223;Normal Attack 3;14;2
+224;Normal Attack 1;14;6
+225;Normal Attack 2;14;6
+226;Normal Attack 3;14;6
+227;Normal Attack 1;14;3
+228;Normal Attack 2;14;3
+229;Normal Attack 3;14;3
+230;Sword Uppercut;14;1
+231;Feral Blade;14;1
+232;Breakdown;14;1
+233;Dual Slash;14;1
+234;Deathbound;14;2
+235;Scorpion Tail;14;2
+236;Wolf Fang;14;2
+237;Triple Flash;14;2
+238;Aerial Slash;14;6
+239;Eclipse Blade;14;6
+240;Overfall;14;6
+241;Quadruple Slash;14;6
+242;Reverb Blade;14;3
+243;Psychic Sword;14;3
+244;Aerial Edge;14;3
+245;Shogun Slash;14;3
+246;Normal Attack 1;15;1
+247;Normal Attack 2;15;1
+248;Normal Attack 3;15;1
+249;Normal Attack 1;15;2
+250;Normal Attack 2;15;2
+251;Normal Attack 3;15;2
+252;Normal Attack 1;15;6
+253;Normal Attack 2;15;6
+254;Normal Attack 3;15;6
+255;Normal Attack 1;15;3
+256;Normal Attack 2;15;3
+257;Normal Attack 3;15;3
+258;Touchdown;15;1
+259;Brave Throw;15;1
+260;String Shot;15;1
+261;Mighty Ball;15;1
+262;Dolphin Spin;15;2
+263;Healing Circle;15;2
+264;Falcon Turn;15;2
+265;Acrobatic Bomber;15;2
+266;Dragonbone Shot;15;6
+267;Celestial Flash;15;6
+268;Shadowrunner;15;6
+269;Gliding Swallow;15;6
+270;Rumble Pitch;15;3
+271;Pulverizing Dunk;15;3
+272;Shell Shot;15;3
+273;Precipitous Impact;15;3
+274;Normal Attack 1;16;1
+275;Normal Attack 2;16;1
+276;Normal Attack 3;16;1
+277;Normal Attack 1;16;2
+278;Normal Attack 2;16;2
+279;Normal Attack 3;16;2
+280;Normal Attack 1;16;6
+281;Normal Attack 2;16;6
+282;Normal Attack 3;16;6
+283;Normal Attack 1;16;3
+284;Normal Attack 2;16;3
+285;Normal Attack 3;16;3
+286;Feral Uppercut;16;1
+287;Grand Smash;16;1
+288;Bullet Punch;16;1
+289;Mach Straight Punch;16;1
+290;Jackal Claw;16;2
+291;Comet Punch;16;2
+292;Deadly Twister;16;2
+293;Raptor Beat;16;2
+294;Armored Fist;16;6
+295;Takedown;16;6
+296;Sneak Hit;16;6
+297;Peerless Blow;16;6
+298;Hammer Lariat;16;3
+299;Fury Dropkick;16;3
+300;Dynamite Knuckle;16;3
+301;Skysplitter Cross Chop;16;3
+302;Normal Attack 1;17;1
+303;Normal Attack 2;17;1
+304;Normal Attack 3;17;1
+305;Sword Bash;17;1
+306;Double Spinning Edge;17;1
+307;Rolling Smash;17;1
+308;Anchor Shot;17;1
+309;Normal Attack 1;18;7
+310;Normal Attack 2;18;7
+311;Normal Attack 3;18;7
+312;Ultraslash;18;7
+313;Skyward Slash;18;7
+314;Empty Moment;18;7
+315;Stunned Swallow;18;7
+316;Normal Attack 1;19;8
+317;Normal Attack 2;19;8
+318;Normal Attack 3;19;8
+319;Hammer Bash;19;8
+320;Sword Striike;19;8
+321;Spiral Savate;19;8
+322;Chakra Burst;19;8
+323;Normal Attack 1;18;9
+324;Normal Attack 2;18;9
+325;Normal Attack 3;18;9
+326;Ultraslash;18;9
+327;Skyward Slash;18;9
+328;Heavenly Disrupt;18;9
+329;Stunned Swallow;18;9
+330;Normal Attack 1;20;1
+331;Normal Attack 2;20;1
+332;Normal Attack 3;20;1
+333;Normal Attack 1;20;2
+334;Normal Attack 2;20;2
+335;Normal Attack 3;20;2
+336;Normal Attack 1;20;6
+337;Normal Attack 2;20;6
+338;Normal Attack 3;20;6
+339;Normal Attack 1;20;3
+340;Normal Attack 2;20;3
+341;Normal Attack 3;20;3
+342;Revolt Smash;20;1
+343;Screw Reaper;20;1
+344;Rising Crescent;20;1
+345;Withering Assault;20;1
+346;Brutal Scythe;20;2
+347;Capra Assault;20;2
+348;Grizzly Smash;20;2
+349;Creeping Slicer;20;2
+350;Tempest Strike;20;6
+351;Sacred Beats's Blessing;20;6
+352;Cyclonic Blade;20;6
+353;Azure Dragon Storm;20;6
+354;Surprise Elbow;20;3
+355;Careful Swing;20;3
+356;Standing Ovation;20;3
+357;Bewilder Slash;20;3
+358;Normal Attack 1;21;1
+359;Normal Attack 2;21;1
+360;Normal Attack 3;21;1
+361;Normal Attack 1;21;2
+362;Normal Attack 2;21;2
+363;Normal Attack 3;21;2
+364;Normal Attack 1;21;6
+365;Normal Attack 2;21;6
+366;Normal Attack 3;21;6
+367;Normal Attack 1;21;3
+368;Normal Attack 2;21;3
+369;Normal Attack 3;21;3
+370;Earth Splitter;21;1
+371;Powerquake;21;1
+372;Final Stone;21;1
+373;Dust Up;21;1
+374;Condor's Beak;21;2
+375;Sand Break;21;2
+376;Cobra Raid;21;2
+377;Merciless Twister;21;2
+378;Blunt Force;21;6
+379;Heaven's Valor;21;6
+380;Lunar Salutation;21;6
+381;Twisted Thistle;21;6
+382;Grudge Blow;21;3
+383;Heaven's Revenge;21;3
+384;Takedown Smash;21;3
+385;Whirlwind of Passion;21;3
+386;Normal Attack 1;22;1
+387;Normal Attack 2;22;1
+388;Normal Attack 3;22;1
+389;Normal Attack 1;22;2
+390;Normal Attack 2;22;2
+391;Normal Attack 3;22;2
+392;Normal Attack 1;22;6
+393;Normal Attack 2;22;6
+394;Normal Attack 3;22;6
+395;Normal Attack 1;22;3
+396;Normal ATtack 2;22;3
+397;Normal Attack 3;22;3
+398;Opened Fan;22;1
+399;Screw Cutter;22;1
+400;Cross Edge;22;1
+401;Brave Wing;22;1
+402;Swallowtail;22;2
+403;Scarecrow;22;2
+404;Vicious Circle;22;2
+405;Healing Trick;22;2
+406;Albatross Cut;22;6
+407;2,000 Wings;22;6
+408;Black Wing Dance;22;6
+409;Stoking the Fire;22;6
+410;Twilight Twist;22;3
+411;Bold Division;22;3
+412;Gutsy Cutter;22;3
+413;Exquisite Spiral;22;3
+414;Normal Attack 1;23;1
+415;Normal Attack 2;23;1
+416;Normal Attack 3;23;1
+417;Normal Attack 1;23;2
+418;Normal Attack 2;23;2
+419;Normal Attack 3;23;2
+420;Normal Attack 1;23;6
+421;Normal Attack 2;23;6
+422;Normal Attack 3;23;6
+423;Normal Attack 1;23;3
+424;Normal Attack 2;23;3
+425;Normal Attack 3;23;3
+426;Thunderclap;23;1
+427;Haphazard Throw;23;1
+428;Cutting Edge;23;1
+429;Rebel's Dagger;23;1
+430;Papillon Dance;23;2
+431;Cheetah Scratch;23;2
+432;Tricksy Loop;23;2
+433;Lustrous Heal;23;2
+434;Photon Slash;23;6
+435;Marigold in Bloom;23;6
+436;Flowing Shadow;23;6
+437;Mastery of Sky Sparks;23;6
+438;Electroshade Twist;23;3
+439;Bewitching Divide;23;3
+440;Thunderslam;23;3
+441;Florid Spiral;23;3
+442;Normal Attack 1;24;1
+443;Normal Attack 2;24;1
+444;Normal Attack 3;24;1
+445;Normal Attack 1;24;2
+446;Normal Attack 2;24;2
+447;Normal Attack 3;24;2
+448;Normal Attack 1;24;6
+449;Normal Attack 2;24;6
+450;Normal Attack 3;24;6
+451;Normal Attack 1;24;3
+452;Normal Attack 2;24;3
+453;Normal Attack 3;24;3
+454;Critical Trigger;24;1
+455;Mighty Missile;24;1
+456;Grenade Burst;24;1
+457;Flamecaster;24;1
+458;Surprise Shot;24;2
+459;Porcupine Blow;24;2
+460;Mayfly;24;2
+461;Phosphorescent Flare;24;2
+462;Cruel Musket;24;6
+463;Thorn Assault;24;6
+464;Rhododendron;24;6
+465;Chimera Drop;24;6
+466;Breakthrough Cannon;24;3
+467;Frenzied Fire;24;3
+468;Stark Artillery;24;3
+469;Crazed Bazooka;24;3
+470;Normal Attack 1;25;1
+471;Normal Attack 2;25;1
+472;Normal Attack 3;25;1
+473;Normal Attack 1;25;2
+474;Normal Attack 2;25;2
+475;Normal Attack 3;25;2
+476;Normal Attack 1;25;6
+477;Normal Attack 2;25;6
+478;Normal Attack 3;25;6
+479;Normal Attack 1;25;3
+480;Normal Attack 2;25;3
+481;Normal Attack 3;25;3
+482;Wild Slugger;25;1
+483;Terror Smash;25;1
+484;Rock Bullet;25;1
+485;Giant Straight;25;1
+486;Lion Claw;25;2
+487;Meteor Punch;25;2
+488;Raging Screw;25;2
+489;Buffalo Beat;25;2
+490;Armor Breaker;25;6
+491;Bear Twist;25;6
+492;Devastating Tremor;25;6
+493;Earth Mover;25;6
+494;Sublime Lariat;25;3
+495;Falling Dropkick;25;3
+496;Decisive Knuckle;25;3
+497;Sacrificial Chop;25;3
+498;Normal Attack 1;26;1
+499;Normal Attack 2;26;1
+500;Normal Attack 3;26;1
+501;Normal Attack 1;26;2
+502;Normal Attack 2;26;2
+503;Normal Attack 3;26;2
+504;Normal Attack 1;26;6
+505;Normal Attack 2;26;6
+506;Normal Attack 3;26;6
+507;Normal Attack 1;26;3
+508;Normal Attack 2;26;3
+509;Normal Attack 3;26;3
+510;Gale Upper;26;1
+511;Wind Smash;26;1
+512;Stormstarter;26;1
+513;Hurricane Punch;26;1
+514;Sabertooth Slash;26;2
+515;Updraft;26;2
+516;Whirlwind;26;2
+517;Universal Beat;26;2
+518;Blade of the Abyss;26;6
+519;Blunt Aggression;26;6
+520;Galeforce Blow;26;6
+521;No Love Lost;26;6
+522;Menacing Lariat;26;3
+523;Hurricane Dropkick;26;3
+524;Shuddering Tonfa;26;3
+525;Wind Dragon Chop;26;3

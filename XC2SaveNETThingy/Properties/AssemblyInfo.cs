@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("XC2SaveNETThingy")]
-[assembly: AssemblyDescription("Save Editor for Xenoblade Chronicles 2")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("damysteryman")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("XC2SaveNETThingy")]
-[assembly: AssemblyCopyright("Copyright ©  2018 damysteryman")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e406391-2185-4056-b52a-6ed2f791c71d")]
+[assembly: Guid("def62145-1d22-4fda-968c-0ff20adedc4f")]
 
 // Version information for an assembly consists of the following four values:
 //

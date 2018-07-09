@@ -1,0 +1,572 @@
+ID;Name;ItemTypeID
+0;(none);0
+10001;Lead Chip;1
+10002;Tin Chip;1
+10003;Bronze Chip;1
+10004;Silver Chip;1
+10005;Iron Chip;1
+10006;Cobalt Chip;1
+10007;Steel Chip;1
+10008;Gold Chip;1
+10009;Fang Chip;1
+10010;Wing Chip;1
+10011;Scale Chip;1
+10012;Horn Chip;1
+10013;Wood Chip;1
+10014;Flower Chip;1
+10015;Glass Chip;1
+10016;Forest Chip;1
+10017;Turquiose Chip;1
+10018;Spinel Chip;1
+10019;Amethyst Chip;1
+10020;Fluorite Chip;1
+10021;Garnet Chip;1
+10022;Aquamarine Chip;1
+10023;Opal Chip;1
+10024;Zircon Chip;1
+10025;Coil Chip;1
+10026;Chain Chip;1
+10027;Magnet Chip;1
+10028;Shaft Chip;1
+10029;Battery Chip;1
+10030;Engine Chip;1
+10031;Motor Chip;1
+10032;Booster Chip;1
+10033;Tri-Chip;1
+10034;Rhombus Chip;1
+10035;Pentagon Chip;1
+10036;Hexagon Chip;1
+10037;Sphere Chip;1
+10038;Cube Chip;1
+10039;Polygon Chip;1
+10041;Spiral Chip;1
+10042;Lodranite Chip;1
+10043;Brachinite Chip;1
+10044;Ureilite Chip;1
+10040;Winonaite Chip;1
+10045;Nakhalite Chip;1
+10046;Howardite Chip;1
+10047;Aubrite Chip;1
+10048;Angrite Chip;1
+10049;Dark Matter Chip;1
+10050;Axion Chip;1
+10051;Mirror Matter Chip;1
+10052;Shining Star Chip;1
+10053;Moon Matter Chip;1
+10054;Sunlight Chip;1
+10055;Photon Chip;1
+10056;Positron Chip;1
+10057;Hadron Chip;1
+10058;Dilation Chip;1
+10059;Preon Chip;1
+10060;Tachyon Chip;1
+30001;ZigZag Shaft;7
+30002;Puri Leaf Cabbage;7
+30003;Fancy Bolt;7
+30004;Hexafly;7
+30005;Dark Gray Spring;7
+30006;Crimson Gear;7
+30007;Tartan Ladybird;7
+30008;Oil Oyster;7
+30009;Glitterspud;7
+30010;Puri Leaf Cabbage;7
+30011;Tartan Ladybird;7
+30012;Hexafly;7
+30013;Anchortail;7
+30014;Oil Oyster;7
+30015;Fancy Bolt;7
+30016;Zigzag Shaft;7
+30017;Dark Gray Spring;7
+30018;Crimson Gear;7
+30019;Puzzletree Wood;7
+30020;Muscle Branch;7
+30021;Vinegar Leaf;7
+30022;Clarity Moss;7
+30023;Confusion Ivy;7
+30024;Panda Pansy;7
+30025;Shepherd's Purse;7
+30026;Dawn Hydrangea;7
+30027;Melosian Honey;7
+30028;Moonbeam Banana;7
+30029;Hot Orange;7
+30030;Hustle Hyacinth;7
+30031;Nopopomouli;7
+30032;Meaty Carrot;7
+30033;Cranberry Bell;7
+30034;Armored Centipede;7
+30035;Giant Stag Beetle;7
+30036;Jet Snake;7
+30037;Steel Salmon;7
+30038;Tree Crab;7
+30039;Mint Fish;7
+30040;Forrestone;7
+30041;Dicy Stone;7
+30042;Dilemma Rock;7
+30043;Helix Tube;7
+30044;Jungle Frame;7
+30045;Snow Ring;7
+30046;Winding Gear;7
+30047;Strong Screw;7
+30048;Vermilion Bark;7
+30049;Mossplash;7
+30050;Twinkle Leaf;7
+30051;Missing Tree;7
+30052;Space Cardoon;7
+30053;Crystal Camellia;7
+30054;Doomsday Poppy;7
+30055;Sirius Anemone;7
+30056;Victory Loquat;7
+30057;Black Pomegranate;7
+30058;Spark Cucumber;7
+30059;Fusty Fungus;7
+30060;Ruby Mangosteen;7
+30061;Shark Gecko;7
+30062;Sickle Cricket;7
+30063;Rainbow Bug;7
+30064;Cobalt Eel;7
+30065;Bully Tuna;7
+30066;Marriage Bluegill;7
+30067;Pearl Lobster;7
+30068;Bipedal Crab;7
+30069;Rainbow Slug;7
+30070;Tricolor Rock;7
+30071;Soap Coral;7
+30072;Mille-Feuille Rock;7
+30073;Pione Stone;7
+30074;Welcome Cactus;7
+30075;Breath Charcoal;7
+30076;Amber Leaf;7
+30077;Propellor Poppy;7
+30078;Sunset Clover;7
+30079;Fatal Belladonna;7
+30080;Crunchy Pasion Fruit;7
+30081;Dusk Bamboo;7
+30082;Dolphin Carrot;7
+30083;Devilmask Cricket;7
+30084;Fan Skink;7
+30085;Pilethorn Rhino Beetle;7
+30086;Shield Bug;7
+30087;Emperor Beetle;7
+30088;Flying Founder;7
+30089;Tender Shark;7
+30090;Lazy Crayfish;7
+30091;Sand Salmon;7
+30092;Scent Stone;7
+30093;Nitrotoluite;7
+30094;Glutinous Sand;7
+30095;Cubic Diamond;7
+30096;Black Ash;7
+30097;Iron Seedling;7
+30098;Tricky Disc;7
+30099;Snake Joint;7
+30100;Rabbit Diode;7
+30101;Thunder Compass;7
+30102;Groove Wood;7
+30103;Silent Wood;7
+30104;Feather Leaf;7
+30105;Beautiful Shoot;7
+30106;Jellyfish Balsam;7
+30107;Spirit Clematis;7
+30108;Plumage Peach;7
+30109;Choice Cherry;7
+30110;Energy Aubergine;7
+30111;Whisper Tomato;7
+30112;Digging Sandfly;7
+30113;Mystery Firefly;7
+30114;Pinfin;7
+30115;Beat Shrimp;7
+30116;Killi-Killi Killifish;7
+30117;Charged Elbaite;7
+30118;Border Sapphire;7
+30119;Clock Marble;7
+30120;Whirlpool Plate;7
+30121;Chain-Shot Gear;7
+30122;Prism Tube;7
+30123;Fairy-Tail Belt Pulley;7
+30124;Angel Engine;7
+30125;Wisteria Bud;7
+30126;Chain Grass;7
+30127;Sporefruit;7
+30128;Hammer Fern;7
+30129;Gleambug;7
+30130;Dark Firefly;7
+30131;Watering Spider;7
+30132;Sworlbug;7
+30133;Horned Bonytongue;7
+30134;Necromanta Ray;7
+30135;Chandelier Monkfish;7
+30136;Deep Fellstone;7
+30137;Addam's Tear;7
+30138;Libra Stone;7
+30139;Frozen Sapphire;7
+30140;Rainbow Crystal;7
+30141;Wraithwood;7
+30142;Lightning Stump;7
+30143;Insanity Moss;7
+30144;Scimitar Grass;7
+30145;Olsteprinium;7
+30146;Secret Turf;7
+30147;Abyss Heather;7
+30148;Acid Tomato;7
+30149;Death Mushroom;7
+30150;Metallipede;7
+30151;Quadriga Darner;7
+30152;Ripper Ant;7
+30153;Hedron Stonefish;7
+30154;Poison Flash;7
+30155;Trippy Catfish;7
+30156;Hezodron Petra;7
+30157;Rising Dragon Rock;7
+30158;Ripple Stone;7
+30159;Stained Pipe;7
+30160;Insect Chip;7
+30161;Grape Spring;7
+30162;Golden Cog;7
+30163;Foolin' Ivy;7
+30164;Melancholy Leaf;7
+30165;Gypsum Branch;7
+30166;Ghost Dudleya;7
+30167;Melancholy Rose;7
+30168;Bellflower Crystal;7
+30169;Lewisia Silver;7
+30170;Love Lemon;7
+30171;Ice Cabbage;7
+30172;Fluffy Snow Bug;7
+30173;Freezing Chameleon;7
+30174;Luckroach;7
+30175;Love Beetle;7
+30176;Fragrant Ship;7
+30177;Abysssturgeon;7
+30178;Lacquer Stone;7
+30179;WaveLet Stone;7
+30180;icicle Marine;7
+30181;Gravity Rock;7
+30182;Giant Pine Cone;7
+30183;Millewire Pine;7
+30184;Frozen Flan;7
+30185;King Marigold;7
+30186;Linka Honey;7
+30187;Snipe Pea;7
+30188;Neon Grape;7
+30189;Rib Grasshopper;7
+30190;Beezle Mosquito;7
+30191;Yehu Fish;7
+30192;Bonito Sailfish;7
+30193;Nail Stone;7
+30194;Magnet Clay;7
+30195;Cyber Spoon;7
+30196;Dynamo Turbine;7
+30197;Android Gear;7
+30198;Curse Branch;7
+30199;Soapberry Box;7
+30200;Ambler Stigma;7
+30201;Gloomy Pitcher Plant;7
+30202;Grim Olive;7
+30203;Blood Walnut;7
+30204;Sore Worm;7
+30205;Pound Viper;7
+30206;Magmalachite;7
+30207;Platinatriumarine;7
+30208;Split-Hop Gizmo;7
+30209;World Supplement;7
+30210;Elima Leaf;7
+30211;Rosary Moss;7
+30212;Limitless Rose;7
+30213;Nameko Gem;7
+30214;Starry Persimmon;7
+30215;Benign Butterfly;7
+30216;Jabara Bug;7
+30217;Numbing Clownfish;7
+30218;Noughtilus;7
+30219;Slime Rock;7
+30220;Throwing Star Rock;7
+30221;Leaf Coil;7
+30222;Hollow Lantern;7
+30223;Screw Coil;7
+30224;Blinding Dream;7
+30225;Zero Bark;7
+30226;Smoke Chopper;7
+30227;Rootless Sandwort;7
+30228;Pain Cone;7
+30229;Crowbell Fruit;7
+30230;Melodious Melon;7
+30231;Gorilla Hair Bristle;7
+30232;海トカゲの鱗(仮);7
+30233;海鳥の羽根(仮);7
+30234;Crustip Chitin;7
+30235;Giant Frog Meat;7
+30236;海トカゲの爪(仮);7
+30237;中型ヘビの尾(仮);7
+30238;Whitescale Antenna;7
+30239;Rhinon Tail;7
+30240;Skwaror Rib-Eye Steak;7
+30241;Noponstone;7
+30242;UNKNOWN_242;7
+30243;ウマのタテガミ(仮);7
+30244;浮遊生物の皮(仮);7
+30245;雲海魚の尾ひれ(仮);7
+30246;飛びエイの棘(仮);7
+30247;Dragon Incense;7
+30248;Gromrice;7
+30249;Salty Soil;7
+30250;Digidigite;7
+30251;Belloat Grass;7
+30252;Sumpkin;7
+30253;Mysteroe;7
+30254;Wibbleweed;7
+30255;Mookah Flower;7
+30256;Love Raspberry;7
+30257;Vinenut;7
+30258;Juicy Ray Fin;7
+30259;Benign Cricket;7
+30260;Soft Sea Cucumber;7
+30261;Limdo Flamii Egg;7
+30262;Sweet Wasabi;7
+30263;Wet Rat;7
+30264;Argentum Monkfish;7
+30265;Rumble Part;7
+30266;Deer Wood;7
+30267;Binding Roots;7
+30268;Sunflower Rogue;7
+30269;Prairie Dragonfly;7
+30270;Locust Spring;7
+30271;Bamboo Seed;7
+30272;Bright Fig;7
+30273;Blue Ladybird;7
+30274;Speckled Whalefish;7
+30275;Empress Beetle;7
+30276;Maple Bite;7
+30277;Gold Condenser;7
+30278;Hide 'n' Creeper;7
+30279;Emblazoned Ray;7
+30280;Stream Navy;7
+30281;Marine Chowfish;7
+30282;Lemon Stone;7
+30283;White Cover;7
+30284;Mystic Dhalia;7
+30285;Fortune Mallow;7
+30286;Deadly Kiwi;7
+30287;Tarnish Apple;7
+30288;Hades Beetle;7
+30289;Shade Trout;7
+30290;Noise Bite;7
+30291;Blue Gear Shard;7
+30292;Gunmetal Bolt;7
+30293;Warning Lamp;7
+30294;Retro Diode;7
+30295;Night Lily;7
+30296;Walnut Grape;7
+30297;Fire Tarantula;7
+30298;Glory Angler;7
+30299;Herioc Starsand;7
+30300;Modern Blue Gear;7
+30301;Broom Icicle;7
+30302;Sea Berry;7
+30303;Amethyst Vanilla;7
+30304;Silvermound Clam;7
+30305;Emerald Snow;7
+30306;Shell Rock;7
+30307;Oil Branch;7
+30308;Moon Flower;7
+30309;Firering Radish;7
+30310;Hill Firefly;7
+30311;Climbing Goby;7
+30312;Horsecrab;7
+30313;Wool Rock;7
+30314;Tail Antenna;7
+30315;Bronze Wood;7
+30316;Delerium Foxglove;7
+30317;Dark Sprout;7
+30318;Electric Cricket;7
+30319;Rubble Gem;7
+30320;Charcoal Cube;7
+30321;Abyss Metal;7
+30322;Mechanical Branch;7
+30323;Jujube Silver;7
+30324;Black Liver Bean;7
+30325;Minute Mantis;7
+30326;Robotic Placoderm;7
+30327;Mossy Panel;7
+30328;Art Core Coil;7
+30329;Styrene Woodblock;7
+30330;Monochrome Muscari;7
+30331;Cosmo Pepper;7
+30332;green Diode;7
+30333;Digital Filament;7
+30334;Bird Chip;7
+30335;Siren Nut;7
+30336;Snow Transistor;7
+30337;Modern Resistor;7
+30338;Vortex panel;7
+30339;Charcoal Leg;7
+30340;コレクション1;7
+30341;コレクション2;7
+30342;コレクション3;7
+30343;コレクション4;7
+30344;コレクション5;7
+30345;コレクション6;7
+30346;コレクション7;7
+30347;コレクション8;7
+30348;コレクション9;7
+30349;コレクション10;7
+30350;コレクション11;7
+30351;コレクション12;7
+30352;コレクション13;7
+30353;コレクション14;7
+30354;コレクション15;7
+30355;コレクション16;7
+30356;コレクション17;7
+30357;コレクション18;7
+30358;コレクション19;7
+30359;コレクション20;7
+30360;コレクション21;7
+30361;コレクション22;7
+30362;コレクション23;7
+30363;コレクション24;7
+30364;コレクション25;7
+30365;コレクション26;7
+30366;コレクション27;7
+30367;コレクション28;7
+30368;コレクション29;7
+30369;コレクション30;7
+30370;コレクション31;7
+30371;コレクション32;7
+30372;コレクション33;7
+30373;コレクション34;7
+30374;コレクション35;7
+30375;コレクション36;7
+30376;コレクション37;7
+30377;コレクション38;7
+30378;コレクション39;7
+30379;コレクション40;7
+30380;コレクション41;7
+30381;コレクション42;7
+30382;コレクション43;7
+30383;コレクション44;7
+30384;コレクション45;7
+30385;コレクション46;7
+30386;コレクション47;7
+30387;Puzzletree Wood;7
+30388;Muscle Branch;7
+30389;Vinegar Leaf;7
+30390;Clarity Moss;7
+30391;Confusion Ivy;7
+30392;Deer Wood;7
+30393;Binding Roots;7
+30394;コレクション48;7
+30395;Panda Pansy;7
+30396;Shepherd's Purse;7
+30397;Dawn Hydrangea;7
+30398;Melosian Honey;7
+30399;Sunflower Rogue;7
+30400;コレクション49;7
+30401;Moonbeam Banana;7
+30402;Hot Orange;7
+30403;Hustle Hyacinth;7
+30404;Meaty Carrot;7
+30405;Cranberry Bell;7
+30406;Sumpkin;7
+30407;コレクション50;7
+30408;コレクション51;7
+30409;コレクション52;7
+30410;コレクション53;7
+30411;コレクション54;7
+30412;コレクション55;7
+30413;コレクション56;7
+30414;Steel Salmon;7
+30415;Tree Crab;7
+30416;Mint Fish;7
+30417;コレクション57;7
+30418;コレクション58;7
+30419;コレクション59;7
+30420;Forrestone;7
+30421;Dicy Stone;7
+30422;Dilemma Rock;7
+30423;コレクション60;7
+30424;コレクション61;7
+30425;コレクション62;7
+30426;コレクション63;7
+30427;コレクション64;7
+30428;コレクション65;7
+30429;コレクション66;7
+30430;コレクション67;7
+30431;コレクション68;7
+30432;コレクション69;7
+30433;コレクション70;7
+30434;コレクション71;7
+30435;コレクション72;7
+30436;コレクション73;7
+30437;コレクション74;7
+30438;コレクション75;7
+30439;コレクション76;7
+30440;Volff Fang;7
+30441;Ellook Horn;7
+30442;コレクション77;7
+30443;コレクション78;7
+30444;コレクション79;7
+30445;あああああああ;7
+45001;Common Core Crystal;11
+45002;Lucky Core Crystal;11
+45003;Inherited Core Crystal;11
+45004;Sealed Core Crystal;11
+45005;Aegaeon's Core Crystal;11
+45006;Praxis's Core Crystal;11
+45007;Theory's Core Crystal;11
+45008;Vess's Core Crystal;11
+45009;Roc's Core Crystal;11
+45010;Unnamed Core Crystal;11
+45011;Common Core Crystal;11
+45012;Rare Core Crystal;11
+45013;Legendary Core Crystal;11
+45014;Unnamed Core Crystal;11
+45015;Unnamed Core Crystal;11
+45016;Beastly Core Crystal;11
+45017;Common Core Crystal;11
+45018;Common Core Crystal;11
+45019;Common Core Crystal;11
+45020;Common Core Crystal;11
+45021;Common Core Crystal;11
+45022;Common Core Crystal;11
+45023;Common Core Crystal;11
+45024;Common Core Crystal;11
+45025;Common Core Crystal;11
+45026;Common Core Crystal;11
+45027;Common Core Crystal;11
+45028;Common Core Crystal;11
+45029;Common Core Crystal;11
+45030;Common Core Crystal;11
+45031;Common Core Crystal;11
+45032;Common Core Crystal;11
+45033;Common Core Crystal;11
+45034;Common Core Crystal;11
+45035;Common Core Crystal;11
+45036;Common Core Crystal;11
+45037;Common Core Crystal;11
+45038;Common Core Crystal;11
+45039;Common Core Crystal;11
+45040;Common Core Crystal;11
+45041;Common Core Crystal;11
+45042;Common Core Crystal;11
+45043;Common Core Crystal;11
+45044;Common Core Crystal;11
+45045;Common Core Crystal;11
+45046;Common Core Crystal;11
+45047;Common Core Crystal;11
+45048;Common Core Crystal;11
+45049;Common Core Crystal;11
+45050;Common Core Crystal;11
+45051;Common Core Crystal;11
+45052;Common Core Crystal;11
+45053;Common Core Crystal;11
+45054;Common Core Crystal;11
+45055;Common Core Crystal;11
+45056;ああああああああ;11
+45057;ああああああああ;11
+50001;Bravery Booster;12
+50002;Truth Booster;12
+50003;Compassion Booster;12
+50004;Justice Booster;12
+50005;ブースター青-1;12
+50006;ブースター赤-1;12
+50007;ブースター白-1;12
+50008;ブースター黒-1;12

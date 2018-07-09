@@ -17,21 +17,23 @@ namespace XC2SaveNETThingy
     public partial class frmMain : Form
     {
         private XC2Save SAVEDATA;
+        
         private bool IsReloadingDrivers = false;
-
-        private ItemEditPanel[] itpPcWpnChipBox;
+        private bool dgvIsEditing = false;
 
         public frmMain()
         {
             InitializeComponent();
 
-            itpPcWpnChipBox = new ItemEditPanel[200];
-            for (int i = 0; i < itpPcWpnChipBox.Length; i++)
-            {
-                itpPcWpnChipBox[i] = new ItemEditPanel();
-                itpPcWpnChipBox[i].Location = new Point(0, (i * 21));
-                tabPcWpnChipBox.Controls.Add(itpPcWpnChipBox[i]);
-            }
+            //for (int i = 0; i < Driver.DRIVER_SKILLS.Count; i++)
+            //{
+
+            //    string query = "INSERT INTO tblDriverSkills(ID, Name) VALUES (" + i + ", \"" + Driver.DRIVER_SKILLS[(ushort)i] + "\")";
+            //    //gamedata.SendNonQuery(query);
+            //    Console.WriteLine(query);
+            //    XC2Data.SendNonQuery(query);
+            //    Console.WriteLine("Added Skill No. " + (i + 1) + " of " + Driver.DRIVER_SKILLS.Count + " to DB.");
+            //}
 
         }
 
@@ -55,13 +57,16 @@ namespace XC2SaveNETThingy
         {
             Text = Application.ProductName + " ver" + Application.ProductVersion;
 
-            cbxDriverIsActive.DisplayMember = "Value";
-            cbxDriverIsActive.ValueMember = "Key";
-            cbxDriverIsActive.DataSource = Driver.STATUS.ToList();
+            cbxDriverIsActive.DisplayMember = "Desc";
+            cbxDriverIsActive.ValueMember = "ID";
+            cbxDriverIsActive.DataSource = XC2Data.DriverStatus();
 
-            cbxDriverSetBlade.DisplayMember = "Value";
-            cbxDriverSetBlade.ValueMember = "Key";
-            cbxDriverSetBlade.DataSource = Driver.SETBLADE.ToList();
+            cbxDriverSetBlade.DisplayMember = "Desc";
+            cbxDriverSetBlade.ValueMember = "ID";
+            cbxDriverSetBlade.DataSource = XC2Data.DriverBladeSetStatus();
+
+            for (int i = 0; i < 3; i++)
+                cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
         }
 
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,7 +91,7 @@ namespace XC2SaveNETThingy
 
         private void LoadSaveFile(string path)
         {
-            SAVEDATA = new XC2Save(File.ReadAllBytes(path));
+            SAVEDATA = XC2SaveParser.Deserialize(File.ReadAllBytes(path));
 
             #region main
 
@@ -121,9 +126,9 @@ namespace XC2SaveNETThingy
             lblChapterSaveEventId.Text = SAVEDATA.ChapterSaveEventId.ToString("X4");
             lblsg_field_3A.Text = SAVEDATA.sg_field_3A.ToString("X4");
 
-            cbxPartyLeader.DataSource = new BindingSource(Driver.IDNAMES, null);
-            cbxPartyLeader.ValueMember = "Key";
-            cbxPartyLeader.DisplayMember = "Value";
+            cbxPartyLeader.DataSource = XC2Data.Drivers();
+            cbxPartyLeader.ValueMember = "ID";
+            cbxPartyLeader.DisplayMember = "Name";
             cbxPartyLeader.SelectedIndex = (int)SAVEDATA.Party.PartyLeader;
 
             for (int i = 0; i < SAVEDATA.Party.Members.Length; i++)
@@ -131,11 +136,13 @@ namespace XC2SaveNETThingy
 
             cbxPartyMembers.SelectedIndex = 0;
             
-            cbxPartyMemberDriver.DataSource = new BindingSource(Driver.IDNAMES, null);
-            cbxPartyMemberDriver.ValueMember = "Key";
-            cbxPartyMemberDriver.DisplayMember = "Value";
+            cbxPartyMemberDriver.DataSource = XC2Data.Drivers();
+            cbxPartyMemberDriver.ValueMember = "ID";
+            cbxPartyMemberDriver.DisplayMember = "Name";
             cbxPartyMemberDriver.SelectedIndex = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId;
 
+
+            lblPlayTime.Text = SAVEDATA.PlayTime.ToString();
             #endregion main
 
             #region drivers
@@ -166,45 +173,25 @@ namespace XC2SaveNETThingy
 
             #region items
 
-            //itpPcWpnChipBox = new ItemEditPanel[SAVEDATA.ItemBox.PcWpnChipBox.Length];
-            for (int i = 0; i < itpPcWpnChipBox.Length; i++)
-            {
-                //    itpPcWpnChipBox[i] = new ItemEditPanel();
-                itpPcWpnChipBox[i].Item = SAVEDATA.ItemBox.PcWpnChipBox[i];
-                //    itpPcWpnChipBox[i].Location = new Point(0, (i * 21));
-                //    tabPcWpnChipBox.Controls.Add(itpPcWpnChipBox[i]);
-            }
-
-            //tabPcWpnChipBox
-
-            dgvBoosterBox.AutoGenerateColumns = false;
-            dgvBoosterBox.DataSource = null;
-
-
-
-
-
-            BindingList<ItemBox.Item> derp = new BindingList<ItemBox.Item>();
-            foreach (ItemBox.Item i in SAVEDATA.ItemBox.BoosterBox)
-            {
-                derp.Add(i);
-            }
-
-            //DataGridViewComboBoxColumn cCbx = new DataGridViewComboBoxColumn();
-
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 0, 8191));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "", null, ItemBox.BOOSTERS.ToDataTable()));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Type", "Byte", null, 0, 63));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 0, 1023));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Is Equipped"));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 0, 67108863));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 0, 63));
-            dgvBoosterBox.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 0, 63));
-
-            dgvBoosterBox.DataSource = derp;
-            //dgvBoosterBox.Invalidate();
-
-            //dgvBoosterBox.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(dgvBoosterBox_EditingControlShowing);
+            //SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, null);
+            SetupItemBox_ALT(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
+            SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, null);
+            SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, null);
+            SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, ItemBox.CYLINDERS);
+            SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, null);
+            SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, null);
+            SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
+            SetupItemBox_ALT(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
+            SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, null);
+            SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, null);
+            SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, null);
+            SetupItemBox_ALT(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
+            SetupItemBox_ALT(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
+            SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, null);
+            SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, ItemBox.HANA_ElementCores);
+            SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, null);
+            SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, null);
+            SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, null);
 
             #endregion items
 
@@ -213,42 +200,100 @@ namespace XC2SaveNETThingy
             Console.WriteLine("DONE");
         }
 
-        private void dgvBoosterBox_EditingControlShowing(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void cbxItemID_SelectionChangeCommited(object sender, EventArgs e)
         {
 
         }
 
-        //private void SetupItemBox(DataGridView dgv, ItemBox.Item[] items, Dictionary<int, String> IdNames)
-        //{
+        private DataGridView SetupItemBox(DataGridView dgv, ItemBox.Item[] items, Dictionary<int, String> IdNames)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = null;
 
-        //    Array.Sort(items);
-        //    dgv.AutoGenerateColumns = false;
-        //    dgv.AutoSize = true;
-        //    dgv.DataSource = new BindingList<ItemBox.Item>(items);
+            BindingList<ItemBox.Item> derp = new BindingList<ItemBox.Item>();
+            foreach (ItemBox.Item i in items)
+                derp.Add(i);
 
-        //    //DataGridViewComboBoxColumn c = new DataGridViewComboBoxColumn();
-        //    //c.DataPropertyName = "Name";
-        //    //c.DataSource = new BindingSource(IdNames,);
-        //    //c.ValueMember = "Key";
-        //    //c.DisplayMember = "Value";
-        //    //dgv.Columns.Add(c);
+            DataTable IDs = null;
+            if (IdNames != null)
+                IDs = IdNames.ToDataTable();
 
-        //    dgv.Columns[0].HeaderText = "Item ID";
-        //    dgv.Columns[1].HeaderText = "Type";
-        //    dgv.Columns[2].HeaderText = "Qty";
-        //    dgv.Columns[3].HeaderText = "Unk1";
-        //    dgv.Columns[4].HeaderText = "Equipped";
-        //    dgv.Columns[5].HeaderText = "Unk2";
-        //    dgv.Columns[6].HeaderText = "Time";
-        //    dgv.Columns[7].HeaderText = "Serial";
-        //    dgv.Columns[8].HeaderText = "Unk3";
+            dgv.Columns.Clear();
 
-        //}
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 0, 8191));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "", null, IDs));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "", null, null));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 0, 1023));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Is Equipped"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 0, 63));
+
+            dgv.DataSource = derp;
+
+            return dgv;
+        }
+
+        private DataGridView SetupItemBox_ALT(DataGridView dgv, ItemBox.Item[] items, DataTable ItemIDs)
+        {
+            dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(Dgv_CellFormatting);
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = null;
+
+            BindingList<ItemBox.Item> derp = new BindingList<ItemBox.Item>();
+            foreach (ItemBox.Item i in items)
+                derp.Add(i);
+
+            dgv.Columns.Clear();
+
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 0, 8191));
+            dgv.Columns.Add(CreateDgvColumn_ALT(DgvColumnType.ComboBox, "ID", "", null, ItemIDs));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn_ALT(DgvColumnType.ComboBox, "Type", "", null, XC2Data.ItemTypes()));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 0, 1023));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Is Equipped"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2"));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 0, 63));
+
+            
+
+            dgv.DataSource = derp;
+
+            
+
+            return dgv;
+        }
+
+        private void Dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //DataGridView dgv = (DataGridView)sender;
+
+            //switch (e.ColumnIndex)
+            //{
+            //    case 1:
+            //        dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
+            //        break;
+
+            //    case 3:
+            //        dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
+            //        break;
+            //}
+
+            //if (e.ColumnIndex == 1 || e.ColumnIndex == 3)
+            dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
+        }
 
         private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -301,10 +346,11 @@ namespace XC2SaveNETThingy
             Driver d = SAVEDATA.Drivers[index];
 
             nudDriverID.Value = d.ID;
-            cbxDriverID.DataSource = new BindingSource(Driver.IDNAMES, null);
-            cbxDriverID.ValueMember = "Key";
-            cbxDriverID.DisplayMember = "Value";
-            if (Driver.IDNAMES.ContainsKey(d.ID))
+            cbxDriverID.DataSource = XC2Data.Drivers();
+            cbxDriverID.ValueMember = "ID";
+            cbxDriverID.DisplayMember = "Name";
+
+            if (XC2Data.ContainsDriver(d.ID))
                 cbxDriverID.SelectedIndex = d.ID;
             else
                 cbxDriverID.SelectedIndex = 0;
@@ -336,10 +382,11 @@ namespace XC2SaveNETThingy
             nudDriverJusticePoints.Value = d.JusticePoints;
 
             int status = d.IsActive;
-            if (Driver.STATUS.ContainsKey(status))
-                cbxDriverIsActive.SelectedItem = new KeyValuePair<int, string>(status, Driver.STATUS[status]);
-            else
-                cbxDriverIsActive.SelectedIndex = 0;
+            //if (XC2Data.DriverStatus().Contains(status, "id"))
+            //    cbxDriverIsActive.SelectedIndex = status;
+            //else
+            //    cbxDriverIsActive.SelectedIndex = 0;
+            cbxDriverIsActive.SelectedValue = d.IsActive;
 
             nudDriverBlade1.Value = d.EquippedBlades[0];
             cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
@@ -354,32 +401,143 @@ namespace XC2SaveNETThingy
             cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.First(b => b.BladeId == d.EquippedBlades[2]);
 
             nudDriverSetBlade.Value = d.SetBlade;
-            cbxDriverSetBlade.SelectedItem = new KeyValuePair<int, string>(d.SetBlade, Driver.SETBLADE[d.SetBlade]);
+            cbxDriverSetBlade.SelectedValue = d.SetBlade;
 
-            cbxDriverWeaponArtId1.DataSource = Driver.DRIVER_ARTS.ToList();
-            cbxDriverWeaponArtId1.DisplayMember = "Value";
-            cbxDriverWeaponArtId1.ValueMember = "Key";
-            cbxDriverWeaponArtId2.DataSource = Driver.DRIVER_ARTS.ToList();
-            cbxDriverWeaponArtId2.DisplayMember = "Value";
-            cbxDriverWeaponArtId2.ValueMember = "Key";
-            cbxDriverWeaponArtId3.DataSource = Driver.DRIVER_ARTS.ToList();
-            cbxDriverWeaponArtId3.DisplayMember = "Value";
-            cbxDriverWeaponArtId3.ValueMember = "Key";
-            cbxDriverWeapons.DataSource = Driver.Weapon.NAMES.ToList();
-            cbxDriverWeapons.DisplayMember = "Value";
-            cbxDriverWeapons.ValueMember = "Key";
+            cbxDriverWeaponArtId1.DataSource = XC2Data.DriverArts();
+            cbxDriverWeaponArtId1.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId1.ValueMember = "ID";
+            cbxDriverWeaponArtId2.DataSource = XC2Data.DriverArts();
+            cbxDriverWeaponArtId2.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId2.ValueMember = "ID";
+            cbxDriverWeaponArtId3.DataSource = XC2Data.DriverArts();
+            cbxDriverWeaponArtId3.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId3.ValueMember = "ID";
+            cbxDriverWeapons.DataSource = XC2Data.Weapons();
+            cbxDriverWeapons.DisplayMember = "Name";
+            cbxDriverWeapons.ValueMember = "ID";
             cbxDriverWeapons.SelectedIndex = 0;
 
-            dsgbxDriverOvertSkills.SkillSet = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills;
-            dsgbxDriverHiddenSkills.SkillSet = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills;
 
-            cbxDriverArt.DataSource = Driver.DRIVER_ARTS.ToList();
-            cbxDriverArt.DisplayMember = "Value";
-            cbxDriverArt.ValueMember = "Key";
+
+
+            foreach (ComboBox b in gbxDriverOvertSkills.Controls.OfType<ComboBox>())
+                CreateDriverSkillComboBox(b);
+
+            nudDriverOvertSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0];
+            nudDriverOvertSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1];
+            nudDriverOvertSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2];
+
+            nudDriverOvertSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0];
+            nudDriverOvertSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1];
+            nudDriverOvertSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2];
+
+            nudDriverOvertSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0];
+            nudDriverOvertSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1];
+            nudDriverOvertSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2];
+
+            nudDriverOvertSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0];
+            nudDriverOvertSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1];
+            nudDriverOvertSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2];
+
+            nudDriverOvertSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0];
+            nudDriverOvertSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1];
+            nudDriverOvertSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2];
+
+            cbxDriverOvertSkill_c1r1.SelectedValue = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0];
+            cbxDriverOvertSkill_c1r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1];
+            cbxDriverOvertSkill_c1r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2];
+
+            cbxDriverOvertSkill_c2r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0];
+            cbxDriverOvertSkill_c2r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1];
+            cbxDriverOvertSkill_c2r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2];
+
+            cbxDriverOvertSkill_c3r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0];
+            cbxDriverOvertSkill_c3r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1];
+            cbxDriverOvertSkill_c3r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2];
+
+            cbxDriverOvertSkill_c4r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0];
+            cbxDriverOvertSkill_c4r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1];
+            cbxDriverOvertSkill_c4r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2];
+
+            cbxDriverOvertSkill_c5r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0];
+            cbxDriverOvertSkill_c5r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1];
+            cbxDriverOvertSkill_c5r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2];
+
+            nudDriverOvertSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].ColumnNo;
+            nudDriverOvertSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].ColumnNo;
+            nudDriverOvertSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].ColumnNo;
+            nudDriverOvertSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].ColumnNo;
+            nudDriverOvertSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].ColumnNo;
+
+            nudDriverOvertSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].Level;
+            nudDriverOvertSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].Level;
+            nudDriverOvertSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].Level;
+            nudDriverOvertSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].Level;
+            nudDriverOvertSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].Level;
+
+            foreach (ComboBox b in gbxDriverHiddenSkills.Controls.OfType<ComboBox>())
+                CreateDriverSkillComboBox(b);
+
+            nudDriverHiddenSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0];
+            nudDriverHiddenSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1];
+            nudDriverHiddenSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2];
+
+            nudDriverHiddenSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0];
+            nudDriverHiddenSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1];
+            nudDriverHiddenSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2];
+
+            nudDriverHiddenSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0];
+            nudDriverHiddenSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1];
+            nudDriverHiddenSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2];
+
+            nudDriverHiddenSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0];
+            nudDriverHiddenSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1];
+            nudDriverHiddenSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2];
+
+            nudDriverHiddenSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0];
+            nudDriverHiddenSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1];
+            nudDriverHiddenSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2];
+
+            cbxDriverHiddenSkill_c1r1.SelectedValue = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0];
+            cbxDriverHiddenSkill_c1r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1];
+            cbxDriverHiddenSkill_c1r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2];
+
+            cbxDriverHiddenSkill_c2r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0];
+            cbxDriverHiddenSkill_c2r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1];
+            cbxDriverHiddenSkill_c2r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2];
+
+            cbxDriverHiddenSkill_c3r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0];
+            cbxDriverHiddenSkill_c3r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1];
+            cbxDriverHiddenSkill_c3r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2];
+
+            cbxDriverHiddenSkill_c4r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0];
+            cbxDriverHiddenSkill_c4r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1];
+            cbxDriverHiddenSkill_c4r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2];
+
+            cbxDriverHiddenSkill_c5r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0];
+            cbxDriverHiddenSkill_c5r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1];
+            cbxDriverHiddenSkill_c5r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2];
+
+            nudDriverHiddenSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].ColumnNo;
+            nudDriverHiddenSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].ColumnNo;
+            nudDriverHiddenSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].ColumnNo;
+            nudDriverHiddenSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].ColumnNo;
+            nudDriverHiddenSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].ColumnNo;
+
+            nudDriverHiddenSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].Level;
+            nudDriverHiddenSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].Level;
+            nudDriverHiddenSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level;
+            nudDriverHiddenSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level;
+            nudDriverHiddenSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level;
+
+
+            cbxDriverArt.DataSource = XC2Data.DriverArts();
+            cbxDriverArt.DisplayMember = "FriendlyName";
+            cbxDriverArt.ValueMember = "ID";
 
             nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
 
-            cbxDriverPouches.DataSource = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo;
+            cbxDriverPouches.SelectedIndex = 1;
             cbxDriverPouches.SelectedIndex = 0;
 
             nudDriverAccessory1ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0;
@@ -394,13 +552,14 @@ namespace XC2SaveNETThingy
             nudDriverAccessory3Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Type;
             nudDriverAccessory3Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Serial;
 
-        }
-
-        private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
-        {
-            box.DataSource = Driver.DRIVER_SKILLS.ToList();
-            box.DisplayMember = "Value";
-            box.SelectedIndex = value;
+            hbxDriverUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x002C);
+            hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x00A8);
+            hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02DC);
+            hbxDriverUnk_0x02EA.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02EA);
+            hbxDriverUnk_0x04FE.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x04FE);
+            hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x057A);
+            hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0582);
+            hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
         }
 
         private void LoadBlade(int index)
@@ -476,6 +635,7 @@ namespace XC2SaveNETThingy
                 chkBladePoppiswapSkill1Enabled.Checked = b.Poppiswap.OpenCircuits.Skill1_Enabled;
                 chkBladePoppiswapSkill2Enabled.Checked = b.Poppiswap.OpenCircuits.Skill2_Enabled;
 
+                nudBladeCommonBladeIndex.Value = b.CommonBladeIndex;
             }
         }
 
@@ -572,12 +732,12 @@ namespace XC2SaveNETThingy
         {
             Int16 value = (Int16)nudDriverSetBlade.Value;
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].SetBlade = value;
-            cbxDriverSetBlade.SelectedItem = new KeyValuePair<int, string>(value, Driver.SETBLADE[value]);
+            cbxDriverSetBlade.SelectedValue = value;
         }
 
         private void cbxDriverSetBlade_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverSetBlade.Value = Driver.SETBLADE.First(kv => kv.Equals(cbxDriverSetBlade.SelectedItem)).Key;
+            nudDriverSetBlade.Value = Convert.ToInt16(cbxDriverSetBlade.SelectedValue);
         }
 
         private void nudDriverBlade1_ValueChanged(object sender, EventArgs e)
@@ -621,7 +781,8 @@ namespace XC2SaveNETThingy
             UInt16 did = (UInt16)nudDriverID.Value;
 
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].ID = did;
-            cbxDriverID.SelectedItem = SAVEDATA.Drivers.FirstOrDefault(d => d.ID.Equals(did));
+            //cbxDriverID.SelectedItem = SAVEDATA.Drivers.FirstOrDefault(d => d.ID.Equals(did));
+            cbxDriverID.SelectedValue = did;
 
             RefreshDriverList();
         }
@@ -751,16 +912,6 @@ namespace XC2SaveNETThingy
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].JusticePoints = (UInt32)nudDriverJusticePoints.Value;
         }
 
-        private void dsgbxDriverOvertSkills_Leave(object sender, EventArgs e)
-        {
-            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills = dsgbxDriverOvertSkills.SkillSet;
-        }
-
-        private void dsgbxDriverHiddenSkills_Leave(object sender, EventArgs e)
-        {
-            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills = dsgbxDriverHiddenSkills.SkillSet;
-        }
-
         private void nudDriverWeaponArtId1_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArtId1.Value;
@@ -888,39 +1039,540 @@ namespace XC2SaveNETThingy
         }
 
 
-        private bool dgvIsEditing = false;
-        private void dgvBoosterBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        
+        private void dgvItemBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (!dgvIsEditing)
+            //{
+            //    dgvIsEditing = true;
+
+            //    DataGridView dgv = (DataGridView)sender;
+
+            //    switch (e.ColumnIndex)
+            //    {
+            //        case 0:
+            //            if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items.Count)
+            //                dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
+            //            break;
+
+            //        case 1:
+            //            dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
+            //            break;
+
+            //        case 2:
+            //            if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items.Count)
+            //                dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
+            //            break;
+
+            //        case 3:
+            //            dgv.Rows[e.RowIndex].Cells[2].Value = dgv.Rows[e.RowIndex].Cells[3].Value;
+            //            break;
+            //    }
+
+            //    dgvIsEditing = false;
+            //}
+            if (e.ColumnIndex >= 0 && e.ColumnIndex < 4)
+                dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
+        }
+
+        private void dgv_NudCbxSync(DataGridView dgv, int columnIndex, int rowIndex)
         {
             if (!dgvIsEditing)
             {
                 dgvIsEditing = true;
 
-                DataGridView dgv = (DataGridView)sender;
+                //DataGridView dgv = (DataGridView)sender;
 
-                switch (e.ColumnIndex)
+                switch (columnIndex)
                 {
                     case 0:
-                        ((DataGridViewComboBoxCell)(dgv.Rows[e.RowIndex].Cells[1])).Value = int.Parse(dgv.Rows[e.RowIndex].Cells[0].Value.ToString());
+                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items.Count)
+                            dgv.Rows[rowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[0].Value)])[0];
                         break;
 
                     case 1:
-                        dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
+                        dgv.Rows[rowIndex].Cells[0].Value = dgv.Rows[rowIndex].Cells[1].Value;
+                        break;
+
+                    case 2:
+                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items.Count)
+                            dgv.Rows[rowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[2].Value)])[0];
+                        break;
+
+                    case 3:
+                        dgv.Rows[rowIndex].Cells[2].Value = dgv.Rows[rowIndex].Cells[3].Value;
                         break;
                 }
 
                 dgvIsEditing = false;
             }
-
         }
 
-        private void dgvBoosterBox_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            ComboBox cbx = e.Control as ComboBox;
 
-            if (cbx != null)
-            {
-                Console.WriteLine(cbx.SelectedIndex);
-            }
+
+        private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
+        {
+            box.DataSource = XC2Data.DriverSkills();
+            box.DisplayMember = "Name";
+            box.ValueMember = "ID";
+            box.SelectedValue = value;
+        }
+
+        private void nudDriverOvertSkill_c1r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0] = (UInt16)nudDriverOvertSkill_c1r1.Value;
+            cbxDriverOvertSkill_c1r1.SelectedValue = nudDriverOvertSkill_c1r1.Value;
+        }
+
+        private void nudDriverOvertSkill_c1r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1] = (UInt16)nudDriverOvertSkill_c1r2.Value;
+            cbxDriverOvertSkill_c1r2.SelectedValue = nudDriverOvertSkill_c1r2.Value;
+        }
+
+        private void nudDriverOvertSkill_c1r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2] = (UInt16)nudDriverOvertSkill_c1r3.Value;
+            cbxDriverOvertSkill_c1r3.SelectedValue = nudDriverOvertSkill_c1r3.Value;
+        }
+
+        private void nudDriverOvertSkill_c2r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0] = (UInt16)nudDriverOvertSkill_c2r1.Value;
+            cbxDriverOvertSkill_c2r1.SelectedValue = nudDriverOvertSkill_c2r1.Value;
+        }
+
+        private void nudDriverOvertSkill_c2r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1] = (UInt16)nudDriverOvertSkill_c2r2.Value;
+            cbxDriverOvertSkill_c2r2.SelectedValue = nudDriverOvertSkill_c2r2.Value;
+        }
+
+        private void nudDriverOvertSkill_c2r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2] = (UInt16)nudDriverOvertSkill_c2r3.Value;
+            cbxDriverOvertSkill_c2r3.SelectedValue = nudDriverOvertSkill_c2r3.Value;
+        }
+
+        private void nudDriverOvertSkill_c3r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0] = (UInt16)nudDriverOvertSkill_c3r1.Value;
+            cbxDriverOvertSkill_c3r1.SelectedValue = nudDriverOvertSkill_c3r1.Value;
+        }
+
+        private void nudDriverOvertSkill_c3r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1] = (UInt16)nudDriverOvertSkill_c3r2.Value;
+            cbxDriverOvertSkill_c3r2.SelectedValue = nudDriverOvertSkill_c3r2.Value;
+        }
+
+        private void nudDriverOvertSkill_c3r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2] = (UInt16)nudDriverOvertSkill_c3r3.Value;
+            cbxDriverOvertSkill_c3r3.SelectedValue = nudDriverOvertSkill_c3r3.Value;
+        }
+
+        private void nudDriverOvertSkill_c4r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0] = (UInt16)nudDriverOvertSkill_c4r1.Value;
+            cbxDriverOvertSkill_c4r1.SelectedValue = nudDriverOvertSkill_c4r1.Value;
+        }
+
+        private void nudDriverOvertSkill_c4r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1] = (UInt16)nudDriverOvertSkill_c4r2.Value;
+            cbxDriverOvertSkill_c4r2.SelectedValue = nudDriverOvertSkill_c4r2.Value;
+        }
+
+        private void nudDriverOvertSkill_c4r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2] = (UInt16)nudDriverOvertSkill_c4r3.Value;
+            cbxDriverOvertSkill_c4r3.SelectedValue = nudDriverOvertSkill_c4r3.Value;
+        }
+
+        private void nudDriverOvertSkill_c5r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0] = (UInt16)nudDriverOvertSkill_c5r1.Value;
+            cbxDriverOvertSkill_c5r1.SelectedValue = nudDriverOvertSkill_c5r1.Value;
+        }
+
+        private void nudDriverOvertSkill_c5r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1] = (UInt16)nudDriverOvertSkill_c5r2.Value;
+            cbxDriverOvertSkill_c5r2.SelectedValue = nudDriverOvertSkill_c5r2.Value;
+        }
+
+        private void nudDriverOvertSkill_c5r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2] = (UInt16)nudDriverOvertSkill_c5r3.Value;
+            cbxDriverOvertSkill_c5r3.SelectedValue = nudDriverOvertSkill_c5r3.Value;
+        }
+
+        private void cbxDriverOvertSkill_c1r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c1r1.Value = Convert.ToUInt16(cbxDriverOvertSkill_c1r1.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c1r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c1r2.Value = Convert.ToUInt16(cbxDriverOvertSkill_c1r2.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c1r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c1r3.Value = Convert.ToUInt16(cbxDriverOvertSkill_c1r3.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c2r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c2r1.Value = Convert.ToUInt16(cbxDriverOvertSkill_c2r1.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c2r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c2r2.Value = Convert.ToUInt16(cbxDriverOvertSkill_c2r2.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c2r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c2r3.Value = Convert.ToUInt16(cbxDriverOvertSkill_c2r3.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c3r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c3r1.Value = Convert.ToUInt16(cbxDriverOvertSkill_c3r1.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c3r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c3r2.Value = Convert.ToUInt16(cbxDriverOvertSkill_c3r2.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c3r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c3r3.Value = Convert.ToUInt16(cbxDriverOvertSkill_c3r3.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c4r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c4r1.Value = Convert.ToUInt16(cbxDriverOvertSkill_c4r1.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c4r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c4r2.Value = Convert.ToUInt16(cbxDriverOvertSkill_c4r2.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c4r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c4r3.Value = Convert.ToUInt16(cbxDriverOvertSkill_c4r3.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c5r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c5r1.Value = Convert.ToUInt16(cbxDriverOvertSkill_c5r1.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c5r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c5r2.Value = Convert.ToUInt16(cbxDriverOvertSkill_c5r2.SelectedValue);
+        }
+
+        private void cbxDriverOvertSkill_c5r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverOvertSkill_c5r3.Value = Convert.ToUInt16(cbxDriverOvertSkill_c5r3.SelectedValue);
+        }
+
+        private void nudDriverOvertSkill_c1_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].ColumnNo = Convert.ToUInt16(nudDriverOvertSkill_c1_ColumnNo.Value);
+        }
+
+        private void nudDriverOvertSkill_c2_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].ColumnNo = Convert.ToUInt16(nudDriverOvertSkill_c2_ColumnNo.Value);
+        }
+
+        private void nudDriverOvertSkill_c3_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].ColumnNo = Convert.ToUInt16(nudDriverOvertSkill_c3_ColumnNo.Value);
+        }
+
+        private void nudDriverOvertSkill_c4_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].ColumnNo = Convert.ToUInt16(nudDriverOvertSkill_c4_ColumnNo.Value);
+        }
+
+        private void nudDriverOvertSkill_c5_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].ColumnNo = Convert.ToUInt16(nudDriverOvertSkill_c5_ColumnNo.Value);
+        }
+
+        private void nudDriverOvertSkill_c1_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].Level = Convert.ToUInt16(nudDriverOvertSkill_c1_Level.Value);
+        }
+
+        private void nudDriverOvertSkill_c2_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].Level = Convert.ToUInt16(nudDriverOvertSkill_c2_Level.Value);
+        }
+
+        private void nudDriverOvertSkill_c3_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].Level = Convert.ToUInt16(nudDriverOvertSkill_c3_Level.Value);
+        }
+
+        private void nudDriverOvertSkill_c4_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].Level = Convert.ToUInt16(nudDriverOvertSkill_c4_Level.Value);
+        }
+
+        private void nudDriverOvertSkill_c5_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].Level = Convert.ToUInt16(nudDriverOvertSkill_c5_Level.Value);
+        }
+
+        private void nudDriverHiddenSkill_c1r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0] = (UInt16)nudDriverHiddenSkill_c1r1.Value;
+            cbxDriverHiddenSkill_c1r1.SelectedValue = nudDriverHiddenSkill_c1r1.Value;
+        }
+
+        private void nudDriverHiddenSkill_c1r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1] = (UInt16)nudDriverHiddenSkill_c1r2.Value;
+            cbxDriverHiddenSkill_c1r2.SelectedValue = nudDriverHiddenSkill_c1r2.Value;
+        }
+
+        private void nudDriverHiddenSkill_c1r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2] = (UInt16)nudDriverHiddenSkill_c1r3.Value;
+            cbxDriverHiddenSkill_c1r3.SelectedValue = nudDriverHiddenSkill_c1r3.Value;
+        }
+
+        private void nudDriverHiddenSkill_c2r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0] = (UInt16)nudDriverHiddenSkill_c2r1.Value;
+            cbxDriverHiddenSkill_c2r1.SelectedValue = nudDriverHiddenSkill_c2r1.Value;
+        }
+
+        private void nudDriverHiddenSkill_c2r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1] = (UInt16)nudDriverHiddenSkill_c2r2.Value;
+            cbxDriverHiddenSkill_c2r2.SelectedValue = nudDriverHiddenSkill_c2r2.Value;
+        }
+
+        private void nudDriverHiddenSkill_c2r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2] = (UInt16)nudDriverHiddenSkill_c2r3.Value;
+            cbxDriverHiddenSkill_c2r3.SelectedValue = nudDriverHiddenSkill_c2r3.Value;
+        }
+
+        private void nudDriverHiddenSkill_c3r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0] = (UInt16)nudDriverHiddenSkill_c3r1.Value;
+            cbxDriverHiddenSkill_c3r1.SelectedValue = nudDriverHiddenSkill_c3r1.Value;
+        }
+
+        private void nudDriverHiddenSkill_c3r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1] = (UInt16)nudDriverHiddenSkill_c3r2.Value;
+            cbxDriverHiddenSkill_c3r2.SelectedValue = nudDriverHiddenSkill_c3r2.Value;
+        }
+
+        private void nudDriverHiddenSkill_c3r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2] = (UInt16)nudDriverHiddenSkill_c3r3.Value;
+            cbxDriverHiddenSkill_c3r3.SelectedValue = nudDriverHiddenSkill_c3r3.Value;
+        }
+
+        private void nudDriverHiddenSkill_c4r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0] = (UInt16)nudDriverHiddenSkill_c4r1.Value;
+            cbxDriverHiddenSkill_c4r1.SelectedValue = nudDriverHiddenSkill_c4r1.Value;
+        }
+
+        private void nudDriverHiddenSkill_c4r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1] = (UInt16)nudDriverHiddenSkill_c4r2.Value;
+            cbxDriverHiddenSkill_c4r2.SelectedValue = nudDriverHiddenSkill_c4r2.Value;
+        }
+
+        private void nudDriverHiddenSkill_c4r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2] = (UInt16)nudDriverHiddenSkill_c4r3.Value;
+            cbxDriverHiddenSkill_c4r3.SelectedValue = nudDriverHiddenSkill_c4r3.Value;
+        }
+
+        private void nudDriverHiddenSkill_c5r1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0] = (UInt16)nudDriverHiddenSkill_c5r1.Value;
+            cbxDriverHiddenSkill_c5r1.SelectedValue = nudDriverHiddenSkill_c5r1.Value;
+        }
+
+        private void nudDriverHiddenSkill_c5r2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1] = (UInt16)nudDriverHiddenSkill_c5r2.Value;
+            cbxDriverHiddenSkill_c5r2.SelectedValue = nudDriverHiddenSkill_c5r2.Value;
+        }
+
+        private void nudDriverHiddenSkill_c5r3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2] = (UInt16)nudDriverHiddenSkill_c5r3.Value;
+            cbxDriverHiddenSkill_c5r3.SelectedValue = nudDriverHiddenSkill_c5r3.Value;
+        }
+
+        private void cbxDriverHiddenSkill_c1r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c1r1.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c1r1.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c1r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c1r2.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c1r2.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c1r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c1r3.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c1r3.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c2r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c2r1.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c2r1.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c2r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c2r2.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c2r2.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c2r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c2r3.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c2r3.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c3r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c3r1.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c3r1.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c3r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c3r2.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c3r2.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c3r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c3r3.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c3r3.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c4r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c4r1.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c4r1.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c4r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c4r2.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c4r2.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c4r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c4r3.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c4r3.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c5r1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c5r1.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c5r1.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c5r2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c5r2.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c5r2.SelectedValue);
+        }
+
+        private void cbxDriverHiddenSkill_c5r3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverHiddenSkill_c5r3.Value = Convert.ToUInt16(cbxDriverHiddenSkill_c5r3.SelectedValue);
+        }
+
+        private void nudDriverHiddenSkill_c1_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].ColumnNo = Convert.ToUInt16(nudDriverHiddenSkill_c1_ColumnNo.Value);
+        }
+
+        private void nudDriverHiddenSkill_c2_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].ColumnNo = Convert.ToUInt16(nudDriverHiddenSkill_c2_ColumnNo.Value);
+        }
+
+        private void nudDriverHiddenSkill_c3_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].ColumnNo = Convert.ToUInt16(nudDriverHiddenSkill_c3_ColumnNo.Value);
+        }
+
+        private void nudDriverHiddenSkill_c4_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].ColumnNo = Convert.ToUInt16(nudDriverHiddenSkill_c4_ColumnNo.Value);
+        }
+
+        private void nudDriverHiddenSkill_c5_ColumnNo_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].ColumnNo = Convert.ToUInt16(nudDriverHiddenSkill_c5_ColumnNo.Value);
+        }
+
+        private void nudDriverHiddenSkill_c1_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].Level = Convert.ToUInt16(nudDriverHiddenSkill_c1_Level.Value);
+        }
+
+        private void nudDriverHiddenSkill_c2_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].Level = Convert.ToUInt16(nudDriverHiddenSkill_c2_Level.Value);
+        }
+
+        private void nudDriverHiddenSkill_c3_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level = Convert.ToUInt16(nudDriverHiddenSkill_c3_Level.Value);
+        }
+
+        private void nudDriverHiddenSkill_c4_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level = Convert.ToUInt16(nudDriverHiddenSkill_c4_Level.Value);
+        }
+
+        private void nudDriverHiddenSkill_c5_Level_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level = Convert.ToUInt16(nudDriverHiddenSkill_c5_Level.Value);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            List<string> dataz = new List<string>();
+
+
+            Console.WriteLine("Exporting DriverArts...");
+
+            string message = "DATA EXPORT COMPLETE!";
+            Console.WriteLine(message);
+            MessageBox.Show("DATA EXPORT COMPLETE!", "Database .csv export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void nudBladeDataType_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].DataType = (UInt16)nudBladeDataType.Value;
+        }
+
+        private void nudBladeCreator_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].Creator = (UInt16)nudBladeCreator.Value;
+        }
+
+        private void nudBladeSetDriver_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].SetDriver = (UInt16)nudBladeSetDriver.Value;
         }
     }
 }
