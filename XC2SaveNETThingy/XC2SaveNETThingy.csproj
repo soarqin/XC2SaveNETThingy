@@ -94,7 +94,13 @@
     <None Include="data\Drivers.csv" />
     <None Include="data\DriverSkills.csv" />
     <None Include="data\DriverStatus.csv" />
+    <None Include="data\FavCategories.csv" />
+    <None Include="data\Items.csv" />
+    <None Include="data\ItemTypes.csv" />
     <None Include="data\Weapons.csv" />
+    <Content Include="db\FavCategories.sql" />
+    <Content Include="db\Items.sql" />
+    <Content Include="db\ItemTypes.sql" />
     <Content Include="db\XC2Data.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

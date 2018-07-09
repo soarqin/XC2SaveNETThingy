@@ -1179,6 +1179,15 @@ namespace XC2SaveNETThingy
             result.AddRange(base.ToRawData());
             result.AddRange(Unk_0x1176A0);
 
+            if (result.Count != SIZE)
+            {
+                string message = "XC2Save150: SIZE ALL WRONG!!!" + Environment.NewLine +
+                "Size should be " + SIZE + " bytes..." + Environment.NewLine +
+                "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
+
             return result.ToArray();
         }
     }

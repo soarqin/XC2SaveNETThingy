@@ -735,12 +735,16 @@ namespace XC2SaveNETThingy
         public UInt16 KeyReleaseLevel { get; set; }
         public UInt16 FavoriteCategory0 { get; set; }
         public UInt16 FavoriteItem0 { get; set; }
-        public UInt16 FavoriteCategory0Unlocked { get; set; }
-        public UInt16 FavoriteItem0Unlocked { get; set; }
+        //public UInt16 FavoriteCategory0Unlocked { get; set; }
+        //public UInt16 FavoriteItem0Unlocked { get; set; }
+        public bool FavoriteCategory0Unlocked { get; set; }
+        public bool FavoriteItem0Unlocked { get; set; }
         public UInt16 FavoriteCategory1 { get; set; }
         public UInt16 FavoriteItem1 { get; set; }
-        public UInt16 FavoriteCategory1Unlocked { get; set; }
-        public UInt16 FavoriteItem1Unlocked { get; set; }
+        //public UInt16 FavoriteCategory1Unlocked { get; set; }
+        //public UInt16 FavoriteItem1Unlocked { get; set; }
+        public bool FavoriteCategory1Unlocked { get; set; }
+        public bool FavoriteItem1Unlocked { get; set; }
         public Byte[] gap676 { get; set; }
         public UInt32 field_678 { get; set; }
         public UInt16 field_67C { get; set; }
@@ -1007,12 +1011,19 @@ namespace XC2SaveNETThingy
             KeyReleaseLevel = BitConverter.ToUInt16(data.GetByteSubArray(LOC["KeyReleaseLevel"], 2), 0);
             FavoriteCategory0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0"], 2), 0);
             FavoriteItem0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0"], 2), 0);
-            FavoriteCategory0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0Unlocked"], 2), 0);
-            FavoriteItem0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0Unlocked"], 2), 0);
+            //FavoriteCategory0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0Unlocked"], 2), 0);
+            //FavoriteItem0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0Unlocked"], 2), 0);
+
+            FavoriteCategory0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0Unlocked"], 2), 0) == 1;
+            FavoriteItem0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0Unlocked"], 2), 0) == 1;
+
             FavoriteCategory1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1"], 2), 0);
             FavoriteItem1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1"], 2), 0);
-            FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0);
-            FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0);
+            //FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0);
+            //FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0);
+
+            FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0) == 1;
+            FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0) == 1;
             gap676 = data.GetByteSubArray(LOC["gap676"], 2);
             field_678 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_678"], 4), 0);
             field_67C = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_67C"], 2), 0);
@@ -1156,12 +1167,12 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(KeyReleaseLevel));
             result.AddRange(BitConverter.GetBytes(FavoriteCategory0));
             result.AddRange(BitConverter.GetBytes(FavoriteItem0));
-            result.AddRange(BitConverter.GetBytes(FavoriteCategory0Unlocked));
-            result.AddRange(BitConverter.GetBytes(FavoriteItem0Unlocked));
+            result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteCategory0Unlocked ? 1 : 0)));
+            result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteItem0Unlocked ? 1 : 0)));
             result.AddRange(BitConverter.GetBytes(FavoriteCategory1));
             result.AddRange(BitConverter.GetBytes(FavoriteItem1));
-            result.AddRange(BitConverter.GetBytes(FavoriteCategory1Unlocked));
-            result.AddRange(BitConverter.GetBytes(FavoriteItem1Unlocked));
+            result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteCategory1Unlocked ? 1 : 0)));
+            result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteItem1Unlocked ? 1 : 0)));
             result.AddRange(gap676);
             result.AddRange(BitConverter.GetBytes(field_678));
             result.AddRange(BitConverter.GetBytes(field_67C));

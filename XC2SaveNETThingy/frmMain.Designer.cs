@@ -117,7 +117,7 @@
             this.label67 = new System.Windows.Forms.Label();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.groupBox33 = new System.Windows.Forms.GroupBox();
-            this.cbxDriverAccessoryType = new System.Windows.Forms.ComboBox();
+            this.cbxDriverAccessory3Type = new System.Windows.Forms.ComboBox();
             this.cbxDriverAccessory3ID = new System.Windows.Forms.ComboBox();
             this.label130 = new System.Windows.Forms.Label();
             this.nudDriverAccessory3Serial = new System.Windows.Forms.NumericUpDown();
@@ -365,10 +365,6 @@
             this.nudBladeStill = new System.Windows.Forms.NumericUpDown();
             this.nudBladeGender = new System.Windows.Forms.NumericUpDown();
             this.nudBladeRace = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeFavoriteItem1Unlocked = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeFavoriteCategory1Unlocked = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeFavoriteItem0Unlocked = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeFavoriteCategory0Unlocked = new System.Windows.Forms.NumericUpDown();
             this.label111 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
             this.label109 = new System.Windows.Forms.Label();
@@ -541,6 +537,15 @@
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
+            this.chkBladeFavoriteCategory0Unlocked = new System.Windows.Forms.CheckBox();
+            this.chkBladeFavoriteItem0Unlocked = new System.Windows.Forms.CheckBox();
+            this.chkBladeFavoriteCategory1Unlocked = new System.Windows.Forms.CheckBox();
+            this.chkBladeFavoriteItem1Unlocked = new System.Windows.Forms.CheckBox();
+            this.cbxBladeFavoriteItem0 = new System.Windows.Forms.ComboBox();
+            this.cbxBladeFavoriteItem1 = new System.Windows.Forms.ComboBox();
+            this.cbxBladeFavoriteCategory0 = new System.Windows.Forms.ComboBox();
+            this.cbxBladeFavoriteCategory1 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverPouchesItemID = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -691,10 +696,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeStill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeGender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeRace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem1Unlocked)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory1Unlocked)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem0Unlocked)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory0Unlocked)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem0)).BeginInit();
@@ -1593,6 +1594,7 @@
             // 
             // groupBox30
             // 
+            this.groupBox30.Controls.Add(this.cbxDriverPouchesItemID);
             this.groupBox30.Controls.Add(this.label123);
             this.groupBox30.Controls.Add(this.nudDriverPouchesTime);
             this.groupBox30.Controls.Add(this.label122);
@@ -1603,7 +1605,7 @@
             this.groupBox30.Controls.Add(this.label67);
             this.groupBox30.Location = new System.Drawing.Point(227, 137);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(253, 123);
+            this.groupBox30.Size = new System.Drawing.Size(278, 123);
             this.groupBox30.TabIndex = 44;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Pouches";
@@ -1611,7 +1613,7 @@
             // label123
             // 
             this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(201, 93);
+            this.label123.Location = new System.Drawing.Point(186, 93);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(27, 13);
             this.label123.TabIndex = 7;
@@ -1620,7 +1622,7 @@
             // nudDriverPouchesTime
             // 
             this.nudDriverPouchesTime.DecimalPlaces = 7;
-            this.nudDriverPouchesTime.Location = new System.Drawing.Point(75, 91);
+            this.nudDriverPouchesTime.Location = new System.Drawing.Point(60, 91);
             this.nudDriverPouchesTime.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -1642,7 +1644,7 @@
             // 
             // nudDriverPouchesItemID
             // 
-            this.nudDriverPouchesItemID.Location = new System.Drawing.Point(75, 65);
+            this.nudDriverPouchesItemID.Location = new System.Drawing.Point(60, 65);
             this.nudDriverPouchesItemID.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -1677,7 +1679,7 @@
             // cbxDriverPouches
             // 
             this.cbxDriverPouches.FormattingEnabled = true;
-            this.cbxDriverPouches.Location = new System.Drawing.Point(75, 20);
+            this.cbxDriverPouches.Location = new System.Drawing.Point(60, 20);
             this.cbxDriverPouches.Name = "cbxDriverPouches";
             this.cbxDriverPouches.Size = new System.Drawing.Size(156, 21);
             this.cbxDriverPouches.TabIndex = 1;
@@ -1706,7 +1708,7 @@
             // 
             // groupBox33
             // 
-            this.groupBox33.Controls.Add(this.cbxDriverAccessoryType);
+            this.groupBox33.Controls.Add(this.cbxDriverAccessory3Type);
             this.groupBox33.Controls.Add(this.cbxDriverAccessory3ID);
             this.groupBox33.Controls.Add(this.label130);
             this.groupBox33.Controls.Add(this.nudDriverAccessory3Serial);
@@ -1721,21 +1723,23 @@
             this.groupBox33.TabStop = false;
             this.groupBox33.Text = "Accessory 3";
             // 
-            // cbxDriverAccessoryType
+            // cbxDriverAccessory3Type
             // 
-            this.cbxDriverAccessoryType.FormattingEnabled = true;
-            this.cbxDriverAccessoryType.Location = new System.Drawing.Point(196, 37);
-            this.cbxDriverAccessoryType.Name = "cbxDriverAccessoryType";
-            this.cbxDriverAccessoryType.Size = new System.Drawing.Size(121, 21);
-            this.cbxDriverAccessoryType.TabIndex = 7;
+            this.cbxDriverAccessory3Type.FormattingEnabled = true;
+            this.cbxDriverAccessory3Type.Location = new System.Drawing.Point(196, 37);
+            this.cbxDriverAccessory3Type.Name = "cbxDriverAccessory3Type";
+            this.cbxDriverAccessory3Type.Size = new System.Drawing.Size(171, 21);
+            this.cbxDriverAccessory3Type.TabIndex = 7;
+            this.cbxDriverAccessory3Type.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory3Type_SelectionChangeCommitted);
             // 
             // cbxDriverAccessory3ID
             // 
             this.cbxDriverAccessory3ID.FormattingEnabled = true;
             this.cbxDriverAccessory3ID.Location = new System.Drawing.Point(196, 18);
             this.cbxDriverAccessory3ID.Name = "cbxDriverAccessory3ID";
-            this.cbxDriverAccessory3ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory3ID.Size = new System.Drawing.Size(171, 21);
             this.cbxDriverAccessory3ID.TabIndex = 6;
+            this.cbxDriverAccessory3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory3ID_SelectionChangeCommitted);
             // 
             // label130
             // 
@@ -1825,16 +1829,18 @@
             this.cbxDriverAccessory2Type.FormattingEnabled = true;
             this.cbxDriverAccessory2Type.Location = new System.Drawing.Point(196, 37);
             this.cbxDriverAccessory2Type.Name = "cbxDriverAccessory2Type";
-            this.cbxDriverAccessory2Type.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory2Type.Size = new System.Drawing.Size(171, 21);
             this.cbxDriverAccessory2Type.TabIndex = 7;
+            this.cbxDriverAccessory2Type.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory2Type_SelectionChangeCommitted);
             // 
             // cbxDriverAccessory2ID
             // 
             this.cbxDriverAccessory2ID.FormattingEnabled = true;
             this.cbxDriverAccessory2ID.Location = new System.Drawing.Point(196, 18);
             this.cbxDriverAccessory2ID.Name = "cbxDriverAccessory2ID";
-            this.cbxDriverAccessory2ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory2ID.Size = new System.Drawing.Size(171, 21);
             this.cbxDriverAccessory2ID.TabIndex = 6;
+            this.cbxDriverAccessory2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory2ID_SelectionChangeCommitted);
             // 
             // label127
             // 
@@ -1924,16 +1930,18 @@
             this.cbxDriverAccessory1Type.FormattingEnabled = true;
             this.cbxDriverAccessory1Type.Location = new System.Drawing.Point(196, 37);
             this.cbxDriverAccessory1Type.Name = "cbxDriverAccessory1Type";
-            this.cbxDriverAccessory1Type.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory1Type.Size = new System.Drawing.Size(171, 21);
             this.cbxDriverAccessory1Type.TabIndex = 7;
+            this.cbxDriverAccessory1Type.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory1Type_SelectionChangeCommitted);
             // 
             // cbxDriverAccessory1ID
             // 
             this.cbxDriverAccessory1ID.FormattingEnabled = true;
             this.cbxDriverAccessory1ID.Location = new System.Drawing.Point(196, 18);
             this.cbxDriverAccessory1ID.Name = "cbxDriverAccessory1ID";
-            this.cbxDriverAccessory1ID.Size = new System.Drawing.Size(121, 21);
+            this.cbxDriverAccessory1ID.Size = new System.Drawing.Size(171, 21);
             this.cbxDriverAccessory1ID.TabIndex = 6;
+            this.cbxDriverAccessory1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverAccessory1ID_SelectionChangeCommitted);
             // 
             // label124
             // 
@@ -4484,14 +4492,18 @@
             // 
             // tabBladeMisc
             // 
+            this.tabBladeMisc.Controls.Add(this.cbxBladeFavoriteCategory1);
+            this.tabBladeMisc.Controls.Add(this.cbxBladeFavoriteCategory0);
+            this.tabBladeMisc.Controls.Add(this.cbxBladeFavoriteItem1);
+            this.tabBladeMisc.Controls.Add(this.cbxBladeFavoriteItem0);
+            this.tabBladeMisc.Controls.Add(this.chkBladeFavoriteItem1Unlocked);
+            this.tabBladeMisc.Controls.Add(this.chkBladeFavoriteCategory1Unlocked);
+            this.tabBladeMisc.Controls.Add(this.chkBladeFavoriteItem0Unlocked);
+            this.tabBladeMisc.Controls.Add(this.chkBladeFavoriteCategory0Unlocked);
             this.tabBladeMisc.Controls.Add(this.nudBladeCommonBladeIndex);
             this.tabBladeMisc.Controls.Add(this.nudBladeStill);
             this.tabBladeMisc.Controls.Add(this.nudBladeGender);
             this.tabBladeMisc.Controls.Add(this.nudBladeRace);
-            this.tabBladeMisc.Controls.Add(this.nudBladeFavoriteItem1Unlocked);
-            this.tabBladeMisc.Controls.Add(this.nudBladeFavoriteCategory1Unlocked);
-            this.tabBladeMisc.Controls.Add(this.nudBladeFavoriteItem0Unlocked);
-            this.tabBladeMisc.Controls.Add(this.nudBladeFavoriteCategory0Unlocked);
             this.tabBladeMisc.Controls.Add(this.label111);
             this.tabBladeMisc.Controls.Add(this.label110);
             this.tabBladeMisc.Controls.Add(this.label109);
@@ -4590,38 +4602,10 @@
             this.nudBladeRace.Size = new System.Drawing.Size(38, 20);
             this.nudBladeRace.TabIndex = 124;
             // 
-            // nudBladeFavoriteItem1Unlocked
-            // 
-            this.nudBladeFavoriteItem1Unlocked.Location = new System.Drawing.Point(686, 93);
-            this.nudBladeFavoriteItem1Unlocked.Name = "nudBladeFavoriteItem1Unlocked";
-            this.nudBladeFavoriteItem1Unlocked.Size = new System.Drawing.Size(29, 20);
-            this.nudBladeFavoriteItem1Unlocked.TabIndex = 123;
-            // 
-            // nudBladeFavoriteCategory1Unlocked
-            // 
-            this.nudBladeFavoriteCategory1Unlocked.Location = new System.Drawing.Point(686, 67);
-            this.nudBladeFavoriteCategory1Unlocked.Name = "nudBladeFavoriteCategory1Unlocked";
-            this.nudBladeFavoriteCategory1Unlocked.Size = new System.Drawing.Size(29, 20);
-            this.nudBladeFavoriteCategory1Unlocked.TabIndex = 122;
-            // 
-            // nudBladeFavoriteItem0Unlocked
-            // 
-            this.nudBladeFavoriteItem0Unlocked.Location = new System.Drawing.Point(686, 41);
-            this.nudBladeFavoriteItem0Unlocked.Name = "nudBladeFavoriteItem0Unlocked";
-            this.nudBladeFavoriteItem0Unlocked.Size = new System.Drawing.Size(29, 20);
-            this.nudBladeFavoriteItem0Unlocked.TabIndex = 121;
-            // 
-            // nudBladeFavoriteCategory0Unlocked
-            // 
-            this.nudBladeFavoriteCategory0Unlocked.Location = new System.Drawing.Point(686, 15);
-            this.nudBladeFavoriteCategory0Unlocked.Name = "nudBladeFavoriteCategory0Unlocked";
-            this.nudBladeFavoriteCategory0Unlocked.Size = new System.Drawing.Size(29, 20);
-            this.nudBladeFavoriteCategory0Unlocked.TabIndex = 120;
-            // 
             // label111
             // 
             this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(530, 119);
+            this.label111.Location = new System.Drawing.Point(531, 117);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(80, 13);
             this.label111.TabIndex = 119;
@@ -4630,7 +4614,7 @@
             // label110
             // 
             this.label110.AutoSize = true;
-            this.label110.Location = new System.Drawing.Point(531, 67);
+            this.label110.Location = new System.Drawing.Point(531, 93);
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(80, 13);
             this.label110.TabIndex = 118;
@@ -4639,7 +4623,7 @@
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(509, 93);
+            this.label109.Location = new System.Drawing.Point(509, 67);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(102, 13);
             this.label109.TabIndex = 117;
@@ -4665,7 +4649,7 @@
             // 
             // nudBladeFavoriteItem1
             // 
-            this.nudBladeFavoriteItem1.Location = new System.Drawing.Point(617, 117);
+            this.nudBladeFavoriteItem1.Location = new System.Drawing.Point(618, 115);
             this.nudBladeFavoriteItem1.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -4674,10 +4658,11 @@
             this.nudBladeFavoriteItem1.Name = "nudBladeFavoriteItem1";
             this.nudBladeFavoriteItem1.Size = new System.Drawing.Size(63, 20);
             this.nudBladeFavoriteItem1.TabIndex = 114;
+            this.nudBladeFavoriteItem1.ValueChanged += new System.EventHandler(this.nudBladeFavoriteItem1_ValueChanged);
             // 
             // nudBladeFavoriteCategory1
             // 
-            this.nudBladeFavoriteCategory1.Location = new System.Drawing.Point(617, 91);
+            this.nudBladeFavoriteCategory1.Location = new System.Drawing.Point(617, 65);
             this.nudBladeFavoriteCategory1.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -4686,10 +4671,11 @@
             this.nudBladeFavoriteCategory1.Name = "nudBladeFavoriteCategory1";
             this.nudBladeFavoriteCategory1.Size = new System.Drawing.Size(63, 20);
             this.nudBladeFavoriteCategory1.TabIndex = 113;
+            this.nudBladeFavoriteCategory1.ValueChanged += new System.EventHandler(this.nudBladeFavoriteCategory1_ValueChanged);
             // 
             // nudBladeFavoriteItem0
             // 
-            this.nudBladeFavoriteItem0.Location = new System.Drawing.Point(617, 65);
+            this.nudBladeFavoriteItem0.Location = new System.Drawing.Point(617, 91);
             this.nudBladeFavoriteItem0.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -4698,6 +4684,7 @@
             this.nudBladeFavoriteItem0.Name = "nudBladeFavoriteItem0";
             this.nudBladeFavoriteItem0.Size = new System.Drawing.Size(63, 20);
             this.nudBladeFavoriteItem0.TabIndex = 112;
+            this.nudBladeFavoriteItem0.ValueChanged += new System.EventHandler(this.nudBladeFavoriteItem0_ValueChanged);
             // 
             // nudBladeFavoriteCategory0
             // 
@@ -4710,6 +4697,7 @@
             this.nudBladeFavoriteCategory0.Name = "nudBladeFavoriteCategory0";
             this.nudBladeFavoriteCategory0.Size = new System.Drawing.Size(63, 20);
             this.nudBladeFavoriteCategory0.TabIndex = 111;
+            this.nudBladeFavoriteCategory0.ValueChanged += new System.EventHandler(this.nudBladeFavoriteCategory0_ValueChanged);
             // 
             // nudBladeKeyReleaseLevel
             // 
@@ -6513,6 +6501,95 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // chkBladeFavoriteCategory0Unlocked
+            // 
+            this.chkBladeFavoriteCategory0Unlocked.AutoSize = true;
+            this.chkBladeFavoriteCategory0Unlocked.Location = new System.Drawing.Point(858, 39);
+            this.chkBladeFavoriteCategory0Unlocked.Name = "chkBladeFavoriteCategory0Unlocked";
+            this.chkBladeFavoriteCategory0Unlocked.Size = new System.Drawing.Size(76, 17);
+            this.chkBladeFavoriteCategory0Unlocked.TabIndex = 128;
+            this.chkBladeFavoriteCategory0Unlocked.Text = "Is Known?";
+            this.chkBladeFavoriteCategory0Unlocked.UseVisualStyleBackColor = true;
+            this.chkBladeFavoriteCategory0Unlocked.CheckedChanged += new System.EventHandler(this.chkBladeFavoriteCategory0Unlocked_CheckedChanged);
+            // 
+            // chkBladeFavoriteItem0Unlocked
+            // 
+            this.chkBladeFavoriteItem0Unlocked.AutoSize = true;
+            this.chkBladeFavoriteItem0Unlocked.Location = new System.Drawing.Point(858, 89);
+            this.chkBladeFavoriteItem0Unlocked.Name = "chkBladeFavoriteItem0Unlocked";
+            this.chkBladeFavoriteItem0Unlocked.Size = new System.Drawing.Size(76, 17);
+            this.chkBladeFavoriteItem0Unlocked.TabIndex = 129;
+            this.chkBladeFavoriteItem0Unlocked.Text = "Is Known?";
+            this.chkBladeFavoriteItem0Unlocked.UseVisualStyleBackColor = true;
+            this.chkBladeFavoriteItem0Unlocked.CheckedChanged += new System.EventHandler(this.chkBladeFavoriteItem0Unlocked_CheckedChanged);
+            // 
+            // chkBladeFavoriteCategory1Unlocked
+            // 
+            this.chkBladeFavoriteCategory1Unlocked.AutoSize = true;
+            this.chkBladeFavoriteCategory1Unlocked.Location = new System.Drawing.Point(858, 66);
+            this.chkBladeFavoriteCategory1Unlocked.Name = "chkBladeFavoriteCategory1Unlocked";
+            this.chkBladeFavoriteCategory1Unlocked.Size = new System.Drawing.Size(76, 17);
+            this.chkBladeFavoriteCategory1Unlocked.TabIndex = 130;
+            this.chkBladeFavoriteCategory1Unlocked.Text = "Is Known?";
+            this.chkBladeFavoriteCategory1Unlocked.UseVisualStyleBackColor = true;
+            this.chkBladeFavoriteCategory1Unlocked.CheckedChanged += new System.EventHandler(this.chkBladeFavoriteCategory1Unlocked_CheckedChanged);
+            // 
+            // chkBladeFavoriteItem1Unlocked
+            // 
+            this.chkBladeFavoriteItem1Unlocked.AutoSize = true;
+            this.chkBladeFavoriteItem1Unlocked.Location = new System.Drawing.Point(859, 117);
+            this.chkBladeFavoriteItem1Unlocked.Name = "chkBladeFavoriteItem1Unlocked";
+            this.chkBladeFavoriteItem1Unlocked.Size = new System.Drawing.Size(76, 17);
+            this.chkBladeFavoriteItem1Unlocked.TabIndex = 131;
+            this.chkBladeFavoriteItem1Unlocked.Text = "Is Known?";
+            this.chkBladeFavoriteItem1Unlocked.UseVisualStyleBackColor = true;
+            this.chkBladeFavoriteItem1Unlocked.CheckedChanged += new System.EventHandler(this.chkBladeFavoriteItem1Unlocked_CheckedChanged);
+            // 
+            // cbxBladeFavoriteItem0
+            // 
+            this.cbxBladeFavoriteItem0.FormattingEnabled = true;
+            this.cbxBladeFavoriteItem0.Location = new System.Drawing.Point(686, 90);
+            this.cbxBladeFavoriteItem0.Name = "cbxBladeFavoriteItem0";
+            this.cbxBladeFavoriteItem0.Size = new System.Drawing.Size(166, 21);
+            this.cbxBladeFavoriteItem0.TabIndex = 132;
+            this.cbxBladeFavoriteItem0.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeFavoriteItem0_SelectionChangeCommitted);
+            // 
+            // cbxBladeFavoriteItem1
+            // 
+            this.cbxBladeFavoriteItem1.FormattingEnabled = true;
+            this.cbxBladeFavoriteItem1.Location = new System.Drawing.Point(687, 114);
+            this.cbxBladeFavoriteItem1.Name = "cbxBladeFavoriteItem1";
+            this.cbxBladeFavoriteItem1.Size = new System.Drawing.Size(166, 21);
+            this.cbxBladeFavoriteItem1.TabIndex = 133;
+            this.cbxBladeFavoriteItem1.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeFavoriteItem1_SelectionChangeCommitted);
+            // 
+            // cbxBladeFavoriteCategory0
+            // 
+            this.cbxBladeFavoriteCategory0.FormattingEnabled = true;
+            this.cbxBladeFavoriteCategory0.Location = new System.Drawing.Point(686, 40);
+            this.cbxBladeFavoriteCategory0.Name = "cbxBladeFavoriteCategory0";
+            this.cbxBladeFavoriteCategory0.Size = new System.Drawing.Size(166, 21);
+            this.cbxBladeFavoriteCategory0.TabIndex = 134;
+            this.cbxBladeFavoriteCategory0.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeFavoriteCategory0_SelectionChangeCommitted);
+            // 
+            // cbxBladeFavoriteCategory1
+            // 
+            this.cbxBladeFavoriteCategory1.FormattingEnabled = true;
+            this.cbxBladeFavoriteCategory1.Location = new System.Drawing.Point(687, 65);
+            this.cbxBladeFavoriteCategory1.Name = "cbxBladeFavoriteCategory1";
+            this.cbxBladeFavoriteCategory1.Size = new System.Drawing.Size(166, 21);
+            this.cbxBladeFavoriteCategory1.TabIndex = 135;
+            this.cbxBladeFavoriteCategory1.SelectedIndexChanged += new System.EventHandler(this.cbxBladeFavoriteCategory1_SelectedIndexChanged);
+            // 
+            // cbxDriverPouchesItemID
+            // 
+            this.cbxDriverPouchesItemID.FormattingEnabled = true;
+            this.cbxDriverPouchesItemID.Location = new System.Drawing.Point(119, 65);
+            this.cbxDriverPouchesItemID.Name = "cbxDriverPouchesItemID";
+            this.cbxDriverPouchesItemID.Size = new System.Drawing.Size(153, 21);
+            this.cbxDriverPouchesItemID.TabIndex = 8;
+            this.cbxDriverPouchesItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverPouchesItemID_SelectionChangeCommitted);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6693,10 +6770,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeStill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeGender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeRace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem1Unlocked)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory1Unlocked)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem0Unlocked)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory0Unlocked)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteCategory1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeFavoriteItem0)).EndInit();
@@ -6925,10 +6998,6 @@
         private System.Windows.Forms.NumericUpDown nudBladeStill;
         private System.Windows.Forms.NumericUpDown nudBladeGender;
         private System.Windows.Forms.NumericUpDown nudBladeRace;
-        private System.Windows.Forms.NumericUpDown nudBladeFavoriteItem1Unlocked;
-        private System.Windows.Forms.NumericUpDown nudBladeFavoriteCategory1Unlocked;
-        private System.Windows.Forms.NumericUpDown nudBladeFavoriteItem0Unlocked;
-        private System.Windows.Forms.NumericUpDown nudBladeFavoriteCategory0Unlocked;
         private System.Windows.Forms.Label label111;
         private System.Windows.Forms.Label label110;
         private System.Windows.Forms.Label label109;
@@ -7176,7 +7245,7 @@
         private System.Windows.Forms.Label label125;
         private System.Windows.Forms.Label label124;
         private System.Windows.Forms.GroupBox groupBox33;
-        private System.Windows.Forms.ComboBox cbxDriverAccessoryType;
+        private System.Windows.Forms.ComboBox cbxDriverAccessory3Type;
         private System.Windows.Forms.ComboBox cbxDriverAccessory3ID;
         private System.Windows.Forms.Label label130;
         private System.Windows.Forms.NumericUpDown nudDriverAccessory3Serial;
@@ -7327,6 +7396,15 @@
         private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblPlayTime;
+        private System.Windows.Forms.CheckBox chkBladeFavoriteItem1Unlocked;
+        private System.Windows.Forms.CheckBox chkBladeFavoriteCategory1Unlocked;
+        private System.Windows.Forms.CheckBox chkBladeFavoriteItem0Unlocked;
+        private System.Windows.Forms.CheckBox chkBladeFavoriteCategory0Unlocked;
+        private System.Windows.Forms.ComboBox cbxBladeFavoriteItem0;
+        private System.Windows.Forms.ComboBox cbxBladeFavoriteItem1;
+        private System.Windows.Forms.ComboBox cbxBladeFavoriteCategory1;
+        private System.Windows.Forms.ComboBox cbxBladeFavoriteCategory0;
+        private System.Windows.Forms.ComboBox cbxDriverPouchesItemID;
     }
 }
 

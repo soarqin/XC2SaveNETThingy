@@ -35,6 +35,7 @@ namespace XC2SaveNETThingy
             //    Console.WriteLine("Added Skill No. " + (i + 1) + " of " + Driver.DRIVER_SKILLS.Count + " to DB.");
             //}
 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace XC2SaveNETThingy
         {
             Text = Application.ProductName + " ver" + Application.ProductVersion;
 
+            SetupComboBoxes();
+        }
+
+        private void SetupComboBoxes()
+        {
             cbxDriverIsActive.DisplayMember = "Desc";
             cbxDriverIsActive.ValueMember = "ID";
             cbxDriverIsActive.DataSource = XC2Data.DriverStatus();
@@ -67,6 +73,50 @@ namespace XC2SaveNETThingy
 
             for (int i = 0; i < 3; i++)
                 cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
+
+            cbxBladeFavoriteItem0.DisplayMember = "Name";
+            cbxBladeFavoriteItem0.ValueMember = "ID";
+            cbxBladeFavoriteItem0.DataSource = XC2Data.Items();
+
+            cbxBladeFavoriteItem1.DisplayMember = "Name";
+            cbxBladeFavoriteItem1.ValueMember = "ID";
+            cbxBladeFavoriteItem1.DataSource = XC2Data.Items();
+
+            cbxBladeFavoriteCategory0.DisplayMember = "Name";
+            cbxBladeFavoriteCategory0.ValueMember = "ID";
+            cbxBladeFavoriteCategory0.DataSource = XC2Data.FavCategories();
+
+            cbxBladeFavoriteCategory1.DisplayMember = "Name";
+            cbxBladeFavoriteCategory1.ValueMember = "ID";
+            cbxBladeFavoriteCategory1.DataSource = XC2Data.FavCategories();
+
+            cbxDriverPouchesItemID.DisplayMember = "Name";
+            cbxDriverPouchesItemID.ValueMember = "ID";
+            cbxDriverPouchesItemID.DataSource = XC2Data.Items();
+
+            cbxDriverAccessory1ID.DisplayMember = "Name";
+            cbxDriverAccessory1ID.ValueMember = "ID";
+            cbxDriverAccessory1ID.DataSource = XC2Data.GetAccessories();
+
+            cbxDriverAccessory2ID.DisplayMember = "Name";
+            cbxDriverAccessory2ID.ValueMember = "ID";
+            cbxDriverAccessory2ID.DataSource = XC2Data.GetAccessories();
+
+            cbxDriverAccessory3ID.DisplayMember = "Name";
+            cbxDriverAccessory3ID.ValueMember = "ID";
+            cbxDriverAccessory3ID.DataSource = XC2Data.GetAccessories();
+
+            cbxDriverAccessory1Type.DisplayMember = "Name";
+            cbxDriverAccessory1Type.ValueMember = "ID";
+            cbxDriverAccessory1Type.DataSource = XC2Data.ItemTypes();
+
+            cbxDriverAccessory2Type.DisplayMember = "Name";
+            cbxDriverAccessory2Type.ValueMember = "ID";
+            cbxDriverAccessory2Type.DataSource = XC2Data.ItemTypes();
+
+            cbxDriverAccessory3Type.DisplayMember = "Name";
+            cbxDriverAccessory3Type.ValueMember = "ID";
+            cbxDriverAccessory3Type.DataSource = XC2Data.ItemTypes();
         }
 
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,25 +223,24 @@ namespace XC2SaveNETThingy
 
             #region items
 
-            //SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, null);
-            SetupItemBox_ALT(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
-            SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, null);
-            SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, null);
-            SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, ItemBox.CYLINDERS);
-            SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, null);
-            SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, null);
+            SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
+            SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, XC2Data.GetAccessories());
+            SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, XC2Data.GetAuxCores());
+            SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, XC2Data.GetCylinders());
+            SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, XC2Data.GetKeyItems());
+            SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, XC2Data.GetInfoItems());
             SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
-            SetupItemBox_ALT(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
-            SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, null);
+            SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
+            SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
             SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, null);
-            SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, null);
-            SetupItemBox_ALT(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
-            SetupItemBox_ALT(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
-            SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, null);
-            SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, ItemBox.HANA_ElementCores);
-            SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, null);
-            SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, null);
-            SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, null);
+            SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, XC2Data.GetPouchItems());
+            SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
+            SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
+            SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, XC2Data.GetPoppiRoleCPU());
+            SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, XC2Data.GetPoppiElementCores());
+            SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
+            SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, XC2Data.GetPoppiArtsCards());
+            SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, XC2Data.GetPoppiSkillRAM());
 
             #endregion items
 
@@ -200,99 +249,62 @@ namespace XC2SaveNETThingy
             Console.WriteLine("DONE");
         }
 
-        
-
-        private void cbxItemID_SelectionChangeCommited(object sender, EventArgs e)
-        {
-
-        }
-
-        private DataGridView SetupItemBox(DataGridView dgv, ItemBox.Item[] items, Dictionary<int, String> IdNames)
-        {
-            dgv.AutoGenerateColumns = false;
-            dgv.DataSource = null;
-
-            BindingList<ItemBox.Item> derp = new BindingList<ItemBox.Item>();
-            foreach (ItemBox.Item i in items)
-                derp.Add(i);
-
-            DataTable IDs = null;
-            if (IdNames != null)
-                IDs = IdNames.ToDataTable();
-
-            dgv.Columns.Clear();
-
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 0, 8191));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "", null, IDs));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "", null, null));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 0, 1023));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Is Equipped"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 0, 63));
-
-            dgv.DataSource = derp;
-
-            return dgv;
-        }
-
-        private DataGridView SetupItemBox_ALT(DataGridView dgv, ItemBox.Item[] items, DataTable ItemIDs)
+        private DataGridView SetupItemBox(DataGridView dgv, ItemBox.Item[] items, DataTable ItemIDs)
         {
             dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(Dgv_CellFormatting);
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = null;
 
-            BindingList<ItemBox.Item> derp = new BindingList<ItemBox.Item>();
+            BindingList<ItemBox.Item> ds = new BindingList<ItemBox.Item>();
             foreach (ItemBox.Item i in items)
-                derp.Add(i);
+                ds.Add(i);
 
             dgv.Columns.Clear();
-
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 0, 8191));
-            dgv.Columns.Add(CreateDgvColumn_ALT(DgvColumnType.ComboBox, "ID", "", null, ItemIDs));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn_ALT(DgvColumnType.ComboBox, "Type", "", null, XC2Data.ItemTypes()));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 0, 1023));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Is Equipped"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2"));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 0, 63));
-
-            
-
-            dgv.DataSource = derp;
-
-            
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 50, 0, 8191));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "Item Name", null, ItemIDs, 150));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "Item Type Name", null, XC2Data.ItemTypes(), 150));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 50, 0, 1023));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 50, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 75, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1", null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2", null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 50, 0, 63));
+            dgv.DataSource = ds;
 
             return dgv;
         }
 
         private void Dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //DataGridView dgv = (DataGridView)sender;
+            if (!dgvIsEditing)
+            {
+                dgvIsEditing = true;
+                int columnIndex = e.ColumnIndex;
+                int rowIndex = e.RowIndex;
 
-            //switch (e.ColumnIndex)
-            //{
-            //    case 1:
-            //        dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
-            //        break;
+                DataGridView dgv = (DataGridView)sender;
 
-            //    case 3:
-            //        dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
-            //        break;
-            //}
+                switch (columnIndex)
+                {
+                    case 0:
+                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items.Count)
+                            dgv.Rows[rowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[0].Value)])[0];
+                        break;
 
-            //if (e.ColumnIndex == 1 || e.ColumnIndex == 3)
-            dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
+                    case 2:
+                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items.Count)
+                            dgv.Rows[rowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[2].Value)])[0];
+                        break;
+
+                }
+
+                dgvIsEditing = false;
+                //dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
+            }
         }
 
         private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -613,13 +625,14 @@ namespace XC2SaveNETThingy
                 nudBladeKeyReleaseLevel.Value = b.KeyReleaseLevel;
                 nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
                 nudBladeFavoriteItem0.Value = b.FavoriteItem0;
+                cbxBladeFavoriteItem0.SelectedValue = b.FavoriteItem0;
                 nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
                 nudBladeFavoriteItem1.Value = b.FavoriteItem1;
 
-                nudBladeFavoriteCategory0Unlocked.Value = b.FavoriteCategory0Unlocked;
-                nudBladeFavoriteItem0Unlocked.Value = b.FavoriteItem0Unlocked;
-                nudBladeFavoriteCategory1Unlocked.Value = b.FavoriteCategory1Unlocked;
-                nudBladeFavoriteItem1Unlocked.Value = b.FavoriteItem1Unlocked;
+                chkBladeFavoriteCategory0Unlocked.Checked = b.FavoriteCategory0Unlocked;
+                chkBladeFavoriteItem0Unlocked.Checked = b.FavoriteItem0Unlocked;
+                chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory1Unlocked;
+                chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem1Unlocked;
 
                 nudBladePoppiswapRoleItem.Value = b.Poppiswap.RoleItem;
                 nudBladePoppiswapAtrItem.Value = b.Poppiswap.AtrItem;
@@ -781,7 +794,6 @@ namespace XC2SaveNETThingy
             UInt16 did = (UInt16)nudDriverID.Value;
 
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].ID = did;
-            //cbxDriverID.SelectedItem = SAVEDATA.Drivers.FirstOrDefault(d => d.ID.Equals(did));
             cbxDriverID.SelectedValue = did;
 
             RefreshDriverList();
@@ -986,6 +998,7 @@ namespace XC2SaveNETThingy
         private void nudDriverPouchesItemID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].ItemId = (UInt16)nudDriverPouchesItemID.Value;
+            cbxDriverPouchesItemID.SelectedValue = (UInt16)nudDriverPouchesItemID.Value; ;
         }
 
         private void nudDriverPouchesTime_ValueChanged(object sender, EventArgs e)
@@ -996,11 +1009,13 @@ namespace XC2SaveNETThingy
         private void nudDriverAccessory1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0 = (UInt16)nudDriverAccessory1ID.Value;
+            cbxDriverAccessory1ID.SelectedValue = (UInt16)nudDriverAccessory1ID.Value;
         }
 
         private void nudDriverAccessory1Type_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Type = (Byte)nudDriverAccessory1Type.Value;
+            cbxDriverAccessory1Type.SelectedValue = (Byte)nudDriverAccessory1Type.Value;
         }
 
         private void nudDriverAccessory1Serial_ValueChanged(object sender, EventArgs e)
@@ -1011,11 +1026,13 @@ namespace XC2SaveNETThingy
         private void nudDriverAccessory2ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId1 = (UInt16)nudDriverAccessory2ID.Value;
+            cbxDriverAccessory2ID.SelectedValue = (UInt16)nudDriverAccessory2ID.Value;
         }
 
         private void nudDriverAccessory2Type_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle1.Type = (Byte)nudDriverAccessory2Type.Value;
+            cbxDriverAccessory2Type.SelectedValue = (Byte)nudDriverAccessory2Type.Value;
         }
 
         private void nudDriverAccessory2Serial_ValueChanged(object sender, EventArgs e)
@@ -1026,11 +1043,13 @@ namespace XC2SaveNETThingy
         private void nudDriverAccessory3ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId2 = (UInt16)nudDriverAccessory3ID.Value;
+            cbxDriverAccessory3ID.SelectedValue = (UInt16)nudDriverAccessory3ID.Value;
         }
 
         private void nudDriverAccessory3Type_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Type = (Byte)nudDriverAccessory3Type.Value;
+            cbxDriverAccessory3Type.SelectedValue = (Byte)nudDriverAccessory3Type.Value;
         }
 
         private void nudDriverAccessory3Serial_ValueChanged(object sender, EventArgs e)
@@ -1042,72 +1061,36 @@ namespace XC2SaveNETThingy
         
         private void dgvItemBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //if (!dgvIsEditing)
-            //{
-            //    dgvIsEditing = true;
-
-            //    DataGridView dgv = (DataGridView)sender;
-
-            //    switch (e.ColumnIndex)
-            //    {
-            //        case 0:
-            //            if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items.Count)
-            //                dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
-            //            break;
-
-            //        case 1:
-            //            dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
-            //            break;
-
-            //        case 2:
-            //            if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items.Count)
-            //                dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
-            //            break;
-
-            //        case 3:
-            //            dgv.Rows[e.RowIndex].Cells[2].Value = dgv.Rows[e.RowIndex].Cells[3].Value;
-            //            break;
-            //    }
-
-            //    dgvIsEditing = false;
-            //}
-            if (e.ColumnIndex >= 0 && e.ColumnIndex < 4)
-                dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
-        }
-
-        private void dgv_NudCbxSync(DataGridView dgv, int columnIndex, int rowIndex)
-        {
             if (!dgvIsEditing)
             {
                 dgvIsEditing = true;
 
-                //DataGridView dgv = (DataGridView)sender;
+                DataGridView dgv = (DataGridView)sender;
 
-                switch (columnIndex)
+                switch (e.ColumnIndex)
                 {
                     case 0:
-                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items.Count)
-                            dgv.Rows[rowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[0].Value)])[0];
+                        if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items.Count)
+                            dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
                         break;
 
                     case 1:
-                        dgv.Rows[rowIndex].Cells[0].Value = dgv.Rows[rowIndex].Cells[1].Value;
+                        dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
                         break;
 
                     case 2:
-                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items.Count)
-                            dgv.Rows[rowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[2].Value)])[0];
+                        if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items.Count)
+                            dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
                         break;
 
                     case 3:
-                        dgv.Rows[rowIndex].Cells[2].Value = dgv.Rows[rowIndex].Cells[3].Value;
+                        dgv.Rows[e.RowIndex].Cells[2].Value = dgv.Rows[e.RowIndex].Cells[3].Value;
                         break;
                 }
 
                 dgvIsEditing = false;
             }
         }
-
 
 
         private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
@@ -1560,19 +1543,94 @@ namespace XC2SaveNETThingy
             MessageBox.Show("DATA EXPORT COMPLETE!", "Database .csv export", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void nudBladeDataType_ValueChanged(object sender, EventArgs e)
+        private void nudBladeDataType_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].DataType = (UInt16)nudBladeDataType.Value;
+
+        private void nudBladeCreator_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Creator = (UInt16)nudBladeCreator.Value;
+
+        private void nudBladeSetDriver_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].SetDriver = (UInt16)nudBladeSetDriver.Value;
+
+        private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory0Unlocked.Checked;
+        private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem0Unlocked.Checked;
+        private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
+        private void chkBladeFavoriteItem1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1Unlocked = chkBladeFavoriteItem1Unlocked.Checked;
+
+        private void nudBladeFavoriteItem0_ValueChanged(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxBlades.SelectedIndex].DataType = (UInt16)nudBladeDataType.Value;
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0 = (UInt16)nudBladeFavoriteItem0.Value;
+            cbxBladeFavoriteItem0.SelectedValue = (UInt16)nudBladeFavoriteItem0.Value;
         }
 
-        private void nudBladeCreator_ValueChanged(object sender, EventArgs e)
+        private void nudBladeFavoriteItem1_ValueChanged(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxBlades.SelectedIndex].Creator = (UInt16)nudBladeCreator.Value;
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1 = (UInt16)nudBladeFavoriteItem1.Value;
+            cbxBladeFavoriteItem1.SelectedValue = (UInt16)nudBladeFavoriteItem1.Value;
         }
 
-        private void nudBladeSetDriver_ValueChanged(object sender, EventArgs e)
+        private void cbxBladeFavoriteItem0_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxBlades.SelectedIndex].SetDriver = (UInt16)nudBladeSetDriver.Value;
+            nudBladeFavoriteItem0.Value = Convert.ToUInt16(cbxBladeFavoriteItem0.SelectedValue);
+        }
+
+        private void cbxBladeFavoriteItem1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudBladeFavoriteItem1.Value = Convert.ToUInt16(cbxBladeFavoriteItem1.SelectedValue);
+        }
+
+        private void nudBladeFavoriteCategory0_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0 = (UInt16)nudBladeFavoriteCategory0.Value;
+            cbxBladeFavoriteCategory0.SelectedValue = (UInt16)nudBladeFavoriteCategory0.Value;
+        }
+
+        private void nudBladeFavoriteCategory1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1 = (UInt16)nudBladeFavoriteCategory1.Value;
+            cbxBladeFavoriteCategory1.SelectedValue = (UInt16)nudBladeFavoriteCategory1.Value;
+        }
+
+        private void cbxBladeFavoriteCategory0_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudBladeFavoriteCategory0.Value = Convert.ToUInt16(cbxBladeFavoriteCategory0.SelectedValue);
+        }
+
+        private void cbxBladeFavoriteCategory1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudBladeFavoriteCategory1.Value = Convert.ToUInt16(cbxBladeFavoriteCategory1.SelectedValue);
+        }
+
+        private void cbxDriverPouchesItemID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverPouchesItemID.Value = Convert.ToUInt16(cbxDriverPouchesItemID.SelectedValue);
+        }
+
+        private void cbxDriverAccessory1ID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory1ID.Value = Convert.ToUInt16(cbxDriverAccessory1ID.SelectedValue);
+        }
+
+        private void cbxDriverAccessory1Type_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory1Type.Value = Convert.ToUInt16(cbxDriverAccessory1Type.SelectedValue);
+        }
+
+        private void cbxDriverAccessory2ID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory2ID.Value = Convert.ToUInt16(cbxDriverAccessory2ID.SelectedValue);
+        }
+
+        private void cbxDriverAccessory2Type_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory2Type.Value = Convert.ToUInt16(cbxDriverAccessory2Type.SelectedValue);
+        }
+
+        private void cbxDriverAccessory3ID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory2ID.Value = Convert.ToUInt16(cbxDriverAccessory2ID.SelectedValue);
+        }
+
+        private void cbxDriverAccessory3Type_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudDriverAccessory3Type.Value = Convert.ToUInt16(cbxDriverAccessory3Type.SelectedValue);
         }
     }
 }

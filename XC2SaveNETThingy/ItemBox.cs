@@ -8,67 +8,6 @@ namespace XC2SaveNETThingy
 {
     public class ItemBox : IXC2SaveObject
     {
-        public static readonly Dictionary<int, string> BOOSTERS = new Dictionary<int, string>()
-        {
-            { 0, "(none)" },
-            { 1, "Bravery Booster" },
-            { 2, "Truth Booster" },
-            { 3, "Compassion Booster" },
-            { 4, "Justice Booster" }
-        };
-
-        public static readonly Dictionary<int, string> CYLINDERS = new Dictionary<int, string>()
-        {
-            { 1, "Normal Cylinder" },
-            { 2, "Silver Cylinder" },
-            { 3, "Golden  Cylinder" },
-            { 4, "Premium Cylinder" }
-        };
-
-        public static readonly Dictionary<int, string> HANA_ROLECPU = new Dictionary<int, string>()
-        {
-            { 4, "Tank Mod IV" },
-            { 9, "Evasion Mod IV" },
-            { 12, "Muscle Mod II" },
-            { 6, "Evasion Mod I" },
-            { 2, "Tank Mod II" },
-            { 1, "Tank Mod I" },
-        };
-
-        public static readonly Dictionary<int, string> HANA_ElementCores = new Dictionary<int, string>()
-        {
-            { 1, "Elemental Core: Fire" },
-            { 2, "Elemental Core: Water" },
-            { 3, "Elemental Core: Electric" },
-            { 4, "Elemental Core: Earth" },
-            { 5, "Elemental Core: Wind" },
-            { 6, "Elemental Core: Ice" },
-            { 7, "Elemental Core: Light" },
-            { 8, "Elemental Core: Dark" }
-        };
-
-        public static readonly Dictionary<int, string> HANA_SpecialsEnhancingRam = new Dictionary<int, string>()
-        {
-            { 98, "AB HP Potion III" },
-            { 71, "AB Avenger I" },
-            { 61, "AB Launch I" },
-            { 63, "AB Launch III" },
-            { 38, "AB HP Absorb Arts III" },
-            { 46, "AB HP Potion III" }
-        };
-
-        public static readonly Dictionary<int, string> HANA_ArtsCards = new Dictionary<int, string>()
-        {
-            { 43, "AC Aggro Draw III" },
-            { 6, "AC Accuracy Up I" },
-            { 11, "AC Arts Boost I" },
-            { 21, "AC Damage Absorb I" },
-            { 26, "AC Reaction Nullify I" },
-            { 16, "AC Recharge Boost I" },
-            { 41, "AC Aggro Draw I" },
-            { 8, "AC Accuracy Up III" }
-        };
-
         public const int SIZE = 0x122EC;
 
         public Item[] PcWpnChipBox { get; set; }
@@ -358,19 +297,6 @@ namespace XC2SaveNETThingy
                 Unk3 = (Byte)(pt2 >> (32 - UNK3_BITS));
             }
 
-            //public Item()
-            //{
-            //    ID = 0;
-            //    Type = 0;
-            //    Qty = 0;
-            //    Unk1 = false;
-            //    Equipped = false;
-            //    Unk2 = false;
-            //    Time = new gf_ElapseTime();
-            //    Serial = 0;
-            //    Unk3 = 0;
-            //}
-
             public Byte[] ToRawData()
             {
                 UInt32 pt1 = (UInt32)((Unk2 ? 1 : 0) << (31 - UNK2_BITS)) +
@@ -398,17 +324,6 @@ namespace XC2SaveNETThingy
                 }
 
                 return result.ToArray();
-            }
-
-            public override string ToString()
-            {
-                switch (Type)
-                {
-                    case 12:
-                        return BOOSTERS[ID];
-                }
-
-                return ID.ToString();
             }
         }
 
