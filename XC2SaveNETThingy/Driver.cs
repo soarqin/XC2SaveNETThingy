@@ -201,7 +201,7 @@ namespace XC2SaveNETThingy
             { "gap_2EA", 0x2EA },
             { "AccessoryHandle2", 0x2EC },
             { "DriverArtLevels", 0x2F0 },
-            { "gap_4FE", 0x4FE },
+            { "gap_536", 0x536 },
             { "AccessoryHandle0", 0x574 },
             { "AccessoryId0", 0x578 },
             { "gap_57A", 0x57A },
@@ -249,7 +249,7 @@ namespace XC2SaveNETThingy
         public Byte[] Unk_0x02EA { get; set; }
         public ItemHandle AccessoryHandle2 { get; set; }
         public Byte[] DriverArtLevels { get; set; }
-        public Byte[] Unk_0x04FE { get; set; }
+        public Byte[] Unk_0x0536 { get; set; }
         public ItemHandle AccessoryHandle0 { get; set; }
         public UInt16 AccessoryId0 { get; set; }
         public Byte[] Unk_0x057A { get; set; }
@@ -312,8 +312,8 @@ namespace XC2SaveNETThingy
             AccessoryId2 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId2"], 2), 0);
             Unk_0x02EA = data.GetByteSubArray(LOC["gap_2EA"], 2);
             AccessoryHandle2 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle2"], ItemHandle32.SIZE));
-            DriverArtLevels = data.GetByteSubArray(LOC["DriverArtLevels"], 526);
-            Unk_0x04FE = data.GetByteSubArray(LOC["gap_4FE"], 118);
+            DriverArtLevels = data.GetByteSubArray(LOC["DriverArtLevels"], 582);
+            Unk_0x0536 = data.GetByteSubArray(LOC["gap_536"], 62);
             AccessoryHandle0 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle0"], ItemHandle32.SIZE));
             AccessoryId0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId0"], 2), 0);
             Unk_0x057A = data.GetByteSubArray(LOC["gap_57A"], 2);
@@ -382,7 +382,7 @@ namespace XC2SaveNETThingy
             result.AddRange(Unk_0x02EA);
             result.AddRange(AccessoryHandle2.ToRawData());
             result.AddRange(DriverArtLevels);
-            result.AddRange(Unk_0x04FE);
+            result.AddRange(Unk_0x0536);
             result.AddRange(AccessoryHandle0.ToRawData());
             result.AddRange(BitConverter.GetBytes(AccessoryId0));
             result.AddRange(Unk_0x057A);

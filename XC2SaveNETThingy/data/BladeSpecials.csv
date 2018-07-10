@@ -1,0 +1,271 @@
+ID;Name;WpnBaseID
+0;(none);0
+1;Blazing End;1
+2;Flame Nova;1
+3;Prominence Revolt;1
+4;Ray of Punishment;1
+5;Lightning Buster;1
+6;Photon Edge;1
+7;Starburst;1
+8;Radiant Flare;1
+9;Genesis Saber;1
+10;Last Hope;2
+11;Merciful Heart;2
+12;Redeeming Strike;2
+13;Raging Tiger;3
+14;Aqua Wave;3
+15;Wild Roar;3
+16;Poppi Spinning Slash;4
+17;Noponic Storm;4
+18;Poppi Drill;4
+19;Poppi Missile;5
+20;Poppi Crushing Blow;5
+21;Noponic Destruction;5
+22;Poppi Ignition;6
+23;Noponic Axion;6
+24;Poppi Unlimited;6
+25;Heat Haze;7
+26;Will-o'-the-Wisp;7
+27;Swirling Dragon;7
+28;Lightning Force;8
+29;Electric Circus;8
+30;Thunder Doom;8
+31;Death Wing;9
+32;Crushing Twister;9
+33;Feather Typhoon;9
+34;Storm Edge;16
+35;Engrave;16
+36;Death Match;16
+37;Storm Edge;19
+38;Engrave;19
+39;Death Match;19
+40;White Wave;10
+41;Sacred Wyrm;10
+42;Dark Judgment;10
+43;Swallow's Flight;11
+44;Great Garland;11
+45;Dragonfly Slash;11
+46;Crow Beat;16
+47;Crow Feather;16
+48;Final Crow;16
+49;Shred;3
+50;Skewer;3
+51;Cruel World;3
+52;Shred;3
+53;Skewer;3
+54;Cruel World;3
+55;Diamond Crash;12
+56;Diamond Flight;12
+57;Diamond Hands;12
+58;Dead Ball;16
+59;Berserk March;16
+60;Earth Breath;16
+61;Water Moon;14
+62;Breaking Wave;14
+63;Midnight Mist;14
+64;Tough Break;13
+65;Cold Judgment;13
+66;Justice Blizzard;13
+67;Brutal Lance;11
+68;Termination Blast;11
+69;Hellbound;11
+70;Dark Serpent;14
+71;Blade Vortex;14
+72;Grim Moon;14
+73;Innocent Teardrop;10
+74;Bittersweet Dreams;10
+75;Leave Me Alone;10
+76;Flame Crown;10
+77;Tyrant Crush;10
+78;Kaiser Flare;10
+79;Flame Crown;10
+80;Tyrant Crush;10
+81;Kaiser Flare;10
+82;Open Wide!;15
+83;Snack On This!;15
+84;Gobble 'em Up!;15
+85;Lavender Drive;15
+86;Lilium Dance;15
+87;Physalis Judgment;15
+88;Sentimental Burst;13
+89;Hidden Emotion;13
+90;Secret Desire;13
+91;Foam Blast;11
+92;Geyser Spring;11
+93;Fierce Deluge;11
+94;Ice Slash;14
+95;Frost Banish;14
+96;Rebel Sister;14
+97;Cold Sever;11
+98;Punishment Strike;11
+99;Extinction Icicle;11
+100;Electric Pompom;16
+101;Vivid Love;16
+102;Angelic Drop;16
+103;Nightmare Rondeau;12
+104;Shadow Rhapsody;12
+105;Decadent Finale;12
+106;Beary Strong;16
+107;Beary Helpful;16
+108;Beary-Go-Round;16
+109;Flaming Slashwave;14
+110;Immolating Cleave;14
+111;Extreme Gutsy Spirit;14
+112;Fierce Healer;10
+113;Wild Grappler;10
+114;Organic Automata;10
+115;Dessert Bomb;12
+116;Tea Leaves;12
+117;Golden Font;12
+118;Healing Bolt;15
+119;Ball Lightning;15
+120;Thunderstrike;15
+121;Harness the Wind;16
+122;Slipstream;16
+123;Mortal Storm;16
+124;Bang-Bang Bound;13
+125;Shocking Assault;13
+126;Rolling Thunder;13
+127;Diabolic Zephyr;10
+128;Adamantine Axe;10
+129;Ascension Blade;10
+130;Blast of Fresh Air;13
+131;Whoopsie Crazy;13
+132;Wake-Up Whirl;13
+133;R-Blade;12
+134;H-Effect R;12
+135;F-G-Shot;12
+136;Empyrean Salvo;12
+137;The Heavens Open;12
+138;Final Retribution;12
+139;Blood Altar;11
+140;Tainted Palace;11
+141;Accursed Prison;11
+142;Heliodor Passion;16
+143;Star Beryl Courage;16
+144;Rhodochrosite Might;16
+145;Crystal Blizzard;16
+146;Snowblind;16
+147;Frost Queen;16
+148;Stream Edge;10
+149;Falling Axe;10
+150;Axe Throw;10
+151;Round Break;11
+152;Boomerang Spear;11
+153;Splash Lance;11
+154;Sidewinder;12
+155;Aerial Trigger;12
+156;Swing Cannon;12
+157;Shield Charge;13
+158;Smash Circle;13
+159;Hammer Beat;13
+160;Excelsior Slash;14
+161;Triple Edge;14
+162;Multi-Raid;14
+163;Grenade Throw;15
+164;Grim Sphere;15
+165;Shrapnel;15
+166;Flying Knuckle;16
+167;Assault Rush;16
+168;Executioner;16
+169;Axe Break;10
+170;Ground Charge;10
+171;War Swing;10
+172;Axe Break;10
+173;Speed Glaive;11
+174;Beam Halberd;11
+175;Hair Trigger;11
+176;Beam Bomber;12
+177;Zero Burst;12
+178;Spinning Laser;12
+179;Wheel Crash;13
+180;Ground Impulse;13
+181;Turn Strike;13
+182;Drop Edge;14
+183;Counter Spin;14
+184;Magnum Edge;14
+185;Metal Blast;15
+186;Wrecking Ball;15
+187;Violent Swing;15
+188;Bomber Tackle;16
+189;Head Shaker;16
+190;Knuckle Purge;16
+191;Axe Strike;10
+192;Megaslash;10
+193;Flying Cutter;10
+194;Multi-Edge;11
+195;Trident Buster;11
+196;Spiral Spear;11
+197;Flash Barrel;12
+198;Blink Bullet;12
+199;Beam Barrage;12
+200;Aerial Shield;13
+201;Drum Roll;13
+202;Hammer Rush;13
+203;Sword Dance;14
+204;Rage Cutter;14
+205;Air Slash;14
+206;Flash Bomb;15
+207;Power Effect;15
+208;Rumble Sphere;15
+209;Thermal Payload;16
+210;Leg Blast;16
+211;Flash Blow;16
+212;Ripple Drive;3
+213;Dual Fang;3
+214;Screw Edge;3
+215;出現攻撃・範囲;0
+216;Dead Ball;16
+217;Berserk March;16
+218;Earth Breath;16
+219;Diamond Crash;12
+220;Diamond Flight;12
+221;Diamond Hands;12
+222;ECHIDNA;10
+223;MAGDALENE 16;10
+224;T-SKYLLA;10
+225;Buster Cyclone;13
+226;Buster Cannon;13
+227;Buster Mirage;13
+228;Monado Purge;13
+229;Monado Cyclone;13
+230;Monado Buster;13
+231;Hidden Thorn;3
+232;Power Smash;3
+233;Lacerate;3
+234;必殺技1;14
+235;必殺技2;14
+236;必殺技3;14
+237;必殺技1;15
+238;必殺技2;15
+239;必殺技3;15
+240;必殺技1;28
+241;必殺技2;28
+242;必殺技3;28
+243;必殺技1;18
+244;必殺技2;18
+245;必殺技3;18
+246;必殺技1;31
+247;必殺技2;31
+248;必殺技3;31
+249;必殺技1;29
+250;必殺技2;29
+251;必殺技3;29
+252;必殺技1;1
+253;必殺技2;1
+254;必殺技3;1
+255;必殺技1;32
+256;必殺技2;32
+257;必殺技3;32
+258;必殺技1;30
+259;必殺技2;30
+260;必殺技3;30
+261;必殺技1;7
+262;必殺技2;7
+263;必殺技3;7
+264;必殺技1;14
+265;必殺技2;14
+266;必殺技3;14
+267;必殺技1;3
+268;必殺技2;3
+269;必殺技3;3

@@ -24,18 +24,6 @@ namespace XC2SaveNETThingy
         public frmMain()
         {
             InitializeComponent();
-
-            //for (int i = 0; i < Driver.DRIVER_SKILLS.Count; i++)
-            //{
-
-            //    string query = "INSERT INTO tblDriverSkills(ID, Name) VALUES (" + i + ", \"" + Driver.DRIVER_SKILLS[(ushort)i] + "\")";
-            //    //gamedata.SendNonQuery(query);
-            //    Console.WriteLine(query);
-            //    XC2Data.SendNonQuery(query);
-            //    Console.WriteLine("Added Skill No. " + (i + 1) + " of " + Driver.DRIVER_SKILLS.Count + " to DB.");
-            //}
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +51,10 @@ namespace XC2SaveNETThingy
 
         private void SetupComboBoxes()
         {
+            cbxDriverID.DataSource = XC2Data.Drivers();
+            cbxDriverID.ValueMember = "ID";
+            cbxDriverID.DisplayMember = "Name";
+
             cbxDriverIsActive.DisplayMember = "Desc";
             cbxDriverIsActive.ValueMember = "ID";
             cbxDriverIsActive.DataSource = XC2Data.DriverStatus();
@@ -70,6 +62,27 @@ namespace XC2SaveNETThingy
             cbxDriverSetBlade.DisplayMember = "Desc";
             cbxDriverSetBlade.ValueMember = "ID";
             cbxDriverSetBlade.DataSource = XC2Data.DriverBladeSetStatus();
+            
+            cbxDriverWeaponArtId1.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId1.ValueMember = "ID";
+            cbxDriverWeaponArtId1.DataSource = XC2Data.DriverArts();
+            
+            cbxDriverWeaponArtId2.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId2.ValueMember = "ID";
+            cbxDriverWeaponArtId2.DataSource = XC2Data.DriverArts();
+            
+            cbxDriverWeaponArtId3.DisplayMember = "FriendlyName";
+            cbxDriverWeaponArtId3.ValueMember = "ID";
+            cbxDriverWeaponArtId3.DataSource = XC2Data.DriverArts();
+
+            cbxDriverArt.DataSource = XC2Data.DriverArts();
+            cbxDriverArt.DisplayMember = "FriendlyName";
+            cbxDriverArt.ValueMember = "ID";
+
+            cbxDriverWeapons.DataSource = XC2Data.Weapons(0b1);
+            cbxDriverWeapons.DisplayMember = "Name";
+            cbxDriverWeapons.ValueMember = "ID";
+            
 
             for (int i = 0; i < 3; i++)
                 cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
@@ -117,6 +130,54 @@ namespace XC2SaveNETThingy
             cbxDriverAccessory3Type.DisplayMember = "Name";
             cbxDriverAccessory3Type.ValueMember = "ID";
             cbxDriverAccessory3Type.DataSource = XC2Data.ItemTypes();
+
+            cbxBladeBArt1ID.DisplayMember = "Name";
+            cbxBladeBArt1ID.ValueMember = "ID";
+            cbxBladeBArt1ID.DataSource = XC2Data.BladeSpecials();
+
+            cbxBladeBArt2ID.DisplayMember = "Name";
+            cbxBladeBArt2ID.ValueMember = "ID";
+            cbxBladeBArt2ID.DataSource = XC2Data.BladeSpecials();
+
+            cbxBladeBArt3ID.DisplayMember = "Name";
+            cbxBladeBArt3ID.ValueMember = "ID";
+            cbxBladeBArt3ID.DataSource = XC2Data.BladeSpecials();
+
+            cbxBladeNArt1ID.DisplayMember = "Name";
+            cbxBladeNArt1ID.ValueMember = "ID";
+            cbxBladeNArt1ID.DataSource = XC2Data.BladeArts();
+
+            cbxBladeNArt2ID.DisplayMember = "Name";
+            cbxBladeNArt2ID.ValueMember = "ID";
+            cbxBladeNArt2ID.DataSource = XC2Data.BladeArts();
+
+            cbxBladeNArt3ID.DisplayMember = "Name";
+            cbxBladeNArt3ID.ValueMember = "ID";
+            cbxBladeNArt3ID.DataSource = XC2Data.BladeArts();
+
+            cbxBladeBattleSkill1ID.DisplayMember = "Name";
+            cbxBladeBattleSkill1ID.ValueMember = "ID";
+            cbxBladeBattleSkill1ID.DataSource = XC2Data.BladeSkills();
+
+            cbxBladeBattleSkill2ID.DisplayMember = "Name";
+            cbxBladeBattleSkill2ID.ValueMember = "ID";
+            cbxBladeBattleSkill2ID.DataSource = XC2Data.BladeSkills();
+
+            cbxBladeBattleSkill3ID.DisplayMember = "Name";
+            cbxBladeBattleSkill3ID.ValueMember = "ID";
+            cbxBladeBattleSkill3ID.DataSource = XC2Data.BladeSkills();
+
+            cbxBladeFieldSkill1ID.DisplayMember = "Name";
+            cbxBladeFieldSkill1ID.ValueMember = "ID";
+            cbxBladeFieldSkill1ID.DataSource = XC2Data.BladeFieldSkills();
+
+            cbxBladeFieldSkill2ID.DisplayMember = "Name";
+            cbxBladeFieldSkill2ID.ValueMember = "ID";
+            cbxBladeFieldSkill2ID.DataSource = XC2Data.BladeFieldSkills();
+
+            cbxBladeFieldSkill3ID.DisplayMember = "Name";
+            cbxBladeFieldSkill3ID.ValueMember = "ID";
+            cbxBladeFieldSkill3ID.DataSource = XC2Data.BladeFieldSkills();
         }
 
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,10 +195,6 @@ namespace XC2SaveNETThingy
             nudDriverWeaponPoints.Value = w.WeaponPoints;
             nudDriverTotalWeaponPoints.Value = w.TotalWeaponPoints;
         }
-
-      
-        
-
 
         private void LoadSaveFile(string path)
         {
@@ -197,20 +254,10 @@ namespace XC2SaveNETThingy
 
             #region drivers
 
-
-            //cbxDriverID.DataSource = SAVEDATA.Drivers;
-            //cbxDriverID.SelectedIndex = 0;
-
             lbxDrivers.DataSource = SAVEDATA.Drivers;
             lbxDrivers.SelectedIndex = 0;
 
             RefreshDriverList();
-
-            //lbxDrivers.SelectedIndex = 0;
-
-
-
-
 
             #endregion drivers
 
@@ -303,7 +350,6 @@ namespace XC2SaveNETThingy
                 }
 
                 dgvIsEditing = false;
-                //dgv_NudCbxSync((DataGridView)sender, e.ColumnIndex, e.RowIndex);
             }
         }
 
@@ -357,15 +403,14 @@ namespace XC2SaveNETThingy
         {
             Driver d = SAVEDATA.Drivers[index];
 
-            nudDriverID.Value = d.ID;
-            cbxDriverID.DataSource = XC2Data.Drivers();
-            cbxDriverID.ValueMember = "ID";
-            cbxDriverID.DisplayMember = "Name";
+            #region DriverID
 
-            if (XC2Data.ContainsDriver(d.ID))
-                cbxDriverID.SelectedIndex = d.ID;
-            else
-                cbxDriverID.SelectedIndex = 0;
+            nudDriverID.Value = d.ID;
+            cbxDriverID.SelectedValue = d.ID;
+
+            #endregion DriverID
+
+            #region DriverStats
 
             nudDriverLevel.Value = d.Level;
             nudDriverHpMax.Value = d.HP;
@@ -384,6 +429,10 @@ namespace XC2SaveNETThingy
             nudDriverCurrentSkillPoints.Value = d.CurrentSkillPoints;
             nudDriverTotalSkillPoints.Value = d.TotalSkillPoints;
 
+            #endregion DriverStats
+
+            #region DriverIdeas
+
             nudDriverBraveryLevel.Value = d.BraveryLevel;
             nudDriverBraveryPoints.Value = d.BraveryPoints;
             nudDriverTruthLevel.Value = d.TruthLevel;
@@ -393,44 +442,43 @@ namespace XC2SaveNETThingy
             nudDriverJusticeLevel.Value = d.JusticeLevel;
             nudDriverJusticePoints.Value = d.JusticePoints;
 
+            #endregion DriverIdeas
+
+            #region DriverStatus
+
             int status = d.IsActive;
-            //if (XC2Data.DriverStatus().Contains(status, "id"))
-            //    cbxDriverIsActive.SelectedIndex = status;
-            //else
-            //    cbxDriverIsActive.SelectedIndex = 0;
             cbxDriverIsActive.SelectedValue = d.IsActive;
+
+            #endregion DriverStatus
+
+            #region DriverEquippedBlades
 
             nudDriverBlade1.Value = d.EquippedBlades[0];
             cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
-            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.First(b => b.BladeId == d.EquippedBlades[0]);
+            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[0]);
 
             nudDriverBlade2.Value = d.EquippedBlades[1];
             cbxDriverBlade2.DataSource = SAVEDATA.Blades.ToList();
-            cbxDriverBlade2.SelectedItem = SAVEDATA.Blades.First(b => b.BladeId == d.EquippedBlades[1]);
+            cbxDriverBlade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[1]);
 
             nudDriverBlade3.Value = d.EquippedBlades[2];
             cbxDriverBlade3.DataSource = SAVEDATA.Blades.ToList();
-            cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.First(b => b.BladeId == d.EquippedBlades[2]);
+            cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[2]);
 
             nudDriverSetBlade.Value = d.SetBlade;
             cbxDriverSetBlade.SelectedValue = d.SetBlade;
 
-            cbxDriverWeaponArtId1.DataSource = XC2Data.DriverArts();
-            cbxDriverWeaponArtId1.DisplayMember = "FriendlyName";
-            cbxDriverWeaponArtId1.ValueMember = "ID";
-            cbxDriverWeaponArtId2.DataSource = XC2Data.DriverArts();
-            cbxDriverWeaponArtId2.DisplayMember = "FriendlyName";
-            cbxDriverWeaponArtId2.ValueMember = "ID";
-            cbxDriverWeaponArtId3.DataSource = XC2Data.DriverArts();
-            cbxDriverWeaponArtId3.DisplayMember = "FriendlyName";
-            cbxDriverWeaponArtId3.ValueMember = "ID";
-            cbxDriverWeapons.DataSource = XC2Data.Weapons();
-            cbxDriverWeapons.DisplayMember = "Name";
-            cbxDriverWeapons.ValueMember = "ID";
+            #endregion DriverEquippedBlades
+
+            #region DriverArts
+
             cbxDriverWeapons.SelectedIndex = 0;
+            nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
+            nudDriverArtID.Value = 0;
 
+            #endregion DriverArts
 
-
+            #region DriverSkills
 
             foreach (ComboBox b in gbxDriverOvertSkills.Controls.OfType<ComboBox>())
                 CreateDriverSkillComboBox(b);
@@ -543,14 +591,17 @@ namespace XC2SaveNETThingy
             nudDriverHiddenSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level;
 
 
-            cbxDriverArt.DataSource = XC2Data.DriverArts();
-            cbxDriverArt.DisplayMember = "FriendlyName";
-            cbxDriverArt.ValueMember = "ID";
+            #endregion DriverSkills
 
-            nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
+            #region DriverPouchItems
 
+            // force refresh
             cbxDriverPouches.SelectedIndex = 1;
             cbxDriverPouches.SelectedIndex = 0;
+
+            #endregion DriverPouchItems
+
+            #region DriverAccessories
 
             nudDriverAccessory1ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0;
             nudDriverAccessory1Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Type;
@@ -564,14 +615,20 @@ namespace XC2SaveNETThingy
             nudDriverAccessory3Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Type;
             nudDriverAccessory3Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Serial;
 
+            #endregion DriverAccessories
+
+            #region DriverUnknown
+
             hbxDriverUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x002C);
             hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x00A8);
             hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02DC);
             hbxDriverUnk_0x02EA.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02EA);
-            hbxDriverUnk_0x04FE.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x04FE);
+            hbxDriverUnk_0x04FE.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0536);
             hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x057A);
             hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0582);
             hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
+
+            #endregion DriverUnknown
         }
 
         private void LoadBlade(int index)
@@ -583,7 +640,7 @@ namespace XC2SaveNETThingy
                 nudBladeDataType.Value = b.DataType;
                 nudBladeCreator.Value = b.Creator;
                 nudBladeSetDriver.Value = b.SetDriver;
-                nudBladeID.Value = b.BladeId;
+                nudBladeID.Value = b.ID;
                 nudBladeRace.Value = b.Race;
                 nudBladeGender.Value = b.Gender;
                 nudBladeStill.Value = b.Still;
@@ -607,20 +664,118 @@ namespace XC2SaveNETThingy
                 nudBladeBladeArtsExH.Value = b.BladeArtsExH;
                 nudBladeBArtEx2Id.Value = b.BladeArtsEx2H;
 
-                cbxBladeBArts.DataSource = b.BArts;
-                cbxBladeNArts.DataSource = b.NArts;
-                cbxBladeBladeSkills.DataSource = b.BattleSkills;
-                cbxBladeFieldSkills.DataSource = b.FieldSkills;
+                #region BladeSpecials
 
-                cbxBladeBArts.SelectedIndex = 0;
-                cbxBladeNArts.SelectedIndex = 0;
-                cbxBladeBladeSkills.SelectedIndex = 0;
-                cbxBladeFieldSkills.SelectedIndex = 0;
+                nudBladeBArt1ID.Value = b.BArts[0].ID;
+                cbxBladeBArt1ID.SelectedValue = b.BArts[0].ID;
+                nudBladeBArt1RecastRev.Value = b.BArts[0].RecastRev;
+                nudBladeBArt1Level.Value = b.BArts[0].Level;
+                nudBladeBArt1MaxLevel.Value = b.BArts[0].MaxLevel;
+                hbxBladeBArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].Unk_0x04);
+                hbxBladeBArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].Unk_0x09);
 
-                cbxBladeTrustRank.DataSource = new BindingSource(Blade.TrustRanks, null);
-                cbxBladeTrustRank.DisplayMember = "Value";
+                nudBladeBArt2ID.Value = b.BArts[1].ID;
+                cbxBladeBArt2ID.SelectedValue = b.BArts[1].ID;
+                nudBladeBArt2RecastRev.Value = b.BArts[1].RecastRev;
+                nudBladeBArt2Level.Value = b.BArts[1].Level;
+                nudBladeBArt2MaxLevel.Value = b.BArts[1].MaxLevel;
+                hbxBladeBArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].Unk_0x04);
+                hbxBladeBArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].Unk_0x09);
 
-                cbxBladeTrustRank.SelectedIndex = (int)b.TrustRank;
+                nudBladeBArt3ID.Value = b.BArts[2].ID;
+                cbxBladeBArt3ID.SelectedValue = b.BArts[2].ID;
+                nudBladeBArt3RecastRev.Value = b.BArts[2].RecastRev;
+                nudBladeBArt3Level.Value = b.BArts[2].Level;
+                nudBladeBArt3MaxLevel.Value = b.BArts[2].MaxLevel;
+                hbxBladeBArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x04);
+                hbxBladeBArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x09);
+
+                #endregion BladeSpecials
+
+                #region BladeArts
+
+                nudBladeNArt1ID.Value = b.NArts[0].ID;
+                cbxBladeNArt1ID.SelectedValue = b.NArts[0].ID;
+                nudBladeNArt1RecastRev.Value = b.NArts[0].RecastRev;
+                nudBladeNArt1Level.Value = b.NArts[0].Level;
+                nudBladeNArt1MaxLevel.Value = b.NArts[0].MaxLevel;
+                hbxBladeNArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].Unk_0x04);
+                hbxBladeNArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].Unk_0x09);
+
+                nudBladeNArt2ID.Value = b.NArts[1].ID;
+                cbxBladeNArt2ID.SelectedValue = b.NArts[1].ID;
+                nudBladeNArt2RecastRev.Value = b.NArts[1].RecastRev;
+                nudBladeNArt2Level.Value = b.NArts[1].Level;
+                nudBladeNArt2MaxLevel.Value = b.NArts[1].MaxLevel;
+                hbxBladeNArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].Unk_0x04);
+                hbxBladeNArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].Unk_0x09);
+
+                nudBladeNArt3ID.Value = b.NArts[2].ID;
+                cbxBladeNArt3ID.SelectedValue = b.NArts[2].ID;
+                nudBladeNArt3RecastRev.Value = b.NArts[2].RecastRev;
+                nudBladeNArt3Level.Value = b.NArts[2].Level;
+                nudBladeNArt3MaxLevel.Value = b.NArts[2].MaxLevel;
+                hbxBladeNArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x04);
+                hbxBladeNArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x09);
+
+                #endregion BladeArts
+
+                #region BladeSkills
+
+                nudBladeBattleSkill1ID.Value = b.BattleSkills[0].ID;
+                cbxBladeBattleSkill1ID.SelectedValue = b.BattleSkills[0].ID;
+                nudBladeBattleSkill1Level.Value = b.BattleSkills[0].Level;
+                nudBladeBattleSkill1MaxLevel.Value = b.BattleSkills[0].MaxLevel;
+                nudBladeBattleSkill1Unk_0x02.Value = b.BattleSkills[0].Unk_0x02;
+                nudBladeBattleSkill1Unk_0x05.Value = b.BattleSkills[0].Unk_0x05;
+
+                nudBladeBattleSkill2ID.Value = b.BattleSkills[1].ID;
+                cbxBladeBattleSkill2ID.SelectedValue = b.BattleSkills[1].ID;
+                nudBladeBattleSkill2Level.Value = b.BattleSkills[1].Level;
+                nudBladeBattleSkill2MaxLevel.Value = b.BattleSkills[1].MaxLevel;
+                nudBladeBattleSkill2Unk_0x02.Value = b.BattleSkills[1].Unk_0x02;
+                nudBladeBattleSkill2Unk_0x05.Value = b.BattleSkills[1].Unk_0x05;
+
+                nudBladeBattleSkill3ID.Value = b.BattleSkills[2].ID;
+                cbxBladeBattleSkill3ID.SelectedValue = b.BattleSkills[2].ID;
+                nudBladeBattleSkill3Level.Value = b.BattleSkills[2].Level;
+                nudBladeBattleSkill3MaxLevel.Value = b.BattleSkills[2].MaxLevel;
+                nudBladeBattleSkill3Unk_0x02.Value = b.BattleSkills[2].Unk_0x02;
+                nudBladeBattleSkill3Unk_0x05.Value = b.BattleSkills[2].Unk_0x05;
+
+                #endregion BladeSkills
+
+                #region FieldSkills
+
+                nudBladeFieldSkill1ID.Value = b.FieldSkills[0].ID;
+                cbxBladeFieldSkill1ID.SelectedValue = b.FieldSkills[0].ID;
+                nudBladeFieldSkill1Level.Value = b.FieldSkills[0].Level;
+                nudBladeFieldSkill1MaxLevel.Value = b.FieldSkills[0].MaxLevel;
+                nudBladeFieldSkill1Unk_0x02.Value = b.FieldSkills[0].Unk_0x02;
+                nudBladeFieldSkill1Unk_0x05.Value = b.FieldSkills[0].Unk_0x05;
+
+                nudBladeFieldSkill2ID.Value = b.FieldSkills[1].ID;
+                cbxBladeFieldSkill2ID.SelectedValue = b.FieldSkills[1].ID;
+                nudBladeFieldSkill2Level.Value = b.FieldSkills[1].Level;
+                nudBladeFieldSkill2MaxLevel.Value = b.FieldSkills[1].MaxLevel;
+                nudBladeFieldSkill2Unk_0x02.Value = b.FieldSkills[1].Unk_0x02;
+                nudBladeFieldSkill2Unk_0x05.Value = b.FieldSkills[1].Unk_0x05;
+
+                nudBladeFieldSkill3ID.Value = b.FieldSkills[2].ID;
+                cbxBladeFieldSkill3ID.SelectedValue = b.FieldSkills[2].ID;
+                nudBladeFieldSkill3Level.Value = b.FieldSkills[2].Level;
+                nudBladeFieldSkill3MaxLevel.Value = b.FieldSkills[2].MaxLevel;
+                nudBladeFieldSkill3Unk_0x02.Value = b.FieldSkills[2].Unk_0x02;
+                nudBladeFieldSkill3Unk_0x05.Value = b.FieldSkills[2].Unk_0x05;
+
+                #endregion FieldSkills
+
+                
+                cbxBladeTrustRank.DisplayMember = "Name";
+                cbxBladeTrustRank.ValueMember = "ID";
+                cbxBladeTrustRank.DataSource = XC2Data.BladeTrustRanks();
+
+                cbxBladeTrustRank.SelectedValue = b.TrustRank;
 
                 nudBladeKeyReleaseLevel.Value = b.KeyReleaseLevel;
                 nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
@@ -650,44 +805,6 @@ namespace XC2SaveNETThingy
 
                 nudBladeCommonBladeIndex.Value = b.CommonBladeIndex;
             }
-        }
-
-        private void cbxBladeBArts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BladeArt ba = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[cbxBladeBArts.SelectedIndex];
-
-            nudBladeBArtID.Value = ba.ID;
-            nudBladeBArtRecastRev.Value = ba.RecastRev;
-            nudBladeBArtLevel.Value = ba.Level;
-            nudBladeBArtMaxLevel.Value = ba.MaxLevel;
-        }
-
-        private void cbxBladeNArts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BladeArt ba = SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[cbxBladeNArts.SelectedIndex];
-
-            nudBladeNArtID.Value = ba.ID;
-            nudBladeNArtRecastRev.Value = ba.RecastRev;
-            nudBladeNArtLevel.Value = ba.Level;
-            nudBladeNArtMaxLevel.Value = ba.MaxLevel;
-        }
-
-        private void cbxBladeBladeSkills_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BladeSkill bs = SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[cbxBladeBladeSkills.SelectedIndex];
-
-            nudBladeBladeSkillID.Value = bs.ID;
-            nudBladeBladeSkillLevel.Value = bs.Level;
-            nudBladeBladeSkillMaxLevel.Value = bs.MaxLevel;
-        }
-
-        private void cbxBladeFieldSkills_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BladeSkill bs = SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[cbxBladeFieldSkills.SelectedIndex];
-
-            nudBladeFieldSkillID.Value = bs.ID;
-            nudBladeFieldSkillLevel.Value = bs.Level;
-            nudBladeFieldSkillMaxLevel.Value = bs.MaxLevel;
         }
 
         private void cbxBladeTrustRank_SelectedIndexChanged(object sender, EventArgs e)
@@ -757,26 +874,26 @@ namespace XC2SaveNETThingy
         {
             UInt16 bid = (UInt16)nudDriverBlade1.Value;
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].EquippedBlades[0] = bid;
-            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.BladeId == bid);
+            cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == bid);
         }
 
         private void nudDriverBlade2_ValueChanged(object sender, EventArgs e)
         {
             UInt16 bid = (UInt16)nudDriverBlade2.Value;
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].EquippedBlades[1] = bid;
-            cbxDriverBlade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.BladeId == bid);
+            cbxDriverBlade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == bid);
         }
 
         private void nudDriverBlade3_ValueChanged(object sender, EventArgs e)
         {
             UInt16 bid = (UInt16)nudDriverBlade3.Value;
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].EquippedBlades[2] = bid;
-            cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.BladeId == bid);
+            cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == bid);
         }
 
         private void cbxDriverBlade1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverBlade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade1.SelectedItem)).BladeId;
+            nudDriverBlade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade1.SelectedItem)).ID;
         }
 
         private void cbxDriverIsActive_SelectionChangeCommitted(object sender, EventArgs e)
@@ -801,12 +918,12 @@ namespace XC2SaveNETThingy
 
         private void cbxDriverBlade2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverBlade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade2.SelectedItem)).BladeId;
+            nudDriverBlade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade2.SelectedItem)).ID;
         }
 
         private void cbxDriverBlade3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            nudDriverBlade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade3.SelectedItem)).BladeId;
+            nudDriverBlade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade3.SelectedItem)).ID;
         }
 
         private void cbxDriverID_SelectionChangeCommitted(object sender, EventArgs e)
@@ -1631,6 +1748,143 @@ namespace XC2SaveNETThingy
         private void cbxDriverAccessory3Type_SelectionChangeCommitted(object sender, EventArgs e)
         {
             nudDriverAccessory3Type.Value = Convert.ToUInt16(cbxDriverAccessory3Type.SelectedValue);
+        }
+
+        private void nudBladeBArt1ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].ID = (UInt16)nudBladeBArt1ID.Value;
+            cbxBladeBArt1ID.SelectedValue = (UInt16)nudBladeBArt1ID.Value;
+        }
+        private void nudBladeBArt1Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].Level = (Byte)nudBladeBArt1Level.Value;
+        private void nudBladeBArt1MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].MaxLevel = (Byte)nudBladeBArt1MaxLevel.Value;
+        private void nudBladeBArt1RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].RecastRev = (UInt16)nudBladeBArt1RecastRev.Value;
+        private void cbxBladeBArt1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBArt1ID.Value = Convert.ToUInt16(cbxBladeBArt1ID.SelectedValue);
+
+        private void nudBladeBArt2ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].ID = (UInt16)nudBladeBArt2ID.Value;
+            cbxBladeBArt2ID.SelectedValue = (UInt16)nudBladeBArt2ID.Value;
+        }
+        private void nudBladeBArt2Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].Level = (Byte)nudBladeBArt2Level.Value;
+        private void nudBladeBArt2MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].MaxLevel = (Byte)nudBladeBArt2MaxLevel.Value;
+        private void nudBladeBArt2RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].RecastRev = (UInt16)nudBladeBArt2RecastRev.Value;
+        private void cbxBladeBArt2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBArt2ID.Value = Convert.ToUInt16(cbxBladeBArt2ID.SelectedValue);
+
+        private void nudBladeBArt3ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].ID = (UInt16)nudBladeBArt3ID.Value;
+            cbxBladeBArt3ID.SelectedValue = (UInt16)nudBladeBArt3ID.Value;
+        }
+        private void nudBladeBArt3Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Level = (Byte)nudBladeBArt3Level.Value;
+        private void nudBladeBArt3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].MaxLevel = (Byte)nudBladeBArt3MaxLevel.Value;
+        private void nudBladeBArt3RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].RecastRev = (UInt16)nudBladeBArt3RecastRev.Value;
+        private void cbxBladeBArt3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBArt3ID.Value = Convert.ToUInt16(cbxBladeBArt3ID.SelectedValue);
+
+        private void nudBladeNArt1ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].ID = (UInt16)nudBladeNArt1ID.Value;
+            cbxBladeNArt1ID.SelectedValue = (UInt16)nudBladeNArt1ID.Value;
+        }
+        private void nudBladeNArt1Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].Level = (Byte)nudBladeNArt1Level.Value;
+        private void nudBladeNArt1MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].MaxLevel = (Byte)nudBladeNArt1MaxLevel.Value;
+        private void nudBladeNArt1RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].RecastRev = (UInt16)nudBladeNArt1RecastRev.Value;
+        private void cbxBladeNArt1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeNArt1ID.Value = Convert.ToUInt16(cbxBladeNArt1ID.SelectedValue);
+
+        private void nudBladeNArt2ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].ID = (UInt16)nudBladeNArt2ID.Value;
+            cbxBladeNArt2ID.SelectedValue = (UInt16)nudBladeNArt2ID.Value;
+        }
+        private void nudBladeNArt2Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].Level = (Byte)nudBladeNArt2Level.Value;
+        private void nudBladeNArt2MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].MaxLevel = (Byte)nudBladeNArt2MaxLevel.Value;
+        private void nudBladeNArt2RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].RecastRev = (UInt16)nudBladeNArt2RecastRev.Value;
+        private void cbxBladeNArt2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeNArt2ID.Value = Convert.ToUInt16(cbxBladeNArt2ID.SelectedValue);
+
+        private void nudBladeNArt3ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].ID = (UInt16)nudBladeNArt3ID.Value;
+            cbxBladeNArt3ID.SelectedValue = (UInt16)nudBladeNArt3ID.Value;
+        }
+        private void nudBladeNArt3Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Level = (Byte)nudBladeNArt3Level.Value;
+        private void nudBladeNArt3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].MaxLevel = (Byte)nudBladeNArt3MaxLevel.Value;
+        private void nudBladeNArt3RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].RecastRev = (UInt16)nudBladeNArt3RecastRev.Value;
+        private void cbxBladeNArt3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeNArt3ID.Value = Convert.ToUInt16(cbxBladeNArt3ID.SelectedValue);
+
+        private void nudBladeBattleSkill1ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].ID = (UInt16)nudBladeBattleSkill1ID.Value;
+            cbxBladeBattleSkill1ID.SelectedValue = (UInt16)nudBladeBattleSkill1ID.Value;
+        }
+        private void nudBladeBattleSkill1Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].Level = (Byte)nudBladeBattleSkill1Level.Value;
+        private void nudBladeBattleSkill1MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].MaxLevel = (Byte)nudBladeBattleSkill1MaxLevel.Value;
+        private void nudBladeBattleSkill1Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].Unk_0x02 = (Byte)nudBladeBattleSkill1Unk_0x02.Value;
+        private void nudBladeBattleSkill1Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].Unk_0x05 = (Byte)nudBladeBattleSkill1Unk_0x05.Value;
+        private void cbxBladeBattleSkill1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBattleSkill1ID.Value = Convert.ToUInt16(cbxBladeBattleSkill1ID.SelectedValue);
+
+        private void nudBladeBattleSkill2ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[1].ID = (UInt16)nudBladeBattleSkill2ID.Value;
+            cbxBladeBattleSkill2ID.SelectedValue = (UInt16)nudBladeBattleSkill2ID.Value;
+        }
+        private void nudBladeBattleSkill2Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[1].Level = (Byte)nudBladeBattleSkill2Level.Value;
+        private void nudBladeBattleSkill2MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[1].MaxLevel = (Byte)nudBladeBattleSkill2MaxLevel.Value;
+        private void nudBladeBattleSkill2Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[1].Unk_0x02 = (Byte)nudBladeBattleSkill2Unk_0x02.Value;
+        private void nudBladeBattleSkill2Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[1].Unk_0x05 = (Byte)nudBladeBattleSkill2Unk_0x05.Value;
+        private void cbxBladeBattleSkill2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBattleSkill2ID.Value = Convert.ToUInt16(cbxBladeBattleSkill2ID.SelectedValue);
+
+        private void nudBladeBattleSkill3ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].ID = (UInt16)nudBladeBattleSkill3ID.Value;
+            cbxBladeBattleSkill3ID.SelectedValue = (UInt16)nudBladeBattleSkill3ID.Value;
+        }
+        private void nudBladeBattleSkill3Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].Level = (Byte)nudBladeBattleSkill3Level.Value;
+        private void nudBladeBattleSkill3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].MaxLevel = (Byte)nudBladeBattleSkill3MaxLevel.Value;
+        private void nudBladeBattleSkill3Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].Unk_0x02 = (Byte)nudBladeBattleSkill3Unk_0x02.Value;
+        private void nudBladeBattleSkill3Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].Unk_0x05 = (Byte)nudBladeBattleSkill3Unk_0x05.Value;
+        private void cbxBladeBattleSkill3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBattleSkill3ID.Value = Convert.ToUInt16(cbxBladeBattleSkill3ID.SelectedValue);
+
+        private void nudBladeFieldSkill1ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].ID = (UInt16)nudBladeFieldSkill1ID.Value;
+            cbxBladeFieldSkill1ID.SelectedValue = (UInt16)nudBladeFieldSkill1ID.Value;
+        }
+        private void nudBladeFieldSkill1Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].Level = (Byte)nudBladeFieldSkill1Level.Value;
+        private void nudBladeFieldSkill1MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].MaxLevel = (Byte)nudBladeFieldSkill1MaxLevel.Value;
+        private void nudBladeFieldSkill1Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].Unk_0x02 = (Byte)nudBladeFieldSkill1Unk_0x02.Value;
+        private void nudBladeFieldSkill1Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].Unk_0x05 = (Byte)nudBladeFieldSkill1Unk_0x05.Value;
+        private void cbxBladeFieldSkill1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFieldSkill1ID.Value = Convert.ToUInt16(cbxBladeFieldSkill1ID.SelectedValue);
+
+        private void nudBladeFieldSkill2ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[1].ID = (UInt16)nudBladeFieldSkill2ID.Value;
+            cbxBladeFieldSkill2ID.SelectedValue = (UInt16)nudBladeFieldSkill2ID.Value;
+        }
+        private void nudBladeFieldSkill2Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[1].Level = (Byte)nudBladeFieldSkill2Level.Value;
+        private void nudBladeFieldSkill2MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[1].MaxLevel = (Byte)nudBladeFieldSkill2MaxLevel.Value;
+        private void nudBladeFieldSkill2Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[1].Unk_0x02 = (Byte)nudBladeFieldSkill2Unk_0x02.Value;
+        private void nudBladeFieldSkill2Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[1].Unk_0x05 = (Byte)nudBladeFieldSkill2Unk_0x05.Value;
+        private void cbxBladeFieldSkill2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFieldSkill2ID.Value = Convert.ToUInt16(cbxBladeFieldSkill2ID.SelectedValue);
+
+        private void nudBladeFieldSkill3ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].ID = (UInt16)nudBladeFieldSkill3ID.Value;
+            cbxBladeFieldSkill3ID.SelectedValue = (UInt16)nudBladeFieldSkill3ID.Value;
+        }
+        private void nudBladeFieldSkill3Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].Level = (Byte)nudBladeFieldSkill3Level.Value;
+        private void nudBladeFieldSkill3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].MaxLevel = (Byte)nudBladeFieldSkill3MaxLevel.Value;
+        private void nudBladeFieldSkill3Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].Unk_0x02 = (Byte)nudBladeFieldSkill3Unk_0x02.Value;
+        private void nudBladeFieldSkill3Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].Unk_0x05 = (Byte)nudBladeFieldSkill3Unk_0x05.Value;
+        private void cbxBladeFieldSkill3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFieldSkill3ID.Value = Convert.ToUInt16(cbxBladeFieldSkill3ID.SelectedValue);
+
+        private void nudBladeTrustRank_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].TrustRank = (UInt32)nudBladeTrustRank.Value;
+            cbxBladeTrustRank.SelectedValue = (UInt32)nudBladeTrustRank.Value;
+        }
+
+        private void cbxBladeTrustRank_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            nudBladeTrustRank.Value = Convert.ToUInt32(cbxBladeTrustRank.SelectedValue);
         }
     }
 }

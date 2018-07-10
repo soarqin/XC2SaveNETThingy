@@ -45,9 +45,70 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM viewDriverArts").Tables[0];
         }
 
-        public static DataTable Weapons()
+        public static DataTable Weapons(Byte args_bits)
         {
-            return GetDataSet("SELECT * FROM Weapons").Tables[0];
+            string query = "";
+
+            if ((args_bits & 1) == 1) // get pre-1.5.0 weapons
+                query += "SELECT * FROM Weapons WHERE ID >= 0 AND ID < 27";
+
+
+            if ((args_bits & 2) >> 1 == 1) // get 1.5.0 unknown weapons
+            {
+                if (query != "")
+                    query += " UNION ";
+                query += "SELECT * FROM Weapons WHERE ID >= 27 AND ID < 33";
+            }
+
+            if ((args_bits & 4) >> 2 == 1) // get 1.5.0 monado + knives
+            {
+                if (query != "")
+                    query += " UNION ";
+                query += "SELECT * FROM Weapons WHERE ID >= 33 AND ID < 35";
+            }
+
+            return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeTrustRanks()
+        {
+            return GetDataSet("SELECT * FROM BladeTrustRanks").Tables[0];
+        }
+
+        public static DataTable BladeSpecials()
+        {
+            string query =
+                "SELECT ID, " +
+                "ID || \": \" || Name AS Name " +
+                "FROM BladeSpecials";
+            return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeArts()
+        {
+            string query =
+                "SELECT ID, " +
+                "ID || \": \" || Name AS Name " +
+                "FROM BladeArts";
+            return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeSkills()
+        {
+            string query =
+                "SELECT ID, " +
+                "ID || \": \" || Name AS Name " +
+                "FROM BladeSkills";
+            return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeFieldSkills()
+        {
+            string query =
+                "SELECT ID, " +
+                "ID || \": \" || Name AS Name " +
+                "FROM BladeFieldSkills";
+            return GetDataSet(query).Tables[0];
         }
 
         public static DataTable DriverSkills()

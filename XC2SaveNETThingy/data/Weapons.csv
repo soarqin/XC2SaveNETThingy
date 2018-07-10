@@ -1,28 +1,36 @@
-ID;Name
-0;(none)
-1;Aegis Sword
-2;Catalyst Scimitar
-3;Twin Rings
-4;Drill Shield
-5;Mech Arms
-6;Variable Saber
-7;Whipswords
-8;Big Bang Edge
-9;Dual Scythes
-10;Greataxe
-11;Megalance
-12;Ether Cannon
-13;Shield Hammer
-14;Chroma Katana
-15;Bitball
-16;Knuckle Claws
-17;Broadsword
-18;Nodachi
-19;Sword Tonfa (Malos)
-20;Calamity Scythe
-21;Cobra Bardiche
-22;Infinity Fans
-23;Brilliant Twinblades
-24;Decimation Cannon
-25;Rockrending Gauntlets
-26;Sword Tonfa
+ID;Name;WpnBaseID
+0;(none);0
+1;Aegis Sword;1
+2;Catalyst Scimitar;2
+3;Twin Rings;3
+4;Drill Shield;4
+5;Mech Arms;5
+6;Variable Saber;6
+7;Whipswords;7
+8;Big Bang Edge;8
+9;Dual Scythes;9
+10;Greataxe;10
+11;Megalance;11
+12;Ether Cannon;12
+13;Shield Hammer;13
+14;Chroma Katana;14
+15;Bitball;15
+16;Knuckle Claws;16
+17;Broadsword;1
+18;Nodachi;18
+19;Sword Tonfa (Malos);19
+20;Calamity Scythe;10
+21;Cobra Bardiche;11
+22;Infinity Fans;3
+23;Brilliant Twinblades;3
+24;Decimation Cannon;12
+25;Rockrending Gauntlets;16
+26;Sword Tonfa;16
+27;Aegis Sword;0
+28;武器種1;28
+29;武器種2;29
+30;武器種3;30
+31;武器種4;31
+32;武器種5;32
+33;Monado;13
+34;Knives;3

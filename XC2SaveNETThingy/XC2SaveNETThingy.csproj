@@ -89,6 +89,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="data\BadeTrustRanks.csv" />
+    <None Include="data\BladeArts.csv" />
+    <None Include="data\BladeFieldSkills.csv" />
+    <None Include="data\BladeSkills.csv" />
+    <None Include="data\BladeSpecials.csv" />
     <None Include="data\DriverArts.csv" />
     <None Include="data\DriverBladeSetStatus.csv" />
     <None Include="data\Drivers.csv" />
@@ -98,6 +103,11 @@
     <None Include="data\Items.csv" />
     <None Include="data\ItemTypes.csv" />
     <None Include="data\Weapons.csv" />
+    <Content Include="db\BladeArts.sql" />
+    <Content Include="db\BladeFieldSkills.sql" />
+    <Content Include="db\BladeSkills.sql" />
+    <Content Include="db\BladeSpecials.sql" />
+    <Content Include="db\BladeTrustRanks.sql" />
     <Content Include="db\FavCategories.sql" />
     <Content Include="db\Items.sql" />
     <Content Include="db\ItemTypes.sql" />
