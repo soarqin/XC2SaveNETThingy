@@ -87,31 +87,31 @@ namespace XC2SaveNETThingy
         public const int SIZE = 0x1C;
 
         public UInt16 QuestID { get; set; }
-        public UInt16 field_2 { get; set; }
+        public Byte[] Unk_0x02 { get; set; }
         public UInt32 Count { get; set; }
         public UInt32 MaxCount { get; set; }
-        public UInt16 field_C { get; set; }
+        public Byte[] Unk_0x0C { get; set; }
         public UInt16 StatsID { get; set; }
         public UInt16 TaskType { get; set; }
         public UInt16 Column { get; set; }
         public UInt16 Row { get; set; }
-        public UInt16 BladeId { get; set; }
-        public UInt16 AchievementId { get; set; }
+        public UInt16 BladeID { get; set; }
+        public UInt16 AchievementID { get; set; }
         public UInt16 Alignment { get; set; }
 
         public AchieveQuest(Byte[] data)
         {
             QuestID = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
-            field_2 = BitConverter.ToUInt16(data.GetByteSubArray(0x2, 2), 0);
+            Unk_0x02 = data.GetByteSubArray(0x2, 2);
             Count = BitConverter.ToUInt32(data.GetByteSubArray(0x4, 4), 0);
             MaxCount = BitConverter.ToUInt32(data.GetByteSubArray(0x8, 4), 0);
-            field_C = BitConverter.ToUInt16(data.GetByteSubArray(0xC, 2), 0);
+            Unk_0x0C = data.GetByteSubArray(0xC, 2);
             StatsID = BitConverter.ToUInt16(data.GetByteSubArray(0xE, 2), 0);
             TaskType = BitConverter.ToUInt16(data.GetByteSubArray(0x10, 2), 0);
             Column = BitConverter.ToUInt16(data.GetByteSubArray(0x12, 2), 0);
             Row = BitConverter.ToUInt16(data.GetByteSubArray(0x14, 2), 0);
-            BladeId = BitConverter.ToUInt16(data.GetByteSubArray(0x16, 2), 0);
-            AchievementId = BitConverter.ToUInt16(data.GetByteSubArray(0x18, 2), 0);
+            BladeID = BitConverter.ToUInt16(data.GetByteSubArray(0x16, 2), 0);
+            AchievementID = BitConverter.ToUInt16(data.GetByteSubArray(0x18, 2), 0);
             Alignment = BitConverter.ToUInt16(data.GetByteSubArray(0x1A, 2), 0);
         }
 
@@ -120,16 +120,16 @@ namespace XC2SaveNETThingy
             List<Byte> result = new List<byte>();
 
             result.AddRange(BitConverter.GetBytes(QuestID));
-            result.AddRange(BitConverter.GetBytes(field_2));
+            result.AddRange(Unk_0x02);
             result.AddRange(BitConverter.GetBytes(Count));
             result.AddRange(BitConverter.GetBytes(MaxCount));
-            result.AddRange(BitConverter.GetBytes(field_C));
+            result.AddRange(Unk_0x0C);
             result.AddRange(BitConverter.GetBytes(StatsID));
             result.AddRange(BitConverter.GetBytes(TaskType));
             result.AddRange(BitConverter.GetBytes(Column));
             result.AddRange(BitConverter.GetBytes(Row));
-            result.AddRange(BitConverter.GetBytes(BladeId));
-            result.AddRange(BitConverter.GetBytes(AchievementId));
+            result.AddRange(BitConverter.GetBytes(BladeID));
+            result.AddRange(BitConverter.GetBytes(AchievementID));
             result.AddRange(BitConverter.GetBytes(Alignment));
 
             if (result.Count != SIZE)
@@ -149,13 +149,13 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0x90;
 
-        public UInt16 Id { get; set; }
+        public UInt16 ID { get; set; }
         public UInt16 Alignment { get; set; }
         public AchieveQuest[] AchieveQuests { get; set; }
 
         public AchieveInfo(Byte[] data)
         {
-            Id = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
+            ID = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
             Alignment = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
 
             AchieveQuests = new AchieveQuest[5];
@@ -167,7 +167,7 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<Byte>();
 
-            result.AddRange(BitConverter.GetBytes(Id));
+            result.AddRange(BitConverter.GetBytes(ID));
             result.AddRange(BitConverter.GetBytes(Alignment));
             
             foreach (AchieveQuest aq in AchieveQuests)
@@ -695,22 +695,21 @@ namespace XC2SaveNETThingy
                 FSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray(LOC["FSkillsAchievement"] + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
 
             KeyAchievement = new AchieveInfo(data.GetByteSubArray(LOC["KeyAchievement"], AchieveInfo.SIZE));
+
             KeyReleaseLevel = BitConverter.ToUInt16(data.GetByteSubArray(LOC["KeyReleaseLevel"], 2), 0);
+
             FavoriteCategory0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0"], 2), 0);
             FavoriteItem0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0"], 2), 0);
-            //FavoriteCategory0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0Unlocked"], 2), 0);
-            //FavoriteItem0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0Unlocked"], 2), 0);
 
             FavoriteCategory0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory0Unlocked"], 2), 0) == 1;
             FavoriteItem0Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem0Unlocked"], 2), 0) == 1;
 
             FavoriteCategory1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1"], 2), 0);
             FavoriteItem1 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1"], 2), 0);
-            //FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0);
-            //FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0);
 
             FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0) == 1;
             FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0) == 1;
+
             gap676 = data.GetByteSubArray(LOC["gap676"], 2);
             field_678 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_678"], 4), 0);
             field_67C = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_67C"], 2), 0);
