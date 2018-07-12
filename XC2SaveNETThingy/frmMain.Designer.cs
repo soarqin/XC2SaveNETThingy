@@ -389,10 +389,6 @@
             this.nudBladeFavoriteCategory0 = new System.Windows.Forms.NumericUpDown();
             this.nudBladeKeyReleaseLevel = new System.Windows.Forms.NumericUpDown();
             this.cbxBladeTrustRank = new System.Windows.Forms.ComboBox();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.nudBladeBladeArtsEx2H = new System.Windows.Forms.NumericUpDown();
             this.nudBladeBArtEx2Id = new System.Windows.Forms.NumericUpDown();
             this.label92 = new System.Windows.Forms.Label();
@@ -624,20 +620,6 @@
             this.label115 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.label112 = new System.Windows.Forms.Label();
-            this.tabBladeUnknown = new System.Windows.Forms.TabPage();
-            this.label98 = new System.Windows.Forms.Label();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
             this.tabBladeAffinityChart = new System.Windows.Forms.TabPage();
             this.groupBox68 = new System.Windows.Forms.GroupBox();
             this.nudBladeAffFieldSkill3Alignment = new System.Windows.Forms.NumericUpDown();
@@ -754,6 +736,20 @@
             this.nudBladeAffRewardMaxCount = new System.Windows.Forms.NumericUpDown();
             this.nudBladeAffRewardCount = new System.Windows.Forms.NumericUpDown();
             this.nudBladeAffRewardQuestID = new System.Windows.Forms.NumericUpDown();
+            this.tabBladeUnknown = new System.Windows.Forms.TabPage();
+            this.groupBox72 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x08A2 = new Be.Windows.Forms.HexBox();
+            this.groupBox71 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x084E = new Be.Windows.Forms.HexBox();
+            this.nudBladeUnk_0x0827 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x0676 = new Be.Windows.Forms.HexBox();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x0094 = new Be.Windows.Forms.HexBox();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x0088 = new Be.Windows.Forms.HexBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPcWpnChipBox = new System.Windows.Forms.TabPage();
@@ -797,6 +793,7 @@
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
+            this.label80 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1071,7 +1068,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapAtrItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).BeginInit();
-            this.tabBladeUnknown.SuspendLayout();
             this.tabBladeAffinityChart.SuspendLayout();
             this.groupBox68.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffFieldSkill3Alignment)).BeginInit();
@@ -1107,6 +1103,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardMaxCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardQuestID)).BeginInit();
+            this.tabBladeUnknown.SuspendLayout();
+            this.groupBox72.SuspendLayout();
+            this.groupBox71.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeUnk_0x0827)).BeginInit();
+            this.groupBox26.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            this.groupBox24.SuspendLayout();
+            this.groupBox23.SuspendLayout();
             this.tabItems.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPcWpnChipBox.SuspendLayout();
@@ -4674,7 +4678,7 @@
             // groupBox40
             // 
             this.groupBox40.Controls.Add(this.hbxDriverUnk_0x057A);
-            this.groupBox40.Location = new System.Drawing.Point(6, 484);
+            this.groupBox40.Location = new System.Drawing.Point(6, 421);
             this.groupBox40.Name = "groupBox40";
             this.groupBox40.Size = new System.Drawing.Size(170, 67);
             this.groupBox40.TabIndex = 154;
@@ -4697,7 +4701,7 @@
             this.groupBox39.Controls.Add(this.hbxDriverUnk_0x04FE);
             this.groupBox39.Location = new System.Drawing.Point(6, 298);
             this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Size = new System.Drawing.Size(483, 180);
+            this.groupBox39.Size = new System.Drawing.Size(483, 117);
             this.groupBox39.TabIndex = 154;
             this.groupBox39.TabStop = false;
             this.groupBox39.Text = "Unk_0x0536";
@@ -4710,7 +4714,7 @@
             this.hbxDriverUnk_0x04FE.Location = new System.Drawing.Point(6, 19);
             this.hbxDriverUnk_0x04FE.Name = "hbxDriverUnk_0x04FE";
             this.hbxDriverUnk_0x04FE.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxDriverUnk_0x04FE.Size = new System.Drawing.Size(470, 154);
+            this.hbxDriverUnk_0x04FE.Size = new System.Drawing.Size(470, 89);
             this.hbxDriverUnk_0x04FE.TabIndex = 151;
             // 
             // groupBox38
@@ -4881,10 +4885,6 @@
             this.tabBladeMisc.Controls.Add(this.nudBladeFavoriteCategory0);
             this.tabBladeMisc.Controls.Add(this.nudBladeKeyReleaseLevel);
             this.tabBladeMisc.Controls.Add(this.cbxBladeTrustRank);
-            this.tabBladeMisc.Controls.Add(this.groupBox26);
-            this.tabBladeMisc.Controls.Add(this.groupBox25);
-            this.tabBladeMisc.Controls.Add(this.groupBox24);
-            this.tabBladeMisc.Controls.Add(this.groupBox23);
             this.tabBladeMisc.Controls.Add(this.nudBladeBladeArtsEx2H);
             this.tabBladeMisc.Controls.Add(this.nudBladeBArtEx2Id);
             this.tabBladeMisc.Controls.Add(this.label92);
@@ -5201,42 +5201,6 @@
             this.cbxBladeTrustRank.Size = new System.Drawing.Size(40, 21);
             this.cbxBladeTrustRank.TabIndex = 109;
             this.cbxBladeTrustRank.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeTrustRank_SelectionChangeCommitted);
-            // 
-            // groupBox26
-            // 
-            this.groupBox26.Location = new System.Drawing.Point(808, 382);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(200, 100);
-            this.groupBox26.TabIndex = 108;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "KeyAchievement";
-            // 
-            // groupBox25
-            // 
-            this.groupBox25.Location = new System.Drawing.Point(575, 417);
-            this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(200, 100);
-            this.groupBox25.TabIndex = 107;
-            this.groupBox25.TabStop = false;
-            this.groupBox25.Text = "FSkillsAchievement";
-            // 
-            // groupBox24
-            // 
-            this.groupBox24.Location = new System.Drawing.Point(808, 276);
-            this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(200, 100);
-            this.groupBox24.TabIndex = 106;
-            this.groupBox24.TabStop = false;
-            this.groupBox24.Text = "BSkillsAvhievement";
-            // 
-            // groupBox23
-            // 
-            this.groupBox23.Location = new System.Drawing.Point(575, 269);
-            this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(200, 100);
-            this.groupBox23.TabIndex = 105;
-            this.groupBox23.TabStop = false;
-            this.groupBox23.Text = "BArtaAchieve";
             // 
             // nudBladeBladeArtsEx2H
             // 
@@ -7857,146 +7821,6 @@
             this.label112.TabIndex = 0;
             this.label112.Text = "Role CPU:";
             // 
-            // tabBladeUnknown
-            // 
-            this.tabBladeUnknown.Controls.Add(this.label98);
-            this.tabBladeUnknown.Controls.Add(this.label97);
-            this.tabBladeUnknown.Controls.Add(this.label96);
-            this.tabBladeUnknown.Controls.Add(this.label95);
-            this.tabBladeUnknown.Controls.Add(this.label94);
-            this.tabBladeUnknown.Controls.Add(this.label93);
-            this.tabBladeUnknown.Controls.Add(this.label90);
-            this.tabBladeUnknown.Controls.Add(this.label89);
-            this.tabBladeUnknown.Controls.Add(this.label88);
-            this.tabBladeUnknown.Controls.Add(this.label87);
-            this.tabBladeUnknown.Controls.Add(this.label86);
-            this.tabBladeUnknown.Controls.Add(this.label81);
-            this.tabBladeUnknown.Controls.Add(this.label80);
-            this.tabBladeUnknown.Location = new System.Drawing.Point(4, 22);
-            this.tabBladeUnknown.Name = "tabBladeUnknown";
-            this.tabBladeUnknown.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeUnknown.Size = new System.Drawing.Size(948, 549);
-            this.tabBladeUnknown.TabIndex = 2;
-            this.tabBladeUnknown.Text = "Unknown";
-            this.tabBladeUnknown.UseVisualStyleBackColor = true;
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(107, 100);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(64, 13);
-            this.label98.TabIndex = 117;
-            this.label98.Text = "ExtraParts2:";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(107, 73);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(60, 13);
-            this.label97.TabIndex = 116;
-            this.label97.Text = "Unk_0x9A:";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(102, 50);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(59, 13);
-            this.label96.TabIndex = 115;
-            this.label96.Text = "Unk_0x99:";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(105, 24);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(59, 13);
-            this.label95.TabIndex = 114;
-            this.label95.Text = "Unk_0x98:";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(44, 228);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(59, 13);
-            this.label94.TabIndex = 113;
-            this.label94.Text = "Unk_0x96:";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(41, 202);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(59, 13);
-            this.label93.TabIndex = 112;
-            this.label93.Text = "Unk_0x94:";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(37, 178);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(60, 13);
-            this.label90.TabIndex = 111;
-            this.label90.Text = "Unk_0x8E:";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(41, 151);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(61, 13);
-            this.label89.TabIndex = 110;
-            this.label89.Text = "Unk_0x8D:";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(38, 123);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(60, 13);
-            this.label88.TabIndex = 109;
-            this.label88.Text = "Unk_0x8C:";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(38, 100);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(60, 13);
-            this.label87.TabIndex = 108;
-            this.label87.Text = "Unk_0x8A:";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(38, 74);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(59, 13);
-            this.label86.TabIndex = 107;
-            this.label86.Text = "Unk_0x88:";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(38, 47);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(59, 13);
-            this.label81.TabIndex = 106;
-            this.label81.Text = "Unk_0x30:";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(38, 19);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(60, 13);
-            this.label80.TabIndex = 105;
-            this.label80.Text = "Unk_0x2C:";
-            // 
             // tabBladeAffinityChart
             // 
             this.tabBladeAffinityChart.Controls.Add(this.groupBox68);
@@ -9329,6 +9153,164 @@
             this.nudBladeAffRewardQuestID.TabIndex = 0;
             this.nudBladeAffRewardQuestID.ValueChanged += new System.EventHandler(this.nudBladeAffRewardQuestID_ValueChanged);
             // 
+            // tabBladeUnknown
+            // 
+            this.tabBladeUnknown.Controls.Add(this.label80);
+            this.tabBladeUnknown.Controls.Add(this.groupBox72);
+            this.tabBladeUnknown.Controls.Add(this.groupBox71);
+            this.tabBladeUnknown.Controls.Add(this.nudBladeUnk_0x0827);
+            this.tabBladeUnknown.Controls.Add(this.groupBox26);
+            this.tabBladeUnknown.Controls.Add(this.groupBox25);
+            this.tabBladeUnknown.Controls.Add(this.groupBox24);
+            this.tabBladeUnknown.Controls.Add(this.groupBox23);
+            this.tabBladeUnknown.Location = new System.Drawing.Point(4, 22);
+            this.tabBladeUnknown.Name = "tabBladeUnknown";
+            this.tabBladeUnknown.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBladeUnknown.Size = new System.Drawing.Size(948, 549);
+            this.tabBladeUnknown.TabIndex = 2;
+            this.tabBladeUnknown.Text = "Unknown";
+            this.tabBladeUnknown.UseVisualStyleBackColor = true;
+            // 
+            // groupBox72
+            // 
+            this.groupBox72.Controls.Add(this.hbxBladeUnk_0x08A2);
+            this.groupBox72.Location = new System.Drawing.Point(6, 416);
+            this.groupBox72.Name = "groupBox72";
+            this.groupBox72.Size = new System.Drawing.Size(170, 67);
+            this.groupBox72.TabIndex = 154;
+            this.groupBox72.TabStop = false;
+            this.groupBox72.Text = "Unk_0x08A2";
+            // 
+            // hbxBladeUnk_0x08A2
+            // 
+            this.hbxBladeUnk_0x08A2.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x08A2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x08A2.LineInfoVisible = true;
+            this.hbxBladeUnk_0x08A2.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x08A2.Name = "hbxBladeUnk_0x08A2";
+            this.hbxBladeUnk_0x08A2.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x08A2.Size = new System.Drawing.Size(156, 41);
+            this.hbxBladeUnk_0x08A2.TabIndex = 151;
+            // 
+            // groupBox71
+            // 
+            this.groupBox71.Controls.Add(this.hbxBladeUnk_0x084E);
+            this.groupBox71.Location = new System.Drawing.Point(6, 343);
+            this.groupBox71.Name = "groupBox71";
+            this.groupBox71.Size = new System.Drawing.Size(170, 67);
+            this.groupBox71.TabIndex = 154;
+            this.groupBox71.TabStop = false;
+            this.groupBox71.Text = "Unk_0x084E";
+            // 
+            // hbxBladeUnk_0x084E
+            // 
+            this.hbxBladeUnk_0x084E.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x084E.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x084E.LineInfoVisible = true;
+            this.hbxBladeUnk_0x084E.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x084E.Name = "hbxBladeUnk_0x084E";
+            this.hbxBladeUnk_0x084E.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x084E.Size = new System.Drawing.Size(156, 41);
+            this.hbxBladeUnk_0x084E.TabIndex = 151;
+            // 
+            // nudBladeUnk_0x0827
+            // 
+            this.nudBladeUnk_0x0827.Hexadecimal = true;
+            this.nudBladeUnk_0x0827.Location = new System.Drawing.Point(91, 317);
+            this.nudBladeUnk_0x0827.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeUnk_0x0827.Name = "nudBladeUnk_0x0827";
+            this.nudBladeUnk_0x0827.Size = new System.Drawing.Size(46, 20);
+            this.nudBladeUnk_0x0827.TabIndex = 157;
+            this.nudBladeUnk_0x0827.ValueChanged += new System.EventHandler(this.nudBladeUnk_0x0827_ValueChanged);
+            // 
+            // groupBox26
+            // 
+            this.groupBox26.Controls.Add(this.hbxBladeUnk_0x0676);
+            this.groupBox26.Location = new System.Drawing.Point(6, 225);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Size = new System.Drawing.Size(483, 86);
+            this.groupBox26.TabIndex = 156;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "Unk_0x0676";
+            // 
+            // hbxBladeUnk_0x0676
+            // 
+            this.hbxBladeUnk_0x0676.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x0676.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x0676.LineInfoVisible = true;
+            this.hbxBladeUnk_0x0676.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x0676.Name = "hbxBladeUnk_0x0676";
+            this.hbxBladeUnk_0x0676.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x0676.Size = new System.Drawing.Size(470, 61);
+            this.hbxBladeUnk_0x0676.TabIndex = 151;
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.hbxBladeUnk_0x0094);
+            this.groupBox25.Location = new System.Drawing.Point(6, 152);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Size = new System.Drawing.Size(313, 67);
+            this.groupBox25.TabIndex = 155;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "Unk_0x0094";
+            // 
+            // hbxBladeUnk_0x0094
+            // 
+            this.hbxBladeUnk_0x0094.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x0094.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x0094.LineInfoVisible = true;
+            this.hbxBladeUnk_0x0094.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x0094.Name = "hbxBladeUnk_0x0094";
+            this.hbxBladeUnk_0x0094.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x0094.Size = new System.Drawing.Size(300, 41);
+            this.hbxBladeUnk_0x0094.TabIndex = 151;
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.Controls.Add(this.hbxBladeUnk_0x0088);
+            this.groupBox24.Location = new System.Drawing.Point(6, 79);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(313, 67);
+            this.groupBox24.TabIndex = 154;
+            this.groupBox24.TabStop = false;
+            this.groupBox24.Text = "Unk_0x0088";
+            // 
+            // hbxBladeUnk_0x0088
+            // 
+            this.hbxBladeUnk_0x0088.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x0088.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x0088.LineInfoVisible = true;
+            this.hbxBladeUnk_0x0088.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x0088.Name = "hbxBladeUnk_0x0088";
+            this.hbxBladeUnk_0x0088.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x0088.Size = new System.Drawing.Size(300, 41);
+            this.hbxBladeUnk_0x0088.TabIndex = 151;
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.hbxBladeUnk_0x002C);
+            this.groupBox23.Location = new System.Drawing.Point(6, 6);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(313, 67);
+            this.groupBox23.TabIndex = 153;
+            this.groupBox23.TabStop = false;
+            this.groupBox23.Text = "Unk_0x002C";
+            // 
+            // hbxBladeUnk_0x002C
+            // 
+            this.hbxBladeUnk_0x002C.ColumnInfoVisible = true;
+            this.hbxBladeUnk_0x002C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeUnk_0x002C.LineInfoVisible = true;
+            this.hbxBladeUnk_0x002C.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeUnk_0x002C.Name = "hbxBladeUnk_0x002C";
+            this.hbxBladeUnk_0x002C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeUnk_0x002C.Size = new System.Drawing.Size(300, 41);
+            this.hbxBladeUnk_0x002C.TabIndex = 151;
+            // 
             // tabItems
             // 
             this.tabItems.Controls.Add(this.tabControl2);
@@ -9825,6 +9807,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(13, 319);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(71, 13);
+            this.label80.TabIndex = 158;
+            this.label80.Text = "Unk_0x0827:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -10147,8 +10138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapAtrItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).EndInit();
-            this.tabBladeUnknown.ResumeLayout(false);
-            this.tabBladeUnknown.PerformLayout();
             this.tabBladeAffinityChart.ResumeLayout(false);
             this.groupBox68.ResumeLayout(false);
             this.groupBox68.PerformLayout();
@@ -10186,6 +10175,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardMaxCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffRewardQuestID)).EndInit();
+            this.tabBladeUnknown.ResumeLayout(false);
+            this.tabBladeUnknown.PerformLayout();
+            this.groupBox72.ResumeLayout(false);
+            this.groupBox71.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeUnk_0x0827)).EndInit();
+            this.groupBox26.ResumeLayout(false);
+            this.groupBox25.ResumeLayout(false);
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox23.ResumeLayout(false);
             this.tabItems.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPcWpnChipBox.ResumeLayout(false);
@@ -10356,10 +10354,6 @@
         private System.Windows.Forms.NumericUpDown nudBladeFavoriteCategory0;
         private System.Windows.Forms.NumericUpDown nudBladeKeyReleaseLevel;
         private System.Windows.Forms.ComboBox cbxBladeTrustRank;
-        private System.Windows.Forms.GroupBox groupBox26;
-        private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.GroupBox groupBox24;
-        private System.Windows.Forms.GroupBox groupBox23;
         private System.Windows.Forms.NumericUpDown nudBladeBladeArtsEx2H;
         private System.Windows.Forms.NumericUpDown nudBladeBArtEx2Id;
         private System.Windows.Forms.Label label92;
@@ -10408,19 +10402,6 @@
         private System.Windows.Forms.TabPage tabBladeArts;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.TabPage tabBladeUnknown;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TabPage tabBladePoppiswap;
         private System.Windows.Forms.CheckBox chkBladePoppiswapSkill2Enabled;
         private System.Windows.Forms.CheckBox chkBladePoppiswapSkill1Enabled;
@@ -11003,6 +10984,20 @@
         private Be.Windows.Forms.HexBox hbxBladeAffRewardUnk_0x0C;
         private System.Windows.Forms.GroupBox groupBox69;
         private Be.Windows.Forms.HexBox hbxBladeAffRewardUnk_0x02;
+        private System.Windows.Forms.GroupBox groupBox23;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x002C;
+        private System.Windows.Forms.GroupBox groupBox24;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x0088;
+        private System.Windows.Forms.GroupBox groupBox25;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x0094;
+        private System.Windows.Forms.GroupBox groupBox26;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x0676;
+        private System.Windows.Forms.NumericUpDown nudBladeUnk_0x0827;
+        private System.Windows.Forms.GroupBox groupBox72;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x08A2;
+        private System.Windows.Forms.GroupBox groupBox71;
+        private Be.Windows.Forms.HexBox hbxBladeUnk_0x084E;
+        private System.Windows.Forms.Label label80;
     }
 }
 

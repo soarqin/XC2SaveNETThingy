@@ -54,37 +54,6 @@ namespace XC2SaveNETThingy
 
         public class Weapon : IXC2SaveObject
         {
-            //public static readonly Dictionary<int, string> NAMES = new Dictionary<int, string>()
-            //{
-            //    { 0, "(none)"},
-            //    { 1, "Aegis Sword"},
-            //    { 2, "Catalyst Scimitar"},
-            //    { 3, "Twin Rings"},
-            //    { 4, "Drill Shield"},
-            //    { 5, "Mech Arms"},
-            //    { 6, "Variable Saber"},
-            //    { 7, "Whipswords"},
-            //    { 8, "Big Bang Edge"},
-            //    { 9, "Dual Scythes"},
-            //    { 10, "Greataxe"},
-            //    { 11, "Megalance"},
-            //    { 12, "Ether Cannon"},
-            //    { 13, "Shield Hammer"},
-            //    { 14, "Chroma Katana"},
-            //    { 15, "Bitball"},
-            //    { 16, "Knuckle Claws"},
-            //    { 17, "Broadsword"},
-            //    { 18, "Nodachi (Jin)"},
-            //    { 19, "Sword Tonfa (Malos)"},
-            //    { 20, "Calamity Scythe"},
-            //    { 21, "Cobra Bardiche"},
-            //    { 22, "Infinity Fans"},
-            //    { 23, "Brilliant Twinblades"},
-            //    { 24, "Decimation Cannon"},
-            //    { 25, "Rockrending Gauntlets"},
-            //    { 26, "Sword Tonfa"},
-            //};
-
             public const int SIZE = 0x14;
 
             public UInt32[] ArtIds { get; set; }
@@ -367,8 +336,6 @@ namespace XC2SaveNETThingy
             result.Add(CriticalRate);
             result.Add(GuardRate);
             result.AddRange(Unk_0x00A8);
-            //result.AddRange(Unk_0xAC);
-            //result.Add(Unk_0xAF);
             result.AddRange(BitConverter.GetBytes(BonusExp));
             result.AddRange(BitConverter.GetBytes(BattleExp));
             result.AddRange(BitConverter.GetBytes(CurrentSkillPoints));

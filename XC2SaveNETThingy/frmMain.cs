@@ -730,6 +730,16 @@ namespace XC2SaveNETThingy
                 #region BladeAffinityChart
                 LoadBladeAffinityReward(new Point(1, 1));
                 #endregion BladeAffinityChart
+
+                #region BladeUnknown
+                hbxBladeUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x002C);
+                hbxBladeUnk_0x0088.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0088);
+                hbxBladeUnk_0x0094.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0094);
+                hbxBladeUnk_0x0676.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0676);
+                nudBladeUnk_0x0827.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827;
+                hbxBladeUnk_0x084E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x084E);
+                hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x08A2);
+                #endregion BladeUnknown
             }
         }
         private void LoadBladeAffinityReward(Point affRewardChartLoc)
@@ -865,7 +875,6 @@ namespace XC2SaveNETThingy
             return dgv;
         }
         #endregion Items
-
 
         #endregion Methods
 
@@ -2158,6 +2167,11 @@ namespace XC2SaveNETThingy
         private void btnBladeAff_10_5_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 5));
         #endregion BladeAffinityCHart
 
+        #region BladeUnknown
+        private void nudBladeUnk_0x0827_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827 = (Byte)nudBladeUnk_0x0827.Value;
+        #endregion BladeUnknown
+
+
         #endregion Blades
 
         #region Items
@@ -2223,5 +2237,7 @@ namespace XC2SaveNETThingy
         #endregion Items
 
         #endregion Events
+
+        
     }
 }

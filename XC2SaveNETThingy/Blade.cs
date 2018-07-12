@@ -255,12 +255,6 @@ namespace XC2SaveNETThingy
     public class HanaCircuits : IXC2SaveObject
     {
         public const int SIZE = 0x2;
-        //uint16 Specials0 : 1;
-        //uint16 Specials1 : 1;
-        //uint16 Specials2 : 1;
-        //uint16 Skill0 : 1;
-        //uint16 Skill1 : 1;
-        //uint16 Skill2 : 1;
 
         public bool Specials0_Enabled { get; set; }
         public bool Specials1_Enabled { get; set; }
@@ -395,27 +389,17 @@ namespace XC2SaveNETThingy
         public UInt32 CompassionLevel { get; set; }
         public UInt32 JusticePoints { get; set; }
         public UInt32 JusticeLevel { get; set; }
-        public UInt32 Unk_0x2C { get; set; }
-        public Byte Unk_0x30 { get; set; }
-        public Byte[] gap_31 { get; set; }
+        public Byte[] Unk_0x002C { get; set; }
         public UInt32 TrustPoints { get; set; }
         public UInt32 TrustRank { get; set; }
         public BladeArt[] BArts { get; set; }
         public BladeArt[] NArts { get; set; }
         public UInt16 BArtExId { get; set; }
         public UInt16 BladeArtsExH { get; set; }
-        public UInt16 field_88 { get; set; }
-        public UInt16 field_8A { get; set; }
-        public Byte field_8C { get; set; }
-        public Byte gap_8D { get; set; }
-        public UInt16 field_8E { get; set; }
+        public Byte[] Unk_0x0088 { get; set; }
         public UInt16 BArtEx2Id { get; set; }
         public UInt16 BladeArtsEx2H { get; set; }
-        public UInt16 field_94 { get; set; }
-        public UInt16 field_96 { get; set; }
-        public Byte field_98 { get; set; }
-        public Byte gap_99 { get; set; }
-        public UInt16 field_9A { get; set; }
+        public Byte[] Unk_0x0094 { get; set; }
         public BladeSkill[] BattleSkills { get; set; }
         public BladeSkill[] FieldSkills { get; set; }
         public Byte[] ExtraParts2 { get; set; }
@@ -432,12 +416,7 @@ namespace XC2SaveNETThingy
         public UInt16 FavoriteItem1 { get; set; }
         public bool FavoriteCategory1Unlocked { get; set; }
         public bool FavoriteItem1Unlocked { get; set; }
-        public Byte[] gap676 { get; set; }
-        public UInt32 field_678 { get; set; }
-        public UInt16 field_67C { get; set; }
-        public Byte[] gap67E { get; set; }
-        public UInt64 field_680 { get; set; }
-        public UInt32 field_688 { get; set; }
+        public Byte[] Unk_0x0676 { get; set; }
         public PoppiSwapData Poppiswap { get; set; }
         public Byte Race { get; set; }
         public Byte Gender { get; set; }
@@ -465,7 +444,7 @@ namespace XC2SaveNETThingy
         public Byte Personality { get; set; }
         public Byte ExtraParts { get; set; }
         public Byte EyeRot { get; set; }
-        public Byte gap_827 { get; set; }
+        public Byte Unk_0x0827 { get; set; }
         public UInt16 CoolTime { get; set; }
         public UInt16 Condition { get; set; }
         public UInt16 DefWeapon { get; set; }
@@ -491,7 +470,7 @@ namespace XC2SaveNETThingy
         public Byte FootStepEffect { get; set; }
         public UInt16 KizunaLinkSet { get; set; }
         public UInt16 NormalTalk { get; set; }
-        public UInt16 gap_84E { get; set; }
+        public Byte[] Unk_0x084E { get; set; }
         public UInt32 CreateEventID { get; set; }
         public UInt16 MountPoint { get; set; }
         public UInt16 MountObject { get; set; }
@@ -502,7 +481,7 @@ namespace XC2SaveNETThingy
         public Byte BladeReleaseStatus { get; set; }
         public Byte isUnselect { get; set; }
         public Byte AffinityChartStatus { get; set; }
-        public UInt16 field_8A2 { get; set; }
+        public Byte[] Unk_0x08A2 { get; set; }
 
         private static Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
@@ -519,27 +498,17 @@ namespace XC2SaveNETThingy
             { "CompassionLevel", 0x20 },
             { "JusticePoints", 0x24 },
             { "JusticeLevel", 0x28 },
-            { "field_2C", 0x2C },
-            { "field_30", 0x30 },
-            { "gap_31", 0x31 },
+            { "Unk_0x002C", 0x2C },
             { "TrustPoints", 0x34 },
             { "TrustRank", 0x38 },
             { "BArts", 0x3C },
             { "NArts", 0x60 },
             { "BArtExId", 0x84 },
             { "BladeArtsExH", 0x86 },
-            { "field_88", 0x88 },
-            { "field_8A", 0x8A },
-            { "field_8C", 0x8C },
-            { "gap_8D", 0x8D },
-            { "field_8E", 0x8E },
+            { "Unk_0x0088", 0x88 },
             { "BArtEx2Id", 0x90 },
             { "BladeArtsEx2H", 0x92 },
-            { "field_94", 0x94 },
-            { "field_96", 0x96 },
-            { "field_98", 0x98 },
-            { "gap_99", 0x99 },
-            { "field_9A", 0x9A },
+            { "Unk_0x0094", 0x94 },
             { "BladeSkills", 0x9C },
             { "FieldSkills", 0xAE },
             { "ExtraParts2", 0xC0 },
@@ -556,12 +525,7 @@ namespace XC2SaveNETThingy
             { "FavoriteItem1", 0x670 },
             { "FavoriteCategory1Unlocked", 0x672 },
             { "FavoriteItem1Unlocked", 0x674 },
-            { "gap676", 0x676 },
-            { "field_678", 0x678 },
-            { "field_67C", 0x67C },
-            { "gap67E", 0x67E },
-            { "field_680", 0x680 },
-            { "field_688", 0x688 },
+            { "Unk_0x0676", 0x676 },
             { "HanaEquip", 0x68C },
             { "Race", 0x708 },
             { "Gender", 0x709 },
@@ -586,7 +550,7 @@ namespace XC2SaveNETThingy
             { "Personality", 0x824 },
             { "ExtraParts", 0x825 },
             { "EyeRot", 0x826 },
-            { "gap_827", 0x827 },
+            { "Unk_0x0827", 0x827 },
             { "CoolTime", 0x828 },
             { "Condition", 0x82A },
             { "DefWeapon", 0x82C },
@@ -612,7 +576,7 @@ namespace XC2SaveNETThingy
             { "FootStepEffect", 0x849 },
             { "KizunaLinkSet", 0x84A },
             { "NormalTalk", 0x84C },
-            { "gap_84E", 0x84E },
+            { "Unk_0x084E", 0x84E },
             { "CreateEventID", 0x850 },
             { "MountPoint", 0x854 },
             { "MountObject", 0x856 },
@@ -623,7 +587,7 @@ namespace XC2SaveNETThingy
             { "BladeReleaseStatus", 0x89F },
             { "isUnselect", 0x8A0 },
             { "AffinityChartStatus", 0x8A1 },
-            { "field_8A2", 0x8A2 },
+            { "Unk_0x08A2", 0x8A2 },
         };
 
         public Blade(Byte[] data)
@@ -641,9 +605,7 @@ namespace XC2SaveNETThingy
             CompassionLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CompassionLevel"], 4), 0);
             JusticePoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticePoints"], 4), 0);
             JusticeLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticeLevel"], 4), 0);
-            Unk_0x2C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_2C"], 4), 0);
-            Unk_0x30 = data[LOC["field_30"]];
-            gap_31 = data.GetByteSubArray(LOC["gap_31"], 3);
+            Unk_0x002C = data.GetByteSubArray(LOC["Unk_0x002C"], 8);
             TrustPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustPoints"], 4), 0);
             TrustRank = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustRank"], 4), 0);
 
@@ -657,18 +619,10 @@ namespace XC2SaveNETThingy
 
             BArtExId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtExId"], 2), 0);
             BladeArtsExH = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsExH"], 2), 0);
-            field_88 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_88"], 2), 0);
-            field_8A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_8A"], 2), 0);
-            field_8C = data[LOC["field_8C"]];
-            gap_8D = data[LOC["gap_8D"]];
-            field_8E = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_8E"], 2), 0);
+            Unk_0x0088 = data.GetByteSubArray(LOC["Unk_0x0088"], 8);
             BArtEx2Id = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtEx2Id"], 2), 0);
             BladeArtsEx2H = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsEx2H"], 2), 0);
-            field_94 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_94"], 2), 0);
-            field_96 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_96"], 2), 0);
-            field_98 = data[LOC["field_98"]];
-            gap_99 = data[LOC["gap_99"]];
-            field_9A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_9A"], 2), 0);
+            Unk_0x0094 = data.GetByteSubArray(LOC["Unk_0x0094"], 8);
 
             BattleSkills = new BladeSkill[3];
             for (int i = 0; i < BattleSkills.Length; i++)
@@ -710,12 +664,7 @@ namespace XC2SaveNETThingy
             FavoriteCategory1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteCategory1Unlocked"], 2), 0) == 1;
             FavoriteItem1Unlocked = BitConverter.ToUInt16(data.GetByteSubArray(LOC["FavoriteItem1Unlocked"], 2), 0) == 1;
 
-            gap676 = data.GetByteSubArray(LOC["gap676"], 2);
-            field_678 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_678"], 4), 0);
-            field_67C = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_67C"], 2), 0);
-            gap67E = data.GetByteSubArray(LOC["gap67E"], 2);
-            field_680 = BitConverter.ToUInt64(data.GetByteSubArray(LOC["field_680"], 8), 0);
-            field_688 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_688"], 4), 0);
+            Unk_0x0676 = data.GetByteSubArray(LOC["Unk_0x0676"], 22);
             Poppiswap = new PoppiSwapData(data.GetByteSubArray(LOC["HanaEquip"], PoppiSwapData.SIZE));
             Race = data[LOC["Race"]];
             Gender = data[LOC["Gender"]];
@@ -748,7 +697,7 @@ namespace XC2SaveNETThingy
             Personality = data[LOC["Personality"]];
             ExtraParts = data[LOC["ExtraParts"]];
             EyeRot = data[LOC["EyeRot"]];
-            gap_827 = data[LOC["gap_827"]];
+            Unk_0x0827 = data[LOC["Unk_0x0827"]];
             CoolTime = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CoolTime"], 2), 0);
             Condition = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Condition"], 2), 0);
             DefWeapon = BitConverter.ToUInt16(data.GetByteSubArray(LOC["DefWeapon"], 2), 0);
@@ -774,7 +723,7 @@ namespace XC2SaveNETThingy
             FootStepEffect = data[LOC["FootStepEffect"]];
             KizunaLinkSet = BitConverter.ToUInt16(data.GetByteSubArray(LOC["KizunaLinkSet"], 2), 0);
             NormalTalk = BitConverter.ToUInt16(data.GetByteSubArray(LOC["NormalTalk"], 2), 0);
-            gap_84E = BitConverter.ToUInt16(data.GetByteSubArray(LOC["gap_84E"], 2), 0);
+            Unk_0x084E = data.GetByteSubArray(LOC["Unk_0x084E"], 2);
             CreateEventID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CreateEventID"], 4), 0);
             MountPoint = BitConverter.ToUInt16(data.GetByteSubArray(LOC["MountPoint"], 2), 0);
             MountObject = BitConverter.ToUInt16(data.GetByteSubArray(LOC["MountObject"], 2), 0);
@@ -785,7 +734,7 @@ namespace XC2SaveNETThingy
             BladeReleaseStatus = data[LOC["BladeReleaseStatus"]];
             isUnselect = data[LOC["isUnselect"]];
             AffinityChartStatus = data[LOC["AffinityChartStatus"]];
-            field_8A2 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_8A2"], 2), 0);
+            Unk_0x08A2 = data.GetByteSubArray(LOC["Unk_0x08A2"], 2);
         }
 
         public Byte[] ToRawData()
@@ -805,9 +754,7 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CompassionLevel));
             result.AddRange(BitConverter.GetBytes(JusticePoints));
             result.AddRange(BitConverter.GetBytes(JusticeLevel));
-            result.AddRange(BitConverter.GetBytes(Unk_0x2C));
-            result.Add(Unk_0x30);
-            result.AddRange(gap_31);
+            result.AddRange(Unk_0x002C);
             result.AddRange(BitConverter.GetBytes(TrustPoints));
             result.AddRange(BitConverter.GetBytes(TrustRank));
 
@@ -819,18 +766,10 @@ namespace XC2SaveNETThingy
 
             result.AddRange(BitConverter.GetBytes(BArtExId));
             result.AddRange(BitConverter.GetBytes(BladeArtsExH));
-            result.AddRange(BitConverter.GetBytes(field_88));
-            result.AddRange(BitConverter.GetBytes(field_8A));
-            result.Add(field_8C);
-            result.Add(gap_8D);
-            result.AddRange(BitConverter.GetBytes(field_8E));
+            result.AddRange(Unk_0x0088);
             result.AddRange(BitConverter.GetBytes(BArtEx2Id));
             result.AddRange(BitConverter.GetBytes(BladeArtsEx2H));
-            result.AddRange(BitConverter.GetBytes(field_94));
-            result.AddRange(BitConverter.GetBytes(field_96));
-            result.Add(field_98);
-            result.Add(gap_99);
-            result.AddRange(BitConverter.GetBytes(field_9A));
+            result.AddRange(Unk_0x0094);
 
             foreach (BladeSkill bs in BattleSkills)
                 result.AddRange(bs.ToRawData());
@@ -859,12 +798,7 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(FavoriteItem1));
             result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteCategory1Unlocked ? 1 : 0)));
             result.AddRange(BitConverter.GetBytes((UInt16)(FavoriteItem1Unlocked ? 1 : 0)));
-            result.AddRange(gap676);
-            result.AddRange(BitConverter.GetBytes(field_678));
-            result.AddRange(BitConverter.GetBytes(field_67C));
-            result.AddRange(gap67E);
-            result.AddRange(BitConverter.GetBytes(field_680));
-            result.AddRange(BitConverter.GetBytes(field_688));
+            result.AddRange(Unk_0x0676);
             result.AddRange(Poppiswap.ToRawData());
             result.Add(Race);
             result.Add(Gender);
@@ -892,7 +826,7 @@ namespace XC2SaveNETThingy
             result.Add(Personality);
             result.Add(ExtraParts);
             result.Add(EyeRot);
-            result.Add(gap_827);
+            result.Add(Unk_0x0827);
             result.AddRange(BitConverter.GetBytes(CoolTime));
             result.AddRange(BitConverter.GetBytes(Condition));
             result.AddRange(BitConverter.GetBytes(DefWeapon));
@@ -918,7 +852,7 @@ namespace XC2SaveNETThingy
             result.Add(FootStepEffect);
             result.AddRange(BitConverter.GetBytes(KizunaLinkSet));
             result.AddRange(BitConverter.GetBytes(NormalTalk));
-            result.AddRange(BitConverter.GetBytes(gap_84E));
+            result.AddRange(Unk_0x084E);
             result.AddRange(BitConverter.GetBytes(CreateEventID));
             result.AddRange(BitConverter.GetBytes(MountPoint));
             result.AddRange(BitConverter.GetBytes(MountObject));
@@ -929,7 +863,7 @@ namespace XC2SaveNETThingy
             result.Add(BladeReleaseStatus);
             result.Add(isUnselect);
             result.Add(AffinityChartStatus);
-            result.AddRange(BitConverter.GetBytes(field_8A2));
+            result.AddRange(Unk_0x08A2);
 
             if (result.Count != SIZE)
             {
