@@ -597,29 +597,201 @@
             this.nudBladeBattleSkill1MaxLevel = new System.Windows.Forms.NumericUpDown();
             this.nudBladeBattleSkill1Level = new System.Windows.Forms.NumericUpDown();
             this.tabBladePoppiswap = new System.Windows.Forms.TabPage();
+            this.tabControl5 = new System.Windows.Forms.TabControl();
+            this.tabBladePoppiswapMisc = new System.Windows.Forms.TabPage();
+            this.groupBox100 = new System.Windows.Forms.GroupBox();
+            this.lblPoppiswapEnergyConverterMaxOutput = new System.Windows.Forms.Label();
+            this.label272 = new System.Windows.Forms.Label();
+            this.label271 = new System.Windows.Forms.Label();
+            this.trbBladePoppiswapEnergyConverterLevel = new System.Windows.Forms.TrackBar();
+            this.nudBladePoppiswapEnergyConverterLevel = new System.Windows.Forms.NumericUpDown();
+            this.groupBox99 = new System.Windows.Forms.GroupBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapElementCoreSerial = new System.Windows.Forms.NumericUpDown();
+            this.label113 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapElementCoreType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapElementCoreID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapElementCoreType = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapElementCoreID = new System.Windows.Forms.ComboBox();
+            this.label270 = new System.Windows.Forms.Label();
+            this.groupBox98 = new System.Windows.Forms.GroupBox();
+            this.label268 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapRoleCPUID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapRoleCPUSerial = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapRoleCPUID = new System.Windows.Forms.ComboBox();
+            this.label112 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapRoleCPUType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapRoleCPUType = new System.Windows.Forms.NumericUpDown();
+            this.label269 = new System.Windows.Forms.Label();
+            this.groupBox94 = new System.Windows.Forms.GroupBox();
+            this.groupBox95 = new System.Windows.Forms.GroupBox();
+            this.label259 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade3Serial = new System.Windows.Forms.NumericUpDown();
+            this.label260 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillUpgrade3Type = new System.Windows.Forms.ComboBox();
+            this.label261 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade3Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillUpgrade3ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillUpgrade3ID = new System.Windows.Forms.ComboBox();
+            this.chkBladePoppiswapSkillUpgrade3Enabled = new System.Windows.Forms.CheckBox();
+            this.groupBox96 = new System.Windows.Forms.GroupBox();
+            this.label262 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade2Serial = new System.Windows.Forms.NumericUpDown();
+            this.label263 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillUpgrade2Type = new System.Windows.Forms.ComboBox();
+            this.label264 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade2Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillUpgrade2ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillUpgrade2ID = new System.Windows.Forms.ComboBox();
+            this.chkBladePoppiswapSkillUpgrade2Enabled = new System.Windows.Forms.CheckBox();
+            this.groupBox97 = new System.Windows.Forms.GroupBox();
+            this.label265 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade1Serial = new System.Windows.Forms.NumericUpDown();
+            this.label266 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillUpgrade1Type = new System.Windows.Forms.ComboBox();
+            this.label267 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillUpgrade1Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillUpgrade1ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillUpgrade1ID = new System.Windows.Forms.ComboBox();
+            this.chkBladePoppiswapSkillUpgrade1Enabled = new System.Windows.Forms.CheckBox();
+            this.groupBox90 = new System.Windows.Forms.GroupBox();
+            this.groupBox93 = new System.Windows.Forms.GroupBox();
+            this.label256 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM3Serial = new System.Windows.Forms.NumericUpDown();
+            this.label257 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillRAM3Type = new System.Windows.Forms.ComboBox();
+            this.label258 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM3Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillRAM3ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillRAM3ID = new System.Windows.Forms.ComboBox();
+            this.groupBox92 = new System.Windows.Forms.GroupBox();
+            this.label253 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM2Serial = new System.Windows.Forms.NumericUpDown();
+            this.label254 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillRAM2Type = new System.Windows.Forms.ComboBox();
+            this.label255 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM2Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillRAM2ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillRAM2ID = new System.Windows.Forms.ComboBox();
+            this.groupBox91 = new System.Windows.Forms.GroupBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM1Serial = new System.Windows.Forms.NumericUpDown();
+            this.label115 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapSkillRAM1Type = new System.Windows.Forms.ComboBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.nudBladePoppiswapSkillRAM1Type = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapSkillRAM1ID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapSkillRAM1ID = new System.Windows.Forms.ComboBox();
+            this.tabBladePoppiswapArtsCards = new System.Windows.Forms.TabPage();
+            this.groupBox87 = new System.Windows.Forms.GroupBox();
+            this.cbxBladePoppiswapNArts3ID = new System.Windows.Forms.ComboBox();
+            this.cbxBladePoppiswapNArts3ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts3ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts3ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox88 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts3Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.label248 = new System.Windows.Forms.Label();
+            this.label249 = new System.Windows.Forms.Label();
+            this.groupBox89 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts3Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.cbxBladePoppiswapNArts3ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts3ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts3RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts3ID = new System.Windows.Forms.NumericUpDown();
+            this.label250 = new System.Windows.Forms.Label();
+            this.label251 = new System.Windows.Forms.Label();
+            this.label252 = new System.Windows.Forms.Label();
+            this.groupBox84 = new System.Windows.Forms.GroupBox();
+            this.cbxBladePoppiswapNArts2ID = new System.Windows.Forms.ComboBox();
+            this.cbxBladePoppiswapNArts2ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts2ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts2ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox85 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts2Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.label243 = new System.Windows.Forms.Label();
+            this.label244 = new System.Windows.Forms.Label();
+            this.groupBox86 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts2Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.cbxBladePoppiswapNArts2ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts2ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts2RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts2ID = new System.Windows.Forms.NumericUpDown();
+            this.label245 = new System.Windows.Forms.Label();
+            this.label246 = new System.Windows.Forms.Label();
+            this.label247 = new System.Windows.Forms.Label();
+            this.groupBox81 = new System.Windows.Forms.GroupBox();
+            this.cbxBladePoppiswapNArts1ID = new System.Windows.Forms.ComboBox();
+            this.cbxBladePoppiswapNArts1ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts1ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts1ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox82 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts1Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.label238 = new System.Windows.Forms.Label();
+            this.label239 = new System.Windows.Forms.Label();
+            this.groupBox83 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapNArts1Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.cbxBladePoppiswapNArts1ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapNArts1ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts1RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapNArts1ID = new System.Windows.Forms.NumericUpDown();
+            this.label240 = new System.Windows.Forms.Label();
+            this.label241 = new System.Windows.Forms.Label();
+            this.label242 = new System.Windows.Forms.Label();
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM = new System.Windows.Forms.TabPage();
+            this.groupBox78 = new System.Windows.Forms.GroupBox();
+            this.cbxBladePoppiswapBArtsEnhance3ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance3ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox79 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.groupBox80 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapBArtsEnhance3ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance3ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance3RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance3ID = new System.Windows.Forms.NumericUpDown();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label237 = new System.Windows.Forms.Label();
+            this.chkBladePoppiswapSpecials3Enabled = new System.Windows.Forms.CheckBox();
+            this.groupBox75 = new System.Windows.Forms.GroupBox();
+            this.cbxBladePoppiswapBArtsEnhance2ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance2ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox77 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.groupBox76 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.cbxBladePoppiswapBArtsEnhance2ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance2ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance2RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance2ID = new System.Windows.Forms.NumericUpDown();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.chkBladePoppiswapSpecials2Enabled = new System.Windows.Forms.CheckBox();
             this.groupBox27 = new System.Windows.Forms.GroupBox();
-            this.nudBladePoppiswapBArtsEnhanceItemID = new System.Windows.Forms.NumericUpDown();
-            this.nudBladePoppiswapBArtsEnhanceRecastRev = new System.Windows.Forms.NumericUpDown();
-            this.nudBladePoppiswapBArtsEnhanceID = new System.Windows.Forms.NumericUpDown();
+            this.cbxBladePoppiswapBArtsEnhance1ItemType = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance1ItemType = new System.Windows.Forms.NumericUpDown();
+            this.groupBox74 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08 = new Be.Windows.Forms.HexBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.groupBox73 = new System.Windows.Forms.GroupBox();
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06 = new Be.Windows.Forms.HexBox();
+            this.cbxBladePoppiswapBArtsEnhance1ItemID = new System.Windows.Forms.ComboBox();
+            this.nudBladePoppiswapBArtsEnhance1ItemID = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance1RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladePoppiswapBArtsEnhance1ID = new System.Windows.Forms.NumericUpDown();
             this.label120 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
-            this.cbxBladePoppiswapBArts = new System.Windows.Forms.ComboBox();
-            this.nudBladePoppiswapRoleItem = new System.Windows.Forms.NumericUpDown();
-            this.nudBladePoppiswapAtrItem = new System.Windows.Forms.NumericUpDown();
-            this.nudBladePoppiswapPowerCapacity = new System.Windows.Forms.NumericUpDown();
-            this.chkBladePoppiswapSkill2Enabled = new System.Windows.Forms.CheckBox();
-            this.chkBladePoppiswapSkill1Enabled = new System.Windows.Forms.CheckBox();
-            this.chkBladePoppiswapSkill0Enabled = new System.Windows.Forms.CheckBox();
-            this.chkBladePoppiswapSpecials2Enabled = new System.Windows.Forms.CheckBox();
             this.chkBladePoppiswapSpecials1Enabled = new System.Windows.Forms.CheckBox();
-            this.chkBladePoppiswapSpecials0Enabled = new System.Windows.Forms.CheckBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
-            this.label116 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
             this.tabBladeAffinityChart = new System.Windows.Forms.TabPage();
             this.groupBox68 = new System.Windows.Forms.GroupBox();
             this.nudBladeAffFieldSkill3Alignment = new System.Windows.Forms.NumericUpDown();
@@ -737,6 +909,7 @@
             this.nudBladeAffRewardCount = new System.Windows.Forms.NumericUpDown();
             this.nudBladeAffRewardQuestID = new System.Windows.Forms.NumericUpDown();
             this.tabBladeUnknown = new System.Windows.Forms.TabPage();
+            this.label80 = new System.Windows.Forms.Label();
             this.groupBox72 = new System.Windows.Forms.GroupBox();
             this.hbxBladeUnk_0x08A2 = new Be.Windows.Forms.HexBox();
             this.groupBox71 = new System.Windows.Forms.GroupBox();
@@ -750,6 +923,7 @@
             this.hbxBladeUnk_0x0088 = new Be.Windows.Forms.HexBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPcWpnChipBox = new System.Windows.Forms.TabPage();
@@ -793,7 +967,6 @@
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
-            this.label80 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1061,13 +1234,95 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBattleSkill1MaxLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBattleSkill1Level)).BeginInit();
             this.tabBladePoppiswap.SuspendLayout();
+            this.tabControl5.SuspendLayout();
+            this.tabBladePoppiswapMisc.SuspendLayout();
+            this.groupBox100.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbBladePoppiswapEnergyConverterLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapEnergyConverterLevel)).BeginInit();
+            this.groupBox99.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreType)).BeginInit();
+            this.groupBox98.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUType)).BeginInit();
+            this.groupBox94.SuspendLayout();
+            this.groupBox95.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3ID)).BeginInit();
+            this.groupBox96.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2ID)).BeginInit();
+            this.groupBox97.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1ID)).BeginInit();
+            this.groupBox90.SuspendLayout();
+            this.groupBox93.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3ID)).BeginInit();
+            this.groupBox92.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2ID)).BeginInit();
+            this.groupBox91.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1Serial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1Type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1ID)).BeginInit();
+            this.tabBladePoppiswapArtsCards.SuspendLayout();
+            this.groupBox87.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemType)).BeginInit();
+            this.groupBox88.SuspendLayout();
+            this.groupBox89.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ID)).BeginInit();
+            this.groupBox84.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemType)).BeginInit();
+            this.groupBox85.SuspendLayout();
+            this.groupBox86.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ID)).BeginInit();
+            this.groupBox81.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemType)).BeginInit();
+            this.groupBox82.SuspendLayout();
+            this.groupBox83.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ID)).BeginInit();
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.SuspendLayout();
+            this.groupBox78.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemType)).BeginInit();
+            this.groupBox79.SuspendLayout();
+            this.groupBox80.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ID)).BeginInit();
+            this.groupBox75.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemType)).BeginInit();
+            this.groupBox77.SuspendLayout();
+            this.groupBox76.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ID)).BeginInit();
             this.groupBox27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceItemID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceRecastRev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapAtrItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemSerial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemType)).BeginInit();
+            this.groupBox74.SuspendLayout();
+            this.groupBox73.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ID)).BeginInit();
             this.tabBladeAffinityChart.SuspendLayout();
             this.groupBox68.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffFieldSkill3Alignment)).BeginInit();
@@ -4849,6 +5104,7 @@
             this.tabControl3.Controls.Add(this.tabBladePoppiswap);
             this.tabControl3.Controls.Add(this.tabBladeAffinityChart);
             this.tabControl3.Controls.Add(this.tabBladeUnknown);
+            this.tabControl3.Controls.Add(this.tabPage1);
             this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
@@ -7559,22 +7815,7 @@
             // 
             // tabBladePoppiswap
             // 
-            this.tabBladePoppiswap.Controls.Add(this.groupBox27);
-            this.tabBladePoppiswap.Controls.Add(this.nudBladePoppiswapRoleItem);
-            this.tabBladePoppiswap.Controls.Add(this.nudBladePoppiswapAtrItem);
-            this.tabBladePoppiswap.Controls.Add(this.nudBladePoppiswapPowerCapacity);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSkill2Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSkill1Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSkill0Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSpecials2Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSpecials1Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.chkBladePoppiswapSpecials0Enabled);
-            this.tabBladePoppiswap.Controls.Add(this.label118);
-            this.tabBladePoppiswap.Controls.Add(this.label117);
-            this.tabBladePoppiswap.Controls.Add(this.label116);
-            this.tabBladePoppiswap.Controls.Add(this.label115);
-            this.tabBladePoppiswap.Controls.Add(this.label113);
-            this.tabBladePoppiswap.Controls.Add(this.label112);
+            this.tabBladePoppiswap.Controls.Add(this.tabControl5);
             this.tabBladePoppiswap.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswap.Name = "tabBladePoppiswap";
             this.tabBladePoppiswap.Padding = new System.Windows.Forms.Padding(3);
@@ -7583,62 +7824,2177 @@
             this.tabBladePoppiswap.Text = "Poppiswap";
             this.tabBladePoppiswap.UseVisualStyleBackColor = true;
             // 
+            // tabControl5
+            // 
+            this.tabControl5.Controls.Add(this.tabBladePoppiswapMisc);
+            this.tabControl5.Controls.Add(this.tabBladePoppiswapArtsCards);
+            this.tabControl5.Controls.Add(this.tabBladePoppiswapMiscSpecialsEnhancingRAM);
+            this.tabControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl5.Location = new System.Drawing.Point(3, 3);
+            this.tabControl5.Name = "tabControl5";
+            this.tabControl5.SelectedIndex = 0;
+            this.tabControl5.Size = new System.Drawing.Size(942, 543);
+            this.tabControl5.TabIndex = 21;
+            // 
+            // tabBladePoppiswapMisc
+            // 
+            this.tabBladePoppiswapMisc.Controls.Add(this.groupBox100);
+            this.tabBladePoppiswapMisc.Controls.Add(this.groupBox99);
+            this.tabBladePoppiswapMisc.Controls.Add(this.groupBox98);
+            this.tabBladePoppiswapMisc.Controls.Add(this.groupBox94);
+            this.tabBladePoppiswapMisc.Controls.Add(this.groupBox90);
+            this.tabBladePoppiswapMisc.Location = new System.Drawing.Point(4, 22);
+            this.tabBladePoppiswapMisc.Name = "tabBladePoppiswapMisc";
+            this.tabBladePoppiswapMisc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBladePoppiswapMisc.Size = new System.Drawing.Size(934, 517);
+            this.tabBladePoppiswapMisc.TabIndex = 0;
+            this.tabBladePoppiswapMisc.Text = "Misc";
+            this.tabBladePoppiswapMisc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox100
+            // 
+            this.groupBox100.Controls.Add(this.lblPoppiswapEnergyConverterMaxOutput);
+            this.groupBox100.Controls.Add(this.label272);
+            this.groupBox100.Controls.Add(this.label271);
+            this.groupBox100.Controls.Add(this.trbBladePoppiswapEnergyConverterLevel);
+            this.groupBox100.Controls.Add(this.nudBladePoppiswapEnergyConverterLevel);
+            this.groupBox100.Location = new System.Drawing.Point(8, 6);
+            this.groupBox100.Name = "groupBox100";
+            this.groupBox100.Size = new System.Drawing.Size(314, 61);
+            this.groupBox100.TabIndex = 24;
+            this.groupBox100.TabStop = false;
+            this.groupBox100.Text = "Energy Converter";
+            // 
+            // lblPoppiswapEnergyConverterMaxOutput
+            // 
+            this.lblPoppiswapEnergyConverterMaxOutput.AutoSize = true;
+            this.lblPoppiswapEnergyConverterMaxOutput.Location = new System.Drawing.Point(101, 39);
+            this.lblPoppiswapEnergyConverterMaxOutput.Name = "lblPoppiswapEnergyConverterMaxOutput";
+            this.lblPoppiswapEnergyConverterMaxOutput.Size = new System.Drawing.Size(200, 13);
+            this.lblPoppiswapEnergyConverterMaxOutput.TabIndex = 25;
+            this.lblPoppiswapEnergyConverterMaxOutput.Text = "lblPoppiswapEnergyConverterMaxOutput";
+            // 
+            // label272
+            // 
+            this.label272.AutoSize = true;
+            this.label272.Location = new System.Drawing.Point(6, 39);
+            this.label272.Name = "label272";
+            this.label272.Size = new System.Drawing.Size(89, 13);
+            this.label272.TabIndex = 24;
+            this.label272.Text = "Maximum Output:";
+            // 
+            // label271
+            // 
+            this.label271.AutoSize = true;
+            this.label271.Location = new System.Drawing.Point(6, 16);
+            this.label271.Name = "label271";
+            this.label271.Size = new System.Drawing.Size(36, 13);
+            this.label271.TabIndex = 0;
+            this.label271.Text = "Level:";
+            // 
+            // trbBladePoppiswapEnergyConverterLevel
+            // 
+            this.trbBladePoppiswapEnergyConverterLevel.BackColor = System.Drawing.SystemColors.Window;
+            this.trbBladePoppiswapEnergyConverterLevel.LargeChange = 1;
+            this.trbBladePoppiswapEnergyConverterLevel.Location = new System.Drawing.Point(99, 7);
+            this.trbBladePoppiswapEnergyConverterLevel.Maximum = 20;
+            this.trbBladePoppiswapEnergyConverterLevel.Minimum = 1;
+            this.trbBladePoppiswapEnergyConverterLevel.Name = "trbBladePoppiswapEnergyConverterLevel";
+            this.trbBladePoppiswapEnergyConverterLevel.Size = new System.Drawing.Size(214, 45);
+            this.trbBladePoppiswapEnergyConverterLevel.TabIndex = 23;
+            this.trbBladePoppiswapEnergyConverterLevel.Value = 1;
+            this.trbBladePoppiswapEnergyConverterLevel.ValueChanged += new System.EventHandler(this.trbBladePoppiswapEnergyConverterLevel_ValueChanged);
+            // 
+            // nudBladePoppiswapEnergyConverterLevel
+            // 
+            this.nudBladePoppiswapEnergyConverterLevel.Location = new System.Drawing.Point(48, 14);
+            this.nudBladePoppiswapEnergyConverterLevel.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapEnergyConverterLevel.Name = "nudBladePoppiswapEnergyConverterLevel";
+            this.nudBladePoppiswapEnergyConverterLevel.Size = new System.Drawing.Size(45, 20);
+            this.nudBladePoppiswapEnergyConverterLevel.TabIndex = 13;
+            this.nudBladePoppiswapEnergyConverterLevel.ValueChanged += new System.EventHandler(this.nudBladePoppiswapEnergyConverterLevel_ValueChanged);
+            // 
+            // groupBox99
+            // 
+            this.groupBox99.Controls.Add(this.label118);
+            this.groupBox99.Controls.Add(this.nudBladePoppiswapElementCoreSerial);
+            this.groupBox99.Controls.Add(this.label113);
+            this.groupBox99.Controls.Add(this.cbxBladePoppiswapElementCoreType);
+            this.groupBox99.Controls.Add(this.nudBladePoppiswapElementCoreID);
+            this.groupBox99.Controls.Add(this.nudBladePoppiswapElementCoreType);
+            this.groupBox99.Controls.Add(this.cbxBladePoppiswapElementCoreID);
+            this.groupBox99.Controls.Add(this.label270);
+            this.groupBox99.Location = new System.Drawing.Point(333, 72);
+            this.groupBox99.Name = "groupBox99";
+            this.groupBox99.Size = new System.Drawing.Size(299, 81);
+            this.groupBox99.TabIndex = 22;
+            this.groupBox99.TabStop = false;
+            this.groupBox99.Text = "Element Core";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Location = new System.Drawing.Point(6, 36);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(34, 13);
+            this.label118.TabIndex = 28;
+            this.label118.Text = "Type:";
+            // 
+            // nudBladePoppiswapElementCoreSerial
+            // 
+            this.nudBladePoppiswapElementCoreSerial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapElementCoreSerial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapElementCoreSerial.Name = "nudBladePoppiswapElementCoreSerial";
+            this.nudBladePoppiswapElementCoreSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapElementCoreSerial.TabIndex = 27;
+            this.nudBladePoppiswapElementCoreSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapElementCoreSerial_ValueChanged);
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(6, 16);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(44, 13);
+            this.label113.TabIndex = 1;
+            this.label113.Text = "Item ID:";
+            // 
+            // cbxBladePoppiswapElementCoreType
+            // 
+            this.cbxBladePoppiswapElementCoreType.FormattingEnabled = true;
+            this.cbxBladePoppiswapElementCoreType.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapElementCoreType.Name = "cbxBladePoppiswapElementCoreType";
+            this.cbxBladePoppiswapElementCoreType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapElementCoreType.TabIndex = 26;
+            this.cbxBladePoppiswapElementCoreType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapElementCoreType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapElementCoreID
+            // 
+            this.nudBladePoppiswapElementCoreID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapElementCoreID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapElementCoreID.Name = "nudBladePoppiswapElementCoreID";
+            this.nudBladePoppiswapElementCoreID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapElementCoreID.TabIndex = 14;
+            this.nudBladePoppiswapElementCoreID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapElementCoreID_ValueChanged);
+            // 
+            // nudBladePoppiswapElementCoreType
+            // 
+            this.nudBladePoppiswapElementCoreType.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapElementCoreType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapElementCoreType.Name = "nudBladePoppiswapElementCoreType";
+            this.nudBladePoppiswapElementCoreType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapElementCoreType.TabIndex = 25;
+            this.nudBladePoppiswapElementCoreType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapElementCoreType_ValueChanged);
+            // 
+            // cbxBladePoppiswapElementCoreID
+            // 
+            this.cbxBladePoppiswapElementCoreID.FormattingEnabled = true;
+            this.cbxBladePoppiswapElementCoreID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapElementCoreID.Name = "cbxBladePoppiswapElementCoreID";
+            this.cbxBladePoppiswapElementCoreID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapElementCoreID.TabIndex = 18;
+            this.cbxBladePoppiswapElementCoreID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapElementCoreID_SelectionChangeCommitted);
+            // 
+            // label270
+            // 
+            this.label270.AutoSize = true;
+            this.label270.Location = new System.Drawing.Point(6, 55);
+            this.label270.Name = "label270";
+            this.label270.Size = new System.Drawing.Size(36, 13);
+            this.label270.TabIndex = 24;
+            this.label270.Text = "Serial:";
+            // 
+            // groupBox98
+            // 
+            this.groupBox98.Controls.Add(this.label268);
+            this.groupBox98.Controls.Add(this.nudBladePoppiswapRoleCPUID);
+            this.groupBox98.Controls.Add(this.nudBladePoppiswapRoleCPUSerial);
+            this.groupBox98.Controls.Add(this.cbxBladePoppiswapRoleCPUID);
+            this.groupBox98.Controls.Add(this.label112);
+            this.groupBox98.Controls.Add(this.cbxBladePoppiswapRoleCPUType);
+            this.groupBox98.Controls.Add(this.nudBladePoppiswapRoleCPUType);
+            this.groupBox98.Controls.Add(this.label269);
+            this.groupBox98.Location = new System.Drawing.Point(14, 72);
+            this.groupBox98.Name = "groupBox98";
+            this.groupBox98.Size = new System.Drawing.Size(299, 81);
+            this.groupBox98.TabIndex = 21;
+            this.groupBox98.TabStop = false;
+            this.groupBox98.Text = "Role CPU";
+            // 
+            // label268
+            // 
+            this.label268.AutoSize = true;
+            this.label268.Location = new System.Drawing.Point(6, 36);
+            this.label268.Name = "label268";
+            this.label268.Size = new System.Drawing.Size(34, 13);
+            this.label268.TabIndex = 23;
+            this.label268.Text = "Type:";
+            // 
+            // nudBladePoppiswapRoleCPUID
+            // 
+            this.nudBladePoppiswapRoleCPUID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapRoleCPUID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapRoleCPUID.Name = "nudBladePoppiswapRoleCPUID";
+            this.nudBladePoppiswapRoleCPUID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapRoleCPUID.TabIndex = 15;
+            this.nudBladePoppiswapRoleCPUID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapRoleCPUID_ValueChanged);
+            // 
+            // nudBladePoppiswapRoleCPUSerial
+            // 
+            this.nudBladePoppiswapRoleCPUSerial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapRoleCPUSerial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapRoleCPUSerial.Name = "nudBladePoppiswapRoleCPUSerial";
+            this.nudBladePoppiswapRoleCPUSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapRoleCPUSerial.TabIndex = 22;
+            this.nudBladePoppiswapRoleCPUSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapRoleCPUSerial_ValueChanged);
+            // 
+            // cbxBladePoppiswapRoleCPUID
+            // 
+            this.cbxBladePoppiswapRoleCPUID.FormattingEnabled = true;
+            this.cbxBladePoppiswapRoleCPUID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapRoleCPUID.Name = "cbxBladePoppiswapRoleCPUID";
+            this.cbxBladePoppiswapRoleCPUID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapRoleCPUID.TabIndex = 17;
+            this.cbxBladePoppiswapRoleCPUID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapRoleCPUID_SelectionChangeCommitted);
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(6, 16);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(44, 13);
+            this.label112.TabIndex = 0;
+            this.label112.Text = "Item ID:";
+            // 
+            // cbxBladePoppiswapRoleCPUType
+            // 
+            this.cbxBladePoppiswapRoleCPUType.FormattingEnabled = true;
+            this.cbxBladePoppiswapRoleCPUType.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapRoleCPUType.Name = "cbxBladePoppiswapRoleCPUType";
+            this.cbxBladePoppiswapRoleCPUType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapRoleCPUType.TabIndex = 21;
+            this.cbxBladePoppiswapRoleCPUType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapRoleCPUType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapRoleCPUType
+            // 
+            this.nudBladePoppiswapRoleCPUType.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapRoleCPUType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapRoleCPUType.Name = "nudBladePoppiswapRoleCPUType";
+            this.nudBladePoppiswapRoleCPUType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapRoleCPUType.TabIndex = 20;
+            this.nudBladePoppiswapRoleCPUType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapRoleCPUType_ValueChanged);
+            // 
+            // label269
+            // 
+            this.label269.AutoSize = true;
+            this.label269.Location = new System.Drawing.Point(6, 55);
+            this.label269.Name = "label269";
+            this.label269.Size = new System.Drawing.Size(36, 13);
+            this.label269.TabIndex = 19;
+            this.label269.Text = "Serial:";
+            // 
+            // groupBox94
+            // 
+            this.groupBox94.Controls.Add(this.groupBox95);
+            this.groupBox94.Controls.Add(this.groupBox96);
+            this.groupBox94.Controls.Add(this.groupBox97);
+            this.groupBox94.Location = new System.Drawing.Point(327, 159);
+            this.groupBox94.Name = "groupBox94";
+            this.groupBox94.Size = new System.Drawing.Size(313, 281);
+            this.groupBox94.TabIndex = 20;
+            this.groupBox94.TabStop = false;
+            this.groupBox94.Text = "Skill Upgrade";
+            // 
+            // groupBox95
+            // 
+            this.groupBox95.Controls.Add(this.label259);
+            this.groupBox95.Controls.Add(this.nudBladePoppiswapSkillUpgrade3Serial);
+            this.groupBox95.Controls.Add(this.label260);
+            this.groupBox95.Controls.Add(this.cbxBladePoppiswapSkillUpgrade3Type);
+            this.groupBox95.Controls.Add(this.label261);
+            this.groupBox95.Controls.Add(this.nudBladePoppiswapSkillUpgrade3Type);
+            this.groupBox95.Controls.Add(this.nudBladePoppiswapSkillUpgrade3ID);
+            this.groupBox95.Controls.Add(this.cbxBladePoppiswapSkillUpgrade3ID);
+            this.groupBox95.Controls.Add(this.chkBladePoppiswapSkillUpgrade3Enabled);
+            this.groupBox95.Location = new System.Drawing.Point(6, 193);
+            this.groupBox95.Name = "groupBox95";
+            this.groupBox95.Size = new System.Drawing.Size(299, 81);
+            this.groupBox95.TabIndex = 10;
+            this.groupBox95.TabStop = false;
+            this.groupBox95.Text = "Skill Upgrade 3";
+            // 
+            // label259
+            // 
+            this.label259.AutoSize = true;
+            this.label259.Location = new System.Drawing.Point(6, 16);
+            this.label259.Name = "label259";
+            this.label259.Size = new System.Drawing.Size(44, 13);
+            this.label259.TabIndex = 0;
+            this.label259.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillUpgrade3Serial
+            // 
+            this.nudBladePoppiswapSkillUpgrade3Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillUpgrade3Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade3Serial.Name = "nudBladePoppiswapSkillUpgrade3Serial";
+            this.nudBladePoppiswapSkillUpgrade3Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade3Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillUpgrade3Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade3Serial_ValueChanged);
+            // 
+            // label260
+            // 
+            this.label260.AutoSize = true;
+            this.label260.Location = new System.Drawing.Point(6, 36);
+            this.label260.Name = "label260";
+            this.label260.Size = new System.Drawing.Size(34, 13);
+            this.label260.TabIndex = 1;
+            this.label260.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillUpgrade3Type
+            // 
+            this.cbxBladePoppiswapSkillUpgrade3Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade3Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillUpgrade3Type.Name = "cbxBladePoppiswapSkillUpgrade3Type";
+            this.cbxBladePoppiswapSkillUpgrade3Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade3Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillUpgrade3Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade3Type_SelectionChangeCommitted);
+            // 
+            // label261
+            // 
+            this.label261.AutoSize = true;
+            this.label261.Location = new System.Drawing.Point(6, 55);
+            this.label261.Name = "label261";
+            this.label261.Size = new System.Drawing.Size(36, 13);
+            this.label261.TabIndex = 2;
+            this.label261.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillUpgrade3Type
+            // 
+            this.nudBladePoppiswapSkillUpgrade3Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillUpgrade3Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade3Type.Name = "nudBladePoppiswapSkillUpgrade3Type";
+            this.nudBladePoppiswapSkillUpgrade3Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade3Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillUpgrade3Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade3Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillUpgrade3ID
+            // 
+            this.nudBladePoppiswapSkillUpgrade3ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillUpgrade3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade3ID.Name = "nudBladePoppiswapSkillUpgrade3ID";
+            this.nudBladePoppiswapSkillUpgrade3ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade3ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillUpgrade3ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade3ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillUpgrade3ID
+            // 
+            this.cbxBladePoppiswapSkillUpgrade3ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade3ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillUpgrade3ID.Name = "cbxBladePoppiswapSkillUpgrade3ID";
+            this.cbxBladePoppiswapSkillUpgrade3ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade3ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillUpgrade3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade3ID_SelectionChangeCommitted);
+            // 
+            // chkBladePoppiswapSkillUpgrade3Enabled
+            // 
+            this.chkBladePoppiswapSkillUpgrade3Enabled.AutoSize = true;
+            this.chkBladePoppiswapSkillUpgrade3Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSkillUpgrade3Enabled.Location = new System.Drawing.Point(116, 58);
+            this.chkBladePoppiswapSkillUpgrade3Enabled.Name = "chkBladePoppiswapSkillUpgrade3Enabled";
+            this.chkBladePoppiswapSkillUpgrade3Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSkillUpgrade3Enabled.TabIndex = 12;
+            this.chkBladePoppiswapSkillUpgrade3Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSkillUpgrade3Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSkillUpgrade3Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSkillUpgrade3Enabled_CheckedChanged);
+            // 
+            // groupBox96
+            // 
+            this.groupBox96.Controls.Add(this.label262);
+            this.groupBox96.Controls.Add(this.nudBladePoppiswapSkillUpgrade2Serial);
+            this.groupBox96.Controls.Add(this.label263);
+            this.groupBox96.Controls.Add(this.cbxBladePoppiswapSkillUpgrade2Type);
+            this.groupBox96.Controls.Add(this.label264);
+            this.groupBox96.Controls.Add(this.nudBladePoppiswapSkillUpgrade2Type);
+            this.groupBox96.Controls.Add(this.nudBladePoppiswapSkillUpgrade2ID);
+            this.groupBox96.Controls.Add(this.cbxBladePoppiswapSkillUpgrade2ID);
+            this.groupBox96.Controls.Add(this.chkBladePoppiswapSkillUpgrade2Enabled);
+            this.groupBox96.Location = new System.Drawing.Point(6, 106);
+            this.groupBox96.Name = "groupBox96";
+            this.groupBox96.Size = new System.Drawing.Size(299, 81);
+            this.groupBox96.TabIndex = 9;
+            this.groupBox96.TabStop = false;
+            this.groupBox96.Text = "Skill Upgrade 2";
+            // 
+            // label262
+            // 
+            this.label262.AutoSize = true;
+            this.label262.Location = new System.Drawing.Point(6, 16);
+            this.label262.Name = "label262";
+            this.label262.Size = new System.Drawing.Size(44, 13);
+            this.label262.TabIndex = 0;
+            this.label262.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillUpgrade2Serial
+            // 
+            this.nudBladePoppiswapSkillUpgrade2Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillUpgrade2Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade2Serial.Name = "nudBladePoppiswapSkillUpgrade2Serial";
+            this.nudBladePoppiswapSkillUpgrade2Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade2Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillUpgrade2Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade2Serial_ValueChanged);
+            // 
+            // label263
+            // 
+            this.label263.AutoSize = true;
+            this.label263.Location = new System.Drawing.Point(6, 36);
+            this.label263.Name = "label263";
+            this.label263.Size = new System.Drawing.Size(34, 13);
+            this.label263.TabIndex = 1;
+            this.label263.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillUpgrade2Type
+            // 
+            this.cbxBladePoppiswapSkillUpgrade2Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade2Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillUpgrade2Type.Name = "cbxBladePoppiswapSkillUpgrade2Type";
+            this.cbxBladePoppiswapSkillUpgrade2Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade2Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillUpgrade2Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade2Type_SelectionChangeCommitted);
+            // 
+            // label264
+            // 
+            this.label264.AutoSize = true;
+            this.label264.Location = new System.Drawing.Point(6, 55);
+            this.label264.Name = "label264";
+            this.label264.Size = new System.Drawing.Size(36, 13);
+            this.label264.TabIndex = 2;
+            this.label264.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillUpgrade2Type
+            // 
+            this.nudBladePoppiswapSkillUpgrade2Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillUpgrade2Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade2Type.Name = "nudBladePoppiswapSkillUpgrade2Type";
+            this.nudBladePoppiswapSkillUpgrade2Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade2Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillUpgrade2Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade2Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillUpgrade2ID
+            // 
+            this.nudBladePoppiswapSkillUpgrade2ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillUpgrade2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade2ID.Name = "nudBladePoppiswapSkillUpgrade2ID";
+            this.nudBladePoppiswapSkillUpgrade2ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade2ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillUpgrade2ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade2ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillUpgrade2ID
+            // 
+            this.cbxBladePoppiswapSkillUpgrade2ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade2ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillUpgrade2ID.Name = "cbxBladePoppiswapSkillUpgrade2ID";
+            this.cbxBladePoppiswapSkillUpgrade2ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade2ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillUpgrade2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade2ID_SelectionChangeCommitted);
+            // 
+            // chkBladePoppiswapSkillUpgrade2Enabled
+            // 
+            this.chkBladePoppiswapSkillUpgrade2Enabled.AutoSize = true;
+            this.chkBladePoppiswapSkillUpgrade2Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSkillUpgrade2Enabled.Location = new System.Drawing.Point(116, 58);
+            this.chkBladePoppiswapSkillUpgrade2Enabled.Name = "chkBladePoppiswapSkillUpgrade2Enabled";
+            this.chkBladePoppiswapSkillUpgrade2Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSkillUpgrade2Enabled.TabIndex = 11;
+            this.chkBladePoppiswapSkillUpgrade2Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSkillUpgrade2Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSkillUpgrade2Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSkillUpgrade2Enabled_CheckedChanged);
+            // 
+            // groupBox97
+            // 
+            this.groupBox97.Controls.Add(this.label265);
+            this.groupBox97.Controls.Add(this.nudBladePoppiswapSkillUpgrade1Serial);
+            this.groupBox97.Controls.Add(this.label266);
+            this.groupBox97.Controls.Add(this.cbxBladePoppiswapSkillUpgrade1Type);
+            this.groupBox97.Controls.Add(this.label267);
+            this.groupBox97.Controls.Add(this.nudBladePoppiswapSkillUpgrade1Type);
+            this.groupBox97.Controls.Add(this.nudBladePoppiswapSkillUpgrade1ID);
+            this.groupBox97.Controls.Add(this.cbxBladePoppiswapSkillUpgrade1ID);
+            this.groupBox97.Controls.Add(this.chkBladePoppiswapSkillUpgrade1Enabled);
+            this.groupBox97.Location = new System.Drawing.Point(6, 19);
+            this.groupBox97.Name = "groupBox97";
+            this.groupBox97.Size = new System.Drawing.Size(299, 81);
+            this.groupBox97.TabIndex = 8;
+            this.groupBox97.TabStop = false;
+            this.groupBox97.Text = "Skill Upgrade 1";
+            // 
+            // label265
+            // 
+            this.label265.AutoSize = true;
+            this.label265.Location = new System.Drawing.Point(6, 16);
+            this.label265.Name = "label265";
+            this.label265.Size = new System.Drawing.Size(44, 13);
+            this.label265.TabIndex = 0;
+            this.label265.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillUpgrade1Serial
+            // 
+            this.nudBladePoppiswapSkillUpgrade1Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillUpgrade1Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade1Serial.Name = "nudBladePoppiswapSkillUpgrade1Serial";
+            this.nudBladePoppiswapSkillUpgrade1Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade1Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillUpgrade1Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade1Serial_ValueChanged);
+            // 
+            // label266
+            // 
+            this.label266.AutoSize = true;
+            this.label266.Location = new System.Drawing.Point(6, 36);
+            this.label266.Name = "label266";
+            this.label266.Size = new System.Drawing.Size(34, 13);
+            this.label266.TabIndex = 1;
+            this.label266.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillUpgrade1Type
+            // 
+            this.cbxBladePoppiswapSkillUpgrade1Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade1Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillUpgrade1Type.Name = "cbxBladePoppiswapSkillUpgrade1Type";
+            this.cbxBladePoppiswapSkillUpgrade1Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade1Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillUpgrade1Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade1Type_SelectionChangeCommitted);
+            // 
+            // label267
+            // 
+            this.label267.AutoSize = true;
+            this.label267.Location = new System.Drawing.Point(6, 55);
+            this.label267.Name = "label267";
+            this.label267.Size = new System.Drawing.Size(36, 13);
+            this.label267.TabIndex = 2;
+            this.label267.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillUpgrade1Type
+            // 
+            this.nudBladePoppiswapSkillUpgrade1Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillUpgrade1Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade1Type.Name = "nudBladePoppiswapSkillUpgrade1Type";
+            this.nudBladePoppiswapSkillUpgrade1Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade1Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillUpgrade1Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade1Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillUpgrade1ID
+            // 
+            this.nudBladePoppiswapSkillUpgrade1ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillUpgrade1ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillUpgrade1ID.Name = "nudBladePoppiswapSkillUpgrade1ID";
+            this.nudBladePoppiswapSkillUpgrade1ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillUpgrade1ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillUpgrade1ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillUpgrade1ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillUpgrade1ID
+            // 
+            this.cbxBladePoppiswapSkillUpgrade1ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillUpgrade1ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillUpgrade1ID.Name = "cbxBladePoppiswapSkillUpgrade1ID";
+            this.cbxBladePoppiswapSkillUpgrade1ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillUpgrade1ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillUpgrade1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillUpgrade1ID_SelectionChangeCommitted);
+            // 
+            // chkBladePoppiswapSkillUpgrade1Enabled
+            // 
+            this.chkBladePoppiswapSkillUpgrade1Enabled.AutoSize = true;
+            this.chkBladePoppiswapSkillUpgrade1Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSkillUpgrade1Enabled.Location = new System.Drawing.Point(116, 58);
+            this.chkBladePoppiswapSkillUpgrade1Enabled.Name = "chkBladePoppiswapSkillUpgrade1Enabled";
+            this.chkBladePoppiswapSkillUpgrade1Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSkillUpgrade1Enabled.TabIndex = 10;
+            this.chkBladePoppiswapSkillUpgrade1Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSkillUpgrade1Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSkillUpgrade1Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSkillUpgrade1Enabled_CheckedChanged);
+            // 
+            // groupBox90
+            // 
+            this.groupBox90.Controls.Add(this.groupBox93);
+            this.groupBox90.Controls.Add(this.groupBox92);
+            this.groupBox90.Controls.Add(this.groupBox91);
+            this.groupBox90.Location = new System.Drawing.Point(8, 159);
+            this.groupBox90.Name = "groupBox90";
+            this.groupBox90.Size = new System.Drawing.Size(313, 281);
+            this.groupBox90.TabIndex = 19;
+            this.groupBox90.TabStop = false;
+            this.groupBox90.Text = "Skill RAM";
+            // 
+            // groupBox93
+            // 
+            this.groupBox93.Controls.Add(this.label256);
+            this.groupBox93.Controls.Add(this.nudBladePoppiswapSkillRAM3Serial);
+            this.groupBox93.Controls.Add(this.label257);
+            this.groupBox93.Controls.Add(this.cbxBladePoppiswapSkillRAM3Type);
+            this.groupBox93.Controls.Add(this.label258);
+            this.groupBox93.Controls.Add(this.nudBladePoppiswapSkillRAM3Type);
+            this.groupBox93.Controls.Add(this.nudBladePoppiswapSkillRAM3ID);
+            this.groupBox93.Controls.Add(this.cbxBladePoppiswapSkillRAM3ID);
+            this.groupBox93.Location = new System.Drawing.Point(6, 193);
+            this.groupBox93.Name = "groupBox93";
+            this.groupBox93.Size = new System.Drawing.Size(299, 81);
+            this.groupBox93.TabIndex = 10;
+            this.groupBox93.TabStop = false;
+            this.groupBox93.Text = "Skill RAM 3";
+            // 
+            // label256
+            // 
+            this.label256.AutoSize = true;
+            this.label256.Location = new System.Drawing.Point(6, 16);
+            this.label256.Name = "label256";
+            this.label256.Size = new System.Drawing.Size(44, 13);
+            this.label256.TabIndex = 0;
+            this.label256.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillRAM3Serial
+            // 
+            this.nudBladePoppiswapSkillRAM3Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillRAM3Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM3Serial.Name = "nudBladePoppiswapSkillRAM3Serial";
+            this.nudBladePoppiswapSkillRAM3Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM3Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillRAM3Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM3Serial_ValueChanged);
+            // 
+            // label257
+            // 
+            this.label257.AutoSize = true;
+            this.label257.Location = new System.Drawing.Point(6, 36);
+            this.label257.Name = "label257";
+            this.label257.Size = new System.Drawing.Size(34, 13);
+            this.label257.TabIndex = 1;
+            this.label257.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillRAM3Type
+            // 
+            this.cbxBladePoppiswapSkillRAM3Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM3Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillRAM3Type.Name = "cbxBladePoppiswapSkillRAM3Type";
+            this.cbxBladePoppiswapSkillRAM3Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM3Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillRAM3Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM3Type_SelectionChangeCommitted);
+            // 
+            // label258
+            // 
+            this.label258.AutoSize = true;
+            this.label258.Location = new System.Drawing.Point(6, 55);
+            this.label258.Name = "label258";
+            this.label258.Size = new System.Drawing.Size(36, 13);
+            this.label258.TabIndex = 2;
+            this.label258.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillRAM3Type
+            // 
+            this.nudBladePoppiswapSkillRAM3Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillRAM3Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM3Type.Name = "nudBladePoppiswapSkillRAM3Type";
+            this.nudBladePoppiswapSkillRAM3Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM3Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillRAM3Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM3Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillRAM3ID
+            // 
+            this.nudBladePoppiswapSkillRAM3ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillRAM3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM3ID.Name = "nudBladePoppiswapSkillRAM3ID";
+            this.nudBladePoppiswapSkillRAM3ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM3ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillRAM3ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM3ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillRAM3ID
+            // 
+            this.cbxBladePoppiswapSkillRAM3ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM3ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillRAM3ID.Name = "cbxBladePoppiswapSkillRAM3ID";
+            this.cbxBladePoppiswapSkillRAM3ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM3ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillRAM3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM3ID_SelectionChangeCommitted);
+            // 
+            // groupBox92
+            // 
+            this.groupBox92.Controls.Add(this.label253);
+            this.groupBox92.Controls.Add(this.nudBladePoppiswapSkillRAM2Serial);
+            this.groupBox92.Controls.Add(this.label254);
+            this.groupBox92.Controls.Add(this.cbxBladePoppiswapSkillRAM2Type);
+            this.groupBox92.Controls.Add(this.label255);
+            this.groupBox92.Controls.Add(this.nudBladePoppiswapSkillRAM2Type);
+            this.groupBox92.Controls.Add(this.nudBladePoppiswapSkillRAM2ID);
+            this.groupBox92.Controls.Add(this.cbxBladePoppiswapSkillRAM2ID);
+            this.groupBox92.Location = new System.Drawing.Point(6, 106);
+            this.groupBox92.Name = "groupBox92";
+            this.groupBox92.Size = new System.Drawing.Size(299, 81);
+            this.groupBox92.TabIndex = 9;
+            this.groupBox92.TabStop = false;
+            this.groupBox92.Text = "Skill RAM 2";
+            // 
+            // label253
+            // 
+            this.label253.AutoSize = true;
+            this.label253.Location = new System.Drawing.Point(6, 16);
+            this.label253.Name = "label253";
+            this.label253.Size = new System.Drawing.Size(44, 13);
+            this.label253.TabIndex = 0;
+            this.label253.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillRAM2Serial
+            // 
+            this.nudBladePoppiswapSkillRAM2Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillRAM2Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM2Serial.Name = "nudBladePoppiswapSkillRAM2Serial";
+            this.nudBladePoppiswapSkillRAM2Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM2Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillRAM2Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM2Serial_ValueChanged);
+            // 
+            // label254
+            // 
+            this.label254.AutoSize = true;
+            this.label254.Location = new System.Drawing.Point(6, 36);
+            this.label254.Name = "label254";
+            this.label254.Size = new System.Drawing.Size(34, 13);
+            this.label254.TabIndex = 1;
+            this.label254.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillRAM2Type
+            // 
+            this.cbxBladePoppiswapSkillRAM2Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM2Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillRAM2Type.Name = "cbxBladePoppiswapSkillRAM2Type";
+            this.cbxBladePoppiswapSkillRAM2Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM2Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillRAM2Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM2Type_SelectionChangeCommitted);
+            // 
+            // label255
+            // 
+            this.label255.AutoSize = true;
+            this.label255.Location = new System.Drawing.Point(6, 55);
+            this.label255.Name = "label255";
+            this.label255.Size = new System.Drawing.Size(36, 13);
+            this.label255.TabIndex = 2;
+            this.label255.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillRAM2Type
+            // 
+            this.nudBladePoppiswapSkillRAM2Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillRAM2Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM2Type.Name = "nudBladePoppiswapSkillRAM2Type";
+            this.nudBladePoppiswapSkillRAM2Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM2Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillRAM2Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM2Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillRAM2ID
+            // 
+            this.nudBladePoppiswapSkillRAM2ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillRAM2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM2ID.Name = "nudBladePoppiswapSkillRAM2ID";
+            this.nudBladePoppiswapSkillRAM2ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM2ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillRAM2ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM2ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillRAM2ID
+            // 
+            this.cbxBladePoppiswapSkillRAM2ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM2ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillRAM2ID.Name = "cbxBladePoppiswapSkillRAM2ID";
+            this.cbxBladePoppiswapSkillRAM2ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM2ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillRAM2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM2ID_SelectionChangeCommitted);
+            // 
+            // groupBox91
+            // 
+            this.groupBox91.Controls.Add(this.label89);
+            this.groupBox91.Controls.Add(this.nudBladePoppiswapSkillRAM1Serial);
+            this.groupBox91.Controls.Add(this.label115);
+            this.groupBox91.Controls.Add(this.cbxBladePoppiswapSkillRAM1Type);
+            this.groupBox91.Controls.Add(this.label116);
+            this.groupBox91.Controls.Add(this.nudBladePoppiswapSkillRAM1Type);
+            this.groupBox91.Controls.Add(this.nudBladePoppiswapSkillRAM1ID);
+            this.groupBox91.Controls.Add(this.cbxBladePoppiswapSkillRAM1ID);
+            this.groupBox91.Location = new System.Drawing.Point(6, 19);
+            this.groupBox91.Name = "groupBox91";
+            this.groupBox91.Size = new System.Drawing.Size(299, 81);
+            this.groupBox91.TabIndex = 8;
+            this.groupBox91.TabStop = false;
+            this.groupBox91.Text = "Skill RAM 1";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(6, 16);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(44, 13);
+            this.label89.TabIndex = 0;
+            this.label89.Text = "Item ID:";
+            // 
+            // nudBladePoppiswapSkillRAM1Serial
+            // 
+            this.nudBladePoppiswapSkillRAM1Serial.Location = new System.Drawing.Point(56, 53);
+            this.nudBladePoppiswapSkillRAM1Serial.Maximum = new decimal(new int[] {
+            67108863,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM1Serial.Name = "nudBladePoppiswapSkillRAM1Serial";
+            this.nudBladePoppiswapSkillRAM1Serial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM1Serial.TabIndex = 7;
+            this.nudBladePoppiswapSkillRAM1Serial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM1Serial_ValueChanged);
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(6, 36);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(34, 13);
+            this.label115.TabIndex = 1;
+            this.label115.Text = "Type:";
+            // 
+            // cbxBladePoppiswapSkillRAM1Type
+            // 
+            this.cbxBladePoppiswapSkillRAM1Type.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM1Type.Location = new System.Drawing.Point(116, 33);
+            this.cbxBladePoppiswapSkillRAM1Type.Name = "cbxBladePoppiswapSkillRAM1Type";
+            this.cbxBladePoppiswapSkillRAM1Type.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM1Type.TabIndex = 6;
+            this.cbxBladePoppiswapSkillRAM1Type.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM1Type_SelectionChangeCommitted);
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(6, 55);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(36, 13);
+            this.label116.TabIndex = 2;
+            this.label116.Text = "Serial:";
+            // 
+            // nudBladePoppiswapSkillRAM1Type
+            // 
+            this.nudBladePoppiswapSkillRAM1Type.Location = new System.Drawing.Point(56, 33);
+            this.nudBladePoppiswapSkillRAM1Type.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM1Type.Name = "nudBladePoppiswapSkillRAM1Type";
+            this.nudBladePoppiswapSkillRAM1Type.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM1Type.TabIndex = 5;
+            this.nudBladePoppiswapSkillRAM1Type.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM1Type_ValueChanged);
+            // 
+            // nudBladePoppiswapSkillRAM1ID
+            // 
+            this.nudBladePoppiswapSkillRAM1ID.Location = new System.Drawing.Point(56, 13);
+            this.nudBladePoppiswapSkillRAM1ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapSkillRAM1ID.Name = "nudBladePoppiswapSkillRAM1ID";
+            this.nudBladePoppiswapSkillRAM1ID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapSkillRAM1ID.TabIndex = 3;
+            this.nudBladePoppiswapSkillRAM1ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapSkillRAM1ID_ValueChanged);
+            // 
+            // cbxBladePoppiswapSkillRAM1ID
+            // 
+            this.cbxBladePoppiswapSkillRAM1ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapSkillRAM1ID.Location = new System.Drawing.Point(116, 13);
+            this.cbxBladePoppiswapSkillRAM1ID.Name = "cbxBladePoppiswapSkillRAM1ID";
+            this.cbxBladePoppiswapSkillRAM1ID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapSkillRAM1ID.TabIndex = 4;
+            this.cbxBladePoppiswapSkillRAM1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapSkillRAM1ID_SelectionChangeCommitted);
+            // 
+            // tabBladePoppiswapArtsCards
+            // 
+            this.tabBladePoppiswapArtsCards.Controls.Add(this.groupBox87);
+            this.tabBladePoppiswapArtsCards.Controls.Add(this.groupBox84);
+            this.tabBladePoppiswapArtsCards.Controls.Add(this.groupBox81);
+            this.tabBladePoppiswapArtsCards.Location = new System.Drawing.Point(4, 22);
+            this.tabBladePoppiswapArtsCards.Name = "tabBladePoppiswapArtsCards";
+            this.tabBladePoppiswapArtsCards.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBladePoppiswapArtsCards.Size = new System.Drawing.Size(934, 517);
+            this.tabBladePoppiswapArtsCards.TabIndex = 2;
+            this.tabBladePoppiswapArtsCards.Text = "Arts Cards";
+            this.tabBladePoppiswapArtsCards.UseVisualStyleBackColor = true;
+            // 
+            // groupBox87
+            // 
+            this.groupBox87.Controls.Add(this.cbxBladePoppiswapNArts3ID);
+            this.groupBox87.Controls.Add(this.cbxBladePoppiswapNArts3ItemType);
+            this.groupBox87.Controls.Add(this.nudBladePoppiswapNArts3ItemSerial);
+            this.groupBox87.Controls.Add(this.nudBladePoppiswapNArts3ItemType);
+            this.groupBox87.Controls.Add(this.groupBox88);
+            this.groupBox87.Controls.Add(this.label248);
+            this.groupBox87.Controls.Add(this.label249);
+            this.groupBox87.Controls.Add(this.groupBox89);
+            this.groupBox87.Controls.Add(this.cbxBladePoppiswapNArts3ItemID);
+            this.groupBox87.Controls.Add(this.nudBladePoppiswapNArts3ItemID);
+            this.groupBox87.Controls.Add(this.nudBladePoppiswapNArts3RecastRev);
+            this.groupBox87.Controls.Add(this.nudBladePoppiswapNArts3ID);
+            this.groupBox87.Controls.Add(this.label250);
+            this.groupBox87.Controls.Add(this.label251);
+            this.groupBox87.Controls.Add(this.label252);
+            this.groupBox87.Location = new System.Drawing.Point(6, 202);
+            this.groupBox87.Name = "groupBox87";
+            this.groupBox87.Size = new System.Drawing.Size(644, 92);
+            this.groupBox87.TabIndex = 158;
+            this.groupBox87.TabStop = false;
+            this.groupBox87.Text = "Battle Skill 3";
+            // 
+            // cbxBladePoppiswapNArts3ID
+            // 
+            this.cbxBladePoppiswapNArts3ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts3ID.Location = new System.Drawing.Point(9, 41);
+            this.cbxBladePoppiswapNArts3ID.Name = "cbxBladePoppiswapNArts3ID";
+            this.cbxBladePoppiswapNArts3ID.Size = new System.Drawing.Size(119, 21);
+            this.cbxBladePoppiswapNArts3ID.TabIndex = 157;
+            this.cbxBladePoppiswapNArts3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts3ID_SelectionChangeCommitted);
+            // 
+            // cbxBladePoppiswapNArts3ItemType
+            // 
+            this.cbxBladePoppiswapNArts3ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts3ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapNArts3ItemType.Name = "cbxBladePoppiswapNArts3ItemType";
+            this.cbxBladePoppiswapNArts3ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts3ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapNArts3ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts3ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts3ItemSerial
+            // 
+            this.nudBladePoppiswapNArts3ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapNArts3ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts3ItemSerial.Name = "nudBladePoppiswapNArts3ItemSerial";
+            this.nudBladePoppiswapNArts3ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts3ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapNArts3ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts3ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts3ItemType
+            // 
+            this.nudBladePoppiswapNArts3ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapNArts3ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts3ItemType.Name = "nudBladePoppiswapNArts3ItemType";
+            this.nudBladePoppiswapNArts3ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts3ItemType.TabIndex = 3;
+            this.nudBladePoppiswapNArts3ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts3ItemType_ValueChanged);
+            // 
+            // groupBox88
+            // 
+            this.groupBox88.Controls.Add(this.hbxBladePoppiswapNArts3Unk_0x08);
+            this.groupBox88.Location = new System.Drawing.Point(537, 17);
+            this.groupBox88.Name = "groupBox88";
+            this.groupBox88.Size = new System.Drawing.Size(98, 67);
+            this.groupBox88.TabIndex = 156;
+            this.groupBox88.TabStop = false;
+            this.groupBox88.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapNArts3Unk_0x08
+            // 
+            this.hbxBladePoppiswapNArts3Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts3Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts3Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts3Unk_0x08.Name = "hbxBladePoppiswapNArts3Unk_0x08";
+            this.hbxBladePoppiswapNArts3Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts3Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts3Unk_0x08.TabIndex = 152;
+            // 
+            // label248
+            // 
+            this.label248.AutoSize = true;
+            this.label248.Location = new System.Drawing.Point(143, 66);
+            this.label248.Name = "label248";
+            this.label248.Size = new System.Drawing.Size(36, 13);
+            this.label248.TabIndex = 1;
+            this.label248.Text = "Serial:";
+            // 
+            // label249
+            // 
+            this.label249.AutoSize = true;
+            this.label249.Location = new System.Drawing.Point(143, 43);
+            this.label249.Name = "label249";
+            this.label249.Size = new System.Drawing.Size(34, 13);
+            this.label249.TabIndex = 0;
+            this.label249.Text = "Type:";
+            // 
+            // groupBox89
+            // 
+            this.groupBox89.Controls.Add(this.hbxBladePoppiswapNArts3Unk_0x06);
+            this.groupBox89.Location = new System.Drawing.Point(433, 17);
+            this.groupBox89.Name = "groupBox89";
+            this.groupBox89.Size = new System.Drawing.Size(98, 67);
+            this.groupBox89.TabIndex = 155;
+            this.groupBox89.TabStop = false;
+            this.groupBox89.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapNArts3Unk_0x06
+            // 
+            this.hbxBladePoppiswapNArts3Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts3Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts3Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts3Unk_0x06.Name = "hbxBladePoppiswapNArts3Unk_0x06";
+            this.hbxBladePoppiswapNArts3Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts3Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts3Unk_0x06.TabIndex = 152;
+            // 
+            // cbxBladePoppiswapNArts3ItemID
+            // 
+            this.cbxBladePoppiswapNArts3ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts3ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapNArts3ItemID.Name = "cbxBladePoppiswapNArts3ItemID";
+            this.cbxBladePoppiswapNArts3ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts3ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapNArts3ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts3ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts3ItemID
+            // 
+            this.nudBladePoppiswapNArts3ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapNArts3ItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts3ItemID.Name = "nudBladePoppiswapNArts3ItemID";
+            this.nudBladePoppiswapNArts3ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts3ItemID.TabIndex = 6;
+            this.nudBladePoppiswapNArts3ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts3ItemID_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts3RecastRev
+            // 
+            this.nudBladePoppiswapNArts3RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapNArts3RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts3RecastRev.Name = "nudBladePoppiswapNArts3RecastRev";
+            this.nudBladePoppiswapNArts3RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts3RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapNArts3RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts3RecastRev_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts3ID
+            // 
+            this.nudBladePoppiswapNArts3ID.Location = new System.Drawing.Point(72, 17);
+            this.nudBladePoppiswapNArts3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts3ID.Name = "nudBladePoppiswapNArts3ID";
+            this.nudBladePoppiswapNArts3ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts3ID.TabIndex = 4;
+            this.nudBladePoppiswapNArts3ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts3ID_ValueChanged);
+            // 
+            // label250
+            // 
+            this.label250.AutoSize = true;
+            this.label250.Location = new System.Drawing.Point(6, 67);
+            this.label250.Name = "label250";
+            this.label250.Size = new System.Drawing.Size(67, 13);
+            this.label250.TabIndex = 3;
+            this.label250.Text = "Recast Rev:";
+            // 
+            // label251
+            // 
+            this.label251.AutoSize = true;
+            this.label251.Location = new System.Drawing.Point(143, 19);
+            this.label251.Name = "label251";
+            this.label251.Size = new System.Drawing.Size(44, 13);
+            this.label251.TabIndex = 2;
+            this.label251.Text = "Item ID:";
+            // 
+            // label252
+            // 
+            this.label252.AutoSize = true;
+            this.label252.Location = new System.Drawing.Point(6, 19);
+            this.label252.Name = "label252";
+            this.label252.Size = new System.Drawing.Size(67, 13);
+            this.label252.TabIndex = 1;
+            this.label252.Text = "Enhance ID:";
+            // 
+            // groupBox84
+            // 
+            this.groupBox84.Controls.Add(this.cbxBladePoppiswapNArts2ID);
+            this.groupBox84.Controls.Add(this.cbxBladePoppiswapNArts2ItemType);
+            this.groupBox84.Controls.Add(this.nudBladePoppiswapNArts2ItemSerial);
+            this.groupBox84.Controls.Add(this.nudBladePoppiswapNArts2ItemType);
+            this.groupBox84.Controls.Add(this.groupBox85);
+            this.groupBox84.Controls.Add(this.label243);
+            this.groupBox84.Controls.Add(this.label244);
+            this.groupBox84.Controls.Add(this.groupBox86);
+            this.groupBox84.Controls.Add(this.cbxBladePoppiswapNArts2ItemID);
+            this.groupBox84.Controls.Add(this.nudBladePoppiswapNArts2ItemID);
+            this.groupBox84.Controls.Add(this.nudBladePoppiswapNArts2RecastRev);
+            this.groupBox84.Controls.Add(this.nudBladePoppiswapNArts2ID);
+            this.groupBox84.Controls.Add(this.label245);
+            this.groupBox84.Controls.Add(this.label246);
+            this.groupBox84.Controls.Add(this.label247);
+            this.groupBox84.Location = new System.Drawing.Point(6, 104);
+            this.groupBox84.Name = "groupBox84";
+            this.groupBox84.Size = new System.Drawing.Size(644, 92);
+            this.groupBox84.TabIndex = 158;
+            this.groupBox84.TabStop = false;
+            this.groupBox84.Text = "Battle Skill 2";
+            // 
+            // cbxBladePoppiswapNArts2ID
+            // 
+            this.cbxBladePoppiswapNArts2ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts2ID.Location = new System.Drawing.Point(9, 41);
+            this.cbxBladePoppiswapNArts2ID.Name = "cbxBladePoppiswapNArts2ID";
+            this.cbxBladePoppiswapNArts2ID.Size = new System.Drawing.Size(119, 21);
+            this.cbxBladePoppiswapNArts2ID.TabIndex = 157;
+            this.cbxBladePoppiswapNArts2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts2ID_SelectionChangeCommitted);
+            // 
+            // cbxBladePoppiswapNArts2ItemType
+            // 
+            this.cbxBladePoppiswapNArts2ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts2ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapNArts2ItemType.Name = "cbxBladePoppiswapNArts2ItemType";
+            this.cbxBladePoppiswapNArts2ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts2ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapNArts2ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts2ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts2ItemSerial
+            // 
+            this.nudBladePoppiswapNArts2ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapNArts2ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts2ItemSerial.Name = "nudBladePoppiswapNArts2ItemSerial";
+            this.nudBladePoppiswapNArts2ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts2ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapNArts2ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts2ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts2ItemType
+            // 
+            this.nudBladePoppiswapNArts2ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapNArts2ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts2ItemType.Name = "nudBladePoppiswapNArts2ItemType";
+            this.nudBladePoppiswapNArts2ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts2ItemType.TabIndex = 3;
+            this.nudBladePoppiswapNArts2ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts2ItemType_ValueChanged);
+            // 
+            // groupBox85
+            // 
+            this.groupBox85.Controls.Add(this.hbxBladePoppiswapNArts2Unk_0x08);
+            this.groupBox85.Location = new System.Drawing.Point(537, 17);
+            this.groupBox85.Name = "groupBox85";
+            this.groupBox85.Size = new System.Drawing.Size(98, 67);
+            this.groupBox85.TabIndex = 156;
+            this.groupBox85.TabStop = false;
+            this.groupBox85.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapNArts2Unk_0x08
+            // 
+            this.hbxBladePoppiswapNArts2Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts2Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts2Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts2Unk_0x08.Name = "hbxBladePoppiswapNArts2Unk_0x08";
+            this.hbxBladePoppiswapNArts2Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts2Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts2Unk_0x08.TabIndex = 152;
+            // 
+            // label243
+            // 
+            this.label243.AutoSize = true;
+            this.label243.Location = new System.Drawing.Point(143, 66);
+            this.label243.Name = "label243";
+            this.label243.Size = new System.Drawing.Size(36, 13);
+            this.label243.TabIndex = 1;
+            this.label243.Text = "Serial:";
+            // 
+            // label244
+            // 
+            this.label244.AutoSize = true;
+            this.label244.Location = new System.Drawing.Point(143, 43);
+            this.label244.Name = "label244";
+            this.label244.Size = new System.Drawing.Size(34, 13);
+            this.label244.TabIndex = 0;
+            this.label244.Text = "Type:";
+            // 
+            // groupBox86
+            // 
+            this.groupBox86.Controls.Add(this.hbxBladePoppiswapNArts2Unk_0x06);
+            this.groupBox86.Location = new System.Drawing.Point(433, 17);
+            this.groupBox86.Name = "groupBox86";
+            this.groupBox86.Size = new System.Drawing.Size(98, 67);
+            this.groupBox86.TabIndex = 155;
+            this.groupBox86.TabStop = false;
+            this.groupBox86.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapNArts2Unk_0x06
+            // 
+            this.hbxBladePoppiswapNArts2Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts2Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts2Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts2Unk_0x06.Name = "hbxBladePoppiswapNArts2Unk_0x06";
+            this.hbxBladePoppiswapNArts2Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts2Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts2Unk_0x06.TabIndex = 152;
+            // 
+            // cbxBladePoppiswapNArts2ItemID
+            // 
+            this.cbxBladePoppiswapNArts2ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts2ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapNArts2ItemID.Name = "cbxBladePoppiswapNArts2ItemID";
+            this.cbxBladePoppiswapNArts2ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts2ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapNArts2ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts2ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts2ItemID
+            // 
+            this.nudBladePoppiswapNArts2ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapNArts2ItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts2ItemID.Name = "nudBladePoppiswapNArts2ItemID";
+            this.nudBladePoppiswapNArts2ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts2ItemID.TabIndex = 6;
+            this.nudBladePoppiswapNArts2ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts2ItemID_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts2RecastRev
+            // 
+            this.nudBladePoppiswapNArts2RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapNArts2RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts2RecastRev.Name = "nudBladePoppiswapNArts2RecastRev";
+            this.nudBladePoppiswapNArts2RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts2RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapNArts2RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts2RecastRev_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts2ID
+            // 
+            this.nudBladePoppiswapNArts2ID.Location = new System.Drawing.Point(72, 17);
+            this.nudBladePoppiswapNArts2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts2ID.Name = "nudBladePoppiswapNArts2ID";
+            this.nudBladePoppiswapNArts2ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts2ID.TabIndex = 4;
+            this.nudBladePoppiswapNArts2ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts2ID_ValueChanged);
+            // 
+            // label245
+            // 
+            this.label245.AutoSize = true;
+            this.label245.Location = new System.Drawing.Point(6, 67);
+            this.label245.Name = "label245";
+            this.label245.Size = new System.Drawing.Size(67, 13);
+            this.label245.TabIndex = 3;
+            this.label245.Text = "Recast Rev:";
+            // 
+            // label246
+            // 
+            this.label246.AutoSize = true;
+            this.label246.Location = new System.Drawing.Point(143, 19);
+            this.label246.Name = "label246";
+            this.label246.Size = new System.Drawing.Size(44, 13);
+            this.label246.TabIndex = 2;
+            this.label246.Text = "Item ID:";
+            // 
+            // label247
+            // 
+            this.label247.AutoSize = true;
+            this.label247.Location = new System.Drawing.Point(6, 19);
+            this.label247.Name = "label247";
+            this.label247.Size = new System.Drawing.Size(67, 13);
+            this.label247.TabIndex = 1;
+            this.label247.Text = "Enhance ID:";
+            // 
+            // groupBox81
+            // 
+            this.groupBox81.Controls.Add(this.cbxBladePoppiswapNArts1ID);
+            this.groupBox81.Controls.Add(this.cbxBladePoppiswapNArts1ItemType);
+            this.groupBox81.Controls.Add(this.nudBladePoppiswapNArts1ItemSerial);
+            this.groupBox81.Controls.Add(this.nudBladePoppiswapNArts1ItemType);
+            this.groupBox81.Controls.Add(this.groupBox82);
+            this.groupBox81.Controls.Add(this.label238);
+            this.groupBox81.Controls.Add(this.label239);
+            this.groupBox81.Controls.Add(this.groupBox83);
+            this.groupBox81.Controls.Add(this.cbxBladePoppiswapNArts1ItemID);
+            this.groupBox81.Controls.Add(this.nudBladePoppiswapNArts1ItemID);
+            this.groupBox81.Controls.Add(this.nudBladePoppiswapNArts1RecastRev);
+            this.groupBox81.Controls.Add(this.nudBladePoppiswapNArts1ID);
+            this.groupBox81.Controls.Add(this.label240);
+            this.groupBox81.Controls.Add(this.label241);
+            this.groupBox81.Controls.Add(this.label242);
+            this.groupBox81.Location = new System.Drawing.Point(6, 6);
+            this.groupBox81.Name = "groupBox81";
+            this.groupBox81.Size = new System.Drawing.Size(644, 92);
+            this.groupBox81.TabIndex = 17;
+            this.groupBox81.TabStop = false;
+            this.groupBox81.Text = "Battle Skill 1";
+            // 
+            // cbxBladePoppiswapNArts1ID
+            // 
+            this.cbxBladePoppiswapNArts1ID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts1ID.Location = new System.Drawing.Point(9, 41);
+            this.cbxBladePoppiswapNArts1ID.Name = "cbxBladePoppiswapNArts1ID";
+            this.cbxBladePoppiswapNArts1ID.Size = new System.Drawing.Size(119, 21);
+            this.cbxBladePoppiswapNArts1ID.TabIndex = 157;
+            this.cbxBladePoppiswapNArts1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts1ID_SelectionChangeCommitted);
+            // 
+            // cbxBladePoppiswapNArts1ItemType
+            // 
+            this.cbxBladePoppiswapNArts1ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts1ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapNArts1ItemType.Name = "cbxBladePoppiswapNArts1ItemType";
+            this.cbxBladePoppiswapNArts1ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts1ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapNArts1ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts1ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts1ItemSerial
+            // 
+            this.nudBladePoppiswapNArts1ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapNArts1ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts1ItemSerial.Name = "nudBladePoppiswapNArts1ItemSerial";
+            this.nudBladePoppiswapNArts1ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts1ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapNArts1ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts1ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts1ItemType
+            // 
+            this.nudBladePoppiswapNArts1ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapNArts1ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts1ItemType.Name = "nudBladePoppiswapNArts1ItemType";
+            this.nudBladePoppiswapNArts1ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts1ItemType.TabIndex = 3;
+            this.nudBladePoppiswapNArts1ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts1ItemType_ValueChanged);
+            // 
+            // groupBox82
+            // 
+            this.groupBox82.Controls.Add(this.hbxBladePoppiswapNArts1Unk_0x08);
+            this.groupBox82.Location = new System.Drawing.Point(537, 17);
+            this.groupBox82.Name = "groupBox82";
+            this.groupBox82.Size = new System.Drawing.Size(98, 67);
+            this.groupBox82.TabIndex = 156;
+            this.groupBox82.TabStop = false;
+            this.groupBox82.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapNArts1Unk_0x08
+            // 
+            this.hbxBladePoppiswapNArts1Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts1Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts1Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts1Unk_0x08.Name = "hbxBladePoppiswapNArts1Unk_0x08";
+            this.hbxBladePoppiswapNArts1Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts1Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts1Unk_0x08.TabIndex = 152;
+            // 
+            // label238
+            // 
+            this.label238.AutoSize = true;
+            this.label238.Location = new System.Drawing.Point(143, 66);
+            this.label238.Name = "label238";
+            this.label238.Size = new System.Drawing.Size(36, 13);
+            this.label238.TabIndex = 1;
+            this.label238.Text = "Serial:";
+            // 
+            // label239
+            // 
+            this.label239.AutoSize = true;
+            this.label239.Location = new System.Drawing.Point(143, 43);
+            this.label239.Name = "label239";
+            this.label239.Size = new System.Drawing.Size(34, 13);
+            this.label239.TabIndex = 0;
+            this.label239.Text = "Type:";
+            // 
+            // groupBox83
+            // 
+            this.groupBox83.Controls.Add(this.hbxBladePoppiswapNArts1Unk_0x06);
+            this.groupBox83.Location = new System.Drawing.Point(433, 17);
+            this.groupBox83.Name = "groupBox83";
+            this.groupBox83.Size = new System.Drawing.Size(98, 67);
+            this.groupBox83.TabIndex = 155;
+            this.groupBox83.TabStop = false;
+            this.groupBox83.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapNArts1Unk_0x06
+            // 
+            this.hbxBladePoppiswapNArts1Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapNArts1Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapNArts1Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapNArts1Unk_0x06.Name = "hbxBladePoppiswapNArts1Unk_0x06";
+            this.hbxBladePoppiswapNArts1Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapNArts1Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapNArts1Unk_0x06.TabIndex = 152;
+            // 
+            // cbxBladePoppiswapNArts1ItemID
+            // 
+            this.cbxBladePoppiswapNArts1ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapNArts1ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapNArts1ItemID.Name = "cbxBladePoppiswapNArts1ItemID";
+            this.cbxBladePoppiswapNArts1ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapNArts1ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapNArts1ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapNArts1ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapNArts1ItemID
+            // 
+            this.nudBladePoppiswapNArts1ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapNArts1ItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts1ItemID.Name = "nudBladePoppiswapNArts1ItemID";
+            this.nudBladePoppiswapNArts1ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapNArts1ItemID.TabIndex = 6;
+            this.nudBladePoppiswapNArts1ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts1ItemID_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts1RecastRev
+            // 
+            this.nudBladePoppiswapNArts1RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapNArts1RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts1RecastRev.Name = "nudBladePoppiswapNArts1RecastRev";
+            this.nudBladePoppiswapNArts1RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts1RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapNArts1RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts1RecastRev_ValueChanged);
+            // 
+            // nudBladePoppiswapNArts1ID
+            // 
+            this.nudBladePoppiswapNArts1ID.Location = new System.Drawing.Point(72, 17);
+            this.nudBladePoppiswapNArts1ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapNArts1ID.Name = "nudBladePoppiswapNArts1ID";
+            this.nudBladePoppiswapNArts1ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapNArts1ID.TabIndex = 4;
+            this.nudBladePoppiswapNArts1ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapNArts1ID_ValueChanged);
+            // 
+            // label240
+            // 
+            this.label240.AutoSize = true;
+            this.label240.Location = new System.Drawing.Point(6, 67);
+            this.label240.Name = "label240";
+            this.label240.Size = new System.Drawing.Size(67, 13);
+            this.label240.TabIndex = 3;
+            this.label240.Text = "Recast Rev:";
+            // 
+            // label241
+            // 
+            this.label241.AutoSize = true;
+            this.label241.Location = new System.Drawing.Point(143, 19);
+            this.label241.Name = "label241";
+            this.label241.Size = new System.Drawing.Size(44, 13);
+            this.label241.TabIndex = 2;
+            this.label241.Text = "Item ID:";
+            // 
+            // label242
+            // 
+            this.label242.AutoSize = true;
+            this.label242.Location = new System.Drawing.Point(6, 19);
+            this.label242.Name = "label242";
+            this.label242.Size = new System.Drawing.Size(67, 13);
+            this.label242.TabIndex = 1;
+            this.label242.Text = "Enhance ID:";
+            // 
+            // tabBladePoppiswapMiscSpecialsEnhancingRAM
+            // 
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Controls.Add(this.groupBox78);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Controls.Add(this.groupBox75);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Controls.Add(this.groupBox27);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Location = new System.Drawing.Point(4, 22);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Name = "tabBladePoppiswapMiscSpecialsEnhancingRAM";
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Size = new System.Drawing.Size(934, 517);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.TabIndex = 1;
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Text = "Specials Enhancing RAM";
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.UseVisualStyleBackColor = true;
+            // 
+            // groupBox78
+            // 
+            this.groupBox78.Controls.Add(this.cbxBladePoppiswapBArtsEnhance3ItemType);
+            this.groupBox78.Controls.Add(this.nudBladePoppiswapBArtsEnhance3ItemSerial);
+            this.groupBox78.Controls.Add(this.nudBladePoppiswapBArtsEnhance3ItemType);
+            this.groupBox78.Controls.Add(this.groupBox79);
+            this.groupBox78.Controls.Add(this.groupBox80);
+            this.groupBox78.Controls.Add(this.label95);
+            this.groupBox78.Controls.Add(this.label96);
+            this.groupBox78.Controls.Add(this.cbxBladePoppiswapBArtsEnhance3ItemID);
+            this.groupBox78.Controls.Add(this.nudBladePoppiswapBArtsEnhance3ItemID);
+            this.groupBox78.Controls.Add(this.nudBladePoppiswapBArtsEnhance3RecastRev);
+            this.groupBox78.Controls.Add(this.nudBladePoppiswapBArtsEnhance3ID);
+            this.groupBox78.Controls.Add(this.label97);
+            this.groupBox78.Controls.Add(this.label98);
+            this.groupBox78.Controls.Add(this.label237);
+            this.groupBox78.Controls.Add(this.chkBladePoppiswapSpecials3Enabled);
+            this.groupBox78.Location = new System.Drawing.Point(6, 202);
+            this.groupBox78.Name = "groupBox78";
+            this.groupBox78.Size = new System.Drawing.Size(644, 92);
+            this.groupBox78.TabIndex = 157;
+            this.groupBox78.TabStop = false;
+            this.groupBox78.Text = "Blade Special Lv3";
+            // 
+            // cbxBladePoppiswapBArtsEnhance3ItemType
+            // 
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.Name = "cbxBladePoppiswapBArtsEnhance3ItemType";
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapBArtsEnhance3ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance3ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance3ItemSerial
+            // 
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.Name = "nudBladePoppiswapBArtsEnhance3ItemSerial";
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapBArtsEnhance3ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance3ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance3ItemType
+            // 
+            this.nudBladePoppiswapBArtsEnhance3ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapBArtsEnhance3ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance3ItemType.Name = "nudBladePoppiswapBArtsEnhance3ItemType";
+            this.nudBladePoppiswapBArtsEnhance3ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance3ItemType.TabIndex = 3;
+            this.nudBladePoppiswapBArtsEnhance3ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance3ItemType_ValueChanged);
+            // 
+            // groupBox79
+            // 
+            this.groupBox79.Controls.Add(this.hbxBladePoppiswapBArtsEnhance3Unk_0x08);
+            this.groupBox79.Location = new System.Drawing.Point(537, 17);
+            this.groupBox79.Name = "groupBox79";
+            this.groupBox79.Size = new System.Drawing.Size(98, 67);
+            this.groupBox79.TabIndex = 156;
+            this.groupBox79.TabStop = false;
+            this.groupBox79.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapBArtsEnhance3Unk_0x08
+            // 
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.Name = "hbxBladePoppiswapBArtsEnhance3Unk_0x08";
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x08.TabIndex = 152;
+            // 
+            // groupBox80
+            // 
+            this.groupBox80.Controls.Add(this.hbxBladePoppiswapBArtsEnhance3Unk_0x06);
+            this.groupBox80.Location = new System.Drawing.Point(433, 17);
+            this.groupBox80.Name = "groupBox80";
+            this.groupBox80.Size = new System.Drawing.Size(98, 67);
+            this.groupBox80.TabIndex = 155;
+            this.groupBox80.TabStop = false;
+            this.groupBox80.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapBArtsEnhance3Unk_0x06
+            // 
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.Name = "hbxBladePoppiswapBArtsEnhance3Unk_0x06";
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance3Unk_0x06.TabIndex = 152;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(143, 66);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(36, 13);
+            this.label95.TabIndex = 1;
+            this.label95.Text = "Serial:";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(143, 43);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(34, 13);
+            this.label96.TabIndex = 0;
+            this.label96.Text = "Type:";
+            // 
+            // cbxBladePoppiswapBArtsEnhance3ItemID
+            // 
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.Name = "cbxBladePoppiswapBArtsEnhance3ItemID";
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapBArtsEnhance3ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance3ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance3ItemID
+            // 
+            this.nudBladePoppiswapBArtsEnhance3ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapBArtsEnhance3ItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance3ItemID.Name = "nudBladePoppiswapBArtsEnhance3ItemID";
+            this.nudBladePoppiswapBArtsEnhance3ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance3ItemID.TabIndex = 6;
+            this.nudBladePoppiswapBArtsEnhance3ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance3ItemID_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance3RecastRev
+            // 
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.Name = "nudBladePoppiswapBArtsEnhance3RecastRev";
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapBArtsEnhance3RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance3RecastRev_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance3ID
+            // 
+            this.nudBladePoppiswapBArtsEnhance3ID.Location = new System.Drawing.Point(72, 39);
+            this.nudBladePoppiswapBArtsEnhance3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance3ID.Name = "nudBladePoppiswapBArtsEnhance3ID";
+            this.nudBladePoppiswapBArtsEnhance3ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance3ID.TabIndex = 4;
+            this.nudBladePoppiswapBArtsEnhance3ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance3ID_ValueChanged);
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(6, 67);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(67, 13);
+            this.label97.TabIndex = 3;
+            this.label97.Text = "Recast Rev:";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(143, 19);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(44, 13);
+            this.label98.TabIndex = 2;
+            this.label98.Text = "Item ID:";
+            // 
+            // label237
+            // 
+            this.label237.AutoSize = true;
+            this.label237.Location = new System.Drawing.Point(6, 41);
+            this.label237.Name = "label237";
+            this.label237.Size = new System.Drawing.Size(67, 13);
+            this.label237.TabIndex = 1;
+            this.label237.Text = "Enhance ID:";
+            // 
+            // chkBladePoppiswapSpecials3Enabled
+            // 
+            this.chkBladePoppiswapSpecials3Enabled.AutoSize = true;
+            this.chkBladePoppiswapSpecials3Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSpecials3Enabled.Location = new System.Drawing.Point(6, 18);
+            this.chkBladePoppiswapSpecials3Enabled.Name = "chkBladePoppiswapSpecials3Enabled";
+            this.chkBladePoppiswapSpecials3Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSpecials3Enabled.TabIndex = 7;
+            this.chkBladePoppiswapSpecials3Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSpecials3Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSpecials3Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials3Enabled_CheckedChanged);
+            // 
+            // groupBox75
+            // 
+            this.groupBox75.Controls.Add(this.cbxBladePoppiswapBArtsEnhance2ItemType);
+            this.groupBox75.Controls.Add(this.nudBladePoppiswapBArtsEnhance2ItemSerial);
+            this.groupBox75.Controls.Add(this.nudBladePoppiswapBArtsEnhance2ItemType);
+            this.groupBox75.Controls.Add(this.groupBox77);
+            this.groupBox75.Controls.Add(this.label81);
+            this.groupBox75.Controls.Add(this.groupBox76);
+            this.groupBox75.Controls.Add(this.label86);
+            this.groupBox75.Controls.Add(this.cbxBladePoppiswapBArtsEnhance2ItemID);
+            this.groupBox75.Controls.Add(this.nudBladePoppiswapBArtsEnhance2ItemID);
+            this.groupBox75.Controls.Add(this.nudBladePoppiswapBArtsEnhance2RecastRev);
+            this.groupBox75.Controls.Add(this.nudBladePoppiswapBArtsEnhance2ID);
+            this.groupBox75.Controls.Add(this.label90);
+            this.groupBox75.Controls.Add(this.label93);
+            this.groupBox75.Controls.Add(this.label94);
+            this.groupBox75.Controls.Add(this.chkBladePoppiswapSpecials2Enabled);
+            this.groupBox75.Location = new System.Drawing.Point(6, 104);
+            this.groupBox75.Name = "groupBox75";
+            this.groupBox75.Size = new System.Drawing.Size(644, 92);
+            this.groupBox75.TabIndex = 157;
+            this.groupBox75.TabStop = false;
+            this.groupBox75.Text = "Blade Special Lv2";
+            // 
+            // cbxBladePoppiswapBArtsEnhance2ItemType
+            // 
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.Name = "cbxBladePoppiswapBArtsEnhance2ItemType";
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapBArtsEnhance2ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance2ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance2ItemSerial
+            // 
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.Name = "nudBladePoppiswapBArtsEnhance2ItemSerial";
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapBArtsEnhance2ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance2ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance2ItemType
+            // 
+            this.nudBladePoppiswapBArtsEnhance2ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapBArtsEnhance2ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance2ItemType.Name = "nudBladePoppiswapBArtsEnhance2ItemType";
+            this.nudBladePoppiswapBArtsEnhance2ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance2ItemType.TabIndex = 3;
+            this.nudBladePoppiswapBArtsEnhance2ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance2ItemType_ValueChanged);
+            // 
+            // groupBox77
+            // 
+            this.groupBox77.Controls.Add(this.hbxBladePoppiswapBArtsEnhance2Unk_0x06);
+            this.groupBox77.Location = new System.Drawing.Point(433, 17);
+            this.groupBox77.Name = "groupBox77";
+            this.groupBox77.Size = new System.Drawing.Size(98, 67);
+            this.groupBox77.TabIndex = 155;
+            this.groupBox77.TabStop = false;
+            this.groupBox77.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapBArtsEnhance2Unk_0x06
+            // 
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.Name = "hbxBladePoppiswapBArtsEnhance2Unk_0x06";
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x06.TabIndex = 152;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(143, 66);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(36, 13);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "Serial:";
+            // 
+            // groupBox76
+            // 
+            this.groupBox76.Controls.Add(this.hbxBladePoppiswapBArtsEnhance2Unk_0x08);
+            this.groupBox76.Location = new System.Drawing.Point(537, 17);
+            this.groupBox76.Name = "groupBox76";
+            this.groupBox76.Size = new System.Drawing.Size(98, 67);
+            this.groupBox76.TabIndex = 156;
+            this.groupBox76.TabStop = false;
+            this.groupBox76.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapBArtsEnhance2Unk_0x08
+            // 
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.Name = "hbxBladePoppiswapBArtsEnhance2Unk_0x08";
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance2Unk_0x08.TabIndex = 152;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(143, 43);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(34, 13);
+            this.label86.TabIndex = 0;
+            this.label86.Text = "Type:";
+            // 
+            // cbxBladePoppiswapBArtsEnhance2ItemID
+            // 
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.Name = "cbxBladePoppiswapBArtsEnhance2ItemID";
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapBArtsEnhance2ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance2ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance2ItemID
+            // 
+            this.nudBladePoppiswapBArtsEnhance2ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapBArtsEnhance2ItemID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance2ItemID.Name = "nudBladePoppiswapBArtsEnhance2ItemID";
+            this.nudBladePoppiswapBArtsEnhance2ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance2ItemID.TabIndex = 6;
+            this.nudBladePoppiswapBArtsEnhance2ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance2ItemID_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance2RecastRev
+            // 
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.Name = "nudBladePoppiswapBArtsEnhance2RecastRev";
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapBArtsEnhance2RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance2RecastRev_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance2ID
+            // 
+            this.nudBladePoppiswapBArtsEnhance2ID.Location = new System.Drawing.Point(72, 39);
+            this.nudBladePoppiswapBArtsEnhance2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance2ID.Name = "nudBladePoppiswapBArtsEnhance2ID";
+            this.nudBladePoppiswapBArtsEnhance2ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance2ID.TabIndex = 4;
+            this.nudBladePoppiswapBArtsEnhance2ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance2ID_ValueChanged);
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(6, 67);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(67, 13);
+            this.label90.TabIndex = 3;
+            this.label90.Text = "Recast Rev:";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(143, 19);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(44, 13);
+            this.label93.TabIndex = 2;
+            this.label93.Text = "Item ID:";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(6, 41);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(67, 13);
+            this.label94.TabIndex = 1;
+            this.label94.Text = "Enhance ID:";
+            // 
+            // chkBladePoppiswapSpecials2Enabled
+            // 
+            this.chkBladePoppiswapSpecials2Enabled.AutoSize = true;
+            this.chkBladePoppiswapSpecials2Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSpecials2Enabled.Location = new System.Drawing.Point(6, 18);
+            this.chkBladePoppiswapSpecials2Enabled.Name = "chkBladePoppiswapSpecials2Enabled";
+            this.chkBladePoppiswapSpecials2Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSpecials2Enabled.TabIndex = 7;
+            this.chkBladePoppiswapSpecials2Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSpecials2Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSpecials2Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials2Enabled_CheckedChanged);
+            // 
             // groupBox27
             // 
-            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhanceItemID);
-            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhanceRecastRev);
-            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhanceID);
+            this.groupBox27.Controls.Add(this.cbxBladePoppiswapBArtsEnhance1ItemType);
+            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhance1ItemSerial);
+            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhance1ItemType);
+            this.groupBox27.Controls.Add(this.groupBox74);
+            this.groupBox27.Controls.Add(this.label87);
+            this.groupBox27.Controls.Add(this.label88);
+            this.groupBox27.Controls.Add(this.groupBox73);
+            this.groupBox27.Controls.Add(this.cbxBladePoppiswapBArtsEnhance1ItemID);
+            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhance1ItemID);
+            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhance1RecastRev);
+            this.groupBox27.Controls.Add(this.nudBladePoppiswapBArtsEnhance1ID);
             this.groupBox27.Controls.Add(this.label120);
             this.groupBox27.Controls.Add(this.label119);
             this.groupBox27.Controls.Add(this.label114);
-            this.groupBox27.Controls.Add(this.cbxBladePoppiswapBArts);
-            this.groupBox27.Location = new System.Drawing.Point(218, 304);
+            this.groupBox27.Controls.Add(this.chkBladePoppiswapSpecials1Enabled);
+            this.groupBox27.Location = new System.Drawing.Point(6, 6);
             this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Size = new System.Drawing.Size(200, 136);
+            this.groupBox27.Size = new System.Drawing.Size(644, 92);
             this.groupBox27.TabIndex = 16;
             this.groupBox27.TabStop = false;
-            this.groupBox27.Text = "Specials Enhance:";
+            this.groupBox27.Text = "Blade Special Lv1";
             // 
-            // nudBladePoppiswapBArtsEnhanceItemID
+            // cbxBladePoppiswapBArtsEnhance1ItemType
             // 
-            this.nudBladePoppiswapBArtsEnhanceItemID.Location = new System.Drawing.Point(74, 95);
-            this.nudBladePoppiswapBArtsEnhanceItemID.Maximum = new decimal(new int[] {
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.Location = new System.Drawing.Point(253, 41);
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.Name = "cbxBladePoppiswapBArtsEnhance1ItemType";
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.TabIndex = 21;
+            this.cbxBladePoppiswapBArtsEnhance1ItemType.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance1ItemType_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance1ItemSerial
+            // 
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.Location = new System.Drawing.Point(193, 65);
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.Name = "nudBladePoppiswapBArtsEnhance1ItemSerial";
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.TabIndex = 2;
+            this.nudBladePoppiswapBArtsEnhance1ItemSerial.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance1ItemSerial_ValueChanged);
+            // 
+            // nudBladePoppiswapBArtsEnhance1ItemType
+            // 
+            this.nudBladePoppiswapBArtsEnhance1ItemType.Location = new System.Drawing.Point(193, 41);
+            this.nudBladePoppiswapBArtsEnhance1ItemType.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudBladePoppiswapBArtsEnhance1ItemType.Name = "nudBladePoppiswapBArtsEnhance1ItemType";
+            this.nudBladePoppiswapBArtsEnhance1ItemType.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance1ItemType.TabIndex = 3;
+            this.nudBladePoppiswapBArtsEnhance1ItemType.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance1ItemType_ValueChanged);
+            // 
+            // groupBox74
+            // 
+            this.groupBox74.Controls.Add(this.hbxBladePoppiswapBArtsEnhance1Unk_0x08);
+            this.groupBox74.Location = new System.Drawing.Point(537, 17);
+            this.groupBox74.Name = "groupBox74";
+            this.groupBox74.Size = new System.Drawing.Size(98, 67);
+            this.groupBox74.TabIndex = 156;
+            this.groupBox74.TabStop = false;
+            this.groupBox74.Text = "Unk_0x08";
+            // 
+            // hbxBladePoppiswapBArtsEnhance1Unk_0x08
+            // 
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.Name = "hbxBladePoppiswapBArtsEnhance1Unk_0x08";
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x08.TabIndex = 152;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(143, 66);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(36, 13);
+            this.label87.TabIndex = 1;
+            this.label87.Text = "Serial:";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(143, 43);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(34, 13);
+            this.label88.TabIndex = 0;
+            this.label88.Text = "Type:";
+            // 
+            // groupBox73
+            // 
+            this.groupBox73.Controls.Add(this.hbxBladePoppiswapBArtsEnhance1Unk_0x06);
+            this.groupBox73.Location = new System.Drawing.Point(433, 17);
+            this.groupBox73.Name = "groupBox73";
+            this.groupBox73.Size = new System.Drawing.Size(98, 67);
+            this.groupBox73.TabIndex = 155;
+            this.groupBox73.TabStop = false;
+            this.groupBox73.Text = "Unk_0x06";
+            // 
+            // hbxBladePoppiswapBArtsEnhance1Unk_0x06
+            // 
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.ColumnInfoVisible = true;
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.Name = "hbxBladePoppiswapBArtsEnhance1Unk_0x06";
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.Size = new System.Drawing.Size(86, 41);
+            this.hbxBladePoppiswapBArtsEnhance1Unk_0x06.TabIndex = 152;
+            // 
+            // cbxBladePoppiswapBArtsEnhance1ItemID
+            // 
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.FormattingEnabled = true;
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.Location = new System.Drawing.Point(253, 17);
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.Name = "cbxBladePoppiswapBArtsEnhance1ItemID";
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.Size = new System.Drawing.Size(174, 21);
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.TabIndex = 7;
+            this.cbxBladePoppiswapBArtsEnhance1ItemID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladePoppiswapBArtsEnhance1ItemID_SelectionChangeCommitted);
+            // 
+            // nudBladePoppiswapBArtsEnhance1ItemID
+            // 
+            this.nudBladePoppiswapBArtsEnhance1ItemID.Location = new System.Drawing.Point(193, 17);
+            this.nudBladePoppiswapBArtsEnhance1ItemID.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.nudBladePoppiswapBArtsEnhanceItemID.Name = "nudBladePoppiswapBArtsEnhanceItemID";
-            this.nudBladePoppiswapBArtsEnhanceItemID.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapBArtsEnhanceItemID.TabIndex = 6;
+            this.nudBladePoppiswapBArtsEnhance1ItemID.Name = "nudBladePoppiswapBArtsEnhance1ItemID";
+            this.nudBladePoppiswapBArtsEnhance1ItemID.Size = new System.Drawing.Size(54, 20);
+            this.nudBladePoppiswapBArtsEnhance1ItemID.TabIndex = 6;
+            this.nudBladePoppiswapBArtsEnhance1ItemID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance1ItemID_ValueChanged);
             // 
-            // nudBladePoppiswapBArtsEnhanceRecastRev
+            // nudBladePoppiswapBArtsEnhance1RecastRev
             // 
-            this.nudBladePoppiswapBArtsEnhanceRecastRev.Location = new System.Drawing.Point(73, 73);
-            this.nudBladePoppiswapBArtsEnhanceRecastRev.Maximum = new decimal(new int[] {
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.Location = new System.Drawing.Point(72, 65);
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.nudBladePoppiswapBArtsEnhanceRecastRev.Name = "nudBladePoppiswapBArtsEnhanceRecastRev";
-            this.nudBladePoppiswapBArtsEnhanceRecastRev.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapBArtsEnhanceRecastRev.TabIndex = 5;
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.Name = "nudBladePoppiswapBArtsEnhance1RecastRev";
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.TabIndex = 5;
+            this.nudBladePoppiswapBArtsEnhance1RecastRev.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance1RecastRev_ValueChanged);
             // 
-            // nudBladePoppiswapBArtsEnhanceID
+            // nudBladePoppiswapBArtsEnhance1ID
             // 
-            this.nudBladePoppiswapBArtsEnhanceID.Location = new System.Drawing.Point(73, 50);
-            this.nudBladePoppiswapBArtsEnhanceID.Maximum = new decimal(new int[] {
+            this.nudBladePoppiswapBArtsEnhance1ID.Location = new System.Drawing.Point(72, 39);
+            this.nudBladePoppiswapBArtsEnhance1ID.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.nudBladePoppiswapBArtsEnhanceID.Name = "nudBladePoppiswapBArtsEnhanceID";
-            this.nudBladePoppiswapBArtsEnhanceID.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapBArtsEnhanceID.TabIndex = 4;
+            this.nudBladePoppiswapBArtsEnhance1ID.Name = "nudBladePoppiswapBArtsEnhance1ID";
+            this.nudBladePoppiswapBArtsEnhance1ID.Size = new System.Drawing.Size(56, 20);
+            this.nudBladePoppiswapBArtsEnhance1ID.TabIndex = 4;
+            this.nudBladePoppiswapBArtsEnhance1ID.ValueChanged += new System.EventHandler(this.nudBladePoppiswapBArtsEnhance1ID_ValueChanged);
             // 
             // label120
             // 
             this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(7, 75);
+            this.label120.Location = new System.Drawing.Point(6, 67);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(67, 13);
             this.label120.TabIndex = 3;
@@ -7647,7 +10003,7 @@
             // label119
             // 
             this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(7, 97);
+            this.label119.Location = new System.Drawing.Point(143, 19);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(44, 13);
             this.label119.TabIndex = 2;
@@ -7656,170 +10012,23 @@
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(7, 52);
+            this.label114.Location = new System.Drawing.Point(6, 41);
             this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(21, 13);
+            this.label114.Size = new System.Drawing.Size(67, 13);
             this.label114.TabIndex = 1;
-            this.label114.Text = "ID:";
-            // 
-            // cbxBladePoppiswapBArts
-            // 
-            this.cbxBladePoppiswapBArts.FormattingEnabled = true;
-            this.cbxBladePoppiswapBArts.Location = new System.Drawing.Point(73, 19);
-            this.cbxBladePoppiswapBArts.Name = "cbxBladePoppiswapBArts";
-            this.cbxBladePoppiswapBArts.Size = new System.Drawing.Size(121, 21);
-            this.cbxBladePoppiswapBArts.TabIndex = 0;
-            this.cbxBladePoppiswapBArts.SelectedIndexChanged += new System.EventHandler(this.cbxBladePoppiswapBArts_SelectedIndexChanged);
-            // 
-            // nudBladePoppiswapRoleItem
-            // 
-            this.nudBladePoppiswapRoleItem.Location = new System.Drawing.Point(158, 39);
-            this.nudBladePoppiswapRoleItem.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladePoppiswapRoleItem.Name = "nudBladePoppiswapRoleItem";
-            this.nudBladePoppiswapRoleItem.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapRoleItem.TabIndex = 15;
-            // 
-            // nudBladePoppiswapAtrItem
-            // 
-            this.nudBladePoppiswapAtrItem.Location = new System.Drawing.Point(158, 60);
-            this.nudBladePoppiswapAtrItem.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladePoppiswapAtrItem.Name = "nudBladePoppiswapAtrItem";
-            this.nudBladePoppiswapAtrItem.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapAtrItem.TabIndex = 14;
-            // 
-            // nudBladePoppiswapPowerCapacity
-            // 
-            this.nudBladePoppiswapPowerCapacity.Location = new System.Drawing.Point(158, 13);
-            this.nudBladePoppiswapPowerCapacity.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladePoppiswapPowerCapacity.Name = "nudBladePoppiswapPowerCapacity";
-            this.nudBladePoppiswapPowerCapacity.Size = new System.Drawing.Size(120, 20);
-            this.nudBladePoppiswapPowerCapacity.TabIndex = 13;
-            // 
-            // chkBladePoppiswapSkill2Enabled
-            // 
-            this.chkBladePoppiswapSkill2Enabled.AutoSize = true;
-            this.chkBladePoppiswapSkill2Enabled.Location = new System.Drawing.Point(365, 131);
-            this.chkBladePoppiswapSkill2Enabled.Name = "chkBladePoppiswapSkill2Enabled";
-            this.chkBladePoppiswapSkill2Enabled.Size = new System.Drawing.Size(54, 17);
-            this.chkBladePoppiswapSkill2Enabled.TabIndex = 12;
-            this.chkBladePoppiswapSkill2Enabled.Text = "Skill 3";
-            this.chkBladePoppiswapSkill2Enabled.UseVisualStyleBackColor = true;
-            // 
-            // chkBladePoppiswapSkill1Enabled
-            // 
-            this.chkBladePoppiswapSkill1Enabled.AutoSize = true;
-            this.chkBladePoppiswapSkill1Enabled.Location = new System.Drawing.Point(365, 108);
-            this.chkBladePoppiswapSkill1Enabled.Name = "chkBladePoppiswapSkill1Enabled";
-            this.chkBladePoppiswapSkill1Enabled.Size = new System.Drawing.Size(54, 17);
-            this.chkBladePoppiswapSkill1Enabled.TabIndex = 11;
-            this.chkBladePoppiswapSkill1Enabled.Text = "Skill 2";
-            this.chkBladePoppiswapSkill1Enabled.UseVisualStyleBackColor = true;
-            // 
-            // chkBladePoppiswapSkill0Enabled
-            // 
-            this.chkBladePoppiswapSkill0Enabled.AutoSize = true;
-            this.chkBladePoppiswapSkill0Enabled.Location = new System.Drawing.Point(365, 85);
-            this.chkBladePoppiswapSkill0Enabled.Name = "chkBladePoppiswapSkill0Enabled";
-            this.chkBladePoppiswapSkill0Enabled.Size = new System.Drawing.Size(54, 17);
-            this.chkBladePoppiswapSkill0Enabled.TabIndex = 10;
-            this.chkBladePoppiswapSkill0Enabled.Text = "Skill 1";
-            this.chkBladePoppiswapSkill0Enabled.UseVisualStyleBackColor = true;
-            // 
-            // chkBladePoppiswapSpecials2Enabled
-            // 
-            this.chkBladePoppiswapSpecials2Enabled.AutoSize = true;
-            this.chkBladePoppiswapSpecials2Enabled.Location = new System.Drawing.Point(365, 62);
-            this.chkBladePoppiswapSpecials2Enabled.Name = "chkBladePoppiswapSpecials2Enabled";
-            this.chkBladePoppiswapSpecials2Enabled.Size = new System.Drawing.Size(75, 17);
-            this.chkBladePoppiswapSpecials2Enabled.TabIndex = 9;
-            this.chkBladePoppiswapSpecials2Enabled.Text = "Specials 3";
-            this.chkBladePoppiswapSpecials2Enabled.UseVisualStyleBackColor = true;
+            this.label114.Text = "Enhance ID:";
             // 
             // chkBladePoppiswapSpecials1Enabled
             // 
             this.chkBladePoppiswapSpecials1Enabled.AutoSize = true;
-            this.chkBladePoppiswapSpecials1Enabled.Location = new System.Drawing.Point(365, 39);
+            this.chkBladePoppiswapSpecials1Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSpecials1Enabled.Location = new System.Drawing.Point(6, 18);
             this.chkBladePoppiswapSpecials1Enabled.Name = "chkBladePoppiswapSpecials1Enabled";
-            this.chkBladePoppiswapSpecials1Enabled.Size = new System.Drawing.Size(75, 17);
-            this.chkBladePoppiswapSpecials1Enabled.TabIndex = 8;
-            this.chkBladePoppiswapSpecials1Enabled.Text = "Specials 2";
+            this.chkBladePoppiswapSpecials1Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSpecials1Enabled.TabIndex = 7;
+            this.chkBladePoppiswapSpecials1Enabled.Text = "Is Unlocked";
             this.chkBladePoppiswapSpecials1Enabled.UseVisualStyleBackColor = true;
-            // 
-            // chkBladePoppiswapSpecials0Enabled
-            // 
-            this.chkBladePoppiswapSpecials0Enabled.AutoSize = true;
-            this.chkBladePoppiswapSpecials0Enabled.Location = new System.Drawing.Point(365, 16);
-            this.chkBladePoppiswapSpecials0Enabled.Name = "chkBladePoppiswapSpecials0Enabled";
-            this.chkBladePoppiswapSpecials0Enabled.Size = new System.Drawing.Size(75, 17);
-            this.chkBladePoppiswapSpecials0Enabled.TabIndex = 7;
-            this.chkBladePoppiswapSpecials0Enabled.Text = "Specials 1";
-            this.chkBladePoppiswapSpecials0Enabled.UseVisualStyleBackColor = true;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(14, 264);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(59, 13);
-            this.label118.TabIndex = 6;
-            this.label118.Text = "Unk_0x58:";
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(6, 13);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(136, 13);
-            this.label117.TabIndex = 5;
-            this.label117.Text = "Energy Converter Capacity:";
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(37, 174);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(34, 13);
-            this.label116.TabIndex = 4;
-            this.label116.Text = "Skills:";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.Location = new System.Drawing.Point(15, 144);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(58, 13);
-            this.label115.TabIndex = 3;
-            this.label115.Text = "Blade Arts:";
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(14, 62);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(73, 13);
-            this.label113.TabIndex = 1;
-            this.label113.Text = "Element Core:";
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(14, 37);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(57, 13);
-            this.label112.TabIndex = 0;
-            this.label112.Text = "Role CPU:";
+            this.chkBladePoppiswapSpecials1Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials1Enabled_CheckedChanged);
             // 
             // tabBladeAffinityChart
             // 
@@ -9171,6 +11380,15 @@
             this.tabBladeUnknown.Text = "Unknown";
             this.tabBladeUnknown.UseVisualStyleBackColor = true;
             // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(13, 319);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(71, 13);
+            this.label80.TabIndex = 158;
+            this.label80.Text = "Unk_0x0827:";
+            // 
             // groupBox72
             // 
             this.groupBox72.Controls.Add(this.hbxBladeUnk_0x08A2);
@@ -9310,6 +11528,16 @@
             this.hbxBladeUnk_0x002C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.hbxBladeUnk_0x002C.Size = new System.Drawing.Size(300, 41);
             this.hbxBladeUnk_0x002C.TabIndex = 151;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(948, 549);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabItems
             // 
@@ -9807,15 +12035,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(13, 319);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(71, 13);
-            this.label80.TabIndex = 158;
-            this.label80.Text = "Unk_0x0827:";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -10129,15 +12348,110 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBattleSkill1MaxLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBattleSkill1Level)).EndInit();
             this.tabBladePoppiswap.ResumeLayout(false);
-            this.tabBladePoppiswap.PerformLayout();
+            this.tabControl5.ResumeLayout(false);
+            this.tabBladePoppiswapMisc.ResumeLayout(false);
+            this.groupBox100.ResumeLayout(false);
+            this.groupBox100.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbBladePoppiswapEnergyConverterLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapEnergyConverterLevel)).EndInit();
+            this.groupBox99.ResumeLayout(false);
+            this.groupBox99.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapElementCoreType)).EndInit();
+            this.groupBox98.ResumeLayout(false);
+            this.groupBox98.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleCPUType)).EndInit();
+            this.groupBox94.ResumeLayout(false);
+            this.groupBox95.ResumeLayout(false);
+            this.groupBox95.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade3ID)).EndInit();
+            this.groupBox96.ResumeLayout(false);
+            this.groupBox96.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade2ID)).EndInit();
+            this.groupBox97.ResumeLayout(false);
+            this.groupBox97.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillUpgrade1ID)).EndInit();
+            this.groupBox90.ResumeLayout(false);
+            this.groupBox93.ResumeLayout(false);
+            this.groupBox93.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM3ID)).EndInit();
+            this.groupBox92.ResumeLayout(false);
+            this.groupBox92.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM2ID)).EndInit();
+            this.groupBox91.ResumeLayout(false);
+            this.groupBox91.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1Serial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1Type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapSkillRAM1ID)).EndInit();
+            this.tabBladePoppiswapArtsCards.ResumeLayout(false);
+            this.groupBox87.ResumeLayout(false);
+            this.groupBox87.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemType)).EndInit();
+            this.groupBox88.ResumeLayout(false);
+            this.groupBox89.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts3ID)).EndInit();
+            this.groupBox84.ResumeLayout(false);
+            this.groupBox84.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemType)).EndInit();
+            this.groupBox85.ResumeLayout(false);
+            this.groupBox86.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts2ID)).EndInit();
+            this.groupBox81.ResumeLayout(false);
+            this.groupBox81.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemType)).EndInit();
+            this.groupBox82.ResumeLayout(false);
+            this.groupBox83.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapNArts1ID)).EndInit();
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.ResumeLayout(false);
+            this.groupBox78.ResumeLayout(false);
+            this.groupBox78.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemType)).EndInit();
+            this.groupBox79.ResumeLayout(false);
+            this.groupBox80.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance3ID)).EndInit();
+            this.groupBox75.ResumeLayout(false);
+            this.groupBox75.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemType)).EndInit();
+            this.groupBox77.ResumeLayout(false);
+            this.groupBox76.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance2ID)).EndInit();
             this.groupBox27.ResumeLayout(false);
             this.groupBox27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceItemID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceRecastRev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhanceID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapRoleItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapAtrItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapPowerCapacity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemSerial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemType)).EndInit();
+            this.groupBox74.ResumeLayout(false);
+            this.groupBox73.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ItemID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ID)).EndInit();
             this.tabBladeAffinityChart.ResumeLayout(false);
             this.groupBox68.ResumeLayout(false);
             this.groupBox68.PerformLayout();
@@ -10403,29 +12717,14 @@
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.TabPage tabBladeUnknown;
         private System.Windows.Forms.TabPage tabBladePoppiswap;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSkill2Enabled;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSkill1Enabled;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSkill0Enabled;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials2Enabled;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials1Enabled;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials0Enabled;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Label label116;
-        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSkillUpgrade3Enabled;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSkillUpgrade2Enabled;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSkillUpgrade1Enabled;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapRoleItem;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapAtrItem;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapPowerCapacity;
-        private System.Windows.Forms.GroupBox groupBox27;
-        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArts;
-        private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhanceID;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhanceItemID;
-        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhanceRecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapRoleCPUID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapElementCoreID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapEnergyConverterLevel;
         private System.Windows.Forms.NumericUpDown nudPartyMemberUnk_0x02;
         private System.Windows.Forms.NumericUpDown nudPartyMemberUnk_0x04;
         private System.Windows.Forms.NumericUpDown nudMoney;
@@ -10998,6 +13297,194 @@
         private System.Windows.Forms.GroupBox groupBox71;
         private Be.Windows.Forms.HexBox hbxBladeUnk_0x084E;
         private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapRoleCPUID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapElementCoreID;
+        private System.Windows.Forms.TabControl tabControl5;
+        private System.Windows.Forms.TabPage tabBladePoppiswapMisc;
+        private System.Windows.Forms.TabPage tabBladePoppiswapMiscSpecialsEnhancingRAM;
+        private System.Windows.Forms.GroupBox groupBox78;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance3ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance3ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance3ItemType;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.GroupBox groupBox79;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance3Unk_0x08;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.GroupBox groupBox80;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance3Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance3ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance3ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance3RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance3ID;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label237;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials3Enabled;
+        private System.Windows.Forms.GroupBox groupBox75;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance2ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2ItemType;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.GroupBox groupBox76;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance2Unk_0x08;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.GroupBox groupBox77;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance2Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance2ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2ID;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials2Enabled;
+        private System.Windows.Forms.GroupBox groupBox27;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance1ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1ItemType;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.GroupBox groupBox74;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance1Unk_0x08;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.GroupBox groupBox73;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapBArtsEnhance1Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance1ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1ID;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials1Enabled;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabBladePoppiswapArtsCards;
+        private System.Windows.Forms.GroupBox groupBox81;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts1ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1ItemType;
+        private System.Windows.Forms.GroupBox groupBox82;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts1Unk_0x08;
+        private System.Windows.Forms.Label label238;
+        private System.Windows.Forms.Label label239;
+        private System.Windows.Forms.GroupBox groupBox83;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts1Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts1ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1ID;
+        private System.Windows.Forms.Label label240;
+        private System.Windows.Forms.Label label241;
+        private System.Windows.Forms.Label label242;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts1ID;
+        private System.Windows.Forms.GroupBox groupBox87;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts3ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts3ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts3ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts3ItemType;
+        private System.Windows.Forms.GroupBox groupBox88;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts3Unk_0x08;
+        private System.Windows.Forms.Label label248;
+        private System.Windows.Forms.Label label249;
+        private System.Windows.Forms.GroupBox groupBox89;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts3Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts3ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts3ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts3RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts3ID;
+        private System.Windows.Forms.Label label250;
+        private System.Windows.Forms.Label label251;
+        private System.Windows.Forms.Label label252;
+        private System.Windows.Forms.GroupBox groupBox84;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts2ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts2ItemType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts2ItemSerial;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts2ItemType;
+        private System.Windows.Forms.GroupBox groupBox85;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts2Unk_0x08;
+        private System.Windows.Forms.Label label243;
+        private System.Windows.Forms.Label label244;
+        private System.Windows.Forms.GroupBox groupBox86;
+        private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts2Unk_0x06;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapNArts2ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts2ItemID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts2RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts2ID;
+        private System.Windows.Forms.Label label245;
+        private System.Windows.Forms.Label label246;
+        private System.Windows.Forms.Label label247;
+        private System.Windows.Forms.GroupBox groupBox90;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM1ID;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM1ID;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.GroupBox groupBox94;
+        private System.Windows.Forms.GroupBox groupBox95;
+        private System.Windows.Forms.Label label259;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade3Serial;
+        private System.Windows.Forms.Label label260;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade3Type;
+        private System.Windows.Forms.Label label261;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade3Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade3ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade3ID;
+        private System.Windows.Forms.GroupBox groupBox96;
+        private System.Windows.Forms.Label label262;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade2Serial;
+        private System.Windows.Forms.Label label263;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade2Type;
+        private System.Windows.Forms.Label label264;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade2Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade2ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade2ID;
+        private System.Windows.Forms.GroupBox groupBox97;
+        private System.Windows.Forms.Label label265;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade1Serial;
+        private System.Windows.Forms.Label label266;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade1Type;
+        private System.Windows.Forms.Label label267;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade1Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillUpgrade1ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillUpgrade1ID;
+        private System.Windows.Forms.GroupBox groupBox93;
+        private System.Windows.Forms.Label label256;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM3Serial;
+        private System.Windows.Forms.Label label257;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM3Type;
+        private System.Windows.Forms.Label label258;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM3Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM3ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM3ID;
+        private System.Windows.Forms.GroupBox groupBox92;
+        private System.Windows.Forms.Label label253;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM2Serial;
+        private System.Windows.Forms.Label label254;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM2Type;
+        private System.Windows.Forms.Label label255;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM2Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM2ID;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM2ID;
+        private System.Windows.Forms.GroupBox groupBox91;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM1Serial;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapSkillRAM1Type;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapSkillRAM1Type;
+        private System.Windows.Forms.GroupBox groupBox99;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapElementCoreSerial;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapElementCoreType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapElementCoreType;
+        private System.Windows.Forms.Label label270;
+        private System.Windows.Forms.GroupBox groupBox98;
+        private System.Windows.Forms.Label label268;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapRoleCPUSerial;
+        private System.Windows.Forms.ComboBox cbxBladePoppiswapRoleCPUType;
+        private System.Windows.Forms.NumericUpDown nudBladePoppiswapRoleCPUType;
+        private System.Windows.Forms.Label label269;
+        private System.Windows.Forms.TrackBar trbBladePoppiswapEnergyConverterLevel;
+        private System.Windows.Forms.GroupBox groupBox100;
+        private System.Windows.Forms.Label lblPoppiswapEnergyConverterMaxOutput;
+        private System.Windows.Forms.Label label272;
+        private System.Windows.Forms.Label label271;
     }
 }
 

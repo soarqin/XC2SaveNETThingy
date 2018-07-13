@@ -96,6 +96,7 @@ namespace XC2SaveNETThingy
         public class Pouch : IXC2SaveObject
         {
             public const int SIZE = 0x8;
+            public const int COUNT = 3;
 
             public float Time { get; set; }
             public UInt16 ItemId { get; set; }

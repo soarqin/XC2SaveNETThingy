@@ -243,6 +243,7 @@ namespace XC2SaveNETThingy
         public class XC2Party : IXC2SaveObject
         {
             public const int SIZE = 0x54;
+            public const int MEMBERS_COUNT = 10;
 
             private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
             {

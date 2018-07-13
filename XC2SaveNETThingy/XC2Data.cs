@@ -116,6 +116,11 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM DriverSkills").Tables[0];
         }
 
+        public static DataTable PoppiPowerLevels()
+        {
+            return GetDataSet("SELECT * FROM PoppiPowerLevels").Tables[0];
+        }
+
         public static DataTable Items()
         {
             string query =

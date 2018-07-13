@@ -84,17 +84,11 @@ namespace XC2SaveNETThingy
                 return value;
         }
 
-        public static DataTable ToDataTable(this Dictionary<int, string> dict)
+        public static void BindDataTable(this ComboBox cbx, DataTable dataSource, string displayMember = "Name", string valueMember = "ID")
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Key", typeof(int));
-            dt.Columns.Add("Value", typeof(string));
-
-            foreach (KeyValuePair<int, string> kv in dict)
-                dt.Rows.Add(kv.Key, kv.Value);
-            dt.AcceptChanges();
-
-            return dt;
+            cbx.DataSource = dataSource;
+            cbx.DisplayMember = displayMember;
+            cbx.ValueMember = valueMember;
         }
     }
 }

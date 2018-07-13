@@ -190,37 +190,21 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0xC;
 
-        private static readonly Dictionary<UInt16, string> NAMES = new Dictionary<UInt16, string>()
-        {
-            {0, "(none)" },
-        };
-
         public UInt16 EnhanceID { get; set; }
         public UInt16 RecastRev { get; set; }
         public UInt16 ItemID { get; set; }
-        public UInt16 Unk_0x06 { get; set; }
-        public ItemHandle16 Unk_0x08 { get; set; }
-        public ItemHandle16 Unk_0x0A { get; set; }
-
-        public string Name
-        {
-            get
-            {
-                if (NAMES.ContainsKey(EnhanceID))
-                    return EnhanceID.ToString() + ": " + NAMES[EnhanceID];
-                else
-                    return EnhanceID.ToString();
-            }
-        }
+        public Byte[] Unk_0x06 { get; set; }
+        public Byte[] Unk_0x08 { get; set; }
+        public ItemHandle16 ItemHandle { get; set; }
 
         public ArtsEnhance(Byte[] data)
         {
             EnhanceID = BitConverter.ToUInt16(data.GetByteSubArray(0x0, 2), 0);
             RecastRev = BitConverter.ToUInt16(data.GetByteSubArray(0x2, 2), 0);
             ItemID = BitConverter.ToUInt16(data.GetByteSubArray(0x4, 2), 0);
-            Unk_0x06 = BitConverter.ToUInt16(data.GetByteSubArray(0x6, 2), 0);
-            Unk_0x08 = new ItemHandle16(data.GetByteSubArray(0x8, ItemHandle16.SIZE));
-            Unk_0x0A = new ItemHandle16(data.GetByteSubArray(0xA, ItemHandle16.SIZE));
+            Unk_0x06 = data.GetByteSubArray(0x6, 2);
+            Unk_0x08 = data.GetByteSubArray(0x8, 2);
+            ItemHandle = new ItemHandle16(data.GetByteSubArray(0xA, ItemHandle16.SIZE));
         }
 
         public Byte[] ToRawData()
@@ -230,9 +214,10 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(EnhanceID));
             result.AddRange(BitConverter.GetBytes(RecastRev));
             result.AddRange(BitConverter.GetBytes(ItemID));
-            result.AddRange(BitConverter.GetBytes(Unk_0x06));
-            result.AddRange(Unk_0x08.ToRawData());
-            result.AddRange(Unk_0x0A.ToRawData());
+            result.AddRange(Unk_0x06);
+            result.AddRange(Unk_0x08);
+            //result.AddRange(Unk_0x08.ToRawData());
+            result.AddRange(ItemHandle.ToRawData());
 
             if (result.Count != SIZE)
             {
@@ -244,11 +229,6 @@ namespace XC2SaveNETThingy
             }
 
             return result.ToArray();
-        }
-
-        public override string ToString()
-        {
-            return Name;
         }
     };
 
@@ -297,25 +277,34 @@ namespace XC2SaveNETThingy
             { "AtrItem", 0x02 },
             { "BArtsEnhance", 0x04 },
             { "NArts", 0x28 },
-            { "Skills", 0x4C },
-            { "field_58", 0x58 },
+            { "SkillRAMIDs", 0x4C },
+            { "SkillUpgradeIDs", 0x52 },
+            { "RoleCPUItemHandle", 0x58 },
+            { "ElementCoreItemHandle", 0x5C },
+            { "SkillRAMItemHandles", 0x60 },
+            { "SkillUpgradeItemHandles", 0x6C },
             { "PowerCapacity", 0x78 },
             { "OpenCircuits", 0x7A }
         };
 
-        public UInt16 RoleItem { get; set; }
-        public UInt16 AtrItem { get; set; }
+        public UInt16 RoleCPU { get; set; }
+        public UInt16 ElementCore { get; set; }
         public ArtsEnhance[] BArtsEnhance { get; set; }
         public ArtsEnhance[] NArts { get; set; }
-        public UInt16[] Skills { get; set; }
-        public ItemHandle32[] field_58 { get; set; }
+        public UInt16[] SkillRAMIDs { get; set; }
+        public UInt16[] SkillUpgradeIDs { get; set; }
+        //public ItemHandle32[] Unk_0x58 { get; set; }
+        public ItemHandle32 RoleCPUItemHandle { get; set; }
+        public ItemHandle32 ElementCoreItemHandle { get; set; }
+        public ItemHandle32[] SkillRAMItemHandles { get; set; }
+        public ItemHandle32[] SkillUpgradeItemHandles { get; set; }
         public UInt16 PowerCapacity { get; set; }
         public HanaCircuits OpenCircuits { get; set; }
 
         public PoppiSwapData(Byte[] data)
         {
-            RoleItem = BitConverter.ToUInt16(data.GetByteSubArray(LOC["RoleItem"], 2), 0);
-            AtrItem = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AtrItem"], 2), 0);
+            RoleCPU = BitConverter.ToUInt16(data.GetByteSubArray(LOC["RoleItem"], 2), 0);
+            ElementCore = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AtrItem"], 2), 0);
 
             BArtsEnhance = new ArtsEnhance[3];
             for (int i = 0; i < BArtsEnhance.Length; i++)
@@ -325,13 +314,28 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < NArts.Length; i++)
                 NArts[i] = new ArtsEnhance(data.GetByteSubArray(LOC["NArts"] + (i * ArtsEnhance.SIZE), ArtsEnhance.SIZE));
 
-            Skills = new UInt16[6];
-            for (int i = 0; i < Skills.Length; i++)
-                Skills[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Skills"] + (i * 2), 2), 0);
+            SkillRAMIDs = new UInt16[3];
+            for (int i = 0; i < SkillRAMIDs.Length; i++)
+                SkillRAMIDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["SkillRAMIDs"] + (i * 2), 2), 0);
 
-            field_58 = new ItemHandle32[8];
-            for (int i = 0; i < field_58.Length; i++)
-                field_58[i] = new ItemHandle32(data.GetByteSubArray(LOC["field_58"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
+            SkillUpgradeIDs = new UInt16[3];
+            for (int i = 0; i < SkillUpgradeIDs.Length; i++)
+                SkillUpgradeIDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["SkillUpgradeIDs"] + (i * 2), 2), 0);
+
+            RoleCPUItemHandle = new ItemHandle32(data.GetByteSubArray(LOC["RoleCPUItemHandle"], ItemHandle32.SIZE));
+            ElementCoreItemHandle = new ItemHandle32(data.GetByteSubArray(LOC["ElementCoreItemHandle"], ItemHandle32.SIZE));
+
+            SkillRAMItemHandles = new ItemHandle32[3];
+            for (int i = 0; i < SkillRAMItemHandles.Length; i++)
+                SkillRAMItemHandles[i] = new ItemHandle32(data.GetByteSubArray(LOC["SkillRAMItemHandles"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
+
+            SkillUpgradeItemHandles = new ItemHandle32[3];
+            for (int i = 0; i < SkillUpgradeItemHandles.Length; i++)
+                SkillUpgradeItemHandles[i] = new ItemHandle32(data.GetByteSubArray(LOC["SkillUpgradeItemHandles"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
+
+            //Unk_0x58 = new ItemHandle32[8];
+            //for (int i = 0; i < Unk_0x58.Length; i++)
+            //    Unk_0x58[i] = new ItemHandle32(data.GetByteSubArray(LOC["field_58"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
 
             PowerCapacity = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PowerCapacity"], 2), 0);
             OpenCircuits = new HanaCircuits(data.GetByteSubArray(LOC["OpenCircuits"], HanaCircuits.SIZE));
@@ -341,8 +345,8 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<byte>();
 
-            result.AddRange(BitConverter.GetBytes(RoleItem));
-            result.AddRange(BitConverter.GetBytes(AtrItem));
+            result.AddRange(BitConverter.GetBytes(RoleCPU));
+            result.AddRange(BitConverter.GetBytes(ElementCore));
 
             foreach (ArtsEnhance ae in BArtsEnhance)
                 result.AddRange(ae.ToRawData());
@@ -350,11 +354,23 @@ namespace XC2SaveNETThingy
             foreach (ArtsEnhance ae in NArts)
                 result.AddRange(ae.ToRawData());
 
-            foreach (UInt16 u in Skills)
+            foreach (UInt16 u in SkillRAMIDs)
                 result.AddRange(BitConverter.GetBytes(u));
 
-            foreach (ItemHandle32 ih in field_58)
+            foreach (UInt16 u in SkillUpgradeIDs)
+                result.AddRange(BitConverter.GetBytes(u));
+
+            result.AddRange(RoleCPUItemHandle.ToRawData());
+            result.AddRange(ElementCoreItemHandle.ToRawData());
+
+            foreach (ItemHandle32 ih in SkillRAMItemHandles)
                 result.AddRange(ih.ToRawData());
+
+            foreach (ItemHandle32 ih in SkillUpgradeItemHandles)
+                result.AddRange(ih.ToRawData());
+
+            //foreach (ItemHandle32 ih in Unk_0x58)
+            //    result.AddRange(ih.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(PowerCapacity));
             result.AddRange(OpenCircuits.ToRawData());
