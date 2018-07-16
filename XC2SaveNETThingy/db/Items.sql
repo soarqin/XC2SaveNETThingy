@@ -1,4 +1,3 @@
--- Script Date: 8/07/2018 6:29 PM  - ErikEJ.SqlCeScripting version 3.5.2.75
 DROP TABLE IF EXISTS [Items];
 CREATE TABLE [Items] (
   [ID] INTEGER  NOT NULL UNIQUE

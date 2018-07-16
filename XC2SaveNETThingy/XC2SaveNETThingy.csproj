@@ -102,6 +102,8 @@
     <None Include="data\FavCategories.csv" />
     <None Include="data\Items.csv" />
     <None Include="data\ItemTypes.csv" />
+    <None Include="data\PoppiPowerLevels.csv" />
+    <None Include="data\WeaponNames.csv" />
     <None Include="data\Weapons.csv" />
     <Content Include="db\BladeArts.sql" />
     <Content Include="db\BladeFieldSkills.sql" />
@@ -111,6 +113,9 @@
     <Content Include="db\FavCategories.sql" />
     <Content Include="db\Items.sql" />
     <Content Include="db\ItemTypes.sql" />
+    <Content Include="db\PoppiPowerLevels.sql" />
+    <Content Include="db\viewWeaponNames.sql" />
+    <Content Include="db\WeaponNames.sql" />
     <Content Include="db\XC2Data.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,1292 @@
+ID;Name;WeaponTypeID;CoreChipID
+0;(none);0;0
+5001;Primitive Sword;1;10001
+5002;Plain Sword;1;10002
+5003;Flatform Sword;1;10003
+5004;Ornate Sword;1;10004
+5005;Breaker Sword;1;10005
+5006;Duelist's Sword;1;10006
+5007;Battle Sword;1;10007
+5008;Snare Sword;1;10008
+5009;Sword of the Fox;1;10009
+5010;Sword of the Dingo;1;10010
+5011;Sword of the Lycaon;1;10011
+5012;Sword of the Jackal;1;10012
+5013;Sword of the Jaguar;1;10013
+5014;Sword of the Lynx;1;10014
+5015;Sword of the Puma;1;10015
+5016;Insect Slayer;1;10016
+5017;Knight's Sword;1;10017
+5018;Guardian's Sword;1;10018
+5019;Cavalry Sword;1;10019
+5020;Valkyrie's Sword;1;10020
+5021;Paladin's Sword;1;10021
+5022;Holy Sword;1;10022
+5023;Sword of Valor;1;10023
+5024;Zephyr Sword;1;10024
+5025;Custom Sword;1;10025
+5026;Clockwork Sword;1;10026
+5027;Technical Sword;1;10027
+5028;Accelerator Sword;1;10028
+5029;Turbine Sword;1;10029
+5030;Ceramic Sword;1;10030
+5031;Mechanized Sword;1;10031
+5032;Machine Slayer;1;10032
+5033;Ancient Sword;1;10033
+5034;Elder Sword;1;10034
+5035;Blessed Sword;1;10035
+5036;Legendary Sword;1;10036
+5037;Agarthan Sword;1;10037
+5038;Sword of El Dorado;1;10038
+5039;Sword of Eden;1;10039
+5040;King of Sharks;1;10041
+5041;Adamant Sword;1;10042
+5042;Wootz Sword;1;10043
+5043;Energy Edge;1;10044
+5044;Orichalcum Sword;1;10040
+5045;Sigma Sword;1;10045
+5046;Delta Sword;1;10046
+5047;Godspeed Sword;1;10047
+5048;Saintslayer Brand;1;10048
+5049;Sword of Despair;1;10049
+5050;Sword of Chaos;1;10050
+5051;Mutinous Sword;1;10051
+5052;Sword of Thanatos;1;10052
+5053;Sword of Banishing;1;10053
+5054;Eater of Souls;1;10054
+5055;Sword of Origin;1;10055
+5056;Eternal Sword;1;10056
+5057;Final Sword;1;10057
+5058;Satellite Sword;1;10058
+5059;Meteorite Sword;1;10059
+5060;Shooting Star;1;10060
+5061;Primitive Scimitar;2;10001
+5062;Plain Scimitar;2;10002
+5063;Flatform Scimitar;2;10003
+5064;Ornate Scimitar;2;10004
+5065;Breaker Scimitar;2;10005
+5066;Duelist's Scimitar;2;10006
+5067;Battle Scimitar;2;10007
+5068;Snare Scimitar;2;10008
+5069;Scimitar of Shores;2;10009
+5070;Scimitar of Waves;2;10010
+5071;Scimitar of Calm;2;10011
+5072;Scimitar of Affection;2;10012
+5073;Scimitar of Purity;2;10013
+5074;Scimitar of Splendor;2;10014
+5075;Scimitar of Integrity;2;10015
+5076;Scimitar of Grace;2;10016
+5077;Knight's Scimitar;2;10017
+5078;Guardian's Scimitar;2;10018
+5079;Scimitar of Prayer;2;10019
+5080;Valkyrie's Scimitar;2;10020
+5081;Paladin's Scimitar;2;10021
+5082;Holy Scimitar;2;10022
+5083;Scimitar of Valor;2;10023
+5084;Winged Scimitar;2;10024
+5085;Custom Scimitar;2;10025
+5086;Clockwork Scimitar;2;10026
+5087;Scimitar of the Owl;2;10027
+5088;Accelerator Scimitar;2;10028
+5089;Turbine Scimitar;2;10029
+5090;Ceramic Scimitar;2;10030
+5091;Mechanized Scimitar;2;10031
+5092;Machine Cleaver;2;10032
+5093;Ancient Scimitar;2;10033
+5094;Elder Scimitar;2;10034
+5095;Furtive Scimitar;2;10035
+5096;Legendary Scimitar;2;10036
+5097;Agarthan Scimitar;2;10037
+5098;Scimitar of El Dorado;2;10038
+5099;Scimitar of Eden;2;10039
+5100;The Kraken;2;10041
+5101;Adamant Scimitar;2;10042
+5102;Wootz Scimitar;2;10043
+5103;Assassin's Scimitar;2;10044
+5104;Orichalcum Scimitar;2;10040
+5105;Sigma Scimitar;2;10045
+5106;Delta Scimitar;2;10046
+5107;Energy Scimitar;2;10047
+5108;Seraphsbane;2;10048
+5109;Scimitar of Despair;2;10049
+5110;Scimitar of Chaos;2;10050
+5111;Supersonic Scimitar;2;10051
+5112;Scimitar of Thanatos;2;10052
+5113;Scimitar of Banishing;2;10053
+5114;The Trickster;2;10054
+5115;Scimitar of Origin;2;10055
+5116;Eternal Scimitar;2;10056
+5117;Final Scimitar;2;10057
+5118;Satellite Scimitar;2;10058
+5119;Meteorite Scimitar;2;10059
+5120;Scimitar of Creation;2;10060
+5121;Primitive Rings;3;10001
+5122;Plain Rings;3;10002
+5123;Flatform Rings;3;10003
+5124;Rings of Plenty;3;10004
+5125;Breaker Rings;3;10005
+5126;Duelist's Rings;3;10006
+5127;Battle Rings;3;10007
+5128;Plunder Rings;3;10008
+5129;Wild Rings;3;10009
+5130;Howling Rings;3;10010
+5131;Shell Rings;3;10011
+5132;Rings of the Earth;3;10012
+5133;Ripper Rings;3;10013
+5134;Dicer Rings;3;10014
+5135;Slicer Rings;3;10015
+5136;Slasher Rings;3;10016
+5137;Knight's Rings;3;10017
+5138;Guardian's Rings;3;10018
+5139;Rings of the Maiden;3;10019
+5140;Valkyrie's Rings;3;10020
+5141;Paladin's Rings;3;10021
+5142;Holy Rings;3;10022
+5143;Rings of Valor;3;10023
+5144;Airslash Rings;3;10024
+5145;Custom Rings;3;10025
+5146;Clockwork Rings;3;10026
+5147;Rings of Revival;3;10027
+5148;Accelerator Rings;3;10028
+5149;Turbine Rings;3;10029
+5150;Ceramic Rings;3;10030
+5151;Mechanized Rings;3;10031
+5152;Ferrous Rings;3;10032
+5153;Ancient Rings;3;10033
+5154;Elder Rings;3;10034
+5155;Rage of the Oceans;3;10035
+5156;Legendary Rings;3;10036
+5157;Agarthan Rings;3;10037
+5158;Rings of El Dorado;3;10038
+5159;Rings of Eden;3;10039
+5160;Marine Slayers;3;10041
+5161;Adamant Rings;3;10042
+5162;Wootz Rings;3;10043
+5163;Rings of Serendipity;3;10044
+5164;Orichalcum Rings;3;10040
+5165;Sigma Rings;3;10045
+5166;Delta Rings;3;10046
+5167;Invisible Rings;3;10047
+5168;Deity Erasers;3;10048
+5169;Rings of Despair;3;10049
+5170;Rings of Chaos;3;10050
+5171;Rings of the Kingslayer;3;10051
+5172;Rings of Thanatos;3;10052
+5173;Rings of Banishing;3;10053
+5174;Specters;3;10054
+5175;Rings of Origin;3;10055
+5176;Eternal Rings;3;10056
+5177;Final Rings;3;10057
+5178;Satellite Rings;3;10058
+5179;Meteorite Rings;3;10059
+5180;Transmigration;3;10060
+5181;Primitive Shield;4;10001
+5182;Plain Shield;4;10002
+5183;Flatform Shield;4;10003
+5184;Shield of Plenty;4;10004
+5185;Breaker Shield;4;10005
+5186;Duelist's Shield;4;10006
+5187;Battle Shield;4;10007
+5188;Plunder Shield;4;10008
+5189;Bitey Bitey Shield;4;10009
+5190;Gnashy Gnashy Shield;4;10010
+5191;Nibbly Nibbly Shield;4;10011
+5192;Pokey Pokey Shield;4;10012
+5193;Blasty Blasty Shield;4;10013
+5194;Cheery Cheery Shield;4;10014
+5195;Rippy Rippy Shield;4;10015
+5196;Carnivore's Shield;4;10016
+5197;Knight's Shield;4;10017
+5198;Guardian's Shield;4;10018
+5199;Daring Shield;4;10019
+5200;Valkyrie's Shield;4;10020
+5201;Paladin's Shield;4;10021
+5202;Holy Shield;4;10022
+5203;Shield of Valor;4;10023
+5204;Birdivore Shield;4;10024
+5205;Custom Shield;4;10025
+5206;Clockwork Shield;4;10026
+5207;Loud Shield;4;10027
+5208;Accelerator Shield;4;10028
+5209;Turbine Shield;4;10029
+5210;Ceramic Shield;4;10030
+5211;Mechanized Shield;4;10031
+5212;Supreme Destroyer;4;10032
+5213;Ancient Shield;4;10033
+5214;Elder Shield;4;10034
+5215;Escutcheon of Athena;4;10035
+5216;Legendary Shield;4;10036
+5217;Agarthan Shield;4;10037
+5218;Shield of El Dorado;4;10038
+5219;Shield of Eden;4;10039
+5220;Maelstrom Plate;4;10041
+5221;Adamant Shield;4;10042
+5222;Wootz Shield;4;10043
+5223;Damascene Shield;4;10044
+5224;Orichalcum Shield;4;10040
+5225;Sigma Shield;4;10045
+5226;Delta Shield;4;10046
+5227;Legionnaire's Shield;4;10047
+5228;Saintslayer Pavise;4;10048
+5229;Shield of Despair;4;10049
+5230;Shield of Chaos;4;10050
+5231;Thundercrash Shield;4;10051
+5232;Shield of Thanatos;4;10052
+5233;Shield of Banishing;4;10053
+5234;Nemesis Shield;4;10054
+5235;Shield of Origin;4;10055
+5236;Eternal Shield;4;10056
+5237;Final Shield;4;10057
+5238;Satellite Shield;4;10058
+5239;Meteorite Shield;4;10059
+5240;Cosmic Impact;4;10060
+5241;Primitive Arms;5;10001
+5242;Plain Arms;5;10002
+5243;Flatform Arms;5;10003
+5244;Ornate Arms;5;10004
+5245;Breaker Arms;5;10005
+5246;Duelist's Arms;5;10006
+5247;Battle Arms;5;10007
+5248;Snare Arms;5;10008
+5249;Studded Arms;5;10009
+5250;Rash Arms;5;10010
+5251;Battering Arms;5;10011
+5252;Pounding Arms;5;10012
+5253;Crushing Arms;5;10013
+5254;Thumping Arms;5;10014
+5255;Pummeling Arms;5;10015
+5256;Strongjaw Gauntlets;5;10016
+5257;Knight's Arms;5;10017
+5258;Guardian's Arms;5;10018
+5259;Temptation Gauntlets;5;10019
+5260;Valkyrie's Arms;5;10020
+5261;Paladin's Arms;5;10021
+5262;Holy Arms;5;10022
+5263;Arms of Valor;5;10023
+5264;Hunter's Arms;5;10024
+5265;Custom Arms;5;10025
+5266;Clockwork Arms;5;10026
+5267;Turbojet Arms;5;10027
+5268;Accelerator Arms;5;10028
+5269;Turbine Arms;5;10029
+5270;Ceramic Arms;5;10030
+5271;Mechanized Arms;5;10031
+5272;Machine Busters;5;10032
+5273;Ancient Arms;5;10033
+5274;Elder Arms;5;10034
+5275;Gauntlets of Lament;5;10035
+5276;Legendary Arms;5;10036
+5277;Agarthan Arms;5;10037
+5278;Arms of El Dorado;5;10038
+5279;Arms of Eden;5;10039
+5280;Doom of Atlantis;5;10041
+5281;Adamant Arms;5;10042
+5282;Wootz Arms;5;10043
+5283;Most Wanted;5;10044
+5284;Orichalcum Arms;5;10040
+5285;Sigma Arms;5;10045
+5286;Delta Arms;5;10046
+5287;Terminal Velocity;5;10047
+5288;Deserved Retribution;5;10048
+5289;Arms of Despair;5;10049
+5290;Arms of Chaos;5;10050
+5291;Insatiable Gauntlets;5;10051
+5292;Arms of Thanatos;5;10052
+5293;Arms of Banishing;5;10053
+5294;Arms of Hermes;5;10054
+5295;Arms of Origin;5;10055
+5296;Eternal Arms;5;10056
+5297;Final Arms;5;10057
+5298;Satellite Arms;5;10058
+5299;Meteorite Arms;5;10059
+5300;Gigantomachy;5;10060
+5301;Primitive Saber;6;10001
+5302;Plain Saber;6;10002
+5303;Flatform Saber;6;10003
+5304;Ornate Saber;6;10004
+5305;Breaker Saber;6;10005
+5306;Duelist's Saber;6;10006
+5307;Battle Saber;6;10007
+5308;Snare Saber;6;10008
+5309;Deadly Saber;6;10009
+5310;Razorgraze Saber;6;10010
+5311;Whirlchip Saber;6;10011
+5312;Songslice Saber;6;10012
+5313;Chopcuff Saber;6;10013
+5314;Swishslash Saber;6;10014
+5315;Twirlslip Saber;6;10015
+5316;Insect Slicer;6;10016
+5317;Knight's Saber;6;10017
+5318;Guardian's Saber;6;10018
+5319;Saint's Saber;6;10019
+5320;Valkyrie's Saber;6;10020
+5321;Paladin's Saber;6;10021
+5322;Holy Saber;6;10022
+5323;Saber of Valor;6;10023
+5324;Regal Saber;6;10024
+5325;Custom Saber;6;10025
+5326;Clockwork Saber;6;10026
+5327;Ranger's Saber;6;10027
+5328;Accelerator Saber;6;10028
+5329;Turbine Saber;6;10029
+5330;Ceramic Saber;6;10030
+5331;Mechanized Saber;6;10031
+5332;Commando's Saber;6;10032
+5333;Ancient Saber;6;10033
+5334;Elder Saber;6;10034
+5335;Mystical Saber;6;10035
+5336;Legendary Saber;6;10036
+5337;Agarthan Saber;6;10037
+5338;Saber of El Dorado;6;10038
+5339;Saber of Eden;6;10039
+5340;Rifled Saber;6;10041
+5341;Adamant Saber;6;10042
+5342;Wootz Saber;6;10043
+5343;Ether Saber;6;10044
+5344;Orichalcum Saber;6;10040
+5345;Sigma Saber;6;10045
+5346;Delta Saber;6;10046
+5347;Sanguine Saber;6;10047
+5348;Creation Eater;6;10048
+5349;Saber of Despair;6;10049
+5350;Saber of Chaos;6;10050
+5351;Barbatos, the Durable;6;10051
+5352;Saber of Thanatos;6;10052
+5353;Saber of Banishing;6;10053
+5354;Metatron's Saber;6;10054
+5355;Saber of Origin;6;10055
+5356;Eternal Saber;6;10056
+5357;Final Saber;6;10057
+5358;Satellite Saber;6;10058
+5359;Meteorite Saber;6;10059
+5360;Ultima Ratio;6;10060
+5361;Primitive Whips;7;10001
+5362;Plain Whips;7;10002
+5363;Flatform Whips;7;10003
+5364;Whips of Plenty;7;10004
+5365;Breaker Whips;7;10005
+5366;Duelist's Whips;7;10006
+5367;Battle Whips;7;10007
+5368;Plunder Whips;7;10008
+5369;Whips of the Sparrow;7;10009
+5370;Whips of the Robin;7;10010
+5371;Whips of the Lark;7;10011
+5372;Whips of the Swift;7;10012
+5373;Whips of the Crane;7;10013
+5374;Whips of the Ibis;7;10014
+5375;Whips of the Shrike;7;10015
+5376;The Cormorants;7;10016
+5377;Knight's Whips;7;10017
+5378;Guardian's Whips;7;10018
+5379;Whips of the Sun;7;10019
+5380;Valkyrie's Whips;7;10020
+5381;Paladin's Whips;7;10021
+5382;Holy Whips;7;10022
+5383;Whips of Valor;7;10023
+5384;Soaring Swallows;7;10024
+5385;Custom Whips;7;10025
+5386;Clockwork Whips;7;10026
+5387;Muscle Whips;7;10027
+5388;Accelerator Whips;7;10028
+5389;Turbine Whips;7;10029
+5390;Ceramic Whips;7;10030
+5391;Mechanized Whips;7;10031
+5392;Nitro Whips;7;10032
+5393;Ancient Whips;7;10033
+5394;Elder Whips;7;10034
+5395;Whips of the Chariot;7;10035
+5396;Legendary Whips;7;10036
+5397;Agarthan Whips;7;10037
+5398;Whips of El Dorado;7;10038
+5399;Whips of Eden;7;10039
+5400;Avalon;7;10041
+5401;Adamant Whips;7;10042
+5402;Wootz Whips;7;10043
+5403;The Assessors;7;10044
+5404;Orichalcum Whips;7;10040
+5405;Sigma Whips;7;10045
+5406;Delta Whips;7;10046
+5407;Whips of Celerity;7;10047
+5408;Ascension Denied;7;10048
+5409;Whips of Despair;7;10049
+5410;Whips of Chaos;7;10050
+5411;Belial's Whips;7;10051
+5412;Whips of Thanatos;7;10052
+5413;Whips of Banishing;7;10053
+5414;Dominion;7;10054
+5415;Whips of Origin;7;10055
+5416;Eternal Whips;7;10056
+5417;Final Whips;7;10057
+5418;Satellite Whips;7;10058
+5419;Meteorite Whips;7;10059
+5420;The Dreadnoughts;7;10060
+5421;Primitive Edge;8;10001
+5422;Plain Edge;8;10002
+5423;Flatform Edge;8;10003
+5424;Edge of Plenty;8;10004
+5425;Breaker Edge;8;10005
+5426;Duelist's Edge;8;10006
+5427;Battle Edge;8;10007
+5428;Plunder Edge;8;10008
+5429;Flighty Edge;8;10009
+5430;Feathered Edge;8;10010
+5431;Winged Edge;8;10011
+5432;Triumph Edge;8;10012
+5433;Avian Edge;8;10013
+5434;Edge of the Raptor;8;10014
+5435;Edge of the Vulture;8;10015
+5436;Predator's Edge;8;10016
+5437;Knight's Edge;8;10017
+5438;Guardian's Edge;8;10018
+5439;Orion's Rise;8;10019
+5440;Valkyrie's Edge;8;10020
+5441;Paladin's Edge;8;10021
+5442;Holy Edge;8;10022
+5443;Edge of Valor;8;10023
+5444;Arbiter's Brand;8;10024
+5445;Custom Edge;8;10025
+5446;Clockwork Edge;8;10026
+5447;Fearful Symmetry;8;10027
+5448;Accelerator Edge;8;10028
+5449;Turbine Edge;8;10029
+5450;Ceramic Edge;8;10030
+5451;Mechanized Edge;8;10031
+5452;The Ingot;8;10032
+5453;Ancient Edge;8;10033
+5454;Elder Edge;8;10034
+5455;Edge of the Mother;8;10035
+5456;Legendary Edge;8;10036
+5457;Agarthan Edge;8;10037
+5458;Edge of El Dorado;8;10038
+5459;Edge of Eden;8;10039
+5460;Just Oceanus;8;10041
+5461;Adamant Edge;8;10042
+5462;Wootz Edge;8;10043
+5463;Black Chronos;8;10044
+5464;Orichalcum Edge;8;10040
+5465;Sigma Edge;8;10045
+5466;Delta Edge;8;10046
+5467;Barghest's Claw;8;10047
+5468;Sainthunter;8;10048
+5469;Edge of Despair;8;10049
+5470;Edge of Chaos;8;10050
+5471;Apocalypse;8;10051
+5472;Edge of Thanatos;8;10052
+5473;Edge of Banishing;8;10053
+5474;Rightful Payback;8;10054
+5475;Edge of Origin;8;10055
+5476;Eternal Edge;8;10056
+5477;Final Edge;8;10057
+5478;Satellite Edge;8;10058
+5479;Meteorite Edge;8;10059
+5480;Bigger Bang;8;10060
+5481;Primitive Scythes;9;10001
+5482;Plain Scythes;9;10002
+5483;Flatform Scythes;9;10003
+5484;Sickles of Plenty;9;10004
+5485;Breaker Scythes;9;10005
+5486;Duelist's Scythes;9;10006
+5487;Battle Scythes;9;10007
+5488;Plunder Sickles;9;10008
+5489;Pixie Scythes;9;10009
+5490;Sylph's Scythes;9;10010
+5491;Faerie Scythes;9;10011
+5492;Titania's Scythes;9;10012
+5493;Spriggan's Scythes;9;10013
+5494;Banshee Scythes;9;10014
+5495;Ainsel's Scythes;9;10015
+5496;Elf King's Scythes;9;10016
+5497;Knight's Scythes;9;10017
+5498;Guardian's Scythes;9;10018
+5499;Augur's Scythes;9;10019
+5500;Valkyrie's Scythes;9;10020
+5501;Paladin's Scythes;9;10021
+5502;Holy Scythes;9;10022
+5503;Scythes of Valor;9;10023
+5504;Executioner's Sickles;9;10024
+5505;Custom Scythes;9;10025
+5506;Clockwork Scythes;9;10026
+5507;Tenacious Sickles;9;10027
+5508;Accelerator Scythes;9;10028
+5509;Turbine Scythes;9;10029
+5510;Ceramic Scythes;9;10030
+5511;Mechanized Scythes;9;10031
+5512;Optimized Scythes;9;10032
+5513;Ancient Scythes;9;10033
+5514;Elder Scythes;9;10034
+5515;Emperor Scythes;9;10035
+5516;Legendary Scythes;9;10036
+5517;Agarthan Scythes;9;10037
+5518;Scythes of El Dorado;9;10038
+5519;Scythes of Eden;9;10039
+5520;Amazon's Scythes;9;10041
+5521;Adamant Scythes;9;10042
+5522;Wootz Scythes;9;10043
+5523;Enigma Scythes;9;10044
+5524;Orichalcum Scythes;9;10040
+5525;Sigma Scythes;9;10045
+5526;Delta Scythes;9;10046
+5527;Dark Order;9;10047
+5528;Titan Gutters;9;10048
+5529;Scythes of Despair;9;10049
+5530;Scythes of Chaos;9;10050
+5531;Inferno;9;10051
+5532;Scythes of Thanatos;9;10052
+5533;Scythes of Banishing;9;10053
+5534;The Grim Reapers;9;10054
+5535;Scythes of Origin;9;10055
+5536;Eternal Scythes;9;10056
+5537;Final Scythes;9;10057
+5538;Satellite Scythes;9;10058
+5539;Meteorite Scythes;9;10059
+5540;Spendthrift Knight;9;10060
+5541;Primitive Axe;10;10001
+5542;Plain Axe;10;10002
+5543;Flatform Axe;10;10003
+5544;Hatchet of Plenty;10;10004
+5545;Breaker Axe;10;10005
+5546;Duelist's Axe;10;10006
+5547;Battle Axe;10;10007
+5548;Plunder Hatchet;10;10008
+5549;Large Axe;10;10009
+5550;Grand Axe;10;10010
+5551;Huge Axe;10;10011
+5552;Enormous Axe;10;10012
+5553;Gargantuan Axe;10;10013
+5554;Violent Axe;10;10014
+5555;Berserker's Axe;10;10015
+5556;Axe of Wrath;10;10016
+5557;Knight's Axe;10;10017
+5558;Guardian's Axe;10;10018
+5559;Hatchet of the Round;10;10019
+5560;Valkyrie's Axe;10;10020
+5561;Paladin's Axe;10;10021
+5562;Holy Axe;10;10022
+5563;Axe of Valor;10;10023
+5564;Axe of Order;10;10024
+5565;Custom Axe;10;10025
+5566;Clockwork Axe;10;10026
+5567;General's Axe;10;10027
+5568;Accelerator Axe;10;10028
+5569;Turbine Axe;10;10029
+5570;Ceramic Axe;10;10030
+5571;Mechanized Axe;10;10031
+5572;Admiral's Axe;10;10032
+5573;Ancient Axe;10;10033
+5574;Elder Axe;10;10034
+5575;Antique Greataxe;10;10035
+5576;Legendary Axe;10;10036
+5577;Agarthan Axe;10;10037
+5578;Axe of El Dorado;10;10038
+5579;Axe of Eden;10;10039
+5580;Sealed Hatchet;10;10041
+5581;Adamant Axe;10;10042
+5582;Wootz Axe;10;10043
+5583;Axe of Fortune;10;10044
+5584;Orichalcum Axe;10;10040
+5585;Sigma Axe;10;10045
+5586;Delta Axe;10;10046
+5587;Truestrike Axe;10;10047
+5588;Mythical Greataxe;10;10048
+5589;Axe of Despair;10;10049
+5590;Axe of Chaos;10;10050
+5591;Reactionary Axe;10;10051
+5592;Axe of Thanatos;10;10052
+5593;Axe of Banishing;10;10053
+5594;Ruinous Hatchet;10;10054
+5595;Axe of Origin;10;10055
+5596;Eternal Axe;10;10056
+5597;Final Axe;10;10057
+5598;Satellite Axe;10;10058
+5599;Meteorite Axe;10;10059
+5600;Galaxy Dusking;10;10060
+5601;Primitive Lance;11;10001
+5602;Plain Lance;11;10002
+5603;Flatform Lance;11;10003
+5604;Ornate Lance;11;10004
+5605;Breaker Lance;11;10005
+5606;Duelist's Lance;11;10006
+5607;Battle Lance;11;10007
+5608;Snare Lance;11;10008
+5609;Spike Lance;11;10009
+5610;Needle Lance;11;10010
+5611;Sharp Lance;11;10011
+5612;Stinger Lance;11;10012
+5613;Lance of Harm;11;10013
+5614;Lance of Torment;11;10014
+5615;Plague Lance;11;10015
+5616;Dread Lance;11;10016
+5617;Knight's Lance;11;10017
+5618;Guardian's Lance;11;10018
+5619;Cleric's Lance;11;10019
+5620;Valkyrie's Lance;11;10020
+5621;Paladin's Lance;11;10021
+5622;Holy Lance;11;10022
+5623;Lance of Valor;11;10023
+5624;Lance of Longinus;11;10024
+5625;Custom Lance;11;10025
+5626;Clockwork Lance;11;10026
+5627;Charged Lance;11;10027
+5628;Accelerator Lance;11;10028
+5629;Turbine Lance;11;10029
+5630;Ceramic Lance;11;10030
+5631;Mechanized Lance;11;10031
+5632;Stalk, Mecha-Spear;11;10032
+5633;Ancient Lance;11;10033
+5634;Elder Lance;11;10034
+5635;Ancestral Lance;11;10035
+5636;Legendary Lance;11;10036
+5637;Agarthan Lance;11;10037
+5638;Lance of El Dorado;11;10038
+5639;Lance of Eden;11;10039
+5640;Empress' Lance;11;10041
+5641;Adamant Lance;11;10042
+5642;Wootz Lance;11;10043
+5643;The Phalanx;11;10044
+5644;Orichalcum Lance;11;10040
+5645;Sigma Lance;11;10045
+5646;Delta Lance;11;10046
+5647;Nuclear Lance;11;10047
+5648;Vindicator;11;10048
+5649;Lance of Despair;11;10049
+5650;Lance of Chaos;11;10050
+5651;Vampiric Lance;11;10051
+5652;Lance of Thanatos;11;10052
+5653;Lance of Banishing;11;10053
+5654;Warhead;11;10054
+5655;Lance of Origin;11;10055
+5656;Eternal Lance;11;10056
+5657;Final Lance;11;10057
+5658;Satellite Lance;11;10058
+5659;Meteorite Lance;11;10059
+5660;Extinction Event;11;10060
+5661;Primitive Cannon;12;10001
+5662;Plain Cannon;12;10002
+5663;Flatform Cannon;12;10003
+5664;Ornate Cannon;12;10004
+5665;Breaker Cannon;12;10005
+5666;Duelist's Cannon;12;10006
+5667;Battle Cannon;12;10007
+5668;Snare Cannon;12;10008
+5669;Osseous Cannon;12;10009
+5670;Roaring Cannon;12;10010
+5671;Loud Cannon;12;10011
+5672;Skull Cannon;12;10012
+5673;Gourmand's Cannon;12;10013
+5674;Monstrous Cannon;12;10014
+5675;Brutal Cannon;12;10015
+5676;Glutton's Cannon;12;10016
+5677;Knight's Cannon;12;10017
+5678;Guardian's Cannon;12;10018
+5679;Sniper Cannon;12;10019
+5680;Valkyrie's Cannon;12;10020
+5681;Paladin's Cannon;12;10021
+5682;Holy Cannon;12;10022
+5683;Cannon of Valor;12;10023
+5684;Buzzard Cannon;12;10024
+5685;Custom Cannon;12;10025
+5686;Clockwork Cannon;12;10026
+5687;Darkseeker;12;10027
+5688;Accelerator Cannon;12;10028
+5689;Turbine Cannon;12;10029
+5690;Ceramic Cannon;12;10030
+5691;Mechanized Cannon;12;10031
+5692;Full Metal Cannon;12;10032
+5693;Ancient Cannon;12;10033
+5694;Elder Cannon;12;10034
+5695;Arcanum Cannon;12;10035
+5696;Legendary Cannon;12;10036
+5697;Agarthan Cannon;12;10037
+5698;Cannon of El Dorado;12;10038
+5699;Cannon of Eden;12;10039
+5700;Gordian Cannon;12;10041
+5701;Adamant Cannon;12;10042
+5702;Wootz Cannon;12;10043
+5703;Silent Gunner;12;10044
+5704;Orichalcum Cannon;12;10040
+5705;Sigma Cannon;12;10045
+5706;Delta Cannon;12;10046
+5707;The Longstone;12;10047
+5708;Cannon of Babel;12;10048
+5709;Cannon of Despair;12;10049
+5710;Cannon of Chaos;12;10050
+5711;Spectral Cannon;12;10051
+5712;Cannon of Thanatos;12;10052
+5713;Cannon of Banishing;12;10053
+5714;The Ashen Horse;12;10054
+5715;Cannon of Origin;12;10055
+5716;Eternal Cannon;12;10056
+5717;Final Cannon;12;10057
+5718;Satellite Cannon;12;10058
+5719;Meteorite Cannon;12;10059
+5720;Regurgitator;12;10060
+5721;Primitive Hammer;13;10001
+5722;Plain Hammer;13;10002
+5723;Flatform Hammer;13;10003
+5724;Ornate Hammer;13;10004
+5725;Breaker Hammer;13;10005
+5726;Duelist's Hammer;13;10006
+5727;Battle Hammer;13;10007
+5728;Snare Hammer;13;10008
+5729;Horn Hammer;13;10009
+5730;Beastly Hammer;13;10010
+5731;Raider's Hammer;13;10011
+5732;Crushing Hammer;13;10012
+5733;Druid's Hammer;13;10013
+5734;Forest Hammer;13;10014
+5735;Highland Hammer;13;10015
+5736;Gaia Hammer;13;10016
+5737;Knight's Hammer;13;10017
+5738;Guardian's Hammer;13;10018
+5739;Concert Hammer;13;10019
+5740;Valkyrie's Hammer;13;10020
+5741;Paladin's Hammer;13;10021
+5742;Holy Hammer;13;10022
+5743;Hammer of Valor;13;10023
+5744;The Maestro;13;10024
+5745;Custom Hammer;13;10025
+5746;Clockwork Hammer;13;10026
+5747;Sonic Hammer;13;10027
+5748;Accelerator Hammer;13;10028
+5749;Turbine Hammer;13;10029
+5750;Ceramic Hammer;13;10030
+5751;Mechanized Hammer;13;10031
+5752;The Flattener;13;10032
+5753;Ancient Hammer;13;10033
+5754;Elder Hammer;13;10034
+5755;Faultless;13;10035
+5756;Legendary Hammer;13;10036
+5757;Agarthan Hammer;13;10037
+5758;Hammer of El Dorado;13;10038
+5759;Hammer of Eden;13;10039
+5760;Nautilus Hammer;13;10041
+5761;Adamant Hammer;13;10042
+5762;Wootz Hammer;13;10043
+5763;Infallible;13;10044
+5764;Orichalcum Hammer;13;10040
+5765;Sigma Hammer;13;10045
+5766;Delta Hammer;13;10046
+5767;Growler Half-Full;13;10047
+5768;Traitor to the Cause;13;10048
+5769;Hammer of Despair;13;10049
+5770;Hammer of Chaos;13;10050
+5771;Demon's Hoof;13;10051
+5772;Hammer of Thanatos;13;10052
+5773;Hammer of Banishing;13;10053
+5774;The Lidless Eye;13;10054
+5775;Hammer of Origin;13;10055
+5776;Eternal Hammer;13;10056
+5777;Final Hammer;13;10057
+5778;Satellite Hammer;13;10058
+5779;Meteorite Hammer;13;10059
+5780;Graviton Smasher;13;10060
+5781;Nameless Katana;14;10001
+5782;Eastern Tachi;14;10002
+5783;Vagrant Tachi;14;10003
+5784;Katana of Plenty;14;10004
+5785;Breaker Tachi;14;10005
+5786;Duelist's Tachi;14;10006
+5787;War Tachi;14;10007
+5788;Plunder Katana;14;10008
+5789;Wildflower Tachi;14;10009
+5790;Meadow Katana;14;10010
+5791;Herbalist's Katana;14;10011
+5792;Katana of Springtime;14;10012
+5793;Shadeleaf Tachi;14;10013
+5794;Budding Katana;14;10014
+5795;Greenbough Tachi;14;10015
+5796;Aesthete's Katana;14;10016
+5797;Warrior's Tachi;14;10017
+5798;Yojimbo;14;10018
+5799;Fencer's Tachi;14;10019
+5800;Flowing Tachi;14;10020
+5801;Flagbearer's Tachi;14;10021
+5802;Lifeline Katana;14;10022
+5803;Brave Katana;14;10023
+5804;Clearglass Katana;14;10024
+5805;Trick Katana;14;10025
+5806;Blackiron Tachi;14;10026
+5807;Eightfold Tachi;14;10027
+5808;Armored Tachi;14;10028
+5809;Mechatronic Tachi;14;10029
+5810;Steamdrive Tachi;14;10030
+5811;Galvanic Katana;14;10031
+5812;Deus Ex Tachi;14;10032
+5813;Antique Tachi;14;10033
+5814;Eternal Tachi;14;10034
+5815;Mysterious Tachi;14;10035
+5816;Legendary Tachi;14;10036
+5817;Tectonic Katana;14;10037
+5818;24-Carat Tachi;14;10038
+5819;Neverdull Tachi;14;10039
+5820;Illusive Tachi;14;10041
+5821;Tempered Katana;14;10042
+5822;Darksilver Tachi;14;10043
+5823;Rippling Tachi;14;10044
+5824;Unbreakable Katana;14;10040
+5825;Zero Tachi;14;10045
+5826;Zetsu;14;10046
+5827;Dimensional Katana;14;10047
+5828;The Empty Sky;14;10048
+5829;Katana of Lost Hopes;14;10049
+5830;Katana of Chaos;14;10050
+5831;Katana of Demise;14;10051
+5832;Katana of Slaughter;14;10052
+5833;Exorcist's Katana;14;10053
+5834;Wisdom's Cradle;14;10054
+5835;Original Tachi;14;10055
+5836;Tachi of Forever;14;10056
+5837;All That Is;14;10057
+5838;Celestial Tachi;14;10058
+5839;Shooting Star Katana;14;10059
+5840;Andromeda;14;10060
+5841;Primitive Ball;15;10001
+5842;Plain Ball;15;10002
+5843;Flatform Ball;15;10003
+5844;Ornate Ball;15;10004
+5845;Breaker Ball;15;10005
+5846;Duelist's Ball;15;10006
+5847;Battle Ball;15;10007
+5848;Snare Ball;15;10008
+5849;Wooden Ball;15;10009
+5850;Maple Ball;15;10010
+5851;Birch Ball;15;10011
+5852;Pine Ball;15;10012
+5853;Linden Ball;15;10013
+5854;Camellia Ball;15;10014
+5855;Magnolia Ball;15;10015
+5856;Ivy Ball;15;10016
+5857;Knight's Ball;15;10017
+5858;Guardian's Ball;15;10018
+5859;Chancy Ball;15;10019
+5860;Valkyrie's Ball;15;10020
+5861;Paladin's Ball;15;10021
+5862;Holy Ball;15;10022
+5863;Ball of Valor;15;10023
+5864;Homing Ball;15;10024
+5865;Custom Ball;15;10025
+5866;Clockwork Ball;15;10026
+5867;Stealth Ball;15;10027
+5868;Accelerator Ball;15;10028
+5869;Turbine Ball;15;10029
+5870;Ceramic Ball;15;10030
+5871;Mechanized Ball;15;10031
+5872;Advanced Ball;15;10032
+5873;Ancient Ball;15;10033
+5874;Elder Ball;15;10034
+5875;Spirit Ball;15;10035
+5876;Legendary Ball;15;10036
+5877;Agarthan Ball;15;10037
+5878;Ball of El Dorado;15;10038
+5879;Ball of Eden;15;10039
+5880;Jewel of Yore;15;10041
+5881;Adamant Ball;15;10042
+5882;Wootz Ball;15;10043
+5883;The Peacemaker;15;10044
+5884;Orichalcum Ball;15;10040
+5885;Sigma Ball;15;10045
+5886;Delta Ball;15;10046
+5887;Cypher;15;10047
+5888;Omega Ball;15;10048
+5889;Ball of Despair;15;10049
+5890;Ball of Chaos;15;10050
+5891;Public Enemy No. 1;15;10051
+5892;Ball of Thanatos;15;10052
+5893;Ball of Banishing;15;10053
+5894;Morningstar Ascending;15;10054
+5895;Ball of Origin;15;10055
+5896;Eternal Ball;15;10056
+5897;Final Ball;15;10057
+5898;Satellite Ball;15;10058
+5899;Meteorite Ball;15;10059
+5900;Eclipse of Reason;15;10060
+5901;Primitive Knuckles;16;10001
+5902;Plain Knuckles;16;10002
+5903;Flatform Knuckles;16;10003
+5904;Ornate Knuckles;16;10004
+5905;Breaker Knuckles;16;10005
+5906;Duelist's Knuckles;16;10006
+5907;Battle Knuckles;16;10007
+5908;Snare Knuckles;16;10008
+5909;Knuckles of the Crow;16;10009
+5910;Peak Knuckles;16;10010
+5911;Crested Knuckles;16;10011
+5912;Titan Knuckles;16;10012
+5913;Raider's Knuckles;16;10013
+5914;Jawbone Knuckles;16;10014
+5915;Bear Knuckles;16;10015
+5916;Chimaera Knuckles;16;10016
+5917;Knight's Knuckles;16;10017
+5918;Guardian's Knuckles;16;10018
+5919;Face Punchers;16;10019
+5920;Valkyrie's Knuckles;16;10020
+5921;Paladin's Knuckles;16;10021
+5922;Holy Knuckles;16;10022
+5923;Knuckles of Valor;16;10023
+5924;Kaiser Knuckles;16;10024
+5925;Custom Knuckles;16;10025
+5926;Clockwork Knuckles;16;10026
+5927;Brawler Knuckles;16;10027
+5928;Accelerator Knuckles;16;10028
+5929;Turbine Knuckles;16;10029
+5930;Ceramic Knuckles;16;10030
+5931;Mechanized Knuckles;16;10031
+5932;Thunderstrikers;16;10032
+5933;Ancient Knuckles;16;10033
+5934;Elder Knuckles;16;10034
+5935;Mirage Knuckles;16;10035
+5936;Legendary Knuckles;16;10036
+5937;Agarthan Knuckles;16;10037
+5938;Knuckles of El Dorado;16;10038
+5939;Knuckles of Eden;16;10039
+5940;Fists of the Advent;16;10041
+5941;Adamant Knuckles;16;10042
+5942;Wootz Knuckles;16;10043
+5943;Fists of Healing;16;10044
+5944;Orichalcum Knuckles;16;10040
+5945;Sigma Knuckles;16;10045
+5946;Delta Knuckles;16;10046
+5947;Lambda Knuckles;16;10047
+5948;Spirits of the Knife;16;10048
+5949;Knuckles of Despair;16;10049
+5950;Knuckles of Chaos;16;10050
+5951;Hands of Ruin;16;10051
+5952;Knuckles of Thanatos;16;10052
+5953;Knuckles of Banishing;16;10053
+5954;Sacrifice;16;10054
+5955;Knuckles of Origin;16;10055
+5956;Eternal Knuckles;16;10056
+5957;Final Knuckles;16;10057
+5958;Satellite Knuckles;16;10058
+5959;Meteorite Knuckles;16;10059
+5960;The First Principle;16;10060
+5961;Junk Sword;17;0
+5962;Masamune;18;0
+5963;Masamune;18;0
+5964;Thanatos;26;0
+5965;Aqua Scimitar;2;0
+5966;Basic Arms;5;0
+5967;Imperial Whips;7;0
+5968;Purple Lightning Edge;8;0
+5969;Storm Scythes;9;0
+5970;Tertiary Sword;1;0
+5971;Doomquills;20;0
+5972;Lance of Ages;21;0
+5973;Divine Consorts;22;0
+5974;Twin Mirage;23;0
+5975;Hearthaven;24;0
+5976;Royal Guard;25;0
+5977;Bringer of the Winds;26;0
+5978;UNKNOWN_5978;33;0
+5979;UNKNOWN_5979;34;0
+5980;武器;28;0
+5981;武器;29;0
+5982;武器;30;0
+5983;UNKNOWN_5983;18;0
+5984;UNKNOWN_5984;31;0
+5985;UNKNOWN_5985;27;0
+5986;UNKNOWN_5986;32;0
+5987;UNKNOWN_5987;7;0
+5988;UNKNOWN_5988;14;0
+5989;Masamune;18;0
+5990;Monado;33;10001
+5991;Monado;33;10002
+5992;Monado;33;10003
+5993;Monado;33;10004
+5994;Monado;33;10005
+5995;Monado;33;10006
+5996;Monado;33;10007
+5997;Monado;33;10008
+5998;Monado;33;10009
+5999;Monado;33;10010
+6000;Monado;33;10011
+6001;Monado;33;10012
+6002;Monado;33;10013
+6003;Monado;33;10014
+6004;Monado;33;10015
+6005;Monado;33;10016
+6006;Monado;33;10017
+6007;Monado;33;10018
+6008;Monado;33;10019
+6009;Monado;33;10020
+6010;Monado;33;10021
+6011;Monado;33;10022
+6012;Monado;33;10023
+6013;Monado;33;10024
+6014;Monado;33;10025
+6015;Monado;33;10026
+6016;Monado;33;10027
+6017;Monado;33;10028
+6018;Monado;33;10029
+6019;Monado;33;10030
+6020;Monado;33;10031
+6021;Monado;33;10032
+6022;Monado;33;10033
+6023;Monado;33;10034
+6024;Monado;33;10035
+6025;Monado;33;10036
+6026;Monado;33;10037
+6027;Monado;33;10038
+6028;Monado;33;10039
+6029;Monado;33;10041
+6030;Monado;33;10042
+6031;Monado;33;10043
+6032;Monado;33;10044
+6033;Monado;33;10040
+6034;Monado;33;10045
+6035;Monado;33;10046
+6036;Monado;33;10047
+6037;Monado;33;10048
+6038;Monado;33;10049
+6039;Monado;33;10050
+6040;Monado;33;10051
+6041;Monado;33;10052
+6042;Monado;33;10053
+6043;Monado;33;10054
+6044;Monado;33;10055
+6045;Monado;33;10056
+6046;Monado;33;10057
+6047;Monado;33;10058
+6048;Monado;33;10059
+6049;Monado;33;10060
+6050;Well-Used Blades;34;10001
+6051;Well-Used Blades;34;10002
+6052;Well-Used Blades;34;10003
+6053;Well-Used Blades;34;10004
+6054;Well-Used Blades;34;10005
+6055;Well-Used Blades;34;10006
+6056;Well-Used Blades;34;10007
+6057;Well-Used Blades;34;10008
+6058;Well-Used Blades;34;10009
+6059;Well-Used Blades;34;10010
+6060;Well-Used Blades;34;10011
+6061;Well-Used Blades;34;10012
+6062;Well-Used Blades;34;10013
+6063;Well-Used Blades;34;10014
+6064;Well-Used Blades;34;10015
+6065;Well-Used Blades;34;10016
+6066;Well-Used Blades;34;10017
+6067;Well-Used Blades;34;10018
+6068;Well-Used Blades;34;10019
+6069;Well-Used Blades;34;10020
+6070;Well-Used Blades;34;10021
+6071;Well-Used Blades;34;10022
+6072;Well-Used Blades;34;10023
+6073;Well-Used Blades;34;10024
+6074;Well-Used Blades;34;10025
+6075;Well-Used Blades;34;10026
+6076;Well-Used Blades;34;10027
+6077;Well-Used Blades;34;10028
+6078;Well-Used Blades;34;10029
+6079;Well-Used Blades;34;10030
+6080;Well-Used Blades;34;10031
+6081;Well-Used Blades;34;10032
+6082;Well-Used Blades;34;10033
+6083;Well-Used Blades;34;10034
+6084;Well-Used Blades;34;10035
+6085;Well-Used Blades;34;10036
+6086;Well-Used Blades;34;10037
+6087;Well-Used Blades;34;10038
+6088;Well-Used Blades;34;10039
+6089;Well-Used Blades;34;10041
+6090;Well-Used Blades;34;10042
+6091;Well-Used Blades;34;10043
+6092;Well-Used Blades;34;10044
+6093;Well-Used Blades;34;10040
+6094;Well-Used Blades;34;10045
+6095;Well-Used Blades;34;10046
+6096;Well-Used Blades;34;10047
+6097;Well-Used Blades;34;10048
+6098;Well-Used Blades;34;10049
+6099;Well-Used Blades;34;10050
+6100;Well-Used Blades;34;10051
+6101;Well-Used Blades;34;10052
+6102;Well-Used Blades;34;10053
+6103;Well-Used Blades;34;10054
+6104;Well-Used Blades;34;10055
+6105;Well-Used Blades;34;10056
+6106;Well-Used Blades;34;10057
+6107;Well-Used Blades;34;10058
+6108;Well-Used Blades;34;10059
+6109;Well-Used Blades;34;10060
+6110;武器;18;10001
+6111;武器;18;10002
+6112;武器;18;10003
+6113;武器;18;10004
+6114;武器;18;10005
+6115;武器;18;10006
+6116;武器;18;10007
+6117;武器;18;10008
+6118;武器;18;10009
+6119;武器;18;10010
+6120;武器;18;10011
+6121;武器;18;10012
+6122;武器;18;10013
+6123;武器;18;10014
+6124;武器;18;10015
+6125;武器;18;10016
+6126;武器;18;10017
+6127;武器;18;10018
+6128;武器;18;10019
+6129;武器;18;10020
+6130;武器;18;10021
+6131;武器;18;10022
+6132;武器;18;10023
+6133;武器;18;10024
+6134;武器;18;10025
+6135;武器;18;10026
+6136;武器;18;10027
+6137;武器;18;10028
+6138;武器;18;10029
+6139;武器;18;10030
+6140;武器;18;10031
+6141;武器;18;10032
+6142;武器;18;10033
+6143;武器;18;10034
+6144;武器;18;10035
+6145;武器;18;10036
+6146;武器;18;10037
+6147;武器;18;10038
+6148;武器;18;10039
+6149;武器;18;10041
+6150;武器;18;10042
+6151;武器;18;10043
+6152;武器;18;10044
+6153;武器;18;10040
+6154;武器;18;10045
+6155;武器;18;10046
+6156;武器;18;10047
+6157;武器;18;10048
+6158;武器;18;10049
+6159;武器;18;10050
+6160;武器;18;10051
+6161;武器;18;10052
+6162;武器;18;10053
+6163;武器;18;10054
+6164;武器;18;10055
+6165;武器;18;10056
+6166;武器;18;10057
+6167;武器;18;10058
+6168;武器;18;10059
+6169;武器;18;10060
+6170;武器;31;10001
+6171;武器;31;10002
+6172;武器;31;10003
+6173;武器;31;10004
+6174;武器;31;10005
+6175;武器;31;10006
+6176;武器;31;10007
+6177;武器;31;10008
+6178;武器;31;10009
+6179;武器;31;10010
+6180;武器;31;10011
+6181;武器;31;10012
+6182;武器;31;10013
+6183;武器;31;10014
+6184;武器;31;10015
+6185;武器;31;10016
+6186;武器;31;10017
+6187;武器;31;10018
+6188;武器;31;10019
+6189;武器;31;10020
+6190;武器;31;10021
+6191;武器;31;10022
+6192;武器;31;10023
+6193;武器;31;10024
+6194;武器;31;10025
+6195;武器;31;10026
+6196;武器;31;10027
+6197;武器;31;10028
+6198;武器;31;10029
+6199;武器;31;10030
+6200;武器;31;10031
+6201;武器;31;10032
+6202;武器;31;10033
+6203;武器;31;10034
+6204;武器;31;10035
+6205;武器;31;10036
+6206;武器;31;10037
+6207;武器;31;10038
+6208;武器;31;10039
+6209;武器;31;10041
+6210;武器;31;10042
+6211;武器;31;10043
+6212;武器;31;10044
+6213;武器;31;10040
+6214;武器;31;10045
+6215;武器;31;10046
+6216;武器;31;10047
+6217;武器;31;10048
+6218;武器;31;10049
+6219;武器;31;10050
+6220;武器;31;10051
+6221;武器;31;10052
+6222;武器;31;10053
+6223;武器;31;10054
+6224;武器;31;10055
+6225;武器;31;10056
+6226;武器;31;10057
+6227;武器;31;10058
+6228;武器;31;10059
+6229;武器;31;10060
+6230;武器;32;10001
+6231;武器;32;10002
+6232;武器;32;10003
+6233;武器;32;10004
+6234;武器;32;10005
+6235;武器;32;10006
+6236;武器;32;10007
+6237;武器;32;10008
+6238;武器;32;10009
+6239;武器;32;10010
+6240;武器;32;10011
+6241;武器;32;10012
+6242;武器;32;10013
+6243;武器;32;10014
+6244;武器;32;10015
+6245;武器;32;10016
+6246;武器;32;10017
+6247;武器;32;10018
+6248;武器;32;10019
+6249;武器;32;10020
+6250;武器;32;10021
+6251;武器;32;10022
+6252;武器;32;10023
+6253;武器;32;10024
+6254;武器;32;10025
+6255;武器;32;10026
+6256;武器;32;10027
+6257;武器;32;10028
+6258;武器;32;10029
+6259;武器;32;10030
+6260;武器;32;10031
+6261;武器;32;10032
+6262;武器;32;10033
+6263;武器;32;10034
+6264;武器;32;10035
+6265;武器;32;10036
+6266;武器;32;10037
+6267;武器;32;10038
+6268;武器;32;10039
+6269;武器;32;10041
+6270;武器;32;10042
+6271;武器;32;10043
+6272;武器;32;10044
+6273;武器;32;10040
+6274;武器;32;10045
+6275;武器;32;10046
+6276;武器;32;10047
+6277;武器;32;10048
+6278;武器;32;10049
+6279;武器;32;10050
+6280;武器;32;10051
+6281;武器;32;10052
+6282;武器;32;10053
+6283;武器;32;10054
+6284;武器;32;10055
+6285;武器;32;10056
+6286;武器;32;10057
+6287;武器;32;10058
+6288;武器;32;10059
+6289;武器;32;10060
+6290;初期1;3;0

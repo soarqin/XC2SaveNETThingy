@@ -68,6 +68,20 @@ namespace XC2SaveNETThingy
             #endregion Driver
 
             #region Blade
+            cbxBladeCreator.BindDataTable(XC2Data.Drivers());
+            cbxBladeSetDriver.BindDataTable(XC2Data.Drivers());
+            cbxBladeWeaponType.BindDataTable(XC2Data.Weapons(7));
+            cbxBladeDefWeapon.BindDataTable(XC2Data.BladeWeaponNames(), "FriendlyName");
+            cbxBladeElement.BindDataTable(XC2Data.Elements());
+            cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames());
+
+            cbxBladeAuxCore1ID.BindDataTable(XC2Data.Items());
+            cbxBladeAuxCore2ID.BindDataTable(XC2Data.Items());
+            cbxBladeAuxCore3ID.BindDataTable(XC2Data.Items());
+            cbxBladeAuxCore1Type.BindDataTable(XC2Data.ItemTypes());
+            cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes());
+            cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes());
+
             cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories());
             cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories());
             cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items());
@@ -204,6 +218,26 @@ namespace XC2SaveNETThingy
             SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
             SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, XC2Data.GetPoppiArtsCards());
             SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, XC2Data.GetPoppiSkillRAM());
+
+            nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
+            nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
+            nudItemsSerial3.Value = SAVEDATA.ItemBox.Serials[2];
+            nudItemsSerial4.Value = SAVEDATA.ItemBox.Serials[3];
+            nudItemsSerial5.Value = SAVEDATA.ItemBox.Serials[4];
+            nudItemsSerial6.Value = SAVEDATA.ItemBox.Serials[5];
+            nudItemsSerial7.Value = SAVEDATA.ItemBox.Serials[6];
+            nudItemsSerial8.Value = SAVEDATA.ItemBox.Serials[7];
+            nudItemsSerial9.Value = SAVEDATA.ItemBox.Serials[8];
+            nudItemsSerial10.Value = SAVEDATA.ItemBox.Serials[9];
+            nudItemsSerial11.Value = SAVEDATA.ItemBox.Serials[10];
+            nudItemsSerial12.Value = SAVEDATA.ItemBox.Serials[11];
+            nudItemsSerial13.Value = SAVEDATA.ItemBox.Serials[12];
+            nudItemsSerial14.Value = SAVEDATA.ItemBox.Serials[13];
+            nudItemsSerial15.Value = SAVEDATA.ItemBox.Serials[14];
+            nudItemsSerial16.Value = SAVEDATA.ItemBox.Serials[15];
+            nudItemsSerial17.Value = SAVEDATA.ItemBox.Serials[16];
+            nudItemsSerial18.Value = SAVEDATA.ItemBox.Serials[17];
+            nudItemsSerial19.Value = SAVEDATA.ItemBox.Serials[18];
             #endregion Items
 
 
@@ -475,9 +509,14 @@ namespace XC2SaveNETThingy
             {
                 Blade b = SAVEDATA.Blades[index];
 
-                nudBladeDataType.Value = b.DataType;
+                #region Blade Misc
+                chkBladeIsEnabled.Checked = b.IsEnabled;
+
                 nudBladeCreator.Value = b.Creator;
+                cbxBladeCreator.SelectedValue = b.Creator;
                 nudBladeSetDriver.Value = b.SetDriver;
+                cbxBladeSetDriver.SelectedValue = b.SetDriver;
+                chkBladeEnableEngageRex.Checked = b.EnableEngageRex;
                 nudBladeID.Value = b.ID;
                 nudBladeRace.Value = b.Race;
                 nudBladeGender.Value = b.Gender;
@@ -487,8 +526,57 @@ namespace XC2SaveNETThingy
                 nudBladeResonatedTimeMinute.Value = b.BornTime.Minutes;
                 nudBladeResonatedTimeSecond.Value = b.BornTime.Seconds;
 
-                #region BladeIdeas
+                nudBladeWeaponType.Value = b.WeaponType;
+                cbxBladeWeaponType.SelectedValue = b.WeaponType;
+                nudBladeDefWeapon.Value = b.DefWeapon;
+                cbxBladeDefWeapon.SelectedValue = b.DefWeapon;
+                nudBladeOrbNum.Value = b.OrbNum;
+                nudBladeElement.Value = b.Atr;
+                cbxBladeElement.SelectedValue = b.Atr;
+                nudBladeRareNameID.Value = b.RareNameId;
+                nudBladeCommonNameID.Value = b.CommonNameId;
+                cbxBladeCommonNameID.SelectedValue = b.CommonNameId;
 
+                nudBladeTrustPoints.Value = b.TrustPoints;
+                nudBladeTrustRank.Value = b.TrustRank;
+                cbxBladeTrustRank.SelectedValue = b.TrustRank;
+
+                nudBladeKeyReleaseLevel.Value = b.KeyReleaseLevel;
+                chkBladeReleaseLock.Checked = b.ReleaseLock;
+                #endregion Blade Misc
+
+                #region Blade Aux Cores
+                nudBladeAuxCore1ID.Value = b.AuxCores[0];
+                cbxBladeAuxCore1ID.SelectedValue = b.AuxCores[0];
+                nudBladeAuxCore1Type.Value = b.AuxCoreItemHandles[0].Type;
+                cbxBladeAuxCore1Type.SelectedValue = b.AuxCoreItemHandles[0].Type;
+                nudBladeAuxCore1Serial.Value = b.AuxCoreItemHandles[0].Serial;
+
+                nudBladeAuxCore2ID.Value = b.AuxCores[1];
+                cbxBladeAuxCore2ID.SelectedValue = b.AuxCores[1];
+                nudBladeAuxCore2Type.Value = b.AuxCoreItemHandles[1].Type;
+                cbxBladeAuxCore2Type.SelectedValue = b.AuxCoreItemHandles[1].Type;
+                nudBladeAuxCore2Serial.Value = b.AuxCoreItemHandles[1].Serial;
+
+                nudBladeAuxCore3ID.Value = b.AuxCores[2];
+                cbxBladeAuxCore3ID.SelectedValue = b.AuxCores[2];
+                nudBladeAuxCore3Type.Value = b.AuxCoreItemHandles[2].Type;
+                cbxBladeAuxCore3Type.SelectedValue = b.AuxCoreItemHandles[2].Type;
+                nudBladeAuxCore3Serial.Value = b.AuxCoreItemHandles[2].Serial;
+                #endregion Blade Aux Cores
+
+                #region Blade Stats
+                nudBladePhysDef.Value = b.PhysDef;
+                nudBladeEtherDef.Value = b.EtherDef;
+                nudBladeHP.Value = b.MaxHPMod;
+                nudBladeStrength.Value = b.StrengthMod;
+                nudBladeEther.Value = b.EtherMod;
+                nudBladeDexterity.Value = b.DexterityMod;
+                nudBladeAgility.Value = b.AgilityMod;
+                nudBladeLuck.Value = b.LuckMod;
+                #endregion Blade Stats
+
+                #region Blade Ideas
                 nudBladeBraveryLevel.Value = b.BraveryLevel;
                 nudBladeBraveryPoints.Value = b.BraveryPoints;
                 nudBladeTruthLevel.Value = b.TruthLevel;
@@ -497,17 +585,27 @@ namespace XC2SaveNETThingy
                 nudBladeCompassionPoints.Value = b.CompassionPoints;
                 nudBladeJusticeLevel.Value = b.JusticeLevel;
                 nudBladeJusticePoints.Value = b.JusticePoints;
+                #endregion Blade Ideas
 
-                #endregion BladeIdeas
+                #region Blade Favorite Pouch Stuff
+                nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
+                cbxBladeFavoriteCategory0.SelectedValue = b.FavoriteCategory0;
+                chkBladeFavoriteCategory0Unlocked.Checked = b.FavoriteCategory0Unlocked;
 
-                nudBladeTrustPoints.Value = b.TrustPoints;
-                nudBladeTrustRank.Value = b.TrustRank;
-                nudBladeBArtExId.Value = b.BArtExId;
-                nudBladeBladeArtsExH.Value = b.BladeArtsExH;
-                nudBladeBArtEx2Id.Value = b.BladeArtsEx2H;
+                nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
+                cbxBladeFavoriteCategory1.SelectedValue = b.FavoriteCategory1;
+                chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory1Unlocked;
 
-                #region BladeSpecials
+                nudBladeFavoriteItem0.Value = b.FavoriteItem0;
+                cbxBladeFavoriteItem0.SelectedValue = b.FavoriteItem0;
+                chkBladeFavoriteItem0Unlocked.Checked = b.FavoriteItem0Unlocked;
 
+                nudBladeFavoriteItem1.Value = b.FavoriteItem1;
+                cbxBladeFavoriteItem1.SelectedValue = b.FavoriteItem1;
+                chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem1Unlocked;
+                #endregion Blade Favorite Pouch Stuff
+
+                #region Blade Specials
                 nudBladeBArt1ID.Value = b.BArts[0].ID;
                 cbxBladeBArt1ID.SelectedValue = b.BArts[0].ID;
                 nudBladeBArt1RecastRev.Value = b.BArts[0].RecastRev;
@@ -531,11 +629,9 @@ namespace XC2SaveNETThingy
                 nudBladeBArt3MaxLevel.Value = b.BArts[2].MaxLevel;
                 hbxBladeBArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x04);
                 hbxBladeBArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x09);
+                #endregion Blade Specials
 
-                #endregion BladeSpecials
-
-                #region BladeArts
-
+                #region Blade Arts
                 nudBladeNArt1ID.Value = b.NArts[0].ID;
                 cbxBladeNArt1ID.SelectedValue = b.NArts[0].ID;
                 nudBladeNArt1RecastRev.Value = b.NArts[0].RecastRev;
@@ -559,11 +655,9 @@ namespace XC2SaveNETThingy
                 nudBladeNArt3MaxLevel.Value = b.NArts[2].MaxLevel;
                 hbxBladeNArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x04);
                 hbxBladeNArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x09);
+                #endregion Blade Arts
 
-                #endregion BladeArts
-
-                #region BladeSkills
-
+                #region Blade Battle Skills
                 nudBladeBattleSkill1ID.Value = b.BattleSkills[0].ID;
                 cbxBladeBattleSkill1ID.SelectedValue = b.BattleSkills[0].ID;
                 nudBladeBattleSkill1Level.Value = b.BattleSkills[0].Level;
@@ -584,10 +678,9 @@ namespace XC2SaveNETThingy
                 nudBladeBattleSkill3MaxLevel.Value = b.BattleSkills[2].MaxLevel;
                 nudBladeBattleSkill3Unk_0x02.Value = b.BattleSkills[2].Unk_0x02;
                 nudBladeBattleSkill3Unk_0x05.Value = b.BattleSkills[2].Unk_0x05;
+                #endregion Blade Battle Skills
 
-                #endregion BladeSkills
-
-                #region FieldSkills
+                #region Blade Field Skills
 
                 nudBladeFieldSkill1ID.Value = b.FieldSkills[0].ID;
                 cbxBladeFieldSkill1ID.SelectedValue = b.FieldSkills[0].ID;
@@ -609,11 +702,9 @@ namespace XC2SaveNETThingy
                 nudBladeFieldSkill3MaxLevel.Value = b.FieldSkills[2].MaxLevel;
                 nudBladeFieldSkill3Unk_0x02.Value = b.FieldSkills[2].Unk_0x02;
                 nudBladeFieldSkill3Unk_0x05.Value = b.FieldSkills[2].Unk_0x05;
+                #endregion Blade Field Skills
 
-                #endregion FieldSkills
-
-                #region BladeAffinityChart
-
+                #region Blade Affinity Chart
                 nudBladeKeyAffinityRewardID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.ID;
                 nudBladeKeyAffinityRewardAlignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.Alignment;
 
@@ -637,29 +728,11 @@ namespace XC2SaveNETThingy
                 nudBladeAffFieldSkill2Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[1].Alignment;
                 nudBladeAffFieldSkill3ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].ID;
                 nudBladeAffFieldSkill3Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].Alignment;
+                #endregion Blade Affinity Chart
 
+                #region Blade Poppiswap
 
-
-
-                #endregion BladeAffinityChart
-
-                cbxBladeTrustRank.SelectedValue = b.TrustRank;
-
-                nudBladeKeyReleaseLevel.Value = b.KeyReleaseLevel;
-                nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
-                nudBladeFavoriteItem0.Value = b.FavoriteItem0;
-                cbxBladeFavoriteItem0.SelectedValue = b.FavoriteItem0;
-                nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
-                nudBladeFavoriteItem1.Value = b.FavoriteItem1;
-
-                chkBladeFavoriteCategory0Unlocked.Checked = b.FavoriteCategory0Unlocked;
-                chkBladeFavoriteItem0Unlocked.Checked = b.FavoriteItem0Unlocked;
-                chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory1Unlocked;
-                chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem1Unlocked;
-
-                #region BladePoppiswap
-
-                #region Misc
+                #region Blade Poppiswap Misc
                 nudBladePoppiswapEnergyConverterLevel.Value = b.Poppiswap.PowerCapacity;
                 if (b.Poppiswap.PowerCapacity >= trbBladePoppiswapEnergyConverterLevel.Minimum && b.Poppiswap.PowerCapacity <= trbBladePoppiswapEnergyConverterLevel.Maximum)
                     trbBladePoppiswapEnergyConverterLevel.Value = b.Poppiswap.PowerCapacity;
@@ -676,12 +749,9 @@ namespace XC2SaveNETThingy
                 nudBladePoppiswapElementCoreType.Value = b.Poppiswap.ElementCoreItemHandle.Type;
                 cbxBladePoppiswapElementCoreType.SelectedValue = b.Poppiswap.ElementCoreItemHandle.Type;
                 nudBladePoppiswapElementCoreSerial.Value = b.Poppiswap.ElementCoreItemHandle.Serial;
+                #endregion Blade Poppiswap Misc
 
-
-
-                #endregion Misc
-
-                #region ArtsCards
+                #region Blade Poppiswap Arts Cards
                 nudBladePoppiswapNArts1ID.Value = b.Poppiswap.NArts[0].EnhanceID;
                 cbxBladePoppiswapNArts1ID.SelectedValue = b.Poppiswap.NArts[0].EnhanceID;
                 nudBladePoppiswapNArts1RecastRev.Value = b.Poppiswap.NArts[0].RecastRev;
@@ -714,9 +784,9 @@ namespace XC2SaveNETThingy
                 nudBladePoppiswapNArts3ItemSerial.Value = b.Poppiswap.NArts[2].ItemHandle.Serial;
                 hbxBladePoppiswapNArts3Unk_0x06.ByteProvider = new FixedLengthByteProvider(b.Poppiswap.NArts[2].Unk_0x06);
                 hbxBladePoppiswapNArts3Unk_0x08.ByteProvider = new FixedLengthByteProvider(b.Poppiswap.NArts[2].Unk_0x08);
-                #endregion ArtsCards
+                #endregion Blade Poppiswap Arts Cards
 
-                #region Specials Enhancing RAM
+                #region Blade Poppiswap Specials Enhancing RAM
                 chkBladePoppiswapSpecials1Enabled.Checked = b.Poppiswap.OpenCircuits.Specials0_Enabled;
                 chkBladePoppiswapSpecials2Enabled.Checked = b.Poppiswap.OpenCircuits.Specials1_Enabled;
                 chkBladePoppiswapSpecials3Enabled.Checked = b.Poppiswap.OpenCircuits.Specials2_Enabled;
@@ -750,9 +820,9 @@ namespace XC2SaveNETThingy
                 nudBladePoppiswapBArtsEnhance3ItemSerial.Value = b.Poppiswap.BArtsEnhance[2].ItemHandle.Serial;
                 hbxBladePoppiswapBArtsEnhance3Unk_0x06.ByteProvider = new FixedLengthByteProvider(b.Poppiswap.BArtsEnhance[2].Unk_0x06);
                 hbxBladePoppiswapBArtsEnhance3Unk_0x08.ByteProvider = new FixedLengthByteProvider(b.Poppiswap.BArtsEnhance[2].Unk_0x08);
-                #endregion Specials Enhancing RAM
+                #endregion Blade Poppiswap Specials Enhancing RAM
 
-                #region Skill RAM
+                #region Blade Poppiswap Skill RAM
                 nudBladePoppiswapSkillRAM1ID.Value = b.Poppiswap.SkillRAMIDs[0];
                 cbxBladePoppiswapSkillRAM1ID.SelectedValue = b.Poppiswap.SkillRAMIDs[0];
                 nudBladePoppiswapSkillRAM1Type.Value = b.Poppiswap.SkillRAMItemHandles[0].Type;
@@ -770,9 +840,9 @@ namespace XC2SaveNETThingy
                 nudBladePoppiswapSkillRAM3Type.Value = b.Poppiswap.SkillRAMItemHandles[2].Type;
                 cbxBladePoppiswapSkillRAM3Type.SelectedValue = b.Poppiswap.SkillRAMItemHandles[2].Type;
                 nudBladePoppiswapSkillRAM3Serial.Value = b.Poppiswap.SkillRAMItemHandles[2].Serial;
-                #endregion Skill RAM
+                #endregion Blade Poppiswap Skill RAM
 
-                #region Skill Upgrade
+                #region Blade Poppiswap Skill Upgrade
                 nudBladePoppiswapSkillUpgrade1ID.Value = b.Poppiswap.SkillUpgradeIDs[0];
                 cbxBladePoppiswapSkillUpgrade1ID.SelectedValue = b.Poppiswap.SkillUpgradeIDs[0];
                 nudBladePoppiswapSkillUpgrade1Type.Value = b.Poppiswap.SkillUpgradeItemHandles[0].Type;
@@ -794,26 +864,75 @@ namespace XC2SaveNETThingy
                 chkBladePoppiswapSkillUpgrade1Enabled.Checked = b.Poppiswap.OpenCircuits.Skill0_Enabled;
                 chkBladePoppiswapSkillUpgrade2Enabled.Checked = b.Poppiswap.OpenCircuits.Skill1_Enabled;
                 chkBladePoppiswapSkillUpgrade3Enabled.Checked = b.Poppiswap.OpenCircuits.Skill2_Enabled;
-                #endregion Skill Upgrade
+                #endregion Blade Poppiswap Skill Upgrade
 
-                #endregion BladePoppiswap
-
-
-                nudBladeCommonBladeIndex.Value = b.CommonBladeIndex;
+                #endregion Blade Poppiswap
 
                 #region BladeAffinityChart
                 LoadBladeAffinityReward(new Point(1, 1));
                 #endregion BladeAffinityChart
 
-                #region BladeUnknown
+                #region BladeResourceData
+                txtBladeModelResourceName.Text = b.ModelResourceName.Str;
+                txtBladeModel2Name.Text = b.Model2Name.Str;
+                txtBladeMotionResourceName.Text = b.MotionResourceName.Str;
+                txtBladeMotion2Name.Text = b.Motion2Name.Str;
+                txtBladeAddMotionName.Text = b.AddMotionName.Str;
+                txtBladeVoiceName.Text = b.VoiceName.Str;
+                hbxBladeClipEvent.ByteProvider = new FixedLengthByteProvider(b.ClipEvent);
+                txtBladeComSE.Text = b.Com_SE.Str;
+                txtBladeEffectResourceName.Text = b.EffectResourceName.Str;
+                txtBladeComVo.Text = b.Com_Vo.Str;
+                txtBladeCenterBone.Text = b.CenterBone.Str;
+                txtBladeCamBone.Text = b.CamBone.Str;
+                txtBladeSeResourceName.Text = b.SeResourceName.Str;
+                #endregion BladeResourceData
+
+                #region Blade Other
+                nudBladeAffinityChartStatus.Value = b.AffinityChartStatus;
+                nudBladeBArtExId.Value = b.BArtExId;
+                nudBladeBArtEx2Id.Value = b.BArtEx2Id;
+                nudBladeBladeArtsExH.Value = b.BladeArtsExH;
+                nudBladeBladeArtsEx2H.Value = b.BladeArtsEx2H;
+                nudBladeChestHeight.Value = b.ChestHeight;
+                nudBladeCollisionID.Value = b.CollisionId;
+                nudBladeCondition.Value = b.Condition;
+                nudBladeCoolTime.Value = b.CoolTime;
+                nudBladeCommonBladeIndex.Value = b.CommonBladeIndex;
+                nudBladeCreateEventID.Value = b.CreateEventID;
+                nudBladeEyeRot.Value = b.EyeRot;
+                nudBladeFootStep.Value = b.FootStep;
+                nudBladeFootStepEffect.Value = b.FootStep;
+                nudBladeIsUnselect.Value = b.IsUnselect;
+                nudBladeKizunaLinkSet.Value = b.KizunaLinkSet;
+                nudBladeLandingHeight.Value = b.LandingHeight;
+                nudBladeMountPoint.Value = b.MountPoint;
+                nudBladeMountObject.Value = b.MountObject;
+                nudBladeNormalTalk.Value = b.NormalTalk;
+                nudBladeOffsetID.Value = b.OffsetID;
+                nudBladePersonality.Value = b.Personality;
+                nudBladeQuestRace.Value = b.QuestRace;
+                nudBladeReleaseStatus.Value = b.BladeReleaseStatus;
+                nudBladeScale.Value = b.Scale;
+                nudBladeSize.Value = b.BladeSize;
+                nudBladeWeaponScale.Value = b.WpnScale;
+
+                nudBladeExtraParts.Value = b.ExtraParts;
+                hbxBladeExtraParts2.ByteProvider = new FixedLengthByteProvider(b.ExtraParts2);
+                hbxBladeInternalName.ByteProvider = new FixedLengthByteProvider(b.Name);
+                nudBladeInternalNameLength.Value = b.NameLength;
+                #endregion Blade Other
+
+                #region Blade Unknown
                 hbxBladeUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x002C);
                 hbxBladeUnk_0x0088.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0088);
                 hbxBladeUnk_0x0094.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0094);
                 hbxBladeUnk_0x0676.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0676);
+                hbxBladeUnk_0x067E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x067E);
                 nudBladeUnk_0x0827.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827;
                 hbxBladeUnk_0x084E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x084E);
                 hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x08A2);
-                #endregion BladeUnknown
+                #endregion Blade Unknown
             }
         }
         private void LoadBladeAffinityReward(Point affRewardChartLoc)
@@ -947,7 +1066,7 @@ namespace XC2SaveNETThingy
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 50, 0, 63));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "Item Type Name", null, XC2Data.ItemTypes(), 150));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 50, 0, 1023));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 55));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 50, 0, 67108863));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 50, 0, 63));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 50, 0, 63));
@@ -966,14 +1085,12 @@ namespace XC2SaveNETThingy
         #region Events
 
         #region Main
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             Text = Application.ProductName + " ver" + Application.ProductVersion;
 
             SetupComboBoxes();
         }
-
         private void btnLoad_Click(object sender, EventArgs e)
         {
             DialogResult = ofdSaveFile.ShowDialog();
@@ -983,7 +1100,6 @@ namespace XC2SaveNETThingy
                 tabControl1.Enabled = true;
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             DialogResult result = sfdSaveFile.ShowDialog();
@@ -998,24 +1114,11 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message, "EXCEPTION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw ex;
+                    MessageBox.Show(ex.Message, "EXCEPTION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //throw ex;
                 }
             }
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            List<string> dataz = new List<string>();
-
-
-            Console.WriteLine("Exporting DriverArts...");
-
-            string message = "DATA EXPORT COMPLETE!";
-            Console.WriteLine(message);
-            MessageBox.Show("DATA EXPORT COMPLETE!", "Database .csv export", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         #endregion Main
 
         #region Misc
@@ -1450,10 +1553,130 @@ namespace XC2SaveNETThingy
         #endregion BladeMain
 
         #region BladeMisc
-        private void nudBladeDataType_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].DataType = (UInt16)nudBladeDataType.Value;
-        private void nudBladeCreator_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Creator = (UInt16)nudBladeCreator.Value;
-        private void nudBladeSetDriver_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].SetDriver = (UInt16)nudBladeSetDriver.Value;
+        private void chkBladeIsEnabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].IsEnabled = chkBladeIsEnabled.Checked;
+        private void nudBladeID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ID = (UInt16)nudBladeID.Value;
+        private void nudBladeCreator_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].Creator = (UInt16)nudBladeCreator.Value;
+            cbxBladeCreator.SelectedValue = (UInt16)nudBladeCreator.Value;
+        }
+        private void cbxBladeCreator_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeCreator.Value = Convert.ToUInt16(cbxBladeCreator.SelectedValue);
+        private void nudBladeSetDriver_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].SetDriver = (UInt16)nudBladeSetDriver.Value;
+            cbxBladeSetDriver.SelectedValue = (UInt16)nudBladeSetDriver.Value;
+        }
+        private void cbxBladeSetDriver_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeSetDriver.Value = Convert.ToUInt16(cbxBladeSetDriver.SelectedValue);
+        private void chkBladeEnableEngageRex_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].EnableEngageRex = chkBladeEnableEngageRex.Checked;
+        private void nudBladeResonatedTimeHour_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BornTime.Hours = (UInt32)nudBladeResonatedTimeHour.Value;
+        private void nudBladeResonatedTimeMinute_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BornTime.Minutes = (Byte)nudBladeResonatedTimeMinute.Value;
+        private void nudBladeResonatedTimeSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BornTime.Seconds = (Byte)nudBladeResonatedTimeSecond.Value;
+        private void btnBladeAwakenedTimeSetNow_Click(object sender, EventArgs e)
+        {
+            nudBladeResonatedTimeHour.Value = SAVEDATA.PlayTime.Hours;
+            nudBladeResonatedTimeMinute.Value = SAVEDATA.PlayTime.Minutes;
+            nudBladeResonatedTimeSecond.Value = SAVEDATA.PlayTime.Seconds;
+        }
+        private void nudBladeRace_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Race = (Byte)nudBladeRace.Value;
+        private void nudBladeGender_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Gender = (Byte)nudBladeGender.Value;
+        private void nudBladeStill_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Still = (UInt16)nudBladeStill.Value;
+
+        private void nudBladeWeaponType_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].WeaponType = (Byte)nudBladeWeaponType.Value;
+            cbxBladeWeaponType.SelectedValue = (Byte)nudBladeWeaponType.Value;
+        }
+        private void cbxBladeWeaponType_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeWeaponType.Value = Convert.ToByte(cbxBladeWeaponType.SelectedValue);
+        private void nudBladeDefWeapon_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].DefWeapon = (UInt16)nudBladeDefWeapon.Value;
+            cbxBladeDefWeapon.SelectedValue = (UInt16)nudBladeDefWeapon.Value;
+        }
+        private void cbxBladeDefWeapon_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeDefWeapon.Value = Convert.ToUInt16(cbxBladeDefWeapon.SelectedValue);
+        private void nudBladeOrbNum_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].OrbNum = (Byte)nudBladeOrbNum.Value;
+        private void nudBladeElement_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].Atr = (Byte)nudBladeElement.Value;
+            cbxBladeElement.SelectedValue = (Byte)nudBladeElement.Value;
+        }
+        private void cbxBladeElement_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeElement.Value = Convert.ToByte(cbxBladeElement.SelectedValue);
+        private void nudBladeRareNameID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].RareNameId = (UInt16)nudBladeRareNameID.Value;
+        private void nudBladeCommonNameID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonNameId = (UInt16)nudBladeCommonNameID.Value;
+            cbxBladeCommonNameID.SelectedValue = (UInt16)nudBladeCommonNameID.Value;
+        }
+        private void cbxBladeCommonNameID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeCommonNameID.Value = Convert.ToUInt16(cbxBladeCommonNameID.SelectedValue);
+        private void nudBladeTrustPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].TrustPoints = (UInt32)nudBladeTrustPoints.Value;
+        private void nudBladeKeyReleaseLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyReleaseLevel = (UInt16)nudBladeKeyReleaseLevel.Value;
+        private void chkBladeReleaseLock_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ReleaseLock = chkBladeReleaseLock.Checked;
         #endregion BladeMisc
+
+        #region Blade Stats
+        private void nudBladePhysDef_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].PhysDef = (Byte)nudBladePhysDef.Value;
+        private void nudBladeEtherDef_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].EtherDef = (Byte)nudBladeEtherDef.Value;
+        private void nudBladeHP_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].MaxHPMod = (Byte)nudBladeHP.Value;
+        private void nudBladeStrength_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].StrengthMod = (Byte)nudBladeStrength.Value;
+        private void nudBladeEther_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].EtherMod = (Byte)nudBladeEther.Value;
+        private void nudBladeDexterity_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].DexterityMod = (Byte)nudBladeDexterity.Value;
+        private void nudBladeAgility_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AgilityMod = (Byte)nudBladeAgility.Value;
+        private void nudBladeLuck_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].LuckMod = (Byte)nudBladeLuck.Value;
+        #endregion Blade Stats
+
+        #region Blade Ideas
+        private void nudBladeBraveryLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BraveryLevel = (UInt32)nudBladeBraveryLevel.Value;
+        private void nudBladeBraveryPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BraveryPoints = (UInt32)nudBladeBraveryPoints.Value;
+        private void nudBladeTruthLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].TruthLevel = (UInt32)nudBladeTruthLevel.Value;
+        private void nudBladeTruthPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].TruthPoints = (UInt32)nudBladeTruthPoints.Value;
+        private void nudBladeCompassionLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CompassionLevel = (UInt32)nudBladeCompassionLevel.Value;
+        private void nudBladeCompassionPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CompassionPoints = (UInt32)nudBladeCompassionPoints.Value;
+        private void nudBladeJusticeLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].JusticeLevel = (UInt32)nudBladeJusticeLevel.Value;
+        private void nudBladeJusticePoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].JusticePoints = (UInt32)nudBladeJusticePoints.Value;
+        #endregion Blade Ideas
+
+        #region Blade Aux Cores
+        private void nudBladeAuxCore1ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCores[0] = (UInt16)nudBladeAuxCore1ID.Value;
+            cbxBladeAuxCore1ID.SelectedValue = (UInt16)nudBladeAuxCore1ID.Value;
+        }
+        private void cbxBladeAuxCore1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore1ID.Value = Convert.ToUInt16(cbxBladeAuxCore1ID.SelectedValue);
+        private void nudBladeAuxCore1Type_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[0].Type = (Byte)nudBladeAuxCore1Type.Value;
+            cbxBladeAuxCore1Type.SelectedValue = (Byte)nudBladeAuxCore1Type.Value;
+        }
+        private void cbxBladeAuxCore1Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore1Type.Value = Convert.ToUInt16(cbxBladeAuxCore1Type.SelectedValue);
+        private void nudBladeAuxCore1Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[0].Serial = (UInt32)nudBladeAuxCore1Serial.Value;
+
+        private void nudBladeAuxCore2ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCores[1] = (UInt16)nudBladeAuxCore2ID.Value;
+            cbxBladeAuxCore2ID.SelectedValue = (UInt16)nudBladeAuxCore2ID.Value;
+        }
+        private void cbxBladeAuxCore2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore2ID.Value = Convert.ToUInt16(cbxBladeAuxCore2ID.SelectedValue);
+        private void nudBladeAuxCore2Type_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[1].Type = (Byte)nudBladeAuxCore2Type.Value;
+            cbxBladeAuxCore2Type.SelectedValue = (Byte)nudBladeAuxCore2Type.Value;
+        }
+        private void cbxBladeAuxCore2Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore2Type.Value = Convert.ToUInt16(cbxBladeAuxCore2Type.SelectedValue);
+        private void nudBladeAuxCore2Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[1].Serial = (UInt32)nudBladeAuxCore2Serial.Value;
+
+        private void nudBladeAuxCore3ID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCores[2] = (UInt16)nudBladeAuxCore3ID.Value;
+            cbxBladeAuxCore3ID.SelectedValue = (UInt16)nudBladeAuxCore3ID.Value;
+        }
+        private void cbxBladeAuxCore3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore3ID.Value = Convert.ToUInt16(cbxBladeAuxCore3ID.SelectedValue);
+        private void nudBladeAuxCore3Type_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[2].Type = (Byte)nudBladeAuxCore3Type.Value;
+            cbxBladeAuxCore3Type.SelectedValue = (Byte)nudBladeAuxCore3Type.Value;
+        }
+        private void cbxBladeAuxCore3Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore3Type.Value = Convert.ToUInt16(cbxBladeAuxCore3Type.SelectedValue);
+        private void nudBladeAuxCore3Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[2].Serial = (UInt32)nudBladeAuxCore3Serial.Value;
+        #endregion Blade Aux Cores
 
         #region BladePoppiswap
 
@@ -2498,6 +2721,53 @@ namespace XC2SaveNETThingy
         private void btnBladeAff_10_5_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 5));
         #endregion BladeAffinityCHart
 
+        #region BladeResourceData
+        private void txtBladeModelResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ModelResourceName.Str = txtBladeModelResourceName.Text;
+        private void txtBladeModel2Name_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Model2Name.Str = txtBladeModel2Name.Text;
+        private void txtBladeMotionResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].MotionResourceName.Str = txtBladeMotionResourceName.Text;
+        private void TxtBladeMotion2Name_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Motion2Name.Str = txtBladeMotion2Name.Text;
+        private void txtBladeAddMotionName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AddMotionName.Str = txtBladeAddMotionName.Text;
+        private void txtBladeVoiceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].VoiceName.Str = txtBladeVoiceName.Text;
+        private void txtBladeComSE_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Com_SE.Str = txtBladeComSE.Text;
+        private void txtBladeEffectResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].EffectResourceName.Str = txtBladeEffectResourceName.Text;
+        private void txtBladeComVo_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Com_Vo.Str = txtBladeComVo.Text;
+        private void txtBladeCenterBone_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CenterBone.Str = txtBladeCenterBone.Text;
+        private void txtBladeCamBone_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CamBone.Str = txtBladeCamBone.Text;
+        private void txtBladeSeResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].SeResourceName.Str = txtBladeSeResourceName.Text;
+        #endregion BladeResourceData
+
+        #region Blade Other
+        private void nudBladeAffinityChartStatus_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AffinityChartStatus = (Byte)nudBladeAffinityChartStatus.Value;
+        private void nudBladeBArtExId_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtExId = (UInt16)nudBladeBArtExId.Value;
+        private void nudBladeBArtEx2Id_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtEx2Id = (UInt16)nudBladeBArtEx2Id.Value;
+        private void nudBladeBladeArtsExH_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BladeArtsExH = (UInt16)nudBladeBArtExId.Value;
+        private void nudBladeBladeArtsEx2H_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BladeArtsEx2H = (UInt16)nudBladeBArtEx2Id.Value;
+        private void nudBladeReleaseStatus_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BladeReleaseStatus = (Byte)nudBladeReleaseStatus.Value;
+        private void nudBladeSize_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BladeSize = (Byte)nudBladeSize.Value;
+        private void nudBladeChestHeight_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ChestHeight = (UInt16)nudBladeChestHeight.Value;
+        private void nudBladeCommonBladeIndex_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex = (Int16)nudBladeCommonBladeIndex.Value;
+        private void nudBladeCollisionID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CollisionId = (UInt16)nudBladeCollisionID.Value;
+        private void nudBladeCondition_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Condition = (UInt16)nudBladeCondition.Value;
+        private void nudBladeCoolTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CoolTime = (UInt16)nudBladeCoolTime.Value;
+        private void nudBladeCreateEventID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CreateEventID = (UInt32)nudBladeCreateEventID.Value;
+        private void nudBladeEyeRot_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].EyeRot = (Byte)nudBladeEyeRot.Value;
+        private void nudBladeFootStep_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FootStep = (Byte)nudBladeFootStep.Value;
+        private void nudBladeFootStepEffect_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FootStepEffect = (Byte)nudBladeFootStepEffect.Value;
+        private void nudBladeIsUnselect_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].IsUnselect = (Byte)nudBladeIsUnselect.Value;
+        private void nudBladeKizunaLinkSet_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].KizunaLinkSet = (UInt16)nudBladeKizunaLinkSet.Value;
+        private void nudBladeLandingHeight_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].LandingHeight = (UInt16)nudBladeLandingHeight.Value;
+        private void nudBladeMountObject_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].MountObject = (UInt16)nudBladeMountObject.Value;
+        private void nudBladeMountPoint_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].MountPoint = (UInt16)nudBladeMountPoint.Value;
+        private void nudBladeNormalTalk_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NormalTalk = (UInt16)nudBladeNormalTalk.Value;
+        private void nudBladeOffsetID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].OffsetID = (UInt16)nudBladeOffsetID.Value;
+        private void nudBladePersonality_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Personality = (Byte)nudBladePersonality.Value;
+        private void nudBladeQuestRace_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].QuestRace = (Byte)nudBladeQuestRace.Value;
+        private void nudBladeScale_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Scale = (UInt16)nudBladeScale.Value;
+        private void nudBladeWeaponScale_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].WpnScale = (UInt16)nudBladeWeaponScale.Value;
+        private void nudBladeExtraParts_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ExtraParts = (Byte)nudBladeExtraParts.Value;
+        private void nudBladeInternalNameLength_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NameLength = (UInt32)nudBladeInternalNameLength.Value;
+        #endregion Blade Other
+
         #region BladeUnknown
         private void nudBladeUnk_0x0827_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827 = (Byte)nudBladeUnk_0x0827.Value;
         #endregion BladeUnknown
@@ -2562,6 +2832,25 @@ namespace XC2SaveNETThingy
                 dgvIsEditing = false;
             }
         }
+        private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
+        private void nudItemsSerial2_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[1] = (UInt32)nudItemsSerial2.Value;
+        private void nudItemsSerial3_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[2] = (UInt32)nudItemsSerial3.Value;
+        private void nudItemsSerial4_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[3] = (UInt32)nudItemsSerial4.Value;
+        private void nudItemsSerial5_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[4] = (UInt32)nudItemsSerial5.Value;
+        private void nudItemsSerial6_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[5] = (UInt32)nudItemsSerial6.Value;
+        private void nudItemsSerial7_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[6] = (UInt32)nudItemsSerial7.Value;
+        private void nudItemsSerial8_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[7] = (UInt32)nudItemsSerial8.Value;
+        private void nudItemsSerial9_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[8] = (UInt32)nudItemsSerial9.Value;
+        private void nudItemsSerial10_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[9] = (UInt32)nudItemsSerial10.Value;
+        private void nudItemsSerial11_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[10] = (UInt32)nudItemsSerial11.Value;
+        private void nudItemsSerial12_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[11] = (UInt32)nudItemsSerial12.Value;
+        private void nudItemsSerial13_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[12] = (UInt32)nudItemsSerial13.Value;
+        private void nudItemsSerial14_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[13] = (UInt32)nudItemsSerial14.Value;
+        private void nudItemsSerial15_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[14] = (UInt32)nudItemsSerial15.Value;
+        private void nudItemsSerial16_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[15] = (UInt32)nudItemsSerial16.Value;
+        private void nudItemsSerial17_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[16] = (UInt32)nudItemsSerial17.Value;
+        private void nudItemsSerial18_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[17] = (UInt32)nudItemsSerial18.Value;
+        private void nudItemsSerial19_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[18] = (UInt32)nudItemsSerial19.Value;
         #endregion Items
 
         #endregion Events

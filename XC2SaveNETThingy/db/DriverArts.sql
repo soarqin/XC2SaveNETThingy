@@ -1,5 +1,4 @@
-﻿-- Script Date: 8/07/2018 6:29 PM  - ErikEJ.SqlCeScripting version 3.5.2.75
-DROP TABLE IF EXISTS [DriverArts];
+﻿DROP TABLE IF EXISTS [DriverArts];
 CREATE TABLE [DriverArts] (
   [ID] INTEGER  NOT NULL UNIQUE
 , [Name] text NOT NULL

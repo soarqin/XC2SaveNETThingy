@@ -1,5 +1,4 @@
-﻿-- Script Date: 8/07/2018 6:28 PM  - ErikEJ.SqlCeScripting version 3.5.2.75
-DROP TABLE IF EXISIS [DriverBladeSetStatus];
+﻿DROP TABLE IF EXISTS [DriverBladeSetStatus];
 CREATE TABLE [DriverBladeSetStatus] (
   [ID] INTEGER  NOT NULL UNIQUE
 , [Desc] text NOT NULL

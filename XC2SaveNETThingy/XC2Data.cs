@@ -15,6 +15,11 @@ namespace XC2SaveNETThingy
         private static SQLiteCommand dbCmd;
         private static DataSet ds;
 
+        public static DataTable Elements()
+        {
+            return GetDataSet("SELECT * FROM Elements").Tables[0];
+        }
+
         public static DataTable Drivers()
         {
             return GetDataSet("SELECT * FROM Drivers").Tables[0];
@@ -45,6 +50,11 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM viewDriverArts").Tables[0];
         }
 
+        public static DataTable DriverSkills()
+        {
+            return GetDataSet("SELECT * FROM DriverSkills").Tables[0];
+        }
+
         public static DataTable Weapons(Byte args_bits)
         {
             string query = "";
@@ -68,6 +78,16 @@ namespace XC2SaveNETThingy
             }
 
             return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeWeaponNames()
+        {
+            return GetDataSet("SELECT * from viewWeaponNames").Tables[0];
+        }
+
+        public static DataTable BladeCommonNames()
+        {
+            return GetDataSet("SELECT * FROM BladeCommonNames").Tables[0];
         }
 
         public static DataTable BladeTrustRanks()
@@ -109,11 +129,6 @@ namespace XC2SaveNETThingy
                 "ID || \": \" || Name AS Name " +
                 "FROM BladeFieldSkills";
             return GetDataSet(query).Tables[0];
-        }
-
-        public static DataTable DriverSkills()
-        {
-            return GetDataSet("SELECT * FROM DriverSkills").Tables[0];
         }
 
         public static DataTable PoppiPowerLevels()
