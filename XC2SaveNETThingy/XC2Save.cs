@@ -85,6 +85,7 @@ namespace XC2SaveNETThingy
             return result.ToArray();
         }
     }
+
     public class XC2Save : IXC2SaveObject
     {
 
@@ -204,14 +205,12 @@ namespace XC2SaveNETThingy
             public const int SIZE = 0x6;
 
             public UInt16 DriverId { get; set; }
-            public UInt16 Unk_0x02 { get; set; }
-            public UInt16 Unk_0x04 { get; set; }
+            public Byte[] Unk_0x02 { get; set; }
 
             public PartyMember(Byte[] data)
             {
                 DriverId = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
-                Unk_0x02 = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
-                Unk_0x04 = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
+                Unk_0x02 = data.GetByteSubArray(2, 4);
             }
 
             public Byte[] ToRawData()
@@ -219,8 +218,7 @@ namespace XC2SaveNETThingy
                 List<Byte> result = new List<byte>();
 
                 result.AddRange(BitConverter.GetBytes(DriverId));
-                result.AddRange(BitConverter.GetBytes(Unk_0x02));
-                result.AddRange(BitConverter.GetBytes(Unk_0x04));
+                result.AddRange(Unk_0x02);
 
                 if (result.Count != SIZE)
                 {
@@ -248,23 +246,19 @@ namespace XC2SaveNETThingy
             private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
             {
                 { "Members", 0x0 },
-                { "gap3C", 0x3C },
+                { "Unk_0x3C", 0x3C },
                 { "PartyLeader", 0x40 },
-                { "field_44", 0x44 },
-                { "field_48", 0x48 },
+                { "Unk_0x44", 0x44 },
                 { "PartyGauge", 0x4C },
-                { "field_4E", 0x4E },
-                { "field_50", 0x50 }
+                { "Unk_0x4E", 0x4E },
             };
 
             public PartyMember[] Members { get; set; }
-            public Byte[] gap3C { get; set; }
-            public UInt32 PartyLeader { get; set; }
-            public UInt32 field_44 { get; set; }
-            public UInt32 field_48 { get; set; }
+            public Byte[] Unk_0x3C { get; set; }
+            public UInt32 Leader { get; set; }
+            public Byte[] Unk_0x44 { get; set; }
             public UInt16 PartyGauge { get; set; }
-            public UInt16 field_4E { get; set; }
-            public UInt32 field_50 { get; set; }
+            public Byte[] Unk_0x4E { get; set; }
 
             public XC2Party(Byte[] data)
             {
@@ -272,16 +266,11 @@ namespace XC2SaveNETThingy
                 for (int i = 0; i < Members.Length; i++)
                     Members[i] = new PartyMember(data.GetByteSubArray(LOC["Members"] + (i * PartyMember.SIZE), PartyMember.SIZE));
 
-                gap3C = new Byte[4];
-                for (int i = 0; i < gap3C.Length; i++)
-                    gap3C[i] = data[LOC["gap3C"] + i];
-
-                PartyLeader = BitConverter.ToUInt32(data.GetByteSubArray(LOC["PartyLeader"], 4), 0);
-                field_44 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_44"], 4), 0);
-                field_48 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_48"], 4), 0);
+                Unk_0x3C = data.GetByteSubArray(LOC["Unk_0x3C"], 4);
+                Leader = BitConverter.ToUInt32(data.GetByteSubArray(LOC["PartyLeader"], 4), 0);
+                Unk_0x44 = data.GetByteSubArray(LOC["Unk_0x44"], 8);
                 PartyGauge = BitConverter.ToUInt16(data.GetByteSubArray(LOC["PartyGauge"], 2), 0);
-                field_4E = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_4E"], 2), 0);
-                field_50 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_50"], 4), 0);
+                Unk_0x4E = data.GetByteSubArray(LOC["Unk_0x4E"], 6);
             }
 
             public Byte[] ToRawData()
@@ -291,15 +280,11 @@ namespace XC2SaveNETThingy
                 foreach (PartyMember m in Members)
                     result.AddRange(m.ToRawData());
 
-                foreach (Byte b in gap3C)
-                    result.Add(b);
-
-                result.AddRange(BitConverter.GetBytes(PartyLeader));
-                result.AddRange(BitConverter.GetBytes(field_44));
-                result.AddRange(BitConverter.GetBytes(field_48));
+                result.AddRange(Unk_0x3C);
+                result.AddRange(BitConverter.GetBytes(Leader));
+                result.AddRange(Unk_0x44);
                 result.AddRange(BitConverter.GetBytes(PartyGauge));
-                result.AddRange(BitConverter.GetBytes(field_4E));
-                result.AddRange(BitConverter.GetBytes(field_50));
+                result.AddRange(Unk_0x4E);
 
                 if (result.Count != SIZE)
                 {

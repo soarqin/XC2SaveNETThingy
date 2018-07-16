@@ -34,12 +34,7 @@ namespace XC2SaveNETThingy
         private void SetupComboBoxes()
         {
             #region Misc
-            cbxPartyLeader.BindDataTable(XC2Data.Drivers());
 
-            for (int i = 0; i < XC2Save.XC2Party.MEMBERS_COUNT; i++)
-                cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
-
-            cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers());
             #endregion Misc
 
             #region Driver
@@ -140,6 +135,14 @@ namespace XC2SaveNETThingy
             cbxBladePoppiswapSkillUpgrade3ID.BindDataTable(XC2Data.Items());
             cbxBladePoppiswapSkillUpgrade3Type.BindDataTable(XC2Data.ItemTypes());
             #endregion Blade
+
+            #region Party
+            for (int i = 0; i < XC2Save.XC2Party.MEMBERS_COUNT; i++)
+                cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
+
+            cbxPartyLeader.BindDataTable(XC2Data.Drivers());
+            cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers());
+            #endregion Party
         }
         private void LoadSaveFile(string path)
         {
@@ -177,10 +180,6 @@ namespace XC2SaveNETThingy
             lblChapterSaveScenarioFlag.Text = SAVEDATA.ChapterSaveScenarioFlag.ToString("X4");
             lblChapterSaveEventId.Text = SAVEDATA.ChapterSaveEventId.ToString("X4");
             lblsg_field_3A.Text = SAVEDATA.sg_field_3A.ToString("X4");
-
-            cbxPartyLeader.SelectedValue = SAVEDATA.Party.PartyLeader;
-            cbxPartyMembers.SelectedIndex = 0;
-            cbxPartyMemberDriver.SelectedValue = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId;
 
 
             lblPlayTime.Text = SAVEDATA.PlayTime.ToString();
@@ -240,7 +239,19 @@ namespace XC2SaveNETThingy
             nudItemsSerial19.Value = SAVEDATA.ItemBox.Serials[18];
             #endregion Items
 
+            #region party
+            // force refresh
+            cbxPartyMembers.SelectedIndex = 1;
+            cbxPartyMembers.SelectedIndex = 0;
 
+            nudPartyLeader.Value = SAVEDATA.Party.Leader;
+            cbxPartyLeader.SelectedValue = SAVEDATA.Party.Leader;
+            nudPartyGauge.Value = SAVEDATA.Party.PartyGauge;
+            hbxPartyUnk_0x3C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x3C);
+            hbxPartyUnk_0x44.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x44);
+            hbxPartyUnk_0x4E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x4E);
+
+            #endregion Party
 
             Console.WriteLine("DONE");
         }
@@ -266,15 +277,12 @@ namespace XC2SaveNETThingy
         {
             Driver d = SAVEDATA.Drivers[index];
 
-            #region DriverID
-
+            #region Driver ID
             nudDriverID.Value = d.ID;
             cbxDriverID.SelectedValue = d.ID;
+            #endregion Driver ID
 
-            #endregion DriverID
-
-            #region DriverStats
-
+            #region Driver Stats
             nudDriverLevel.Value = d.Level;
             nudDriverHpMax.Value = d.HP;
             nudDriverStrength.Value = d.Strength;
@@ -291,11 +299,9 @@ namespace XC2SaveNETThingy
             nudDriverBattleExp.Value = d.BattleExp;
             nudDriverCurrentSkillPoints.Value = d.CurrentSkillPoints;
             nudDriverTotalSkillPoints.Value = d.TotalSkillPoints;
+            #endregion Driver Stats
 
-            #endregion DriverStats
-
-            #region DriverIdeas
-
+            #region Driver Ideas
             nudDriverBraveryLevel.Value = d.BraveryLevel;
             nudDriverBraveryPoints.Value = d.BraveryPoints;
             nudDriverTruthLevel.Value = d.TruthLevel;
@@ -304,18 +310,14 @@ namespace XC2SaveNETThingy
             nudDriverCompassionPoints.Value = d.CompassionPoints;
             nudDriverJusticeLevel.Value = d.JusticeLevel;
             nudDriverJusticePoints.Value = d.JusticePoints;
+            #endregion Driver Ideas
 
-            #endregion DriverIdeas
-
-            #region DriverStatus
-
+            #region Driver Status
             int status = d.IsActive;
             cbxDriverIsActive.SelectedValue = d.IsActive;
+            #endregion Driver Status
 
-            #endregion DriverStatus
-
-            #region DriverEquippedBlades
-
+            #region Driver Equipped Blades
             nudDriverBlade1.Value = d.EquippedBlades[0];
             cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[0]);
@@ -330,19 +332,15 @@ namespace XC2SaveNETThingy
 
             nudDriverSetBlade.Value = d.SetBlade;
             cbxDriverSetBlade.SelectedValue = d.SetBlade;
+            #endregion Driver Equipped Blades
 
-            #endregion DriverEquippedBlades
-
-            #region DriverArts
-
+            #region Driver Arts
             cbxDriverWeapons.SelectedIndex = 0;
             nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
             nudDriverArtID.Value = 0;
+            #endregion Driver Arts
 
-            #endregion DriverArts
-
-            #region DriverSkills
-
+            #region Driver Skills
             foreach (ComboBox b in gbxDriverOvertSkills.Controls.OfType<ComboBox>())
                 CreateDriverSkillComboBox(b);
 
@@ -452,20 +450,15 @@ namespace XC2SaveNETThingy
             nudDriverHiddenSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level;
             nudDriverHiddenSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level;
             nudDriverHiddenSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level;
+            #endregion Driver Skills
 
-
-            #endregion DriverSkills
-
-            #region DriverPouchItems
-
+            #region Driver Pouch Items
             // force refresh
             cbxDriverPouches.SelectedIndex = 1;
             cbxDriverPouches.SelectedIndex = 0;
+            #endregion Driver Pouch Items
 
-            #endregion DriverPouchItems
-
-            #region DriverAccessories
-
+            #region Driver Accessories
             nudDriverAccessory1ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0;
             nudDriverAccessory1Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Type;
             nudDriverAccessory1Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Serial;
@@ -477,11 +470,9 @@ namespace XC2SaveNETThingy
             nudDriverAccessory3ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId2;
             nudDriverAccessory3Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Type;
             nudDriverAccessory3Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Serial;
+            #endregion Driver Accessories
 
-            #endregion DriverAccessories
-
-            #region DriverUnknown
-
+            #region Driver Unknown
             hbxDriverUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x002C);
             hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x00A8);
             hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02DC);
@@ -490,8 +481,7 @@ namespace XC2SaveNETThingy
             hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x057A);
             hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0582);
             hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
-
-            #endregion DriverUnknown
+            #endregion Driver Unknown
         }
         private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
         {
@@ -1124,23 +1114,7 @@ namespace XC2SaveNETThingy
         #region Misc
         private void nudMoney_ValueChanged(object sender, EventArgs e) => SAVEDATA.Money = (UInt32)nudMoney.Value;
 
-        #region Party
 
-        private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            XC2Save.PartyMember m = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex];
-            cbxPartyMemberDriver.SelectedValue = m.DriverId;
-
-            nudPartyMemberUnk_0x02.Value = m.Unk_0x02;
-            nudPartyMemberUnk_0x04.Value = m.Unk_0x04;
-        }
-        private void cbxPartyLeader_SelectionChangeCommitted(object sender, EventArgs e) => SAVEDATA.Party.PartyLeader = (UInt32)cbxPartyLeader.SelectedIndex;
-        private void cbxPartyMemberDriver_SelectionChangeCommitted(object sender, EventArgs e) => SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId = (UInt16)cbxPartyMemberDriver.SelectedIndex;
-        private void nudPartyMemberUnk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].Unk_0x02 = (UInt16)nudPartyMemberUnk_0x02.Value;
-        private void nudPartyMemberUnk_0x04_ValueChanged(object sender, EventArgs e) => SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].Unk_0x04 = (UInt16)nudPartyMemberUnk_0x04.Value;
-
-        #endregion Party
 
         #endregion Misc
 
@@ -1289,7 +1263,7 @@ namespace XC2SaveNETThingy
         private void nudDriverPouchesItemID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].ItemId = (UInt16)nudDriverPouchesItemID.Value;
-            cbxDriverPouchesItemID.SelectedValue = (UInt16)nudDriverPouchesItemID.Value; ;
+            cbxDriverPouchesItemID.SelectedValue = (UInt16)nudDriverPouchesItemID.Value;
         }
         private void cbxDriverPouchesItemID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverPouchesItemID.Value = Convert.ToUInt16(cbxDriverPouchesItemID.SelectedValue);
         private void nudDriverPouchesTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time = (float)nudDriverPouchesTime.Value;
@@ -1542,7 +1516,6 @@ namespace XC2SaveNETThingy
         private void nudDriverHiddenSkill_c4_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level = Convert.ToUInt16(nudDriverHiddenSkill_c4_Level.Value);
         private void nudDriverHiddenSkill_c5_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level = Convert.ToUInt16(nudDriverHiddenSkill_c5_Level.Value);
         #endregion DriverHiddenSkills
-
 
         #endregion Driver
 
@@ -2851,8 +2824,33 @@ namespace XC2SaveNETThingy
         private void nudItemsSerial17_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[16] = (UInt32)nudItemsSerial17.Value;
         private void nudItemsSerial18_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[17] = (UInt32)nudItemsSerial18.Value;
         private void nudItemsSerial19_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[18] = (UInt32)nudItemsSerial19.Value;
+
+
         #endregion Items
 
+        #region Party
+        private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudPartyMemberDriver.Value = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId;
+            cbxPartyMemberDriver.SelectedValue = SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId;
+            hbxPartyMemberUnk_0x02.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].Unk_0x02);
+        }
+        private void nudPartyMemberDriver_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.Members[cbxPartyMembers.SelectedIndex].DriverId = (UInt16)nudPartyMemberDriver.Value;
+            cbxPartyMemberDriver.SelectedValue = (UInt16)nudPartyMemberDriver.Value;
+        }
+        private void cbxPartyMemberDriver_SelectionChangeCommitted(object sender, EventArgs e) => nudPartyMemberDriver.Value = Convert.ToUInt16(cbxPartyMemberDriver.SelectedValue);
+        private void nudPartyLeader_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Party.Leader = (UInt32)nudPartyLeader.Value;
+            cbxPartyLeader.SelectedValue = (UInt32)nudPartyLeader.Value;
+        }
+        private void cbxPartyLeader_SelectionChangeCommitted(object sender, EventArgs e) => nudPartyLeader.Value = Convert.ToUInt32(cbxPartyLeader.SelectedValue);
+        #endregion Party
+
         #endregion Events
+
+
     }
 }

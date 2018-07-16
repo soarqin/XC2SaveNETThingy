@@ -86,11 +86,7 @@
             this.nudMoney = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.nudPartyMemberUnk_0x04 = new System.Windows.Forms.NumericUpDown();
-            this.nudPartyMemberUnk_0x02 = new System.Windows.Forms.NumericUpDown();
             this.cbxPartyMemberDriver = new System.Windows.Forms.ComboBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.cbxPartyMembers = new System.Windows.Forms.ComboBox();
             this.cbxPartyLeader = new System.Windows.Forms.ComboBox();
@@ -1156,6 +1152,19 @@
             this.nudItemsSerial16 = new System.Windows.Forms.NumericUpDown();
             this.label351 = new System.Windows.Forms.Label();
             this.groupBox112 = new System.Windows.Forms.GroupBox();
+            this.label347 = new System.Windows.Forms.Label();
+            this.groupBox113 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyMemberUnk_0x02 = new Be.Windows.Forms.HexBox();
+            this.nudPartyMemberDriver = new System.Windows.Forms.NumericUpDown();
+            this.nudPartyLeader = new System.Windows.Forms.NumericUpDown();
+            this.label65 = new System.Windows.Forms.Label();
+            this.nudPartyGauge = new System.Windows.Forms.NumericUpDown();
+            this.groupBox114 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x3C = new Be.Windows.Forms.HexBox();
+            this.groupBox115 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x44 = new Be.Windows.Forms.HexBox();
+            this.groupBox116 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x4E = new Be.Windows.Forms.HexBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1163,8 +1172,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x04)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x02)).BeginInit();
             this.tabDrivers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -1677,6 +1684,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).BeginInit();
             this.groupBox112.SuspendLayout();
+            this.groupBox113.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).BeginInit();
+            this.groupBox114.SuspendLayout();
+            this.groupBox115.SuspendLayout();
+            this.groupBox116.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -2202,7 +2216,7 @@
             // lblPlayTime
             // 
             this.lblPlayTime.AutoSize = true;
-            this.lblPlayTime.Location = new System.Drawing.Point(713, 331);
+            this.lblPlayTime.Location = new System.Drawing.Point(44, 379);
             this.lblPlayTime.Name = "lblPlayTime";
             this.lblPlayTime.Size = new System.Drawing.Size(60, 13);
             this.lblPlayTime.TabIndex = 34;
@@ -2223,89 +2237,50 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.groupBox116);
+            this.groupBox11.Controls.Add(this.groupBox115);
+            this.groupBox11.Controls.Add(this.groupBox114);
+            this.groupBox11.Controls.Add(this.nudPartyGauge);
+            this.groupBox11.Controls.Add(this.label65);
+            this.groupBox11.Controls.Add(this.nudPartyLeader);
             this.groupBox11.Controls.Add(this.groupBox12);
             this.groupBox11.Controls.Add(this.cbxPartyLeader);
             this.groupBox11.Controls.Add(this.label63);
             this.groupBox11.Location = new System.Drawing.Point(507, 29);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(269, 204);
+            this.groupBox11.Size = new System.Drawing.Size(513, 234);
             this.groupBox11.TabIndex = 32;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Party";
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.nudPartyMemberUnk_0x04);
-            this.groupBox12.Controls.Add(this.nudPartyMemberUnk_0x02);
+            this.groupBox12.Controls.Add(this.nudPartyMemberDriver);
+            this.groupBox12.Controls.Add(this.groupBox113);
+            this.groupBox12.Controls.Add(this.label347);
             this.groupBox12.Controls.Add(this.cbxPartyMemberDriver);
-            this.groupBox12.Controls.Add(this.label66);
-            this.groupBox12.Controls.Add(this.label65);
             this.groupBox12.Controls.Add(this.label64);
             this.groupBox12.Controls.Add(this.cbxPartyMembers);
-            this.groupBox12.Location = new System.Drawing.Point(10, 61);
+            this.groupBox12.Location = new System.Drawing.Point(6, 89);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(231, 137);
+            this.groupBox12.Size = new System.Drawing.Size(261, 139);
             this.groupBox12.TabIndex = 2;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Members:";
-            // 
-            // nudPartyMemberUnk_0x04
-            // 
-            this.nudPartyMemberUnk_0x04.Location = new System.Drawing.Point(75, 103);
-            this.nudPartyMemberUnk_0x04.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudPartyMemberUnk_0x04.Name = "nudPartyMemberUnk_0x04";
-            this.nudPartyMemberUnk_0x04.Size = new System.Drawing.Size(120, 20);
-            this.nudPartyMemberUnk_0x04.TabIndex = 8;
-            this.nudPartyMemberUnk_0x04.ValueChanged += new System.EventHandler(this.nudPartyMemberUnk_0x04_ValueChanged);
-            // 
-            // nudPartyMemberUnk_0x02
-            // 
-            this.nudPartyMemberUnk_0x02.Location = new System.Drawing.Point(75, 76);
-            this.nudPartyMemberUnk_0x02.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudPartyMemberUnk_0x02.Name = "nudPartyMemberUnk_0x02";
-            this.nudPartyMemberUnk_0x02.Size = new System.Drawing.Size(120, 20);
-            this.nudPartyMemberUnk_0x02.TabIndex = 7;
-            this.nudPartyMemberUnk_0x02.ValueChanged += new System.EventHandler(this.nudPartyMemberUnk_0x02_ValueChanged);
+            this.groupBox12.Text = "Party Members Edit:";
             // 
             // cbxPartyMemberDriver
             // 
             this.cbxPartyMemberDriver.FormattingEnabled = true;
-            this.cbxPartyMemberDriver.Location = new System.Drawing.Point(74, 46);
+            this.cbxPartyMemberDriver.Location = new System.Drawing.Point(140, 41);
             this.cbxPartyMemberDriver.Name = "cbxPartyMemberDriver";
-            this.cbxPartyMemberDriver.Size = new System.Drawing.Size(121, 21);
+            this.cbxPartyMemberDriver.Size = new System.Drawing.Size(115, 21);
             this.cbxPartyMemberDriver.TabIndex = 4;
             this.cbxPartyMemberDriver.SelectionChangeCommitted += new System.EventHandler(this.cbxPartyMemberDriver_SelectionChangeCommitted);
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(7, 103);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(59, 13);
-            this.label66.TabIndex = 3;
-            this.label66.Text = "Unk_0x04:";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(7, 82);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(59, 13);
-            this.label65.TabIndex = 2;
-            this.label65.Text = "Unk_0x02:";
             // 
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(7, 55);
+            this.label64.Location = new System.Drawing.Point(7, 45);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(38, 13);
             this.label64.TabIndex = 1;
@@ -2314,7 +2289,7 @@
             // cbxPartyMembers
             // 
             this.cbxPartyMembers.FormattingEnabled = true;
-            this.cbxPartyMembers.Location = new System.Drawing.Point(7, 20);
+            this.cbxPartyMembers.Location = new System.Drawing.Point(76, 13);
             this.cbxPartyMembers.Name = "cbxPartyMembers";
             this.cbxPartyMembers.Size = new System.Drawing.Size(121, 21);
             this.cbxPartyMembers.TabIndex = 0;
@@ -2323,20 +2298,20 @@
             // cbxPartyLeader
             // 
             this.cbxPartyLeader.FormattingEnabled = true;
-            this.cbxPartyLeader.Location = new System.Drawing.Point(56, 20);
+            this.cbxPartyLeader.Location = new System.Drawing.Point(146, 14);
             this.cbxPartyLeader.Name = "cbxPartyLeader";
-            this.cbxPartyLeader.Size = new System.Drawing.Size(121, 21);
+            this.cbxPartyLeader.Size = new System.Drawing.Size(115, 21);
             this.cbxPartyLeader.TabIndex = 1;
             this.cbxPartyLeader.SelectionChangeCommitted += new System.EventHandler(this.cbxPartyLeader_SelectionChangeCommitted);
             // 
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(7, 23);
+            this.label63.Location = new System.Drawing.Point(6, 16);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(43, 13);
+            this.label63.Size = new System.Drawing.Size(70, 13);
             this.label63.TabIndex = 0;
-            this.label63.Text = "Leader:";
+            this.label63.Text = "Party Leader:";
             // 
             // tabDrivers
             // 
@@ -14493,6 +14468,142 @@
             this.groupBox112.TabStop = false;
             this.groupBox112.Text = "Item Box Serials";
             // 
+            // label347
+            // 
+            this.label347.AutoSize = true;
+            this.label347.Location = new System.Drawing.Point(7, 16);
+            this.label347.Name = "label347";
+            this.label347.Size = new System.Drawing.Size(48, 13);
+            this.label347.TabIndex = 9;
+            this.label347.Text = "Member:";
+            // 
+            // groupBox113
+            // 
+            this.groupBox113.Controls.Add(this.hbxPartyMemberUnk_0x02);
+            this.groupBox113.Location = new System.Drawing.Point(6, 66);
+            this.groupBox113.Name = "groupBox113";
+            this.groupBox113.Size = new System.Drawing.Size(170, 67);
+            this.groupBox113.TabIndex = 154;
+            this.groupBox113.TabStop = false;
+            this.groupBox113.Text = "Unk_0x02";
+            // 
+            // hbxPartyMemberUnk_0x02
+            // 
+            this.hbxPartyMemberUnk_0x02.ColumnInfoVisible = true;
+            this.hbxPartyMemberUnk_0x02.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyMemberUnk_0x02.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyMemberUnk_0x02.Name = "hbxPartyMemberUnk_0x02";
+            this.hbxPartyMemberUnk_0x02.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyMemberUnk_0x02.Size = new System.Drawing.Size(156, 41);
+            this.hbxPartyMemberUnk_0x02.TabIndex = 151;
+            // 
+            // nudPartyMemberDriver
+            // 
+            this.nudPartyMemberDriver.Location = new System.Drawing.Point(76, 40);
+            this.nudPartyMemberDriver.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyMemberDriver.Name = "nudPartyMemberDriver";
+            this.nudPartyMemberDriver.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyMemberDriver.TabIndex = 157;
+            this.nudPartyMemberDriver.ValueChanged += new System.EventHandler(this.nudPartyMemberDriver_ValueChanged);
+            // 
+            // nudPartyLeader
+            // 
+            this.nudPartyLeader.Location = new System.Drawing.Point(82, 14);
+            this.nudPartyLeader.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyLeader.Name = "nudPartyLeader";
+            this.nudPartyLeader.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyLeader.TabIndex = 158;
+            this.nudPartyLeader.ValueChanged += new System.EventHandler(this.nudPartyLeader_ValueChanged);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(6, 40);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(69, 13);
+            this.label65.TabIndex = 159;
+            this.label65.Text = "Party Gauge:";
+            // 
+            // nudPartyGauge
+            // 
+            this.nudPartyGauge.Location = new System.Drawing.Point(82, 38);
+            this.nudPartyGauge.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyGauge.Name = "nudPartyGauge";
+            this.nudPartyGauge.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyGauge.TabIndex = 160;
+            // 
+            // groupBox114
+            // 
+            this.groupBox114.Controls.Add(this.hbxPartyUnk_0x3C);
+            this.groupBox114.Location = new System.Drawing.Point(273, 12);
+            this.groupBox114.Name = "groupBox114";
+            this.groupBox114.Size = new System.Drawing.Size(140, 67);
+            this.groupBox114.TabIndex = 155;
+            this.groupBox114.TabStop = false;
+            this.groupBox114.Text = "Unk_0x3C";
+            // 
+            // hbxPartyUnk_0x3C
+            // 
+            this.hbxPartyUnk_0x3C.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x3C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x3C.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x3C.Name = "hbxPartyUnk_0x3C";
+            this.hbxPartyUnk_0x3C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x3C.Size = new System.Drawing.Size(128, 41);
+            this.hbxPartyUnk_0x3C.TabIndex = 151;
+            // 
+            // groupBox115
+            // 
+            this.groupBox115.Controls.Add(this.hbxPartyUnk_0x44);
+            this.groupBox115.Location = new System.Drawing.Point(273, 85);
+            this.groupBox115.Name = "groupBox115";
+            this.groupBox115.Size = new System.Drawing.Size(234, 67);
+            this.groupBox115.TabIndex = 155;
+            this.groupBox115.TabStop = false;
+            this.groupBox115.Text = "Unk_0x44";
+            // 
+            // hbxPartyUnk_0x44
+            // 
+            this.hbxPartyUnk_0x44.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x44.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x44.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x44.Name = "hbxPartyUnk_0x44";
+            this.hbxPartyUnk_0x44.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x44.Size = new System.Drawing.Size(222, 41);
+            this.hbxPartyUnk_0x44.TabIndex = 151;
+            // 
+            // groupBox116
+            // 
+            this.groupBox116.Controls.Add(this.hbxPartyUnk_0x4E);
+            this.groupBox116.Location = new System.Drawing.Point(273, 161);
+            this.groupBox116.Name = "groupBox116";
+            this.groupBox116.Size = new System.Drawing.Size(187, 67);
+            this.groupBox116.TabIndex = 161;
+            this.groupBox116.TabStop = false;
+            this.groupBox116.Text = "Unk_0x4E";
+            // 
+            // hbxPartyUnk_0x4E
+            // 
+            this.hbxPartyUnk_0x4E.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x4E.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x4E.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x4E.Name = "hbxPartyUnk_0x4E";
+            this.hbxPartyUnk_0x4E.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x4E.Size = new System.Drawing.Size(174, 41);
+            this.hbxPartyUnk_0x4E.TabIndex = 151;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -14514,8 +14625,6 @@
             this.groupBox11.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x04)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberUnk_0x02)).EndInit();
             this.tabDrivers.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -15088,6 +15197,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).EndInit();
             this.groupBox112.ResumeLayout(false);
             this.groupBox112.PerformLayout();
+            this.groupBox113.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).EndInit();
+            this.groupBox114.ResumeLayout(false);
+            this.groupBox115.ResumeLayout(false);
+            this.groupBox116.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -15157,8 +15273,6 @@
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.ComboBox cbxPartyMembers;
         private System.Windows.Forms.ComboBox cbxPartyMemberDriver;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabCoreChipBox;
@@ -15263,8 +15377,6 @@
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapRoleCPUID;
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapElementCoreID;
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapEnergyConverterLevel;
-        private System.Windows.Forms.NumericUpDown nudPartyMemberUnk_0x02;
-        private System.Windows.Forms.NumericUpDown nudPartyMemberUnk_0x04;
         private System.Windows.Forms.NumericUpDown nudMoney;
         private System.Windows.Forms.TabPage tabDrivers;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -16222,6 +16334,19 @@
         private System.Windows.Forms.NumericUpDown nudItemsSerial1;
         private System.Windows.Forms.Label label332;
         private System.Windows.Forms.GroupBox groupBox112;
+        private System.Windows.Forms.Label label347;
+        private System.Windows.Forms.GroupBox groupBox113;
+        private Be.Windows.Forms.HexBox hbxPartyMemberUnk_0x02;
+        private System.Windows.Forms.NumericUpDown nudPartyLeader;
+        private System.Windows.Forms.NumericUpDown nudPartyMemberDriver;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.NumericUpDown nudPartyGauge;
+        private System.Windows.Forms.GroupBox groupBox116;
+        private Be.Windows.Forms.HexBox hbxPartyUnk_0x4E;
+        private System.Windows.Forms.GroupBox groupBox115;
+        private Be.Windows.Forms.HexBox hbxPartyUnk_0x44;
+        private System.Windows.Forms.GroupBox groupBox114;
+        private Be.Windows.Forms.HexBox hbxPartyUnk_0x3C;
     }
 }
 
