@@ -1165,6 +1165,34 @@
             this.hbxPartyUnk_0x44 = new Be.Windows.Forms.HexBox();
             this.groupBox116 = new System.Windows.Forms.GroupBox();
             this.hbxPartyUnk_0x4E = new Be.Windows.Forms.HexBox();
+            this.tabTigerTiger = new System.Windows.Forms.TabPage();
+            this.gourpBox119 = new System.Windows.Forms.GroupBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
+            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
+            this.label352 = new System.Windows.Forms.Label();
+            this.label353 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
+            this.label354 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
+            this.label355 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
+            this.label356 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage5IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage5Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage5Score = new System.Windows.Forms.NumericUpDown();
+            this.label357 = new System.Windows.Forms.Label();
+            this.groupBox117 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
+            this.groupBox118 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1691,6 +1719,15 @@
             this.groupBox114.SuspendLayout();
             this.groupBox115.SuspendLayout();
             this.groupBox116.SuspendLayout();
+            this.tabTigerTiger.SuspendLayout();
+            this.gourpBox119.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
+            this.groupBox117.SuspendLayout();
+            this.groupBox118.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -2168,6 +2205,7 @@
             this.tabControl1.Controls.Add(this.tabDrivers);
             this.tabControl1.Controls.Add(this.tabBlades);
             this.tabControl1.Controls.Add(this.tabItems);
+            this.tabControl1.Controls.Add(this.tabTigerTiger);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -14604,6 +14642,325 @@
             this.hbxPartyUnk_0x4E.Size = new System.Drawing.Size(174, 41);
             this.hbxPartyUnk_0x4E.TabIndex = 151;
             // 
+            // tabTigerTiger
+            // 
+            this.tabTigerTiger.Controls.Add(this.groupBox118);
+            this.tabTigerTiger.Controls.Add(this.groupBox117);
+            this.tabTigerTiger.Controls.Add(this.gourpBox119);
+            this.tabTigerTiger.Location = new System.Drawing.Point(4, 22);
+            this.tabTigerTiger.Name = "tabTigerTiger";
+            this.tabTigerTiger.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTigerTiger.Size = new System.Drawing.Size(1134, 581);
+            this.tabTigerTiger.TabIndex = 4;
+            this.tabTigerTiger.Text = "Tiger! Tiger!";
+            this.tabTigerTiger.UseVisualStyleBackColor = true;
+            // 
+            // gourpBox119
+            // 
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage5IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage5Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage5Score);
+            this.gourpBox119.Controls.Add(this.label357);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage4IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage4Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage4Score);
+            this.gourpBox119.Controls.Add(this.label356);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage3IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage3Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage3Score);
+            this.gourpBox119.Controls.Add(this.label355);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage2IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage2Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage2Score);
+            this.gourpBox119.Controls.Add(this.label354);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage1IsEasyMode);
+            this.gourpBox119.Controls.Add(this.label353);
+            this.gourpBox119.Controls.Add(this.label352);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage1Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage1Score);
+            this.gourpBox119.Controls.Add(this.label66);
+            this.gourpBox119.Location = new System.Drawing.Point(8, 6);
+            this.gourpBox119.Name = "gourpBox119";
+            this.gourpBox119.Size = new System.Drawing.Size(328, 138);
+            this.gourpBox119.TabIndex = 0;
+            this.gourpBox119.TabStop = false;
+            this.gourpBox119.Text = "Tiger! Tiger! High Scores";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(8, 34);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(47, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Stage 1:";
+            // 
+            // nudTigerTigerStage1Score
+            // 
+            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
+            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
+            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage1Score.TabIndex = 1;
+            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
+            // 
+            // txtTigerTigerStage1Initials
+            // 
+            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
+            this.txtTigerTigerStage1Initials.MaxLength = 3;
+            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
+            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage1Initials.TabIndex = 2;
+            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
+            // 
+            // label352
+            // 
+            this.label352.AutoSize = true;
+            this.label352.Location = new System.Drawing.Point(58, 16);
+            this.label352.Name = "label352";
+            this.label352.Size = new System.Drawing.Size(38, 13);
+            this.label352.TabIndex = 3;
+            this.label352.Text = "Score:";
+            // 
+            // label353
+            // 
+            this.label353.AutoSize = true;
+            this.label353.Location = new System.Drawing.Point(155, 16);
+            this.label353.Name = "label353";
+            this.label353.Size = new System.Drawing.Size(39, 13);
+            this.label353.TabIndex = 4;
+            this.label353.Text = "Initials:";
+            // 
+            // chkTigerTigerStage1IsEasyMode
+            // 
+            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
+            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
+            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
+            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
+            // 
+            // chkTigerTigerStage2IsEasyMode
+            // 
+            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
+            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
+            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
+            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage2Initials
+            // 
+            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
+            this.txtTigerTigerStage2Initials.MaxLength = 3;
+            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
+            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage2Initials.TabIndex = 8;
+            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
+            // 
+            // nudTigerTigerStage2Score
+            // 
+            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
+            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
+            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage2Score.TabIndex = 7;
+            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
+            // 
+            // label354
+            // 
+            this.label354.AutoSize = true;
+            this.label354.Location = new System.Drawing.Point(8, 54);
+            this.label354.Name = "label354";
+            this.label354.Size = new System.Drawing.Size(47, 13);
+            this.label354.TabIndex = 6;
+            this.label354.Text = "Stage 2:";
+            // 
+            // chkTigerTigerStage3IsEasyMode
+            // 
+            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
+            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
+            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
+            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage3Initials
+            // 
+            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
+            this.txtTigerTigerStage3Initials.MaxLength = 3;
+            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
+            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage3Initials.TabIndex = 12;
+            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
+            // 
+            // nudTigerTigerStage3Score
+            // 
+            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
+            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
+            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage3Score.TabIndex = 11;
+            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
+            // 
+            // label355
+            // 
+            this.label355.AutoSize = true;
+            this.label355.Location = new System.Drawing.Point(8, 74);
+            this.label355.Name = "label355";
+            this.label355.Size = new System.Drawing.Size(47, 13);
+            this.label355.TabIndex = 10;
+            this.label355.Text = "Stage 3:";
+            // 
+            // chkTigerTigerStage4IsEasyMode
+            // 
+            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
+            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
+            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
+            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage4Initials
+            // 
+            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
+            this.txtTigerTigerStage4Initials.MaxLength = 3;
+            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
+            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage4Initials.TabIndex = 16;
+            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
+            // 
+            // nudTigerTigerStage4Score
+            // 
+            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
+            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
+            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage4Score.TabIndex = 15;
+            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
+            // 
+            // label356
+            // 
+            this.label356.AutoSize = true;
+            this.label356.Location = new System.Drawing.Point(8, 94);
+            this.label356.Name = "label356";
+            this.label356.Size = new System.Drawing.Size(47, 13);
+            this.label356.TabIndex = 14;
+            this.label356.Text = "Stage 4:";
+            // 
+            // chkTigerTigerStage5IsEasyMode
+            // 
+            this.chkTigerTigerStage5IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage5IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage5IsEasyMode.Location = new System.Drawing.Point(211, 114);
+            this.chkTigerTigerStage5IsEasyMode.Name = "chkTigerTigerStage5IsEasyMode";
+            this.chkTigerTigerStage5IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage5IsEasyMode.TabIndex = 21;
+            this.chkTigerTigerStage5IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage5IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage5IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage5IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage5Initials
+            // 
+            this.txtTigerTigerStage5Initials.Location = new System.Drawing.Point(158, 112);
+            this.txtTigerTigerStage5Initials.MaxLength = 3;
+            this.txtTigerTigerStage5Initials.Name = "txtTigerTigerStage5Initials";
+            this.txtTigerTigerStage5Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage5Initials.TabIndex = 20;
+            this.txtTigerTigerStage5Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage5Initials_TextChanged);
+            // 
+            // nudTigerTigerStage5Score
+            // 
+            this.nudTigerTigerStage5Score.Location = new System.Drawing.Point(61, 112);
+            this.nudTigerTigerStage5Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage5Score.Name = "nudTigerTigerStage5Score";
+            this.nudTigerTigerStage5Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage5Score.TabIndex = 19;
+            this.nudTigerTigerStage5Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage5Score_ValueChanged);
+            // 
+            // label357
+            // 
+            this.label357.AutoSize = true;
+            this.label357.Location = new System.Drawing.Point(8, 114);
+            this.label357.Name = "label357";
+            this.label357.Size = new System.Drawing.Size(47, 13);
+            this.label357.TabIndex = 18;
+            this.label357.Text = "Stage 5:";
+            // 
+            // groupBox117
+            // 
+            this.groupBox117.Controls.Add(this.hbxTigerTigerUnk_0x00);
+            this.groupBox117.Location = new System.Drawing.Point(8, 150);
+            this.groupBox117.Name = "groupBox117";
+            this.groupBox117.Size = new System.Drawing.Size(313, 67);
+            this.groupBox117.TabIndex = 155;
+            this.groupBox117.TabStop = false;
+            this.groupBox117.Text = "Unk_0x00";
+            // 
+            // hbxTigerTigerUnk_0x00
+            // 
+            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
+            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
+            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
+            // 
+            // groupBox118
+            // 
+            this.groupBox118.Controls.Add(this.hbxTigerTigerUnk_0x30);
+            this.groupBox118.Location = new System.Drawing.Point(8, 224);
+            this.groupBox118.Name = "groupBox118";
+            this.groupBox118.Size = new System.Drawing.Size(487, 276);
+            this.groupBox118.TabIndex = 156;
+            this.groupBox118.TabStop = false;
+            this.groupBox118.Text = "Unk_0x30";
+            // 
+            // hbxTigerTigerUnk_0x30
+            // 
+            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
+            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
+            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -15204,6 +15561,16 @@
             this.groupBox114.ResumeLayout(false);
             this.groupBox115.ResumeLayout(false);
             this.groupBox116.ResumeLayout(false);
+            this.tabTigerTiger.ResumeLayout(false);
+            this.gourpBox119.ResumeLayout(false);
+            this.gourpBox119.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
+            this.groupBox117.ResumeLayout(false);
+            this.groupBox118.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -16347,6 +16714,34 @@
         private Be.Windows.Forms.HexBox hbxPartyUnk_0x44;
         private System.Windows.Forms.GroupBox groupBox114;
         private Be.Windows.Forms.HexBox hbxPartyUnk_0x3C;
+        private System.Windows.Forms.TabPage tabTigerTiger;
+        private System.Windows.Forms.GroupBox gourpBox119;
+        private System.Windows.Forms.NumericUpDown nudTigerTigerStage1Score;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.CheckBox chkTigerTigerStage5IsEasyMode;
+        private System.Windows.Forms.TextBox txtTigerTigerStage5Initials;
+        private System.Windows.Forms.NumericUpDown nudTigerTigerStage5Score;
+        private System.Windows.Forms.Label label357;
+        private System.Windows.Forms.CheckBox chkTigerTigerStage4IsEasyMode;
+        private System.Windows.Forms.TextBox txtTigerTigerStage4Initials;
+        private System.Windows.Forms.NumericUpDown nudTigerTigerStage4Score;
+        private System.Windows.Forms.Label label356;
+        private System.Windows.Forms.CheckBox chkTigerTigerStage3IsEasyMode;
+        private System.Windows.Forms.TextBox txtTigerTigerStage3Initials;
+        private System.Windows.Forms.NumericUpDown nudTigerTigerStage3Score;
+        private System.Windows.Forms.Label label355;
+        private System.Windows.Forms.CheckBox chkTigerTigerStage2IsEasyMode;
+        private System.Windows.Forms.TextBox txtTigerTigerStage2Initials;
+        private System.Windows.Forms.NumericUpDown nudTigerTigerStage2Score;
+        private System.Windows.Forms.Label label354;
+        private System.Windows.Forms.CheckBox chkTigerTigerStage1IsEasyMode;
+        private System.Windows.Forms.Label label353;
+        private System.Windows.Forms.Label label352;
+        private System.Windows.Forms.TextBox txtTigerTigerStage1Initials;
+        private System.Windows.Forms.GroupBox groupBox118;
+        private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x30;
+        private System.Windows.Forms.GroupBox groupBox117;
+        private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x00;
     }
 }
 

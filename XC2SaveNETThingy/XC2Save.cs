@@ -672,12 +672,11 @@ namespace XC2SaveNETThingy
             }
         }
 
-        public class Minigame : IXC2SaveObject
+        public class TigerTigerData : IXC2SaveObject
         {
             public const int SIZE = 0x100;
 
-            public UInt32 Unk_0x00 { get; set; }
-            public UInt32 Unk_0x04 { get; set; }
+            public Byte[] Unk_0x00 { get; set; }
             public UInt32 Stage1HighScore { get; set; }
             public bool Stage1ScoreIsEasyMode { get; set; }
             public string Stage1HighScoreInitials { get; set; }
@@ -695,10 +694,9 @@ namespace XC2SaveNETThingy
             public string Stage5HighScoreInitials { get; set; }
             public Byte[] Unk_0x30 { get; set; }
 
-            public Minigame(Byte[] data)
+            public TigerTigerData(Byte[] data)
             {
-                Unk_0x00 = BitConverter.ToUInt32(data.GetByteSubArray(0, 4), 0);
-                Unk_0x04 = BitConverter.ToUInt32(data.GetByteSubArray(4, 4), 0);
+                Unk_0x00 = data.GetByteSubArray(0, 8);
 
                 UInt32 mask = (UInt32)(Math.Pow(2, 31));
 
@@ -736,8 +734,7 @@ namespace XC2SaveNETThingy
 
                 List<Byte> result = new List<byte>();
                 
-                result.AddRange(BitConverter.GetBytes(Unk_0x00));
-                result.AddRange(BitConverter.GetBytes(Unk_0x04));
+                result.AddRange(Unk_0x00);
 
                 result.AddRange(BitConverter.GetBytes((UInt32)(((Stage1ScoreIsEasyMode ? 1 : 0) << 31) + Stage1HighScore)));
                 Encoding.ASCII.GetBytes(Stage1HighScoreInitials, 0, 3, initials, 0);
@@ -900,7 +897,7 @@ namespace XC2SaveNETThingy
         public UInt32 field_10AD74 { get; set; }
         public RealTime Time2 { get; set; }
         public float CameraHeight { get; set; }
-        public Minigame TigerTigerData { get; set; }
+        public TigerTigerData TigerTiger { get; set; }
         public float CameraYaw { get; set; }
         public float CameraPitch { get; set; }
         public Byte CameraFreeMode { get; set; }
@@ -1003,7 +1000,7 @@ namespace XC2SaveNETThingy
             field_10AD74 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_10AD74"], 4), 0);
             Time2 = new RealTime(data.GetByteSubArray(LOC["Time2"], RealTime.SIZE));
             CameraHeight = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraHeight"], 4), 0);
-            TigerTigerData = new Minigame(data.GetByteSubArray(LOC["TigerTigerData"], Minigame.SIZE));
+            TigerTiger = new TigerTigerData(data.GetByteSubArray(LOC["TigerTigerData"], TigerTigerData.SIZE));
             CameraYaw = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraYaw"], 4), 0);
             CameraPitch = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraPitch"], 4), 0);
             CameraFreeMode = data[LOC["CameraFreeMode"]];
@@ -1109,7 +1106,7 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(field_10AD74));
             result.AddRange(Time2.ToRawData());
             result.AddRange(BitConverter.GetBytes(CameraHeight));
-            result.AddRange(TigerTigerData.ToRawData());
+            result.AddRange(TigerTiger.ToRawData());
             result.AddRange(BitConverter.GetBytes(CameraYaw));
             result.AddRange(BitConverter.GetBytes(CameraPitch));
             result.Add(CameraFreeMode);

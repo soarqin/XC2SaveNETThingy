@@ -250,8 +250,32 @@ namespace XC2SaveNETThingy
             hbxPartyUnk_0x3C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x3C);
             hbxPartyUnk_0x44.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x44);
             hbxPartyUnk_0x4E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x4E);
-
             #endregion Party
+
+            #region Tiger! Tiger!
+            nudTigerTigerStage1Score.Value = SAVEDATA.TigerTiger.Stage1HighScore;
+            txtTigerTigerStage1Initials.Text = SAVEDATA.TigerTiger.Stage1HighScoreInitials;
+            chkTigerTigerStage1IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage1ScoreIsEasyMode;
+
+            nudTigerTigerStage2Score.Value = SAVEDATA.TigerTiger.Stage2HighScore;
+            txtTigerTigerStage2Initials.Text = SAVEDATA.TigerTiger.Stage2HighScoreInitials;
+            chkTigerTigerStage2IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage2ScoreIsEasyMode;
+
+            nudTigerTigerStage3Score.Value = SAVEDATA.TigerTiger.Stage3HighScore;
+            txtTigerTigerStage3Initials.Text = SAVEDATA.TigerTiger.Stage3HighScoreInitials;
+            chkTigerTigerStage3IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage3ScoreIsEasyMode;
+
+            nudTigerTigerStage4Score.Value = SAVEDATA.TigerTiger.Stage4HighScore;
+            txtTigerTigerStage4Initials.Text = SAVEDATA.TigerTiger.Stage4HighScoreInitials;
+            chkTigerTigerStage4IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage4ScoreIsEasyMode;
+
+            nudTigerTigerStage5Score.Value = SAVEDATA.TigerTiger.Stage5HighScore;
+            txtTigerTigerStage5Initials.Text = SAVEDATA.TigerTiger.Stage5HighScoreInitials;
+            chkTigerTigerStage5IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage5ScoreIsEasyMode;
+
+            hbxTigerTigerUnk_0x00.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x00);
+            hbxTigerTigerUnk_0x30.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x30);
+            #endregion Tiger! Tiger!
 
             Console.WriteLine("DONE");
         }
@@ -1113,9 +1137,6 @@ namespace XC2SaveNETThingy
 
         #region Misc
         private void nudMoney_ValueChanged(object sender, EventArgs e) => SAVEDATA.Money = (UInt32)nudMoney.Value;
-
-
-
         #endregion Misc
 
         #region Driver
@@ -2849,8 +2870,28 @@ namespace XC2SaveNETThingy
         private void cbxPartyLeader_SelectionChangeCommitted(object sender, EventArgs e) => nudPartyLeader.Value = Convert.ToUInt32(cbxPartyLeader.SelectedValue);
         #endregion Party
 
+        #region Tiger! Tiger!
+        private void nudTigerTigerStage1Score_ValueChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage1HighScore = (UInt32)nudTigerTigerStage1Score.Value;
+        private void txtTigerTigerStage1Initials_TextChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage1HighScoreInitials = txtTigerTigerStage1Initials.Text;
+        private void chkTigerTigerStage1IsEasyMode_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage1ScoreIsEasyMode = chkTigerTigerStage1IsEasyMode.Checked;
+
+        private void nudTigerTigerStage2Score_ValueChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage2HighScore = (UInt32)nudTigerTigerStage2Score.Value;
+        private void txtTigerTigerStage2Initials_TextChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage2HighScoreInitials = txtTigerTigerStage2Initials.Text;
+        private void chkTigerTigerStage2IsEasyMode_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage2ScoreIsEasyMode = chkTigerTigerStage2IsEasyMode.Checked;
+
+        private void nudTigerTigerStage3Score_ValueChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage3HighScore = (UInt32)nudTigerTigerStage3Score.Value;
+        private void txtTigerTigerStage3Initials_TextChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage3HighScoreInitials = txtTigerTigerStage3Initials.Text;
+        private void chkTigerTigerStage3IsEasyMode_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage3ScoreIsEasyMode = chkTigerTigerStage3IsEasyMode.Checked;
+
+        private void nudTigerTigerStage4Score_ValueChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage4HighScore = (UInt32)nudTigerTigerStage4Score.Value;
+        private void txtTigerTigerStage4Initials_TextChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage4HighScoreInitials = txtTigerTigerStage4Initials.Text;
+        private void chkTigerTigerStage4IsEasyMode_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage4ScoreIsEasyMode = chkTigerTigerStage4IsEasyMode.Checked;
+
+        private void nudTigerTigerStage5Score_ValueChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage5HighScore = (UInt32)nudTigerTigerStage5Score.Value;
+        private void txtTigerTigerStage5Initials_TextChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage5HighScoreInitials = txtTigerTigerStage5Initials.Text;
+        private void chkTigerTigerStage5IsEasyMode_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TigerTiger.Stage5ScoreIsEasyMode = chkTigerTigerStage5IsEasyMode.Checked;
+        #endregion Tiger! Tiger!
+
         #endregion Events
-
-
     }
 }
