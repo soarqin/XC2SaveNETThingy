@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,19 +56,10 @@
             this.lblss_field_4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtMapJumpId = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.lblsg_field_18 = new System.Windows.Forms.Label();
             this.lblsg_field_1C = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtMapPositionZ = new System.Windows.Forms.TextBox();
-            this.txtMapPositionY = new System.Windows.Forms.TextBox();
-            this.txtMapPositionX = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lblsg_field_2C = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -85,7 +77,20 @@
             this.lblPlayTime = new System.Windows.Forms.Label();
             this.nudMoney = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox116 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x4E = new Be.Windows.Forms.HexBox();
+            this.groupBox115 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x44 = new Be.Windows.Forms.HexBox();
+            this.groupBox114 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyUnk_0x3C = new Be.Windows.Forms.HexBox();
+            this.nudPartyGauge = new System.Windows.Forms.NumericUpDown();
+            this.label65 = new System.Windows.Forms.Label();
+            this.nudPartyLeader = new System.Windows.Forms.NumericUpDown();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.nudPartyMemberDriver = new System.Windows.Forms.NumericUpDown();
+            this.groupBox113 = new System.Windows.Forms.GroupBox();
+            this.hbxPartyMemberUnk_0x02 = new Be.Windows.Forms.HexBox();
+            this.label347 = new System.Windows.Forms.Label();
             this.cbxPartyMemberDriver = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
             this.cbxPartyMembers = new System.Windows.Forms.ComboBox();
@@ -94,7 +99,7 @@
             this.tabDrivers = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lbxDrivers = new System.Windows.Forms.ListBox();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tbcDrivers = new System.Windows.Forms.TabControl();
             this.tabDriversMisc = new System.Windows.Forms.TabPage();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
             this.label51 = new System.Windows.Forms.Label();
@@ -353,6 +358,24 @@
             this.hbxDriverUnk_0x00A8 = new Be.Windows.Forms.HexBox();
             this.groupBox35 = new System.Windows.Forms.GroupBox();
             this.hbxDriverUnk_0x002C = new Be.Windows.Forms.HexBox();
+            this.tabDriver150 = new System.Windows.Forms.TabPage();
+            this.label391 = new System.Windows.Forms.Label();
+            this.gbxDriverWeapons150 = new System.Windows.Forms.GroupBox();
+            this.cbxDriverWeaponArt150Id3 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverWeaponArt150Id2 = new System.Windows.Forms.ComboBox();
+            this.cbxDriverWeaponArt150Id1 = new System.Windows.Forms.ComboBox();
+            this.nudDriverTotalWeaponPoints150 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponPoints150 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArt150Id3 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArt150Id2 = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverWeaponArt150Id1 = new System.Windows.Forms.NumericUpDown();
+            this.label385 = new System.Windows.Forms.Label();
+            this.label386 = new System.Windows.Forms.Label();
+            this.label387 = new System.Windows.Forms.Label();
+            this.label388 = new System.Windows.Forms.Label();
+            this.cbxDriverWeapons150 = new System.Windows.Forms.ComboBox();
+            this.label389 = new System.Windows.Forms.Label();
+            this.label390 = new System.Windows.Forms.Label();
             this.tabBlades = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbxBlades = new System.Windows.Forms.ListBox();
@@ -1108,104 +1131,213 @@
             this.dgvHanaNArtsBox = new System.Windows.Forms.DataGridView();
             this.tabPoppiSkillRAMBox = new System.Windows.Forms.TabPage();
             this.dgvHanaAssistBox = new System.Windows.Forms.DataGridView();
-            this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tabItemsSerials = new System.Windows.Forms.TabPage();
-            this.label332 = new System.Windows.Forms.Label();
-            this.nudItemsSerial1 = new System.Windows.Forms.NumericUpDown();
-            this.nudItemsSerial2 = new System.Windows.Forms.NumericUpDown();
-            this.label333 = new System.Windows.Forms.Label();
-            this.nudItemsSerial3 = new System.Windows.Forms.NumericUpDown();
-            this.label334 = new System.Windows.Forms.Label();
-            this.nudItemsSerial4 = new System.Windows.Forms.NumericUpDown();
-            this.label335 = new System.Windows.Forms.Label();
-            this.nudItemsSerial5 = new System.Windows.Forms.NumericUpDown();
-            this.label336 = new System.Windows.Forms.Label();
-            this.nudItemsSerial10 = new System.Windows.Forms.NumericUpDown();
-            this.label337 = new System.Windows.Forms.Label();
-            this.nudItemsSerial9 = new System.Windows.Forms.NumericUpDown();
-            this.label338 = new System.Windows.Forms.Label();
-            this.nudItemsSerial8 = new System.Windows.Forms.NumericUpDown();
-            this.label339 = new System.Windows.Forms.Label();
-            this.nudItemsSerial7 = new System.Windows.Forms.NumericUpDown();
-            this.label340 = new System.Windows.Forms.Label();
-            this.nudItemsSerial6 = new System.Windows.Forms.NumericUpDown();
-            this.label341 = new System.Windows.Forms.Label();
-            this.nudItemsSerial15 = new System.Windows.Forms.NumericUpDown();
-            this.label342 = new System.Windows.Forms.Label();
-            this.nudItemsSerial14 = new System.Windows.Forms.NumericUpDown();
-            this.label343 = new System.Windows.Forms.Label();
-            this.nudItemsSerial13 = new System.Windows.Forms.NumericUpDown();
-            this.label344 = new System.Windows.Forms.Label();
-            this.nudItemsSerial12 = new System.Windows.Forms.NumericUpDown();
-            this.label345 = new System.Windows.Forms.Label();
-            this.nudItemsSerial11 = new System.Windows.Forms.NumericUpDown();
-            this.label346 = new System.Windows.Forms.Label();
-            this.nudItemsSerial19 = new System.Windows.Forms.NumericUpDown();
-            this.label348 = new System.Windows.Forms.Label();
-            this.nudItemsSerial18 = new System.Windows.Forms.NumericUpDown();
-            this.label349 = new System.Windows.Forms.Label();
-            this.nudItemsSerial17 = new System.Windows.Forms.NumericUpDown();
-            this.label350 = new System.Windows.Forms.Label();
-            this.nudItemsSerial16 = new System.Windows.Forms.NumericUpDown();
-            this.label351 = new System.Windows.Forms.Label();
             this.groupBox112 = new System.Windows.Forms.GroupBox();
-            this.label347 = new System.Windows.Forms.Label();
-            this.groupBox113 = new System.Windows.Forms.GroupBox();
-            this.hbxPartyMemberUnk_0x02 = new Be.Windows.Forms.HexBox();
-            this.nudPartyMemberDriver = new System.Windows.Forms.NumericUpDown();
-            this.nudPartyLeader = new System.Windows.Forms.NumericUpDown();
-            this.label65 = new System.Windows.Forms.Label();
-            this.nudPartyGauge = new System.Windows.Forms.NumericUpDown();
-            this.groupBox114 = new System.Windows.Forms.GroupBox();
-            this.hbxPartyUnk_0x3C = new Be.Windows.Forms.HexBox();
-            this.groupBox115 = new System.Windows.Forms.GroupBox();
-            this.hbxPartyUnk_0x44 = new Be.Windows.Forms.HexBox();
-            this.groupBox116 = new System.Windows.Forms.GroupBox();
-            this.hbxPartyUnk_0x4E = new Be.Windows.Forms.HexBox();
+            this.nudItemsSerial1 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial19 = new System.Windows.Forms.NumericUpDown();
+            this.label332 = new System.Windows.Forms.Label();
+            this.label348 = new System.Windows.Forms.Label();
+            this.label333 = new System.Windows.Forms.Label();
+            this.nudItemsSerial18 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial2 = new System.Windows.Forms.NumericUpDown();
+            this.label349 = new System.Windows.Forms.Label();
+            this.label334 = new System.Windows.Forms.Label();
+            this.nudItemsSerial17 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial3 = new System.Windows.Forms.NumericUpDown();
+            this.label350 = new System.Windows.Forms.Label();
+            this.label335 = new System.Windows.Forms.Label();
+            this.nudItemsSerial16 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial4 = new System.Windows.Forms.NumericUpDown();
+            this.label351 = new System.Windows.Forms.Label();
+            this.label336 = new System.Windows.Forms.Label();
+            this.nudItemsSerial15 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial5 = new System.Windows.Forms.NumericUpDown();
+            this.label342 = new System.Windows.Forms.Label();
+            this.label341 = new System.Windows.Forms.Label();
+            this.nudItemsSerial14 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial6 = new System.Windows.Forms.NumericUpDown();
+            this.label343 = new System.Windows.Forms.Label();
+            this.label340 = new System.Windows.Forms.Label();
+            this.nudItemsSerial13 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial7 = new System.Windows.Forms.NumericUpDown();
+            this.label344 = new System.Windows.Forms.Label();
+            this.label339 = new System.Windows.Forms.Label();
+            this.nudItemsSerial12 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial8 = new System.Windows.Forms.NumericUpDown();
+            this.label345 = new System.Windows.Forms.Label();
+            this.label338 = new System.Windows.Forms.Label();
+            this.nudItemsSerial11 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemsSerial9 = new System.Windows.Forms.NumericUpDown();
+            this.label346 = new System.Windows.Forms.Label();
+            this.label337 = new System.Windows.Forms.Label();
+            this.nudItemsSerial10 = new System.Windows.Forms.NumericUpDown();
             this.tabTigerTiger = new System.Windows.Forms.TabPage();
+            this.groupBox118 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
+            this.groupBox117 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
             this.gourpBox119 = new System.Windows.Forms.GroupBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
-            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
-            this.label352 = new System.Windows.Forms.Label();
-            this.label353 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
-            this.label354 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
-            this.label355 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
-            this.label356 = new System.Windows.Forms.Label();
             this.chkTigerTigerStage5IsEasyMode = new System.Windows.Forms.CheckBox();
             this.txtTigerTigerStage5Initials = new System.Windows.Forms.TextBox();
             this.nudTigerTigerStage5Score = new System.Windows.Forms.NumericUpDown();
             this.label357 = new System.Windows.Forms.Label();
-            this.groupBox117 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
-            this.groupBox118 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
+            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
+            this.label356 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
+            this.label355 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
+            this.label354 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.label353 = new System.Windows.Forms.Label();
+            this.label352 = new System.Windows.Forms.Label();
+            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
+            this.label66 = new System.Windows.Forms.Label();
+            this.tabMapLocation = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.nudLastVisitedLandmarkMapJumpID = new System.Windows.Forms.NumericUpDown();
+            this.nudLastVisitedLandmarkMapPositionZ = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.nudLastVisitedLandmarkMapPositionY = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.nudLastVisitedLandmarkMapPositionX = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox122 = new System.Windows.Forms.GroupBox();
+            this.nudMapBlade3RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade3RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade1RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade1RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade3RotX = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2RotX = new System.Windows.Forms.NumericUpDown();
+            this.label377 = new System.Windows.Forms.Label();
+            this.label378 = new System.Windows.Forms.Label();
+            this.label379 = new System.Windows.Forms.Label();
+            this.nudMapBlade1RotX = new System.Windows.Forms.NumericUpDown();
+            this.label380 = new System.Windows.Forms.Label();
+            this.label381 = new System.Windows.Forms.Label();
+            this.label382 = new System.Windows.Forms.Label();
+            this.groupBox121 = new System.Windows.Forms.GroupBox();
+            this.nudMapDriver3RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver3RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver1RotZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver1RotY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver3RotX = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2RotX = new System.Windows.Forms.NumericUpDown();
+            this.label371 = new System.Windows.Forms.Label();
+            this.label372 = new System.Windows.Forms.Label();
+            this.label373 = new System.Windows.Forms.Label();
+            this.nudMapDriver1RotX = new System.Windows.Forms.NumericUpDown();
+            this.label374 = new System.Windows.Forms.Label();
+            this.label375 = new System.Windows.Forms.Label();
+            this.label376 = new System.Windows.Forms.Label();
+            this.groupBox120 = new System.Windows.Forms.GroupBox();
+            this.nudMapBlade3PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade3PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade1PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade1PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade3PosX = new System.Windows.Forms.NumericUpDown();
+            this.nudMapBlade2PosX = new System.Windows.Forms.NumericUpDown();
+            this.label365 = new System.Windows.Forms.Label();
+            this.label366 = new System.Windows.Forms.Label();
+            this.label367 = new System.Windows.Forms.Label();
+            this.nudMapBlade1PosX = new System.Windows.Forms.NumericUpDown();
+            this.label368 = new System.Windows.Forms.Label();
+            this.label369 = new System.Windows.Forms.Label();
+            this.label370 = new System.Windows.Forms.Label();
+            this.groupBox119 = new System.Windows.Forms.GroupBox();
+            this.nudMapDriver3PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver3PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver1PosZ = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver1PosY = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver3PosX = new System.Windows.Forms.NumericUpDown();
+            this.nudMapDriver2PosX = new System.Windows.Forms.NumericUpDown();
+            this.label364 = new System.Windows.Forms.Label();
+            this.label363 = new System.Windows.Forms.Label();
+            this.label362 = new System.Windows.Forms.Label();
+            this.nudMapDriver1PosX = new System.Windows.Forms.NumericUpDown();
+            this.label361 = new System.Windows.Forms.Label();
+            this.label360 = new System.Windows.Forms.Label();
+            this.label359 = new System.Windows.Forms.Label();
+            this.label358 = new System.Windows.Forms.Label();
+            this.nudMapMapJumpID = new System.Windows.Forms.NumericUpDown();
+            this.tabUnknown = new System.Windows.Forms.TabPage();
+            this.tabControl6 = new System.Windows.Forms.TabControl();
+            this.tabUnkMain = new System.Windows.Forms.TabPage();
+            this.groupBox123 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x000004 = new Be.Windows.Forms.HexBox();
+            this.nudUnk_0x10AE93 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox124 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x000018 = new Be.Windows.Forms.HexBox();
+            this.label383 = new System.Windows.Forms.Label();
+            this.groupBox125 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x00002C = new Be.Windows.Forms.HexBox();
+            this.groupBox130 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x10AD62 = new Be.Windows.Forms.HexBox();
+            this.groupBox126 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x00003A = new Be.Windows.Forms.HexBox();
+            this.groupBox129 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x10AD74 = new Be.Windows.Forms.HexBox();
+            this.groupBox127 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x1097FC = new Be.Windows.Forms.HexBox();
+            this.groupBox128 = new System.Windows.Forms.GroupBox();
+            this.hbxUnk_0x1098C4 = new Be.Windows.Forms.HexBox();
+            this.tabUnk_0x1171E8 = new System.Windows.Forms.TabPage();
+            this.hbxUnk_0x1171E8 = new Be.Windows.Forms.HexBox();
+            this.tabUnk_0x117390 = new System.Windows.Forms.TabPage();
+            this.hbxUnk_0x117390 = new Be.Windows.Forms.HexBox();
+            this.tab150RawData = new System.Windows.Forms.TabPage();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.label384 = new System.Windows.Forms.Label();
+            this.groupBox131 = new System.Windows.Forms.GroupBox();
+            this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.tbc150RawData = new System.Windows.Forms.TabControl();
+            this.tab150RawDataUnk_0x1176A0 = new System.Windows.Forms.TabPage();
+            this.tab150RawDataUnk_0x117728 = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
+            this.tab150RawDataUnk_0x117A4C = new System.Windows.Forms.TabPage();
+            this.tab150RawDataUnk_0x117D70 = new System.Windows.Forms.TabPage();
+            this.tab150RawDataUnk_0x1186DC = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x117728 = new Be.Windows.Forms.HexBox();
+            this.hbx150RawDataUnk_0x117A4C = new Be.Windows.Forms.HexBox();
+            this.hbx150RawDataUnk_0x117D70 = new Be.Windows.Forms.HexBox();
+            this.hbx150RawDataUnk_0x1186DC = new Be.Windows.Forms.HexBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).BeginInit();
             this.groupBox11.SuspendLayout();
+            this.groupBox116.SuspendLayout();
+            this.groupBox115.SuspendLayout();
+            this.groupBox114.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).BeginInit();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).BeginInit();
+            this.groupBox113.SuspendLayout();
             this.tabDrivers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.tabControl4.SuspendLayout();
+            this.tbcDrivers.SuspendLayout();
             this.tabDriversMisc.SuspendLayout();
             this.groupBox34.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).BeginInit();
@@ -1330,6 +1462,13 @@
             this.groupBox37.SuspendLayout();
             this.groupBox36.SuspendLayout();
             this.groupBox35.SuspendLayout();
+            this.tabDriver150.SuspendLayout();
+            this.gbxDriverWeapons150.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints150)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponPoints150)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id1)).BeginInit();
             this.tabBlades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1687,47 +1826,113 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).BeginInit();
             this.tabPoppiSkillRAMBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).BeginInit();
+            this.tabItemsSerials.SuspendLayout();
+            this.groupBox112.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).BeginInit();
+            this.tabTigerTiger.SuspendLayout();
+            this.groupBox118.SuspendLayout();
+            this.groupBox117.SuspendLayout();
+            this.gourpBox119.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
+            this.tabMapLocation.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapJumpID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionX)).BeginInit();
+            this.groupBox122.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotX)).BeginInit();
+            this.groupBox121.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotX)).BeginInit();
+            this.groupBox120.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosX)).BeginInit();
+            this.groupBox119.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosZ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).BeginInit();
+            this.tabUnknown.SuspendLayout();
+            this.tabControl6.SuspendLayout();
+            this.tabUnkMain.SuspendLayout();
+            this.groupBox123.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUnk_0x10AE93)).BeginInit();
+            this.groupBox124.SuspendLayout();
+            this.groupBox125.SuspendLayout();
+            this.groupBox130.SuspendLayout();
+            this.groupBox126.SuspendLayout();
+            this.groupBox129.SuspendLayout();
+            this.groupBox127.SuspendLayout();
+            this.groupBox128.SuspendLayout();
+            this.tabUnk_0x1171E8.SuspendLayout();
+            this.tabUnk_0x117390.SuspendLayout();
+            this.tab150RawData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            this.groupBox131.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            this.tabItemsSerials.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).BeginInit();
-            this.groupBox112.SuspendLayout();
-            this.groupBox113.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).BeginInit();
-            this.groupBox114.SuspendLayout();
-            this.groupBox115.SuspendLayout();
-            this.groupBox116.SuspendLayout();
-            this.tabTigerTiger.SuspendLayout();
-            this.gourpBox119.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
-            this.groupBox117.SuspendLayout();
-            this.groupBox118.SuspendLayout();
+            this.tbc150RawData.SuspendLayout();
+            this.tab150RawDataUnk_0x1176A0.SuspendLayout();
+            this.tab150RawDataUnk_0x117728.SuspendLayout();
+            this.tab150RawDataUnk_0x117A4C.SuspendLayout();
+            this.tab150RawDataUnk_0x117D70.SuspendLayout();
+            this.tab150RawDataUnk_0x1186DC.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -1974,15 +2179,6 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "G";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 13);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "MapJumpId:";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1991,13 +2187,6 @@
             this.label15.Size = new System.Drawing.Size(64, 13);
             this.label15.TabIndex = 14;
             this.label15.Text = "sg_field_18:";
-            // 
-            // txtMapJumpId
-            // 
-            this.txtMapJumpId.Location = new System.Drawing.Point(77, 13);
-            this.txtMapJumpId.Name = "txtMapJumpId";
-            this.txtMapJumpId.Size = new System.Drawing.Size(100, 20);
-            this.txtMapJumpId.TabIndex = 15;
             // 
             // label16
             // 
@@ -2025,71 +2214,6 @@
             this.lblsg_field_1C.Size = new System.Drawing.Size(41, 13);
             this.lblsg_field_1C.TabIndex = 18;
             this.lblsg_field_1C.Text = "label17";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtMapPositionZ);
-            this.groupBox2.Controls.Add(this.txtMapPositionY);
-            this.groupBox2.Controls.Add(this.txtMapPositionX);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.txtMapJumpId);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Location = new System.Drawing.Point(41, 220);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(187, 120);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "MapPosition";
-            // 
-            // txtMapPositionZ
-            // 
-            this.txtMapPositionZ.Location = new System.Drawing.Point(77, 93);
-            this.txtMapPositionZ.Name = "txtMapPositionZ";
-            this.txtMapPositionZ.Size = new System.Drawing.Size(100, 20);
-            this.txtMapPositionZ.TabIndex = 5;
-            // 
-            // txtMapPositionY
-            // 
-            this.txtMapPositionY.Location = new System.Drawing.Point(77, 67);
-            this.txtMapPositionY.Name = "txtMapPositionY";
-            this.txtMapPositionY.Size = new System.Drawing.Size(100, 20);
-            this.txtMapPositionY.TabIndex = 4;
-            // 
-            // txtMapPositionX
-            // 
-            this.txtMapPositionX.Location = new System.Drawing.Point(77, 39);
-            this.txtMapPositionX.Name = "txtMapPositionX";
-            this.txtMapPositionX.Size = new System.Drawing.Size(100, 20);
-            this.txtMapPositionX.TabIndex = 3;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(54, 96);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(17, 13);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Z:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(54, 70);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(17, 13);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Y:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(54, 42);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(17, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "X:";
             // 
             // label20
             // 
@@ -2206,6 +2330,9 @@
             this.tabControl1.Controls.Add(this.tabBlades);
             this.tabControl1.Controls.Add(this.tabItems);
             this.tabControl1.Controls.Add(this.tabTigerTiger);
+            this.tabControl1.Controls.Add(this.tabMapLocation);
+            this.tabControl1.Controls.Add(this.tabUnknown);
+            this.tabControl1.Controls.Add(this.tab150RawData);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -2243,7 +2370,6 @@
             this.tabMain.Controls.Add(this.lblsg_field_2C);
             this.tabMain.Controls.Add(this.lblsg_field_1C);
             this.tabMain.Controls.Add(this.label20);
-            this.tabMain.Controls.Add(this.groupBox2);
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
@@ -2291,6 +2417,100 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Party";
             // 
+            // groupBox116
+            // 
+            this.groupBox116.Controls.Add(this.hbxPartyUnk_0x4E);
+            this.groupBox116.Location = new System.Drawing.Point(273, 161);
+            this.groupBox116.Name = "groupBox116";
+            this.groupBox116.Size = new System.Drawing.Size(187, 67);
+            this.groupBox116.TabIndex = 161;
+            this.groupBox116.TabStop = false;
+            this.groupBox116.Text = "Unk_0x4E";
+            // 
+            // hbxPartyUnk_0x4E
+            // 
+            this.hbxPartyUnk_0x4E.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x4E.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x4E.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x4E.Name = "hbxPartyUnk_0x4E";
+            this.hbxPartyUnk_0x4E.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x4E.Size = new System.Drawing.Size(174, 41);
+            this.hbxPartyUnk_0x4E.TabIndex = 151;
+            // 
+            // groupBox115
+            // 
+            this.groupBox115.Controls.Add(this.hbxPartyUnk_0x44);
+            this.groupBox115.Location = new System.Drawing.Point(273, 85);
+            this.groupBox115.Name = "groupBox115";
+            this.groupBox115.Size = new System.Drawing.Size(234, 67);
+            this.groupBox115.TabIndex = 155;
+            this.groupBox115.TabStop = false;
+            this.groupBox115.Text = "Unk_0x44";
+            // 
+            // hbxPartyUnk_0x44
+            // 
+            this.hbxPartyUnk_0x44.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x44.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x44.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x44.Name = "hbxPartyUnk_0x44";
+            this.hbxPartyUnk_0x44.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x44.Size = new System.Drawing.Size(222, 41);
+            this.hbxPartyUnk_0x44.TabIndex = 151;
+            // 
+            // groupBox114
+            // 
+            this.groupBox114.Controls.Add(this.hbxPartyUnk_0x3C);
+            this.groupBox114.Location = new System.Drawing.Point(273, 12);
+            this.groupBox114.Name = "groupBox114";
+            this.groupBox114.Size = new System.Drawing.Size(140, 67);
+            this.groupBox114.TabIndex = 155;
+            this.groupBox114.TabStop = false;
+            this.groupBox114.Text = "Unk_0x3C";
+            // 
+            // hbxPartyUnk_0x3C
+            // 
+            this.hbxPartyUnk_0x3C.ColumnInfoVisible = true;
+            this.hbxPartyUnk_0x3C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyUnk_0x3C.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyUnk_0x3C.Name = "hbxPartyUnk_0x3C";
+            this.hbxPartyUnk_0x3C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyUnk_0x3C.Size = new System.Drawing.Size(128, 41);
+            this.hbxPartyUnk_0x3C.TabIndex = 151;
+            // 
+            // nudPartyGauge
+            // 
+            this.nudPartyGauge.Location = new System.Drawing.Point(82, 38);
+            this.nudPartyGauge.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyGauge.Name = "nudPartyGauge";
+            this.nudPartyGauge.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyGauge.TabIndex = 160;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(6, 40);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(69, 13);
+            this.label65.TabIndex = 159;
+            this.label65.Text = "Party Gauge:";
+            // 
+            // nudPartyLeader
+            // 
+            this.nudPartyLeader.Location = new System.Drawing.Point(82, 14);
+            this.nudPartyLeader.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyLeader.Name = "nudPartyLeader";
+            this.nudPartyLeader.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyLeader.TabIndex = 158;
+            this.nudPartyLeader.ValueChanged += new System.EventHandler(this.nudPartyLeader_ValueChanged);
+            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.nudPartyMemberDriver);
@@ -2305,6 +2525,48 @@
             this.groupBox12.TabIndex = 2;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Party Members Edit:";
+            // 
+            // nudPartyMemberDriver
+            // 
+            this.nudPartyMemberDriver.Location = new System.Drawing.Point(76, 40);
+            this.nudPartyMemberDriver.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPartyMemberDriver.Name = "nudPartyMemberDriver";
+            this.nudPartyMemberDriver.Size = new System.Drawing.Size(63, 20);
+            this.nudPartyMemberDriver.TabIndex = 157;
+            this.nudPartyMemberDriver.ValueChanged += new System.EventHandler(this.nudPartyMemberDriver_ValueChanged);
+            // 
+            // groupBox113
+            // 
+            this.groupBox113.Controls.Add(this.hbxPartyMemberUnk_0x02);
+            this.groupBox113.Location = new System.Drawing.Point(6, 66);
+            this.groupBox113.Name = "groupBox113";
+            this.groupBox113.Size = new System.Drawing.Size(170, 67);
+            this.groupBox113.TabIndex = 154;
+            this.groupBox113.TabStop = false;
+            this.groupBox113.Text = "Unk_0x02";
+            // 
+            // hbxPartyMemberUnk_0x02
+            // 
+            this.hbxPartyMemberUnk_0x02.ColumnInfoVisible = true;
+            this.hbxPartyMemberUnk_0x02.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxPartyMemberUnk_0x02.Location = new System.Drawing.Point(6, 19);
+            this.hbxPartyMemberUnk_0x02.Name = "hbxPartyMemberUnk_0x02";
+            this.hbxPartyMemberUnk_0x02.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxPartyMemberUnk_0x02.Size = new System.Drawing.Size(156, 41);
+            this.hbxPartyMemberUnk_0x02.TabIndex = 151;
+            // 
+            // label347
+            // 
+            this.label347.AutoSize = true;
+            this.label347.Location = new System.Drawing.Point(7, 16);
+            this.label347.Name = "label347";
+            this.label347.Size = new System.Drawing.Size(48, 13);
+            this.label347.TabIndex = 9;
+            this.label347.Text = "Member:";
             // 
             // cbxPartyMemberDriver
             // 
@@ -2376,7 +2638,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.tabControl4);
+            this.splitContainer2.Panel2.Controls.Add(this.tbcDrivers);
             this.splitContainer2.Size = new System.Drawing.Size(1128, 575);
             this.splitContainer2.SplitterDistance = 168;
             this.splitContainer2.TabIndex = 0;
@@ -2391,17 +2653,18 @@
             this.lbxDrivers.TabIndex = 0;
             this.lbxDrivers.SelectedIndexChanged += new System.EventHandler(this.lbxDrivers_SelectedIndexChanged);
             // 
-            // tabControl4
+            // tbcDrivers
             // 
-            this.tabControl4.Controls.Add(this.tabDriversMisc);
-            this.tabControl4.Controls.Add(this.tabDriversSkills);
-            this.tabControl4.Controls.Add(this.tabDriversUnknown);
-            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl4.Location = new System.Drawing.Point(0, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(956, 575);
-            this.tabControl4.TabIndex = 0;
+            this.tbcDrivers.Controls.Add(this.tabDriversMisc);
+            this.tbcDrivers.Controls.Add(this.tabDriversSkills);
+            this.tbcDrivers.Controls.Add(this.tabDriversUnknown);
+            this.tbcDrivers.Controls.Add(this.tabDriver150);
+            this.tbcDrivers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcDrivers.Location = new System.Drawing.Point(0, 0);
+            this.tbcDrivers.Name = "tbcDrivers";
+            this.tbcDrivers.SelectedIndex = 0;
+            this.tbcDrivers.Size = new System.Drawing.Size(956, 575);
+            this.tbcDrivers.TabIndex = 0;
             // 
             // tabDriversMisc
             // 
@@ -5337,6 +5600,206 @@
             this.hbxDriverUnk_0x002C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.hbxDriverUnk_0x002C.Size = new System.Drawing.Size(204, 41);
             this.hbxDriverUnk_0x002C.TabIndex = 151;
+            // 
+            // tabDriver150
+            // 
+            this.tabDriver150.Controls.Add(this.label391);
+            this.tabDriver150.Controls.Add(this.gbxDriverWeapons150);
+            this.tabDriver150.Location = new System.Drawing.Point(4, 22);
+            this.tabDriver150.Name = "tabDriver150";
+            this.tabDriver150.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriver150.Size = new System.Drawing.Size(948, 549);
+            this.tabDriver150.TabIndex = 3;
+            this.tabDriver150.Text = "1.5.0+";
+            this.tabDriver150.UseVisualStyleBackColor = true;
+            // 
+            // label391
+            // 
+            this.label391.AutoSize = true;
+            this.label391.Location = new System.Drawing.Point(6, 3);
+            this.label391.Name = "label391";
+            this.label391.Size = new System.Drawing.Size(570, 26);
+            this.label391.TabIndex = 42;
+            this.label391.Text = resources.GetString("label391.Text");
+            // 
+            // gbxDriverWeapons150
+            // 
+            this.gbxDriverWeapons150.Controls.Add(this.cbxDriverWeaponArt150Id3);
+            this.gbxDriverWeapons150.Controls.Add(this.cbxDriverWeaponArt150Id2);
+            this.gbxDriverWeapons150.Controls.Add(this.cbxDriverWeaponArt150Id1);
+            this.gbxDriverWeapons150.Controls.Add(this.nudDriverTotalWeaponPoints150);
+            this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponPoints150);
+            this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponArt150Id3);
+            this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponArt150Id2);
+            this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponArt150Id1);
+            this.gbxDriverWeapons150.Controls.Add(this.label385);
+            this.gbxDriverWeapons150.Controls.Add(this.label386);
+            this.gbxDriverWeapons150.Controls.Add(this.label387);
+            this.gbxDriverWeapons150.Controls.Add(this.label388);
+            this.gbxDriverWeapons150.Controls.Add(this.cbxDriverWeapons150);
+            this.gbxDriverWeapons150.Controls.Add(this.label389);
+            this.gbxDriverWeapons150.Controls.Add(this.label390);
+            this.gbxDriverWeapons150.Location = new System.Drawing.Point(9, 45);
+            this.gbxDriverWeapons150.Name = "gbxDriverWeapons150";
+            this.gbxDriverWeapons150.Size = new System.Drawing.Size(385, 151);
+            this.gbxDriverWeapons150.TabIndex = 41;
+            this.gbxDriverWeapons150.TabStop = false;
+            this.gbxDriverWeapons150.Text = "Set Driver Arts for DLC Weapons";
+            // 
+            // cbxDriverWeaponArt150Id3
+            // 
+            this.cbxDriverWeaponArt150Id3.FormattingEnabled = true;
+            this.cbxDriverWeaponArt150Id3.Location = new System.Drawing.Point(117, 79);
+            this.cbxDriverWeaponArt150Id3.Name = "cbxDriverWeaponArt150Id3";
+            this.cbxDriverWeaponArt150Id3.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArt150Id3.TabIndex = 19;
+            this.cbxDriverWeaponArt150Id3.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArt150Id3_SelectionChangeCommitted);
+            // 
+            // cbxDriverWeaponArt150Id2
+            // 
+            this.cbxDriverWeaponArt150Id2.FormattingEnabled = true;
+            this.cbxDriverWeaponArt150Id2.Location = new System.Drawing.Point(117, 59);
+            this.cbxDriverWeaponArt150Id2.Name = "cbxDriverWeaponArt150Id2";
+            this.cbxDriverWeaponArt150Id2.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArt150Id2.TabIndex = 18;
+            this.cbxDriverWeaponArt150Id2.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArt150Id2_SelectionChangeCommitted);
+            // 
+            // cbxDriverWeaponArt150Id1
+            // 
+            this.cbxDriverWeaponArt150Id1.FormattingEnabled = true;
+            this.cbxDriverWeaponArt150Id1.Location = new System.Drawing.Point(117, 39);
+            this.cbxDriverWeaponArt150Id1.Name = "cbxDriverWeaponArt150Id1";
+            this.cbxDriverWeaponArt150Id1.Size = new System.Drawing.Size(262, 21);
+            this.cbxDriverWeaponArt150Id1.TabIndex = 17;
+            this.cbxDriverWeaponArt150Id1.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverWeaponArt150Id1_SelectionChangeCommitted);
+            // 
+            // nudDriverTotalWeaponPoints150
+            // 
+            this.nudDriverTotalWeaponPoints150.Location = new System.Drawing.Point(118, 124);
+            this.nudDriverTotalWeaponPoints150.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTotalWeaponPoints150.Name = "nudDriverTotalWeaponPoints150";
+            this.nudDriverTotalWeaponPoints150.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverTotalWeaponPoints150.TabIndex = 16;
+            this.nudDriverTotalWeaponPoints150.ValueChanged += new System.EventHandler(this.nudDriverTotalWeaponPoints150_ValueChanged);
+            // 
+            // nudDriverWeaponPoints150
+            // 
+            this.nudDriverWeaponPoints150.Location = new System.Drawing.Point(118, 105);
+            this.nudDriverWeaponPoints150.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponPoints150.Name = "nudDriverWeaponPoints150";
+            this.nudDriverWeaponPoints150.Size = new System.Drawing.Size(100, 20);
+            this.nudDriverWeaponPoints150.TabIndex = 15;
+            this.nudDriverWeaponPoints150.ValueChanged += new System.EventHandler(this.nudDriverWeaponPoints150_ValueChanged);
+            // 
+            // nudDriverWeaponArt150Id3
+            // 
+            this.nudDriverWeaponArt150Id3.Location = new System.Drawing.Point(63, 79);
+            this.nudDriverWeaponArt150Id3.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArt150Id3.Name = "nudDriverWeaponArt150Id3";
+            this.nudDriverWeaponArt150Id3.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArt150Id3.TabIndex = 14;
+            this.nudDriverWeaponArt150Id3.ValueChanged += new System.EventHandler(this.nudDriverWeaponArt150Id3_ValueChanged);
+            // 
+            // nudDriverWeaponArt150Id2
+            // 
+            this.nudDriverWeaponArt150Id2.Location = new System.Drawing.Point(63, 59);
+            this.nudDriverWeaponArt150Id2.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArt150Id2.Name = "nudDriverWeaponArt150Id2";
+            this.nudDriverWeaponArt150Id2.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArt150Id2.TabIndex = 13;
+            this.nudDriverWeaponArt150Id2.ValueChanged += new System.EventHandler(this.nudDriverWeaponArt150Id2_ValueChanged);
+            // 
+            // nudDriverWeaponArt150Id1
+            // 
+            this.nudDriverWeaponArt150Id1.Location = new System.Drawing.Point(63, 39);
+            this.nudDriverWeaponArt150Id1.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverWeaponArt150Id1.Name = "nudDriverWeaponArt150Id1";
+            this.nudDriverWeaponArt150Id1.Size = new System.Drawing.Size(48, 20);
+            this.nudDriverWeaponArt150Id1.TabIndex = 12;
+            this.nudDriverWeaponArt150Id1.ValueChanged += new System.EventHandler(this.nudDriverWeaponArt150Id1_ValueChanged);
+            // 
+            // label385
+            // 
+            this.label385.AutoSize = true;
+            this.label385.Location = new System.Drawing.Point(6, 16);
+            this.label385.Name = "label385";
+            this.label385.Size = new System.Drawing.Size(51, 13);
+            this.label385.TabIndex = 11;
+            this.label385.Text = "Weapon:";
+            // 
+            // label386
+            // 
+            this.label386.AutoSize = true;
+            this.label386.Location = new System.Drawing.Point(6, 126);
+            this.label386.Name = "label386";
+            this.label386.Size = new System.Drawing.Size(110, 13);
+            this.label386.TabIndex = 5;
+            this.label386.Text = "Total Weapon Points:";
+            // 
+            // label387
+            // 
+            this.label387.AutoSize = true;
+            this.label387.Location = new System.Drawing.Point(6, 107);
+            this.label387.Name = "label387";
+            this.label387.Size = new System.Drawing.Size(83, 13);
+            this.label387.TabIndex = 4;
+            this.label387.Text = "Weapon Points:";
+            // 
+            // label388
+            // 
+            this.label388.AutoSize = true;
+            this.label388.Location = new System.Drawing.Point(6, 79);
+            this.label388.Name = "label388";
+            this.label388.Size = new System.Drawing.Size(30, 13);
+            this.label388.TabIndex = 3;
+            this.label388.Text = "ID 3:";
+            // 
+            // cbxDriverWeapons150
+            // 
+            this.cbxDriverWeapons150.FormattingEnabled = true;
+            this.cbxDriverWeapons150.Location = new System.Drawing.Point(63, 13);
+            this.cbxDriverWeapons150.Name = "cbxDriverWeapons150";
+            this.cbxDriverWeapons150.Size = new System.Drawing.Size(155, 21);
+            this.cbxDriverWeapons150.TabIndex = 0;
+            this.cbxDriverWeapons150.SelectedIndexChanged += new System.EventHandler(this.cbxDriverWeapons150_SelectedIndexChanged);
+            // 
+            // label389
+            // 
+            this.label389.AutoSize = true;
+            this.label389.Location = new System.Drawing.Point(6, 41);
+            this.label389.Name = "label389";
+            this.label389.Size = new System.Drawing.Size(30, 13);
+            this.label389.TabIndex = 1;
+            this.label389.Text = "ID 1:";
+            // 
+            // label390
+            // 
+            this.label390.AutoSize = true;
+            this.label390.Location = new System.Drawing.Point(6, 60);
+            this.label390.Name = "label390";
+            this.label390.Size = new System.Drawing.Size(30, 13);
+            this.label390.TabIndex = 2;
+            this.label390.Text = "ID 2:";
             // 
             // tabBlades
             // 
@@ -13997,40 +14460,6 @@
             this.dgvHanaAssistBox.TabIndex = 0;
             this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
-            // ofdSaveFile
-            // 
-            this.ofdSaveFile.FileName = "openFileDialog1";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(138, 7);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 33;
-            this.btnSave.Text = "Save File";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
-            this.splitContainer3.Panel1.Controls.Add(this.btnSave);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
-            this.splitContainer3.SplitterDistance = 48;
-            this.splitContainer3.TabIndex = 34;
-            // 
             // tabItemsSerials
             // 
             this.tabItemsSerials.Controls.Add(this.groupBox112);
@@ -14040,424 +14469,6 @@
             this.tabItemsSerials.TabIndex = 18;
             this.tabItemsSerials.Text = "Serials";
             this.tabItemsSerials.UseVisualStyleBackColor = true;
-            // 
-            // label332
-            // 
-            this.label332.AutoSize = true;
-            this.label332.Location = new System.Drawing.Point(6, 16);
-            this.label332.Name = "label332";
-            this.label332.Size = new System.Drawing.Size(45, 13);
-            this.label332.TabIndex = 0;
-            this.label332.Text = "Serial 1:";
-            // 
-            // nudItemsSerial1
-            // 
-            this.nudItemsSerial1.Location = new System.Drawing.Point(57, 14);
-            this.nudItemsSerial1.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial1.Name = "nudItemsSerial1";
-            this.nudItemsSerial1.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial1.TabIndex = 1;
-            this.nudItemsSerial1.ValueChanged += new System.EventHandler(this.nudItemsSerial1_ValueChanged);
-            // 
-            // nudItemsSerial2
-            // 
-            this.nudItemsSerial2.Location = new System.Drawing.Point(57, 40);
-            this.nudItemsSerial2.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial2.Name = "nudItemsSerial2";
-            this.nudItemsSerial2.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial2.TabIndex = 3;
-            this.nudItemsSerial2.ValueChanged += new System.EventHandler(this.nudItemsSerial2_ValueChanged);
-            // 
-            // label333
-            // 
-            this.label333.AutoSize = true;
-            this.label333.Location = new System.Drawing.Point(6, 42);
-            this.label333.Name = "label333";
-            this.label333.Size = new System.Drawing.Size(45, 13);
-            this.label333.TabIndex = 2;
-            this.label333.Text = "Serial 2:";
-            // 
-            // nudItemsSerial3
-            // 
-            this.nudItemsSerial3.Location = new System.Drawing.Point(57, 66);
-            this.nudItemsSerial3.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial3.Name = "nudItemsSerial3";
-            this.nudItemsSerial3.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial3.TabIndex = 5;
-            this.nudItemsSerial3.ValueChanged += new System.EventHandler(this.nudItemsSerial3_ValueChanged);
-            // 
-            // label334
-            // 
-            this.label334.AutoSize = true;
-            this.label334.Location = new System.Drawing.Point(6, 68);
-            this.label334.Name = "label334";
-            this.label334.Size = new System.Drawing.Size(45, 13);
-            this.label334.TabIndex = 4;
-            this.label334.Text = "Serial 3:";
-            // 
-            // nudItemsSerial4
-            // 
-            this.nudItemsSerial4.Location = new System.Drawing.Point(57, 92);
-            this.nudItemsSerial4.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial4.Name = "nudItemsSerial4";
-            this.nudItemsSerial4.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial4.TabIndex = 7;
-            this.nudItemsSerial4.ValueChanged += new System.EventHandler(this.nudItemsSerial4_ValueChanged);
-            // 
-            // label335
-            // 
-            this.label335.AutoSize = true;
-            this.label335.Location = new System.Drawing.Point(6, 94);
-            this.label335.Name = "label335";
-            this.label335.Size = new System.Drawing.Size(45, 13);
-            this.label335.TabIndex = 6;
-            this.label335.Text = "Serial 4:";
-            // 
-            // nudItemsSerial5
-            // 
-            this.nudItemsSerial5.Location = new System.Drawing.Point(57, 118);
-            this.nudItemsSerial5.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial5.Name = "nudItemsSerial5";
-            this.nudItemsSerial5.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial5.TabIndex = 9;
-            this.nudItemsSerial5.ValueChanged += new System.EventHandler(this.nudItemsSerial5_ValueChanged);
-            // 
-            // label336
-            // 
-            this.label336.AutoSize = true;
-            this.label336.Location = new System.Drawing.Point(6, 120);
-            this.label336.Name = "label336";
-            this.label336.Size = new System.Drawing.Size(45, 13);
-            this.label336.TabIndex = 8;
-            this.label336.Text = "Serial 5:";
-            // 
-            // nudItemsSerial10
-            // 
-            this.nudItemsSerial10.Location = new System.Drawing.Point(234, 118);
-            this.nudItemsSerial10.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial10.Name = "nudItemsSerial10";
-            this.nudItemsSerial10.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial10.TabIndex = 19;
-            this.nudItemsSerial10.ValueChanged += new System.EventHandler(this.nudItemsSerial10_ValueChanged);
-            // 
-            // label337
-            // 
-            this.label337.AutoSize = true;
-            this.label337.Location = new System.Drawing.Point(183, 120);
-            this.label337.Name = "label337";
-            this.label337.Size = new System.Drawing.Size(51, 13);
-            this.label337.TabIndex = 18;
-            this.label337.Text = "Serial 10:";
-            // 
-            // nudItemsSerial9
-            // 
-            this.nudItemsSerial9.Location = new System.Drawing.Point(234, 92);
-            this.nudItemsSerial9.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial9.Name = "nudItemsSerial9";
-            this.nudItemsSerial9.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial9.TabIndex = 17;
-            this.nudItemsSerial9.ValueChanged += new System.EventHandler(this.nudItemsSerial9_ValueChanged);
-            // 
-            // label338
-            // 
-            this.label338.AutoSize = true;
-            this.label338.Location = new System.Drawing.Point(183, 94);
-            this.label338.Name = "label338";
-            this.label338.Size = new System.Drawing.Size(45, 13);
-            this.label338.TabIndex = 16;
-            this.label338.Text = "Serial 9:";
-            // 
-            // nudItemsSerial8
-            // 
-            this.nudItemsSerial8.Location = new System.Drawing.Point(234, 66);
-            this.nudItemsSerial8.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial8.Name = "nudItemsSerial8";
-            this.nudItemsSerial8.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial8.TabIndex = 15;
-            this.nudItemsSerial8.ValueChanged += new System.EventHandler(this.nudItemsSerial8_ValueChanged);
-            // 
-            // label339
-            // 
-            this.label339.AutoSize = true;
-            this.label339.Location = new System.Drawing.Point(183, 68);
-            this.label339.Name = "label339";
-            this.label339.Size = new System.Drawing.Size(45, 13);
-            this.label339.TabIndex = 14;
-            this.label339.Text = "Serial 8:";
-            // 
-            // nudItemsSerial7
-            // 
-            this.nudItemsSerial7.Location = new System.Drawing.Point(234, 40);
-            this.nudItemsSerial7.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial7.Name = "nudItemsSerial7";
-            this.nudItemsSerial7.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial7.TabIndex = 13;
-            this.nudItemsSerial7.ValueChanged += new System.EventHandler(this.nudItemsSerial7_ValueChanged);
-            // 
-            // label340
-            // 
-            this.label340.AutoSize = true;
-            this.label340.Location = new System.Drawing.Point(183, 42);
-            this.label340.Name = "label340";
-            this.label340.Size = new System.Drawing.Size(45, 13);
-            this.label340.TabIndex = 12;
-            this.label340.Text = "Serial 7:";
-            // 
-            // nudItemsSerial6
-            // 
-            this.nudItemsSerial6.Location = new System.Drawing.Point(234, 14);
-            this.nudItemsSerial6.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial6.Name = "nudItemsSerial6";
-            this.nudItemsSerial6.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial6.TabIndex = 11;
-            this.nudItemsSerial6.ValueChanged += new System.EventHandler(this.nudItemsSerial6_ValueChanged);
-            // 
-            // label341
-            // 
-            this.label341.AutoSize = true;
-            this.label341.Location = new System.Drawing.Point(183, 16);
-            this.label341.Name = "label341";
-            this.label341.Size = new System.Drawing.Size(45, 13);
-            this.label341.TabIndex = 10;
-            this.label341.Text = "Serial 6:";
-            // 
-            // nudItemsSerial15
-            // 
-            this.nudItemsSerial15.Location = new System.Drawing.Point(411, 118);
-            this.nudItemsSerial15.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial15.Name = "nudItemsSerial15";
-            this.nudItemsSerial15.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial15.TabIndex = 29;
-            this.nudItemsSerial15.ValueChanged += new System.EventHandler(this.nudItemsSerial15_ValueChanged);
-            // 
-            // label342
-            // 
-            this.label342.AutoSize = true;
-            this.label342.Location = new System.Drawing.Point(360, 120);
-            this.label342.Name = "label342";
-            this.label342.Size = new System.Drawing.Size(51, 13);
-            this.label342.TabIndex = 28;
-            this.label342.Text = "Serial 15:";
-            // 
-            // nudItemsSerial14
-            // 
-            this.nudItemsSerial14.Location = new System.Drawing.Point(411, 92);
-            this.nudItemsSerial14.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial14.Name = "nudItemsSerial14";
-            this.nudItemsSerial14.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial14.TabIndex = 27;
-            this.nudItemsSerial14.ValueChanged += new System.EventHandler(this.nudItemsSerial14_ValueChanged);
-            // 
-            // label343
-            // 
-            this.label343.AutoSize = true;
-            this.label343.Location = new System.Drawing.Point(360, 94);
-            this.label343.Name = "label343";
-            this.label343.Size = new System.Drawing.Size(51, 13);
-            this.label343.TabIndex = 26;
-            this.label343.Text = "Serial 14:";
-            // 
-            // nudItemsSerial13
-            // 
-            this.nudItemsSerial13.Location = new System.Drawing.Point(411, 66);
-            this.nudItemsSerial13.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial13.Name = "nudItemsSerial13";
-            this.nudItemsSerial13.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial13.TabIndex = 25;
-            this.nudItemsSerial13.ValueChanged += new System.EventHandler(this.nudItemsSerial13_ValueChanged);
-            // 
-            // label344
-            // 
-            this.label344.AutoSize = true;
-            this.label344.Location = new System.Drawing.Point(360, 68);
-            this.label344.Name = "label344";
-            this.label344.Size = new System.Drawing.Size(51, 13);
-            this.label344.TabIndex = 24;
-            this.label344.Text = "Serial 13:";
-            // 
-            // nudItemsSerial12
-            // 
-            this.nudItemsSerial12.Location = new System.Drawing.Point(411, 40);
-            this.nudItemsSerial12.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial12.Name = "nudItemsSerial12";
-            this.nudItemsSerial12.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial12.TabIndex = 23;
-            this.nudItemsSerial12.ValueChanged += new System.EventHandler(this.nudItemsSerial12_ValueChanged);
-            // 
-            // label345
-            // 
-            this.label345.AutoSize = true;
-            this.label345.Location = new System.Drawing.Point(360, 42);
-            this.label345.Name = "label345";
-            this.label345.Size = new System.Drawing.Size(51, 13);
-            this.label345.TabIndex = 22;
-            this.label345.Text = "Serial 12:";
-            // 
-            // nudItemsSerial11
-            // 
-            this.nudItemsSerial11.Location = new System.Drawing.Point(411, 14);
-            this.nudItemsSerial11.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial11.Name = "nudItemsSerial11";
-            this.nudItemsSerial11.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial11.TabIndex = 21;
-            this.nudItemsSerial11.ValueChanged += new System.EventHandler(this.nudItemsSerial11_ValueChanged);
-            // 
-            // label346
-            // 
-            this.label346.AutoSize = true;
-            this.label346.Location = new System.Drawing.Point(360, 16);
-            this.label346.Name = "label346";
-            this.label346.Size = new System.Drawing.Size(51, 13);
-            this.label346.TabIndex = 20;
-            this.label346.Text = "Serial 11:";
-            // 
-            // nudItemsSerial19
-            // 
-            this.nudItemsSerial19.Location = new System.Drawing.Point(588, 92);
-            this.nudItemsSerial19.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial19.Name = "nudItemsSerial19";
-            this.nudItemsSerial19.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial19.TabIndex = 37;
-            this.nudItemsSerial19.ValueChanged += new System.EventHandler(this.nudItemsSerial19_ValueChanged);
-            // 
-            // label348
-            // 
-            this.label348.AutoSize = true;
-            this.label348.Location = new System.Drawing.Point(537, 94);
-            this.label348.Name = "label348";
-            this.label348.Size = new System.Drawing.Size(51, 13);
-            this.label348.TabIndex = 36;
-            this.label348.Text = "Serial 19:";
-            // 
-            // nudItemsSerial18
-            // 
-            this.nudItemsSerial18.Location = new System.Drawing.Point(588, 66);
-            this.nudItemsSerial18.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial18.Name = "nudItemsSerial18";
-            this.nudItemsSerial18.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial18.TabIndex = 35;
-            this.nudItemsSerial18.ValueChanged += new System.EventHandler(this.nudItemsSerial18_ValueChanged);
-            // 
-            // label349
-            // 
-            this.label349.AutoSize = true;
-            this.label349.Location = new System.Drawing.Point(537, 68);
-            this.label349.Name = "label349";
-            this.label349.Size = new System.Drawing.Size(51, 13);
-            this.label349.TabIndex = 34;
-            this.label349.Text = "Serial 18:";
-            // 
-            // nudItemsSerial17
-            // 
-            this.nudItemsSerial17.Location = new System.Drawing.Point(588, 40);
-            this.nudItemsSerial17.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial17.Name = "nudItemsSerial17";
-            this.nudItemsSerial17.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial17.TabIndex = 33;
-            this.nudItemsSerial17.ValueChanged += new System.EventHandler(this.nudItemsSerial17_ValueChanged);
-            // 
-            // label350
-            // 
-            this.label350.AutoSize = true;
-            this.label350.Location = new System.Drawing.Point(537, 42);
-            this.label350.Name = "label350";
-            this.label350.Size = new System.Drawing.Size(51, 13);
-            this.label350.TabIndex = 32;
-            this.label350.Text = "Serial 17:";
-            // 
-            // nudItemsSerial16
-            // 
-            this.nudItemsSerial16.Location = new System.Drawing.Point(588, 14);
-            this.nudItemsSerial16.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudItemsSerial16.Name = "nudItemsSerial16";
-            this.nudItemsSerial16.Size = new System.Drawing.Size(120, 20);
-            this.nudItemsSerial16.TabIndex = 31;
-            this.nudItemsSerial16.ValueChanged += new System.EventHandler(this.nudItemsSerial16_ValueChanged);
-            // 
-            // label351
-            // 
-            this.label351.AutoSize = true;
-            this.label351.Location = new System.Drawing.Point(537, 16);
-            this.label351.Name = "label351";
-            this.label351.Size = new System.Drawing.Size(51, 13);
-            this.label351.TabIndex = 30;
-            this.label351.Text = "Serial 16:";
             // 
             // groupBox112
             // 
@@ -14506,141 +14517,423 @@
             this.groupBox112.TabStop = false;
             this.groupBox112.Text = "Item Box Serials";
             // 
-            // label347
+            // nudItemsSerial1
             // 
-            this.label347.AutoSize = true;
-            this.label347.Location = new System.Drawing.Point(7, 16);
-            this.label347.Name = "label347";
-            this.label347.Size = new System.Drawing.Size(48, 13);
-            this.label347.TabIndex = 9;
-            this.label347.Text = "Member:";
-            // 
-            // groupBox113
-            // 
-            this.groupBox113.Controls.Add(this.hbxPartyMemberUnk_0x02);
-            this.groupBox113.Location = new System.Drawing.Point(6, 66);
-            this.groupBox113.Name = "groupBox113";
-            this.groupBox113.Size = new System.Drawing.Size(170, 67);
-            this.groupBox113.TabIndex = 154;
-            this.groupBox113.TabStop = false;
-            this.groupBox113.Text = "Unk_0x02";
-            // 
-            // hbxPartyMemberUnk_0x02
-            // 
-            this.hbxPartyMemberUnk_0x02.ColumnInfoVisible = true;
-            this.hbxPartyMemberUnk_0x02.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxPartyMemberUnk_0x02.Location = new System.Drawing.Point(6, 19);
-            this.hbxPartyMemberUnk_0x02.Name = "hbxPartyMemberUnk_0x02";
-            this.hbxPartyMemberUnk_0x02.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxPartyMemberUnk_0x02.Size = new System.Drawing.Size(156, 41);
-            this.hbxPartyMemberUnk_0x02.TabIndex = 151;
-            // 
-            // nudPartyMemberDriver
-            // 
-            this.nudPartyMemberDriver.Location = new System.Drawing.Point(76, 40);
-            this.nudPartyMemberDriver.Maximum = new decimal(new int[] {
-            65535,
+            this.nudItemsSerial1.Location = new System.Drawing.Point(57, 14);
+            this.nudItemsSerial1.Maximum = new decimal(new int[] {
+            -1,
             0,
             0,
             0});
-            this.nudPartyMemberDriver.Name = "nudPartyMemberDriver";
-            this.nudPartyMemberDriver.Size = new System.Drawing.Size(63, 20);
-            this.nudPartyMemberDriver.TabIndex = 157;
-            this.nudPartyMemberDriver.ValueChanged += new System.EventHandler(this.nudPartyMemberDriver_ValueChanged);
+            this.nudItemsSerial1.Name = "nudItemsSerial1";
+            this.nudItemsSerial1.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial1.TabIndex = 1;
+            this.nudItemsSerial1.ValueChanged += new System.EventHandler(this.nudItemsSerial1_ValueChanged);
             // 
-            // nudPartyLeader
+            // nudItemsSerial19
             // 
-            this.nudPartyLeader.Location = new System.Drawing.Point(82, 14);
-            this.nudPartyLeader.Maximum = new decimal(new int[] {
-            65535,
+            this.nudItemsSerial19.Location = new System.Drawing.Point(588, 92);
+            this.nudItemsSerial19.Maximum = new decimal(new int[] {
+            -1,
             0,
             0,
             0});
-            this.nudPartyLeader.Name = "nudPartyLeader";
-            this.nudPartyLeader.Size = new System.Drawing.Size(63, 20);
-            this.nudPartyLeader.TabIndex = 158;
-            this.nudPartyLeader.ValueChanged += new System.EventHandler(this.nudPartyLeader_ValueChanged);
+            this.nudItemsSerial19.Name = "nudItemsSerial19";
+            this.nudItemsSerial19.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial19.TabIndex = 37;
+            this.nudItemsSerial19.ValueChanged += new System.EventHandler(this.nudItemsSerial19_ValueChanged);
             // 
-            // label65
+            // label332
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(6, 40);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(69, 13);
-            this.label65.TabIndex = 159;
-            this.label65.Text = "Party Gauge:";
+            this.label332.AutoSize = true;
+            this.label332.Location = new System.Drawing.Point(6, 16);
+            this.label332.Name = "label332";
+            this.label332.Size = new System.Drawing.Size(45, 13);
+            this.label332.TabIndex = 0;
+            this.label332.Text = "Serial 1:";
             // 
-            // nudPartyGauge
+            // label348
             // 
-            this.nudPartyGauge.Location = new System.Drawing.Point(82, 38);
-            this.nudPartyGauge.Maximum = new decimal(new int[] {
-            65535,
+            this.label348.AutoSize = true;
+            this.label348.Location = new System.Drawing.Point(537, 94);
+            this.label348.Name = "label348";
+            this.label348.Size = new System.Drawing.Size(51, 13);
+            this.label348.TabIndex = 36;
+            this.label348.Text = "Serial 19:";
+            // 
+            // label333
+            // 
+            this.label333.AutoSize = true;
+            this.label333.Location = new System.Drawing.Point(6, 42);
+            this.label333.Name = "label333";
+            this.label333.Size = new System.Drawing.Size(45, 13);
+            this.label333.TabIndex = 2;
+            this.label333.Text = "Serial 2:";
+            // 
+            // nudItemsSerial18
+            // 
+            this.nudItemsSerial18.Location = new System.Drawing.Point(588, 66);
+            this.nudItemsSerial18.Maximum = new decimal(new int[] {
+            -1,
             0,
             0,
             0});
-            this.nudPartyGauge.Name = "nudPartyGauge";
-            this.nudPartyGauge.Size = new System.Drawing.Size(63, 20);
-            this.nudPartyGauge.TabIndex = 160;
+            this.nudItemsSerial18.Name = "nudItemsSerial18";
+            this.nudItemsSerial18.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial18.TabIndex = 35;
+            this.nudItemsSerial18.ValueChanged += new System.EventHandler(this.nudItemsSerial18_ValueChanged);
             // 
-            // groupBox114
+            // nudItemsSerial2
             // 
-            this.groupBox114.Controls.Add(this.hbxPartyUnk_0x3C);
-            this.groupBox114.Location = new System.Drawing.Point(273, 12);
-            this.groupBox114.Name = "groupBox114";
-            this.groupBox114.Size = new System.Drawing.Size(140, 67);
-            this.groupBox114.TabIndex = 155;
-            this.groupBox114.TabStop = false;
-            this.groupBox114.Text = "Unk_0x3C";
+            this.nudItemsSerial2.Location = new System.Drawing.Point(57, 40);
+            this.nudItemsSerial2.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial2.Name = "nudItemsSerial2";
+            this.nudItemsSerial2.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial2.TabIndex = 3;
+            this.nudItemsSerial2.ValueChanged += new System.EventHandler(this.nudItemsSerial2_ValueChanged);
             // 
-            // hbxPartyUnk_0x3C
+            // label349
             // 
-            this.hbxPartyUnk_0x3C.ColumnInfoVisible = true;
-            this.hbxPartyUnk_0x3C.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxPartyUnk_0x3C.Location = new System.Drawing.Point(6, 19);
-            this.hbxPartyUnk_0x3C.Name = "hbxPartyUnk_0x3C";
-            this.hbxPartyUnk_0x3C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxPartyUnk_0x3C.Size = new System.Drawing.Size(128, 41);
-            this.hbxPartyUnk_0x3C.TabIndex = 151;
+            this.label349.AutoSize = true;
+            this.label349.Location = new System.Drawing.Point(537, 68);
+            this.label349.Name = "label349";
+            this.label349.Size = new System.Drawing.Size(51, 13);
+            this.label349.TabIndex = 34;
+            this.label349.Text = "Serial 18:";
             // 
-            // groupBox115
+            // label334
             // 
-            this.groupBox115.Controls.Add(this.hbxPartyUnk_0x44);
-            this.groupBox115.Location = new System.Drawing.Point(273, 85);
-            this.groupBox115.Name = "groupBox115";
-            this.groupBox115.Size = new System.Drawing.Size(234, 67);
-            this.groupBox115.TabIndex = 155;
-            this.groupBox115.TabStop = false;
-            this.groupBox115.Text = "Unk_0x44";
+            this.label334.AutoSize = true;
+            this.label334.Location = new System.Drawing.Point(6, 68);
+            this.label334.Name = "label334";
+            this.label334.Size = new System.Drawing.Size(45, 13);
+            this.label334.TabIndex = 4;
+            this.label334.Text = "Serial 3:";
             // 
-            // hbxPartyUnk_0x44
+            // nudItemsSerial17
             // 
-            this.hbxPartyUnk_0x44.ColumnInfoVisible = true;
-            this.hbxPartyUnk_0x44.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxPartyUnk_0x44.Location = new System.Drawing.Point(6, 19);
-            this.hbxPartyUnk_0x44.Name = "hbxPartyUnk_0x44";
-            this.hbxPartyUnk_0x44.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxPartyUnk_0x44.Size = new System.Drawing.Size(222, 41);
-            this.hbxPartyUnk_0x44.TabIndex = 151;
+            this.nudItemsSerial17.Location = new System.Drawing.Point(588, 40);
+            this.nudItemsSerial17.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial17.Name = "nudItemsSerial17";
+            this.nudItemsSerial17.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial17.TabIndex = 33;
+            this.nudItemsSerial17.ValueChanged += new System.EventHandler(this.nudItemsSerial17_ValueChanged);
             // 
-            // groupBox116
+            // nudItemsSerial3
             // 
-            this.groupBox116.Controls.Add(this.hbxPartyUnk_0x4E);
-            this.groupBox116.Location = new System.Drawing.Point(273, 161);
-            this.groupBox116.Name = "groupBox116";
-            this.groupBox116.Size = new System.Drawing.Size(187, 67);
-            this.groupBox116.TabIndex = 161;
-            this.groupBox116.TabStop = false;
-            this.groupBox116.Text = "Unk_0x4E";
+            this.nudItemsSerial3.Location = new System.Drawing.Point(57, 66);
+            this.nudItemsSerial3.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial3.Name = "nudItemsSerial3";
+            this.nudItemsSerial3.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial3.TabIndex = 5;
+            this.nudItemsSerial3.ValueChanged += new System.EventHandler(this.nudItemsSerial3_ValueChanged);
             // 
-            // hbxPartyUnk_0x4E
+            // label350
             // 
-            this.hbxPartyUnk_0x4E.ColumnInfoVisible = true;
-            this.hbxPartyUnk_0x4E.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxPartyUnk_0x4E.Location = new System.Drawing.Point(6, 19);
-            this.hbxPartyUnk_0x4E.Name = "hbxPartyUnk_0x4E";
-            this.hbxPartyUnk_0x4E.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxPartyUnk_0x4E.Size = new System.Drawing.Size(174, 41);
-            this.hbxPartyUnk_0x4E.TabIndex = 151;
+            this.label350.AutoSize = true;
+            this.label350.Location = new System.Drawing.Point(537, 42);
+            this.label350.Name = "label350";
+            this.label350.Size = new System.Drawing.Size(51, 13);
+            this.label350.TabIndex = 32;
+            this.label350.Text = "Serial 17:";
+            // 
+            // label335
+            // 
+            this.label335.AutoSize = true;
+            this.label335.Location = new System.Drawing.Point(6, 94);
+            this.label335.Name = "label335";
+            this.label335.Size = new System.Drawing.Size(45, 13);
+            this.label335.TabIndex = 6;
+            this.label335.Text = "Serial 4:";
+            // 
+            // nudItemsSerial16
+            // 
+            this.nudItemsSerial16.Location = new System.Drawing.Point(588, 14);
+            this.nudItemsSerial16.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial16.Name = "nudItemsSerial16";
+            this.nudItemsSerial16.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial16.TabIndex = 31;
+            this.nudItemsSerial16.ValueChanged += new System.EventHandler(this.nudItemsSerial16_ValueChanged);
+            // 
+            // nudItemsSerial4
+            // 
+            this.nudItemsSerial4.Location = new System.Drawing.Point(57, 92);
+            this.nudItemsSerial4.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial4.Name = "nudItemsSerial4";
+            this.nudItemsSerial4.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial4.TabIndex = 7;
+            this.nudItemsSerial4.ValueChanged += new System.EventHandler(this.nudItemsSerial4_ValueChanged);
+            // 
+            // label351
+            // 
+            this.label351.AutoSize = true;
+            this.label351.Location = new System.Drawing.Point(537, 16);
+            this.label351.Name = "label351";
+            this.label351.Size = new System.Drawing.Size(51, 13);
+            this.label351.TabIndex = 30;
+            this.label351.Text = "Serial 16:";
+            // 
+            // label336
+            // 
+            this.label336.AutoSize = true;
+            this.label336.Location = new System.Drawing.Point(6, 120);
+            this.label336.Name = "label336";
+            this.label336.Size = new System.Drawing.Size(45, 13);
+            this.label336.TabIndex = 8;
+            this.label336.Text = "Serial 5:";
+            // 
+            // nudItemsSerial15
+            // 
+            this.nudItemsSerial15.Location = new System.Drawing.Point(411, 118);
+            this.nudItemsSerial15.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial15.Name = "nudItemsSerial15";
+            this.nudItemsSerial15.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial15.TabIndex = 29;
+            this.nudItemsSerial15.ValueChanged += new System.EventHandler(this.nudItemsSerial15_ValueChanged);
+            // 
+            // nudItemsSerial5
+            // 
+            this.nudItemsSerial5.Location = new System.Drawing.Point(57, 118);
+            this.nudItemsSerial5.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial5.Name = "nudItemsSerial5";
+            this.nudItemsSerial5.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial5.TabIndex = 9;
+            this.nudItemsSerial5.ValueChanged += new System.EventHandler(this.nudItemsSerial5_ValueChanged);
+            // 
+            // label342
+            // 
+            this.label342.AutoSize = true;
+            this.label342.Location = new System.Drawing.Point(360, 120);
+            this.label342.Name = "label342";
+            this.label342.Size = new System.Drawing.Size(51, 13);
+            this.label342.TabIndex = 28;
+            this.label342.Text = "Serial 15:";
+            // 
+            // label341
+            // 
+            this.label341.AutoSize = true;
+            this.label341.Location = new System.Drawing.Point(183, 16);
+            this.label341.Name = "label341";
+            this.label341.Size = new System.Drawing.Size(45, 13);
+            this.label341.TabIndex = 10;
+            this.label341.Text = "Serial 6:";
+            // 
+            // nudItemsSerial14
+            // 
+            this.nudItemsSerial14.Location = new System.Drawing.Point(411, 92);
+            this.nudItemsSerial14.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial14.Name = "nudItemsSerial14";
+            this.nudItemsSerial14.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial14.TabIndex = 27;
+            this.nudItemsSerial14.ValueChanged += new System.EventHandler(this.nudItemsSerial14_ValueChanged);
+            // 
+            // nudItemsSerial6
+            // 
+            this.nudItemsSerial6.Location = new System.Drawing.Point(234, 14);
+            this.nudItemsSerial6.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial6.Name = "nudItemsSerial6";
+            this.nudItemsSerial6.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial6.TabIndex = 11;
+            this.nudItemsSerial6.ValueChanged += new System.EventHandler(this.nudItemsSerial6_ValueChanged);
+            // 
+            // label343
+            // 
+            this.label343.AutoSize = true;
+            this.label343.Location = new System.Drawing.Point(360, 94);
+            this.label343.Name = "label343";
+            this.label343.Size = new System.Drawing.Size(51, 13);
+            this.label343.TabIndex = 26;
+            this.label343.Text = "Serial 14:";
+            // 
+            // label340
+            // 
+            this.label340.AutoSize = true;
+            this.label340.Location = new System.Drawing.Point(183, 42);
+            this.label340.Name = "label340";
+            this.label340.Size = new System.Drawing.Size(45, 13);
+            this.label340.TabIndex = 12;
+            this.label340.Text = "Serial 7:";
+            // 
+            // nudItemsSerial13
+            // 
+            this.nudItemsSerial13.Location = new System.Drawing.Point(411, 66);
+            this.nudItemsSerial13.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial13.Name = "nudItemsSerial13";
+            this.nudItemsSerial13.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial13.TabIndex = 25;
+            this.nudItemsSerial13.ValueChanged += new System.EventHandler(this.nudItemsSerial13_ValueChanged);
+            // 
+            // nudItemsSerial7
+            // 
+            this.nudItemsSerial7.Location = new System.Drawing.Point(234, 40);
+            this.nudItemsSerial7.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial7.Name = "nudItemsSerial7";
+            this.nudItemsSerial7.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial7.TabIndex = 13;
+            this.nudItemsSerial7.ValueChanged += new System.EventHandler(this.nudItemsSerial7_ValueChanged);
+            // 
+            // label344
+            // 
+            this.label344.AutoSize = true;
+            this.label344.Location = new System.Drawing.Point(360, 68);
+            this.label344.Name = "label344";
+            this.label344.Size = new System.Drawing.Size(51, 13);
+            this.label344.TabIndex = 24;
+            this.label344.Text = "Serial 13:";
+            // 
+            // label339
+            // 
+            this.label339.AutoSize = true;
+            this.label339.Location = new System.Drawing.Point(183, 68);
+            this.label339.Name = "label339";
+            this.label339.Size = new System.Drawing.Size(45, 13);
+            this.label339.TabIndex = 14;
+            this.label339.Text = "Serial 8:";
+            // 
+            // nudItemsSerial12
+            // 
+            this.nudItemsSerial12.Location = new System.Drawing.Point(411, 40);
+            this.nudItemsSerial12.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial12.Name = "nudItemsSerial12";
+            this.nudItemsSerial12.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial12.TabIndex = 23;
+            this.nudItemsSerial12.ValueChanged += new System.EventHandler(this.nudItemsSerial12_ValueChanged);
+            // 
+            // nudItemsSerial8
+            // 
+            this.nudItemsSerial8.Location = new System.Drawing.Point(234, 66);
+            this.nudItemsSerial8.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial8.Name = "nudItemsSerial8";
+            this.nudItemsSerial8.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial8.TabIndex = 15;
+            this.nudItemsSerial8.ValueChanged += new System.EventHandler(this.nudItemsSerial8_ValueChanged);
+            // 
+            // label345
+            // 
+            this.label345.AutoSize = true;
+            this.label345.Location = new System.Drawing.Point(360, 42);
+            this.label345.Name = "label345";
+            this.label345.Size = new System.Drawing.Size(51, 13);
+            this.label345.TabIndex = 22;
+            this.label345.Text = "Serial 12:";
+            // 
+            // label338
+            // 
+            this.label338.AutoSize = true;
+            this.label338.Location = new System.Drawing.Point(183, 94);
+            this.label338.Name = "label338";
+            this.label338.Size = new System.Drawing.Size(45, 13);
+            this.label338.TabIndex = 16;
+            this.label338.Text = "Serial 9:";
+            // 
+            // nudItemsSerial11
+            // 
+            this.nudItemsSerial11.Location = new System.Drawing.Point(411, 14);
+            this.nudItemsSerial11.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial11.Name = "nudItemsSerial11";
+            this.nudItemsSerial11.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial11.TabIndex = 21;
+            this.nudItemsSerial11.ValueChanged += new System.EventHandler(this.nudItemsSerial11_ValueChanged);
+            // 
+            // nudItemsSerial9
+            // 
+            this.nudItemsSerial9.Location = new System.Drawing.Point(234, 92);
+            this.nudItemsSerial9.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial9.Name = "nudItemsSerial9";
+            this.nudItemsSerial9.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial9.TabIndex = 17;
+            this.nudItemsSerial9.ValueChanged += new System.EventHandler(this.nudItemsSerial9_ValueChanged);
+            // 
+            // label346
+            // 
+            this.label346.AutoSize = true;
+            this.label346.Location = new System.Drawing.Point(360, 16);
+            this.label346.Name = "label346";
+            this.label346.Size = new System.Drawing.Size(51, 13);
+            this.label346.TabIndex = 20;
+            this.label346.Text = "Serial 11:";
+            // 
+            // label337
+            // 
+            this.label337.AutoSize = true;
+            this.label337.Location = new System.Drawing.Point(183, 120);
+            this.label337.Name = "label337";
+            this.label337.Size = new System.Drawing.Size(51, 13);
+            this.label337.TabIndex = 18;
+            this.label337.Text = "Serial 10:";
+            // 
+            // nudItemsSerial10
+            // 
+            this.nudItemsSerial10.Location = new System.Drawing.Point(234, 118);
+            this.nudItemsSerial10.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudItemsSerial10.Name = "nudItemsSerial10";
+            this.nudItemsSerial10.Size = new System.Drawing.Size(120, 20);
+            this.nudItemsSerial10.TabIndex = 19;
+            this.nudItemsSerial10.ValueChanged += new System.EventHandler(this.nudItemsSerial10_ValueChanged);
             // 
             // tabTigerTiger
             // 
@@ -14654,6 +14947,48 @@
             this.tabTigerTiger.TabIndex = 4;
             this.tabTigerTiger.Text = "Tiger! Tiger!";
             this.tabTigerTiger.UseVisualStyleBackColor = true;
+            // 
+            // groupBox118
+            // 
+            this.groupBox118.Controls.Add(this.hbxTigerTigerUnk_0x30);
+            this.groupBox118.Location = new System.Drawing.Point(8, 224);
+            this.groupBox118.Name = "groupBox118";
+            this.groupBox118.Size = new System.Drawing.Size(487, 276);
+            this.groupBox118.TabIndex = 156;
+            this.groupBox118.TabStop = false;
+            this.groupBox118.Text = "Unk_0x30";
+            // 
+            // hbxTigerTigerUnk_0x30
+            // 
+            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
+            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
+            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
+            // 
+            // groupBox117
+            // 
+            this.groupBox117.Controls.Add(this.hbxTigerTigerUnk_0x00);
+            this.groupBox117.Location = new System.Drawing.Point(8, 150);
+            this.groupBox117.Name = "groupBox117";
+            this.groupBox117.Size = new System.Drawing.Size(313, 67);
+            this.groupBox117.TabIndex = 155;
+            this.groupBox117.TabStop = false;
+            this.groupBox117.Text = "Unk_0x00";
+            // 
+            // hbxTigerTigerUnk_0x00
+            // 
+            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
+            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
+            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
             // 
             // gourpBox119
             // 
@@ -14685,196 +15020,6 @@
             this.gourpBox119.TabIndex = 0;
             this.gourpBox119.TabStop = false;
             this.gourpBox119.Text = "Tiger! Tiger! High Scores";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(8, 34);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(47, 13);
-            this.label66.TabIndex = 0;
-            this.label66.Text = "Stage 1:";
-            // 
-            // nudTigerTigerStage1Score
-            // 
-            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
-            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
-            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage1Score.TabIndex = 1;
-            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
-            // 
-            // txtTigerTigerStage1Initials
-            // 
-            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
-            this.txtTigerTigerStage1Initials.MaxLength = 3;
-            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
-            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage1Initials.TabIndex = 2;
-            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
-            // 
-            // label352
-            // 
-            this.label352.AutoSize = true;
-            this.label352.Location = new System.Drawing.Point(58, 16);
-            this.label352.Name = "label352";
-            this.label352.Size = new System.Drawing.Size(38, 13);
-            this.label352.TabIndex = 3;
-            this.label352.Text = "Score:";
-            // 
-            // label353
-            // 
-            this.label353.AutoSize = true;
-            this.label353.Location = new System.Drawing.Point(155, 16);
-            this.label353.Name = "label353";
-            this.label353.Size = new System.Drawing.Size(39, 13);
-            this.label353.TabIndex = 4;
-            this.label353.Text = "Initials:";
-            // 
-            // chkTigerTigerStage1IsEasyMode
-            // 
-            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
-            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
-            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
-            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
-            // 
-            // chkTigerTigerStage2IsEasyMode
-            // 
-            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
-            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
-            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
-            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage2Initials
-            // 
-            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
-            this.txtTigerTigerStage2Initials.MaxLength = 3;
-            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
-            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage2Initials.TabIndex = 8;
-            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
-            // 
-            // nudTigerTigerStage2Score
-            // 
-            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
-            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
-            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage2Score.TabIndex = 7;
-            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
-            // 
-            // label354
-            // 
-            this.label354.AutoSize = true;
-            this.label354.Location = new System.Drawing.Point(8, 54);
-            this.label354.Name = "label354";
-            this.label354.Size = new System.Drawing.Size(47, 13);
-            this.label354.TabIndex = 6;
-            this.label354.Text = "Stage 2:";
-            // 
-            // chkTigerTigerStage3IsEasyMode
-            // 
-            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
-            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
-            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
-            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage3Initials
-            // 
-            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
-            this.txtTigerTigerStage3Initials.MaxLength = 3;
-            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
-            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage3Initials.TabIndex = 12;
-            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
-            // 
-            // nudTigerTigerStage3Score
-            // 
-            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
-            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
-            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage3Score.TabIndex = 11;
-            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
-            // 
-            // label355
-            // 
-            this.label355.AutoSize = true;
-            this.label355.Location = new System.Drawing.Point(8, 74);
-            this.label355.Name = "label355";
-            this.label355.Size = new System.Drawing.Size(47, 13);
-            this.label355.TabIndex = 10;
-            this.label355.Text = "Stage 3:";
-            // 
-            // chkTigerTigerStage4IsEasyMode
-            // 
-            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
-            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
-            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
-            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage4Initials
-            // 
-            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
-            this.txtTigerTigerStage4Initials.MaxLength = 3;
-            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
-            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage4Initials.TabIndex = 16;
-            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
-            // 
-            // nudTigerTigerStage4Score
-            // 
-            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
-            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
-            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage4Score.TabIndex = 15;
-            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
-            // 
-            // label356
-            // 
-            this.label356.AutoSize = true;
-            this.label356.Location = new System.Drawing.Point(8, 94);
-            this.label356.Name = "label356";
-            this.label356.Size = new System.Drawing.Size(47, 13);
-            this.label356.TabIndex = 14;
-            this.label356.Text = "Stage 4:";
             // 
             // chkTigerTigerStage5IsEasyMode
             // 
@@ -14919,47 +15064,1864 @@
             this.label357.TabIndex = 18;
             this.label357.Text = "Stage 5:";
             // 
-            // groupBox117
+            // chkTigerTigerStage4IsEasyMode
             // 
-            this.groupBox117.Controls.Add(this.hbxTigerTigerUnk_0x00);
-            this.groupBox117.Location = new System.Drawing.Point(8, 150);
-            this.groupBox117.Name = "groupBox117";
-            this.groupBox117.Size = new System.Drawing.Size(313, 67);
-            this.groupBox117.TabIndex = 155;
-            this.groupBox117.TabStop = false;
-            this.groupBox117.Text = "Unk_0x00";
+            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
+            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
+            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
+            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
             // 
-            // hbxTigerTigerUnk_0x00
+            // txtTigerTigerStage4Initials
             // 
-            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
-            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
-            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
+            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
+            this.txtTigerTigerStage4Initials.MaxLength = 3;
+            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
+            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage4Initials.TabIndex = 16;
+            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
             // 
-            // groupBox118
+            // nudTigerTigerStage4Score
             // 
-            this.groupBox118.Controls.Add(this.hbxTigerTigerUnk_0x30);
-            this.groupBox118.Location = new System.Drawing.Point(8, 224);
-            this.groupBox118.Name = "groupBox118";
-            this.groupBox118.Size = new System.Drawing.Size(487, 276);
-            this.groupBox118.TabIndex = 156;
-            this.groupBox118.TabStop = false;
-            this.groupBox118.Text = "Unk_0x30";
+            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
+            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
+            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage4Score.TabIndex = 15;
+            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
             // 
-            // hbxTigerTigerUnk_0x30
+            // label356
             // 
-            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
-            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
-            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
+            this.label356.AutoSize = true;
+            this.label356.Location = new System.Drawing.Point(8, 94);
+            this.label356.Name = "label356";
+            this.label356.Size = new System.Drawing.Size(47, 13);
+            this.label356.TabIndex = 14;
+            this.label356.Text = "Stage 4:";
+            // 
+            // chkTigerTigerStage3IsEasyMode
+            // 
+            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
+            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
+            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
+            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage3Initials
+            // 
+            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
+            this.txtTigerTigerStage3Initials.MaxLength = 3;
+            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
+            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage3Initials.TabIndex = 12;
+            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
+            // 
+            // nudTigerTigerStage3Score
+            // 
+            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
+            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
+            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage3Score.TabIndex = 11;
+            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
+            // 
+            // label355
+            // 
+            this.label355.AutoSize = true;
+            this.label355.Location = new System.Drawing.Point(8, 74);
+            this.label355.Name = "label355";
+            this.label355.Size = new System.Drawing.Size(47, 13);
+            this.label355.TabIndex = 10;
+            this.label355.Text = "Stage 3:";
+            // 
+            // chkTigerTigerStage2IsEasyMode
+            // 
+            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
+            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
+            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
+            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage2Initials
+            // 
+            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
+            this.txtTigerTigerStage2Initials.MaxLength = 3;
+            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
+            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage2Initials.TabIndex = 8;
+            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
+            // 
+            // nudTigerTigerStage2Score
+            // 
+            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
+            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
+            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage2Score.TabIndex = 7;
+            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
+            // 
+            // label354
+            // 
+            this.label354.AutoSize = true;
+            this.label354.Location = new System.Drawing.Point(8, 54);
+            this.label354.Name = "label354";
+            this.label354.Size = new System.Drawing.Size(47, 13);
+            this.label354.TabIndex = 6;
+            this.label354.Text = "Stage 2:";
+            // 
+            // chkTigerTigerStage1IsEasyMode
+            // 
+            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
+            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
+            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
+            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
+            // 
+            // label353
+            // 
+            this.label353.AutoSize = true;
+            this.label353.Location = new System.Drawing.Point(155, 16);
+            this.label353.Name = "label353";
+            this.label353.Size = new System.Drawing.Size(39, 13);
+            this.label353.TabIndex = 4;
+            this.label353.Text = "Initials:";
+            // 
+            // label352
+            // 
+            this.label352.AutoSize = true;
+            this.label352.Location = new System.Drawing.Point(58, 16);
+            this.label352.Name = "label352";
+            this.label352.Size = new System.Drawing.Size(38, 13);
+            this.label352.TabIndex = 3;
+            this.label352.Text = "Score:";
+            // 
+            // txtTigerTigerStage1Initials
+            // 
+            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
+            this.txtTigerTigerStage1Initials.MaxLength = 3;
+            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
+            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage1Initials.TabIndex = 2;
+            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
+            // 
+            // nudTigerTigerStage1Score
+            // 
+            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
+            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
+            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage1Score.TabIndex = 1;
+            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(8, 34);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(47, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Stage 1:";
+            // 
+            // tabMapLocation
+            // 
+            this.tabMapLocation.Controls.Add(this.groupBox2);
+            this.tabMapLocation.Controls.Add(this.groupBox122);
+            this.tabMapLocation.Controls.Add(this.groupBox121);
+            this.tabMapLocation.Controls.Add(this.groupBox120);
+            this.tabMapLocation.Controls.Add(this.groupBox119);
+            this.tabMapLocation.Controls.Add(this.label358);
+            this.tabMapLocation.Controls.Add(this.nudMapMapJumpID);
+            this.tabMapLocation.Location = new System.Drawing.Point(4, 22);
+            this.tabMapLocation.Name = "tabMapLocation";
+            this.tabMapLocation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMapLocation.Size = new System.Drawing.Size(1134, 581);
+            this.tabMapLocation.TabIndex = 5;
+            this.tabMapLocation.Text = "Map Location";
+            this.tabMapLocation.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapJumpID);
+            this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapPositionZ);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapPositionY);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapPositionX);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Location = new System.Drawing.Point(8, 272);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(160, 114);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Last Visited Landmark";
+            // 
+            // nudLastVisitedLandmarkMapJumpID
+            // 
+            this.nudLastVisitedLandmarkMapJumpID.Location = new System.Drawing.Point(79, 19);
+            this.nudLastVisitedLandmarkMapJumpID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudLastVisitedLandmarkMapJumpID.Name = "nudLastVisitedLandmarkMapJumpID";
+            this.nudLastVisitedLandmarkMapJumpID.Size = new System.Drawing.Size(73, 20);
+            this.nudLastVisitedLandmarkMapJumpID.TabIndex = 23;
+            this.nudLastVisitedLandmarkMapJumpID.ValueChanged += new System.EventHandler(this.nudMapJumpID_ValueChanged);
+            // 
+            // nudLastVisitedLandmarkMapPositionZ
+            // 
+            this.nudLastVisitedLandmarkMapPositionZ.DecimalPlaces = 7;
+            this.nudLastVisitedLandmarkMapPositionZ.Location = new System.Drawing.Point(32, 85);
+            this.nudLastVisitedLandmarkMapPositionZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudLastVisitedLandmarkMapPositionZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudLastVisitedLandmarkMapPositionZ.Name = "nudLastVisitedLandmarkMapPositionZ";
+            this.nudLastVisitedLandmarkMapPositionZ.Size = new System.Drawing.Size(120, 20);
+            this.nudLastVisitedLandmarkMapPositionZ.TabIndex = 22;
+            this.nudLastVisitedLandmarkMapPositionZ.ValueChanged += new System.EventHandler(this.nudMapPositionZ_ValueChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 13);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "MapJumpId:";
+            // 
+            // nudLastVisitedLandmarkMapPositionY
+            // 
+            this.nudLastVisitedLandmarkMapPositionY.DecimalPlaces = 7;
+            this.nudLastVisitedLandmarkMapPositionY.Location = new System.Drawing.Point(32, 65);
+            this.nudLastVisitedLandmarkMapPositionY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudLastVisitedLandmarkMapPositionY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudLastVisitedLandmarkMapPositionY.Name = "nudLastVisitedLandmarkMapPositionY";
+            this.nudLastVisitedLandmarkMapPositionY.Size = new System.Drawing.Size(120, 20);
+            this.nudLastVisitedLandmarkMapPositionY.TabIndex = 21;
+            this.nudLastVisitedLandmarkMapPositionY.ValueChanged += new System.EventHandler(this.nudMapPositionY_ValueChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(9, 47);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(17, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "X:";
+            // 
+            // nudLastVisitedLandmarkMapPositionX
+            // 
+            this.nudLastVisitedLandmarkMapPositionX.DecimalPlaces = 7;
+            this.nudLastVisitedLandmarkMapPositionX.Location = new System.Drawing.Point(32, 45);
+            this.nudLastVisitedLandmarkMapPositionX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudLastVisitedLandmarkMapPositionX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudLastVisitedLandmarkMapPositionX.Name = "nudLastVisitedLandmarkMapPositionX";
+            this.nudLastVisitedLandmarkMapPositionX.Size = new System.Drawing.Size(120, 20);
+            this.nudLastVisitedLandmarkMapPositionX.TabIndex = 16;
+            this.nudLastVisitedLandmarkMapPositionX.ValueChanged += new System.EventHandler(this.nudMapPositionX_ValueChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(9, 67);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(17, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Y:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 87);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(17, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Z:";
+            // 
+            // groupBox122
+            // 
+            this.groupBox122.Controls.Add(this.nudMapBlade3RotZ);
+            this.groupBox122.Controls.Add(this.nudMapBlade3RotY);
+            this.groupBox122.Controls.Add(this.nudMapBlade2RotZ);
+            this.groupBox122.Controls.Add(this.nudMapBlade2RotY);
+            this.groupBox122.Controls.Add(this.nudMapBlade1RotZ);
+            this.groupBox122.Controls.Add(this.nudMapBlade1RotY);
+            this.groupBox122.Controls.Add(this.nudMapBlade3RotX);
+            this.groupBox122.Controls.Add(this.nudMapBlade2RotX);
+            this.groupBox122.Controls.Add(this.label377);
+            this.groupBox122.Controls.Add(this.label378);
+            this.groupBox122.Controls.Add(this.label379);
+            this.groupBox122.Controls.Add(this.nudMapBlade1RotX);
+            this.groupBox122.Controls.Add(this.label380);
+            this.groupBox122.Controls.Add(this.label381);
+            this.groupBox122.Controls.Add(this.label382);
+            this.groupBox122.Location = new System.Drawing.Point(423, 163);
+            this.groupBox122.Name = "groupBox122";
+            this.groupBox122.Size = new System.Drawing.Size(409, 103);
+            this.groupBox122.TabIndex = 18;
+            this.groupBox122.TabStop = false;
+            this.groupBox122.Text = "Blade Rotations";
+            // 
+            // nudMapBlade3RotZ
+            // 
+            this.nudMapBlade3RotZ.DecimalPlaces = 7;
+            this.nudMapBlade3RotZ.Location = new System.Drawing.Point(281, 72);
+            this.nudMapBlade3RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3RotZ.Name = "nudMapBlade3RotZ";
+            this.nudMapBlade3RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3RotZ.TabIndex = 15;
+            this.nudMapBlade3RotZ.ValueChanged += new System.EventHandler(this.nudMapBlade3RotZ_ValueChanged);
+            // 
+            // nudMapBlade3RotY
+            // 
+            this.nudMapBlade3RotY.DecimalPlaces = 7;
+            this.nudMapBlade3RotY.Location = new System.Drawing.Point(281, 52);
+            this.nudMapBlade3RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3RotY.Name = "nudMapBlade3RotY";
+            this.nudMapBlade3RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3RotY.TabIndex = 14;
+            this.nudMapBlade3RotY.ValueChanged += new System.EventHandler(this.nudMapBlade3RotY_ValueChanged);
+            // 
+            // nudMapBlade2RotZ
+            // 
+            this.nudMapBlade2RotZ.DecimalPlaces = 7;
+            this.nudMapBlade2RotZ.Location = new System.Drawing.Point(155, 72);
+            this.nudMapBlade2RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2RotZ.Name = "nudMapBlade2RotZ";
+            this.nudMapBlade2RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2RotZ.TabIndex = 13;
+            this.nudMapBlade2RotZ.ValueChanged += new System.EventHandler(this.nudMapBlade2RotZ_ValueChanged);
+            // 
+            // nudMapBlade2RotY
+            // 
+            this.nudMapBlade2RotY.DecimalPlaces = 7;
+            this.nudMapBlade2RotY.Location = new System.Drawing.Point(155, 52);
+            this.nudMapBlade2RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2RotY.Name = "nudMapBlade2RotY";
+            this.nudMapBlade2RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2RotY.TabIndex = 12;
+            this.nudMapBlade2RotY.ValueChanged += new System.EventHandler(this.nudMapBlade2RotY_ValueChanged);
+            // 
+            // nudMapBlade1RotZ
+            // 
+            this.nudMapBlade1RotZ.DecimalPlaces = 7;
+            this.nudMapBlade1RotZ.Location = new System.Drawing.Point(29, 72);
+            this.nudMapBlade1RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1RotZ.Name = "nudMapBlade1RotZ";
+            this.nudMapBlade1RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1RotZ.TabIndex = 11;
+            this.nudMapBlade1RotZ.ValueChanged += new System.EventHandler(this.nudMapBlade1RotZ_ValueChanged);
+            // 
+            // nudMapBlade1RotY
+            // 
+            this.nudMapBlade1RotY.DecimalPlaces = 7;
+            this.nudMapBlade1RotY.Location = new System.Drawing.Point(29, 52);
+            this.nudMapBlade1RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1RotY.Name = "nudMapBlade1RotY";
+            this.nudMapBlade1RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1RotY.TabIndex = 10;
+            this.nudMapBlade1RotY.ValueChanged += new System.EventHandler(this.nudMapBlade1RotY_ValueChanged);
+            // 
+            // nudMapBlade3RotX
+            // 
+            this.nudMapBlade3RotX.DecimalPlaces = 7;
+            this.nudMapBlade3RotX.Location = new System.Drawing.Point(281, 32);
+            this.nudMapBlade3RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3RotX.Name = "nudMapBlade3RotX";
+            this.nudMapBlade3RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3RotX.TabIndex = 9;
+            this.nudMapBlade3RotX.ValueChanged += new System.EventHandler(this.nudMapBlade3RotX_ValueChanged);
+            // 
+            // nudMapBlade2RotX
+            // 
+            this.nudMapBlade2RotX.DecimalPlaces = 7;
+            this.nudMapBlade2RotX.Location = new System.Drawing.Point(155, 32);
+            this.nudMapBlade2RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2RotX.Name = "nudMapBlade2RotX";
+            this.nudMapBlade2RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2RotX.TabIndex = 8;
+            this.nudMapBlade2RotX.ValueChanged += new System.EventHandler(this.nudMapBlade2RotX_ValueChanged);
+            // 
+            // label377
+            // 
+            this.label377.AutoSize = true;
+            this.label377.Location = new System.Drawing.Point(6, 74);
+            this.label377.Name = "label377";
+            this.label377.Size = new System.Drawing.Size(17, 13);
+            this.label377.TabIndex = 5;
+            this.label377.Text = "Z:";
+            // 
+            // label378
+            // 
+            this.label378.AutoSize = true;
+            this.label378.Location = new System.Drawing.Point(6, 54);
+            this.label378.Name = "label378";
+            this.label378.Size = new System.Drawing.Size(17, 13);
+            this.label378.TabIndex = 4;
+            this.label378.Text = "Y:";
+            // 
+            // label379
+            // 
+            this.label379.AutoSize = true;
+            this.label379.Location = new System.Drawing.Point(6, 34);
+            this.label379.Name = "label379";
+            this.label379.Size = new System.Drawing.Size(17, 13);
+            this.label379.TabIndex = 3;
+            this.label379.Text = "X:";
+            // 
+            // nudMapBlade1RotX
+            // 
+            this.nudMapBlade1RotX.DecimalPlaces = 7;
+            this.nudMapBlade1RotX.Location = new System.Drawing.Point(29, 32);
+            this.nudMapBlade1RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1RotX.Name = "nudMapBlade1RotX";
+            this.nudMapBlade1RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1RotX.TabIndex = 7;
+            this.nudMapBlade1RotX.ValueChanged += new System.EventHandler(this.nudMapBlade1RotX_ValueChanged);
+            // 
+            // label380
+            // 
+            this.label380.AutoSize = true;
+            this.label380.Location = new System.Drawing.Point(317, 16);
+            this.label380.Name = "label380";
+            this.label380.Size = new System.Drawing.Size(46, 13);
+            this.label380.TabIndex = 2;
+            this.label380.Text = "Blade 3:";
+            // 
+            // label381
+            // 
+            this.label381.AutoSize = true;
+            this.label381.Location = new System.Drawing.Point(192, 16);
+            this.label381.Name = "label381";
+            this.label381.Size = new System.Drawing.Size(46, 13);
+            this.label381.TabIndex = 1;
+            this.label381.Text = "Blade 2:";
+            // 
+            // label382
+            // 
+            this.label382.AutoSize = true;
+            this.label382.Location = new System.Drawing.Point(66, 16);
+            this.label382.Name = "label382";
+            this.label382.Size = new System.Drawing.Size(46, 13);
+            this.label382.TabIndex = 0;
+            this.label382.Text = "Blade 1:";
+            // 
+            // groupBox121
+            // 
+            this.groupBox121.Controls.Add(this.nudMapDriver3RotZ);
+            this.groupBox121.Controls.Add(this.nudMapDriver3RotY);
+            this.groupBox121.Controls.Add(this.nudMapDriver2RotZ);
+            this.groupBox121.Controls.Add(this.nudMapDriver2RotY);
+            this.groupBox121.Controls.Add(this.nudMapDriver1RotZ);
+            this.groupBox121.Controls.Add(this.nudMapDriver1RotY);
+            this.groupBox121.Controls.Add(this.nudMapDriver3RotX);
+            this.groupBox121.Controls.Add(this.nudMapDriver2RotX);
+            this.groupBox121.Controls.Add(this.label371);
+            this.groupBox121.Controls.Add(this.label372);
+            this.groupBox121.Controls.Add(this.label373);
+            this.groupBox121.Controls.Add(this.nudMapDriver1RotX);
+            this.groupBox121.Controls.Add(this.label374);
+            this.groupBox121.Controls.Add(this.label375);
+            this.groupBox121.Controls.Add(this.label376);
+            this.groupBox121.Location = new System.Drawing.Point(8, 163);
+            this.groupBox121.Name = "groupBox121";
+            this.groupBox121.Size = new System.Drawing.Size(409, 103);
+            this.groupBox121.TabIndex = 17;
+            this.groupBox121.TabStop = false;
+            this.groupBox121.Text = "Driver Rotations";
+            // 
+            // nudMapDriver3RotZ
+            // 
+            this.nudMapDriver3RotZ.DecimalPlaces = 7;
+            this.nudMapDriver3RotZ.Location = new System.Drawing.Point(281, 72);
+            this.nudMapDriver3RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3RotZ.Name = "nudMapDriver3RotZ";
+            this.nudMapDriver3RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3RotZ.TabIndex = 15;
+            this.nudMapDriver3RotZ.ValueChanged += new System.EventHandler(this.nudMapDriver3RotZ_ValueChanged);
+            // 
+            // nudMapDriver3RotY
+            // 
+            this.nudMapDriver3RotY.DecimalPlaces = 7;
+            this.nudMapDriver3RotY.Location = new System.Drawing.Point(281, 52);
+            this.nudMapDriver3RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3RotY.Name = "nudMapDriver3RotY";
+            this.nudMapDriver3RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3RotY.TabIndex = 14;
+            this.nudMapDriver3RotY.ValueChanged += new System.EventHandler(this.nudMapDriver3RotY_ValueChanged);
+            // 
+            // nudMapDriver2RotZ
+            // 
+            this.nudMapDriver2RotZ.DecimalPlaces = 7;
+            this.nudMapDriver2RotZ.Location = new System.Drawing.Point(155, 72);
+            this.nudMapDriver2RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2RotZ.Name = "nudMapDriver2RotZ";
+            this.nudMapDriver2RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2RotZ.TabIndex = 13;
+            this.nudMapDriver2RotZ.ValueChanged += new System.EventHandler(this.nudMapDriver2RotZ_ValueChanged);
+            // 
+            // nudMapDriver2RotY
+            // 
+            this.nudMapDriver2RotY.DecimalPlaces = 7;
+            this.nudMapDriver2RotY.Location = new System.Drawing.Point(155, 52);
+            this.nudMapDriver2RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2RotY.Name = "nudMapDriver2RotY";
+            this.nudMapDriver2RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2RotY.TabIndex = 12;
+            this.nudMapDriver2RotY.ValueChanged += new System.EventHandler(this.nudMapDriver2RotY_ValueChanged);
+            // 
+            // nudMapDriver1RotZ
+            // 
+            this.nudMapDriver1RotZ.DecimalPlaces = 7;
+            this.nudMapDriver1RotZ.Location = new System.Drawing.Point(29, 72);
+            this.nudMapDriver1RotZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1RotZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1RotZ.Name = "nudMapDriver1RotZ";
+            this.nudMapDriver1RotZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1RotZ.TabIndex = 11;
+            this.nudMapDriver1RotZ.ValueChanged += new System.EventHandler(this.nudMapDriver1RotZ_ValueChanged);
+            // 
+            // nudMapDriver1RotY
+            // 
+            this.nudMapDriver1RotY.DecimalPlaces = 7;
+            this.nudMapDriver1RotY.Location = new System.Drawing.Point(29, 52);
+            this.nudMapDriver1RotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1RotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1RotY.Name = "nudMapDriver1RotY";
+            this.nudMapDriver1RotY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1RotY.TabIndex = 10;
+            this.nudMapDriver1RotY.ValueChanged += new System.EventHandler(this.nudMapDriver1RotY_ValueChanged);
+            // 
+            // nudMapDriver3RotX
+            // 
+            this.nudMapDriver3RotX.DecimalPlaces = 7;
+            this.nudMapDriver3RotX.Location = new System.Drawing.Point(281, 32);
+            this.nudMapDriver3RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3RotX.Name = "nudMapDriver3RotX";
+            this.nudMapDriver3RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3RotX.TabIndex = 9;
+            this.nudMapDriver3RotX.ValueChanged += new System.EventHandler(this.nudMapDriver3RotX_ValueChanged);
+            // 
+            // nudMapDriver2RotX
+            // 
+            this.nudMapDriver2RotX.DecimalPlaces = 7;
+            this.nudMapDriver2RotX.Location = new System.Drawing.Point(155, 32);
+            this.nudMapDriver2RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2RotX.Name = "nudMapDriver2RotX";
+            this.nudMapDriver2RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2RotX.TabIndex = 8;
+            this.nudMapDriver2RotX.ValueChanged += new System.EventHandler(this.nudMapDriver2RotX_ValueChanged);
+            // 
+            // label371
+            // 
+            this.label371.AutoSize = true;
+            this.label371.Location = new System.Drawing.Point(6, 74);
+            this.label371.Name = "label371";
+            this.label371.Size = new System.Drawing.Size(17, 13);
+            this.label371.TabIndex = 5;
+            this.label371.Text = "Z:";
+            // 
+            // label372
+            // 
+            this.label372.AutoSize = true;
+            this.label372.Location = new System.Drawing.Point(6, 54);
+            this.label372.Name = "label372";
+            this.label372.Size = new System.Drawing.Size(17, 13);
+            this.label372.TabIndex = 4;
+            this.label372.Text = "Y:";
+            // 
+            // label373
+            // 
+            this.label373.AutoSize = true;
+            this.label373.Location = new System.Drawing.Point(6, 34);
+            this.label373.Name = "label373";
+            this.label373.Size = new System.Drawing.Size(17, 13);
+            this.label373.TabIndex = 3;
+            this.label373.Text = "X:";
+            // 
+            // nudMapDriver1RotX
+            // 
+            this.nudMapDriver1RotX.DecimalPlaces = 7;
+            this.nudMapDriver1RotX.Location = new System.Drawing.Point(29, 32);
+            this.nudMapDriver1RotX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1RotX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1RotX.Name = "nudMapDriver1RotX";
+            this.nudMapDriver1RotX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1RotX.TabIndex = 7;
+            this.nudMapDriver1RotX.ValueChanged += new System.EventHandler(this.nudMapDriver1RotX_ValueChanged);
+            // 
+            // label374
+            // 
+            this.label374.AutoSize = true;
+            this.label374.Location = new System.Drawing.Point(317, 16);
+            this.label374.Name = "label374";
+            this.label374.Size = new System.Drawing.Size(47, 13);
+            this.label374.TabIndex = 2;
+            this.label374.Text = "Driver 3:";
+            // 
+            // label375
+            // 
+            this.label375.AutoSize = true;
+            this.label375.Location = new System.Drawing.Point(192, 16);
+            this.label375.Name = "label375";
+            this.label375.Size = new System.Drawing.Size(47, 13);
+            this.label375.TabIndex = 1;
+            this.label375.Text = "Driver 2:";
+            // 
+            // label376
+            // 
+            this.label376.AutoSize = true;
+            this.label376.Location = new System.Drawing.Point(66, 16);
+            this.label376.Name = "label376";
+            this.label376.Size = new System.Drawing.Size(47, 13);
+            this.label376.TabIndex = 0;
+            this.label376.Text = "Driver 1:";
+            // 
+            // groupBox120
+            // 
+            this.groupBox120.Controls.Add(this.nudMapBlade3PosZ);
+            this.groupBox120.Controls.Add(this.nudMapBlade3PosY);
+            this.groupBox120.Controls.Add(this.nudMapBlade2PosZ);
+            this.groupBox120.Controls.Add(this.nudMapBlade2PosY);
+            this.groupBox120.Controls.Add(this.nudMapBlade1PosZ);
+            this.groupBox120.Controls.Add(this.nudMapBlade1PosY);
+            this.groupBox120.Controls.Add(this.nudMapBlade3PosX);
+            this.groupBox120.Controls.Add(this.nudMapBlade2PosX);
+            this.groupBox120.Controls.Add(this.label365);
+            this.groupBox120.Controls.Add(this.label366);
+            this.groupBox120.Controls.Add(this.label367);
+            this.groupBox120.Controls.Add(this.nudMapBlade1PosX);
+            this.groupBox120.Controls.Add(this.label368);
+            this.groupBox120.Controls.Add(this.label369);
+            this.groupBox120.Controls.Add(this.label370);
+            this.groupBox120.Location = new System.Drawing.Point(423, 54);
+            this.groupBox120.Name = "groupBox120";
+            this.groupBox120.Size = new System.Drawing.Size(409, 103);
+            this.groupBox120.TabIndex = 16;
+            this.groupBox120.TabStop = false;
+            this.groupBox120.Text = "Blade Positions";
+            // 
+            // nudMapBlade3PosZ
+            // 
+            this.nudMapBlade3PosZ.DecimalPlaces = 7;
+            this.nudMapBlade3PosZ.Location = new System.Drawing.Point(281, 72);
+            this.nudMapBlade3PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3PosZ.Name = "nudMapBlade3PosZ";
+            this.nudMapBlade3PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3PosZ.TabIndex = 15;
+            this.nudMapBlade3PosZ.ValueChanged += new System.EventHandler(this.nudMapBlade3PosZ_ValueChanged);
+            // 
+            // nudMapBlade3PosY
+            // 
+            this.nudMapBlade3PosY.DecimalPlaces = 7;
+            this.nudMapBlade3PosY.Location = new System.Drawing.Point(281, 52);
+            this.nudMapBlade3PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3PosY.Name = "nudMapBlade3PosY";
+            this.nudMapBlade3PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3PosY.TabIndex = 14;
+            this.nudMapBlade3PosY.ValueChanged += new System.EventHandler(this.nudMapBlade3PosY_ValueChanged);
+            // 
+            // nudMapBlade2PosZ
+            // 
+            this.nudMapBlade2PosZ.AccessibleDescription = "";
+            this.nudMapBlade2PosZ.DecimalPlaces = 7;
+            this.nudMapBlade2PosZ.Location = new System.Drawing.Point(155, 72);
+            this.nudMapBlade2PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2PosZ.Name = "nudMapBlade2PosZ";
+            this.nudMapBlade2PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2PosZ.TabIndex = 13;
+            this.nudMapBlade2PosZ.ValueChanged += new System.EventHandler(this.nudMapBlade2PosZ_ValueChanged);
+            // 
+            // nudMapBlade2PosY
+            // 
+            this.nudMapBlade2PosY.DecimalPlaces = 7;
+            this.nudMapBlade2PosY.Location = new System.Drawing.Point(155, 52);
+            this.nudMapBlade2PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2PosY.Name = "nudMapBlade2PosY";
+            this.nudMapBlade2PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2PosY.TabIndex = 12;
+            this.nudMapBlade2PosY.ValueChanged += new System.EventHandler(this.nudMapBlade2PosY_ValueChanged);
+            // 
+            // nudMapBlade1PosZ
+            // 
+            this.nudMapBlade1PosZ.DecimalPlaces = 7;
+            this.nudMapBlade1PosZ.Location = new System.Drawing.Point(29, 72);
+            this.nudMapBlade1PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1PosZ.Name = "nudMapBlade1PosZ";
+            this.nudMapBlade1PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1PosZ.TabIndex = 11;
+            this.nudMapBlade1PosZ.ValueChanged += new System.EventHandler(this.nudMapBlade1PosZ_ValueChanged);
+            // 
+            // nudMapBlade1PosY
+            // 
+            this.nudMapBlade1PosY.DecimalPlaces = 7;
+            this.nudMapBlade1PosY.Location = new System.Drawing.Point(29, 52);
+            this.nudMapBlade1PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1PosY.Name = "nudMapBlade1PosY";
+            this.nudMapBlade1PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1PosY.TabIndex = 10;
+            this.nudMapBlade1PosY.ValueChanged += new System.EventHandler(this.nudMapBlade1PosY_ValueChanged);
+            // 
+            // nudMapBlade3PosX
+            // 
+            this.nudMapBlade3PosX.DecimalPlaces = 7;
+            this.nudMapBlade3PosX.Location = new System.Drawing.Point(281, 32);
+            this.nudMapBlade3PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade3PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade3PosX.Name = "nudMapBlade3PosX";
+            this.nudMapBlade3PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade3PosX.TabIndex = 9;
+            this.nudMapBlade3PosX.ValueChanged += new System.EventHandler(this.nudMapBlade3PosX_ValueChanged);
+            // 
+            // nudMapBlade2PosX
+            // 
+            this.nudMapBlade2PosX.DecimalPlaces = 7;
+            this.nudMapBlade2PosX.Location = new System.Drawing.Point(155, 32);
+            this.nudMapBlade2PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade2PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade2PosX.Name = "nudMapBlade2PosX";
+            this.nudMapBlade2PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade2PosX.TabIndex = 8;
+            this.nudMapBlade2PosX.ValueChanged += new System.EventHandler(this.nudMapBlade2PosX_ValueChanged);
+            // 
+            // label365
+            // 
+            this.label365.AutoSize = true;
+            this.label365.Location = new System.Drawing.Point(6, 74);
+            this.label365.Name = "label365";
+            this.label365.Size = new System.Drawing.Size(17, 13);
+            this.label365.TabIndex = 5;
+            this.label365.Text = "Z:";
+            // 
+            // label366
+            // 
+            this.label366.AutoSize = true;
+            this.label366.Location = new System.Drawing.Point(6, 54);
+            this.label366.Name = "label366";
+            this.label366.Size = new System.Drawing.Size(17, 13);
+            this.label366.TabIndex = 4;
+            this.label366.Text = "Y:";
+            // 
+            // label367
+            // 
+            this.label367.AutoSize = true;
+            this.label367.Location = new System.Drawing.Point(6, 34);
+            this.label367.Name = "label367";
+            this.label367.Size = new System.Drawing.Size(17, 13);
+            this.label367.TabIndex = 3;
+            this.label367.Text = "X:";
+            // 
+            // nudMapBlade1PosX
+            // 
+            this.nudMapBlade1PosX.DecimalPlaces = 7;
+            this.nudMapBlade1PosX.Location = new System.Drawing.Point(29, 32);
+            this.nudMapBlade1PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapBlade1PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapBlade1PosX.Name = "nudMapBlade1PosX";
+            this.nudMapBlade1PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapBlade1PosX.TabIndex = 7;
+            this.nudMapBlade1PosX.ValueChanged += new System.EventHandler(this.nudMapBlade1PosX_ValueChanged);
+            // 
+            // label368
+            // 
+            this.label368.AutoSize = true;
+            this.label368.Location = new System.Drawing.Point(317, 16);
+            this.label368.Name = "label368";
+            this.label368.Size = new System.Drawing.Size(46, 13);
+            this.label368.TabIndex = 2;
+            this.label368.Text = "Blade 3:";
+            // 
+            // label369
+            // 
+            this.label369.AutoSize = true;
+            this.label369.Location = new System.Drawing.Point(192, 16);
+            this.label369.Name = "label369";
+            this.label369.Size = new System.Drawing.Size(46, 13);
+            this.label369.TabIndex = 1;
+            this.label369.Text = "Blade 2:";
+            // 
+            // label370
+            // 
+            this.label370.AutoSize = true;
+            this.label370.Location = new System.Drawing.Point(66, 16);
+            this.label370.Name = "label370";
+            this.label370.Size = new System.Drawing.Size(46, 13);
+            this.label370.TabIndex = 0;
+            this.label370.Text = "Blade 1:";
+            // 
+            // groupBox119
+            // 
+            this.groupBox119.Controls.Add(this.nudMapDriver3PosZ);
+            this.groupBox119.Controls.Add(this.nudMapDriver3PosY);
+            this.groupBox119.Controls.Add(this.nudMapDriver2PosZ);
+            this.groupBox119.Controls.Add(this.nudMapDriver2PosY);
+            this.groupBox119.Controls.Add(this.nudMapDriver1PosZ);
+            this.groupBox119.Controls.Add(this.nudMapDriver1PosY);
+            this.groupBox119.Controls.Add(this.nudMapDriver3PosX);
+            this.groupBox119.Controls.Add(this.nudMapDriver2PosX);
+            this.groupBox119.Controls.Add(this.label364);
+            this.groupBox119.Controls.Add(this.label363);
+            this.groupBox119.Controls.Add(this.label362);
+            this.groupBox119.Controls.Add(this.nudMapDriver1PosX);
+            this.groupBox119.Controls.Add(this.label361);
+            this.groupBox119.Controls.Add(this.label360);
+            this.groupBox119.Controls.Add(this.label359);
+            this.groupBox119.Location = new System.Drawing.Point(8, 54);
+            this.groupBox119.Name = "groupBox119";
+            this.groupBox119.Size = new System.Drawing.Size(409, 103);
+            this.groupBox119.TabIndex = 10;
+            this.groupBox119.TabStop = false;
+            this.groupBox119.Text = "Driver Positions";
+            // 
+            // nudMapDriver3PosZ
+            // 
+            this.nudMapDriver3PosZ.DecimalPlaces = 7;
+            this.nudMapDriver3PosZ.Location = new System.Drawing.Point(281, 72);
+            this.nudMapDriver3PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3PosZ.Name = "nudMapDriver3PosZ";
+            this.nudMapDriver3PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3PosZ.TabIndex = 15;
+            this.nudMapDriver3PosZ.ValueChanged += new System.EventHandler(this.nudMapDriver3PosZ_ValueChanged);
+            // 
+            // nudMapDriver3PosY
+            // 
+            this.nudMapDriver3PosY.DecimalPlaces = 7;
+            this.nudMapDriver3PosY.Location = new System.Drawing.Point(281, 52);
+            this.nudMapDriver3PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3PosY.Name = "nudMapDriver3PosY";
+            this.nudMapDriver3PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3PosY.TabIndex = 14;
+            this.nudMapDriver3PosY.ValueChanged += new System.EventHandler(this.nudMapDriver3PosY_ValueChanged);
+            // 
+            // nudMapDriver2PosZ
+            // 
+            this.nudMapDriver2PosZ.DecimalPlaces = 7;
+            this.nudMapDriver2PosZ.Location = new System.Drawing.Point(155, 72);
+            this.nudMapDriver2PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2PosZ.Name = "nudMapDriver2PosZ";
+            this.nudMapDriver2PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2PosZ.TabIndex = 13;
+            this.nudMapDriver2PosZ.ValueChanged += new System.EventHandler(this.nudMapDriver2PosZ_ValueChanged);
+            // 
+            // nudMapDriver2PosY
+            // 
+            this.nudMapDriver2PosY.DecimalPlaces = 7;
+            this.nudMapDriver2PosY.Location = new System.Drawing.Point(155, 52);
+            this.nudMapDriver2PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2PosY.Name = "nudMapDriver2PosY";
+            this.nudMapDriver2PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2PosY.TabIndex = 12;
+            this.nudMapDriver2PosY.ValueChanged += new System.EventHandler(this.nudMapDriver2PosY_ValueChanged);
+            // 
+            // nudMapDriver1PosZ
+            // 
+            this.nudMapDriver1PosZ.DecimalPlaces = 7;
+            this.nudMapDriver1PosZ.Location = new System.Drawing.Point(29, 72);
+            this.nudMapDriver1PosZ.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1PosZ.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1PosZ.Name = "nudMapDriver1PosZ";
+            this.nudMapDriver1PosZ.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1PosZ.TabIndex = 11;
+            this.nudMapDriver1PosZ.ValueChanged += new System.EventHandler(this.nudMapDriver1PosZ_ValueChanged);
+            // 
+            // nudMapDriver1PosY
+            // 
+            this.nudMapDriver1PosY.DecimalPlaces = 7;
+            this.nudMapDriver1PosY.Location = new System.Drawing.Point(29, 52);
+            this.nudMapDriver1PosY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1PosY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1PosY.Name = "nudMapDriver1PosY";
+            this.nudMapDriver1PosY.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1PosY.TabIndex = 10;
+            this.nudMapDriver1PosY.ValueChanged += new System.EventHandler(this.nudMapDriver1PosY_ValueChanged);
+            // 
+            // nudMapDriver3PosX
+            // 
+            this.nudMapDriver3PosX.DecimalPlaces = 7;
+            this.nudMapDriver3PosX.Location = new System.Drawing.Point(281, 32);
+            this.nudMapDriver3PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver3PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver3PosX.Name = "nudMapDriver3PosX";
+            this.nudMapDriver3PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver3PosX.TabIndex = 9;
+            this.nudMapDriver3PosX.ValueChanged += new System.EventHandler(this.nudMapDriver3PosX_ValueChanged);
+            // 
+            // nudMapDriver2PosX
+            // 
+            this.nudMapDriver2PosX.DecimalPlaces = 7;
+            this.nudMapDriver2PosX.Location = new System.Drawing.Point(155, 32);
+            this.nudMapDriver2PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver2PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver2PosX.Name = "nudMapDriver2PosX";
+            this.nudMapDriver2PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver2PosX.TabIndex = 8;
+            this.nudMapDriver2PosX.ValueChanged += new System.EventHandler(this.nudMapDriver2PosX_ValueChanged);
+            // 
+            // label364
+            // 
+            this.label364.AutoSize = true;
+            this.label364.Location = new System.Drawing.Point(6, 74);
+            this.label364.Name = "label364";
+            this.label364.Size = new System.Drawing.Size(17, 13);
+            this.label364.TabIndex = 5;
+            this.label364.Text = "Z:";
+            // 
+            // label363
+            // 
+            this.label363.AutoSize = true;
+            this.label363.Location = new System.Drawing.Point(6, 54);
+            this.label363.Name = "label363";
+            this.label363.Size = new System.Drawing.Size(17, 13);
+            this.label363.TabIndex = 4;
+            this.label363.Text = "Y:";
+            // 
+            // label362
+            // 
+            this.label362.AutoSize = true;
+            this.label362.Location = new System.Drawing.Point(6, 34);
+            this.label362.Name = "label362";
+            this.label362.Size = new System.Drawing.Size(17, 13);
+            this.label362.TabIndex = 3;
+            this.label362.Text = "X:";
+            // 
+            // nudMapDriver1PosX
+            // 
+            this.nudMapDriver1PosX.DecimalPlaces = 7;
+            this.nudMapDriver1PosX.Location = new System.Drawing.Point(29, 32);
+            this.nudMapDriver1PosX.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMapDriver1PosX.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMapDriver1PosX.Name = "nudMapDriver1PosX";
+            this.nudMapDriver1PosX.Size = new System.Drawing.Size(120, 20);
+            this.nudMapDriver1PosX.TabIndex = 7;
+            this.nudMapDriver1PosX.ValueChanged += new System.EventHandler(this.nudMapDriver1PosX_ValueChanged);
+            // 
+            // label361
+            // 
+            this.label361.AutoSize = true;
+            this.label361.Location = new System.Drawing.Point(317, 16);
+            this.label361.Name = "label361";
+            this.label361.Size = new System.Drawing.Size(47, 13);
+            this.label361.TabIndex = 2;
+            this.label361.Text = "Driver 3:";
+            // 
+            // label360
+            // 
+            this.label360.AutoSize = true;
+            this.label360.Location = new System.Drawing.Point(192, 16);
+            this.label360.Name = "label360";
+            this.label360.Size = new System.Drawing.Size(47, 13);
+            this.label360.TabIndex = 1;
+            this.label360.Text = "Driver 2:";
+            // 
+            // label359
+            // 
+            this.label359.AutoSize = true;
+            this.label359.Location = new System.Drawing.Point(66, 16);
+            this.label359.Name = "label359";
+            this.label359.Size = new System.Drawing.Size(47, 13);
+            this.label359.TabIndex = 0;
+            this.label359.Text = "Driver 1:";
+            // 
+            // label358
+            // 
+            this.label358.AutoSize = true;
+            this.label358.Location = new System.Drawing.Point(19, 21);
+            this.label358.Name = "label358";
+            this.label358.Size = new System.Drawing.Size(73, 13);
+            this.label358.TabIndex = 9;
+            this.label358.Text = "Map Jump ID:";
+            // 
+            // nudMapMapJumpID
+            // 
+            this.nudMapMapJumpID.Location = new System.Drawing.Point(98, 19);
+            this.nudMapMapJumpID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMapMapJumpID.Name = "nudMapMapJumpID";
+            this.nudMapMapJumpID.Size = new System.Drawing.Size(73, 20);
+            this.nudMapMapJumpID.TabIndex = 8;
+            this.nudMapMapJumpID.ValueChanged += new System.EventHandler(this.nudMapMapJumpID_ValueChanged);
+            // 
+            // tabUnknown
+            // 
+            this.tabUnknown.AutoScroll = true;
+            this.tabUnknown.Controls.Add(this.tabControl6);
+            this.tabUnknown.Location = new System.Drawing.Point(4, 22);
+            this.tabUnknown.Name = "tabUnknown";
+            this.tabUnknown.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUnknown.Size = new System.Drawing.Size(1134, 581);
+            this.tabUnknown.TabIndex = 6;
+            this.tabUnknown.Text = "Unknown";
+            this.tabUnknown.UseVisualStyleBackColor = true;
+            // 
+            // tabControl6
+            // 
+            this.tabControl6.Controls.Add(this.tabUnkMain);
+            this.tabControl6.Controls.Add(this.tabUnk_0x1171E8);
+            this.tabControl6.Controls.Add(this.tabUnk_0x117390);
+            this.tabControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl6.Location = new System.Drawing.Point(3, 3);
+            this.tabControl6.Name = "tabControl6";
+            this.tabControl6.SelectedIndex = 0;
+            this.tabControl6.Size = new System.Drawing.Size(1128, 575);
+            this.tabControl6.TabIndex = 166;
+            // 
+            // tabUnkMain
+            // 
+            this.tabUnkMain.AutoScroll = true;
+            this.tabUnkMain.Controls.Add(this.groupBox123);
+            this.tabUnkMain.Controls.Add(this.nudUnk_0x10AE93);
+            this.tabUnkMain.Controls.Add(this.groupBox124);
+            this.tabUnkMain.Controls.Add(this.label383);
+            this.tabUnkMain.Controls.Add(this.groupBox125);
+            this.tabUnkMain.Controls.Add(this.groupBox130);
+            this.tabUnkMain.Controls.Add(this.groupBox126);
+            this.tabUnkMain.Controls.Add(this.groupBox129);
+            this.tabUnkMain.Controls.Add(this.groupBox127);
+            this.tabUnkMain.Controls.Add(this.groupBox128);
+            this.tabUnkMain.Location = new System.Drawing.Point(4, 22);
+            this.tabUnkMain.Name = "tabUnkMain";
+            this.tabUnkMain.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUnkMain.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnkMain.TabIndex = 0;
+            this.tabUnkMain.Text = "Main";
+            this.tabUnkMain.UseVisualStyleBackColor = true;
+            // 
+            // groupBox123
+            // 
+            this.groupBox123.Controls.Add(this.hbxUnk_0x000004);
+            this.groupBox123.Location = new System.Drawing.Point(6, 6);
+            this.groupBox123.Name = "groupBox123";
+            this.groupBox123.Size = new System.Drawing.Size(217, 67);
+            this.groupBox123.TabIndex = 154;
+            this.groupBox123.TabStop = false;
+            this.groupBox123.Text = "Unk_0x000004";
+            // 
+            // hbxUnk_0x000004
+            // 
+            this.hbxUnk_0x000004.ColumnInfoVisible = true;
+            this.hbxUnk_0x000004.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x000004.LineInfoVisible = true;
+            this.hbxUnk_0x000004.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x000004.Name = "hbxUnk_0x000004";
+            this.hbxUnk_0x000004.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x000004.Size = new System.Drawing.Size(204, 41);
+            this.hbxUnk_0x000004.TabIndex = 151;
+            // 
+            // nudUnk_0x10AE93
+            // 
+            this.nudUnk_0x10AE93.Location = new System.Drawing.Point(429, 41);
+            this.nudUnk_0x10AE93.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudUnk_0x10AE93.Name = "nudUnk_0x10AE93";
+            this.nudUnk_0x10AE93.Size = new System.Drawing.Size(43, 20);
+            this.nudUnk_0x10AE93.TabIndex = 165;
+            // 
+            // groupBox124
+            // 
+            this.groupBox124.Controls.Add(this.hbxUnk_0x000018);
+            this.groupBox124.Location = new System.Drawing.Point(6, 79);
+            this.groupBox124.Name = "groupBox124";
+            this.groupBox124.Size = new System.Drawing.Size(313, 67);
+            this.groupBox124.TabIndex = 155;
+            this.groupBox124.TabStop = false;
+            this.groupBox124.Text = "Unk_0x000018";
+            // 
+            // hbxUnk_0x000018
+            // 
+            this.hbxUnk_0x000018.ColumnInfoVisible = true;
+            this.hbxUnk_0x000018.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x000018.LineInfoVisible = true;
+            this.hbxUnk_0x000018.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x000018.Name = "hbxUnk_0x000018";
+            this.hbxUnk_0x000018.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x000018.Size = new System.Drawing.Size(300, 41);
+            this.hbxUnk_0x000018.TabIndex = 151;
+            // 
+            // label383
+            // 
+            this.label383.AutoSize = true;
+            this.label383.Location = new System.Drawing.Point(338, 43);
+            this.label383.Name = "label383";
+            this.label383.Size = new System.Drawing.Size(85, 13);
+            this.label383.TabIndex = 164;
+            this.label383.Text = "Unk_0x10AE93:";
+            // 
+            // groupBox125
+            // 
+            this.groupBox125.Controls.Add(this.hbxUnk_0x00002C);
+            this.groupBox125.Location = new System.Drawing.Point(6, 152);
+            this.groupBox125.Name = "groupBox125";
+            this.groupBox125.Size = new System.Drawing.Size(217, 67);
+            this.groupBox125.TabIndex = 156;
+            this.groupBox125.TabStop = false;
+            this.groupBox125.Text = "Unk_0x00002C";
+            // 
+            // hbxUnk_0x00002C
+            // 
+            this.hbxUnk_0x00002C.ColumnInfoVisible = true;
+            this.hbxUnk_0x00002C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x00002C.LineInfoVisible = true;
+            this.hbxUnk_0x00002C.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x00002C.Name = "hbxUnk_0x00002C";
+            this.hbxUnk_0x00002C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x00002C.Size = new System.Drawing.Size(204, 41);
+            this.hbxUnk_0x00002C.TabIndex = 151;
+            // 
+            // groupBox130
+            // 
+            this.groupBox130.Controls.Add(this.hbxUnk_0x10AD62);
+            this.groupBox130.Location = new System.Drawing.Point(335, 152);
+            this.groupBox130.Name = "groupBox130";
+            this.groupBox130.Size = new System.Drawing.Size(217, 67);
+            this.groupBox130.TabIndex = 161;
+            this.groupBox130.TabStop = false;
+            this.groupBox130.Text = "Unk_0x10AD62";
+            // 
+            // hbxUnk_0x10AD62
+            // 
+            this.hbxUnk_0x10AD62.ColumnInfoVisible = true;
+            this.hbxUnk_0x10AD62.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x10AD62.LineInfoVisible = true;
+            this.hbxUnk_0x10AD62.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x10AD62.Name = "hbxUnk_0x10AD62";
+            this.hbxUnk_0x10AD62.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x10AD62.Size = new System.Drawing.Size(204, 41);
+            this.hbxUnk_0x10AD62.TabIndex = 151;
+            // 
+            // groupBox126
+            // 
+            this.groupBox126.Controls.Add(this.hbxUnk_0x00003A);
+            this.groupBox126.Location = new System.Drawing.Point(6, 225);
+            this.groupBox126.Name = "groupBox126";
+            this.groupBox126.Size = new System.Drawing.Size(168, 67);
+            this.groupBox126.TabIndex = 157;
+            this.groupBox126.TabStop = false;
+            this.groupBox126.Text = "Unk_0x00003A";
+            // 
+            // hbxUnk_0x00003A
+            // 
+            this.hbxUnk_0x00003A.ColumnInfoVisible = true;
+            this.hbxUnk_0x00003A.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x00003A.LineInfoVisible = true;
+            this.hbxUnk_0x00003A.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x00003A.Name = "hbxUnk_0x00003A";
+            this.hbxUnk_0x00003A.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x00003A.Size = new System.Drawing.Size(156, 41);
+            this.hbxUnk_0x00003A.TabIndex = 151;
+            // 
+            // groupBox129
+            // 
+            this.groupBox129.Controls.Add(this.hbxUnk_0x10AD74);
+            this.groupBox129.Location = new System.Drawing.Point(335, 225);
+            this.groupBox129.Name = "groupBox129";
+            this.groupBox129.Size = new System.Drawing.Size(217, 67);
+            this.groupBox129.TabIndex = 160;
+            this.groupBox129.TabStop = false;
+            this.groupBox129.Text = "Unk_0x10AD74";
+            // 
+            // hbxUnk_0x10AD74
+            // 
+            this.hbxUnk_0x10AD74.ColumnInfoVisible = true;
+            this.hbxUnk_0x10AD74.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x10AD74.LineInfoVisible = true;
+            this.hbxUnk_0x10AD74.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x10AD74.Name = "hbxUnk_0x10AD74";
+            this.hbxUnk_0x10AD74.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x10AD74.Size = new System.Drawing.Size(204, 41);
+            this.hbxUnk_0x10AD74.TabIndex = 151;
+            // 
+            // groupBox127
+            // 
+            this.groupBox127.Controls.Add(this.hbxUnk_0x1097FC);
+            this.groupBox127.Location = new System.Drawing.Point(6, 298);
+            this.groupBox127.Name = "groupBox127";
+            this.groupBox127.Size = new System.Drawing.Size(217, 67);
+            this.groupBox127.TabIndex = 158;
+            this.groupBox127.TabStop = false;
+            this.groupBox127.Text = "Unk_0x1097FC";
+            // 
+            // hbxUnk_0x1097FC
+            // 
+            this.hbxUnk_0x1097FC.ColumnInfoVisible = true;
+            this.hbxUnk_0x1097FC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x1097FC.LineInfoVisible = true;
+            this.hbxUnk_0x1097FC.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x1097FC.Name = "hbxUnk_0x1097FC";
+            this.hbxUnk_0x1097FC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x1097FC.Size = new System.Drawing.Size(204, 41);
+            this.hbxUnk_0x1097FC.TabIndex = 151;
+            // 
+            // groupBox128
+            // 
+            this.groupBox128.Controls.Add(this.hbxUnk_0x1098C4);
+            this.groupBox128.Location = new System.Drawing.Point(335, 79);
+            this.groupBox128.Name = "groupBox128";
+            this.groupBox128.Size = new System.Drawing.Size(409, 67);
+            this.groupBox128.TabIndex = 159;
+            this.groupBox128.TabStop = false;
+            this.groupBox128.Text = "Unk_0x1098C4";
+            // 
+            // hbxUnk_0x1098C4
+            // 
+            this.hbxUnk_0x1098C4.ColumnInfoVisible = true;
+            this.hbxUnk_0x1098C4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x1098C4.LineInfoVisible = true;
+            this.hbxUnk_0x1098C4.Location = new System.Drawing.Point(6, 19);
+            this.hbxUnk_0x1098C4.Name = "hbxUnk_0x1098C4";
+            this.hbxUnk_0x1098C4.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x1098C4.Size = new System.Drawing.Size(396, 41);
+            this.hbxUnk_0x1098C4.TabIndex = 151;
+            // 
+            // tabUnk_0x1171E8
+            // 
+            this.tabUnk_0x1171E8.Controls.Add(this.hbxUnk_0x1171E8);
+            this.tabUnk_0x1171E8.Location = new System.Drawing.Point(4, 22);
+            this.tabUnk_0x1171E8.Name = "tabUnk_0x1171E8";
+            this.tabUnk_0x1171E8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUnk_0x1171E8.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnk_0x1171E8.TabIndex = 1;
+            this.tabUnk_0x1171E8.Text = "Unk_0x1171E8";
+            this.tabUnk_0x1171E8.UseVisualStyleBackColor = true;
+            // 
+            // hbxUnk_0x1171E8
+            // 
+            this.hbxUnk_0x1171E8.ColumnInfoVisible = true;
+            this.hbxUnk_0x1171E8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxUnk_0x1171E8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x1171E8.LineInfoVisible = true;
+            this.hbxUnk_0x1171E8.Location = new System.Drawing.Point(3, 3);
+            this.hbxUnk_0x1171E8.Name = "hbxUnk_0x1171E8";
+            this.hbxUnk_0x1171E8.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x1171E8.Size = new System.Drawing.Size(1114, 543);
+            this.hbxUnk_0x1171E8.StringViewVisible = true;
+            this.hbxUnk_0x1171E8.TabIndex = 151;
+            this.hbxUnk_0x1171E8.UseFixedBytesPerLine = true;
+            this.hbxUnk_0x1171E8.VScrollBarVisible = true;
+            // 
+            // tabUnk_0x117390
+            // 
+            this.tabUnk_0x117390.Controls.Add(this.hbxUnk_0x117390);
+            this.tabUnk_0x117390.Location = new System.Drawing.Point(4, 22);
+            this.tabUnk_0x117390.Name = "tabUnk_0x117390";
+            this.tabUnk_0x117390.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnk_0x117390.TabIndex = 2;
+            this.tabUnk_0x117390.Text = "Unk_0x117390";
+            this.tabUnk_0x117390.UseVisualStyleBackColor = true;
+            // 
+            // hbxUnk_0x117390
+            // 
+            this.hbxUnk_0x117390.ColumnInfoVisible = true;
+            this.hbxUnk_0x117390.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxUnk_0x117390.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxUnk_0x117390.LineInfoVisible = true;
+            this.hbxUnk_0x117390.Location = new System.Drawing.Point(0, 0);
+            this.hbxUnk_0x117390.Name = "hbxUnk_0x117390";
+            this.hbxUnk_0x117390.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxUnk_0x117390.Size = new System.Drawing.Size(1120, 549);
+            this.hbxUnk_0x117390.StringViewVisible = true;
+            this.hbxUnk_0x117390.TabIndex = 151;
+            this.hbxUnk_0x117390.UseFixedBytesPerLine = true;
+            this.hbxUnk_0x117390.VScrollBarVisible = true;
+            // 
+            // tab150RawData
+            // 
+            this.tab150RawData.Controls.Add(this.splitContainer4);
+            this.tab150RawData.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawData.Name = "tab150RawData";
+            this.tab150RawData.Padding = new System.Windows.Forms.Padding(3);
+            this.tab150RawData.Size = new System.Drawing.Size(1134, 581);
+            this.tab150RawData.TabIndex = 7;
+            this.tab150RawData.Text = "1.5.0+ Raw Data";
+            this.tab150RawData.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.IsSplitterFixed = true;
+            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.label384);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox131);
+            this.splitContainer4.Size = new System.Drawing.Size(1128, 575);
+            this.splitContainer4.SplitterDistance = 49;
+            this.splitContainer4.TabIndex = 1;
+            // 
+            // label384
+            // 
+            this.label384.AutoSize = true;
+            this.label384.Location = new System.Drawing.Point(5, 9);
+            this.label384.Name = "label384";
+            this.label384.Size = new System.Drawing.Size(860, 26);
+            this.label384.TabIndex = 1;
+            this.label384.Text = resources.GetString("label384.Text");
+            // 
+            // groupBox131
+            // 
+            this.groupBox131.Controls.Add(this.tbc150RawData);
+            this.groupBox131.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox131.Location = new System.Drawing.Point(0, 0);
+            this.groupBox131.Name = "groupBox131";
+            this.groupBox131.Size = new System.Drawing.Size(1128, 522);
+            this.groupBox131.TabIndex = 0;
+            this.groupBox131.TabStop = false;
+            this.groupBox131.Text = "1.5.0+ New Extra Data";
+            // 
+            // ofdSaveFile
+            // 
+            this.ofdSaveFile.FileName = "openFileDialog1";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(138, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 33;
+            this.btnSave.Text = "Save File";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
+            this.splitContainer3.Panel1.Controls.Add(this.btnSave);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
+            this.splitContainer3.SplitterDistance = 48;
+            this.splitContainer3.TabIndex = 34;
+            // 
+            // tbc150RawData
+            // 
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1176A0);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117728);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117A4C);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117D70);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1186DC);
+            this.tbc150RawData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbc150RawData.Location = new System.Drawing.Point(3, 16);
+            this.tbc150RawData.Name = "tbc150RawData";
+            this.tbc150RawData.SelectedIndex = 0;
+            this.tbc150RawData.Size = new System.Drawing.Size(1122, 503);
+            this.tbc150RawData.TabIndex = 0;
+            // 
+            // tab150RawDataUnk_0x1176A0
+            // 
+            this.tab150RawDataUnk_0x1176A0.Controls.Add(this.hbx150RawDataUnk_0x1176A0);
+            this.tab150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x1176A0.Name = "tab150RawDataUnk_0x1176A0";
+            this.tab150RawDataUnk_0x1176A0.Padding = new System.Windows.Forms.Padding(3);
+            this.tab150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x1176A0.TabIndex = 0;
+            this.tab150RawDataUnk_0x1176A0.Text = "Unk_0x1176A0";
+            this.tab150RawDataUnk_0x1176A0.UseVisualStyleBackColor = true;
+            // 
+            // tab150RawDataUnk_0x117728
+            // 
+            this.tab150RawDataUnk_0x117728.Controls.Add(this.hbx150RawDataUnk_0x117728);
+            this.tab150RawDataUnk_0x117728.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117728.Name = "tab150RawDataUnk_0x117728";
+            this.tab150RawDataUnk_0x117728.Padding = new System.Windows.Forms.Padding(3);
+            this.tab150RawDataUnk_0x117728.Size = new System.Drawing.Size(566, 206);
+            this.tab150RawDataUnk_0x117728.TabIndex = 1;
+            this.tab150RawDataUnk_0x117728.Text = "Unk_0x117728";
+            this.tab150RawDataUnk_0x117728.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x1176A0
+            // 
+            this.hbx150RawDataUnk_0x1176A0.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x1176A0.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x1176A0.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(3, 3);
+            this.hbx150RawDataUnk_0x1176A0.Name = "hbx150RawDataUnk_0x1176A0";
+            this.hbx150RawDataUnk_0x1176A0.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1108, 471);
+            this.hbx150RawDataUnk_0x1176A0.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.TabIndex = 154;
+            this.hbx150RawDataUnk_0x1176A0.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x1176A0.VScrollBarVisible = true;
+            // 
+            // tab150RawDataUnk_0x117A4C
+            // 
+            this.tab150RawDataUnk_0x117A4C.Controls.Add(this.hbx150RawDataUnk_0x117A4C);
+            this.tab150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117A4C.Name = "tab150RawDataUnk_0x117A4C";
+            this.tab150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(566, 206);
+            this.tab150RawDataUnk_0x117A4C.TabIndex = 2;
+            this.tab150RawDataUnk_0x117A4C.Text = "Unk_0x117A4C";
+            this.tab150RawDataUnk_0x117A4C.UseVisualStyleBackColor = true;
+            // 
+            // tab150RawDataUnk_0x117D70
+            // 
+            this.tab150RawDataUnk_0x117D70.Controls.Add(this.hbx150RawDataUnk_0x117D70);
+            this.tab150RawDataUnk_0x117D70.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117D70.Name = "tab150RawDataUnk_0x117D70";
+            this.tab150RawDataUnk_0x117D70.Size = new System.Drawing.Size(566, 206);
+            this.tab150RawDataUnk_0x117D70.TabIndex = 3;
+            this.tab150RawDataUnk_0x117D70.Text = "Unk_0x117D70";
+            this.tab150RawDataUnk_0x117D70.UseVisualStyleBackColor = true;
+            // 
+            // tab150RawDataUnk_0x1186DC
+            // 
+            this.tab150RawDataUnk_0x1186DC.Controls.Add(this.hbx150RawDataUnk_0x1186DC);
+            this.tab150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x1186DC.Name = "tab150RawDataUnk_0x1186DC";
+            this.tab150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(566, 206);
+            this.tab150RawDataUnk_0x1186DC.TabIndex = 4;
+            this.tab150RawDataUnk_0x1186DC.Text = "Unk_0x1186DC";
+            this.tab150RawDataUnk_0x1186DC.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x117728
+            // 
+            this.hbx150RawDataUnk_0x117728.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117728.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117728.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117728.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117728.Location = new System.Drawing.Point(3, 3);
+            this.hbx150RawDataUnk_0x117728.Name = "hbx150RawDataUnk_0x117728";
+            this.hbx150RawDataUnk_0x117728.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117728.Size = new System.Drawing.Size(560, 200);
+            this.hbx150RawDataUnk_0x117728.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117728.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117728.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117728.VScrollBarVisible = true;
+            // 
+            // hbx150RawDataUnk_0x117A4C
+            // 
+            this.hbx150RawDataUnk_0x117A4C.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117A4C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117A4C.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x117A4C.Name = "hbx150RawDataUnk_0x117A4C";
+            this.hbx150RawDataUnk_0x117A4C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(566, 206);
+            this.hbx150RawDataUnk_0x117A4C.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117A4C.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117A4C.VScrollBarVisible = true;
+            // 
+            // hbx150RawDataUnk_0x117D70
+            // 
+            this.hbx150RawDataUnk_0x117D70.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117D70.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117D70.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
+            this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(566, 206);
+            this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117D70.VScrollBarVisible = true;
+            // 
+            // hbx150RawDataUnk_0x1186DC
+            // 
+            this.hbx150RawDataUnk_0x1186DC.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x1186DC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x1186DC.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x1186DC.Name = "hbx150RawDataUnk_0x1186DC";
+            this.hbx150RawDataUnk_0x1186DC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(566, 206);
+            this.hbx150RawDataUnk_0x1186DC.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.TabIndex = 155;
+            this.hbx150RawDataUnk_0x1186DC.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x1186DC.VScrollBarVisible = true;
             // 
             // frmMain
             // 
@@ -14972,22 +16934,27 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            this.groupBox116.ResumeLayout(false);
+            this.groupBox115.ResumeLayout(false);
+            this.groupBox114.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).EndInit();
+            this.groupBox113.ResumeLayout(false);
             this.tabDrivers.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
+            this.tbcDrivers.ResumeLayout(false);
             this.tabDriversMisc.ResumeLayout(false);
             this.groupBox34.ResumeLayout(false);
             this.groupBox34.PerformLayout();
@@ -15127,6 +17094,15 @@
             this.groupBox37.ResumeLayout(false);
             this.groupBox36.ResumeLayout(false);
             this.groupBox35.ResumeLayout(false);
+            this.tabDriver150.ResumeLayout(false);
+            this.tabDriver150.PerformLayout();
+            this.gbxDriverWeapons150.ResumeLayout(false);
+            this.gbxDriverWeapons150.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints150)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponPoints150)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArt150Id1)).EndInit();
             this.tabBlades.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -15528,49 +17504,123 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).EndInit();
             this.tabPoppiSkillRAMBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).EndInit();
+            this.tabItemsSerials.ResumeLayout(false);
+            this.groupBox112.ResumeLayout(false);
+            this.groupBox112.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).EndInit();
+            this.tabTigerTiger.ResumeLayout(false);
+            this.groupBox118.ResumeLayout(false);
+            this.groupBox117.ResumeLayout(false);
+            this.gourpBox119.ResumeLayout(false);
+            this.gourpBox119.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
+            this.tabMapLocation.ResumeLayout(false);
+            this.tabMapLocation.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapJumpID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionX)).EndInit();
+            this.groupBox122.ResumeLayout(false);
+            this.groupBox122.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3RotX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2RotX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1RotX)).EndInit();
+            this.groupBox121.ResumeLayout(false);
+            this.groupBox121.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3RotX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2RotX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1RotX)).EndInit();
+            this.groupBox120.ResumeLayout(false);
+            this.groupBox120.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade3PosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade2PosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapBlade1PosX)).EndInit();
+            this.groupBox119.ResumeLayout(false);
+            this.groupBox119.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosZ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver3PosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).EndInit();
+            this.tabUnknown.ResumeLayout(false);
+            this.tabControl6.ResumeLayout(false);
+            this.tabUnkMain.ResumeLayout(false);
+            this.tabUnkMain.PerformLayout();
+            this.groupBox123.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudUnk_0x10AE93)).EndInit();
+            this.groupBox124.ResumeLayout(false);
+            this.groupBox125.ResumeLayout(false);
+            this.groupBox130.ResumeLayout(false);
+            this.groupBox126.ResumeLayout(false);
+            this.groupBox129.ResumeLayout(false);
+            this.groupBox127.ResumeLayout(false);
+            this.groupBox128.ResumeLayout(false);
+            this.tabUnk_0x1171E8.ResumeLayout(false);
+            this.tabUnk_0x117390.ResumeLayout(false);
+            this.tab150RawData.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.groupBox131.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            this.tabItemsSerials.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial16)).EndInit();
-            this.groupBox112.ResumeLayout(false);
-            this.groupBox112.PerformLayout();
-            this.groupBox113.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyMemberDriver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyLeader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPartyGauge)).EndInit();
-            this.groupBox114.ResumeLayout(false);
-            this.groupBox115.ResumeLayout(false);
-            this.groupBox116.ResumeLayout(false);
-            this.tabTigerTiger.ResumeLayout(false);
-            this.gourpBox119.ResumeLayout(false);
-            this.gourpBox119.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
-            this.groupBox117.ResumeLayout(false);
-            this.groupBox118.ResumeLayout(false);
+            this.tbc150RawData.ResumeLayout(false);
+            this.tab150RawDataUnk_0x1176A0.ResumeLayout(false);
+            this.tab150RawDataUnk_0x117728.ResumeLayout(false);
+            this.tab150RawDataUnk_0x117A4C.ResumeLayout(false);
+            this.tab150RawDataUnk_0x117D70.ResumeLayout(false);
+            this.tab150RawDataUnk_0x1186DC.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -15604,19 +17654,10 @@
         private System.Windows.Forms.Label lblss_field_4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtMapJumpId;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblsg_field_18;
         private System.Windows.Forms.Label lblsg_field_1C;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtMapPositionX;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtMapPositionZ;
-        private System.Windows.Forms.TextBox txtMapPositionY;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblsg_field_2C;
         private System.Windows.Forms.Label label21;
@@ -15747,7 +17788,7 @@
         private System.Windows.Forms.NumericUpDown nudMoney;
         private System.Windows.Forms.TabPage tabDrivers;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabControl tbcDrivers;
         private System.Windows.Forms.TabPage tabDriversMisc;
         private System.Windows.Forms.NumericUpDown nudDriverID;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -16742,6 +18783,140 @@
         private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x30;
         private System.Windows.Forms.GroupBox groupBox117;
         private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x00;
+        private System.Windows.Forms.TabPage tabMapLocation;
+        private System.Windows.Forms.Label label358;
+        private System.Windows.Forms.NumericUpDown nudMapMapJumpID;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1PosX;
+        private System.Windows.Forms.GroupBox groupBox119;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3PosY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2PosY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1PosY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3PosX;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2PosX;
+        private System.Windows.Forms.Label label364;
+        private System.Windows.Forms.Label label363;
+        private System.Windows.Forms.Label label362;
+        private System.Windows.Forms.Label label361;
+        private System.Windows.Forms.Label label360;
+        private System.Windows.Forms.Label label359;
+        private System.Windows.Forms.GroupBox groupBox122;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3RotY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2RotY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1RotY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3RotX;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2RotX;
+        private System.Windows.Forms.Label label377;
+        private System.Windows.Forms.Label label378;
+        private System.Windows.Forms.Label label379;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1RotX;
+        private System.Windows.Forms.Label label380;
+        private System.Windows.Forms.Label label381;
+        private System.Windows.Forms.Label label382;
+        private System.Windows.Forms.GroupBox groupBox121;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3RotY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2RotY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1RotZ;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1RotY;
+        private System.Windows.Forms.NumericUpDown nudMapDriver3RotX;
+        private System.Windows.Forms.NumericUpDown nudMapDriver2RotX;
+        private System.Windows.Forms.Label label371;
+        private System.Windows.Forms.Label label372;
+        private System.Windows.Forms.Label label373;
+        private System.Windows.Forms.NumericUpDown nudMapDriver1RotX;
+        private System.Windows.Forms.Label label374;
+        private System.Windows.Forms.Label label375;
+        private System.Windows.Forms.Label label376;
+        private System.Windows.Forms.GroupBox groupBox120;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3PosY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2PosY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1PosZ;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1PosY;
+        private System.Windows.Forms.NumericUpDown nudMapBlade3PosX;
+        private System.Windows.Forms.NumericUpDown nudMapBlade2PosX;
+        private System.Windows.Forms.Label label365;
+        private System.Windows.Forms.Label label366;
+        private System.Windows.Forms.Label label367;
+        private System.Windows.Forms.NumericUpDown nudMapBlade1PosX;
+        private System.Windows.Forms.Label label368;
+        private System.Windows.Forms.Label label369;
+        private System.Windows.Forms.Label label370;
+        private System.Windows.Forms.NumericUpDown nudLastVisitedLandmarkMapPositionZ;
+        private System.Windows.Forms.NumericUpDown nudLastVisitedLandmarkMapPositionY;
+        private System.Windows.Forms.NumericUpDown nudLastVisitedLandmarkMapPositionX;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown nudLastVisitedLandmarkMapJumpID;
+        private System.Windows.Forms.TabPage tabUnknown;
+        private System.Windows.Forms.TabPage tab150RawData;
+        private System.Windows.Forms.GroupBox groupBox123;
+        private Be.Windows.Forms.HexBox hbxUnk_0x000004;
+        private System.Windows.Forms.GroupBox groupBox127;
+        private Be.Windows.Forms.HexBox hbxUnk_0x1097FC;
+        private System.Windows.Forms.GroupBox groupBox126;
+        private Be.Windows.Forms.HexBox hbxUnk_0x00003A;
+        private System.Windows.Forms.GroupBox groupBox125;
+        private Be.Windows.Forms.HexBox hbxUnk_0x00002C;
+        private System.Windows.Forms.GroupBox groupBox124;
+        private Be.Windows.Forms.HexBox hbxUnk_0x000018;
+        private System.Windows.Forms.GroupBox groupBox128;
+        private Be.Windows.Forms.HexBox hbxUnk_0x1098C4;
+        private Be.Windows.Forms.HexBox hbxUnk_0x1171E8;
+        private System.Windows.Forms.GroupBox groupBox130;
+        private Be.Windows.Forms.HexBox hbxUnk_0x10AD62;
+        private System.Windows.Forms.GroupBox groupBox129;
+        private Be.Windows.Forms.HexBox hbxUnk_0x10AD74;
+        private Be.Windows.Forms.HexBox hbxUnk_0x117390;
+        private System.Windows.Forms.NumericUpDown nudUnk_0x10AE93;
+        private System.Windows.Forms.Label label383;
+        private System.Windows.Forms.TabControl tabControl6;
+        private System.Windows.Forms.TabPage tabUnkMain;
+        private System.Windows.Forms.TabPage tabUnk_0x1171E8;
+        private System.Windows.Forms.TabPage tabUnk_0x117390;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.GroupBox groupBox131;
+        private System.Windows.Forms.Label label384;
+        private System.Windows.Forms.TabPage tabDriver150;
+        private System.Windows.Forms.Label label391;
+        private System.Windows.Forms.GroupBox gbxDriverWeapons150;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArt150Id3;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArt150Id2;
+        private System.Windows.Forms.ComboBox cbxDriverWeaponArt150Id1;
+        private System.Windows.Forms.NumericUpDown nudDriverTotalWeaponPoints150;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponPoints150;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArt150Id3;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArt150Id2;
+        private System.Windows.Forms.NumericUpDown nudDriverWeaponArt150Id1;
+        private System.Windows.Forms.Label label385;
+        private System.Windows.Forms.Label label386;
+        private System.Windows.Forms.Label label387;
+        private System.Windows.Forms.Label label388;
+        private System.Windows.Forms.ComboBox cbxDriverWeapons150;
+        private System.Windows.Forms.Label label389;
+        private System.Windows.Forms.Label label390;
+        private System.Windows.Forms.TabControl tbc150RawData;
+        private System.Windows.Forms.TabPage tab150RawDataUnk_0x1176A0;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1176A0;
+        private System.Windows.Forms.TabPage tab150RawDataUnk_0x117728;
+        private System.Windows.Forms.TabPage tab150RawDataUnk_0x117A4C;
+        private System.Windows.Forms.TabPage tab150RawDataUnk_0x117D70;
+        private System.Windows.Forms.TabPage tab150RawDataUnk_0x1186DC;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117728;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117A4C;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117D70;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1186DC;
     }
 }
 

@@ -299,7 +299,7 @@ namespace XC2SaveNETThingy
             }
         }
 
-        public class SDataMap : IXC2SaveObject
+        public class MapData : IXC2SaveObject
         {
             public const int SIZE = 0xC4;
 
@@ -307,9 +307,9 @@ namespace XC2SaveNETThingy
             public Vec3Padded[] BladePositions { get; set; }
             public Vec3Padded[] DriverRotations { get; set; }
             public Vec3Padded[] BladeRotations { get; set; }
-            public UInt32 MapJumpId { get; set; }
+            public UInt32 MapJumpID { get; set; }
 
-            public SDataMap(Byte[] data)
+            public MapData(Byte[] data)
             {
                 DriverPositions = new Vec3Padded[3];
                 for (int i = 0; i < DriverPositions.Length; i++)
@@ -327,7 +327,7 @@ namespace XC2SaveNETThingy
                 for (int i = 0; i < BladeRotations.Length; i++)
                     BladeRotations[i] = new Vec3Padded(data.GetByteSubArray(0x90 + (i * Vec3Padded.SIZE), Vec3Padded.SIZE));
 
-                MapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(0xC0, 4), 0);
+                MapJumpID = BitConverter.ToUInt32(data.GetByteSubArray(0xC0, 4), 0);
             }
 
             public Byte[] ToRawData()
@@ -346,7 +346,7 @@ namespace XC2SaveNETThingy
                 foreach (Vec3Padded vp in BladeRotations)
                     result.AddRange(vp.ToRawData());
 
-                result.AddRange(BitConverter.GetBytes(MapJumpId));
+                result.AddRange(BitConverter.GetBytes(MapJumpID));
 
                 if (result.Count != SIZE)
                 {
@@ -845,19 +845,19 @@ namespace XC2SaveNETThingy
         };
 
         public UInt32 Magic { get; }
-        public UInt32 ss_field_4 { get; set; }
+        public Byte[] Unk_0x000004 { get; set; }
         public RealTime Time { get; set; }
         public UInt32 Money { get; set; }
-        public UInt32 MapJumpId { get; set; }
-        public UInt32 sg_field_18 { get; set; }
-        public UInt32 sg_field_1C { get; set; }
-        public Vec3 MapPosition { get; set; }
-        public float sg_field_2C { get; set; }
+        public UInt32 LastVisitedLandmarkMapJumpId { get; set; }
+        public Byte[] Unk_0x000018 { get; set; }
+        //public UInt32 sg_field_1C { get; set; }
+        public Vec3 LastVisitedLandmarkMapPosition { get; set; }
+        public Byte[] Unk_0x00002C { get; set; }
         public float LandmarkRotY { get; set; }
         public UInt16 isTimeStop { get; set; }
         public UInt16 ChapterSaveScenarioFlag { get; set; }
         public UInt16 ChapterSaveEventId { get; set; }
-        public UInt16 sg_field_3A { get; set; }
+        public Byte[] Unk_0x00003A { get; set; }
         public Driver[] Drivers { get; set; }
         public Blade[] Blades { get; set; }
         public XC2Party Party { get; set; }
@@ -867,9 +867,9 @@ namespace XC2SaveNETThingy
         public Byte[] Flags { get; set; }
         public UInt32 ScenarioQuest { get; set; }
         public UInt32 CurrentQuest { get; set; }
-        public UInt32 field_1097FC { get; set; }
-        public SDataMap Map { get; set; }
-        public Byte[] sg_gap_1098C4 { get; set; }
+        public Byte[] Unk_0x1097FC { get; set; }
+        public MapData Map { get; set; }
+        public Byte[] Unk_0x1098C4 { get; set; }
         public GameTime CurrentInGameTime { get; set; }
         public ElapseTime PlayTime { get; set; }
         public MercenaryTeam MercenaryTeam1 { get; set; }
@@ -891,10 +891,10 @@ namespace XC2SaveNETThingy
         public UInt32 AssurePoint { get; set; }
         public UInt32 AssureCount { get; set; }
         public UInt16 RareBladeAppearType { get; set; }
-        public UInt16 field_10AD62 { get; set; }
+        public Byte[] Unk_0x10AD62 { get; set; }
         public UInt32 CoinCount { get; set; }
         public UInt32[] SavedEnemyHp { get; set; }
-        public UInt32 field_10AD74 { get; set; }
+        public Byte[] Unk_0x10AD74 { get; set; }
         public RealTime Time2 { get; set; }
         public float CameraHeight { get; set; }
         public TigerTigerData TigerTiger { get; set; }
@@ -906,33 +906,37 @@ namespace XC2SaveNETThingy
         public Byte IsCollectFlagNewVersion { get; set; }
         public Byte IsEndGameSave { get; set; }
         public Byte CameraSide { get; set; }
-        public Byte gap_10AE93 { get; set; }
+        public Byte Unk_0x10AE93 { get; set; }
         public Event[] Events { get; set; }
         public UInt32 EventsLength { get; set; }
-        public Byte[] sg_gap1171E8 { get; set; }
-        public float sg_field_117378 { get; set; }
+        public Byte[] Unk_0x1171E8 { get; set; }
+        //public Byte[] sg_field_117378 { get; set; }
         public UInt32[] ContentVersions { get; set; }
-        public Byte[] sg_gap_117390 { get; set; }
-        public UInt32 sg_field_117698 { get; set; }
-        public UInt32 sg_field_11769C { get; set; }
+        public Byte[] Unk_0x117390 { get; set; }
+        //public UInt32 sg_field_117698 { get; set; }
+        //public UInt32 sg_field_11769C { get; set; }
 
         public const int SIZE = 0x1176A0;
         public XC2Save(Byte[] data)
         {
             Magic = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Magic"], 4), 0);
-            ss_field_4 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ss_field_4"], 4), 0);
+            //Unk_0x000004 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ss_field_4"], 4), 0);
+            Unk_0x000004 = data.GetByteSubArray(LOC["ss_field_4"], 4);
             Time = new RealTime(data.GetByteSubArray(LOC["Time"], RealTime.SIZE));
             Money = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Money"], 4), 0);
-            MapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MapJumpId"], 4), 0);
-            sg_field_18 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_18"], 4), 0);
-            sg_field_1C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_1C"], 4), 0);
-            MapPosition = new Vec3(data.GetByteSubArray(LOC["MapPosition"], Vec3.SIZE));
-            sg_field_2C = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_2C"], 4), 0);
+            LastVisitedLandmarkMapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MapJumpId"], 4), 0);
+            //Unk_0x000018 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_18"], 4), 0);
+            //sg_field_1C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_1C"], 4), 0);
+            Unk_0x000018 = data.GetByteSubArray(LOC["sg_field_18"], 8);
+            LastVisitedLandmarkMapPosition = new Vec3(data.GetByteSubArray(LOC["MapPosition"], Vec3.SIZE));
+            //Unk_0x00002C = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_2C"], 4), 0);
+            Unk_0x00002C = data.GetByteSubArray(LOC["sg_field_2C"], 4);
             LandmarkRotY = BitConverter.ToSingle(data.GetByteSubArray(LOC["LandmarkRotY"], 4), 0);
             isTimeStop = BitConverter.ToUInt16(data.GetByteSubArray(LOC["isTimeStop"], 2), 0);
             ChapterSaveScenarioFlag = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveScenarioFlag"], 2), 0);
             ChapterSaveEventId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveEventId"], 2), 0);
-            sg_field_3A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["sg_field_3A"], 2), 0);
+            //Unk_0x00003A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["sg_field_3A"], 2), 0);
+            Unk_0x00003A = data.GetByteSubArray(LOC["sg_field_3A"], 2);
 
             Drivers = new Driver[16];
             for (int i = 0; i < Drivers.Length; i++)
@@ -947,9 +951,10 @@ namespace XC2SaveNETThingy
             Flags = data.GetByteSubArray(LOC["Flags"], 0xDC20);
             ScenarioQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ScenarioQuest"], 4), 0);
             CurrentQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CurrentQuest"], 4), 0);
-            field_1097FC = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_1097FC"], 4), 0);
-            Map = new SDataMap(data.GetByteSubArray(LOC["Map"], SDataMap.SIZE));
-            sg_gap_1098C4 = data.GetByteSubArray(LOC["sg_gap_1098C4"], 12);
+            //Unk_0x1097FC = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_1097FC"], 4), 0);
+            Unk_0x1097FC = data.GetByteSubArray(LOC["field_1097FC"], 4);
+            Map = new MapData(data.GetByteSubArray(LOC["Map"], MapData.SIZE));
+            Unk_0x1098C4 = data.GetByteSubArray(LOC["sg_gap_1098C4"], 12);
             CurrentInGameTime = new GameTime(data.GetByteSubArray(LOC["CurrentInGameTime"], GameTime.SIZE));
             PlayTime = new ElapseTime(data.GetByteSubArray(LOC["PlayTime"], ElapseTime.SIZE));
             MercenaryTeam1 = new MercenaryTeam(data.GetByteSubArray(LOC["MercenaryTeam1"], MercenaryTeam.SIZE));
@@ -990,14 +995,16 @@ namespace XC2SaveNETThingy
             AssurePoint = BitConverter.ToUInt32(data.GetByteSubArray(LOC["AssurePoint"], 4), 0);
             AssureCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["AssureCount"], 4), 0);
             RareBladeAppearType = BitConverter.ToUInt16(data.GetByteSubArray(LOC["RareBladeAppearType"], 4), 0);
-            field_10AD62 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_10AD62"], 4), 0);
+            //Unk_0x10AD62 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_10AD62"], 2), 0);
+            Unk_0x10AD62 = data.GetByteSubArray(LOC["field_10AD62"], 2);
             CoinCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CoinCount"], 4), 0);
 
             SavedEnemyHp = new UInt32[3];
             for (int i = 0; i < SavedEnemyHp.Length; i++)
                 SavedEnemyHp[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SavedEnemyHp"] + (i * 4), 4), 0);
 
-            field_10AD74 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_10AD74"], 4), 0);
+            //Unk_0x10AD74 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_10AD74"], 4), 0);
+            Unk_0x10AD74 = data.GetByteSubArray(LOC["field_10AD74"], 4);
             Time2 = new RealTime(data.GetByteSubArray(LOC["Time2"], RealTime.SIZE));
             CameraHeight = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraHeight"], 4), 0);
             TigerTiger = new TigerTigerData(data.GetByteSubArray(LOC["TigerTigerData"], TigerTigerData.SIZE));
@@ -1009,23 +1016,25 @@ namespace XC2SaveNETThingy
             IsCollectFlagNewVersion = data[LOC["IsCollectFlagNewVersion"]];
             IsEndGameSave = data[LOC["IsEndGameSave"]];
             CameraSide = data[LOC["CameraSide"]];
-            gap_10AE93 = data[LOC["gap_10AE93"]];
+            Unk_0x10AE93 = data[LOC["gap_10AE93"]];
 
             Events = new Event[500];
             for (int i = 0; i < Events.Length; i++)
                 Events[i] = new Event(data.GetByteSubArray(LOC["Events"] + (i * Event.SIZE), Event.SIZE));
 
             EventsLength = BitConverter.ToUInt32(data.GetByteSubArray(LOC["EventsLength"], 4), 0);
-            sg_gap1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 400);
-            sg_field_117378 = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_117378"], 4), 0);
+            //Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 400);
+            //sg_field_117378 = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_117378"], 4), 0);
+            Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 404);
 
             ContentVersions = new UInt32[5];
             for (int i = 0; i < ContentVersions.Length; i++)
                 ContentVersions[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ContentVersions"] + (i * 4), 4), 0);
 
-            sg_gap_117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 776);
-            sg_field_117698 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_117698"], 4), 0);
-            sg_field_11769C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_11769C"], 4), 0);
+            //Unk_0x117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 776);
+            //sg_field_117698 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_117698"], 4), 0);
+            //sg_field_11769C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_11769C"], 4), 0);
+            Unk_0x117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 784);
         }
 
         public virtual byte[] ToRawData()
@@ -1033,19 +1042,23 @@ namespace XC2SaveNETThingy
             List<Byte> result = new List<byte>();
 
             result.AddRange(BitConverter.GetBytes(Magic));
-            result.AddRange(BitConverter.GetBytes(ss_field_4));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x000004));
+            result.AddRange(Unk_0x000004);
             result.AddRange(Time.ToRawData());
             result.AddRange(BitConverter.GetBytes(Money));
-            result.AddRange(BitConverter.GetBytes(MapJumpId));
-            result.AddRange(BitConverter.GetBytes(sg_field_18));
-            result.AddRange(BitConverter.GetBytes(sg_field_1C));
-            result.AddRange(MapPosition.ToRawData());
-            result.AddRange(BitConverter.GetBytes(sg_field_2C));
+            result.AddRange(BitConverter.GetBytes(LastVisitedLandmarkMapJumpId));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x000018));
+            //result.AddRange(BitConverter.GetBytes(sg_field_1C));
+            result.AddRange(Unk_0x000018);
+            result.AddRange(LastVisitedLandmarkMapPosition.ToRawData());
+            //result.AddRange(BitConverter.GetBytes(Unk_0x00002C));
+            result.AddRange(Unk_0x00002C);
             result.AddRange(BitConverter.GetBytes(LandmarkRotY));
             result.AddRange(BitConverter.GetBytes(isTimeStop));
             result.AddRange(BitConverter.GetBytes(ChapterSaveScenarioFlag));
             result.AddRange(BitConverter.GetBytes(ChapterSaveEventId));
-            result.AddRange(BitConverter.GetBytes(sg_field_3A));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x00003A));
+            result.AddRange(Unk_0x00003A);
 
             foreach (Driver d in Drivers)
                 result.AddRange(d.ToRawData());
@@ -1058,9 +1071,10 @@ namespace XC2SaveNETThingy
             result.AddRange(Flags);
             result.AddRange(BitConverter.GetBytes(ScenarioQuest));
             result.AddRange(BitConverter.GetBytes(CurrentQuest));
-            result.AddRange(BitConverter.GetBytes(field_1097FC));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x1097FC));
+            result.AddRange(Unk_0x1097FC);
             result.AddRange(Map.ToRawData());
-            result.AddRange(sg_gap_1098C4);
+            result.AddRange(Unk_0x1098C4);
             result.AddRange(CurrentInGameTime.ToRawData());
             result.AddRange(PlayTime.ToRawData());
             result.AddRange(MercenaryTeam1.ToRawData());
@@ -1097,13 +1111,15 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(AssurePoint));
             result.AddRange(BitConverter.GetBytes(AssureCount));
             result.AddRange(BitConverter.GetBytes(RareBladeAppearType));
-            result.AddRange(BitConverter.GetBytes(field_10AD62));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x10AD62));
+            result.AddRange(Unk_0x10AD62);
             result.AddRange(BitConverter.GetBytes(CoinCount));
 
             foreach (UInt32 u in SavedEnemyHp)
                 result.AddRange(BitConverter.GetBytes(u));
 
-            result.AddRange(BitConverter.GetBytes(field_10AD74));
+            //result.AddRange(BitConverter.GetBytes(Unk_0x10AD74));
+            result.AddRange(Unk_0x10AD74);
             result.AddRange(Time2.ToRawData());
             result.AddRange(BitConverter.GetBytes(CameraHeight));
             result.AddRange(TigerTiger.ToRawData());
@@ -1116,21 +1132,21 @@ namespace XC2SaveNETThingy
             result.Add(IsEndGameSave);
 
             result.Add(CameraSide);
-            result.Add(gap_10AE93);
+            result.Add(Unk_0x10AE93);
 
             foreach (Event e in Events)
                 result.AddRange(e.ToRawData());
 
             result.AddRange(BitConverter.GetBytes(EventsLength));
-            result.AddRange(sg_gap1171E8);
-            result.AddRange(BitConverter.GetBytes(sg_field_117378));
+            result.AddRange(Unk_0x1171E8);
+            //result.AddRange(BitConverter.GetBytes(sg_field_117378));
 
             foreach (UInt32 u in ContentVersions)
                 result.AddRange(BitConverter.GetBytes(u));
 
-            result.AddRange(sg_gap_117390);
-            result.AddRange(BitConverter.GetBytes(sg_field_117698));
-            result.AddRange(BitConverter.GetBytes(sg_field_11769C));
+            result.AddRange(Unk_0x117390);
+            //result.AddRange(BitConverter.GetBytes(sg_field_117698));
+            //result.AddRange(BitConverter.GetBytes(sg_field_11769C));
 
             if (result.Count != SIZE)
             {
@@ -1148,19 +1164,88 @@ namespace XC2SaveNETThingy
     public class XC2Save150 : XC2Save, IXC2SaveObject
     {
         public new const int SIZE = 0x126D90;
+
+        // ALL PROVISIONAL, SUPER HACKY
+        // 1.5.0+ DATA NEEDS TO BE FIGURED OUT
         public Byte[] Unk_0x1176A0 { get; set; }
+        public Driver.Weapon[] Driver1Weapons150 { get; set; }
+        public Byte[] Unk_0x117728 { get; set; }
+        public Driver.Weapon[] Driver2Weapons150 { get; set; }
+        public Byte[] Unk_0x117A4C { get; set; }
+        public Driver.Weapon[] Driver3Weapons150 { get; set; }
+        public Byte[] Unk_0x117D70 { get; set; }
+        public Driver.Weapon[] Driver6Weapons150 { get; set; }
+        public Byte[] Unk_0x1186DC { get; set; }
+
+        private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
+        {
+            { "Unk_0x1176A0", 0x1176A0 },
+            { "Driver1Weapons150", 0x117700 },
+            { "Unk_0x117728", 0x117728 },
+            { "Driver2Weapons150", 0x117A24 },
+            { "Unk_0x117A4C", 0x117A4C },
+            { "Driver3Weapons150", 0x117D48 },
+            { "Unk_0x117D70", 0x117D70 },
+            { "Driver6Weapons150", 0x1186B4 },
+            { "Unk_0x1186DC", 0x1186DC }
+        };
 
         public XC2Save150(Byte[] data) : base(data)
         {
-            Unk_0x1176A0 = data.GetByteSubArray(0x1176A0, SIZE - XC2Save.SIZE);
+            Unk_0x1176A0 = data.GetByteSubArray(LOC["Unk_0x1176A0"], 0x60);
+
+            Driver1Weapons150 = new Driver.Weapon[2];
+            for (int i = 0; i < Driver1Weapons150.Length; i++)
+                Driver1Weapons150[i] = new Driver.Weapon(data.GetByteSubArray(LOC["Driver1Weapons150"] + (i * Driver.Weapon.SIZE), Driver.Weapon.SIZE));
+
+            Unk_0x117728 = data.GetByteSubArray(LOC["Unk_0x117728"], 0x2FC);
+
+            Driver2Weapons150 = new Driver.Weapon[2];
+            for (int i = 0; i < Driver2Weapons150.Length; i++)
+                Driver2Weapons150[i] = new Driver.Weapon(data.GetByteSubArray(LOC["Driver2Weapons150"] + (i * Driver.Weapon.SIZE), Driver.Weapon.SIZE));
+
+            Unk_0x117A4C = data.GetByteSubArray(LOC["Unk_0x117A4C"], 0x2FC);
+
+            Driver3Weapons150 = new Driver.Weapon[2];
+            for (int i = 0; i < Driver3Weapons150.Length; i++)
+                Driver3Weapons150[i] = new Driver.Weapon(data.GetByteSubArray(LOC["Driver3Weapons150"] + (i * Driver.Weapon.SIZE), Driver.Weapon.SIZE));
+
+            Unk_0x117D70 = data.GetByteSubArray(LOC["Unk_0x117D70"], 0x944);
+
+            Driver6Weapons150 = new Driver.Weapon[2];
+            for (int i = 0; i < Driver6Weapons150.Length; i++)
+                Driver6Weapons150[i] = new Driver.Weapon(data.GetByteSubArray(LOC["Driver6Weapons150"] + (i * Driver.Weapon.SIZE), Driver.Weapon.SIZE));
+
+            Unk_0x1186DC = data.GetByteSubArray(LOC["Unk_0x1186DC"], 0xE6B4);
         }
 
         public override Byte[] ToRawData()
         {
+            
             List<Byte> result = new List<Byte>();
 
             result.AddRange(base.ToRawData());
             result.AddRange(Unk_0x1176A0);
+
+            foreach (Driver.Weapon w in Driver1Weapons150)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x117728);
+
+            foreach (Driver.Weapon w in Driver2Weapons150)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x117A4C);
+
+            foreach (Driver.Weapon w in Driver3Weapons150)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x117D70);
+
+            foreach (Driver.Weapon w in Driver6Weapons150)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x1186DC);
 
             if (result.Count != SIZE)
             {
