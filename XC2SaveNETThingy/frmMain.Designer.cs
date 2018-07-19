@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,15 +52,8 @@
             this.txtTimeMonth = new System.Windows.Forms.TextBox();
             this.txtTimeYear = new System.Windows.Forms.TextBox();
             this.lblMagic = new System.Windows.Forms.Label();
-            this.lblss_field_4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblsg_field_18 = new System.Windows.Forms.Label();
-            this.lblsg_field_1C = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblsg_field_2C = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lblLandmarkRotY = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -70,8 +62,6 @@
             this.lblChapterSaveScenarioFlag = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.lblChapterSaveEventId = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.lblsg_field_3A = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
             this.lblPlayTime = new System.Windows.Forms.Label();
@@ -427,6 +417,7 @@
             this.cbxBladeFavoriteItem1 = new System.Windows.Forms.ComboBox();
             this.cbxBladeFavoriteCategory1 = new System.Windows.Forms.ComboBox();
             this.groupBox104 = new System.Windows.Forms.GroupBox();
+            this.cbxBladeRareNameID = new System.Windows.Forms.ComboBox();
             this.cbxBladeDefWeapon = new System.Windows.Forms.ComboBox();
             this.label291 = new System.Windows.Forms.Label();
             this.nudBladeDefWeapon = new System.Windows.Forms.NumericUpDown();
@@ -1275,6 +1266,129 @@
             this.label359 = new System.Windows.Forms.Label();
             this.label358 = new System.Windows.Forms.Label();
             this.nudMapMapJumpID = new System.Windows.Forms.NumericUpDown();
+            this.tabMercGroups = new System.Windows.Forms.TabPage();
+            this.groupBox144 = new System.Windows.Forms.GroupBox();
+            this.label429 = new System.Windows.Forms.Label();
+            this.nudMercGroupPresetMember6 = new System.Windows.Forms.NumericUpDown();
+            this.label428 = new System.Windows.Forms.Label();
+            this.nudMercGroupPresetMember5 = new System.Windows.Forms.NumericUpDown();
+            this.label427 = new System.Windows.Forms.Label();
+            this.nudMercGroupPresetMember1 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroupPresetMember4 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroupPresetMember2 = new System.Windows.Forms.NumericUpDown();
+            this.label424 = new System.Windows.Forms.Label();
+            this.nudMercGroupPresetMember3 = new System.Windows.Forms.NumericUpDown();
+            this.label425 = new System.Windows.Forms.Label();
+            this.label426 = new System.Windows.Forms.Label();
+            this.nudMercGroupsCount = new System.Windows.Forms.NumericUpDown();
+            this.label423 = new System.Windows.Forms.Label();
+            this.groupBox140 = new System.Windows.Forms.GroupBox();
+            this.label422 = new System.Windows.Forms.Label();
+            this.label421 = new System.Windows.Forms.Label();
+            this.groupBox141 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup3Unk_0x24 = new Be.Windows.Forms.HexBox();
+            this.groupBox142 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup3Unk_0x0C = new Be.Windows.Forms.HexBox();
+            this.groupBox143 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup3Unk_0x18 = new Be.Windows.Forms.HexBox();
+            this.nudMercGroup3OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label407 = new System.Windows.Forms.Label();
+            this.nudMercGroup3MissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label408 = new System.Windows.Forms.Label();
+            this.nudMercGroup3MissionID = new System.Windows.Forms.NumericUpDown();
+            this.label409 = new System.Windows.Forms.Label();
+            this.nudMercGroup3TeamID = new System.Windows.Forms.NumericUpDown();
+            this.label410 = new System.Windows.Forms.Label();
+            this.cbxMercGroup3Blade6 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup3Blade5 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup3Blade6 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup3Blade5 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup3Blade4 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup3Blade4 = new System.Windows.Forms.NumericUpDown();
+            this.label411 = new System.Windows.Forms.Label();
+            this.label412 = new System.Windows.Forms.Label();
+            this.label413 = new System.Windows.Forms.Label();
+            this.cbxMercGroup3Blade3 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup3Blade2 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup3Blade3 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup3Blade2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup3Blade1 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup3Blade1 = new System.Windows.Forms.NumericUpDown();
+            this.label414 = new System.Windows.Forms.Label();
+            this.label415 = new System.Windows.Forms.Label();
+            this.label416 = new System.Windows.Forms.Label();
+            this.groupBox136 = new System.Windows.Forms.GroupBox();
+            this.label420 = new System.Windows.Forms.Label();
+            this.label419 = new System.Windows.Forms.Label();
+            this.groupBox137 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup2Unk_0x24 = new Be.Windows.Forms.HexBox();
+            this.groupBox138 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup2Unk_0x0C = new Be.Windows.Forms.HexBox();
+            this.groupBox139 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup2Unk_0x18 = new Be.Windows.Forms.HexBox();
+            this.nudMercGroup2OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label397 = new System.Windows.Forms.Label();
+            this.nudMercGroup2MissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label398 = new System.Windows.Forms.Label();
+            this.nudMercGroup2MissionID = new System.Windows.Forms.NumericUpDown();
+            this.label399 = new System.Windows.Forms.Label();
+            this.nudMercGroup2TeamID = new System.Windows.Forms.NumericUpDown();
+            this.label400 = new System.Windows.Forms.Label();
+            this.cbxMercGroup2Blade6 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup2Blade5 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup2Blade6 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup2Blade5 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup2Blade4 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup2Blade4 = new System.Windows.Forms.NumericUpDown();
+            this.label401 = new System.Windows.Forms.Label();
+            this.label402 = new System.Windows.Forms.Label();
+            this.label403 = new System.Windows.Forms.Label();
+            this.cbxMercGroup2Blade3 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup2Blade2 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup2Blade3 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup2Blade2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup2Blade1 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup2Blade1 = new System.Windows.Forms.NumericUpDown();
+            this.label404 = new System.Windows.Forms.Label();
+            this.label405 = new System.Windows.Forms.Label();
+            this.label406 = new System.Windows.Forms.Label();
+            this.groupBox132 = new System.Windows.Forms.GroupBox();
+            this.label418 = new System.Windows.Forms.Label();
+            this.label417 = new System.Windows.Forms.Label();
+            this.groupBox135 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup1Unk_0x24 = new Be.Windows.Forms.HexBox();
+            this.groupBox134 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup1Unk_0x0C = new Be.Windows.Forms.HexBox();
+            this.groupBox133 = new System.Windows.Forms.GroupBox();
+            this.hbxMercGroup1Unk_0x18 = new Be.Windows.Forms.HexBox();
+            this.nudMercGroup1OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label396 = new System.Windows.Forms.Label();
+            this.nudMercGroup1MissionTime = new System.Windows.Forms.NumericUpDown();
+            this.label395 = new System.Windows.Forms.Label();
+            this.nudMercGroup1MissionID = new System.Windows.Forms.NumericUpDown();
+            this.label394 = new System.Windows.Forms.Label();
+            this.nudMercGroup1TeamID = new System.Windows.Forms.NumericUpDown();
+            this.label393 = new System.Windows.Forms.Label();
+            this.cbxMercGroup1Blade6 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup1Blade5 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup1Blade6 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup1Blade5 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup1Blade4 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup1Blade4 = new System.Windows.Forms.NumericUpDown();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label392 = new System.Windows.Forms.Label();
+            this.cbxMercGroup1Blade3 = new System.Windows.Forms.ComboBox();
+            this.cbxMercGroup1Blade2 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup1Blade3 = new System.Windows.Forms.NumericUpDown();
+            this.nudMercGroup1Blade2 = new System.Windows.Forms.NumericUpDown();
+            this.cbxMercGroup1Blade1 = new System.Windows.Forms.ComboBox();
+            this.nudMercGroup1Blade1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tabFlags = new System.Windows.Forms.TabPage();
+            this.hbxFlags = new Be.Windows.Forms.HexBox();
             this.tabUnknown = new System.Windows.Forms.TabPage();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tabUnkMain = new System.Windows.Forms.TabPage();
@@ -1304,21 +1418,23 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.label384 = new System.Windows.Forms.Label();
             this.groupBox131 = new System.Windows.Forms.GroupBox();
+            this.tbc150RawData = new System.Windows.Forms.TabControl();
+            this.tab150RawDataUnk_0x1176A0 = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
+            this.tab150RawDataUnk_0x117728 = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x117728 = new Be.Windows.Forms.HexBox();
+            this.tab150RawDataUnk_0x117A4C = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x117A4C = new Be.Windows.Forms.HexBox();
+            this.tab150RawDataUnk_0x117D70 = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x117D70 = new Be.Windows.Forms.HexBox();
+            this.tab150RawDataUnk_0x1186DC = new System.Windows.Forms.TabPage();
+            this.hbx150RawDataUnk_0x1186DC = new Be.Windows.Forms.HexBox();
             this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.tbc150RawData = new System.Windows.Forms.TabControl();
-            this.tab150RawDataUnk_0x1176A0 = new System.Windows.Forms.TabPage();
-            this.tab150RawDataUnk_0x117728 = new System.Windows.Forms.TabPage();
-            this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
-            this.tab150RawDataUnk_0x117A4C = new System.Windows.Forms.TabPage();
-            this.tab150RawDataUnk_0x117D70 = new System.Windows.Forms.TabPage();
-            this.tab150RawDataUnk_0x1186DC = new System.Windows.Forms.TabPage();
-            this.hbx150RawDataUnk_0x117728 = new Be.Windows.Forms.HexBox();
-            this.hbx150RawDataUnk_0x117A4C = new Be.Windows.Forms.HexBox();
-            this.hbx150RawDataUnk_0x117D70 = new Be.Windows.Forms.HexBox();
-            this.hbx150RawDataUnk_0x1186DC = new Be.Windows.Forms.HexBox();
+            this.cbxMercGroupPresets = new System.Windows.Forms.ComboBox();
+            this.label430 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
@@ -1903,6 +2019,58 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).BeginInit();
+            this.tabMercGroups.SuspendLayout();
+            this.groupBox144.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupsCount)).BeginInit();
+            this.groupBox140.SuspendLayout();
+            this.groupBox141.SuspendLayout();
+            this.groupBox142.SuspendLayout();
+            this.groupBox143.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3OriginalMissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3TeamID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade1)).BeginInit();
+            this.groupBox136.SuspendLayout();
+            this.groupBox137.SuspendLayout();
+            this.groupBox138.SuspendLayout();
+            this.groupBox139.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2OriginalMissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2TeamID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade1)).BeginInit();
+            this.groupBox132.SuspendLayout();
+            this.groupBox135.SuspendLayout();
+            this.groupBox134.SuspendLayout();
+            this.groupBox133.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1OriginalMissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1TeamID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).BeginInit();
+            this.tabFlags.SuspendLayout();
             this.tabUnknown.SuspendLayout();
             this.tabControl6.SuspendLayout();
             this.tabUnkMain.SuspendLayout();
@@ -1923,16 +2091,16 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this.groupBox131.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.tbc150RawData.SuspendLayout();
             this.tab150RawDataUnk_0x1176A0.SuspendLayout();
             this.tab150RawDataUnk_0x117728.SuspendLayout();
             this.tab150RawDataUnk_0x117A4C.SuspendLayout();
             this.tab150RawDataUnk_0x117D70.SuspendLayout();
             this.tab150RawDataUnk_0x1186DC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -1953,15 +2121,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Magic:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ss_field_4:";
             // 
             // label4
             // 
@@ -2152,15 +2311,6 @@
             this.lblMagic.TabIndex = 8;
             this.lblMagic.Text = "label12";
             // 
-            // lblss_field_4
-            // 
-            this.lblss_field_4.AutoSize = true;
-            this.lblss_field_4.Location = new System.Drawing.Point(120, 52);
-            this.lblss_field_4.Name = "lblss_field_4";
-            this.lblss_field_4.Size = new System.Drawing.Size(41, 13);
-            this.lblss_field_4.TabIndex = 9;
-            this.lblss_field_4.Text = "label12";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -2178,60 +2328,6 @@
             this.label13.Size = new System.Drawing.Size(15, 13);
             this.label13.TabIndex = 12;
             this.label13.Text = "G";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(50, 146);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(64, 13);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "sg_field_18:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(50, 163);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "sg_field_1C:";
-            // 
-            // lblsg_field_18
-            // 
-            this.lblsg_field_18.AutoSize = true;
-            this.lblsg_field_18.Location = new System.Drawing.Point(119, 146);
-            this.lblsg_field_18.Name = "lblsg_field_18";
-            this.lblsg_field_18.Size = new System.Drawing.Size(41, 13);
-            this.lblsg_field_18.TabIndex = 17;
-            this.lblsg_field_18.Text = "label17";
-            // 
-            // lblsg_field_1C
-            // 
-            this.lblsg_field_1C.AutoSize = true;
-            this.lblsg_field_1C.Location = new System.Drawing.Point(123, 168);
-            this.lblsg_field_1C.Name = "lblsg_field_1C";
-            this.lblsg_field_1C.Size = new System.Drawing.Size(41, 13);
-            this.lblsg_field_1C.TabIndex = 18;
-            this.lblsg_field_1C.Text = "label17";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(50, 193);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(65, 13);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "sg_field_2C:";
-            // 
-            // lblsg_field_2C
-            // 
-            this.lblsg_field_2C.AutoSize = true;
-            this.lblsg_field_2C.Location = new System.Drawing.Point(126, 194);
-            this.lblsg_field_2C.Name = "lblsg_field_2C";
-            this.lblsg_field_2C.Size = new System.Drawing.Size(41, 13);
-            this.lblsg_field_2C.TabIndex = 21;
-            this.lblsg_field_2C.Text = "label21";
             // 
             // label21
             // 
@@ -2305,24 +2401,6 @@
             this.lblChapterSaveEventId.TabIndex = 29;
             this.lblChapterSaveEventId.Text = "label25";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(284, 441);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(65, 13);
-            this.label25.TabIndex = 30;
-            this.label25.Text = "sg_field_3A:";
-            // 
-            // lblsg_field_3A
-            // 
-            this.lblsg_field_3A.AutoSize = true;
-            this.lblsg_field_3A.Location = new System.Drawing.Point(369, 441);
-            this.lblsg_field_3A.Name = "lblsg_field_3A";
-            this.lblsg_field_3A.Size = new System.Drawing.Size(41, 13);
-            this.lblsg_field_3A.TabIndex = 31;
-            this.lblsg_field_3A.Text = "label26";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabMain);
@@ -2331,6 +2409,8 @@
             this.tabControl1.Controls.Add(this.tabItems);
             this.tabControl1.Controls.Add(this.tabTigerTiger);
             this.tabControl1.Controls.Add(this.tabMapLocation);
+            this.tabControl1.Controls.Add(this.tabMercGroups);
+            this.tabControl1.Controls.Add(this.tabFlags);
             this.tabControl1.Controls.Add(this.tabUnknown);
             this.tabControl1.Controls.Add(this.tab150RawData);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2348,28 +2428,18 @@
             this.tabMain.Controls.Add(this.nudMoney);
             this.tabMain.Controls.Add(this.groupBox11);
             this.tabMain.Controls.Add(this.groupBox1);
-            this.tabMain.Controls.Add(this.lblsg_field_3A);
             this.tabMain.Controls.Add(this.label1);
-            this.tabMain.Controls.Add(this.label25);
-            this.tabMain.Controls.Add(this.label2);
             this.tabMain.Controls.Add(this.lblChapterSaveEventId);
             this.tabMain.Controls.Add(this.lblMagic);
             this.tabMain.Controls.Add(this.label24);
-            this.tabMain.Controls.Add(this.lblss_field_4);
             this.tabMain.Controls.Add(this.lblChapterSaveScenarioFlag);
             this.tabMain.Controls.Add(this.label12);
             this.tabMain.Controls.Add(this.label23);
             this.tabMain.Controls.Add(this.lblIsTimeStopped);
             this.tabMain.Controls.Add(this.label13);
             this.tabMain.Controls.Add(this.label22);
-            this.tabMain.Controls.Add(this.label15);
             this.tabMain.Controls.Add(this.lblLandmarkRotY);
-            this.tabMain.Controls.Add(this.label16);
             this.tabMain.Controls.Add(this.label21);
-            this.tabMain.Controls.Add(this.lblsg_field_18);
-            this.tabMain.Controls.Add(this.lblsg_field_2C);
-            this.tabMain.Controls.Add(this.lblsg_field_1C);
-            this.tabMain.Controls.Add(this.label20);
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
@@ -3836,7 +3906,7 @@
             0,
             0});
             this.nudDriverBlade3.Name = "nudDriverBlade3";
-            this.nudDriverBlade3.Size = new System.Drawing.Size(47, 20);
+            this.nudDriverBlade3.Size = new System.Drawing.Size(48, 20);
             this.nudDriverBlade3.TabIndex = 15;
             this.nudDriverBlade3.ValueChanged += new System.EventHandler(this.nudDriverBlade3_ValueChanged);
             // 
@@ -6383,6 +6453,7 @@
             // 
             // groupBox104
             // 
+            this.groupBox104.Controls.Add(this.cbxBladeRareNameID);
             this.groupBox104.Controls.Add(this.cbxBladeDefWeapon);
             this.groupBox104.Controls.Add(this.label291);
             this.groupBox104.Controls.Add(this.nudBladeDefWeapon);
@@ -6430,6 +6501,15 @@
             this.groupBox104.TabIndex = 236;
             this.groupBox104.TabStop = false;
             this.groupBox104.Text = "Misc";
+            // 
+            // cbxBladeRareNameID
+            // 
+            this.cbxBladeRareNameID.FormattingEnabled = true;
+            this.cbxBladeRareNameID.Location = new System.Drawing.Point(399, 100);
+            this.cbxBladeRareNameID.Name = "cbxBladeRareNameID";
+            this.cbxBladeRareNameID.Size = new System.Drawing.Size(103, 21);
+            this.cbxBladeRareNameID.TabIndex = 279;
+            this.cbxBladeRareNameID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeRareNameID_SelectionChangeCommitted);
             // 
             // cbxBladeDefWeapon
             // 
@@ -16413,6 +16493,1399 @@
             this.nudMapMapJumpID.TabIndex = 8;
             this.nudMapMapJumpID.ValueChanged += new System.EventHandler(this.nudMapMapJumpID_ValueChanged);
             // 
+            // tabMercGroups
+            // 
+            this.tabMercGroups.Controls.Add(this.groupBox144);
+            this.tabMercGroups.Controls.Add(this.nudMercGroupsCount);
+            this.tabMercGroups.Controls.Add(this.label423);
+            this.tabMercGroups.Controls.Add(this.groupBox140);
+            this.tabMercGroups.Controls.Add(this.groupBox136);
+            this.tabMercGroups.Controls.Add(this.groupBox132);
+            this.tabMercGroups.Location = new System.Drawing.Point(4, 22);
+            this.tabMercGroups.Name = "tabMercGroups";
+            this.tabMercGroups.Size = new System.Drawing.Size(1134, 581);
+            this.tabMercGroups.TabIndex = 9;
+            this.tabMercGroups.Text = "Merc Groups";
+            this.tabMercGroups.UseVisualStyleBackColor = true;
+            // 
+            // groupBox144
+            // 
+            this.groupBox144.Controls.Add(this.label430);
+            this.groupBox144.Controls.Add(this.cbxMercGroupPresets);
+            this.groupBox144.Controls.Add(this.label429);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember6);
+            this.groupBox144.Controls.Add(this.label428);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember5);
+            this.groupBox144.Controls.Add(this.label427);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember1);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember4);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember2);
+            this.groupBox144.Controls.Add(this.label424);
+            this.groupBox144.Controls.Add(this.nudMercGroupPresetMember3);
+            this.groupBox144.Controls.Add(this.label425);
+            this.groupBox144.Controls.Add(this.label426);
+            this.groupBox144.Location = new System.Drawing.Point(748, 51);
+            this.groupBox144.Name = "groupBox144";
+            this.groupBox144.Size = new System.Drawing.Size(140, 188);
+            this.groupBox144.TabIndex = 162;
+            this.groupBox144.TabStop = false;
+            this.groupBox144.Text = "Merc Group Presets";
+            // 
+            // label429
+            // 
+            this.label429.AutoSize = true;
+            this.label429.Location = new System.Drawing.Point(12, 54);
+            this.label429.Name = "label429";
+            this.label429.Size = new System.Drawing.Size(57, 13);
+            this.label429.TabIndex = 160;
+            this.label429.Text = "Member 1:";
+            // 
+            // nudMercGroupPresetMember6
+            // 
+            this.nudMercGroupPresetMember6.Location = new System.Drawing.Point(75, 152);
+            this.nudMercGroupPresetMember6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember6.Name = "nudMercGroupPresetMember6";
+            this.nudMercGroupPresetMember6.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember6.TabIndex = 175;
+            this.nudMercGroupPresetMember6.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember6_ValueChanged);
+            // 
+            // label428
+            // 
+            this.label428.AutoSize = true;
+            this.label428.Location = new System.Drawing.Point(12, 74);
+            this.label428.Name = "label428";
+            this.label428.Size = new System.Drawing.Size(57, 13);
+            this.label428.TabIndex = 161;
+            this.label428.Text = "Member 2:";
+            // 
+            // nudMercGroupPresetMember5
+            // 
+            this.nudMercGroupPresetMember5.Location = new System.Drawing.Point(75, 132);
+            this.nudMercGroupPresetMember5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember5.Name = "nudMercGroupPresetMember5";
+            this.nudMercGroupPresetMember5.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember5.TabIndex = 174;
+            this.nudMercGroupPresetMember5.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember5_ValueChanged);
+            // 
+            // label427
+            // 
+            this.label427.AutoSize = true;
+            this.label427.Location = new System.Drawing.Point(12, 93);
+            this.label427.Name = "label427";
+            this.label427.Size = new System.Drawing.Size(57, 13);
+            this.label427.TabIndex = 162;
+            this.label427.Text = "Member 3:";
+            // 
+            // nudMercGroupPresetMember1
+            // 
+            this.nudMercGroupPresetMember1.Location = new System.Drawing.Point(75, 52);
+            this.nudMercGroupPresetMember1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember1.Name = "nudMercGroupPresetMember1";
+            this.nudMercGroupPresetMember1.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember1.TabIndex = 164;
+            this.nudMercGroupPresetMember1.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember1_ValueChanged);
+            // 
+            // nudMercGroupPresetMember4
+            // 
+            this.nudMercGroupPresetMember4.Location = new System.Drawing.Point(75, 112);
+            this.nudMercGroupPresetMember4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember4.Name = "nudMercGroupPresetMember4";
+            this.nudMercGroupPresetMember4.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember4.TabIndex = 173;
+            this.nudMercGroupPresetMember4.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember4_ValueChanged);
+            // 
+            // nudMercGroupPresetMember2
+            // 
+            this.nudMercGroupPresetMember2.Location = new System.Drawing.Point(75, 72);
+            this.nudMercGroupPresetMember2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember2.Name = "nudMercGroupPresetMember2";
+            this.nudMercGroupPresetMember2.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember2.TabIndex = 165;
+            this.nudMercGroupPresetMember2.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember2_ValueChanged);
+            // 
+            // label424
+            // 
+            this.label424.AutoSize = true;
+            this.label424.Location = new System.Drawing.Point(12, 154);
+            this.label424.Name = "label424";
+            this.label424.Size = new System.Drawing.Size(57, 13);
+            this.label424.TabIndex = 171;
+            this.label424.Text = "Member 6:";
+            // 
+            // nudMercGroupPresetMember3
+            // 
+            this.nudMercGroupPresetMember3.Location = new System.Drawing.Point(75, 92);
+            this.nudMercGroupPresetMember3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroupPresetMember3.Name = "nudMercGroupPresetMember3";
+            this.nudMercGroupPresetMember3.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroupPresetMember3.TabIndex = 166;
+            this.nudMercGroupPresetMember3.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember3_ValueChanged);
+            // 
+            // label425
+            // 
+            this.label425.AutoSize = true;
+            this.label425.Location = new System.Drawing.Point(12, 134);
+            this.label425.Name = "label425";
+            this.label425.Size = new System.Drawing.Size(57, 13);
+            this.label425.TabIndex = 170;
+            this.label425.Text = "Member 5:";
+            // 
+            // label426
+            // 
+            this.label426.AutoSize = true;
+            this.label426.Location = new System.Drawing.Point(12, 114);
+            this.label426.Name = "label426";
+            this.label426.Size = new System.Drawing.Size(57, 13);
+            this.label426.TabIndex = 169;
+            this.label426.Text = "Member 4:";
+            // 
+            // nudMercGroupsCount
+            // 
+            this.nudMercGroupsCount.Location = new System.Drawing.Point(134, 18);
+            this.nudMercGroupsCount.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroupsCount.Name = "nudMercGroupsCount";
+            this.nudMercGroupsCount.Size = new System.Drawing.Size(83, 20);
+            this.nudMercGroupsCount.TabIndex = 161;
+            this.nudMercGroupsCount.ValueChanged += new System.EventHandler(this.nudMercGroupsCount_ValueChanged);
+            // 
+            // label423
+            // 
+            this.label423.AutoSize = true;
+            this.label423.Location = new System.Drawing.Point(8, 20);
+            this.label423.Name = "label423";
+            this.label423.Size = new System.Drawing.Size(120, 13);
+            this.label423.TabIndex = 160;
+            this.label423.Text = "Merc Groups Unlocked:";
+            // 
+            // groupBox140
+            // 
+            this.groupBox140.Controls.Add(this.label422);
+            this.groupBox140.Controls.Add(this.label421);
+            this.groupBox140.Controls.Add(this.groupBox141);
+            this.groupBox140.Controls.Add(this.groupBox142);
+            this.groupBox140.Controls.Add(this.groupBox143);
+            this.groupBox140.Controls.Add(this.nudMercGroup3OriginalMissionTime);
+            this.groupBox140.Controls.Add(this.label407);
+            this.groupBox140.Controls.Add(this.nudMercGroup3MissionTime);
+            this.groupBox140.Controls.Add(this.label408);
+            this.groupBox140.Controls.Add(this.nudMercGroup3MissionID);
+            this.groupBox140.Controls.Add(this.label409);
+            this.groupBox140.Controls.Add(this.nudMercGroup3TeamID);
+            this.groupBox140.Controls.Add(this.label410);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade6);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade5);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade6);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade5);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade4);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade4);
+            this.groupBox140.Controls.Add(this.label411);
+            this.groupBox140.Controls.Add(this.label412);
+            this.groupBox140.Controls.Add(this.label413);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade3);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade2);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade3);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade2);
+            this.groupBox140.Controls.Add(this.cbxMercGroup3Blade1);
+            this.groupBox140.Controls.Add(this.nudMercGroup3Blade1);
+            this.groupBox140.Controls.Add(this.label414);
+            this.groupBox140.Controls.Add(this.label415);
+            this.groupBox140.Controls.Add(this.label416);
+            this.groupBox140.Location = new System.Drawing.Point(8, 362);
+            this.groupBox140.Name = "groupBox140";
+            this.groupBox140.Size = new System.Drawing.Size(719, 153);
+            this.groupBox140.TabIndex = 158;
+            this.groupBox140.TabStop = false;
+            this.groupBox140.Text = "Merc Group 1";
+            // 
+            // label422
+            // 
+            this.label422.AutoSize = true;
+            this.label422.Location = new System.Drawing.Point(400, 96);
+            this.label422.Name = "label422";
+            this.label422.Size = new System.Drawing.Size(27, 13);
+            this.label422.TabIndex = 158;
+            this.label422.Text = "sec.";
+            // 
+            // label421
+            // 
+            this.label421.AutoSize = true;
+            this.label421.Location = new System.Drawing.Point(400, 70);
+            this.label421.Name = "label421";
+            this.label421.Size = new System.Drawing.Size(27, 13);
+            this.label421.TabIndex = 157;
+            this.label421.Text = "sec.";
+            // 
+            // groupBox141
+            // 
+            this.groupBox141.Controls.Add(this.hbxMercGroup3Unk_0x24);
+            this.groupBox141.Location = new System.Drawing.Point(573, 80);
+            this.groupBox141.Name = "groupBox141";
+            this.groupBox141.Size = new System.Drawing.Size(140, 67);
+            this.groupBox141.TabIndex = 156;
+            this.groupBox141.TabStop = false;
+            this.groupBox141.Text = "Unk_0x24";
+            // 
+            // hbxMercGroup3Unk_0x24
+            // 
+            this.hbxMercGroup3Unk_0x24.ColumnInfoVisible = true;
+            this.hbxMercGroup3Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup3Unk_0x24.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup3Unk_0x24.Name = "hbxMercGroup3Unk_0x24";
+            this.hbxMercGroup3Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup3Unk_0x24.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup3Unk_0x24.TabIndex = 151;
+            // 
+            // groupBox142
+            // 
+            this.groupBox142.Controls.Add(this.hbxMercGroup3Unk_0x0C);
+            this.groupBox142.Location = new System.Drawing.Point(427, 80);
+            this.groupBox142.Name = "groupBox142";
+            this.groupBox142.Size = new System.Drawing.Size(140, 67);
+            this.groupBox142.TabIndex = 156;
+            this.groupBox142.TabStop = false;
+            this.groupBox142.Text = "Unk_0x0C";
+            // 
+            // hbxMercGroup3Unk_0x0C
+            // 
+            this.hbxMercGroup3Unk_0x0C.ColumnInfoVisible = true;
+            this.hbxMercGroup3Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup3Unk_0x0C.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup3Unk_0x0C.Name = "hbxMercGroup3Unk_0x0C";
+            this.hbxMercGroup3Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup3Unk_0x0C.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup3Unk_0x0C.TabIndex = 151;
+            // 
+            // groupBox143
+            // 
+            this.groupBox143.Controls.Add(this.hbxMercGroup3Unk_0x18);
+            this.groupBox143.Location = new System.Drawing.Point(573, 7);
+            this.groupBox143.Name = "groupBox143";
+            this.groupBox143.Size = new System.Drawing.Size(140, 67);
+            this.groupBox143.TabIndex = 156;
+            this.groupBox143.TabStop = false;
+            this.groupBox143.Text = "Unk_0x18";
+            // 
+            // hbxMercGroup3Unk_0x18
+            // 
+            this.hbxMercGroup3Unk_0x18.ColumnInfoVisible = true;
+            this.hbxMercGroup3Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup3Unk_0x18.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup3Unk_0x18.Name = "hbxMercGroup3Unk_0x18";
+            this.hbxMercGroup3Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup3Unk_0x18.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup3Unk_0x18.TabIndex = 151;
+            // 
+            // nudMercGroup3OriginalMissionTime
+            // 
+            this.nudMercGroup3OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
+            this.nudMercGroup3OriginalMissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup3OriginalMissionTime.Name = "nudMercGroup3OriginalMissionTime";
+            this.nudMercGroup3OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup3OriginalMissionTime.TabIndex = 43;
+            this.nudMercGroup3OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup3OriginalMissionTime_ValueChanged);
+            // 
+            // label407
+            // 
+            this.label407.AutoSize = true;
+            this.label407.Location = new System.Drawing.Point(230, 96);
+            this.label407.Name = "label407";
+            this.label407.Size = new System.Drawing.Size(109, 13);
+            this.label407.TabIndex = 42;
+            this.label407.Text = "Original Mission Time:";
+            // 
+            // nudMercGroup3MissionTime
+            // 
+            this.nudMercGroup3MissionTime.Location = new System.Drawing.Point(345, 68);
+            this.nudMercGroup3MissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup3MissionTime.Name = "nudMercGroup3MissionTime";
+            this.nudMercGroup3MissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup3MissionTime.TabIndex = 41;
+            this.nudMercGroup3MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup3MissionTime_ValueChanged);
+            // 
+            // label408
+            // 
+            this.label408.AutoSize = true;
+            this.label408.Location = new System.Drawing.Point(230, 70);
+            this.label408.Name = "label408";
+            this.label408.Size = new System.Drawing.Size(71, 13);
+            this.label408.TabIndex = 40;
+            this.label408.Text = "Mission Time:";
+            // 
+            // nudMercGroup3MissionID
+            // 
+            this.nudMercGroup3MissionID.Location = new System.Drawing.Point(345, 42);
+            this.nudMercGroup3MissionID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup3MissionID.Name = "nudMercGroup3MissionID";
+            this.nudMercGroup3MissionID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup3MissionID.TabIndex = 39;
+            this.nudMercGroup3MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup3MissionID_ValueChanged);
+            // 
+            // label409
+            // 
+            this.label409.AutoSize = true;
+            this.label409.Location = new System.Drawing.Point(230, 44);
+            this.label409.Name = "label409";
+            this.label409.Size = new System.Drawing.Size(59, 13);
+            this.label409.TabIndex = 38;
+            this.label409.Text = "Mission ID:";
+            // 
+            // nudMercGroup3TeamID
+            // 
+            this.nudMercGroup3TeamID.Location = new System.Drawing.Point(345, 16);
+            this.nudMercGroup3TeamID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup3TeamID.Name = "nudMercGroup3TeamID";
+            this.nudMercGroup3TeamID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup3TeamID.TabIndex = 37;
+            this.nudMercGroup3TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup3TeamID_ValueChanged);
+            // 
+            // label410
+            // 
+            this.label410.AutoSize = true;
+            this.label410.Location = new System.Drawing.Point(230, 18);
+            this.label410.Name = "label410";
+            this.label410.Size = new System.Drawing.Size(51, 13);
+            this.label410.TabIndex = 36;
+            this.label410.Text = "Team ID:";
+            // 
+            // cbxMercGroup3Blade6
+            // 
+            this.cbxMercGroup3Blade6.FormattingEnabled = true;
+            this.cbxMercGroup3Blade6.Location = new System.Drawing.Point(103, 114);
+            this.cbxMercGroup3Blade6.Name = "cbxMercGroup3Blade6";
+            this.cbxMercGroup3Blade6.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade6.TabIndex = 35;
+            this.cbxMercGroup3Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade6_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup3Blade5
+            // 
+            this.cbxMercGroup3Blade5.FormattingEnabled = true;
+            this.cbxMercGroup3Blade5.Location = new System.Drawing.Point(103, 94);
+            this.cbxMercGroup3Blade5.Name = "cbxMercGroup3Blade5";
+            this.cbxMercGroup3Blade5.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade5.TabIndex = 34;
+            this.cbxMercGroup3Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade5_SelectionChangeCommitted);
+            // 
+            // nudMercGroup3Blade6
+            // 
+            this.nudMercGroup3Blade6.Location = new System.Drawing.Point(58, 114);
+            this.nudMercGroup3Blade6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade6.Name = "nudMercGroup3Blade6";
+            this.nudMercGroup3Blade6.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade6.TabIndex = 33;
+            this.nudMercGroup3Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade6_ValueChanged);
+            // 
+            // nudMercGroup3Blade5
+            // 
+            this.nudMercGroup3Blade5.Location = new System.Drawing.Point(58, 94);
+            this.nudMercGroup3Blade5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade5.Name = "nudMercGroup3Blade5";
+            this.nudMercGroup3Blade5.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade5.TabIndex = 32;
+            this.nudMercGroup3Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade5_ValueChanged);
+            // 
+            // cbxMercGroup3Blade4
+            // 
+            this.cbxMercGroup3Blade4.FormattingEnabled = true;
+            this.cbxMercGroup3Blade4.Location = new System.Drawing.Point(103, 74);
+            this.cbxMercGroup3Blade4.Name = "cbxMercGroup3Blade4";
+            this.cbxMercGroup3Blade4.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade4.TabIndex = 30;
+            this.cbxMercGroup3Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade4_SelectionChangeCommitted);
+            // 
+            // nudMercGroup3Blade4
+            // 
+            this.nudMercGroup3Blade4.Location = new System.Drawing.Point(58, 74);
+            this.nudMercGroup3Blade4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade4.Name = "nudMercGroup3Blade4";
+            this.nudMercGroup3Blade4.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade4.TabIndex = 31;
+            this.nudMercGroup3Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade4_ValueChanged);
+            // 
+            // label411
+            // 
+            this.label411.AutoSize = true;
+            this.label411.Location = new System.Drawing.Point(6, 116);
+            this.label411.Name = "label411";
+            this.label411.Size = new System.Drawing.Size(46, 13);
+            this.label411.TabIndex = 29;
+            this.label411.Text = "Blade 6:";
+            // 
+            // label412
+            // 
+            this.label412.AutoSize = true;
+            this.label412.Location = new System.Drawing.Point(6, 96);
+            this.label412.Name = "label412";
+            this.label412.Size = new System.Drawing.Size(46, 13);
+            this.label412.TabIndex = 28;
+            this.label412.Text = "Blade 5:";
+            // 
+            // label413
+            // 
+            this.label413.AutoSize = true;
+            this.label413.Location = new System.Drawing.Point(6, 76);
+            this.label413.Name = "label413";
+            this.label413.Size = new System.Drawing.Size(46, 13);
+            this.label413.TabIndex = 27;
+            this.label413.Text = "Blade 4:";
+            // 
+            // cbxMercGroup3Blade3
+            // 
+            this.cbxMercGroup3Blade3.FormattingEnabled = true;
+            this.cbxMercGroup3Blade3.Location = new System.Drawing.Point(103, 54);
+            this.cbxMercGroup3Blade3.Name = "cbxMercGroup3Blade3";
+            this.cbxMercGroup3Blade3.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade3.TabIndex = 26;
+            this.cbxMercGroup3Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade3_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup3Blade2
+            // 
+            this.cbxMercGroup3Blade2.FormattingEnabled = true;
+            this.cbxMercGroup3Blade2.Location = new System.Drawing.Point(103, 34);
+            this.cbxMercGroup3Blade2.Name = "cbxMercGroup3Blade2";
+            this.cbxMercGroup3Blade2.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade2.TabIndex = 25;
+            this.cbxMercGroup3Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade2_SelectionChangeCommitted);
+            // 
+            // nudMercGroup3Blade3
+            // 
+            this.nudMercGroup3Blade3.Location = new System.Drawing.Point(58, 54);
+            this.nudMercGroup3Blade3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade3.Name = "nudMercGroup3Blade3";
+            this.nudMercGroup3Blade3.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade3.TabIndex = 24;
+            this.nudMercGroup3Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade3_ValueChanged);
+            // 
+            // nudMercGroup3Blade2
+            // 
+            this.nudMercGroup3Blade2.Location = new System.Drawing.Point(58, 34);
+            this.nudMercGroup3Blade2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade2.Name = "nudMercGroup3Blade2";
+            this.nudMercGroup3Blade2.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade2.TabIndex = 23;
+            this.nudMercGroup3Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade2_ValueChanged);
+            // 
+            // cbxMercGroup3Blade1
+            // 
+            this.cbxMercGroup3Blade1.FormattingEnabled = true;
+            this.cbxMercGroup3Blade1.Location = new System.Drawing.Point(103, 14);
+            this.cbxMercGroup3Blade1.Name = "cbxMercGroup3Blade1";
+            this.cbxMercGroup3Blade1.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup3Blade1.TabIndex = 21;
+            this.cbxMercGroup3Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade1_SelectionChangeCommitted);
+            // 
+            // nudMercGroup3Blade1
+            // 
+            this.nudMercGroup3Blade1.Location = new System.Drawing.Point(58, 14);
+            this.nudMercGroup3Blade1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup3Blade1.Name = "nudMercGroup3Blade1";
+            this.nudMercGroup3Blade1.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup3Blade1.TabIndex = 22;
+            this.nudMercGroup3Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade1_ValueChanged);
+            // 
+            // label414
+            // 
+            this.label414.AutoSize = true;
+            this.label414.Location = new System.Drawing.Point(6, 55);
+            this.label414.Name = "label414";
+            this.label414.Size = new System.Drawing.Size(46, 13);
+            this.label414.TabIndex = 20;
+            this.label414.Text = "Blade 3:";
+            // 
+            // label415
+            // 
+            this.label415.AutoSize = true;
+            this.label415.Location = new System.Drawing.Point(6, 36);
+            this.label415.Name = "label415";
+            this.label415.Size = new System.Drawing.Size(46, 13);
+            this.label415.TabIndex = 19;
+            this.label415.Text = "Blade 2:";
+            // 
+            // label416
+            // 
+            this.label416.AutoSize = true;
+            this.label416.Location = new System.Drawing.Point(6, 16);
+            this.label416.Name = "label416";
+            this.label416.Size = new System.Drawing.Size(46, 13);
+            this.label416.TabIndex = 18;
+            this.label416.Text = "Blade 1:";
+            // 
+            // groupBox136
+            // 
+            this.groupBox136.Controls.Add(this.label420);
+            this.groupBox136.Controls.Add(this.label419);
+            this.groupBox136.Controls.Add(this.groupBox137);
+            this.groupBox136.Controls.Add(this.groupBox138);
+            this.groupBox136.Controls.Add(this.groupBox139);
+            this.groupBox136.Controls.Add(this.nudMercGroup2OriginalMissionTime);
+            this.groupBox136.Controls.Add(this.label397);
+            this.groupBox136.Controls.Add(this.nudMercGroup2MissionTime);
+            this.groupBox136.Controls.Add(this.label398);
+            this.groupBox136.Controls.Add(this.nudMercGroup2MissionID);
+            this.groupBox136.Controls.Add(this.label399);
+            this.groupBox136.Controls.Add(this.nudMercGroup2TeamID);
+            this.groupBox136.Controls.Add(this.label400);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade6);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade5);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade6);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade5);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade4);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade4);
+            this.groupBox136.Controls.Add(this.label401);
+            this.groupBox136.Controls.Add(this.label402);
+            this.groupBox136.Controls.Add(this.label403);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade3);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade2);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade3);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade2);
+            this.groupBox136.Controls.Add(this.cbxMercGroup2Blade1);
+            this.groupBox136.Controls.Add(this.nudMercGroup2Blade1);
+            this.groupBox136.Controls.Add(this.label404);
+            this.groupBox136.Controls.Add(this.label405);
+            this.groupBox136.Controls.Add(this.label406);
+            this.groupBox136.Location = new System.Drawing.Point(8, 203);
+            this.groupBox136.Name = "groupBox136";
+            this.groupBox136.Size = new System.Drawing.Size(719, 153);
+            this.groupBox136.TabIndex = 157;
+            this.groupBox136.TabStop = false;
+            this.groupBox136.Text = "Merc Group 1";
+            // 
+            // label420
+            // 
+            this.label420.AutoSize = true;
+            this.label420.Location = new System.Drawing.Point(400, 97);
+            this.label420.Name = "label420";
+            this.label420.Size = new System.Drawing.Size(27, 13);
+            this.label420.TabIndex = 158;
+            this.label420.Text = "sec.";
+            // 
+            // label419
+            // 
+            this.label419.AutoSize = true;
+            this.label419.Location = new System.Drawing.Point(400, 70);
+            this.label419.Name = "label419";
+            this.label419.Size = new System.Drawing.Size(27, 13);
+            this.label419.TabIndex = 157;
+            this.label419.Text = "sec.";
+            // 
+            // groupBox137
+            // 
+            this.groupBox137.Controls.Add(this.hbxMercGroup2Unk_0x24);
+            this.groupBox137.Location = new System.Drawing.Point(573, 80);
+            this.groupBox137.Name = "groupBox137";
+            this.groupBox137.Size = new System.Drawing.Size(140, 67);
+            this.groupBox137.TabIndex = 156;
+            this.groupBox137.TabStop = false;
+            this.groupBox137.Text = "Unk_0x24";
+            // 
+            // hbxMercGroup2Unk_0x24
+            // 
+            this.hbxMercGroup2Unk_0x24.ColumnInfoVisible = true;
+            this.hbxMercGroup2Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup2Unk_0x24.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup2Unk_0x24.Name = "hbxMercGroup2Unk_0x24";
+            this.hbxMercGroup2Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup2Unk_0x24.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup2Unk_0x24.TabIndex = 151;
+            // 
+            // groupBox138
+            // 
+            this.groupBox138.Controls.Add(this.hbxMercGroup2Unk_0x0C);
+            this.groupBox138.Location = new System.Drawing.Point(427, 80);
+            this.groupBox138.Name = "groupBox138";
+            this.groupBox138.Size = new System.Drawing.Size(140, 67);
+            this.groupBox138.TabIndex = 156;
+            this.groupBox138.TabStop = false;
+            this.groupBox138.Text = "Unk_0x0C";
+            // 
+            // hbxMercGroup2Unk_0x0C
+            // 
+            this.hbxMercGroup2Unk_0x0C.ColumnInfoVisible = true;
+            this.hbxMercGroup2Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup2Unk_0x0C.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup2Unk_0x0C.Name = "hbxMercGroup2Unk_0x0C";
+            this.hbxMercGroup2Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup2Unk_0x0C.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup2Unk_0x0C.TabIndex = 151;
+            // 
+            // groupBox139
+            // 
+            this.groupBox139.Controls.Add(this.hbxMercGroup2Unk_0x18);
+            this.groupBox139.Location = new System.Drawing.Point(573, 7);
+            this.groupBox139.Name = "groupBox139";
+            this.groupBox139.Size = new System.Drawing.Size(140, 67);
+            this.groupBox139.TabIndex = 156;
+            this.groupBox139.TabStop = false;
+            this.groupBox139.Text = "Unk_0x18";
+            // 
+            // hbxMercGroup2Unk_0x18
+            // 
+            this.hbxMercGroup2Unk_0x18.ColumnInfoVisible = true;
+            this.hbxMercGroup2Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup2Unk_0x18.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup2Unk_0x18.Name = "hbxMercGroup2Unk_0x18";
+            this.hbxMercGroup2Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup2Unk_0x18.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup2Unk_0x18.TabIndex = 151;
+            // 
+            // nudMercGroup2OriginalMissionTime
+            // 
+            this.nudMercGroup2OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
+            this.nudMercGroup2OriginalMissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup2OriginalMissionTime.Name = "nudMercGroup2OriginalMissionTime";
+            this.nudMercGroup2OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup2OriginalMissionTime.TabIndex = 43;
+            this.nudMercGroup2OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup2OriginalMissionTime_ValueChanged);
+            // 
+            // label397
+            // 
+            this.label397.AutoSize = true;
+            this.label397.Location = new System.Drawing.Point(230, 96);
+            this.label397.Name = "label397";
+            this.label397.Size = new System.Drawing.Size(109, 13);
+            this.label397.TabIndex = 42;
+            this.label397.Text = "Original Mission Time:";
+            // 
+            // nudMercGroup2MissionTime
+            // 
+            this.nudMercGroup2MissionTime.Location = new System.Drawing.Point(345, 68);
+            this.nudMercGroup2MissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup2MissionTime.Name = "nudMercGroup2MissionTime";
+            this.nudMercGroup2MissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup2MissionTime.TabIndex = 41;
+            this.nudMercGroup2MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup2MissionTime_ValueChanged);
+            // 
+            // label398
+            // 
+            this.label398.AutoSize = true;
+            this.label398.Location = new System.Drawing.Point(230, 70);
+            this.label398.Name = "label398";
+            this.label398.Size = new System.Drawing.Size(71, 13);
+            this.label398.TabIndex = 40;
+            this.label398.Text = "Mission Time:";
+            // 
+            // nudMercGroup2MissionID
+            // 
+            this.nudMercGroup2MissionID.Location = new System.Drawing.Point(345, 42);
+            this.nudMercGroup2MissionID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup2MissionID.Name = "nudMercGroup2MissionID";
+            this.nudMercGroup2MissionID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup2MissionID.TabIndex = 39;
+            this.nudMercGroup2MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup2MissionID_ValueChanged);
+            // 
+            // label399
+            // 
+            this.label399.AutoSize = true;
+            this.label399.Location = new System.Drawing.Point(230, 44);
+            this.label399.Name = "label399";
+            this.label399.Size = new System.Drawing.Size(59, 13);
+            this.label399.TabIndex = 38;
+            this.label399.Text = "Mission ID:";
+            // 
+            // nudMercGroup2TeamID
+            // 
+            this.nudMercGroup2TeamID.Location = new System.Drawing.Point(345, 16);
+            this.nudMercGroup2TeamID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup2TeamID.Name = "nudMercGroup2TeamID";
+            this.nudMercGroup2TeamID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup2TeamID.TabIndex = 37;
+            this.nudMercGroup2TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup2TeamID_ValueChanged);
+            // 
+            // label400
+            // 
+            this.label400.AutoSize = true;
+            this.label400.Location = new System.Drawing.Point(230, 18);
+            this.label400.Name = "label400";
+            this.label400.Size = new System.Drawing.Size(51, 13);
+            this.label400.TabIndex = 36;
+            this.label400.Text = "Team ID:";
+            // 
+            // cbxMercGroup2Blade6
+            // 
+            this.cbxMercGroup2Blade6.FormattingEnabled = true;
+            this.cbxMercGroup2Blade6.Location = new System.Drawing.Point(103, 114);
+            this.cbxMercGroup2Blade6.Name = "cbxMercGroup2Blade6";
+            this.cbxMercGroup2Blade6.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade6.TabIndex = 35;
+            this.cbxMercGroup2Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade6_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup2Blade5
+            // 
+            this.cbxMercGroup2Blade5.FormattingEnabled = true;
+            this.cbxMercGroup2Blade5.Location = new System.Drawing.Point(103, 94);
+            this.cbxMercGroup2Blade5.Name = "cbxMercGroup2Blade5";
+            this.cbxMercGroup2Blade5.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade5.TabIndex = 34;
+            this.cbxMercGroup2Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade5_SelectionChangeCommitted);
+            // 
+            // nudMercGroup2Blade6
+            // 
+            this.nudMercGroup2Blade6.Location = new System.Drawing.Point(58, 114);
+            this.nudMercGroup2Blade6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade6.Name = "nudMercGroup2Blade6";
+            this.nudMercGroup2Blade6.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade6.TabIndex = 33;
+            this.nudMercGroup2Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade6_ValueChanged);
+            // 
+            // nudMercGroup2Blade5
+            // 
+            this.nudMercGroup2Blade5.Location = new System.Drawing.Point(58, 94);
+            this.nudMercGroup2Blade5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade5.Name = "nudMercGroup2Blade5";
+            this.nudMercGroup2Blade5.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade5.TabIndex = 32;
+            this.nudMercGroup2Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade5_ValueChanged);
+            // 
+            // cbxMercGroup2Blade4
+            // 
+            this.cbxMercGroup2Blade4.FormattingEnabled = true;
+            this.cbxMercGroup2Blade4.Location = new System.Drawing.Point(103, 74);
+            this.cbxMercGroup2Blade4.Name = "cbxMercGroup2Blade4";
+            this.cbxMercGroup2Blade4.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade4.TabIndex = 30;
+            this.cbxMercGroup2Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade4_SelectionChangeCommitted);
+            // 
+            // nudMercGroup2Blade4
+            // 
+            this.nudMercGroup2Blade4.Location = new System.Drawing.Point(58, 74);
+            this.nudMercGroup2Blade4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade4.Name = "nudMercGroup2Blade4";
+            this.nudMercGroup2Blade4.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade4.TabIndex = 31;
+            this.nudMercGroup2Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade4_ValueChanged);
+            // 
+            // label401
+            // 
+            this.label401.AutoSize = true;
+            this.label401.Location = new System.Drawing.Point(6, 116);
+            this.label401.Name = "label401";
+            this.label401.Size = new System.Drawing.Size(46, 13);
+            this.label401.TabIndex = 29;
+            this.label401.Text = "Blade 6:";
+            // 
+            // label402
+            // 
+            this.label402.AutoSize = true;
+            this.label402.Location = new System.Drawing.Point(6, 96);
+            this.label402.Name = "label402";
+            this.label402.Size = new System.Drawing.Size(46, 13);
+            this.label402.TabIndex = 28;
+            this.label402.Text = "Blade 5:";
+            // 
+            // label403
+            // 
+            this.label403.AutoSize = true;
+            this.label403.Location = new System.Drawing.Point(6, 76);
+            this.label403.Name = "label403";
+            this.label403.Size = new System.Drawing.Size(46, 13);
+            this.label403.TabIndex = 27;
+            this.label403.Text = "Blade 4:";
+            // 
+            // cbxMercGroup2Blade3
+            // 
+            this.cbxMercGroup2Blade3.FormattingEnabled = true;
+            this.cbxMercGroup2Blade3.Location = new System.Drawing.Point(103, 54);
+            this.cbxMercGroup2Blade3.Name = "cbxMercGroup2Blade3";
+            this.cbxMercGroup2Blade3.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade3.TabIndex = 26;
+            this.cbxMercGroup2Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade3_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup2Blade2
+            // 
+            this.cbxMercGroup2Blade2.FormattingEnabled = true;
+            this.cbxMercGroup2Blade2.Location = new System.Drawing.Point(103, 34);
+            this.cbxMercGroup2Blade2.Name = "cbxMercGroup2Blade2";
+            this.cbxMercGroup2Blade2.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade2.TabIndex = 25;
+            this.cbxMercGroup2Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade2_SelectionChangeCommitted);
+            // 
+            // nudMercGroup2Blade3
+            // 
+            this.nudMercGroup2Blade3.Location = new System.Drawing.Point(58, 54);
+            this.nudMercGroup2Blade3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade3.Name = "nudMercGroup2Blade3";
+            this.nudMercGroup2Blade3.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade3.TabIndex = 24;
+            this.nudMercGroup2Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade3_ValueChanged);
+            // 
+            // nudMercGroup2Blade2
+            // 
+            this.nudMercGroup2Blade2.Location = new System.Drawing.Point(58, 34);
+            this.nudMercGroup2Blade2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade2.Name = "nudMercGroup2Blade2";
+            this.nudMercGroup2Blade2.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade2.TabIndex = 23;
+            this.nudMercGroup2Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade2_ValueChanged);
+            // 
+            // cbxMercGroup2Blade1
+            // 
+            this.cbxMercGroup2Blade1.FormattingEnabled = true;
+            this.cbxMercGroup2Blade1.Location = new System.Drawing.Point(103, 14);
+            this.cbxMercGroup2Blade1.Name = "cbxMercGroup2Blade1";
+            this.cbxMercGroup2Blade1.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup2Blade1.TabIndex = 21;
+            this.cbxMercGroup2Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade1_SelectionChangeCommitted);
+            // 
+            // nudMercGroup2Blade1
+            // 
+            this.nudMercGroup2Blade1.Location = new System.Drawing.Point(58, 14);
+            this.nudMercGroup2Blade1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup2Blade1.Name = "nudMercGroup2Blade1";
+            this.nudMercGroup2Blade1.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup2Blade1.TabIndex = 22;
+            this.nudMercGroup2Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade1_ValueChanged);
+            // 
+            // label404
+            // 
+            this.label404.AutoSize = true;
+            this.label404.Location = new System.Drawing.Point(6, 55);
+            this.label404.Name = "label404";
+            this.label404.Size = new System.Drawing.Size(46, 13);
+            this.label404.TabIndex = 20;
+            this.label404.Text = "Blade 3:";
+            // 
+            // label405
+            // 
+            this.label405.AutoSize = true;
+            this.label405.Location = new System.Drawing.Point(6, 36);
+            this.label405.Name = "label405";
+            this.label405.Size = new System.Drawing.Size(46, 13);
+            this.label405.TabIndex = 19;
+            this.label405.Text = "Blade 2:";
+            // 
+            // label406
+            // 
+            this.label406.AutoSize = true;
+            this.label406.Location = new System.Drawing.Point(6, 16);
+            this.label406.Name = "label406";
+            this.label406.Size = new System.Drawing.Size(46, 13);
+            this.label406.TabIndex = 18;
+            this.label406.Text = "Blade 1:";
+            // 
+            // groupBox132
+            // 
+            this.groupBox132.Controls.Add(this.label418);
+            this.groupBox132.Controls.Add(this.label417);
+            this.groupBox132.Controls.Add(this.groupBox135);
+            this.groupBox132.Controls.Add(this.groupBox134);
+            this.groupBox132.Controls.Add(this.groupBox133);
+            this.groupBox132.Controls.Add(this.nudMercGroup1OriginalMissionTime);
+            this.groupBox132.Controls.Add(this.label396);
+            this.groupBox132.Controls.Add(this.nudMercGroup1MissionTime);
+            this.groupBox132.Controls.Add(this.label395);
+            this.groupBox132.Controls.Add(this.nudMercGroup1MissionID);
+            this.groupBox132.Controls.Add(this.label394);
+            this.groupBox132.Controls.Add(this.nudMercGroup1TeamID);
+            this.groupBox132.Controls.Add(this.label393);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade6);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade5);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade6);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade5);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade4);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade4);
+            this.groupBox132.Controls.Add(this.label20);
+            this.groupBox132.Controls.Add(this.label25);
+            this.groupBox132.Controls.Add(this.label392);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade3);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade2);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade3);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade2);
+            this.groupBox132.Controls.Add(this.cbxMercGroup1Blade1);
+            this.groupBox132.Controls.Add(this.nudMercGroup1Blade1);
+            this.groupBox132.Controls.Add(this.label2);
+            this.groupBox132.Controls.Add(this.label15);
+            this.groupBox132.Controls.Add(this.label16);
+            this.groupBox132.Location = new System.Drawing.Point(8, 44);
+            this.groupBox132.Name = "groupBox132";
+            this.groupBox132.Size = new System.Drawing.Size(719, 153);
+            this.groupBox132.TabIndex = 0;
+            this.groupBox132.TabStop = false;
+            this.groupBox132.Text = "Merc Group 1";
+            // 
+            // label418
+            // 
+            this.label418.AutoSize = true;
+            this.label418.Location = new System.Drawing.Point(400, 99);
+            this.label418.Name = "label418";
+            this.label418.Size = new System.Drawing.Size(27, 13);
+            this.label418.TabIndex = 159;
+            this.label418.Text = "sec.";
+            // 
+            // label417
+            // 
+            this.label417.AutoSize = true;
+            this.label417.Location = new System.Drawing.Point(400, 70);
+            this.label417.Name = "label417";
+            this.label417.Size = new System.Drawing.Size(27, 13);
+            this.label417.TabIndex = 159;
+            this.label417.Text = "sec.";
+            // 
+            // groupBox135
+            // 
+            this.groupBox135.Controls.Add(this.hbxMercGroup1Unk_0x24);
+            this.groupBox135.Location = new System.Drawing.Point(573, 80);
+            this.groupBox135.Name = "groupBox135";
+            this.groupBox135.Size = new System.Drawing.Size(140, 67);
+            this.groupBox135.TabIndex = 156;
+            this.groupBox135.TabStop = false;
+            this.groupBox135.Text = "Unk_0x24";
+            // 
+            // hbxMercGroup1Unk_0x24
+            // 
+            this.hbxMercGroup1Unk_0x24.ColumnInfoVisible = true;
+            this.hbxMercGroup1Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup1Unk_0x24.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup1Unk_0x24.Name = "hbxMercGroup1Unk_0x24";
+            this.hbxMercGroup1Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup1Unk_0x24.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup1Unk_0x24.TabIndex = 151;
+            // 
+            // groupBox134
+            // 
+            this.groupBox134.Controls.Add(this.hbxMercGroup1Unk_0x0C);
+            this.groupBox134.Location = new System.Drawing.Point(427, 80);
+            this.groupBox134.Name = "groupBox134";
+            this.groupBox134.Size = new System.Drawing.Size(140, 67);
+            this.groupBox134.TabIndex = 156;
+            this.groupBox134.TabStop = false;
+            this.groupBox134.Text = "Unk_0x0C";
+            // 
+            // hbxMercGroup1Unk_0x0C
+            // 
+            this.hbxMercGroup1Unk_0x0C.ColumnInfoVisible = true;
+            this.hbxMercGroup1Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup1Unk_0x0C.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup1Unk_0x0C.Name = "hbxMercGroup1Unk_0x0C";
+            this.hbxMercGroup1Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup1Unk_0x0C.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup1Unk_0x0C.TabIndex = 151;
+            // 
+            // groupBox133
+            // 
+            this.groupBox133.Controls.Add(this.hbxMercGroup1Unk_0x18);
+            this.groupBox133.Location = new System.Drawing.Point(573, 7);
+            this.groupBox133.Name = "groupBox133";
+            this.groupBox133.Size = new System.Drawing.Size(140, 67);
+            this.groupBox133.TabIndex = 156;
+            this.groupBox133.TabStop = false;
+            this.groupBox133.Text = "Unk_0x18";
+            // 
+            // hbxMercGroup1Unk_0x18
+            // 
+            this.hbxMercGroup1Unk_0x18.ColumnInfoVisible = true;
+            this.hbxMercGroup1Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxMercGroup1Unk_0x18.Location = new System.Drawing.Point(6, 19);
+            this.hbxMercGroup1Unk_0x18.Name = "hbxMercGroup1Unk_0x18";
+            this.hbxMercGroup1Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxMercGroup1Unk_0x18.Size = new System.Drawing.Size(128, 41);
+            this.hbxMercGroup1Unk_0x18.TabIndex = 151;
+            // 
+            // nudMercGroup1OriginalMissionTime
+            // 
+            this.nudMercGroup1OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
+            this.nudMercGroup1OriginalMissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup1OriginalMissionTime.Name = "nudMercGroup1OriginalMissionTime";
+            this.nudMercGroup1OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup1OriginalMissionTime.TabIndex = 43;
+            this.nudMercGroup1OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup1OriginalMissionTime_ValueChanged);
+            // 
+            // label396
+            // 
+            this.label396.AutoSize = true;
+            this.label396.Location = new System.Drawing.Point(230, 96);
+            this.label396.Name = "label396";
+            this.label396.Size = new System.Drawing.Size(109, 13);
+            this.label396.TabIndex = 42;
+            this.label396.Text = "Original Mission Time:";
+            // 
+            // nudMercGroup1MissionTime
+            // 
+            this.nudMercGroup1MissionTime.Location = new System.Drawing.Point(345, 68);
+            this.nudMercGroup1MissionTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup1MissionTime.Name = "nudMercGroup1MissionTime";
+            this.nudMercGroup1MissionTime.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup1MissionTime.TabIndex = 41;
+            this.nudMercGroup1MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup1MissionTime_ValueChanged);
+            // 
+            // label395
+            // 
+            this.label395.AutoSize = true;
+            this.label395.Location = new System.Drawing.Point(230, 70);
+            this.label395.Name = "label395";
+            this.label395.Size = new System.Drawing.Size(71, 13);
+            this.label395.TabIndex = 40;
+            this.label395.Text = "Mission Time:";
+            // 
+            // nudMercGroup1MissionID
+            // 
+            this.nudMercGroup1MissionID.Location = new System.Drawing.Point(345, 42);
+            this.nudMercGroup1MissionID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup1MissionID.Name = "nudMercGroup1MissionID";
+            this.nudMercGroup1MissionID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup1MissionID.TabIndex = 39;
+            this.nudMercGroup1MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup1MissionID_ValueChanged);
+            // 
+            // label394
+            // 
+            this.label394.AutoSize = true;
+            this.label394.Location = new System.Drawing.Point(230, 44);
+            this.label394.Name = "label394";
+            this.label394.Size = new System.Drawing.Size(59, 13);
+            this.label394.TabIndex = 38;
+            this.label394.Text = "Mission ID:";
+            // 
+            // nudMercGroup1TeamID
+            // 
+            this.nudMercGroup1TeamID.Location = new System.Drawing.Point(345, 16);
+            this.nudMercGroup1TeamID.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudMercGroup1TeamID.Name = "nudMercGroup1TeamID";
+            this.nudMercGroup1TeamID.Size = new System.Drawing.Size(54, 20);
+            this.nudMercGroup1TeamID.TabIndex = 37;
+            this.nudMercGroup1TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup1TeamID_ValueChanged);
+            // 
+            // label393
+            // 
+            this.label393.AutoSize = true;
+            this.label393.Location = new System.Drawing.Point(230, 18);
+            this.label393.Name = "label393";
+            this.label393.Size = new System.Drawing.Size(51, 13);
+            this.label393.TabIndex = 36;
+            this.label393.Text = "Team ID:";
+            // 
+            // cbxMercGroup1Blade6
+            // 
+            this.cbxMercGroup1Blade6.FormattingEnabled = true;
+            this.cbxMercGroup1Blade6.Location = new System.Drawing.Point(103, 114);
+            this.cbxMercGroup1Blade6.Name = "cbxMercGroup1Blade6";
+            this.cbxMercGroup1Blade6.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade6.TabIndex = 35;
+            this.cbxMercGroup1Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade6_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup1Blade5
+            // 
+            this.cbxMercGroup1Blade5.FormattingEnabled = true;
+            this.cbxMercGroup1Blade5.Location = new System.Drawing.Point(103, 94);
+            this.cbxMercGroup1Blade5.Name = "cbxMercGroup1Blade5";
+            this.cbxMercGroup1Blade5.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade5.TabIndex = 34;
+            this.cbxMercGroup1Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade5_SelectionChangeCommitted);
+            // 
+            // nudMercGroup1Blade6
+            // 
+            this.nudMercGroup1Blade6.Location = new System.Drawing.Point(58, 114);
+            this.nudMercGroup1Blade6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade6.Name = "nudMercGroup1Blade6";
+            this.nudMercGroup1Blade6.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade6.TabIndex = 33;
+            this.nudMercGroup1Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade6_ValueChanged);
+            // 
+            // nudMercGroup1Blade5
+            // 
+            this.nudMercGroup1Blade5.Location = new System.Drawing.Point(58, 94);
+            this.nudMercGroup1Blade5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade5.Name = "nudMercGroup1Blade5";
+            this.nudMercGroup1Blade5.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade5.TabIndex = 32;
+            this.nudMercGroup1Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade5_ValueChanged);
+            // 
+            // cbxMercGroup1Blade4
+            // 
+            this.cbxMercGroup1Blade4.FormattingEnabled = true;
+            this.cbxMercGroup1Blade4.Location = new System.Drawing.Point(103, 74);
+            this.cbxMercGroup1Blade4.Name = "cbxMercGroup1Blade4";
+            this.cbxMercGroup1Blade4.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade4.TabIndex = 30;
+            this.cbxMercGroup1Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade4_SelectionChangeCommitted);
+            // 
+            // nudMercGroup1Blade4
+            // 
+            this.nudMercGroup1Blade4.Location = new System.Drawing.Point(58, 74);
+            this.nudMercGroup1Blade4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade4.Name = "nudMercGroup1Blade4";
+            this.nudMercGroup1Blade4.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade4.TabIndex = 31;
+            this.nudMercGroup1Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade4_ValueChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 116);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(46, 13);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "Blade 6:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 96);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 13);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Blade 5:";
+            // 
+            // label392
+            // 
+            this.label392.AutoSize = true;
+            this.label392.Location = new System.Drawing.Point(6, 76);
+            this.label392.Name = "label392";
+            this.label392.Size = new System.Drawing.Size(46, 13);
+            this.label392.TabIndex = 27;
+            this.label392.Text = "Blade 4:";
+            // 
+            // cbxMercGroup1Blade3
+            // 
+            this.cbxMercGroup1Blade3.FormattingEnabled = true;
+            this.cbxMercGroup1Blade3.Location = new System.Drawing.Point(103, 54);
+            this.cbxMercGroup1Blade3.Name = "cbxMercGroup1Blade3";
+            this.cbxMercGroup1Blade3.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade3.TabIndex = 26;
+            this.cbxMercGroup1Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade3_SelectionChangeCommitted);
+            // 
+            // cbxMercGroup1Blade2
+            // 
+            this.cbxMercGroup1Blade2.FormattingEnabled = true;
+            this.cbxMercGroup1Blade2.Location = new System.Drawing.Point(103, 34);
+            this.cbxMercGroup1Blade2.Name = "cbxMercGroup1Blade2";
+            this.cbxMercGroup1Blade2.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade2.TabIndex = 25;
+            this.cbxMercGroup1Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade2_SelectionChangeCommitted);
+            // 
+            // nudMercGroup1Blade3
+            // 
+            this.nudMercGroup1Blade3.Location = new System.Drawing.Point(58, 54);
+            this.nudMercGroup1Blade3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade3.Name = "nudMercGroup1Blade3";
+            this.nudMercGroup1Blade3.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade3.TabIndex = 24;
+            this.nudMercGroup1Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade3_ValueChanged);
+            // 
+            // nudMercGroup1Blade2
+            // 
+            this.nudMercGroup1Blade2.Location = new System.Drawing.Point(58, 34);
+            this.nudMercGroup1Blade2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade2.Name = "nudMercGroup1Blade2";
+            this.nudMercGroup1Blade2.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade2.TabIndex = 23;
+            this.nudMercGroup1Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade2_ValueChanged);
+            // 
+            // cbxMercGroup1Blade1
+            // 
+            this.cbxMercGroup1Blade1.FormattingEnabled = true;
+            this.cbxMercGroup1Blade1.Location = new System.Drawing.Point(103, 14);
+            this.cbxMercGroup1Blade1.Name = "cbxMercGroup1Blade1";
+            this.cbxMercGroup1Blade1.Size = new System.Drawing.Size(121, 21);
+            this.cbxMercGroup1Blade1.TabIndex = 21;
+            this.cbxMercGroup1Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade1_SelectionChangeCommitted);
+            // 
+            // nudMercGroup1Blade1
+            // 
+            this.nudMercGroup1Blade1.Location = new System.Drawing.Point(58, 14);
+            this.nudMercGroup1Blade1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudMercGroup1Blade1.Name = "nudMercGroup1Blade1";
+            this.nudMercGroup1Blade1.Size = new System.Drawing.Size(48, 20);
+            this.nudMercGroup1Blade1.TabIndex = 22;
+            this.nudMercGroup1Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade1_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Blade 3:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(46, 13);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Blade 2:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Blade 1:";
+            // 
+            // tabFlags
+            // 
+            this.tabFlags.Controls.Add(this.hbxFlags);
+            this.tabFlags.Location = new System.Drawing.Point(4, 22);
+            this.tabFlags.Name = "tabFlags";
+            this.tabFlags.Size = new System.Drawing.Size(1134, 581);
+            this.tabFlags.TabIndex = 8;
+            this.tabFlags.Text = "Game Flag Data";
+            this.tabFlags.UseVisualStyleBackColor = true;
+            // 
+            // hbxFlags
+            // 
+            this.hbxFlags.ColumnInfoVisible = true;
+            this.hbxFlags.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxFlags.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxFlags.LineInfoVisible = true;
+            this.hbxFlags.Location = new System.Drawing.Point(0, 0);
+            this.hbxFlags.Name = "hbxFlags";
+            this.hbxFlags.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxFlags.Size = new System.Drawing.Size(1134, 581);
+            this.hbxFlags.StringViewVisible = true;
+            this.hbxFlags.TabIndex = 155;
+            this.hbxFlags.UseFixedBytesPerLine = true;
+            this.hbxFlags.VScrollBarVisible = true;
+            // 
             // tabUnknown
             // 
             this.tabUnknown.AutoScroll = true;
@@ -16748,6 +18221,147 @@
             this.groupBox131.TabStop = false;
             this.groupBox131.Text = "1.5.0+ New Extra Data";
             // 
+            // tbc150RawData
+            // 
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1176A0);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117728);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117A4C);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117D70);
+            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1186DC);
+            this.tbc150RawData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbc150RawData.Location = new System.Drawing.Point(3, 16);
+            this.tbc150RawData.Name = "tbc150RawData";
+            this.tbc150RawData.SelectedIndex = 0;
+            this.tbc150RawData.Size = new System.Drawing.Size(1122, 503);
+            this.tbc150RawData.TabIndex = 0;
+            // 
+            // tab150RawDataUnk_0x1176A0
+            // 
+            this.tab150RawDataUnk_0x1176A0.Controls.Add(this.hbx150RawDataUnk_0x1176A0);
+            this.tab150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x1176A0.Name = "tab150RawDataUnk_0x1176A0";
+            this.tab150RawDataUnk_0x1176A0.Padding = new System.Windows.Forms.Padding(3);
+            this.tab150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x1176A0.TabIndex = 0;
+            this.tab150RawDataUnk_0x1176A0.Text = "Unk_0x1176A0";
+            this.tab150RawDataUnk_0x1176A0.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x1176A0
+            // 
+            this.hbx150RawDataUnk_0x1176A0.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x1176A0.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x1176A0.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(3, 3);
+            this.hbx150RawDataUnk_0x1176A0.Name = "hbx150RawDataUnk_0x1176A0";
+            this.hbx150RawDataUnk_0x1176A0.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1108, 471);
+            this.hbx150RawDataUnk_0x1176A0.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.TabIndex = 154;
+            this.hbx150RawDataUnk_0x1176A0.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x1176A0.VScrollBarVisible = true;
+            // 
+            // tab150RawDataUnk_0x117728
+            // 
+            this.tab150RawDataUnk_0x117728.Controls.Add(this.hbx150RawDataUnk_0x117728);
+            this.tab150RawDataUnk_0x117728.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117728.Name = "tab150RawDataUnk_0x117728";
+            this.tab150RawDataUnk_0x117728.Padding = new System.Windows.Forms.Padding(3);
+            this.tab150RawDataUnk_0x117728.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117728.TabIndex = 1;
+            this.tab150RawDataUnk_0x117728.Text = "Unk_0x117728";
+            this.tab150RawDataUnk_0x117728.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x117728
+            // 
+            this.hbx150RawDataUnk_0x117728.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117728.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117728.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117728.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117728.Location = new System.Drawing.Point(3, 3);
+            this.hbx150RawDataUnk_0x117728.Name = "hbx150RawDataUnk_0x117728";
+            this.hbx150RawDataUnk_0x117728.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117728.Size = new System.Drawing.Size(1108, 471);
+            this.hbx150RawDataUnk_0x117728.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117728.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117728.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117728.VScrollBarVisible = true;
+            // 
+            // tab150RawDataUnk_0x117A4C
+            // 
+            this.tab150RawDataUnk_0x117A4C.Controls.Add(this.hbx150RawDataUnk_0x117A4C);
+            this.tab150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117A4C.Name = "tab150RawDataUnk_0x117A4C";
+            this.tab150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117A4C.TabIndex = 2;
+            this.tab150RawDataUnk_0x117A4C.Text = "Unk_0x117A4C";
+            this.tab150RawDataUnk_0x117A4C.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x117A4C
+            // 
+            this.hbx150RawDataUnk_0x117A4C.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117A4C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117A4C.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x117A4C.Name = "hbx150RawDataUnk_0x117A4C";
+            this.hbx150RawDataUnk_0x117A4C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x117A4C.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117A4C.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117A4C.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117A4C.VScrollBarVisible = true;
+            // 
+            // tab150RawDataUnk_0x117D70
+            // 
+            this.tab150RawDataUnk_0x117D70.Controls.Add(this.hbx150RawDataUnk_0x117D70);
+            this.tab150RawDataUnk_0x117D70.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x117D70.Name = "tab150RawDataUnk_0x117D70";
+            this.tab150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117D70.TabIndex = 3;
+            this.tab150RawDataUnk_0x117D70.Text = "Unk_0x117D70";
+            this.tab150RawDataUnk_0x117D70.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x117D70
+            // 
+            this.hbx150RawDataUnk_0x117D70.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117D70.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117D70.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
+            this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117D70.VScrollBarVisible = true;
+            // 
+            // tab150RawDataUnk_0x1186DC
+            // 
+            this.tab150RawDataUnk_0x1186DC.Controls.Add(this.hbx150RawDataUnk_0x1186DC);
+            this.tab150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(4, 22);
+            this.tab150RawDataUnk_0x1186DC.Name = "tab150RawDataUnk_0x1186DC";
+            this.tab150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x1186DC.TabIndex = 4;
+            this.tab150RawDataUnk_0x1186DC.Text = "Unk_0x1186DC";
+            this.tab150RawDataUnk_0x1186DC.UseVisualStyleBackColor = true;
+            // 
+            // hbx150RawDataUnk_0x1186DC
+            // 
+            this.hbx150RawDataUnk_0x1186DC.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x1186DC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x1186DC.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x1186DC.Name = "hbx150RawDataUnk_0x1186DC";
+            this.hbx150RawDataUnk_0x1186DC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x1186DC.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x1186DC.TabIndex = 155;
+            this.hbx150RawDataUnk_0x1186DC.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x1186DC.VScrollBarVisible = true;
+            // 
             // ofdSaveFile
             // 
             this.ofdSaveFile.FileName = "openFileDialog1";
@@ -16782,146 +18396,23 @@
             this.splitContainer3.SplitterDistance = 48;
             this.splitContainer3.TabIndex = 34;
             // 
-            // tbc150RawData
+            // cbxMercGroupPresets
             // 
-            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1176A0);
-            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117728);
-            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117A4C);
-            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x117D70);
-            this.tbc150RawData.Controls.Add(this.tab150RawDataUnk_0x1186DC);
-            this.tbc150RawData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbc150RawData.Location = new System.Drawing.Point(3, 16);
-            this.tbc150RawData.Name = "tbc150RawData";
-            this.tbc150RawData.SelectedIndex = 0;
-            this.tbc150RawData.Size = new System.Drawing.Size(1122, 503);
-            this.tbc150RawData.TabIndex = 0;
+            this.cbxMercGroupPresets.FormattingEnabled = true;
+            this.cbxMercGroupPresets.Location = new System.Drawing.Point(58, 19);
+            this.cbxMercGroupPresets.Name = "cbxMercGroupPresets";
+            this.cbxMercGroupPresets.Size = new System.Drawing.Size(69, 21);
+            this.cbxMercGroupPresets.TabIndex = 178;
+            this.cbxMercGroupPresets.SelectedIndexChanged += new System.EventHandler(this.cbxMercGroupPresets_SelectedIndexChanged);
             // 
-            // tab150RawDataUnk_0x1176A0
+            // label430
             // 
-            this.tab150RawDataUnk_0x1176A0.Controls.Add(this.hbx150RawDataUnk_0x1176A0);
-            this.tab150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(4, 22);
-            this.tab150RawDataUnk_0x1176A0.Name = "tab150RawDataUnk_0x1176A0";
-            this.tab150RawDataUnk_0x1176A0.Padding = new System.Windows.Forms.Padding(3);
-            this.tab150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1114, 477);
-            this.tab150RawDataUnk_0x1176A0.TabIndex = 0;
-            this.tab150RawDataUnk_0x1176A0.Text = "Unk_0x1176A0";
-            this.tab150RawDataUnk_0x1176A0.UseVisualStyleBackColor = true;
-            // 
-            // tab150RawDataUnk_0x117728
-            // 
-            this.tab150RawDataUnk_0x117728.Controls.Add(this.hbx150RawDataUnk_0x117728);
-            this.tab150RawDataUnk_0x117728.Location = new System.Drawing.Point(4, 22);
-            this.tab150RawDataUnk_0x117728.Name = "tab150RawDataUnk_0x117728";
-            this.tab150RawDataUnk_0x117728.Padding = new System.Windows.Forms.Padding(3);
-            this.tab150RawDataUnk_0x117728.Size = new System.Drawing.Size(566, 206);
-            this.tab150RawDataUnk_0x117728.TabIndex = 1;
-            this.tab150RawDataUnk_0x117728.Text = "Unk_0x117728";
-            this.tab150RawDataUnk_0x117728.UseVisualStyleBackColor = true;
-            // 
-            // hbx150RawDataUnk_0x1176A0
-            // 
-            this.hbx150RawDataUnk_0x1176A0.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x1176A0.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x1176A0.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(3, 3);
-            this.hbx150RawDataUnk_0x1176A0.Name = "hbx150RawDataUnk_0x1176A0";
-            this.hbx150RawDataUnk_0x1176A0.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1108, 471);
-            this.hbx150RawDataUnk_0x1176A0.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.TabIndex = 154;
-            this.hbx150RawDataUnk_0x1176A0.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x1176A0.VScrollBarVisible = true;
-            // 
-            // tab150RawDataUnk_0x117A4C
-            // 
-            this.tab150RawDataUnk_0x117A4C.Controls.Add(this.hbx150RawDataUnk_0x117A4C);
-            this.tab150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(4, 22);
-            this.tab150RawDataUnk_0x117A4C.Name = "tab150RawDataUnk_0x117A4C";
-            this.tab150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(566, 206);
-            this.tab150RawDataUnk_0x117A4C.TabIndex = 2;
-            this.tab150RawDataUnk_0x117A4C.Text = "Unk_0x117A4C";
-            this.tab150RawDataUnk_0x117A4C.UseVisualStyleBackColor = true;
-            // 
-            // tab150RawDataUnk_0x117D70
-            // 
-            this.tab150RawDataUnk_0x117D70.Controls.Add(this.hbx150RawDataUnk_0x117D70);
-            this.tab150RawDataUnk_0x117D70.Location = new System.Drawing.Point(4, 22);
-            this.tab150RawDataUnk_0x117D70.Name = "tab150RawDataUnk_0x117D70";
-            this.tab150RawDataUnk_0x117D70.Size = new System.Drawing.Size(566, 206);
-            this.tab150RawDataUnk_0x117D70.TabIndex = 3;
-            this.tab150RawDataUnk_0x117D70.Text = "Unk_0x117D70";
-            this.tab150RawDataUnk_0x117D70.UseVisualStyleBackColor = true;
-            // 
-            // tab150RawDataUnk_0x1186DC
-            // 
-            this.tab150RawDataUnk_0x1186DC.Controls.Add(this.hbx150RawDataUnk_0x1186DC);
-            this.tab150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(4, 22);
-            this.tab150RawDataUnk_0x1186DC.Name = "tab150RawDataUnk_0x1186DC";
-            this.tab150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(566, 206);
-            this.tab150RawDataUnk_0x1186DC.TabIndex = 4;
-            this.tab150RawDataUnk_0x1186DC.Text = "Unk_0x1186DC";
-            this.tab150RawDataUnk_0x1186DC.UseVisualStyleBackColor = true;
-            // 
-            // hbx150RawDataUnk_0x117728
-            // 
-            this.hbx150RawDataUnk_0x117728.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x117728.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x117728.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x117728.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x117728.Location = new System.Drawing.Point(3, 3);
-            this.hbx150RawDataUnk_0x117728.Name = "hbx150RawDataUnk_0x117728";
-            this.hbx150RawDataUnk_0x117728.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117728.Size = new System.Drawing.Size(560, 200);
-            this.hbx150RawDataUnk_0x117728.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x117728.TabIndex = 155;
-            this.hbx150RawDataUnk_0x117728.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x117728.VScrollBarVisible = true;
-            // 
-            // hbx150RawDataUnk_0x117A4C
-            // 
-            this.hbx150RawDataUnk_0x117A4C.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x117A4C.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x117A4C.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x117A4C.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(0, 0);
-            this.hbx150RawDataUnk_0x117A4C.Name = "hbx150RawDataUnk_0x117A4C";
-            this.hbx150RawDataUnk_0x117A4C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(566, 206);
-            this.hbx150RawDataUnk_0x117A4C.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x117A4C.TabIndex = 155;
-            this.hbx150RawDataUnk_0x117A4C.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x117A4C.VScrollBarVisible = true;
-            // 
-            // hbx150RawDataUnk_0x117D70
-            // 
-            this.hbx150RawDataUnk_0x117D70.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x117D70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x117D70.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x117D70.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
-            this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
-            this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(566, 206);
-            this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
-            this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x117D70.VScrollBarVisible = true;
-            // 
-            // hbx150RawDataUnk_0x1186DC
-            // 
-            this.hbx150RawDataUnk_0x1186DC.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x1186DC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x1186DC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x1186DC.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(0, 0);
-            this.hbx150RawDataUnk_0x1186DC.Name = "hbx150RawDataUnk_0x1186DC";
-            this.hbx150RawDataUnk_0x1186DC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(566, 206);
-            this.hbx150RawDataUnk_0x1186DC.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x1186DC.TabIndex = 155;
-            this.hbx150RawDataUnk_0x1186DC.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x1186DC.VScrollBarVisible = true;
+            this.label430.AutoSize = true;
+            this.label430.Location = new System.Drawing.Point(12, 22);
+            this.label430.Name = "label430";
+            this.label430.Size = new System.Drawing.Size(40, 13);
+            this.label430.TabIndex = 179;
+            this.label430.Text = "Preset:";
             // 
             // frmMain
             // 
@@ -17589,6 +19080,63 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).EndInit();
+            this.tabMercGroups.ResumeLayout(false);
+            this.tabMercGroups.PerformLayout();
+            this.groupBox144.ResumeLayout(false);
+            this.groupBox144.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupsCount)).EndInit();
+            this.groupBox140.ResumeLayout(false);
+            this.groupBox140.PerformLayout();
+            this.groupBox141.ResumeLayout(false);
+            this.groupBox142.ResumeLayout(false);
+            this.groupBox143.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3OriginalMissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3TeamID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade1)).EndInit();
+            this.groupBox136.ResumeLayout(false);
+            this.groupBox136.PerformLayout();
+            this.groupBox137.ResumeLayout(false);
+            this.groupBox138.ResumeLayout(false);
+            this.groupBox139.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2OriginalMissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2TeamID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade1)).EndInit();
+            this.groupBox132.ResumeLayout(false);
+            this.groupBox132.PerformLayout();
+            this.groupBox135.ResumeLayout(false);
+            this.groupBox134.ResumeLayout(false);
+            this.groupBox133.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1OriginalMissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1TeamID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).EndInit();
+            this.tabFlags.ResumeLayout(false);
             this.tabUnknown.ResumeLayout(false);
             this.tabControl6.ResumeLayout(false);
             this.tabUnkMain.ResumeLayout(false);
@@ -17611,16 +19159,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this.groupBox131.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.tbc150RawData.ResumeLayout(false);
             this.tab150RawDataUnk_0x1176A0.ResumeLayout(false);
             this.tab150RawDataUnk_0x117728.ResumeLayout(false);
             this.tab150RawDataUnk_0x117A4C.ResumeLayout(false);
             this.tab150RawDataUnk_0x117D70.ResumeLayout(false);
             this.tab150RawDataUnk_0x1186DC.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -17629,7 +19177,6 @@
 
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -17651,15 +19198,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblMagic;
-        private System.Windows.Forms.Label lblss_field_4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label lblsg_field_18;
-        private System.Windows.Forms.Label lblsg_field_1C;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label lblsg_field_2C;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblLandmarkRotY;
         private System.Windows.Forms.Label label22;
@@ -17668,8 +19208,6 @@
         private System.Windows.Forms.Label lblChapterSaveScenarioFlag;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label lblChapterSaveEventId;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label lblsg_field_3A;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabMain;
         private System.Windows.Forms.OpenFileDialog ofdSaveFile;
@@ -18917,6 +20455,132 @@
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117A4C;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117D70;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1186DC;
+        private System.Windows.Forms.TabPage tabFlags;
+        private Be.Windows.Forms.HexBox hbxFlags;
+        private System.Windows.Forms.TabPage tabMercGroups;
+        private System.Windows.Forms.GroupBox groupBox132;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade6;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade5;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade6;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade5;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade4;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade4;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label392;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade3;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade2;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade3;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade2;
+        private System.Windows.Forms.ComboBox cbxMercGroup1Blade1;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1MissionID;
+        private System.Windows.Forms.Label label394;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1TeamID;
+        private System.Windows.Forms.Label label393;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1OriginalMissionTime;
+        private System.Windows.Forms.Label label396;
+        private System.Windows.Forms.NumericUpDown nudMercGroup1MissionTime;
+        private System.Windows.Forms.Label label395;
+        private System.Windows.Forms.GroupBox groupBox135;
+        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x24;
+        private System.Windows.Forms.GroupBox groupBox134;
+        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x0C;
+        private System.Windows.Forms.GroupBox groupBox133;
+        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x18;
+        private System.Windows.Forms.GroupBox groupBox140;
+        private System.Windows.Forms.GroupBox groupBox141;
+        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x24;
+        private System.Windows.Forms.GroupBox groupBox142;
+        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x0C;
+        private System.Windows.Forms.GroupBox groupBox143;
+        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x18;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3OriginalMissionTime;
+        private System.Windows.Forms.Label label407;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3MissionTime;
+        private System.Windows.Forms.Label label408;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3MissionID;
+        private System.Windows.Forms.Label label409;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3TeamID;
+        private System.Windows.Forms.Label label410;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade6;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade5;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade6;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade5;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade4;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade4;
+        private System.Windows.Forms.Label label411;
+        private System.Windows.Forms.Label label412;
+        private System.Windows.Forms.Label label413;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade3;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade2;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade3;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade2;
+        private System.Windows.Forms.ComboBox cbxMercGroup3Blade1;
+        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade1;
+        private System.Windows.Forms.Label label414;
+        private System.Windows.Forms.Label label415;
+        private System.Windows.Forms.Label label416;
+        private System.Windows.Forms.GroupBox groupBox136;
+        private System.Windows.Forms.GroupBox groupBox137;
+        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x24;
+        private System.Windows.Forms.GroupBox groupBox138;
+        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x0C;
+        private System.Windows.Forms.GroupBox groupBox139;
+        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x18;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2OriginalMissionTime;
+        private System.Windows.Forms.Label label397;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2MissionTime;
+        private System.Windows.Forms.Label label398;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2MissionID;
+        private System.Windows.Forms.Label label399;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2TeamID;
+        private System.Windows.Forms.Label label400;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade6;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade5;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade6;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade5;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade4;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade4;
+        private System.Windows.Forms.Label label401;
+        private System.Windows.Forms.Label label402;
+        private System.Windows.Forms.Label label403;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade3;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade2;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade3;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade2;
+        private System.Windows.Forms.ComboBox cbxMercGroup2Blade1;
+        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade1;
+        private System.Windows.Forms.Label label404;
+        private System.Windows.Forms.Label label405;
+        private System.Windows.Forms.Label label406;
+        private System.Windows.Forms.ComboBox cbxBladeRareNameID;
+        private System.Windows.Forms.Label label422;
+        private System.Windows.Forms.Label label421;
+        private System.Windows.Forms.Label label420;
+        private System.Windows.Forms.Label label419;
+        private System.Windows.Forms.Label label418;
+        private System.Windows.Forms.Label label417;
+        private System.Windows.Forms.NumericUpDown nudMercGroupsCount;
+        private System.Windows.Forms.Label label423;
+        private System.Windows.Forms.GroupBox groupBox144;
+        private System.Windows.Forms.Label label429;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember6;
+        private System.Windows.Forms.Label label428;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember5;
+        private System.Windows.Forms.Label label427;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember1;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember4;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember2;
+        private System.Windows.Forms.Label label424;
+        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember3;
+        private System.Windows.Forms.Label label425;
+        private System.Windows.Forms.Label label426;
+        private System.Windows.Forms.Label label430;
+        private System.Windows.Forms.ComboBox cbxMercGroupPresets;
     }
 }
 

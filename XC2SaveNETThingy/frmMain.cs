@@ -34,7 +34,8 @@ namespace XC2SaveNETThingy
         private void SetupComboBoxes()
         {
             #region Misc
-
+            for (int i = 0; i < XC2Save.MercGroupPreset.COUNT; i++)
+                cbxMercGroupPresets.Items.Add("Preset " + (i + 1).ToString());
             #endregion Misc
 
             #region Driver
@@ -76,6 +77,7 @@ namespace XC2SaveNETThingy
             cbxBladeWeaponType.BindDataTable(XC2Data.Weapons(7));
             cbxBladeDefWeapon.BindDataTable(XC2Data.BladeWeaponNames(), "FriendlyName");
             cbxBladeElement.BindDataTable(XC2Data.Elements());
+            cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames());
             cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames());
 
             cbxBladeAuxCore1ID.BindDataTable(XC2Data.Items());
@@ -204,7 +206,7 @@ namespace XC2SaveNETThingy
             SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
             SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
             SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
-            SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, null);
+            SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, XC2Data.GetUnrefinedAuxCores());
             SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, XC2Data.GetPouchItems());
             SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
             SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
@@ -321,6 +323,121 @@ namespace XC2SaveNETThingy
             nudLastVisitedLandmarkMapPositionY.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Y;
             nudLastVisitedLandmarkMapPositionZ.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Z;
             #endregion Map
+
+            #region Merc Groups
+
+            nudMercGroupsCount.Value = SAVEDATA.MercGroupCount;
+
+            #region Merc Group 1
+            nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
+            cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
+
+            nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
+            cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
+
+            nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
+            cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
+
+            nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
+            cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
+
+            nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
+            cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
+
+            nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
+            cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
+
+            nudMercGroup1TeamID.Value = SAVEDATA.MercGroup1.TeamID;
+            nudMercGroup1MissionID.Value = SAVEDATA.MercGroup1.MissionID;
+            nudMercGroup1MissionTime.Value = SAVEDATA.MercGroup1.MissionTime;
+            nudMercGroup1OriginalMissionTime.Value = SAVEDATA.MercGroup1.MissionTimeOriginal;
+            hbxMercGroup1Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x0C);
+            hbxMercGroup1Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x18);
+            hbxMercGroup1Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x24);
+            #endregion Merc Group 1
+
+            #region Merc Group 2
+            nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
+            cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
+
+            nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
+            cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
+
+            nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
+            cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
+
+            nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
+            cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
+
+            nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
+            cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
+
+            nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
+            cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
+
+            nudMercGroup2TeamID.Value = SAVEDATA.MercGroup2.TeamID;
+            nudMercGroup2MissionID.Value = SAVEDATA.MercGroup2.MissionID;
+            nudMercGroup2MissionTime.Value = SAVEDATA.MercGroup2.MissionTime;
+            nudMercGroup2OriginalMissionTime.Value = SAVEDATA.MercGroup2.MissionTimeOriginal;
+            hbxMercGroup2Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x0C);
+            hbxMercGroup2Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x18);
+            hbxMercGroup2Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x24);
+            #endregion Merc Group 2
+
+            #region Merc Group 3
+            nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
+            cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
+
+            nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
+            cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
+
+            nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
+            cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
+
+            nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
+            cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
+
+            nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
+            cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
+
+            nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
+            cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
+            cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
+
+            nudMercGroup3TeamID.Value = SAVEDATA.MercGroup3.TeamID;
+            nudMercGroup3MissionID.Value = SAVEDATA.MercGroup3.MissionID;
+            nudMercGroup3MissionTime.Value = SAVEDATA.MercGroup3.MissionTime;
+            nudMercGroup3OriginalMissionTime.Value = SAVEDATA.MercGroup3.MissionTimeOriginal;
+            hbxMercGroup3Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x0C);
+            hbxMercGroup3Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x18);
+            hbxMercGroup3Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x24);
+            #endregion Merc Group 3
+
+            cbxMercGroupPresets.SelectedIndex = 1;
+            cbxMercGroupPresets.SelectedIndex = 0;
+
+            #endregion Merc Groups
+
+            #region Flags
+            hbxFlags.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Flags);
+            #endregion Flags
 
             #region Unknown
             hbxUnk_0x000004.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000004);
@@ -660,6 +777,8 @@ namespace XC2SaveNETThingy
                 nudBladeElement.Value = b.Atr;
                 cbxBladeElement.SelectedValue = b.Atr;
                 nudBladeRareNameID.Value = b.RareNameId;
+                nudBladeRareNameID.Value = b.RareNameId;
+                cbxBladeRareNameID.SelectedValue = b.RareNameId;
                 nudBladeCommonNameID.Value = b.CommonNameId;
                 cbxBladeCommonNameID.SelectedValue = b.CommonNameId;
 
@@ -1258,15 +1377,15 @@ namespace XC2SaveNETThingy
 
         #region Driver
 
-        #region DriverMain
+        #region Driver Main
         private void lbxDrivers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!(IsReloadingDrivers))
                 LoadDriver(lbxDrivers.SelectedIndex);
         }
-        #endregion DriverMain
+        #endregion Driver Main
 
-        #region DriverMisc
+        #region Driver Misc
         private void nudDriverID_ValueChanged(object sender, EventArgs e)
         {
             UInt16 did = (UInt16)nudDriverID.Value;
@@ -1278,10 +1397,9 @@ namespace XC2SaveNETThingy
         }
         private void cbxDriverID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverID.Value = cbxDriverID.SelectedIndex;
         private void cbxDriverIsActive_SelectionChangeCommitted(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].IsActive = (UInt16)cbxDriverIsActive.SelectedIndex;
-        #endregion DriverMisc
+        #endregion Driver Misc
 
-        #region DriverEquippedBlades
-
+        #region Driver Equipped Blades
         private void nudDriverSetBlade_ValueChanged(object sender, EventArgs e)
         {
             Int16 value = (Int16)nudDriverSetBlade.Value;
@@ -1310,10 +1428,9 @@ namespace XC2SaveNETThingy
         private void cbxDriverBlade1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverBlade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade1.SelectedItem)).ID;
         private void cbxDriverBlade2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverBlade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade2.SelectedItem)).ID;
         private void cbxDriverBlade3_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverBlade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxDriverBlade3.SelectedItem)).ID;
+        #endregion Driver Equipped Blades
 
-        #endregion DriverEquippedBlades
-
-        #region DriverStats
+        #region Driver Stats
         private void nudDriverLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Level = (UInt16)nudDriverLevel.Value;
         private void nudDriverHpMax_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HP = (UInt16)nudDriverHpMax.Value;
         private void nudDriverStrength_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Strength = (UInt16)nudDriverStrength.Value;
@@ -1329,9 +1446,9 @@ namespace XC2SaveNETThingy
         private void nudDriverBattleExp_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].BattleExp = (UInt32)nudDriverBattleExp.Value;
         private void nudDriverCurrentSkillPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].CurrentSkillPoints = (UInt32)nudDriverCurrentSkillPoints.Value;
         private void nudDriverTotalSkillPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].TotalSkillPoints = (UInt32)nudDriverTotalSkillPoints.Value;
-        #endregion DriverStats
+        #endregion Driver Stats
 
-        #region DriverIdeas
+        #region Driver Ideas
         private void nudDriverBraveryLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].BraveryLevel = (UInt32)nudDriverBraveryLevel.Value;
         private void nudDriverBraveryPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].BraveryPoints = (UInt32)nudDriverBraveryPoints.Value;
         private void nudDriverTruthLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].TruthLevel = (UInt32)nudDriverTruthLevel.Value;
@@ -1340,9 +1457,9 @@ namespace XC2SaveNETThingy
         private void nudDriverCompassionPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].CompassionPoints = (UInt32)nudDriverCompassionPoints.Value;
         private void nudDriverJusticeLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].JusticeLevel = (UInt32)nudDriverJusticeLevel.Value;
         private void nudDriverJusticePoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].JusticePoints = (UInt32)nudDriverJusticePoints.Value;
-        #endregion DriverIdeas
+        #endregion Driver Ideas
 
-        #region DriverArts
+        #region Driver Arts
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
         {
             Driver.Weapon w = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex];
@@ -1378,9 +1495,9 @@ namespace XC2SaveNETThingy
         private void cbxDriverWeaponArtId1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId1.Value = cbxDriverWeaponArtId1.SelectedIndex.SanitizeUInt16();
         private void cbxDriverWeaponArtId2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId2.Value = cbxDriverWeaponArtId2.SelectedIndex.SanitizeUInt16();
         private void cbxDriverWeaponArtId3_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId3.Value = cbxDriverWeaponArtId3.SelectedIndex.SanitizeUInt16();
-        #endregion DriverArts
+        #endregion Driver Arts
 
-        #region DriverArtsLevels
+        #region Driver Arts Levels
         private void nudDriverArtID_ValueChanged(object sender, EventArgs e)
         {
             cbxDriverArt.SelectedIndex = cbxDriverArt.SanitizeCbxIndex((int)nudDriverArtID.Value);
@@ -1388,9 +1505,9 @@ namespace XC2SaveNETThingy
         }
         private void cbxDriverArt_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverArtID.Value = cbxDriverArt.SelectedIndex.SanitizeUInt16();
         private void nudDriverArtLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value] = (Byte)nudDriverArtLevel.Value;
-        #endregion DriverArtsLevels
+        #endregion Driver Arts Levels
 
-        #region DriverPouches
+        #region Driver Pouches
         private void cbxDriverPouches_SelectedIndexChanged(object sender, EventArgs e)
         {
             nudDriverPouchesTime.Value = (decimal)SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time;
@@ -1405,9 +1522,9 @@ namespace XC2SaveNETThingy
         }
         private void cbxDriverPouchesItemID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverPouchesItemID.Value = Convert.ToUInt16(cbxDriverPouchesItemID.SelectedValue);
         private void nudDriverPouchesTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time = (float)nudDriverPouchesTime.Value;
-        #endregion DriverPouches
+        #endregion Driver Pouches
 
-        #region DriverAccessories
+        #region Driver Accessories
         private void nudDriverAccessory1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0 = (UInt16)nudDriverAccessory1ID.Value;
@@ -1447,9 +1564,9 @@ namespace XC2SaveNETThingy
         }
         private void cbxDriverAccessory3Type_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverAccessory3Type.Value = Convert.ToUInt16(cbxDriverAccessory3Type.SelectedValue);
         private void nudDriverAccessory3Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Serial = (UInt32)nudDriverAccessory3Serial.Value;
-        #endregion DriverAccessories
+        #endregion Driver Accessories
 
-        #region DriverOvertSkills
+        #region Driver Overt Skills
         private void nudDriverOvertSkill_c1r1_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0] = (UInt16)nudDriverOvertSkill_c1r1.Value;
@@ -1550,9 +1667,9 @@ namespace XC2SaveNETThingy
         private void nudDriverOvertSkill_c3_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].Level = Convert.ToUInt16(nudDriverOvertSkill_c3_Level.Value);
         private void nudDriverOvertSkill_c4_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].Level = Convert.ToUInt16(nudDriverOvertSkill_c4_Level.Value);
         private void nudDriverOvertSkill_c5_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].Level = Convert.ToUInt16(nudDriverOvertSkill_c5_Level.Value);
-        #endregion DriverOvertSkills
+        #endregion Driver Overt Skills
 
-        #region DriverHiddenSkills
+        #region Driver Hidden Skills
         private void nudDriverHiddenSkill_c1r1_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0] = (UInt16)nudDriverHiddenSkill_c1r1.Value;
@@ -1653,7 +1770,7 @@ namespace XC2SaveNETThingy
         private void nudDriverHiddenSkill_c3_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level = Convert.ToUInt16(nudDriverHiddenSkill_c3_Level.Value);
         private void nudDriverHiddenSkill_c4_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level = Convert.ToUInt16(nudDriverHiddenSkill_c4_Level.Value);
         private void nudDriverHiddenSkill_c5_Level_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level = Convert.ToUInt16(nudDriverHiddenSkill_c5_Level.Value);
-        #endregion DriverHiddenSkills
+        #endregion Driver Hidden Skills
 
         #region 1.5.0
         // ALL PROVISIONAL, SUPER HACKY
@@ -1885,7 +2002,12 @@ namespace XC2SaveNETThingy
             cbxBladeElement.SelectedValue = (Byte)nudBladeElement.Value;
         }
         private void cbxBladeElement_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeElement.Value = Convert.ToByte(cbxBladeElement.SelectedValue);
-        private void nudBladeRareNameID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].RareNameId = (UInt16)nudBladeRareNameID.Value;
+        private void nudBladeRareNameID_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.Blades[lbxBlades.SelectedIndex].RareNameId = (UInt16)nudBladeRareNameID.Value;
+            cbxBladeRareNameID.SelectedValue = (UInt16)nudBladeRareNameID.Value;
+        }
+        private void cbxBladeRareNameID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeRareNameID.Value = Convert.ToUInt16(cbxBladeRareNameID.SelectedValue);
         private void nudBladeCommonNameID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonNameId = (UInt16)nudBladeCommonNameID.Value;
@@ -3234,6 +3356,157 @@ namespace XC2SaveNETThingy
 
 
         #endregion Map
+
+        #region Merc Groups
+        private void nudMercGroupsCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupCount = (UInt64)nudMercGroupsCount.Value;
+
+        #region Merc Group 1
+        private void nudMercGroup1Blade1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[0] = (UInt16)nudMercGroup1Blade1.Value;
+            cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade1.Value);
+        }
+        private void nudMercGroup1Blade2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[1] = (UInt16)nudMercGroup1Blade2.Value;
+            cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade2.Value);
+        }
+        private void nudMercGroup1Blade3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[2] = (UInt16)nudMercGroup1Blade3.Value;
+            cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade3.Value);
+        }
+        private void nudMercGroup1Blade4_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[3] = (UInt16)nudMercGroup1Blade4.Value;
+            cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade4.Value);
+        }
+        private void nudMercGroup1Blade5_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[4] = (UInt16)nudMercGroup1Blade5.Value;
+            cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade5.Value);
+        }
+        private void nudMercGroup1Blade6_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup1.TeamMemberIDs[5] = (UInt16)nudMercGroup1Blade6.Value;
+            cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup1Blade6.Value);
+        }
+        private void cbxMercGroup1Blade1_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade1.SelectedItem)).ID;
+        private void cbxMercGroup1Blade2_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade2.SelectedItem)).ID;
+        private void cbxMercGroup1Blade3_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade3.SelectedItem)).ID;
+        private void cbxMercGroup1Blade4_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade4.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade4.SelectedItem)).ID;
+        private void cbxMercGroup1Blade5_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade5.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade5.SelectedItem)).ID;
+        private void cbxMercGroup1Blade6_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup1Blade6.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup1Blade6.SelectedItem)).ID;
+        private void nudMercGroup1TeamID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.TeamID = (UInt32)nudMercGroup1TeamID.Value;
+        private void nudMercGroup1MissionID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionID = (UInt32)nudMercGroup1MissionID.Value;
+        private void nudMercGroup1MissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionTime = (UInt32)nudMercGroup1MissionTime.Value;
+        private void nudMercGroup1OriginalMissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionTimeOriginal = (UInt32)nudMercGroup1OriginalMissionTime.Value;
+
+        #endregion Marc Group 1
+
+        #region Merc Group 2
+        private void nudMercGroup2Blade1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[0] = (UInt16)nudMercGroup2Blade1.Value;
+            cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade1.Value);
+        }
+        private void nudMercGroup2Blade2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[1] = (UInt16)nudMercGroup2Blade2.Value;
+            cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade2.Value);
+        }
+        private void nudMercGroup2Blade3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[2] = (UInt16)nudMercGroup2Blade3.Value;
+            cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade3.Value);
+        }
+        private void nudMercGroup2Blade4_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[3] = (UInt16)nudMercGroup2Blade4.Value;
+            cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade4.Value);
+        }
+        private void nudMercGroup2Blade5_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[4] = (UInt16)nudMercGroup2Blade5.Value;
+            cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade5.Value);
+        }
+        private void nudMercGroup2Blade6_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup2.TeamMemberIDs[5] = (UInt16)nudMercGroup2Blade6.Value;
+            cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup2Blade6.Value);
+        }
+        private void cbxMercGroup2Blade1_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade1.SelectedItem)).ID;
+        private void cbxMercGroup2Blade2_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade2.SelectedItem)).ID;
+        private void cbxMercGroup2Blade3_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade3.SelectedItem)).ID;
+        private void cbxMercGroup2Blade4_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade4.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade4.SelectedItem)).ID;
+        private void cbxMercGroup2Blade5_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade5.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade5.SelectedItem)).ID;
+        private void cbxMercGroup2Blade6_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup2Blade6.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup2Blade6.SelectedItem)).ID;
+        private void nudMercGroup2TeamID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup2.TeamID = (UInt32)nudMercGroup2TeamID.Value;
+        private void nudMercGroup2MissionID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup2.MissionID = (UInt32)nudMercGroup2MissionID.Value;
+        private void nudMercGroup2MissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup2.MissionTime = (UInt32)nudMercGroup2MissionTime.Value;
+        private void nudMercGroup2OriginalMissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup2.MissionTimeOriginal = (UInt32)nudMercGroup2OriginalMissionTime.Value;
+        #endregion Merc Group 2
+
+        #region Merc Group 3
+        private void nudMercGroup3Blade1_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[0] = (UInt16)nudMercGroup3Blade1.Value;
+            cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade1.Value);
+        }
+        private void nudMercGroup3Blade2_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[1] = (UInt16)nudMercGroup3Blade2.Value;
+            cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade2.Value);
+        }
+        private void nudMercGroup3Blade3_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[2] = (UInt16)nudMercGroup3Blade3.Value;
+            cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade3.Value);
+        }
+        private void nudMercGroup3Blade4_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[3] = (UInt16)nudMercGroup3Blade4.Value;
+            cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade4.Value);
+        }
+        private void nudMercGroup3Blade5_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[4] = (UInt16)nudMercGroup3Blade5.Value;
+            cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade5.Value);
+        }
+        private void nudMercGroup3Blade6_ValueChanged(object sender, EventArgs e)
+        {
+            SAVEDATA.MercGroup3.TeamMemberIDs[5] = (UInt16)nudMercGroup3Blade6.Value;
+            cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == (UInt16)nudMercGroup3Blade6.Value);
+        }
+        private void cbxMercGroup3Blade1_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade1.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade1.SelectedItem)).ID;
+        private void cbxMercGroup3Blade2_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade2.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade2.SelectedItem)).ID;
+        private void cbxMercGroup3Blade3_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade3.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade3.SelectedItem)).ID;
+        private void cbxMercGroup3Blade4_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade4.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade4.SelectedItem)).ID;
+        private void cbxMercGroup3Blade5_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade5.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade5.SelectedItem)).ID;
+        private void cbxMercGroup3Blade6_SelectionChangeCommitted(object sender, EventArgs e) => nudMercGroup3Blade6.Value = SAVEDATA.Blades.FirstOrDefault(b => b.Equals(cbxMercGroup3Blade6.SelectedItem)).ID;
+        private void nudMercGroup3TeamID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup3.TeamID = (UInt32)nudMercGroup3TeamID.Value;
+        private void nudMercGroup3MissionID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup3.MissionID = (UInt32)nudMercGroup3MissionID.Value;
+        private void nudMercGroup3MissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup3.MissionTime = (UInt32)nudMercGroup3MissionTime.Value;
+        private void nudMercGroup3OriginalMissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup3.MissionTimeOriginal = (UInt32)nudMercGroup3OriginalMissionTime.Value;
+        #endregion Merc Group 3
+
+        private void cbxMercGroupPresets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nudMercGroupPresetMember1.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[0];
+            nudMercGroupPresetMember2.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[1];
+            nudMercGroupPresetMember3.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[2];
+            nudMercGroupPresetMember4.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[3];
+            nudMercGroupPresetMember5.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[4];
+            nudMercGroupPresetMember6.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5];
+        }
+        private void nudMercGroupPresetMember1_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[0] = (UInt16)nudMercGroupPresetMember1.Value;
+        private void nudMercGroupPresetMember2_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[1] = (UInt16)nudMercGroupPresetMember2.Value;
+        private void nudMercGroupPresetMember3_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[2] = (UInt16)nudMercGroupPresetMember3.Value;
+        private void nudMercGroupPresetMember4_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[3] = (UInt16)nudMercGroupPresetMember4.Value;
+        private void nudMercGroupPresetMember5_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[4] = (UInt16)nudMercGroupPresetMember5.Value;
+        private void nudMercGroupPresetMember6_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5] = (UInt16)nudMercGroupPresetMember6.Value;
+
+        #endregion Merc Groups
 
         #endregion Events
     }

@@ -361,18 +361,18 @@ namespace XC2SaveNETThingy
             }
         }
 
-        public class MercenaryTeam : IXC2SaveObject
+        public class MercGroup : IXC2SaveObject
         {
             public const int SIZE = 0x28;
 
-            public UInt16[] TeamMemberIds { get; set; }
-            public UInt32 field_C { get; set; }
-            public UInt32 TeamId { get; set; }
-            public UInt32 MissionId { get; set; }
-            public UInt32 field_18 { get; set; }
+            public UInt16[] TeamMemberIDs { get; set; }
+            public Byte[] Unk_0x0C { get; set; }
+            public UInt32 TeamID { get; set; }
+            public UInt32 MissionID { get; set; }
+            public Byte[] Unk_0x18 { get; set; }
             public UInt32 MissionTime { get; set; }
             public UInt32 MissionTimeOriginal { get; set; }
-            public UInt32 field_24 { get; set; }
+            public Byte[] Unk_0x24 { get; set; }
 
             private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
             {
@@ -386,35 +386,35 @@ namespace XC2SaveNETThingy
                 { "field_24", 0x24 }
             };
 
-            public MercenaryTeam(Byte[] data)
+            public MercGroup(Byte[] data)
             {
-                TeamMemberIds = new UInt16[6];
-                for (int i = 0; i < TeamMemberIds.Length; i++)
-                    TeamMemberIds[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["TeamMemberIds"] + (i * 2), 2), 0);
+                TeamMemberIDs = new UInt16[6];
+                for (int i = 0; i < TeamMemberIDs.Length; i++)
+                    TeamMemberIDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["TeamMemberIds"] + (i * 2), 2), 0);
 
-                field_C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_C"], 4), 0);
-                TeamId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TeamId"], 4), 0);
-                MissionId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MissionId"], 4), 0);
-                field_18 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_18"], 4), 0);
+                Unk_0x0C = data.GetByteSubArray(LOC["field_C"], 4);
+                TeamID = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TeamId"], 4), 0);
+                MissionID = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MissionId"], 4), 0);
+                Unk_0x18 = data.GetByteSubArray(LOC["field_18"], 4);
                 MissionTime = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MissionTime"], 4), 0);
                 MissionTimeOriginal = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MissionTimeOriginal"], 4), 0);
-                field_24 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_24"], 4), 0);
+                Unk_0x24 = data.GetByteSubArray(LOC["field_24"], 4);
             }
 
             public Byte[] ToRawData()
             {
                 List<Byte> result = new List<Byte>();
 
-                foreach (UInt16 tm in TeamMemberIds)
+                foreach (UInt16 tm in TeamMemberIDs)
                     result.AddRange(BitConverter.GetBytes(tm));
 
-                result.AddRange(BitConverter.GetBytes(field_C));
-                result.AddRange(BitConverter.GetBytes(TeamId));
-                result.AddRange(BitConverter.GetBytes(MissionId));
-                result.AddRange(BitConverter.GetBytes(field_18));
+                result.AddRange(Unk_0x0C);
+                result.AddRange(BitConverter.GetBytes(TeamID));
+                result.AddRange(BitConverter.GetBytes(MissionID));
+                result.AddRange(Unk_0x18);
                 result.AddRange(BitConverter.GetBytes(MissionTime));
                 result.AddRange(BitConverter.GetBytes(MissionTimeOriginal));
-                result.AddRange(BitConverter.GetBytes(field_24));
+                result.AddRange(Unk_0x24);
 
                 if (result.Count != SIZE)
                 {
@@ -429,13 +429,14 @@ namespace XC2SaveNETThingy
             }
         }
 
-        public class MercenaryTeamPreset : IXC2SaveObject
+        public class MercGroupPreset : IXC2SaveObject
         {
             public const int SIZE = 0xC;
+            public const int COUNT = 8;
 
             public UInt16[] Members { get; set; }
 
-            public MercenaryTeamPreset(Byte[] data)
+            public MercGroupPreset(Byte[] data)
             {
                 Members = new UInt16[6];
                 for (int i = 0; i < Members.Length; i++)
@@ -850,7 +851,6 @@ namespace XC2SaveNETThingy
         public UInt32 Money { get; set; }
         public UInt32 LastVisitedLandmarkMapJumpId { get; set; }
         public Byte[] Unk_0x000018 { get; set; }
-        //public UInt32 sg_field_1C { get; set; }
         public Vec3 LastVisitedLandmarkMapPosition { get; set; }
         public Byte[] Unk_0x00002C { get; set; }
         public float LandmarkRotY { get; set; }
@@ -862,8 +862,6 @@ namespace XC2SaveNETThingy
         public Blade[] Blades { get; set; }
         public XC2Party Party { get; set; }
         public ItemBox ItemBox { get; set; }
-
-        //GameFlag Flags;
         public Byte[] Flags { get; set; }
         public UInt32 ScenarioQuest { get; set; }
         public UInt32 CurrentQuest { get; set; }
@@ -872,11 +870,11 @@ namespace XC2SaveNETThingy
         public Byte[] Unk_0x1098C4 { get; set; }
         public GameTime CurrentInGameTime { get; set; }
         public ElapseTime PlayTime { get; set; }
-        public MercenaryTeam MercenaryTeam1 { get; set; }
-        public MercenaryTeam MercenaryTeam2 { get; set; }
-        public MercenaryTeam MercenaryTeam3 { get; set; }
-        public UInt64 MercenaryTeamCount { get; set; }
-        public MercenaryTeamPreset[] MercenaryTeamPresets { get; set; }
+        public MercGroup MercGroup1 { get; set; }
+        public MercGroup MercGroup2 { get; set; }
+        public MercGroup MercGroup3 { get; set; }
+        public UInt64 MercGroupCount { get; set; }
+        public MercGroupPreset[] MercGroupPresets { get; set; }
         public UInt16[] CommonBladeIDs { get; set; }
         public float PlayerCameraDistance { get; set; }
         public UInt32 GameClearCount { get; set; }
@@ -910,32 +908,24 @@ namespace XC2SaveNETThingy
         public Event[] Events { get; set; }
         public UInt32 EventsLength { get; set; }
         public Byte[] Unk_0x1171E8 { get; set; }
-        //public Byte[] sg_field_117378 { get; set; }
         public UInt32[] ContentVersions { get; set; }
         public Byte[] Unk_0x117390 { get; set; }
-        //public UInt32 sg_field_117698 { get; set; }
-        //public UInt32 sg_field_11769C { get; set; }
 
         public const int SIZE = 0x1176A0;
         public XC2Save(Byte[] data)
         {
             Magic = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Magic"], 4), 0);
-            //Unk_0x000004 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ss_field_4"], 4), 0);
             Unk_0x000004 = data.GetByteSubArray(LOC["ss_field_4"], 4);
             Time = new RealTime(data.GetByteSubArray(LOC["Time"], RealTime.SIZE));
             Money = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Money"], 4), 0);
             LastVisitedLandmarkMapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MapJumpId"], 4), 0);
-            //Unk_0x000018 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_18"], 4), 0);
-            //sg_field_1C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_1C"], 4), 0);
             Unk_0x000018 = data.GetByteSubArray(LOC["sg_field_18"], 8);
             LastVisitedLandmarkMapPosition = new Vec3(data.GetByteSubArray(LOC["MapPosition"], Vec3.SIZE));
-            //Unk_0x00002C = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_2C"], 4), 0);
             Unk_0x00002C = data.GetByteSubArray(LOC["sg_field_2C"], 4);
             LandmarkRotY = BitConverter.ToSingle(data.GetByteSubArray(LOC["LandmarkRotY"], 4), 0);
             isTimeStop = BitConverter.ToUInt16(data.GetByteSubArray(LOC["isTimeStop"], 2), 0);
             ChapterSaveScenarioFlag = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveScenarioFlag"], 2), 0);
             ChapterSaveEventId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveEventId"], 2), 0);
-            //Unk_0x00003A = BitConverter.ToUInt16(data.GetByteSubArray(LOC["sg_field_3A"], 2), 0);
             Unk_0x00003A = data.GetByteSubArray(LOC["sg_field_3A"], 2);
 
             Drivers = new Driver[16];
@@ -951,20 +941,19 @@ namespace XC2SaveNETThingy
             Flags = data.GetByteSubArray(LOC["Flags"], 0xDC20);
             ScenarioQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ScenarioQuest"], 4), 0);
             CurrentQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CurrentQuest"], 4), 0);
-            //Unk_0x1097FC = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_1097FC"], 4), 0);
             Unk_0x1097FC = data.GetByteSubArray(LOC["field_1097FC"], 4);
             Map = new MapData(data.GetByteSubArray(LOC["Map"], MapData.SIZE));
             Unk_0x1098C4 = data.GetByteSubArray(LOC["sg_gap_1098C4"], 12);
             CurrentInGameTime = new GameTime(data.GetByteSubArray(LOC["CurrentInGameTime"], GameTime.SIZE));
             PlayTime = new ElapseTime(data.GetByteSubArray(LOC["PlayTime"], ElapseTime.SIZE));
-            MercenaryTeam1 = new MercenaryTeam(data.GetByteSubArray(LOC["MercenaryTeam1"], MercenaryTeam.SIZE));
-            MercenaryTeam2 = new MercenaryTeam(data.GetByteSubArray(LOC["MercenaryTeam2"], MercenaryTeam.SIZE));
-            MercenaryTeam3 = new MercenaryTeam(data.GetByteSubArray(LOC["MercenaryTeam3"], MercenaryTeam.SIZE));
-            MercenaryTeamCount = BitConverter.ToUInt64(data.GetByteSubArray(LOC["MercenaryTeamCount"], 8), 0);
+            MercGroup1 = new MercGroup(data.GetByteSubArray(LOC["MercenaryTeam1"], MercGroup.SIZE));
+            MercGroup2 = new MercGroup(data.GetByteSubArray(LOC["MercenaryTeam2"], MercGroup.SIZE));
+            MercGroup3 = new MercGroup(data.GetByteSubArray(LOC["MercenaryTeam3"], MercGroup.SIZE));
+            MercGroupCount = BitConverter.ToUInt64(data.GetByteSubArray(LOC["MercenaryTeamCount"], 8), 0);
 
-            MercenaryTeamPresets = new MercenaryTeamPreset[8];
-            for (int i = 0; i < MercenaryTeamPresets.Length; i++)
-                MercenaryTeamPresets[i] = new MercenaryTeamPreset(data.GetByteSubArray(LOC["MercenaryTeamPresets"] + (i * MercenaryTeamPreset.SIZE), MercenaryTeamPreset.SIZE));
+            MercGroupPresets = new MercGroupPreset[8];
+            for (int i = 0; i < MercGroupPresets.Length; i++)
+                MercGroupPresets[i] = new MercGroupPreset(data.GetByteSubArray(LOC["MercenaryTeamPresets"] + (i * MercGroupPreset.SIZE), MercGroupPreset.SIZE));
 
             CommonBladeIDs = new UInt16[192];
             for (int i = 0; i < CommonBladeIDs.Length; i++)
@@ -995,15 +984,13 @@ namespace XC2SaveNETThingy
             AssurePoint = BitConverter.ToUInt32(data.GetByteSubArray(LOC["AssurePoint"], 4), 0);
             AssureCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["AssureCount"], 4), 0);
             RareBladeAppearType = BitConverter.ToUInt16(data.GetByteSubArray(LOC["RareBladeAppearType"], 4), 0);
-            //Unk_0x10AD62 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["field_10AD62"], 2), 0);
             Unk_0x10AD62 = data.GetByteSubArray(LOC["field_10AD62"], 2);
             CoinCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CoinCount"], 4), 0);
 
             SavedEnemyHp = new UInt32[3];
             for (int i = 0; i < SavedEnemyHp.Length; i++)
                 SavedEnemyHp[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SavedEnemyHp"] + (i * 4), 4), 0);
-
-            //Unk_0x10AD74 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["field_10AD74"], 4), 0);
+            
             Unk_0x10AD74 = data.GetByteSubArray(LOC["field_10AD74"], 4);
             Time2 = new RealTime(data.GetByteSubArray(LOC["Time2"], RealTime.SIZE));
             CameraHeight = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraHeight"], 4), 0);
@@ -1023,17 +1010,12 @@ namespace XC2SaveNETThingy
                 Events[i] = new Event(data.GetByteSubArray(LOC["Events"] + (i * Event.SIZE), Event.SIZE));
 
             EventsLength = BitConverter.ToUInt32(data.GetByteSubArray(LOC["EventsLength"], 4), 0);
-            //Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 400);
-            //sg_field_117378 = BitConverter.ToSingle(data.GetByteSubArray(LOC["sg_field_117378"], 4), 0);
             Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 404);
 
             ContentVersions = new UInt32[5];
             for (int i = 0; i < ContentVersions.Length; i++)
                 ContentVersions[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ContentVersions"] + (i * 4), 4), 0);
-
-            //Unk_0x117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 776);
-            //sg_field_117698 = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_117698"], 4), 0);
-            //sg_field_11769C = BitConverter.ToUInt32(data.GetByteSubArray(LOC["sg_field_11769C"], 4), 0);
+            
             Unk_0x117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 784);
         }
 
@@ -1042,22 +1024,17 @@ namespace XC2SaveNETThingy
             List<Byte> result = new List<byte>();
 
             result.AddRange(BitConverter.GetBytes(Magic));
-            //result.AddRange(BitConverter.GetBytes(Unk_0x000004));
             result.AddRange(Unk_0x000004);
             result.AddRange(Time.ToRawData());
             result.AddRange(BitConverter.GetBytes(Money));
             result.AddRange(BitConverter.GetBytes(LastVisitedLandmarkMapJumpId));
-            //result.AddRange(BitConverter.GetBytes(Unk_0x000018));
-            //result.AddRange(BitConverter.GetBytes(sg_field_1C));
             result.AddRange(Unk_0x000018);
             result.AddRange(LastVisitedLandmarkMapPosition.ToRawData());
-            //result.AddRange(BitConverter.GetBytes(Unk_0x00002C));
             result.AddRange(Unk_0x00002C);
             result.AddRange(BitConverter.GetBytes(LandmarkRotY));
             result.AddRange(BitConverter.GetBytes(isTimeStop));
             result.AddRange(BitConverter.GetBytes(ChapterSaveScenarioFlag));
             result.AddRange(BitConverter.GetBytes(ChapterSaveEventId));
-            //result.AddRange(BitConverter.GetBytes(Unk_0x00003A));
             result.AddRange(Unk_0x00003A);
 
             foreach (Driver d in Drivers)
@@ -1071,19 +1048,18 @@ namespace XC2SaveNETThingy
             result.AddRange(Flags);
             result.AddRange(BitConverter.GetBytes(ScenarioQuest));
             result.AddRange(BitConverter.GetBytes(CurrentQuest));
-            //result.AddRange(BitConverter.GetBytes(Unk_0x1097FC));
             result.AddRange(Unk_0x1097FC);
             result.AddRange(Map.ToRawData());
             result.AddRange(Unk_0x1098C4);
             result.AddRange(CurrentInGameTime.ToRawData());
             result.AddRange(PlayTime.ToRawData());
-            result.AddRange(MercenaryTeam1.ToRawData());
-            result.AddRange(MercenaryTeam2.ToRawData());
-            result.AddRange(MercenaryTeam3.ToRawData());
+            result.AddRange(MercGroup1.ToRawData());
+            result.AddRange(MercGroup2.ToRawData());
+            result.AddRange(MercGroup3.ToRawData());
 
-            result.AddRange(BitConverter.GetBytes(MercenaryTeamCount));
+            result.AddRange(BitConverter.GetBytes(MercGroupCount));
 
-            foreach (MercenaryTeamPreset mtp in MercenaryTeamPresets)
+            foreach (MercGroupPreset mtp in MercGroupPresets)
                 result.AddRange(mtp.ToRawData());
 
             foreach (UInt16 u in CommonBladeIDs)
@@ -1111,14 +1087,12 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(AssurePoint));
             result.AddRange(BitConverter.GetBytes(AssureCount));
             result.AddRange(BitConverter.GetBytes(RareBladeAppearType));
-            //result.AddRange(BitConverter.GetBytes(Unk_0x10AD62));
             result.AddRange(Unk_0x10AD62);
             result.AddRange(BitConverter.GetBytes(CoinCount));
 
             foreach (UInt32 u in SavedEnemyHp)
                 result.AddRange(BitConverter.GetBytes(u));
-
-            //result.AddRange(BitConverter.GetBytes(Unk_0x10AD74));
+            
             result.AddRange(Unk_0x10AD74);
             result.AddRange(Time2.ToRawData());
             result.AddRange(BitConverter.GetBytes(CameraHeight));
@@ -1139,14 +1113,11 @@ namespace XC2SaveNETThingy
 
             result.AddRange(BitConverter.GetBytes(EventsLength));
             result.AddRange(Unk_0x1171E8);
-            //result.AddRange(BitConverter.GetBytes(sg_field_117378));
 
             foreach (UInt32 u in ContentVersions)
                 result.AddRange(BitConverter.GetBytes(u));
 
             result.AddRange(Unk_0x117390);
-            //result.AddRange(BitConverter.GetBytes(sg_field_117698));
-            //result.AddRange(BitConverter.GetBytes(sg_field_11769C));
 
             if (result.Count != SIZE)
             {

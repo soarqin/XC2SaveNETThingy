@@ -90,6 +90,11 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM BladeCommonNames").Tables[0];
         }
 
+        public static DataTable BladeRareNames()
+        {
+            return GetDataSet("SELECT * FROM BladeRareNames").Tables[0];
+        }
+
         public static DataTable BladeTrustRanks()
         {
             return GetDataSet("SELECT * FROM BladeTrustRanks").Tables[0];

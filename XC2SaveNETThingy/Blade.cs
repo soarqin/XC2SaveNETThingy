@@ -901,19 +901,18 @@ namespace XC2SaveNETThingy
 
         public override string ToString()
         {
-            string internalName = "";
             string name = "";
 
-            internalName = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
-
             if (CommonNameId > 0)
-            {
                 name = (string)XC2Data.BladeCommonNames().Select("ID = " + CommonNameId)[0]["Name"];
-                return ID + ": " + name + " : " + internalName;
-            }
 
-            else
-                return ID + ": " + internalName;
+            if (RareNameId > 0)
+                name = (string)XC2Data.BladeRareNames().Select("ID = " + RareNameId)[0]["Name"];
+
+            if (name == "")
+                name = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
+
+            return ID + ": " + name;
         }
     }
 }
