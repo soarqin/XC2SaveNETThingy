@@ -34,8 +34,17 @@ namespace XC2SaveNETThingy
         private void SetupComboBoxes()
         {
             #region Misc
+            for (int i = 0; i < XC2Save.TaskAchieve.COUNT; i++)
+                cbxAchievementTasks.Items.Add("Achievement Task " + (i + 1));
+
             for (int i = 0; i < XC2Save.MercGroupPreset.COUNT; i++)
-                cbxMercGroupPresets.Items.Add("Preset " + (i + 1).ToString());
+                cbxMercGroupPresets.Items.Add("Preset " + (i + 1));
+
+            for (int i = 0; i < XC2Save.WeatherInfo.COUNT; i++)
+                cbxWeatherInfo.Items.Add("Weather Info " + (i + 1));
+
+            for (int i = 0; i < XC2Save.Event.COUNT; i++)
+                cbxEvents.Items.Add("Event " + (i + 1));
             #endregion Misc
 
             #region Driver
@@ -156,336 +165,367 @@ namespace XC2SaveNETThingy
         }
         private void LoadSaveFile(string path)
         {
-            SAVEDATA = XC2SaveParser.Deserialize(File.ReadAllBytes(path));
-
-            #region Main
-
-            lblMagic.Text = SAVEDATA.Magic.ToString("X2");
-
-            lblTime.Text = SAVEDATA.Time.ToString();
-            txtTimeYear.Text = SAVEDATA.Time.Year.ToString();
-            txtTimeMonth.Text = SAVEDATA.Time.Month.ToString();
-            txtTimeUnkB.Text = SAVEDATA.Time.UnkB.ToString();
-            txtTimeDay.Text = SAVEDATA.Time.Day.ToString();
-            txtTimeHour.Text = SAVEDATA.Time.Hour.ToString();
-            txtTimeMinute.Text = SAVEDATA.Time.Minute.ToString();
-            txtTimeSecond.Text = SAVEDATA.Time.Second.ToString();
-            txtTimeMSecond.Text = SAVEDATA.Time.MSecond.ToString();
-            txtTimeUnkA.Text = SAVEDATA.Time.UnkA.ToString();
-
-            nudMoney.Value = SAVEDATA.Money;
-
-            lblLandmarkRotY.Text = SAVEDATA.LandmarkRotY.ToString();
-            lblIsTimeStopped.Text = SAVEDATA.isTimeStop.ToString("X4");
-            lblChapterSaveScenarioFlag.Text = SAVEDATA.ChapterSaveScenarioFlag.ToString("X4");
-            lblChapterSaveEventId.Text = SAVEDATA.ChapterSaveEventId.ToString("X4");
-
-            lblPlayTime.Text = SAVEDATA.PlayTime.ToString();
-
-            #endregion Main
-
-            #region Drivers
-            lbxDrivers.DataSource = SAVEDATA.Drivers;
-            lbxDrivers.SelectedIndex = 0;
-
-            RefreshDriverList();
-            #endregion Drivers
-
-            #region Blades
-            lbxBlades.DataSource = SAVEDATA.Blades;
-            lbxBlades.SelectedIndex = 0;
-            #endregion Blades
-
-            #region Items
-            SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
-            SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, XC2Data.GetAccessories());
-            SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, XC2Data.GetAuxCores());
-            SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, XC2Data.GetCylinders());
-            SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, XC2Data.GetKeyItems());
-            SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, XC2Data.GetInfoItems());
-            SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
-            SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
-            SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
-            SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, XC2Data.GetUnrefinedAuxCores());
-            SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, XC2Data.GetPouchItems());
-            SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
-            SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
-            SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, XC2Data.GetPoppiRoleCPU());
-            SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, XC2Data.GetPoppiElementCores());
-            SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
-            SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, XC2Data.GetPoppiArtsCards());
-            SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, XC2Data.GetPoppiSkillRAM());
-
-            nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
-            nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
-            nudItemsSerial3.Value = SAVEDATA.ItemBox.Serials[2];
-            nudItemsSerial4.Value = SAVEDATA.ItemBox.Serials[3];
-            nudItemsSerial5.Value = SAVEDATA.ItemBox.Serials[4];
-            nudItemsSerial6.Value = SAVEDATA.ItemBox.Serials[5];
-            nudItemsSerial7.Value = SAVEDATA.ItemBox.Serials[6];
-            nudItemsSerial8.Value = SAVEDATA.ItemBox.Serials[7];
-            nudItemsSerial9.Value = SAVEDATA.ItemBox.Serials[8];
-            nudItemsSerial10.Value = SAVEDATA.ItemBox.Serials[9];
-            nudItemsSerial11.Value = SAVEDATA.ItemBox.Serials[10];
-            nudItemsSerial12.Value = SAVEDATA.ItemBox.Serials[11];
-            nudItemsSerial13.Value = SAVEDATA.ItemBox.Serials[12];
-            nudItemsSerial14.Value = SAVEDATA.ItemBox.Serials[13];
-            nudItemsSerial15.Value = SAVEDATA.ItemBox.Serials[14];
-            nudItemsSerial16.Value = SAVEDATA.ItemBox.Serials[15];
-            nudItemsSerial17.Value = SAVEDATA.ItemBox.Serials[16];
-            nudItemsSerial18.Value = SAVEDATA.ItemBox.Serials[17];
-            nudItemsSerial19.Value = SAVEDATA.ItemBox.Serials[18];
-            #endregion Items
-
-            #region party
-            // force refresh
-            cbxPartyMembers.SelectedIndex = 1;
-            cbxPartyMembers.SelectedIndex = 0;
-
-            nudPartyLeader.Value = SAVEDATA.Party.Leader;
-            cbxPartyLeader.SelectedValue = SAVEDATA.Party.Leader;
-            nudPartyGauge.Value = SAVEDATA.Party.PartyGauge;
-            hbxPartyUnk_0x3C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x3C);
-            hbxPartyUnk_0x44.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x44);
-            hbxPartyUnk_0x4E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x4E);
-            #endregion Party
-
-            #region Tiger! Tiger!
-            nudTigerTigerStage1Score.Value = SAVEDATA.TigerTiger.Stage1HighScore;
-            txtTigerTigerStage1Initials.Text = SAVEDATA.TigerTiger.Stage1HighScoreInitials;
-            chkTigerTigerStage1IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage1ScoreIsEasyMode;
-
-            nudTigerTigerStage2Score.Value = SAVEDATA.TigerTiger.Stage2HighScore;
-            txtTigerTigerStage2Initials.Text = SAVEDATA.TigerTiger.Stage2HighScoreInitials;
-            chkTigerTigerStage2IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage2ScoreIsEasyMode;
-
-            nudTigerTigerStage3Score.Value = SAVEDATA.TigerTiger.Stage3HighScore;
-            txtTigerTigerStage3Initials.Text = SAVEDATA.TigerTiger.Stage3HighScoreInitials;
-            chkTigerTigerStage3IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage3ScoreIsEasyMode;
-
-            nudTigerTigerStage4Score.Value = SAVEDATA.TigerTiger.Stage4HighScore;
-            txtTigerTigerStage4Initials.Text = SAVEDATA.TigerTiger.Stage4HighScoreInitials;
-            chkTigerTigerStage4IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage4ScoreIsEasyMode;
-
-            nudTigerTigerStage5Score.Value = SAVEDATA.TigerTiger.Stage5HighScore;
-            txtTigerTigerStage5Initials.Text = SAVEDATA.TigerTiger.Stage5HighScoreInitials;
-            chkTigerTigerStage5IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage5ScoreIsEasyMode;
-
-            hbxTigerTigerUnk_0x00.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x00);
-            hbxTigerTigerUnk_0x30.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x30);
-            #endregion Tiger! Tiger!
-
-            #region Map
-            nudMapMapJumpID.Value = SAVEDATA.Map.MapJumpID;
-
-            nudMapDriver1PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[0].X;
-            nudMapDriver1PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[0].Y;
-            nudMapDriver1PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[0].Z;
-            nudMapDriver2PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[1].X;
-            nudMapDriver2PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[1].Y;
-            nudMapDriver2PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[1].Z;
-            nudMapDriver3PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[2].X;
-            nudMapDriver3PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[2].Y;
-            nudMapDriver3PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[2].Z;
-
-            nudMapBlade1PosX.Value = (decimal)SAVEDATA.Map.BladePositions[0].X;
-            nudMapBlade1PosY.Value = (decimal)SAVEDATA.Map.BladePositions[0].Y;
-            nudMapBlade1PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[0].Z;
-            nudMapBlade2PosX.Value = (decimal)SAVEDATA.Map.BladePositions[1].X;
-            nudMapBlade2PosY.Value = (decimal)SAVEDATA.Map.BladePositions[1].Y;
-            nudMapBlade2PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[1].Z;
-            nudMapBlade3PosX.Value = (decimal)SAVEDATA.Map.BladePositions[2].X;
-            nudMapBlade3PosY.Value = (decimal)SAVEDATA.Map.BladePositions[2].Y;
-            nudMapBlade3PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[2].Z;
-
-            nudMapDriver1RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[0].X;
-            nudMapDriver1RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[0].Y;
-            nudMapDriver1RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[0].Z;
-            nudMapDriver2RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[1].X;
-            nudMapDriver2RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[1].Y;
-            nudMapDriver2RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[1].Z;
-            nudMapDriver3RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[2].X;
-            nudMapDriver3RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[2].Y;
-            nudMapDriver3RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[2].Z;
-
-            nudMapBlade1RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[0].X;
-            nudMapBlade1RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[0].Y;
-            nudMapBlade1RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[0].Z;
-            nudMapBlade2RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[1].X;
-            nudMapBlade2RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[1].Y;
-            nudMapBlade2RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[1].Z;
-            nudMapBlade3RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[2].X;
-            nudMapBlade3RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[2].Y;
-            nudMapBlade3RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[2].Z;
-
-            nudLastVisitedLandmarkMapJumpID.Value = SAVEDATA.LastVisitedLandmarkMapJumpId;
-            nudLastVisitedLandmarkMapPositionX.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.X;
-            nudLastVisitedLandmarkMapPositionY.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Y;
-            nudLastVisitedLandmarkMapPositionZ.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Z;
-            #endregion Map
-
-            #region Merc Groups
-
-            nudMercGroupsCount.Value = SAVEDATA.MercGroupCount;
-
-            #region Merc Group 1
-            nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
-            cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
-
-            nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
-            cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
-
-            nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
-            cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
-
-            nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
-            cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
-
-            nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
-            cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
-
-            nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
-            cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
-
-            nudMercGroup1TeamID.Value = SAVEDATA.MercGroup1.TeamID;
-            nudMercGroup1MissionID.Value = SAVEDATA.MercGroup1.MissionID;
-            nudMercGroup1MissionTime.Value = SAVEDATA.MercGroup1.MissionTime;
-            nudMercGroup1OriginalMissionTime.Value = SAVEDATA.MercGroup1.MissionTimeOriginal;
-            hbxMercGroup1Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x0C);
-            hbxMercGroup1Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x18);
-            hbxMercGroup1Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x24);
-            #endregion Merc Group 1
-
-            #region Merc Group 2
-            nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
-            cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
-
-            nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
-            cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
-
-            nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
-            cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
-
-            nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
-            cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
-
-            nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
-            cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
-
-            nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
-            cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
-
-            nudMercGroup2TeamID.Value = SAVEDATA.MercGroup2.TeamID;
-            nudMercGroup2MissionID.Value = SAVEDATA.MercGroup2.MissionID;
-            nudMercGroup2MissionTime.Value = SAVEDATA.MercGroup2.MissionTime;
-            nudMercGroup2OriginalMissionTime.Value = SAVEDATA.MercGroup2.MissionTimeOriginal;
-            hbxMercGroup2Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x0C);
-            hbxMercGroup2Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x18);
-            hbxMercGroup2Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x24);
-            #endregion Merc Group 2
-
-            #region Merc Group 3
-            nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
-            cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
-
-            nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
-            cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
-
-            nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
-            cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
-
-            nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
-            cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
-
-            nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
-            cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
-
-            nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
-            cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
-            cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
-
-            nudMercGroup3TeamID.Value = SAVEDATA.MercGroup3.TeamID;
-            nudMercGroup3MissionID.Value = SAVEDATA.MercGroup3.MissionID;
-            nudMercGroup3MissionTime.Value = SAVEDATA.MercGroup3.MissionTime;
-            nudMercGroup3OriginalMissionTime.Value = SAVEDATA.MercGroup3.MissionTimeOriginal;
-            hbxMercGroup3Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x0C);
-            hbxMercGroup3Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x18);
-            hbxMercGroup3Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x24);
-            #endregion Merc Group 3
-
-            cbxMercGroupPresets.SelectedIndex = 1;
-            cbxMercGroupPresets.SelectedIndex = 0;
-
-            #endregion Merc Groups
-
-            #region Flags
-            hbxFlags.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Flags);
-            #endregion Flags
-
-            #region Unknown
-            hbxUnk_0x000004.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000004);
-            hbxUnk_0x000018.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000018);
-            hbxUnk_0x00002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x00002C);
-            hbxUnk_0x00003A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x00003A);
-            hbxUnk_0x1097FC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1097FC);
-            hbxUnk_0x1098C4.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1098C4);
-            hbxUnk_0x10AD62.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD62);
-            hbxUnk_0x10AD74.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD74);
-            nudUnk_0x10AE93.Value = SAVEDATA.Unk_0x10AE93;
-            hbxUnk_0x1171E8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1171E8);
-            hbxUnk_0x117390.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x117390);
-            #endregion Unknownm
-
-            #region 1.5.0+ Raw Data
-            if (SAVEDATA.GetType() == typeof(XC2Save150))
+            try
             {
-                Console.WriteLine("Save File Type: 1.5.0+");
-                if (!tabControl1.TabPages.Contains(tab150RawData))
-                    tabControl1.TabPages.Add(tab150RawData);
-                if (!tbcDrivers.TabPages.Contains(tabDriver150))
-                    tbcDrivers.TabPages.Add(tabDriver150);
-                hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
-                hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117728);
-                hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117A4C);
-                hbx150RawDataUnk_0x117D70.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117D70);
-                hbx150RawDataUnk_0x1186DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1186DC);
-                gbxDriverWeapons150.Visible = true;
+                SAVEDATA = XC2SaveDeserializer.Deserialize(File.ReadAllBytes(path));
+
+                #region 1.5.0+ Raw Data
+                if (SAVEDATA.GetType() == typeof(XC2Save150))
+                {
+                    Console.WriteLine("Save File Type: 1.5.0+");
+                    if (!tabControl1.TabPages.Contains(tab150RawData))
+                        tabControl1.TabPages.Add(tab150RawData);
+                    if (!tbcDrivers.TabPages.Contains(tabDriver150))
+                        tbcDrivers.TabPages.Add(tabDriver150);
+                    hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
+                    hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117728);
+                    hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117A4C);
+                    hbx150RawDataUnk_0x117D70.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117D70);
+                    hbx150RawDataUnk_0x1186DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1186DC);
+                    gbxDriverWeapons150.Visible = true;
+                }
+                else
+                {
+                    Console.WriteLine("Save File Type: Pre-1.5.0 or Unknown");
+                    if (tabControl1.TabPages.Contains(tab150RawData))
+                        tabControl1.TabPages.Remove(tab150RawData);
+                    if (tbcDrivers.TabPages.Contains(tabDriver150))
+                        tbcDrivers.TabPages.Remove(tabDriver150);
+                    hbx150RawDataUnk_0x1176A0.ByteProvider = null;
+                    hbx150RawDataUnk_0x117728.ByteProvider = null;
+                    hbx150RawDataUnk_0x117A4C.ByteProvider = null;
+                    hbx150RawDataUnk_0x117D70.ByteProvider = null;
+                    hbx150RawDataUnk_0x1186DC.ByteProvider = null;
+                    gbxDriverWeapons150.Visible = false;
+                }
+                #endregion
+
+                #region Main
+                nudMoney.Value = SAVEDATA.Money;
+                nudEtherCrystals.Value = SAVEDATA.EtherCrystals;
+
+                nudTimeSavedYear.Value = SAVEDATA.TimeSaved.Year;
+                nudTimeSavedMonth.Value = SAVEDATA.TimeSaved.Month;
+                nudTimeSavedDay.Value = SAVEDATA.TimeSaved.Day;
+                nudTimeSavedHour.Value = SAVEDATA.TimeSaved.Hour;
+                nudTimeSavedMinute.Value = SAVEDATA.TimeSaved.Minute;
+                nudTimeSavedSecond.Value = SAVEDATA.TimeSaved.Second;
+                nudTimeSavedMSecond.Value = SAVEDATA.TimeSaved.MSecond;
+                nudTimeSavedUnkA.Value = SAVEDATA.TimeSaved.UnkA;
+                nudTimeSavedUnkB.Value = SAVEDATA.TimeSaved.UnkB;
+
+                nudTime2Year.Value = SAVEDATA.Time2.Year;
+                nudTime2Month.Value = SAVEDATA.Time2.Month;
+                nudTime2Day.Value = SAVEDATA.Time2.Day;
+                nudTime2Hour.Value = SAVEDATA.Time2.Hour;
+                nudTime2Minute.Value = SAVEDATA.Time2.Minute;
+                nudTime2Second.Value = SAVEDATA.Time2.Second;
+                nudTime2MSecond.Value = SAVEDATA.Time2.MSecond;
+                nudTime2UnkA.Value = SAVEDATA.Time2.UnkA;
+                nudTime2UnkB.Value = SAVEDATA.Time2.UnkB;
+
+                nudCurrentInGameTimeDay.Value = SAVEDATA.CurrentInGameTime.Days;
+                nudCurrentInGameTimeHour.Value = SAVEDATA.CurrentInGameTime.Hours;
+                nudCurrentInGameTimeMinute.Value = SAVEDATA.CurrentInGameTime.Minutes;
+                nudCurrentInGameTimeSecond.Value = SAVEDATA.CurrentInGameTime.Seconds;
+
+                nudTotalPlayTimeHour.Value = SAVEDATA.PlayTime.Hours;
+                nudTotalPlayTimeMinute.Value = SAVEDATA.PlayTime.Minutes;
+                nudTotalPlayTimeSecond.Value = SAVEDATA.PlayTime.Seconds;
+
+                cbxAchievementTasks.SelectedIndex = 1;
+                cbxAchievementTasks.SelectedIndex = 0;
+
+                cbxWeatherInfo.SelectedIndex = 1;
+                cbxWeatherInfo.SelectedIndex = 0;
+
+                cbxEvents.SelectedIndex = 1;
+                cbxEvents.SelectedIndex = 0;
+
+                lblLandmarkRotY.Text = SAVEDATA.LandmarkRotY.ToString();
+                lblIsTimeStopped.Text = SAVEDATA.isTimeStop.ToString("X4");
+                lblChapterSaveScenarioFlag.Text = SAVEDATA.ChapterSaveScenarioFlag.ToString("X4");
+                lblChapterSaveEventId.Text = SAVEDATA.ChapterSaveEventId.ToString("X4");
+
+                #endregion Main
+
+                #region Drivers
+                lbxDrivers.DataSource = SAVEDATA.Drivers;
+                lbxDrivers.SelectedIndex = 0;
+
+                RefreshDriverList();
+                #endregion Drivers
+
+                #region Blades
+                lbxBlades.DataSource = SAVEDATA.Blades;
+                lbxBlades.SelectedIndex = 0;
+                #endregion Blades
+
+                #region Items
+                SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
+                SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, XC2Data.GetAccessories());
+                SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, XC2Data.GetAuxCores());
+                SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, XC2Data.GetCylinders());
+                SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, XC2Data.GetKeyItems());
+                SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, XC2Data.GetInfoItems());
+                SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
+                SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
+                SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
+                SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, XC2Data.GetUnrefinedAuxCores());
+                SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, XC2Data.GetPouchItems());
+                SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
+                SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
+                SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, XC2Data.GetPoppiRoleCPU());
+                SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, XC2Data.GetPoppiElementCores());
+                SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
+                SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, XC2Data.GetPoppiArtsCards());
+                SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, XC2Data.GetPoppiSkillRAM());
+
+                nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
+                nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
+                nudItemsSerial3.Value = SAVEDATA.ItemBox.Serials[2];
+                nudItemsSerial4.Value = SAVEDATA.ItemBox.Serials[3];
+                nudItemsSerial5.Value = SAVEDATA.ItemBox.Serials[4];
+                nudItemsSerial6.Value = SAVEDATA.ItemBox.Serials[5];
+                nudItemsSerial7.Value = SAVEDATA.ItemBox.Serials[6];
+                nudItemsSerial8.Value = SAVEDATA.ItemBox.Serials[7];
+                nudItemsSerial9.Value = SAVEDATA.ItemBox.Serials[8];
+                nudItemsSerial10.Value = SAVEDATA.ItemBox.Serials[9];
+                nudItemsSerial11.Value = SAVEDATA.ItemBox.Serials[10];
+                nudItemsSerial12.Value = SAVEDATA.ItemBox.Serials[11];
+                nudItemsSerial13.Value = SAVEDATA.ItemBox.Serials[12];
+                nudItemsSerial14.Value = SAVEDATA.ItemBox.Serials[13];
+                nudItemsSerial15.Value = SAVEDATA.ItemBox.Serials[14];
+                nudItemsSerial16.Value = SAVEDATA.ItemBox.Serials[15];
+                nudItemsSerial17.Value = SAVEDATA.ItemBox.Serials[16];
+                nudItemsSerial18.Value = SAVEDATA.ItemBox.Serials[17];
+                nudItemsSerial19.Value = SAVEDATA.ItemBox.Serials[18];
+                #endregion Items
+
+                #region party
+                // force refresh
+                cbxPartyMembers.SelectedIndex = 1;
+                cbxPartyMembers.SelectedIndex = 0;
+
+                nudPartyLeader.Value = SAVEDATA.Party.Leader;
+                cbxPartyLeader.SelectedValue = SAVEDATA.Party.Leader;
+                nudPartyGauge.Value = SAVEDATA.Party.PartyGauge;
+                hbxPartyUnk_0x3C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x3C);
+                hbxPartyUnk_0x44.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x44);
+                hbxPartyUnk_0x4E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Party.Unk_0x4E);
+                #endregion Party
+
+                #region Tiger! Tiger!
+                nudTigerTigerStage1Score.Value = SAVEDATA.TigerTiger.Stage1HighScore;
+                txtTigerTigerStage1Initials.Text = SAVEDATA.TigerTiger.Stage1HighScoreInitials;
+                chkTigerTigerStage1IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage1ScoreIsEasyMode;
+
+                nudTigerTigerStage2Score.Value = SAVEDATA.TigerTiger.Stage2HighScore;
+                txtTigerTigerStage2Initials.Text = SAVEDATA.TigerTiger.Stage2HighScoreInitials;
+                chkTigerTigerStage2IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage2ScoreIsEasyMode;
+
+                nudTigerTigerStage3Score.Value = SAVEDATA.TigerTiger.Stage3HighScore;
+                txtTigerTigerStage3Initials.Text = SAVEDATA.TigerTiger.Stage3HighScoreInitials;
+                chkTigerTigerStage3IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage3ScoreIsEasyMode;
+
+                nudTigerTigerStage4Score.Value = SAVEDATA.TigerTiger.Stage4HighScore;
+                txtTigerTigerStage4Initials.Text = SAVEDATA.TigerTiger.Stage4HighScoreInitials;
+                chkTigerTigerStage4IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage4ScoreIsEasyMode;
+
+                nudTigerTigerStage5Score.Value = SAVEDATA.TigerTiger.Stage5HighScore;
+                txtTigerTigerStage5Initials.Text = SAVEDATA.TigerTiger.Stage5HighScoreInitials;
+                chkTigerTigerStage5IsEasyMode.Checked = SAVEDATA.TigerTiger.Stage5ScoreIsEasyMode;
+
+                hbxTigerTigerUnk_0x00.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x00);
+                hbxTigerTigerUnk_0x30.ByteProvider = new FixedLengthByteProvider(SAVEDATA.TigerTiger.Unk_0x30);
+                #endregion Tiger! Tiger!
+
+                #region Map
+                nudMapMapJumpID.Value = SAVEDATA.Map.MapJumpID;
+
+                nudMapDriver1PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[0].X;
+                nudMapDriver1PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[0].Y;
+                nudMapDriver1PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[0].Z;
+                nudMapDriver2PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[1].X;
+                nudMapDriver2PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[1].Y;
+                nudMapDriver2PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[1].Z;
+                nudMapDriver3PosX.Value = (decimal)SAVEDATA.Map.DriverPositions[2].X;
+                nudMapDriver3PosY.Value = (decimal)SAVEDATA.Map.DriverPositions[2].Y;
+                nudMapDriver3PosZ.Value = (decimal)SAVEDATA.Map.DriverPositions[2].Z;
+
+                nudMapBlade1PosX.Value = (decimal)SAVEDATA.Map.BladePositions[0].X;
+                nudMapBlade1PosY.Value = (decimal)SAVEDATA.Map.BladePositions[0].Y;
+                nudMapBlade1PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[0].Z;
+                nudMapBlade2PosX.Value = (decimal)SAVEDATA.Map.BladePositions[1].X;
+                nudMapBlade2PosY.Value = (decimal)SAVEDATA.Map.BladePositions[1].Y;
+                nudMapBlade2PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[1].Z;
+                nudMapBlade3PosX.Value = (decimal)SAVEDATA.Map.BladePositions[2].X;
+                nudMapBlade3PosY.Value = (decimal)SAVEDATA.Map.BladePositions[2].Y;
+                nudMapBlade3PosZ.Value = (decimal)SAVEDATA.Map.BladePositions[2].Z;
+
+                nudMapDriver1RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[0].X;
+                nudMapDriver1RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[0].Y;
+                nudMapDriver1RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[0].Z;
+                nudMapDriver2RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[1].X;
+                nudMapDriver2RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[1].Y;
+                nudMapDriver2RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[1].Z;
+                nudMapDriver3RotX.Value = (decimal)SAVEDATA.Map.DriverRotations[2].X;
+                nudMapDriver3RotY.Value = (decimal)SAVEDATA.Map.DriverRotations[2].Y;
+                nudMapDriver3RotZ.Value = (decimal)SAVEDATA.Map.DriverRotations[2].Z;
+
+                nudMapBlade1RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[0].X;
+                nudMapBlade1RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[0].Y;
+                nudMapBlade1RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[0].Z;
+                nudMapBlade2RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[1].X;
+                nudMapBlade2RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[1].Y;
+                nudMapBlade2RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[1].Z;
+                nudMapBlade3RotX.Value = (decimal)SAVEDATA.Map.BladeRotations[2].X;
+                nudMapBlade3RotY.Value = (decimal)SAVEDATA.Map.BladeRotations[2].Y;
+                nudMapBlade3RotZ.Value = (decimal)SAVEDATA.Map.BladeRotations[2].Z;
+
+                nudLastVisitedLandmarkMapJumpID.Value = SAVEDATA.LastVisitedLandmarkMapJumpId;
+                nudLastVisitedLandmarkMapPositionX.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.X;
+                nudLastVisitedLandmarkMapPositionY.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Y;
+                nudLastVisitedLandmarkMapPositionZ.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Z;
+                #endregion Map
+
+                #region Merc Groups
+
+                nudMercGroupsCount.Value = SAVEDATA.MercGroupCount;
+
+                #region Merc Group 1
+                nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
+                cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
+
+                nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
+                cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
+
+                nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
+                cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
+
+                nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
+                cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
+
+                nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
+                cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
+
+                nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
+                cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
+
+                nudMercGroup1TeamID.Value = SAVEDATA.MercGroup1.TeamID;
+                nudMercGroup1MissionID.Value = SAVEDATA.MercGroup1.MissionID;
+                nudMercGroup1MissionTime.Value = SAVEDATA.MercGroup1.MissionTime;
+                nudMercGroup1OriginalMissionTime.Value = SAVEDATA.MercGroup1.MissionTimeOriginal;
+                hbxMercGroup1Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x0C);
+                hbxMercGroup1Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x18);
+                hbxMercGroup1Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup1.Unk_0x24);
+                #endregion Merc Group 1
+
+                #region Merc Group 2
+                nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
+                cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
+
+                nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
+                cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
+
+                nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
+                cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
+
+                nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
+                cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
+
+                nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
+                cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
+
+                nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
+                cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
+
+                nudMercGroup2TeamID.Value = SAVEDATA.MercGroup2.TeamID;
+                nudMercGroup2MissionID.Value = SAVEDATA.MercGroup2.MissionID;
+                nudMercGroup2MissionTime.Value = SAVEDATA.MercGroup2.MissionTime;
+                nudMercGroup2OriginalMissionTime.Value = SAVEDATA.MercGroup2.MissionTimeOriginal;
+                hbxMercGroup2Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x0C);
+                hbxMercGroup2Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x18);
+                hbxMercGroup2Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup2.Unk_0x24);
+                #endregion Merc Group 2
+
+                #region Merc Group 3
+                nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
+                cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
+
+                nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
+                cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
+
+                nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
+                cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
+
+                nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
+                cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
+
+                nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
+                cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
+
+                nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
+                cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
+
+                nudMercGroup3TeamID.Value = SAVEDATA.MercGroup3.TeamID;
+                nudMercGroup3MissionID.Value = SAVEDATA.MercGroup3.MissionID;
+                nudMercGroup3MissionTime.Value = SAVEDATA.MercGroup3.MissionTime;
+                nudMercGroup3OriginalMissionTime.Value = SAVEDATA.MercGroup3.MissionTimeOriginal;
+                hbxMercGroup3Unk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x0C);
+                hbxMercGroup3Unk_0x18.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x18);
+                hbxMercGroup3Unk_0x24.ByteProvider = new FixedLengthByteProvider(SAVEDATA.MercGroup3.Unk_0x24);
+                #endregion Merc Group 3
+
+                cbxMercGroupPresets.SelectedIndex = 1;
+                cbxMercGroupPresets.SelectedIndex = 0;
+
+                #endregion Merc Groups
+
+                #region Flags
+                hbxFlags.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Flags);
+                #endregion Flags
+
+                #region Unknown
+                hbxUnk_0x000004.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000004);
+                hbxUnk_0x000018.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000018);
+                hbxUnk_0x00002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x00002C);
+                hbxUnk_0x00003A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x00003A);
+                hbxUnk_0x1097FC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1097FC);
+                hbxUnk_0x1098C4.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1098C4);
+                hbxUnk_0x10AD62.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD62);
+                hbxUnk_0x10AD74.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD74);
+                nudUnk_0x10AE93.Value = SAVEDATA.Unk_0x10AE93;
+                hbxUnk_0x1171E8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1171E8);
+                hbxUnk_0x117390.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x117390);
+                #endregion Unknownm
+
+                tabControl1.Enabled = true;
+                Console.WriteLine("File Loaded.");
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Save File Type: Pre-1.5.0 or Unknown");
-                if (tabControl1.TabPages.Contains(tab150RawData))
-                    tabControl1.TabPages.Remove(tab150RawData);
-                if (tbcDrivers.TabPages.Contains(tabDriver150))
-                    tbcDrivers.TabPages.Remove(tabDriver150);
-                hbx150RawDataUnk_0x1176A0.ByteProvider = null;
-                hbx150RawDataUnk_0x117728.ByteProvider = null;
-                hbx150RawDataUnk_0x117A4C.ByteProvider = null;
-                hbx150RawDataUnk_0x117D70.ByteProvider = null;
-                hbx150RawDataUnk_0x1186DC.ByteProvider = null;
-                gbxDriverWeapons150.Visible = false;
+                MessageBox.Show(ex.Message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            #endregion
-
-            Console.WriteLine("DONE");
         }
         #endregion Main
 
@@ -545,7 +585,6 @@ namespace XC2SaveNETThingy
             #endregion Driver Ideas
 
             #region Driver Status
-            int status = d.IsActive;
             cbxDriverIsActive.SelectedValue = d.IsActive;
             #endregion Driver Status
 
@@ -715,7 +754,7 @@ namespace XC2SaveNETThingy
             hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
             #endregion Driver Unknown
 
-            #region 1.5.0
+            #region Driver 1.5.0
             if (SAVEDATA.GetType() == typeof(XC2Save150))
             {
                 switch (lbxDrivers.SelectedIndex)
@@ -725,7 +764,6 @@ namespace XC2SaveNETThingy
                     case 2:
                     case 5:
                         gbxDriverWeapons150.Enabled = true;
-                        cbxDriverWeapons150.SelectedIndex = 1;
                         cbxDriverWeapons150.SelectedIndex = 0;
                         break;
 
@@ -734,7 +772,7 @@ namespace XC2SaveNETThingy
                         break;
                 }
             }
-            #endregion 1.5.0
+            #endregion Driver 1.5.0
         }
         private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
         {
@@ -1345,10 +1383,7 @@ namespace XC2SaveNETThingy
         {
             DialogResult = ofdSaveFile.ShowDialog();
             if (DialogResult == DialogResult.OK)
-            {
                 LoadSaveFile(ofdSaveFile.FileName);
-                tabControl1.Enabled = true;
-            }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -1364,7 +1399,7 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "EXCEPTION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //throw ex;
                 }
             }
@@ -1373,6 +1408,47 @@ namespace XC2SaveNETThingy
 
         #region Misc
         private void nudMoney_ValueChanged(object sender, EventArgs e) => SAVEDATA.Money = (UInt32)nudMoney.Value;
+        private void nudEtherCrystals_ValueChanged(object sender, EventArgs e) => SAVEDATA.EtherCrystals = (UInt32)nudEtherCrystals.Value;
+
+        private void nudTimeSavedYear_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Year = (UInt16)nudTimeSavedYear.Value;
+        private void nudTimeSavedMonth_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Month = (Byte)nudTimeSavedMonth.Value;
+        private void nudTimeSavedDay_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Day = (Byte)nudTimeSavedDay.Value;
+        private void nudTimeSavedHour_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Hour = (Byte)nudTimeSavedHour.Value;
+        private void nudTimeSavedMinute_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Minute = (Byte)nudTimeSavedMinute.Value;
+        private void nudTimeSavedSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.Second = (Byte)nudTimeSavedSecond.Value;
+        private void nudTimeSavedMSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.MSecond = (UInt16)nudTimeSavedMSecond.Value;
+        private void nudTimeSavedUnkA_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.UnkA = (Byte)nudTimeSavedUnkA.Value;
+        private void nudTimeSavedUnkB_ValueChanged(object sender, EventArgs e) => SAVEDATA.TimeSaved.UnkB = (UInt16)nudTimeSavedUnkB.Value;
+
+        private void nudTime2Year_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Year = (UInt16)nudTime2Year.Value;
+        private void nudTime2Month_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Month = (Byte)nudTime2Month.Value;
+        private void nudTime2Day_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Day = (Byte)nudTime2Day.Value;
+        private void nudTime2Hour_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Hour = (Byte)nudTime2Hour.Value;
+        private void nudTime2Minute_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Minute = (Byte)nudTime2Minute.Value;
+        private void nudTime2Second_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.Second = (Byte)nudTime2Second.Value;
+        private void nudTime2MSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.MSecond = (UInt16)nudTime2MSecond.Value;
+        private void nudTime2UnkA_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.UnkA = (Byte)nudTime2UnkA.Value;
+        private void nudTime2UnkB_ValueChanged(object sender, EventArgs e) => SAVEDATA.Time2.UnkB = (UInt16)nudTime2UnkB.Value;
+
+        private void nudCurrentInGameTimeDay_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentInGameTime.Days = (UInt16)nudCurrentInGameTimeDay.Value;
+        private void nudCurrentInGameTimeHour_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentInGameTime.Hours = (Byte)nudCurrentInGameTimeHour.Value;
+        private void nudCurrentInGameTimeMinute_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentInGameTime.Minutes = (Byte)nudCurrentInGameTimeMinute.Value;
+        private void nudCurrentInGameTimeSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentInGameTime.Seconds = (Byte)nudCurrentInGameTimeSecond.Value;
+
+        private void nudTotalPlayTimeHour_ValueChanged(object sender, EventArgs e) => SAVEDATA.PlayTime.Hours = (UInt32)nudTotalPlayTimeHour.Value;
+        private void nudTotalPlayTimeMinute_ValueChanged(object sender, EventArgs e) => SAVEDATA.PlayTime.Minutes = (Byte)nudTotalPlayTimeMinute.Value;
+        private void nudTotalPlayTimeSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.PlayTime.Seconds = (Byte)nudTotalPlayTimeSecond.Value;
+
+        private void cbxAchievementTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hbxAchievementTask.ByteProvider = new FixedLengthByteProvider(SAVEDATA.AchievementTasks[cbxAchievementTasks.SelectedIndex].Unk);
+        }
+        private void nudAchievementTaskCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.AchievementTasksCount = (UInt64)nudAchievementTaskCount.Value;
+        private void cbxWeatherInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtWeatherInfoName.Text = SAVEDATA.Weather[cbxWeatherInfo.SelectedIndex].Name;
+            hbxWeatherInfoUnk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Weather[cbxWeatherInfo.SelectedIndex].Unk_0x04);
+        }
         #endregion Misc
 
         #region Driver
@@ -1777,169 +1853,196 @@ namespace XC2SaveNETThingy
         // 1.5.0+ DATA NEEDS TO BE FIGURED OUT
         private void cbxDriverWeapons150_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if ((i < 0))
             {
-                case 0:
-                    nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints;
-                    nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints;
-                    break;
-
-                case 1:
-                    nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints;
-                    nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints;
-                    break;
-
-                case 2:
-                    nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints;
-                    nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints;
-                    break;
-
-                case 5:
-                    nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0];
-                    nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1];
-                    nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2];
-                    nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints;
-                    nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints;
-                    break;
+                nudDriverWeaponArt150Id1.Value = 0;
+                cbxDriverWeaponArt150Id1.SelectedValue = 0;
+                nudDriverWeaponArt150Id2.Value = 0;
+                cbxDriverWeaponArt150Id2.SelectedValue = 0;
+                nudDriverWeaponArt150Id3.Value = 0;
+                cbxDriverWeaponArt150Id3.SelectedValue = 0;
+                nudDriverWeaponPoints150.Value = 0;
+                nudDriverTotalWeaponPoints150.Value = 0;
             }
+            else
+            {
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
+                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
+                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
+                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
+                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
+                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
+                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints;
+                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints;
+                        break;
+
+                    case 1:
+                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
+                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
+                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
+                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
+                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
+                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
+                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints;
+                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints;
+                        break;
+
+                    case 2:
+                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
+                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
+                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
+                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
+                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
+                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
+                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints;
+                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints;
+                        break;
+
+                    case 5:
+                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
+                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
+                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
+                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
+                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
+                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
+                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints;
+                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints;
+                        break;
+                }
+            }
+
+
         }
         private void nudDriverWeaponArt150Id1_ValueChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
-            {
-                case 0:
-                    ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    break;
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if (!(i < 0))
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        break;
 
-                case 1:
-                    ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    break;
+                    case 1:
+                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        break;
 
-                case 2:
-                    ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    break;
+                    case 2:
+                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        break;
 
-                case 5:
-                    ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                    break;
-            }
+                    case 5:
+                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+                        break;
+                }
         }
         private void nudDriverWeaponArt150Id2_ValueChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
-            {
-                case 0:
-                    ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    break;
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if (!(i < 0))
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        break;
 
-                case 1:
-                    ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    break;
+                    case 1:
+                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        break;
 
-                case 2:
-                    ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    break;
+                    case 2:
+                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        break;
 
-                case 5:
-                    ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                    break;
-            }
+                    case 5:
+                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+                        break;
+                }
         }
         private void nudDriverWeaponArt150Id3_ValueChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
-            {
-                case 0:
-                    ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    break;
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if (!(i < 0))
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        break;
 
-                case 1:
-                    ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    break;
+                    case 1:
+                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        break;
 
-                case 2:
-                    ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    break;
+                    case 2:
+                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        break;
 
-                case 5:
-                    ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                    break;
-            }
+                    case 5:
+                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+                        break;
+                }
         }
         private void nudDriverWeaponPoints150_ValueChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
-            {
-                case 0:
-                    ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                    break;
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if (!(i < 0))
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+                        break;
 
-                case 1:
-                    ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                    break;
+                    case 1:
+                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+                        break;
 
-                case 2:
-                    ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                    break;
+                    case 2:
+                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+                        break;
 
-                case 5:
-                    ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                    break;
-            }
+                    case 5:
+                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+                        break;
+                }
         }
         private void nudDriverTotalWeaponPoints150_ValueChanged(object sender, EventArgs e)
         {
-            switch (lbxDrivers.SelectedIndex)
-            {
-                case 0:
-                    ((XC2Save150)SAVEDATA).Driver1Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                    break;
+            int i = cbxDriverWeapons150.SelectedIndex - 1;
+            if (!(i < 0))
+                switch (lbxDrivers.SelectedIndex)
+                {
+                    case 0:
+                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+                        break;
 
-                case 1:
-                    ((XC2Save150)SAVEDATA).Driver2Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                    break;
+                    case 1:
+                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+                        break;
 
-                case 2:
-                    ((XC2Save150)SAVEDATA).Driver3Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                    break;
+                    case 2:
+                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+                        break;
 
-                case 5:
-                    ((XC2Save150)SAVEDATA).Driver6Weapons150[cbxDriverWeapons150.SelectedIndex].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                    break;
-            }
+                    case 5:
+                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+                        break;
+                }
         }
         private void cbxDriverWeaponArt150Id1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id1.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id1.SelectedValue);
         private void cbxDriverWeaponArt150Id2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id2.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id2.SelectedValue);
@@ -3507,6 +3610,91 @@ namespace XC2SaveNETThingy
         private void nudMercGroupPresetMember6_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5] = (UInt16)nudMercGroupPresetMember6.Value;
 
         #endregion Merc Groups
+
+        #region XC2Save Events
+        private void cbxEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XC2Save.Event ev = SAVEDATA.Events[cbxEvents.SelectedIndex];
+
+            nudEventID.Value = ev.EventID;
+            nudEventCreator.Value = ev.Creator;
+            nudEventPlayBladeID.Value = ev.PlayBladeID;
+            nudEventVoiceID.Value = ev.VoiceID;
+            nudEventAttribute.Value = ev.Attribute;
+            nudEventExtraParts.Value = ev.ExtraParts;
+            nudEventCurrentMapWeatherID.Value = ev.CurrentMapWeatherID;
+            nudEventCurrentWeatherType.Value = ev.CurrentWeatherType;
+
+            nudEventTimeDay.Value = ev.Time.Days;
+            nudEventTimeHour.Value = ev.Time.Hours;
+            nudEventTimeMinute.Value = ev.Time.Minutes;
+            nudEventTimeSecond.Value = ev.Time.Seconds;
+
+            nudEventWeapon1.Value = ev.Weapons[0];
+            nudEventWeapon2.Value = ev.Weapons[1];
+            nudEventWeapon3.Value = ev.Weapons[2];
+            nudEventWeapon4.Value = ev.Weapons[3];
+            nudEventWeapon5.Value = ev.Weapons[4];
+            nudEventWeapon6.Value = ev.Weapons[5];
+            nudEventWeapon7.Value = ev.Weapons[6];
+            nudEventWeapon8.Value = ev.Weapons[7];
+            nudEventWeapon9.Value = ev.Weapons[8];
+            nudEventWeapon10.Value = ev.Weapons[9];
+
+            nudEventBladeID1.Value = ev.BladeIDs[0];
+            nudEventBladeID2.Value = ev.BladeIDs[1];
+            nudEventBladeID3.Value = ev.BladeIDs[2];
+            nudEventBladeID4.Value = ev.BladeIDs[3];
+            nudEventBladeID5.Value = ev.BladeIDs[4];
+            nudEventBladeID6.Value = ev.BladeIDs[5];
+            nudEventBladeID7.Value = ev.BladeIDs[6];
+            nudEventBladeID8.Value = ev.BladeIDs[7];
+            nudEventBladeID9.Value = ev.BladeIDs[8];
+            nudEventBladeID10.Value = ev.BladeIDs[9];
+
+            hbxEventUnk_0x0C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x0C);
+            hbxEventUnk_0x22.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x22);
+            hbxEventUnk_0x42.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x42);
+            hbxEventUnk_0x54.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x54);
+        }
+        private void nudEventsCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.EventsCount = (UInt32)nudEventsCount.Value;
+
+        private void nudEventID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].EventID = (UInt16)nudEventID.Value;
+        private void nudEventCreator_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Creator = (UInt16)nudEventCreator.Value;
+        private void nudEventPlayBladeID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].PlayBladeID = (UInt16)nudEventPlayBladeID.Value;
+        private void nudEventVoiceID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].VoiceID = (UInt16)nudEventVoiceID.Value;
+        private void nudEventAttribute_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Attribute = (UInt16)nudEventAttribute.Value;
+        private void nudEventExtraParts_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].ExtraParts = (UInt16)nudEventExtraParts.Value;
+        private void nudEventCurrentMapWeatherID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].CurrentMapWeatherID = (UInt16)nudEventCurrentMapWeatherID.Value;
+        private void nudEventCurrentWeatherType_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].CurrentWeatherType = (UInt16)nudEventCurrentWeatherType.Value;
+
+        private void nudEventTimeDay_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Time.Days = (UInt16)nudEventTimeDay.Value;
+        private void nudEventTimeHour_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Time.Hours = (Byte)nudEventTimeHour.Value;
+        private void nudEventTimeMinute_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Time.Minutes = (Byte)nudEventTimeMinute.Value;
+        private void nudEventTimeSecond_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Time.Seconds = (Byte)nudEventTimeSecond.Value;
+
+        private void nudEventWeapon1_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[0] = (UInt16)nudEventWeapon1.Value;
+        private void nudEventWeapon2_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[1] = (UInt16)nudEventWeapon2.Value;
+        private void nudEventWeapon3_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[2] = (UInt16)nudEventWeapon3.Value;
+        private void nudEventWeapon4_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[3] = (UInt16)nudEventWeapon4.Value;
+        private void nudEventWeapon5_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[4] = (UInt16)nudEventWeapon5.Value;
+        private void nudEventWeapon6_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[5] = (UInt16)nudEventWeapon6.Value;
+        private void nudEventWeapon7_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[6] = (UInt16)nudEventWeapon7.Value;
+        private void nudEventWeapon8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[7] = (UInt16)nudEventWeapon8.Value;
+        private void nudEventWeapon9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[8] = (UInt16)nudEventWeapon9.Value;
+        private void nudEventWeapon10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].Weapons[9] = (UInt16)nudEventWeapon10.Value;
+
+        private void nudEventBladeID1_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[0] = (UInt16)nudEventBladeID1.Value;
+        private void nudEventBladeID2_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[1] = (UInt16)nudEventBladeID2.Value;
+        private void nudEventBladeID3_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[2] = (UInt16)nudEventBladeID3.Value;
+        private void nudEventBladeID4_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[3] = (UInt16)nudEventBladeID4.Value;
+        private void nudEventBladeID5_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[4] = (UInt16)nudEventBladeID5.Value;
+        private void nudEventBladeID6_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[5] = (UInt16)nudEventBladeID6.Value;
+        private void nudEventBladeID7_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[6] = (UInt16)nudEventBladeID7.Value;
+        private void nudEventBladeID8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[7] = (UInt16)nudEventBladeID8.Value;
+        private void nudEventBladeID9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[8] = (UInt16)nudEventBladeID9.Value;
+        private void nudEventBladeID10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[9] = (UInt16)nudEventBladeID10.Value;
+        #endregion XC2Save Events
 
         #endregion Events
     }

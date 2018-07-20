@@ -30,28 +30,61 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnLoad = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTimeUnkA = new System.Windows.Forms.TextBox();
+            this.groupBox147 = new System.Windows.Forms.GroupBox();
+            this.nudTotalPlayTimeSecond = new System.Windows.Forms.NumericUpDown();
+            this.label441 = new System.Windows.Forms.Label();
+            this.nudTotalPlayTimeMinute = new System.Windows.Forms.NumericUpDown();
+            this.nudTotalPlayTimeHour = new System.Windows.Forms.NumericUpDown();
+            this.label443 = new System.Windows.Forms.Label();
+            this.label444 = new System.Windows.Forms.Label();
+            this.groupBox146 = new System.Windows.Forms.GroupBox();
+            this.nudCurrentInGameTimeDay = new System.Windows.Forms.NumericUpDown();
+            this.label442 = new System.Windows.Forms.Label();
+            this.nudCurrentInGameTimeSecond = new System.Windows.Forms.NumericUpDown();
+            this.label445 = new System.Windows.Forms.Label();
+            this.nudCurrentInGameTimeMinute = new System.Windows.Forms.NumericUpDown();
+            this.nudCurrentInGameTimeHour = new System.Windows.Forms.NumericUpDown();
+            this.label447 = new System.Windows.Forms.Label();
+            this.label448 = new System.Windows.Forms.Label();
+            this.groupBox145 = new System.Windows.Forms.GroupBox();
+            this.nudTime2Year = new System.Windows.Forms.NumericUpDown();
+            this.nudTime2UnkB = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTimeMSecond = new System.Windows.Forms.TextBox();
-            this.txtTimeSecond = new System.Windows.Forms.TextBox();
-            this.txtTimeMinute = new System.Windows.Forms.TextBox();
-            this.txtTimeHour = new System.Windows.Forms.TextBox();
-            this.txtTimeDay = new System.Windows.Forms.TextBox();
+            this.nudTime2UnkA = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.nudTime2MSecond = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label434 = new System.Windows.Forms.Label();
+            this.label435 = new System.Windows.Forms.Label();
+            this.nudTime2Second = new System.Windows.Forms.NumericUpDown();
+            this.label436 = new System.Windows.Forms.Label();
+            this.nudTime2Minute = new System.Windows.Forms.NumericUpDown();
+            this.label437 = new System.Windows.Forms.Label();
+            this.nudTime2Hour = new System.Windows.Forms.NumericUpDown();
+            this.nudTime2Month = new System.Windows.Forms.NumericUpDown();
+            this.label438 = new System.Windows.Forms.Label();
+            this.nudTime2Day = new System.Windows.Forms.NumericUpDown();
+            this.label439 = new System.Windows.Forms.Label();
+            this.gbxTimeSaved = new System.Windows.Forms.GroupBox();
+            this.nudTimeSavedYear = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeSavedUnkB = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeSavedUnkA = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeSavedMSecond = new System.Windows.Forms.NumericUpDown();
+            this.label433 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTimeUnkB = new System.Windows.Forms.TextBox();
-            this.txtTimeMonth = new System.Windows.Forms.TextBox();
-            this.txtTimeYear = new System.Windows.Forms.TextBox();
-            this.lblMagic = new System.Windows.Forms.Label();
+            this.nudTimeSavedSecond = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nudTimeSavedMinute = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudTimeSavedHour = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeSavedMonth = new System.Windows.Forms.NumericUpDown();
+            this.label431 = new System.Windows.Forms.Label();
+            this.nudTimeSavedDay = new System.Windows.Forms.NumericUpDown();
+            this.label432 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -64,7 +97,20 @@
             this.lblChapterSaveEventId = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
-            this.lblPlayTime = new System.Windows.Forms.Label();
+            this.groupBox150 = new System.Windows.Forms.GroupBox();
+            this.groupBox151 = new System.Windows.Forms.GroupBox();
+            this.hbxWeatherInfoUnk_0x04 = new Be.Windows.Forms.HexBox();
+            this.txtWeatherInfoName = new System.Windows.Forms.TextBox();
+            this.label450 = new System.Windows.Forms.Label();
+            this.cbxWeatherInfo = new System.Windows.Forms.ComboBox();
+            this.label449 = new System.Windows.Forms.Label();
+            this.groupBox149 = new System.Windows.Forms.GroupBox();
+            this.hbxAchievementTask = new Be.Windows.Forms.HexBox();
+            this.cbxAchievementTasks = new System.Windows.Forms.ComboBox();
+            this.label446 = new System.Windows.Forms.Label();
+            this.groupBox148 = new System.Windows.Forms.GroupBox();
+            this.nudEtherCrystals = new System.Windows.Forms.NumericUpDown();
+            this.label440 = new System.Windows.Forms.Label();
             this.nudMoney = new System.Windows.Forms.NumericUpDown();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox116 = new System.Windows.Forms.GroupBox();
@@ -1162,34 +1208,8 @@
             this.label346 = new System.Windows.Forms.Label();
             this.label337 = new System.Windows.Forms.Label();
             this.nudItemsSerial10 = new System.Windows.Forms.NumericUpDown();
-            this.tabTigerTiger = new System.Windows.Forms.TabPage();
-            this.groupBox118 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
-            this.groupBox117 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
-            this.gourpBox119 = new System.Windows.Forms.GroupBox();
-            this.chkTigerTigerStage5IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage5Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage5Score = new System.Windows.Forms.NumericUpDown();
-            this.label357 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
-            this.label356 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
-            this.label355 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
-            this.label354 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.label353 = new System.Windows.Forms.Label();
-            this.label352 = new System.Windows.Forms.Label();
-            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
-            this.label66 = new System.Windows.Forms.Label();
+            this.tabFlags = new System.Windows.Forms.TabPage();
+            this.hbxFlags = new Be.Windows.Forms.HexBox();
             this.tabMapLocation = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nudLastVisitedLandmarkMapJumpID = new System.Windows.Forms.NumericUpDown();
@@ -1268,6 +1288,8 @@
             this.nudMapMapJumpID = new System.Windows.Forms.NumericUpDown();
             this.tabMercGroups = new System.Windows.Forms.TabPage();
             this.groupBox144 = new System.Windows.Forms.GroupBox();
+            this.label430 = new System.Windows.Forms.Label();
+            this.cbxMercGroupPresets = new System.Windows.Forms.ComboBox();
             this.label429 = new System.Windows.Forms.Label();
             this.nudMercGroupPresetMember6 = new System.Windows.Forms.NumericUpDown();
             this.label428 = new System.Windows.Forms.Label();
@@ -1387,8 +1409,113 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabFlags = new System.Windows.Forms.TabPage();
-            this.hbxFlags = new Be.Windows.Forms.HexBox();
+            this.tabTigerTiger = new System.Windows.Forms.TabPage();
+            this.groupBox118 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
+            this.groupBox117 = new System.Windows.Forms.GroupBox();
+            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
+            this.gourpBox119 = new System.Windows.Forms.GroupBox();
+            this.chkTigerTigerStage5IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage5Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage5Score = new System.Windows.Forms.NumericUpDown();
+            this.label357 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
+            this.label356 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
+            this.label355 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
+            this.label354 = new System.Windows.Forms.Label();
+            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
+            this.label353 = new System.Windows.Forms.Label();
+            this.label352 = new System.Windows.Forms.Label();
+            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
+            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
+            this.label66 = new System.Windows.Forms.Label();
+            this.tabEvents = new System.Windows.Forms.TabPage();
+            this.groupBox159 = new System.Windows.Forms.GroupBox();
+            this.hbxEventUnk_0x54 = new Be.Windows.Forms.HexBox();
+            this.groupBox158 = new System.Windows.Forms.GroupBox();
+            this.hbxEventUnk_0x42 = new Be.Windows.Forms.HexBox();
+            this.groupBox157 = new System.Windows.Forms.GroupBox();
+            this.hbxEventUnk_0x22 = new Be.Windows.Forms.HexBox();
+            this.groupBox156 = new System.Windows.Forms.GroupBox();
+            this.hbxEventUnk_0x0C = new Be.Windows.Forms.HexBox();
+            this.groupBox155 = new System.Windows.Forms.GroupBox();
+            this.nudEventID = new System.Windows.Forms.NumericUpDown();
+            this.nudEventCurrentWeatherType = new System.Windows.Forms.NumericUpDown();
+            this.label453 = new System.Windows.Forms.Label();
+            this.nudEventCurrentMapWeatherID = new System.Windows.Forms.NumericUpDown();
+            this.nudEventPlayBladeID = new System.Windows.Forms.NumericUpDown();
+            this.label483 = new System.Windows.Forms.Label();
+            this.nudEventVoiceID = new System.Windows.Forms.NumericUpDown();
+            this.label482 = new System.Windows.Forms.Label();
+            this.label452 = new System.Windows.Forms.Label();
+            this.label454 = new System.Windows.Forms.Label();
+            this.nudEventCreator = new System.Windows.Forms.NumericUpDown();
+            this.nudEventAttribute = new System.Windows.Forms.NumericUpDown();
+            this.label451 = new System.Windows.Forms.Label();
+            this.label455 = new System.Windows.Forms.Label();
+            this.label456 = new System.Windows.Forms.Label();
+            this.nudEventExtraParts = new System.Windows.Forms.NumericUpDown();
+            this.groupBox154 = new System.Windows.Forms.GroupBox();
+            this.label459 = new System.Windows.Forms.Label();
+            this.label458 = new System.Windows.Forms.Label();
+            this.nudEventWeapon1 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventWeapon10 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventWeapon2 = new System.Windows.Forms.NumericUpDown();
+            this.label467 = new System.Windows.Forms.Label();
+            this.label460 = new System.Windows.Forms.Label();
+            this.nudEventWeapon9 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventWeapon3 = new System.Windows.Forms.NumericUpDown();
+            this.label466 = new System.Windows.Forms.Label();
+            this.label461 = new System.Windows.Forms.Label();
+            this.nudEventWeapon8 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventWeapon4 = new System.Windows.Forms.NumericUpDown();
+            this.label465 = new System.Windows.Forms.Label();
+            this.label462 = new System.Windows.Forms.Label();
+            this.nudEventWeapon7 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventWeapon5 = new System.Windows.Forms.NumericUpDown();
+            this.label464 = new System.Windows.Forms.Label();
+            this.label463 = new System.Windows.Forms.Label();
+            this.nudEventWeapon6 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox153 = new System.Windows.Forms.GroupBox();
+            this.nudEventBladeID1 = new System.Windows.Forms.NumericUpDown();
+            this.label477 = new System.Windows.Forms.Label();
+            this.nudEventBladeID10 = new System.Windows.Forms.NumericUpDown();
+            this.label476 = new System.Windows.Forms.Label();
+            this.label468 = new System.Windows.Forms.Label();
+            this.nudEventBladeID2 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventBladeID9 = new System.Windows.Forms.NumericUpDown();
+            this.label475 = new System.Windows.Forms.Label();
+            this.label469 = new System.Windows.Forms.Label();
+            this.nudEventBladeID3 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventBladeID8 = new System.Windows.Forms.NumericUpDown();
+            this.label474 = new System.Windows.Forms.Label();
+            this.label470 = new System.Windows.Forms.Label();
+            this.nudEventBladeID4 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventBladeID7 = new System.Windows.Forms.NumericUpDown();
+            this.label473 = new System.Windows.Forms.Label();
+            this.label471 = new System.Windows.Forms.Label();
+            this.nudEventBladeID5 = new System.Windows.Forms.NumericUpDown();
+            this.nudEventBladeID6 = new System.Windows.Forms.NumericUpDown();
+            this.label472 = new System.Windows.Forms.Label();
+            this.groupBox152 = new System.Windows.Forms.GroupBox();
+            this.nudEventTimeDay = new System.Windows.Forms.NumericUpDown();
+            this.label478 = new System.Windows.Forms.Label();
+            this.nudEventTimeSecond = new System.Windows.Forms.NumericUpDown();
+            this.label479 = new System.Windows.Forms.Label();
+            this.nudEventTimeMinute = new System.Windows.Forms.NumericUpDown();
+            this.nudEventTimeHour = new System.Windows.Forms.NumericUpDown();
+            this.label480 = new System.Windows.Forms.Label();
+            this.label481 = new System.Windows.Forms.Label();
+            this.cbxEvents = new System.Windows.Forms.ComboBox();
+            this.label457 = new System.Windows.Forms.Label();
             this.tabUnknown = new System.Windows.Forms.TabPage();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tabUnkMain = new System.Windows.Forms.TabPage();
@@ -1433,11 +1560,47 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.cbxMercGroupPresets = new System.Windows.Forms.ComboBox();
-            this.label430 = new System.Windows.Forms.Label();
+            this.nudAchievementTaskCount = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudEventsCount = new System.Windows.Forms.NumericUpDown();
+            this.label484 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox147.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeHour)).BeginInit();
+            this.groupBox146.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeHour)).BeginInit();
+            this.groupBox145.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Year)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2UnkB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2UnkA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2MSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Second)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Hour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Month)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Day)).BeginInit();
+            this.gbxTimeSaved.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedUnkB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedUnkA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedDay)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabMain.SuspendLayout();
+            this.groupBox150.SuspendLayout();
+            this.groupBox151.SuspendLayout();
+            this.groupBox149.SuspendLayout();
+            this.groupBox148.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.groupBox116.SuspendLayout();
@@ -1963,15 +2126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).BeginInit();
-            this.tabTigerTiger.SuspendLayout();
-            this.groupBox118.SuspendLayout();
-            this.groupBox117.SuspendLayout();
-            this.gourpBox119.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
+            this.tabFlags.SuspendLayout();
             this.tabMapLocation.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapJumpID)).BeginInit();
@@ -2070,7 +2225,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).BeginInit();
-            this.tabFlags.SuspendLayout();
+            this.tabTigerTiger.SuspendLayout();
+            this.groupBox118.SuspendLayout();
+            this.groupBox117.SuspendLayout();
+            this.gourpBox119.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
+            this.tabEvents.SuspendLayout();
+            this.groupBox159.SuspendLayout();
+            this.groupBox158.SuspendLayout();
+            this.groupBox157.SuspendLayout();
+            this.groupBox156.SuspendLayout();
+            this.groupBox155.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCurrentWeatherType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCurrentMapWeatherID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventPlayBladeID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventVoiceID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCreator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventAttribute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventExtraParts)).BeginInit();
+            this.groupBox154.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon6)).BeginInit();
+            this.groupBox153.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID6)).BeginInit();
+            this.groupBox152.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeHour)).BeginInit();
             this.tabUnknown.SuspendLayout();
             this.tabControl6.SuspendLayout();
             this.tabUnkMain.SuspendLayout();
@@ -2101,6 +2305,8 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -2113,37 +2319,28 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Magic:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 46);
+            this.label4.Location = new System.Drawing.Point(6, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Year:";
+            this.label4.Text = "Date:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 72);
+            this.label5.Location = new System.Drawing.Point(95, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(10, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Month:";
+            this.label5.Text = "-";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 98);
+            this.label6.Location = new System.Drawing.Point(260, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 6;
@@ -2151,170 +2348,634 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblTime);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtTimeUnkA);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtTimeMSecond);
-            this.groupBox1.Controls.Add(this.txtTimeSecond);
-            this.groupBox1.Controls.Add(this.txtTimeMinute);
-            this.groupBox1.Controls.Add(this.txtTimeHour);
-            this.groupBox1.Controls.Add(this.txtTimeDay);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtTimeUnkB);
-            this.groupBox1.Controls.Add(this.txtTimeMonth);
-            this.groupBox1.Controls.Add(this.txtTimeYear);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(278, 18);
+            this.groupBox1.Controls.Add(this.groupBox147);
+            this.groupBox1.Controls.Add(this.groupBox146);
+            this.groupBox1.Controls.Add(this.groupBox145);
+            this.groupBox1.Controls.Add(this.gbxTimeSaved);
+            this.groupBox1.Location = new System.Drawing.Point(6, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 280);
+            this.groupBox1.Size = new System.Drawing.Size(372, 272);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Time:";
+            this.groupBox1.Text = "Time Data";
             // 
-            // lblTime
+            // groupBox147
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(7, 20);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(0, 13);
-            this.lblTime.TabIndex = 22;
+            this.groupBox147.Controls.Add(this.nudTotalPlayTimeSecond);
+            this.groupBox147.Controls.Add(this.label441);
+            this.groupBox147.Controls.Add(this.nudTotalPlayTimeMinute);
+            this.groupBox147.Controls.Add(this.nudTotalPlayTimeHour);
+            this.groupBox147.Controls.Add(this.label443);
+            this.groupBox147.Controls.Add(this.label444);
+            this.groupBox147.Location = new System.Drawing.Point(6, 222);
+            this.groupBox147.Name = "groupBox147";
+            this.groupBox147.Size = new System.Drawing.Size(201, 46);
+            this.groupBox147.TabIndex = 37;
+            this.groupBox147.TabStop = false;
+            this.groupBox147.Text = "Total Play Time:";
+            // 
+            // nudTotalPlayTimeSecond
+            // 
+            this.nudTotalPlayTimeSecond.Location = new System.Drawing.Point(155, 19);
+            this.nudTotalPlayTimeSecond.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTotalPlayTimeSecond.Name = "nudTotalPlayTimeSecond";
+            this.nudTotalPlayTimeSecond.Size = new System.Drawing.Size(39, 20);
+            this.nudTotalPlayTimeSecond.TabIndex = 30;
+            this.nudTotalPlayTimeSecond.ValueChanged += new System.EventHandler(this.nudTotalPlayTimeSecond_ValueChanged);
+            // 
+            // label441
+            // 
+            this.label441.AutoSize = true;
+            this.label441.Location = new System.Drawing.Point(6, 21);
+            this.label441.Name = "label441";
+            this.label441.Size = new System.Drawing.Size(33, 13);
+            this.label441.TabIndex = 16;
+            this.label441.Text = "Time:";
+            // 
+            // nudTotalPlayTimeMinute
+            // 
+            this.nudTotalPlayTimeMinute.Location = new System.Drawing.Point(105, 19);
+            this.nudTotalPlayTimeMinute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTotalPlayTimeMinute.Name = "nudTotalPlayTimeMinute";
+            this.nudTotalPlayTimeMinute.Size = new System.Drawing.Size(39, 20);
+            this.nudTotalPlayTimeMinute.TabIndex = 29;
+            this.nudTotalPlayTimeMinute.ValueChanged += new System.EventHandler(this.nudTotalPlayTimeMinute_ValueChanged);
+            // 
+            // nudTotalPlayTimeHour
+            // 
+            this.nudTotalPlayTimeHour.Location = new System.Drawing.Point(45, 19);
+            this.nudTotalPlayTimeHour.Maximum = new decimal(new int[] {
+            1048575,
+            0,
+            0,
+            0});
+            this.nudTotalPlayTimeHour.Name = "nudTotalPlayTimeHour";
+            this.nudTotalPlayTimeHour.Size = new System.Drawing.Size(49, 20);
+            this.nudTotalPlayTimeHour.TabIndex = 28;
+            this.nudTotalPlayTimeHour.ValueChanged += new System.EventHandler(this.nudTotalPlayTimeHour_ValueChanged);
+            // 
+            // label443
+            // 
+            this.label443.AutoSize = true;
+            this.label443.Location = new System.Drawing.Point(145, 21);
+            this.label443.Name = "label443";
+            this.label443.Size = new System.Drawing.Size(10, 13);
+            this.label443.TabIndex = 27;
+            this.label443.Text = ":";
+            // 
+            // label444
+            // 
+            this.label444.AutoSize = true;
+            this.label444.Location = new System.Drawing.Point(95, 21);
+            this.label444.Name = "label444";
+            this.label444.Size = new System.Drawing.Size(10, 13);
+            this.label444.TabIndex = 26;
+            this.label444.Text = ":";
+            // 
+            // groupBox146
+            // 
+            this.groupBox146.Controls.Add(this.nudCurrentInGameTimeDay);
+            this.groupBox146.Controls.Add(this.label442);
+            this.groupBox146.Controls.Add(this.nudCurrentInGameTimeSecond);
+            this.groupBox146.Controls.Add(this.label445);
+            this.groupBox146.Controls.Add(this.nudCurrentInGameTimeMinute);
+            this.groupBox146.Controls.Add(this.nudCurrentInGameTimeHour);
+            this.groupBox146.Controls.Add(this.label447);
+            this.groupBox146.Controls.Add(this.label448);
+            this.groupBox146.Location = new System.Drawing.Point(6, 170);
+            this.groupBox146.Name = "groupBox146";
+            this.groupBox146.Size = new System.Drawing.Size(297, 46);
+            this.groupBox146.TabIndex = 36;
+            this.groupBox146.TabStop = false;
+            this.groupBox146.Text = "Current In-Game Time";
+            // 
+            // nudCurrentInGameTimeDay
+            // 
+            this.nudCurrentInGameTimeDay.Location = new System.Drawing.Point(45, 19);
+            this.nudCurrentInGameTimeDay.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.nudCurrentInGameTimeDay.Name = "nudCurrentInGameTimeDay";
+            this.nudCurrentInGameTimeDay.Size = new System.Drawing.Size(49, 20);
+            this.nudCurrentInGameTimeDay.TabIndex = 23;
+            this.nudCurrentInGameTimeDay.ValueChanged += new System.EventHandler(this.nudCurrentInGameTimeDay_ValueChanged);
+            // 
+            // label442
+            // 
+            this.label442.AutoSize = true;
+            this.label442.Location = new System.Drawing.Point(6, 21);
+            this.label442.Name = "label442";
+            this.label442.Size = new System.Drawing.Size(29, 13);
+            this.label442.TabIndex = 4;
+            this.label442.Text = "Day:";
+            // 
+            // nudCurrentInGameTimeSecond
+            // 
+            this.nudCurrentInGameTimeSecond.Location = new System.Drawing.Point(251, 19);
+            this.nudCurrentInGameTimeSecond.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudCurrentInGameTimeSecond.Name = "nudCurrentInGameTimeSecond";
+            this.nudCurrentInGameTimeSecond.Size = new System.Drawing.Size(39, 20);
+            this.nudCurrentInGameTimeSecond.TabIndex = 30;
+            this.nudCurrentInGameTimeSecond.ValueChanged += new System.EventHandler(this.nudCurrentInGameTimeSecond_ValueChanged);
+            // 
+            // label445
+            // 
+            this.label445.AutoSize = true;
+            this.label445.Location = new System.Drawing.Point(102, 21);
+            this.label445.Name = "label445";
+            this.label445.Size = new System.Drawing.Size(33, 13);
+            this.label445.TabIndex = 16;
+            this.label445.Text = "Time:";
+            // 
+            // nudCurrentInGameTimeMinute
+            // 
+            this.nudCurrentInGameTimeMinute.Location = new System.Drawing.Point(201, 19);
+            this.nudCurrentInGameTimeMinute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudCurrentInGameTimeMinute.Name = "nudCurrentInGameTimeMinute";
+            this.nudCurrentInGameTimeMinute.Size = new System.Drawing.Size(39, 20);
+            this.nudCurrentInGameTimeMinute.TabIndex = 29;
+            this.nudCurrentInGameTimeMinute.ValueChanged += new System.EventHandler(this.nudCurrentInGameTimeMinute_ValueChanged);
+            // 
+            // nudCurrentInGameTimeHour
+            // 
+            this.nudCurrentInGameTimeHour.Location = new System.Drawing.Point(141, 19);
+            this.nudCurrentInGameTimeHour.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.nudCurrentInGameTimeHour.Name = "nudCurrentInGameTimeHour";
+            this.nudCurrentInGameTimeHour.Size = new System.Drawing.Size(49, 20);
+            this.nudCurrentInGameTimeHour.TabIndex = 28;
+            this.nudCurrentInGameTimeHour.ValueChanged += new System.EventHandler(this.nudCurrentInGameTimeHour_ValueChanged);
+            // 
+            // label447
+            // 
+            this.label447.AutoSize = true;
+            this.label447.Location = new System.Drawing.Point(241, 21);
+            this.label447.Name = "label447";
+            this.label447.Size = new System.Drawing.Size(10, 13);
+            this.label447.TabIndex = 27;
+            this.label447.Text = ":";
+            // 
+            // label448
+            // 
+            this.label448.AutoSize = true;
+            this.label448.Location = new System.Drawing.Point(191, 21);
+            this.label448.Name = "label448";
+            this.label448.Size = new System.Drawing.Size(10, 13);
+            this.label448.TabIndex = 26;
+            this.label448.Text = ":";
+            // 
+            // groupBox145
+            // 
+            this.groupBox145.Controls.Add(this.nudTime2Year);
+            this.groupBox145.Controls.Add(this.nudTime2UnkB);
+            this.groupBox145.Controls.Add(this.label8);
+            this.groupBox145.Controls.Add(this.nudTime2UnkA);
+            this.groupBox145.Controls.Add(this.label9);
+            this.groupBox145.Controls.Add(this.nudTime2MSecond);
+            this.groupBox145.Controls.Add(this.label10);
+            this.groupBox145.Controls.Add(this.label434);
+            this.groupBox145.Controls.Add(this.label435);
+            this.groupBox145.Controls.Add(this.nudTime2Second);
+            this.groupBox145.Controls.Add(this.label436);
+            this.groupBox145.Controls.Add(this.nudTime2Minute);
+            this.groupBox145.Controls.Add(this.label437);
+            this.groupBox145.Controls.Add(this.nudTime2Hour);
+            this.groupBox145.Controls.Add(this.nudTime2Month);
+            this.groupBox145.Controls.Add(this.label438);
+            this.groupBox145.Controls.Add(this.nudTime2Day);
+            this.groupBox145.Controls.Add(this.label439);
+            this.groupBox145.Location = new System.Drawing.Point(6, 96);
+            this.groupBox145.Name = "groupBox145";
+            this.groupBox145.Size = new System.Drawing.Size(359, 68);
+            this.groupBox145.TabIndex = 36;
+            this.groupBox145.TabStop = false;
+            this.groupBox145.Text = "Time2";
+            // 
+            // nudTime2Year
+            // 
+            this.nudTime2Year.Location = new System.Drawing.Point(45, 19);
+            this.nudTime2Year.Maximum = new decimal(new int[] {
+            8191,
+            0,
+            0,
+            0});
+            this.nudTime2Year.Name = "nudTime2Year";
+            this.nudTime2Year.Size = new System.Drawing.Size(49, 20);
+            this.nudTime2Year.TabIndex = 23;
+            this.nudTime2Year.ValueChanged += new System.EventHandler(this.nudTime2Year_ValueChanged);
+            // 
+            // nudTime2UnkB
+            // 
+            this.nudTime2UnkB.Hexadecimal = true;
+            this.nudTime2UnkB.Location = new System.Drawing.Point(303, 42);
+            this.nudTime2UnkB.Maximum = new decimal(new int[] {
+            511,
+            0,
+            0,
+            0});
+            this.nudTime2UnkB.Name = "nudTime2UnkB";
+            this.nudTime2UnkB.Size = new System.Drawing.Size(49, 20);
+            this.nudTime2UnkB.TabIndex = 34;
+            this.nudTime2UnkB.ValueChanged += new System.EventHandler(this.nudTime2UnkB_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(95, 21);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(10, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "-";
+            // 
+            // nudTime2UnkA
+            // 
+            this.nudTime2UnkA.Hexadecimal = true;
+            this.nudTime2UnkA.Location = new System.Drawing.Point(303, 19);
+            this.nudTime2UnkA.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudTime2UnkA.Name = "nudTime2UnkA";
+            this.nudTime2UnkA.Size = new System.Drawing.Size(49, 20);
+            this.nudTime2UnkA.TabIndex = 33;
+            this.nudTime2UnkA.ValueChanged += new System.EventHandler(this.nudTime2UnkA_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(260, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "UnkB:";
+            // 
+            // nudTime2MSecond
+            // 
+            this.nudTime2MSecond.Location = new System.Drawing.Point(205, 42);
+            this.nudTime2MSecond.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudTime2MSecond.Name = "nudTime2MSecond";
+            this.nudTime2MSecond.Size = new System.Drawing.Size(49, 20);
+            this.nudTime2MSecond.TabIndex = 32;
+            this.nudTime2MSecond.ValueChanged += new System.EventHandler(this.nudTime2MSecond_ValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Date:";
+            // 
+            // label434
+            // 
+            this.label434.AutoSize = true;
+            this.label434.Location = new System.Drawing.Point(195, 44);
+            this.label434.Name = "label434";
+            this.label434.Size = new System.Drawing.Size(10, 13);
+            this.label434.TabIndex = 31;
+            this.label434.Text = ".";
+            // 
+            // label435
+            // 
+            this.label435.AutoSize = true;
+            this.label435.Location = new System.Drawing.Point(145, 21);
+            this.label435.Name = "label435";
+            this.label435.Size = new System.Drawing.Size(10, 13);
+            this.label435.TabIndex = 10;
+            this.label435.Text = "-";
+            // 
+            // nudTime2Second
+            // 
+            this.nudTime2Second.Location = new System.Drawing.Point(155, 42);
+            this.nudTime2Second.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTime2Second.Name = "nudTime2Second";
+            this.nudTime2Second.Size = new System.Drawing.Size(39, 20);
+            this.nudTime2Second.TabIndex = 30;
+            this.nudTime2Second.ValueChanged += new System.EventHandler(this.nudTime2Second_ValueChanged);
+            // 
+            // label436
+            // 
+            this.label436.AutoSize = true;
+            this.label436.Location = new System.Drawing.Point(6, 44);
+            this.label436.Name = "label436";
+            this.label436.Size = new System.Drawing.Size(33, 13);
+            this.label436.TabIndex = 16;
+            this.label436.Text = "Time:";
+            // 
+            // nudTime2Minute
+            // 
+            this.nudTime2Minute.Location = new System.Drawing.Point(105, 42);
+            this.nudTime2Minute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTime2Minute.Name = "nudTime2Minute";
+            this.nudTime2Minute.Size = new System.Drawing.Size(39, 20);
+            this.nudTime2Minute.TabIndex = 29;
+            this.nudTime2Minute.ValueChanged += new System.EventHandler(this.nudTime2Minute_ValueChanged);
+            // 
+            // label437
+            // 
+            this.label437.AutoSize = true;
+            this.label437.Location = new System.Drawing.Point(260, 21);
+            this.label437.Name = "label437";
+            this.label437.Size = new System.Drawing.Size(37, 13);
+            this.label437.TabIndex = 21;
+            this.label437.Text = "UnkA:";
+            // 
+            // nudTime2Hour
+            // 
+            this.nudTime2Hour.Location = new System.Drawing.Point(45, 42);
+            this.nudTime2Hour.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.nudTime2Hour.Name = "nudTime2Hour";
+            this.nudTime2Hour.Size = new System.Drawing.Size(49, 20);
+            this.nudTime2Hour.TabIndex = 28;
+            this.nudTime2Hour.ValueChanged += new System.EventHandler(this.nudTime2Hour_ValueChanged);
+            // 
+            // nudTime2Month
+            // 
+            this.nudTime2Month.Location = new System.Drawing.Point(105, 19);
+            this.nudTime2Month.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudTime2Month.Name = "nudTime2Month";
+            this.nudTime2Month.Size = new System.Drawing.Size(39, 20);
+            this.nudTime2Month.TabIndex = 24;
+            this.nudTime2Month.ValueChanged += new System.EventHandler(this.nudTime2Month_ValueChanged);
+            // 
+            // label438
+            // 
+            this.label438.AutoSize = true;
+            this.label438.Location = new System.Drawing.Point(145, 44);
+            this.label438.Name = "label438";
+            this.label438.Size = new System.Drawing.Size(10, 13);
+            this.label438.TabIndex = 27;
+            this.label438.Text = ":";
+            // 
+            // nudTime2Day
+            // 
+            this.nudTime2Day.Location = new System.Drawing.Point(155, 19);
+            this.nudTime2Day.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.nudTime2Day.Name = "nudTime2Day";
+            this.nudTime2Day.Size = new System.Drawing.Size(39, 20);
+            this.nudTime2Day.TabIndex = 25;
+            this.nudTime2Day.ValueChanged += new System.EventHandler(this.nudTime2Day_ValueChanged);
+            // 
+            // label439
+            // 
+            this.label439.AutoSize = true;
+            this.label439.Location = new System.Drawing.Point(95, 44);
+            this.label439.Name = "label439";
+            this.label439.Size = new System.Drawing.Size(10, 13);
+            this.label439.TabIndex = 26;
+            this.label439.Text = ":";
+            // 
+            // gbxTimeSaved
+            // 
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedYear);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedUnkB);
+            this.gbxTimeSaved.Controls.Add(this.label5);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedUnkA);
+            this.gbxTimeSaved.Controls.Add(this.label6);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedMSecond);
+            this.gbxTimeSaved.Controls.Add(this.label4);
+            this.gbxTimeSaved.Controls.Add(this.label433);
+            this.gbxTimeSaved.Controls.Add(this.label3);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedSecond);
+            this.gbxTimeSaved.Controls.Add(this.label7);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedMinute);
+            this.gbxTimeSaved.Controls.Add(this.label11);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedHour);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedMonth);
+            this.gbxTimeSaved.Controls.Add(this.label431);
+            this.gbxTimeSaved.Controls.Add(this.nudTimeSavedDay);
+            this.gbxTimeSaved.Controls.Add(this.label432);
+            this.gbxTimeSaved.Location = new System.Drawing.Point(6, 19);
+            this.gbxTimeSaved.Name = "gbxTimeSaved";
+            this.gbxTimeSaved.Size = new System.Drawing.Size(359, 68);
+            this.gbxTimeSaved.TabIndex = 35;
+            this.gbxTimeSaved.TabStop = false;
+            this.gbxTimeSaved.Text = "Time Saved";
+            // 
+            // nudTimeSavedYear
+            // 
+            this.nudTimeSavedYear.Location = new System.Drawing.Point(45, 19);
+            this.nudTimeSavedYear.Maximum = new decimal(new int[] {
+            8191,
+            0,
+            0,
+            0});
+            this.nudTimeSavedYear.Name = "nudTimeSavedYear";
+            this.nudTimeSavedYear.Size = new System.Drawing.Size(49, 20);
+            this.nudTimeSavedYear.TabIndex = 23;
+            this.nudTimeSavedYear.ValueChanged += new System.EventHandler(this.nudTimeSavedYear_ValueChanged);
+            // 
+            // nudTimeSavedUnkB
+            // 
+            this.nudTimeSavedUnkB.Hexadecimal = true;
+            this.nudTimeSavedUnkB.Location = new System.Drawing.Point(303, 42);
+            this.nudTimeSavedUnkB.Maximum = new decimal(new int[] {
+            511,
+            0,
+            0,
+            0});
+            this.nudTimeSavedUnkB.Name = "nudTimeSavedUnkB";
+            this.nudTimeSavedUnkB.Size = new System.Drawing.Size(49, 20);
+            this.nudTimeSavedUnkB.TabIndex = 34;
+            this.nudTimeSavedUnkB.ValueChanged += new System.EventHandler(this.nudTimeSavedUnkB_ValueChanged);
+            // 
+            // nudTimeSavedUnkA
+            // 
+            this.nudTimeSavedUnkA.Hexadecimal = true;
+            this.nudTimeSavedUnkA.Location = new System.Drawing.Point(303, 19);
+            this.nudTimeSavedUnkA.Maximum = new decimal(new int[] {
+            63,
+            0,
+            0,
+            0});
+            this.nudTimeSavedUnkA.Name = "nudTimeSavedUnkA";
+            this.nudTimeSavedUnkA.Size = new System.Drawing.Size(49, 20);
+            this.nudTimeSavedUnkA.TabIndex = 33;
+            this.nudTimeSavedUnkA.ValueChanged += new System.EventHandler(this.nudTimeSavedUnkA_ValueChanged);
+            // 
+            // nudTimeSavedMSecond
+            // 
+            this.nudTimeSavedMSecond.Location = new System.Drawing.Point(205, 42);
+            this.nudTimeSavedMSecond.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudTimeSavedMSecond.Name = "nudTimeSavedMSecond";
+            this.nudTimeSavedMSecond.Size = new System.Drawing.Size(49, 20);
+            this.nudTimeSavedMSecond.TabIndex = 32;
+            this.nudTimeSavedMSecond.ValueChanged += new System.EventHandler(this.nudTimeSavedMSecond_ValueChanged);
+            // 
+            // label433
+            // 
+            this.label433.AutoSize = true;
+            this.label433.Location = new System.Drawing.Point(195, 44);
+            this.label433.Name = "label433";
+            this.label433.Size = new System.Drawing.Size(10, 13);
+            this.label433.TabIndex = 31;
+            this.label433.Text = ".";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(145, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "-";
+            // 
+            // nudTimeSavedSecond
+            // 
+            this.nudTimeSavedSecond.Location = new System.Drawing.Point(155, 42);
+            this.nudTimeSavedSecond.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTimeSavedSecond.Name = "nudTimeSavedSecond";
+            this.nudTimeSavedSecond.Size = new System.Drawing.Size(39, 20);
+            this.nudTimeSavedSecond.TabIndex = 30;
+            this.nudTimeSavedSecond.ValueChanged += new System.EventHandler(this.nudTimeSavedSecond_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Time:";
+            // 
+            // nudTimeSavedMinute
+            // 
+            this.nudTimeSavedMinute.Location = new System.Drawing.Point(105, 42);
+            this.nudTimeSavedMinute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudTimeSavedMinute.Name = "nudTimeSavedMinute";
+            this.nudTimeSavedMinute.Size = new System.Drawing.Size(39, 20);
+            this.nudTimeSavedMinute.TabIndex = 29;
+            this.nudTimeSavedMinute.ValueChanged += new System.EventHandler(this.nudTimeSavedMinute_ValueChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 254);
+            this.label11.Location = new System.Drawing.Point(260, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 21;
             this.label11.Text = "UnkA:";
             // 
-            // label10
+            // nudTimeSavedHour
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 228);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "MSecond:";
+            this.nudTimeSavedHour.Location = new System.Drawing.Point(45, 42);
+            this.nudTimeSavedHour.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.nudTimeSavedHour.Name = "nudTimeSavedHour";
+            this.nudTimeSavedHour.Size = new System.Drawing.Size(49, 20);
+            this.nudTimeSavedHour.TabIndex = 28;
+            this.nudTimeSavedHour.ValueChanged += new System.EventHandler(this.nudTimeSavedHour_ValueChanged);
             // 
-            // label9
+            // nudTimeSavedMonth
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 202);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Second:";
+            this.nudTimeSavedMonth.Location = new System.Drawing.Point(105, 19);
+            this.nudTimeSavedMonth.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudTimeSavedMonth.Name = "nudTimeSavedMonth";
+            this.nudTimeSavedMonth.Size = new System.Drawing.Size(39, 20);
+            this.nudTimeSavedMonth.TabIndex = 24;
+            this.nudTimeSavedMonth.ValueChanged += new System.EventHandler(this.nudTimeSavedMonth_ValueChanged);
             // 
-            // txtTimeUnkA
+            // label431
             // 
-            this.txtTimeUnkA.Location = new System.Drawing.Point(92, 251);
-            this.txtTimeUnkA.Name = "txtTimeUnkA";
-            this.txtTimeUnkA.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeUnkA.TabIndex = 18;
+            this.label431.AutoSize = true;
+            this.label431.Location = new System.Drawing.Point(145, 44);
+            this.label431.Name = "label431";
+            this.label431.Size = new System.Drawing.Size(10, 13);
+            this.label431.TabIndex = 27;
+            this.label431.Text = ":";
             // 
-            // label8
+            // nudTimeSavedDay
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Minute:";
+            this.nudTimeSavedDay.Location = new System.Drawing.Point(155, 19);
+            this.nudTimeSavedDay.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.nudTimeSavedDay.Name = "nudTimeSavedDay";
+            this.nudTimeSavedDay.Size = new System.Drawing.Size(39, 20);
+            this.nudTimeSavedDay.TabIndex = 25;
+            this.nudTimeSavedDay.ValueChanged += new System.EventHandler(this.nudTimeSavedDay_ValueChanged);
             // 
-            // label7
+            // label432
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Hour:";
-            // 
-            // txtTimeMSecond
-            // 
-            this.txtTimeMSecond.Location = new System.Drawing.Point(92, 225);
-            this.txtTimeMSecond.Name = "txtTimeMSecond";
-            this.txtTimeMSecond.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeMSecond.TabIndex = 15;
-            // 
-            // txtTimeSecond
-            // 
-            this.txtTimeSecond.Location = new System.Drawing.Point(92, 199);
-            this.txtTimeSecond.Name = "txtTimeSecond";
-            this.txtTimeSecond.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeSecond.TabIndex = 14;
-            // 
-            // txtTimeMinute
-            // 
-            this.txtTimeMinute.Location = new System.Drawing.Point(92, 173);
-            this.txtTimeMinute.Name = "txtTimeMinute";
-            this.txtTimeMinute.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeMinute.TabIndex = 13;
-            // 
-            // txtTimeHour
-            // 
-            this.txtTimeHour.Location = new System.Drawing.Point(92, 147);
-            this.txtTimeHour.Name = "txtTimeHour";
-            this.txtTimeHour.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeHour.TabIndex = 12;
-            // 
-            // txtTimeDay
-            // 
-            this.txtTimeDay.Location = new System.Drawing.Point(92, 121);
-            this.txtTimeDay.Name = "txtTimeDay";
-            this.txtTimeDay.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeDay.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Day:";
-            // 
-            // txtTimeUnkB
-            // 
-            this.txtTimeUnkB.Location = new System.Drawing.Point(92, 95);
-            this.txtTimeUnkB.Name = "txtTimeUnkB";
-            this.txtTimeUnkB.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeUnkB.TabIndex = 9;
-            // 
-            // txtTimeMonth
-            // 
-            this.txtTimeMonth.Location = new System.Drawing.Point(92, 69);
-            this.txtTimeMonth.Name = "txtTimeMonth";
-            this.txtTimeMonth.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeMonth.TabIndex = 8;
-            // 
-            // txtTimeYear
-            // 
-            this.txtTimeYear.Location = new System.Drawing.Point(92, 43);
-            this.txtTimeYear.Name = "txtTimeYear";
-            this.txtTimeYear.Size = new System.Drawing.Size(100, 20);
-            this.txtTimeYear.TabIndex = 7;
-            // 
-            // lblMagic
-            // 
-            this.lblMagic.AutoSize = true;
-            this.lblMagic.Location = new System.Drawing.Point(120, 30);
-            this.lblMagic.Name = "lblMagic";
-            this.lblMagic.Size = new System.Drawing.Size(41, 13);
-            this.lblMagic.TabIndex = 8;
-            this.lblMagic.Text = "label12";
+            this.label432.AutoSize = true;
+            this.label432.Location = new System.Drawing.Point(95, 44);
+            this.label432.Name = "label432";
+            this.label432.Size = new System.Drawing.Size(10, 13);
+            this.label432.TabIndex = 26;
+            this.label432.Text = ":";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(47, 75);
+            this.label12.Location = new System.Drawing.Point(6, 21);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(42, 13);
             this.label12.TabIndex = 10;
@@ -2323,7 +2984,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(192, 78);
+            this.label13.Location = new System.Drawing.Point(144, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 13);
             this.label13.TabIndex = 12;
@@ -2332,7 +2993,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(275, 327);
+            this.label21.Location = new System.Drawing.Point(933, 68);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(81, 13);
             this.label21.TabIndex = 22;
@@ -2341,7 +3002,7 @@
             // lblLandmarkRotY
             // 
             this.lblLandmarkRotY.AutoSize = true;
-            this.lblLandmarkRotY.Location = new System.Drawing.Point(356, 331);
+            this.lblLandmarkRotY.Location = new System.Drawing.Point(1014, 72);
             this.lblLandmarkRotY.Name = "lblLandmarkRotY";
             this.lblLandmarkRotY.Size = new System.Drawing.Size(41, 13);
             this.lblLandmarkRotY.TabIndex = 23;
@@ -2350,7 +3011,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(278, 365);
+            this.label22.Location = new System.Drawing.Point(936, 106);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(81, 13);
             this.label22.TabIndex = 24;
@@ -2359,7 +3020,7 @@
             // lblIsTimeStopped
             // 
             this.lblIsTimeStopped.AutoSize = true;
-            this.lblIsTimeStopped.Location = new System.Drawing.Point(366, 366);
+            this.lblIsTimeStopped.Location = new System.Drawing.Point(1024, 107);
             this.lblIsTimeStopped.Name = "lblIsTimeStopped";
             this.lblIsTimeStopped.Size = new System.Drawing.Size(41, 13);
             this.lblIsTimeStopped.TabIndex = 25;
@@ -2368,7 +3029,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(281, 395);
+            this.label23.Location = new System.Drawing.Point(939, 136);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(134, 13);
             this.label23.TabIndex = 26;
@@ -2377,7 +3038,7 @@
             // lblChapterSaveScenarioFlag
             // 
             this.lblChapterSaveScenarioFlag.AutoSize = true;
-            this.lblChapterSaveScenarioFlag.Location = new System.Drawing.Point(446, 395);
+            this.lblChapterSaveScenarioFlag.Location = new System.Drawing.Point(1071, 132);
             this.lblChapterSaveScenarioFlag.Name = "lblChapterSaveScenarioFlag";
             this.lblChapterSaveScenarioFlag.Size = new System.Drawing.Size(41, 13);
             this.lblChapterSaveScenarioFlag.TabIndex = 27;
@@ -2386,7 +3047,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(293, 418);
+            this.label24.Location = new System.Drawing.Point(951, 159);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(109, 13);
             this.label24.TabIndex = 28;
@@ -2395,7 +3056,7 @@
             // lblChapterSaveEventId
             // 
             this.lblChapterSaveEventId.AutoSize = true;
-            this.lblChapterSaveEventId.Location = new System.Drawing.Point(449, 418);
+            this.lblChapterSaveEventId.Location = new System.Drawing.Point(1074, 155);
             this.lblChapterSaveEventId.Name = "lblChapterSaveEventId";
             this.lblChapterSaveEventId.Size = new System.Drawing.Size(41, 13);
             this.lblChapterSaveEventId.TabIndex = 29;
@@ -2407,10 +3068,11 @@
             this.tabControl1.Controls.Add(this.tabDrivers);
             this.tabControl1.Controls.Add(this.tabBlades);
             this.tabControl1.Controls.Add(this.tabItems);
-            this.tabControl1.Controls.Add(this.tabTigerTiger);
+            this.tabControl1.Controls.Add(this.tabFlags);
             this.tabControl1.Controls.Add(this.tabMapLocation);
             this.tabControl1.Controls.Add(this.tabMercGroups);
-            this.tabControl1.Controls.Add(this.tabFlags);
+            this.tabControl1.Controls.Add(this.tabTigerTiger);
+            this.tabControl1.Controls.Add(this.tabEvents);
             this.tabControl1.Controls.Add(this.tabUnknown);
             this.tabControl1.Controls.Add(this.tab150RawData);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2423,20 +3085,17 @@
             // 
             // tabMain
             // 
-            this.tabMain.BackColor = System.Drawing.SystemColors.Control;
-            this.tabMain.Controls.Add(this.lblPlayTime);
-            this.tabMain.Controls.Add(this.nudMoney);
+            this.tabMain.BackColor = System.Drawing.Color.Transparent;
+            this.tabMain.Controls.Add(this.groupBox150);
+            this.tabMain.Controls.Add(this.groupBox149);
+            this.tabMain.Controls.Add(this.groupBox148);
             this.tabMain.Controls.Add(this.groupBox11);
             this.tabMain.Controls.Add(this.groupBox1);
-            this.tabMain.Controls.Add(this.label1);
             this.tabMain.Controls.Add(this.lblChapterSaveEventId);
-            this.tabMain.Controls.Add(this.lblMagic);
             this.tabMain.Controls.Add(this.label24);
             this.tabMain.Controls.Add(this.lblChapterSaveScenarioFlag);
-            this.tabMain.Controls.Add(this.label12);
             this.tabMain.Controls.Add(this.label23);
             this.tabMain.Controls.Add(this.lblIsTimeStopped);
-            this.tabMain.Controls.Add(this.label13);
             this.tabMain.Controls.Add(this.label22);
             this.tabMain.Controls.Add(this.lblLandmarkRotY);
             this.tabMain.Controls.Add(this.label21);
@@ -2447,18 +3106,157 @@
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
             // 
-            // lblPlayTime
+            // groupBox150
             // 
-            this.lblPlayTime.AutoSize = true;
-            this.lblPlayTime.Location = new System.Drawing.Point(44, 379);
-            this.lblPlayTime.Name = "lblPlayTime";
-            this.lblPlayTime.Size = new System.Drawing.Size(60, 13);
-            this.lblPlayTime.TabIndex = 34;
-            this.lblPlayTime.Text = "lblPlayTime";
+            this.groupBox150.Controls.Add(this.groupBox151);
+            this.groupBox150.Controls.Add(this.txtWeatherInfoName);
+            this.groupBox150.Controls.Add(this.label450);
+            this.groupBox150.Controls.Add(this.cbxWeatherInfo);
+            this.groupBox150.Controls.Add(this.label449);
+            this.groupBox150.Location = new System.Drawing.Point(384, 246);
+            this.groupBox150.Name = "groupBox150";
+            this.groupBox150.Size = new System.Drawing.Size(512, 137);
+            this.groupBox150.TabIndex = 37;
+            this.groupBox150.TabStop = false;
+            this.groupBox150.Text = "Weather Info Edit";
+            // 
+            // groupBox151
+            // 
+            this.groupBox151.Controls.Add(this.hbxWeatherInfoUnk_0x04);
+            this.groupBox151.Location = new System.Drawing.Point(6, 45);
+            this.groupBox151.Name = "groupBox151";
+            this.groupBox151.Size = new System.Drawing.Size(500, 85);
+            this.groupBox151.TabIndex = 38;
+            this.groupBox151.TabStop = false;
+            this.groupBox151.Text = "Unk_0x04";
+            // 
+            // hbxWeatherInfoUnk_0x04
+            // 
+            this.hbxWeatherInfoUnk_0x04.ColumnInfoVisible = true;
+            this.hbxWeatherInfoUnk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxWeatherInfoUnk_0x04.LineInfoVisible = true;
+            this.hbxWeatherInfoUnk_0x04.Location = new System.Drawing.Point(6, 14);
+            this.hbxWeatherInfoUnk_0x04.Name = "hbxWeatherInfoUnk_0x04";
+            this.hbxWeatherInfoUnk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxWeatherInfoUnk_0x04.Size = new System.Drawing.Size(488, 66);
+            this.hbxWeatherInfoUnk_0x04.TabIndex = 153;
+            // 
+            // txtWeatherInfoName
+            // 
+            this.txtWeatherInfoName.Location = new System.Drawing.Point(308, 19);
+            this.txtWeatherInfoName.MaxLength = 4;
+            this.txtWeatherInfoName.Name = "txtWeatherInfoName";
+            this.txtWeatherInfoName.Size = new System.Drawing.Size(50, 20);
+            this.txtWeatherInfoName.TabIndex = 155;
+            // 
+            // label450
+            // 
+            this.label450.AutoSize = true;
+            this.label450.Location = new System.Drawing.Point(264, 22);
+            this.label450.Name = "label450";
+            this.label450.Size = new System.Drawing.Size(38, 13);
+            this.label450.TabIndex = 154;
+            this.label450.Text = "Name:";
+            // 
+            // cbxWeatherInfo
+            // 
+            this.cbxWeatherInfo.FormattingEnabled = true;
+            this.cbxWeatherInfo.Location = new System.Drawing.Point(126, 19);
+            this.cbxWeatherInfo.Name = "cbxWeatherInfo";
+            this.cbxWeatherInfo.Size = new System.Drawing.Size(121, 21);
+            this.cbxWeatherInfo.TabIndex = 1;
+            this.cbxWeatherInfo.SelectedIndexChanged += new System.EventHandler(this.cbxWeatherInfo_SelectedIndexChanged);
+            // 
+            // label449
+            // 
+            this.label449.AutoSize = true;
+            this.label449.Location = new System.Drawing.Point(3, 22);
+            this.label449.Name = "label449";
+            this.label449.Size = new System.Drawing.Size(117, 13);
+            this.label449.TabIndex = 0;
+            this.label449.Text = "Selected Weather Info:";
+            // 
+            // groupBox149
+            // 
+            this.groupBox149.Controls.Add(this.nudAchievementTaskCount);
+            this.groupBox149.Controls.Add(this.label1);
+            this.groupBox149.Controls.Add(this.hbxAchievementTask);
+            this.groupBox149.Controls.Add(this.cbxAchievementTasks);
+            this.groupBox149.Controls.Add(this.label446);
+            this.groupBox149.Location = new System.Drawing.Point(6, 335);
+            this.groupBox149.Name = "groupBox149";
+            this.groupBox149.Size = new System.Drawing.Size(331, 110);
+            this.groupBox149.TabIndex = 36;
+            this.groupBox149.TabStop = false;
+            this.groupBox149.Text = "Achievement Tasks Edit";
+            // 
+            // hbxAchievementTask
+            // 
+            this.hbxAchievementTask.ColumnInfoVisible = true;
+            this.hbxAchievementTask.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxAchievementTask.Location = new System.Drawing.Point(6, 39);
+            this.hbxAchievementTask.Name = "hbxAchievementTask";
+            this.hbxAchievementTask.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxAchievementTask.Size = new System.Drawing.Size(320, 41);
+            this.hbxAchievementTask.TabIndex = 152;
+            // 
+            // cbxAchievementTasks
+            // 
+            this.cbxAchievementTasks.FormattingEnabled = true;
+            this.cbxAchievementTasks.Location = new System.Drawing.Point(156, 12);
+            this.cbxAchievementTasks.Name = "cbxAchievementTasks";
+            this.cbxAchievementTasks.Size = new System.Drawing.Size(141, 21);
+            this.cbxAchievementTasks.TabIndex = 1;
+            this.cbxAchievementTasks.SelectedIndexChanged += new System.EventHandler(this.cbxAchievementTasks_SelectedIndexChanged);
+            // 
+            // label446
+            // 
+            this.label446.AutoSize = true;
+            this.label446.Location = new System.Drawing.Point(6, 16);
+            this.label446.Name = "label446";
+            this.label446.Size = new System.Drawing.Size(144, 13);
+            this.label446.TabIndex = 0;
+            this.label446.Text = "Selected Achievement Task:";
+            // 
+            // groupBox148
+            // 
+            this.groupBox148.Controls.Add(this.nudEtherCrystals);
+            this.groupBox148.Controls.Add(this.label440);
+            this.groupBox148.Controls.Add(this.nudMoney);
+            this.groupBox148.Controls.Add(this.label13);
+            this.groupBox148.Controls.Add(this.label12);
+            this.groupBox148.Location = new System.Drawing.Point(6, 6);
+            this.groupBox148.Name = "groupBox148";
+            this.groupBox148.Size = new System.Drawing.Size(340, 45);
+            this.groupBox148.TabIndex = 35;
+            this.groupBox148.TabStop = false;
+            this.groupBox148.Text = "Money";
+            // 
+            // nudEtherCrystals
+            // 
+            this.nudEtherCrystals.Location = new System.Drawing.Point(245, 19);
+            this.nudEtherCrystals.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudEtherCrystals.Name = "nudEtherCrystals";
+            this.nudEtherCrystals.Size = new System.Drawing.Size(88, 20);
+            this.nudEtherCrystals.TabIndex = 35;
+            this.nudEtherCrystals.ValueChanged += new System.EventHandler(this.nudEtherCrystals_ValueChanged);
+            // 
+            // label440
+            // 
+            this.label440.AutoSize = true;
+            this.label440.Location = new System.Drawing.Point(165, 21);
+            this.label440.Name = "label440";
+            this.label440.Size = new System.Drawing.Size(74, 13);
+            this.label440.TabIndex = 34;
+            this.label440.Text = "Ether Crystals:";
             // 
             // nudMoney
             // 
-            this.nudMoney.Location = new System.Drawing.Point(98, 73);
+            this.nudMoney.Location = new System.Drawing.Point(54, 19);
             this.nudMoney.Maximum = new decimal(new int[] {
             -1,
             0,
@@ -2480,7 +3278,7 @@
             this.groupBox11.Controls.Add(this.groupBox12);
             this.groupBox11.Controls.Add(this.cbxPartyLeader);
             this.groupBox11.Controls.Add(this.label63);
-            this.groupBox11.Location = new System.Drawing.Point(507, 29);
+            this.groupBox11.Location = new System.Drawing.Point(384, 6);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(513, 234);
             this.groupBox11.TabIndex = 32;
@@ -2594,11 +3392,11 @@
             this.groupBox12.Size = new System.Drawing.Size(261, 139);
             this.groupBox12.TabIndex = 2;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Party Members Edit:";
+            this.groupBox12.Text = "Party Members Edit";
             // 
             // nudPartyMemberDriver
             // 
-            this.nudPartyMemberDriver.Location = new System.Drawing.Point(76, 40);
+            this.nudPartyMemberDriver.Location = new System.Drawing.Point(76, 41);
             this.nudPartyMemberDriver.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -2632,7 +3430,7 @@
             // label347
             // 
             this.label347.AutoSize = true;
-            this.label347.Location = new System.Drawing.Point(7, 16);
+            this.label347.Location = new System.Drawing.Point(6, 16);
             this.label347.Name = "label347";
             this.label347.Size = new System.Drawing.Size(48, 13);
             this.label347.TabIndex = 9;
@@ -2650,7 +3448,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(7, 45);
+            this.label64.Location = new System.Drawing.Point(6, 44);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(38, 13);
             this.label64.TabIndex = 1;
@@ -15015,324 +15813,30 @@
             this.nudItemsSerial10.TabIndex = 19;
             this.nudItemsSerial10.ValueChanged += new System.EventHandler(this.nudItemsSerial10_ValueChanged);
             // 
-            // tabTigerTiger
+            // tabFlags
             // 
-            this.tabTigerTiger.Controls.Add(this.groupBox118);
-            this.tabTigerTiger.Controls.Add(this.groupBox117);
-            this.tabTigerTiger.Controls.Add(this.gourpBox119);
-            this.tabTigerTiger.Location = new System.Drawing.Point(4, 22);
-            this.tabTigerTiger.Name = "tabTigerTiger";
-            this.tabTigerTiger.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTigerTiger.Size = new System.Drawing.Size(1134, 581);
-            this.tabTigerTiger.TabIndex = 4;
-            this.tabTigerTiger.Text = "Tiger! Tiger!";
-            this.tabTigerTiger.UseVisualStyleBackColor = true;
+            this.tabFlags.Controls.Add(this.hbxFlags);
+            this.tabFlags.Location = new System.Drawing.Point(4, 22);
+            this.tabFlags.Name = "tabFlags";
+            this.tabFlags.Size = new System.Drawing.Size(1134, 581);
+            this.tabFlags.TabIndex = 8;
+            this.tabFlags.Text = "Game Flag Data";
+            this.tabFlags.UseVisualStyleBackColor = true;
             // 
-            // groupBox118
+            // hbxFlags
             // 
-            this.groupBox118.Controls.Add(this.hbxTigerTigerUnk_0x30);
-            this.groupBox118.Location = new System.Drawing.Point(8, 224);
-            this.groupBox118.Name = "groupBox118";
-            this.groupBox118.Size = new System.Drawing.Size(487, 276);
-            this.groupBox118.TabIndex = 156;
-            this.groupBox118.TabStop = false;
-            this.groupBox118.Text = "Unk_0x30";
-            // 
-            // hbxTigerTigerUnk_0x30
-            // 
-            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
-            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
-            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
-            // 
-            // groupBox117
-            // 
-            this.groupBox117.Controls.Add(this.hbxTigerTigerUnk_0x00);
-            this.groupBox117.Location = new System.Drawing.Point(8, 150);
-            this.groupBox117.Name = "groupBox117";
-            this.groupBox117.Size = new System.Drawing.Size(313, 67);
-            this.groupBox117.TabIndex = 155;
-            this.groupBox117.TabStop = false;
-            this.groupBox117.Text = "Unk_0x00";
-            // 
-            // hbxTigerTigerUnk_0x00
-            // 
-            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
-            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
-            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
-            // 
-            // gourpBox119
-            // 
-            this.gourpBox119.Controls.Add(this.chkTigerTigerStage5IsEasyMode);
-            this.gourpBox119.Controls.Add(this.txtTigerTigerStage5Initials);
-            this.gourpBox119.Controls.Add(this.nudTigerTigerStage5Score);
-            this.gourpBox119.Controls.Add(this.label357);
-            this.gourpBox119.Controls.Add(this.chkTigerTigerStage4IsEasyMode);
-            this.gourpBox119.Controls.Add(this.txtTigerTigerStage4Initials);
-            this.gourpBox119.Controls.Add(this.nudTigerTigerStage4Score);
-            this.gourpBox119.Controls.Add(this.label356);
-            this.gourpBox119.Controls.Add(this.chkTigerTigerStage3IsEasyMode);
-            this.gourpBox119.Controls.Add(this.txtTigerTigerStage3Initials);
-            this.gourpBox119.Controls.Add(this.nudTigerTigerStage3Score);
-            this.gourpBox119.Controls.Add(this.label355);
-            this.gourpBox119.Controls.Add(this.chkTigerTigerStage2IsEasyMode);
-            this.gourpBox119.Controls.Add(this.txtTigerTigerStage2Initials);
-            this.gourpBox119.Controls.Add(this.nudTigerTigerStage2Score);
-            this.gourpBox119.Controls.Add(this.label354);
-            this.gourpBox119.Controls.Add(this.chkTigerTigerStage1IsEasyMode);
-            this.gourpBox119.Controls.Add(this.label353);
-            this.gourpBox119.Controls.Add(this.label352);
-            this.gourpBox119.Controls.Add(this.txtTigerTigerStage1Initials);
-            this.gourpBox119.Controls.Add(this.nudTigerTigerStage1Score);
-            this.gourpBox119.Controls.Add(this.label66);
-            this.gourpBox119.Location = new System.Drawing.Point(8, 6);
-            this.gourpBox119.Name = "gourpBox119";
-            this.gourpBox119.Size = new System.Drawing.Size(328, 138);
-            this.gourpBox119.TabIndex = 0;
-            this.gourpBox119.TabStop = false;
-            this.gourpBox119.Text = "Tiger! Tiger! High Scores";
-            // 
-            // chkTigerTigerStage5IsEasyMode
-            // 
-            this.chkTigerTigerStage5IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage5IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage5IsEasyMode.Location = new System.Drawing.Point(211, 114);
-            this.chkTigerTigerStage5IsEasyMode.Name = "chkTigerTigerStage5IsEasyMode";
-            this.chkTigerTigerStage5IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage5IsEasyMode.TabIndex = 21;
-            this.chkTigerTigerStage5IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage5IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage5IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage5IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage5Initials
-            // 
-            this.txtTigerTigerStage5Initials.Location = new System.Drawing.Point(158, 112);
-            this.txtTigerTigerStage5Initials.MaxLength = 3;
-            this.txtTigerTigerStage5Initials.Name = "txtTigerTigerStage5Initials";
-            this.txtTigerTigerStage5Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage5Initials.TabIndex = 20;
-            this.txtTigerTigerStage5Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage5Initials_TextChanged);
-            // 
-            // nudTigerTigerStage5Score
-            // 
-            this.nudTigerTigerStage5Score.Location = new System.Drawing.Point(61, 112);
-            this.nudTigerTigerStage5Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage5Score.Name = "nudTigerTigerStage5Score";
-            this.nudTigerTigerStage5Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage5Score.TabIndex = 19;
-            this.nudTigerTigerStage5Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage5Score_ValueChanged);
-            // 
-            // label357
-            // 
-            this.label357.AutoSize = true;
-            this.label357.Location = new System.Drawing.Point(8, 114);
-            this.label357.Name = "label357";
-            this.label357.Size = new System.Drawing.Size(47, 13);
-            this.label357.TabIndex = 18;
-            this.label357.Text = "Stage 5:";
-            // 
-            // chkTigerTigerStage4IsEasyMode
-            // 
-            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
-            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
-            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
-            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage4Initials
-            // 
-            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
-            this.txtTigerTigerStage4Initials.MaxLength = 3;
-            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
-            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage4Initials.TabIndex = 16;
-            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
-            // 
-            // nudTigerTigerStage4Score
-            // 
-            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
-            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
-            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage4Score.TabIndex = 15;
-            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
-            // 
-            // label356
-            // 
-            this.label356.AutoSize = true;
-            this.label356.Location = new System.Drawing.Point(8, 94);
-            this.label356.Name = "label356";
-            this.label356.Size = new System.Drawing.Size(47, 13);
-            this.label356.TabIndex = 14;
-            this.label356.Text = "Stage 4:";
-            // 
-            // chkTigerTigerStage3IsEasyMode
-            // 
-            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
-            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
-            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
-            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage3Initials
-            // 
-            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
-            this.txtTigerTigerStage3Initials.MaxLength = 3;
-            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
-            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage3Initials.TabIndex = 12;
-            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
-            // 
-            // nudTigerTigerStage3Score
-            // 
-            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
-            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
-            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage3Score.TabIndex = 11;
-            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
-            // 
-            // label355
-            // 
-            this.label355.AutoSize = true;
-            this.label355.Location = new System.Drawing.Point(8, 74);
-            this.label355.Name = "label355";
-            this.label355.Size = new System.Drawing.Size(47, 13);
-            this.label355.TabIndex = 10;
-            this.label355.Text = "Stage 3:";
-            // 
-            // chkTigerTigerStage2IsEasyMode
-            // 
-            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
-            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
-            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
-            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage2Initials
-            // 
-            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
-            this.txtTigerTigerStage2Initials.MaxLength = 3;
-            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
-            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage2Initials.TabIndex = 8;
-            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
-            // 
-            // nudTigerTigerStage2Score
-            // 
-            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
-            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
-            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage2Score.TabIndex = 7;
-            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
-            // 
-            // label354
-            // 
-            this.label354.AutoSize = true;
-            this.label354.Location = new System.Drawing.Point(8, 54);
-            this.label354.Name = "label354";
-            this.label354.Size = new System.Drawing.Size(47, 13);
-            this.label354.TabIndex = 6;
-            this.label354.Text = "Stage 2:";
-            // 
-            // chkTigerTigerStage1IsEasyMode
-            // 
-            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
-            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
-            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
-            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
-            // 
-            // label353
-            // 
-            this.label353.AutoSize = true;
-            this.label353.Location = new System.Drawing.Point(155, 16);
-            this.label353.Name = "label353";
-            this.label353.Size = new System.Drawing.Size(39, 13);
-            this.label353.TabIndex = 4;
-            this.label353.Text = "Initials:";
-            // 
-            // label352
-            // 
-            this.label352.AutoSize = true;
-            this.label352.Location = new System.Drawing.Point(58, 16);
-            this.label352.Name = "label352";
-            this.label352.Size = new System.Drawing.Size(38, 13);
-            this.label352.TabIndex = 3;
-            this.label352.Text = "Score:";
-            // 
-            // txtTigerTigerStage1Initials
-            // 
-            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
-            this.txtTigerTigerStage1Initials.MaxLength = 3;
-            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
-            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage1Initials.TabIndex = 2;
-            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
-            // 
-            // nudTigerTigerStage1Score
-            // 
-            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
-            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
-            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage1Score.TabIndex = 1;
-            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(8, 34);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(47, 13);
-            this.label66.TabIndex = 0;
-            this.label66.Text = "Stage 1:";
+            this.hbxFlags.ColumnInfoVisible = true;
+            this.hbxFlags.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxFlags.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxFlags.LineInfoVisible = true;
+            this.hbxFlags.Location = new System.Drawing.Point(0, 0);
+            this.hbxFlags.Name = "hbxFlags";
+            this.hbxFlags.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxFlags.Size = new System.Drawing.Size(1134, 581);
+            this.hbxFlags.StringViewVisible = true;
+            this.hbxFlags.TabIndex = 155;
+            this.hbxFlags.UseFixedBytesPerLine = true;
+            this.hbxFlags.VScrollBarVisible = true;
             // 
             // tabMapLocation
             // 
@@ -16524,12 +17028,30 @@
             this.groupBox144.Controls.Add(this.nudMercGroupPresetMember3);
             this.groupBox144.Controls.Add(this.label425);
             this.groupBox144.Controls.Add(this.label426);
-            this.groupBox144.Location = new System.Drawing.Point(748, 51);
+            this.groupBox144.Location = new System.Drawing.Point(733, 44);
             this.groupBox144.Name = "groupBox144";
             this.groupBox144.Size = new System.Drawing.Size(140, 188);
             this.groupBox144.TabIndex = 162;
             this.groupBox144.TabStop = false;
             this.groupBox144.Text = "Merc Group Presets";
+            // 
+            // label430
+            // 
+            this.label430.AutoSize = true;
+            this.label430.Location = new System.Drawing.Point(12, 22);
+            this.label430.Name = "label430";
+            this.label430.Size = new System.Drawing.Size(40, 13);
+            this.label430.TabIndex = 179;
+            this.label430.Text = "Preset:";
+            // 
+            // cbxMercGroupPresets
+            // 
+            this.cbxMercGroupPresets.FormattingEnabled = true;
+            this.cbxMercGroupPresets.Location = new System.Drawing.Point(58, 19);
+            this.cbxMercGroupPresets.Name = "cbxMercGroupPresets";
+            this.cbxMercGroupPresets.Size = new System.Drawing.Size(69, 21);
+            this.cbxMercGroupPresets.TabIndex = 178;
+            this.cbxMercGroupPresets.SelectedIndexChanged += new System.EventHandler(this.cbxMercGroupPresets_SelectedIndexChanged);
             // 
             // label429
             // 
@@ -17861,30 +18383,1248 @@
             this.label16.TabIndex = 18;
             this.label16.Text = "Blade 1:";
             // 
-            // tabFlags
+            // tabTigerTiger
             // 
-            this.tabFlags.Controls.Add(this.hbxFlags);
-            this.tabFlags.Location = new System.Drawing.Point(4, 22);
-            this.tabFlags.Name = "tabFlags";
-            this.tabFlags.Size = new System.Drawing.Size(1134, 581);
-            this.tabFlags.TabIndex = 8;
-            this.tabFlags.Text = "Game Flag Data";
-            this.tabFlags.UseVisualStyleBackColor = true;
+            this.tabTigerTiger.Controls.Add(this.groupBox118);
+            this.tabTigerTiger.Controls.Add(this.groupBox117);
+            this.tabTigerTiger.Controls.Add(this.gourpBox119);
+            this.tabTigerTiger.Location = new System.Drawing.Point(4, 22);
+            this.tabTigerTiger.Name = "tabTigerTiger";
+            this.tabTigerTiger.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTigerTiger.Size = new System.Drawing.Size(1134, 581);
+            this.tabTigerTiger.TabIndex = 4;
+            this.tabTigerTiger.Text = "Tiger! Tiger!";
+            this.tabTigerTiger.UseVisualStyleBackColor = true;
             // 
-            // hbxFlags
+            // groupBox118
             // 
-            this.hbxFlags.ColumnInfoVisible = true;
-            this.hbxFlags.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbxFlags.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxFlags.LineInfoVisible = true;
-            this.hbxFlags.Location = new System.Drawing.Point(0, 0);
-            this.hbxFlags.Name = "hbxFlags";
-            this.hbxFlags.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxFlags.Size = new System.Drawing.Size(1134, 581);
-            this.hbxFlags.StringViewVisible = true;
-            this.hbxFlags.TabIndex = 155;
-            this.hbxFlags.UseFixedBytesPerLine = true;
-            this.hbxFlags.VScrollBarVisible = true;
+            this.groupBox118.Controls.Add(this.hbxTigerTigerUnk_0x30);
+            this.groupBox118.Location = new System.Drawing.Point(8, 224);
+            this.groupBox118.Name = "groupBox118";
+            this.groupBox118.Size = new System.Drawing.Size(487, 276);
+            this.groupBox118.TabIndex = 156;
+            this.groupBox118.TabStop = false;
+            this.groupBox118.Text = "Unk_0x30";
+            // 
+            // hbxTigerTigerUnk_0x30
+            // 
+            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
+            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
+            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
+            // 
+            // groupBox117
+            // 
+            this.groupBox117.Controls.Add(this.hbxTigerTigerUnk_0x00);
+            this.groupBox117.Location = new System.Drawing.Point(8, 150);
+            this.groupBox117.Name = "groupBox117";
+            this.groupBox117.Size = new System.Drawing.Size(313, 67);
+            this.groupBox117.TabIndex = 155;
+            this.groupBox117.TabStop = false;
+            this.groupBox117.Text = "Unk_0x00";
+            // 
+            // hbxTigerTigerUnk_0x00
+            // 
+            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
+            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
+            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
+            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
+            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
+            // 
+            // gourpBox119
+            // 
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage5IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage5Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage5Score);
+            this.gourpBox119.Controls.Add(this.label357);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage4IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage4Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage4Score);
+            this.gourpBox119.Controls.Add(this.label356);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage3IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage3Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage3Score);
+            this.gourpBox119.Controls.Add(this.label355);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage2IsEasyMode);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage2Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage2Score);
+            this.gourpBox119.Controls.Add(this.label354);
+            this.gourpBox119.Controls.Add(this.chkTigerTigerStage1IsEasyMode);
+            this.gourpBox119.Controls.Add(this.label353);
+            this.gourpBox119.Controls.Add(this.label352);
+            this.gourpBox119.Controls.Add(this.txtTigerTigerStage1Initials);
+            this.gourpBox119.Controls.Add(this.nudTigerTigerStage1Score);
+            this.gourpBox119.Controls.Add(this.label66);
+            this.gourpBox119.Location = new System.Drawing.Point(8, 6);
+            this.gourpBox119.Name = "gourpBox119";
+            this.gourpBox119.Size = new System.Drawing.Size(328, 138);
+            this.gourpBox119.TabIndex = 0;
+            this.gourpBox119.TabStop = false;
+            this.gourpBox119.Text = "Tiger! Tiger! High Scores";
+            // 
+            // chkTigerTigerStage5IsEasyMode
+            // 
+            this.chkTigerTigerStage5IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage5IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage5IsEasyMode.Location = new System.Drawing.Point(211, 114);
+            this.chkTigerTigerStage5IsEasyMode.Name = "chkTigerTigerStage5IsEasyMode";
+            this.chkTigerTigerStage5IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage5IsEasyMode.TabIndex = 21;
+            this.chkTigerTigerStage5IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage5IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage5IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage5IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage5Initials
+            // 
+            this.txtTigerTigerStage5Initials.Location = new System.Drawing.Point(158, 112);
+            this.txtTigerTigerStage5Initials.MaxLength = 3;
+            this.txtTigerTigerStage5Initials.Name = "txtTigerTigerStage5Initials";
+            this.txtTigerTigerStage5Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage5Initials.TabIndex = 20;
+            this.txtTigerTigerStage5Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage5Initials_TextChanged);
+            // 
+            // nudTigerTigerStage5Score
+            // 
+            this.nudTigerTigerStage5Score.Location = new System.Drawing.Point(61, 112);
+            this.nudTigerTigerStage5Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage5Score.Name = "nudTigerTigerStage5Score";
+            this.nudTigerTigerStage5Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage5Score.TabIndex = 19;
+            this.nudTigerTigerStage5Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage5Score_ValueChanged);
+            // 
+            // label357
+            // 
+            this.label357.AutoSize = true;
+            this.label357.Location = new System.Drawing.Point(8, 114);
+            this.label357.Name = "label357";
+            this.label357.Size = new System.Drawing.Size(47, 13);
+            this.label357.TabIndex = 18;
+            this.label357.Text = "Stage 5:";
+            // 
+            // chkTigerTigerStage4IsEasyMode
+            // 
+            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
+            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
+            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
+            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage4Initials
+            // 
+            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
+            this.txtTigerTigerStage4Initials.MaxLength = 3;
+            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
+            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage4Initials.TabIndex = 16;
+            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
+            // 
+            // nudTigerTigerStage4Score
+            // 
+            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
+            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
+            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage4Score.TabIndex = 15;
+            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
+            // 
+            // label356
+            // 
+            this.label356.AutoSize = true;
+            this.label356.Location = new System.Drawing.Point(8, 94);
+            this.label356.Name = "label356";
+            this.label356.Size = new System.Drawing.Size(47, 13);
+            this.label356.TabIndex = 14;
+            this.label356.Text = "Stage 4:";
+            // 
+            // chkTigerTigerStage3IsEasyMode
+            // 
+            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
+            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
+            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
+            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage3Initials
+            // 
+            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
+            this.txtTigerTigerStage3Initials.MaxLength = 3;
+            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
+            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage3Initials.TabIndex = 12;
+            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
+            // 
+            // nudTigerTigerStage3Score
+            // 
+            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
+            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
+            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage3Score.TabIndex = 11;
+            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
+            // 
+            // label355
+            // 
+            this.label355.AutoSize = true;
+            this.label355.Location = new System.Drawing.Point(8, 74);
+            this.label355.Name = "label355";
+            this.label355.Size = new System.Drawing.Size(47, 13);
+            this.label355.TabIndex = 10;
+            this.label355.Text = "Stage 3:";
+            // 
+            // chkTigerTigerStage2IsEasyMode
+            // 
+            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
+            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
+            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
+            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
+            // 
+            // txtTigerTigerStage2Initials
+            // 
+            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
+            this.txtTigerTigerStage2Initials.MaxLength = 3;
+            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
+            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage2Initials.TabIndex = 8;
+            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
+            // 
+            // nudTigerTigerStage2Score
+            // 
+            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
+            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
+            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage2Score.TabIndex = 7;
+            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
+            // 
+            // label354
+            // 
+            this.label354.AutoSize = true;
+            this.label354.Location = new System.Drawing.Point(8, 54);
+            this.label354.Name = "label354";
+            this.label354.Size = new System.Drawing.Size(47, 13);
+            this.label354.TabIndex = 6;
+            this.label354.Text = "Stage 2:";
+            // 
+            // chkTigerTigerStage1IsEasyMode
+            // 
+            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
+            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
+            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
+            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
+            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
+            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
+            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
+            // 
+            // label353
+            // 
+            this.label353.AutoSize = true;
+            this.label353.Location = new System.Drawing.Point(155, 16);
+            this.label353.Name = "label353";
+            this.label353.Size = new System.Drawing.Size(39, 13);
+            this.label353.TabIndex = 4;
+            this.label353.Text = "Initials:";
+            // 
+            // label352
+            // 
+            this.label352.AutoSize = true;
+            this.label352.Location = new System.Drawing.Point(58, 16);
+            this.label352.Name = "label352";
+            this.label352.Size = new System.Drawing.Size(38, 13);
+            this.label352.TabIndex = 3;
+            this.label352.Text = "Score:";
+            // 
+            // txtTigerTigerStage1Initials
+            // 
+            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
+            this.txtTigerTigerStage1Initials.MaxLength = 3;
+            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
+            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
+            this.txtTigerTigerStage1Initials.TabIndex = 2;
+            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
+            // 
+            // nudTigerTigerStage1Score
+            // 
+            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
+            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
+            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
+            this.nudTigerTigerStage1Score.TabIndex = 1;
+            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(8, 34);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(47, 13);
+            this.label66.TabIndex = 0;
+            this.label66.Text = "Stage 1:";
+            // 
+            // tabEvents
+            // 
+            this.tabEvents.Controls.Add(this.nudEventsCount);
+            this.tabEvents.Controls.Add(this.label484);
+            this.tabEvents.Controls.Add(this.groupBox159);
+            this.tabEvents.Controls.Add(this.groupBox158);
+            this.tabEvents.Controls.Add(this.groupBox157);
+            this.tabEvents.Controls.Add(this.groupBox156);
+            this.tabEvents.Controls.Add(this.groupBox155);
+            this.tabEvents.Controls.Add(this.groupBox154);
+            this.tabEvents.Controls.Add(this.groupBox153);
+            this.tabEvents.Controls.Add(this.groupBox152);
+            this.tabEvents.Controls.Add(this.cbxEvents);
+            this.tabEvents.Controls.Add(this.label457);
+            this.tabEvents.Location = new System.Drawing.Point(4, 22);
+            this.tabEvents.Name = "tabEvents";
+            this.tabEvents.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEvents.Size = new System.Drawing.Size(1134, 581);
+            this.tabEvents.TabIndex = 10;
+            this.tabEvents.Text = "Events";
+            this.tabEvents.UseVisualStyleBackColor = true;
+            // 
+            // groupBox159
+            // 
+            this.groupBox159.Controls.Add(this.hbxEventUnk_0x54);
+            this.groupBox159.Location = new System.Drawing.Point(448, 255);
+            this.groupBox159.Name = "groupBox159";
+            this.groupBox159.Size = new System.Drawing.Size(427, 68);
+            this.groupBox159.TabIndex = 232;
+            this.groupBox159.TabStop = false;
+            this.groupBox159.Text = "Unk_0x54";
+            // 
+            // hbxEventUnk_0x54
+            // 
+            this.hbxEventUnk_0x54.ColumnInfoVisible = true;
+            this.hbxEventUnk_0x54.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxEventUnk_0x54.Location = new System.Drawing.Point(6, 19);
+            this.hbxEventUnk_0x54.Name = "hbxEventUnk_0x54";
+            this.hbxEventUnk_0x54.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxEventUnk_0x54.Size = new System.Drawing.Size(415, 41);
+            this.hbxEventUnk_0x54.TabIndex = 153;
+            // 
+            // groupBox158
+            // 
+            this.groupBox158.Controls.Add(this.hbxEventUnk_0x42);
+            this.groupBox158.Location = new System.Drawing.Point(448, 181);
+            this.groupBox158.Name = "groupBox158";
+            this.groupBox158.Size = new System.Drawing.Size(288, 68);
+            this.groupBox158.TabIndex = 231;
+            this.groupBox158.TabStop = false;
+            this.groupBox158.Text = "Unk_0x42";
+            // 
+            // hbxEventUnk_0x42
+            // 
+            this.hbxEventUnk_0x42.ColumnInfoVisible = true;
+            this.hbxEventUnk_0x42.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxEventUnk_0x42.Location = new System.Drawing.Point(6, 19);
+            this.hbxEventUnk_0x42.Name = "hbxEventUnk_0x42";
+            this.hbxEventUnk_0x42.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxEventUnk_0x42.Size = new System.Drawing.Size(275, 41);
+            this.hbxEventUnk_0x42.TabIndex = 153;
+            // 
+            // groupBox157
+            // 
+            this.groupBox157.Controls.Add(this.hbxEventUnk_0x22);
+            this.groupBox157.Location = new System.Drawing.Point(448, 107);
+            this.groupBox157.Name = "groupBox157";
+            this.groupBox157.Size = new System.Drawing.Size(333, 68);
+            this.groupBox157.TabIndex = 230;
+            this.groupBox157.TabStop = false;
+            this.groupBox157.Text = "Unk_0x22";
+            // 
+            // hbxEventUnk_0x22
+            // 
+            this.hbxEventUnk_0x22.ColumnInfoVisible = true;
+            this.hbxEventUnk_0x22.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxEventUnk_0x22.Location = new System.Drawing.Point(6, 19);
+            this.hbxEventUnk_0x22.Name = "hbxEventUnk_0x22";
+            this.hbxEventUnk_0x22.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxEventUnk_0x22.Size = new System.Drawing.Size(320, 41);
+            this.hbxEventUnk_0x22.TabIndex = 153;
+            // 
+            // groupBox156
+            // 
+            this.groupBox156.Controls.Add(this.hbxEventUnk_0x0C);
+            this.groupBox156.Location = new System.Drawing.Point(448, 33);
+            this.groupBox156.Name = "groupBox156";
+            this.groupBox156.Size = new System.Drawing.Size(90, 68);
+            this.groupBox156.TabIndex = 229;
+            this.groupBox156.TabStop = false;
+            this.groupBox156.Text = "Unk_0x0C";
+            // 
+            // hbxEventUnk_0x0C
+            // 
+            this.hbxEventUnk_0x0C.ColumnInfoVisible = true;
+            this.hbxEventUnk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxEventUnk_0x0C.Location = new System.Drawing.Point(6, 19);
+            this.hbxEventUnk_0x0C.Name = "hbxEventUnk_0x0C";
+            this.hbxEventUnk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxEventUnk_0x0C.Size = new System.Drawing.Size(78, 41);
+            this.hbxEventUnk_0x0C.TabIndex = 153;
+            // 
+            // groupBox155
+            // 
+            this.groupBox155.Controls.Add(this.nudEventID);
+            this.groupBox155.Controls.Add(this.nudEventCurrentWeatherType);
+            this.groupBox155.Controls.Add(this.label453);
+            this.groupBox155.Controls.Add(this.nudEventCurrentMapWeatherID);
+            this.groupBox155.Controls.Add(this.nudEventPlayBladeID);
+            this.groupBox155.Controls.Add(this.label483);
+            this.groupBox155.Controls.Add(this.nudEventVoiceID);
+            this.groupBox155.Controls.Add(this.label482);
+            this.groupBox155.Controls.Add(this.label452);
+            this.groupBox155.Controls.Add(this.label454);
+            this.groupBox155.Controls.Add(this.nudEventCreator);
+            this.groupBox155.Controls.Add(this.nudEventAttribute);
+            this.groupBox155.Controls.Add(this.label451);
+            this.groupBox155.Controls.Add(this.label455);
+            this.groupBox155.Controls.Add(this.label456);
+            this.groupBox155.Controls.Add(this.nudEventExtraParts);
+            this.groupBox155.Location = new System.Drawing.Point(6, 33);
+            this.groupBox155.Name = "groupBox155";
+            this.groupBox155.Size = new System.Drawing.Size(142, 215);
+            this.groupBox155.TabIndex = 228;
+            this.groupBox155.TabStop = false;
+            this.groupBox155.Text = "Misc";
+            // 
+            // nudEventID
+            // 
+            this.nudEventID.Location = new System.Drawing.Point(83, 19);
+            this.nudEventID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventID.Name = "nudEventID";
+            this.nudEventID.Size = new System.Drawing.Size(54, 20);
+            this.nudEventID.TabIndex = 167;
+            this.nudEventID.ValueChanged += new System.EventHandler(this.nudEventID_ValueChanged);
+            // 
+            // nudEventCurrentWeatherType
+            // 
+            this.nudEventCurrentWeatherType.Location = new System.Drawing.Point(83, 179);
+            this.nudEventCurrentWeatherType.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventCurrentWeatherType.Name = "nudEventCurrentWeatherType";
+            this.nudEventCurrentWeatherType.Size = new System.Drawing.Size(54, 20);
+            this.nudEventCurrentWeatherType.TabIndex = 227;
+            this.nudEventCurrentWeatherType.ValueChanged += new System.EventHandler(this.nudEventCurrentWeatherType_ValueChanged);
+            // 
+            // label453
+            // 
+            this.label453.AutoSize = true;
+            this.label453.Location = new System.Drawing.Point(6, 61);
+            this.label453.Name = "label453";
+            this.label453.Size = new System.Drawing.Size(71, 13);
+            this.label453.TabIndex = 172;
+            this.label453.Text = "PlayBlade ID:";
+            // 
+            // nudEventCurrentMapWeatherID
+            // 
+            this.nudEventCurrentMapWeatherID.Location = new System.Drawing.Point(83, 149);
+            this.nudEventCurrentMapWeatherID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventCurrentMapWeatherID.Name = "nudEventCurrentMapWeatherID";
+            this.nudEventCurrentMapWeatherID.Size = new System.Drawing.Size(54, 20);
+            this.nudEventCurrentMapWeatherID.TabIndex = 226;
+            this.nudEventCurrentMapWeatherID.ValueChanged += new System.EventHandler(this.nudEventCurrentMapWeatherID_ValueChanged);
+            // 
+            // nudEventPlayBladeID
+            // 
+            this.nudEventPlayBladeID.Location = new System.Drawing.Point(83, 59);
+            this.nudEventPlayBladeID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventPlayBladeID.Name = "nudEventPlayBladeID";
+            this.nudEventPlayBladeID.Size = new System.Drawing.Size(54, 20);
+            this.nudEventPlayBladeID.TabIndex = 171;
+            this.nudEventPlayBladeID.ValueChanged += new System.EventHandler(this.nudEventPlayBladeID_ValueChanged);
+            // 
+            // label483
+            // 
+            this.label483.AutoSize = true;
+            this.label483.Location = new System.Drawing.Point(6, 181);
+            this.label483.Name = "label483";
+            this.label483.Size = new System.Drawing.Size(78, 26);
+            this.label483.TabIndex = 225;
+            this.label483.Text = "Current\r\nWeather Type:";
+            // 
+            // nudEventVoiceID
+            // 
+            this.nudEventVoiceID.Location = new System.Drawing.Point(83, 79);
+            this.nudEventVoiceID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventVoiceID.Name = "nudEventVoiceID";
+            this.nudEventVoiceID.Size = new System.Drawing.Size(54, 20);
+            this.nudEventVoiceID.TabIndex = 173;
+            this.nudEventVoiceID.ValueChanged += new System.EventHandler(this.nudEventVoiceID_ValueChanged);
+            // 
+            // label482
+            // 
+            this.label482.AutoSize = true;
+            this.label482.Location = new System.Drawing.Point(6, 141);
+            this.label482.Name = "label482";
+            this.label482.Size = new System.Drawing.Size(65, 26);
+            this.label482.TabIndex = 224;
+            this.label482.Text = "Current Map\r\nWeather ID:";
+            // 
+            // label452
+            // 
+            this.label452.AutoSize = true;
+            this.label452.Location = new System.Drawing.Point(6, 41);
+            this.label452.Name = "label452";
+            this.label452.Size = new System.Drawing.Size(44, 13);
+            this.label452.TabIndex = 170;
+            this.label452.Text = "Creator:";
+            // 
+            // label454
+            // 
+            this.label454.AutoSize = true;
+            this.label454.Location = new System.Drawing.Point(6, 81);
+            this.label454.Name = "label454";
+            this.label454.Size = new System.Drawing.Size(51, 13);
+            this.label454.TabIndex = 174;
+            this.label454.Text = "Voice ID:";
+            // 
+            // nudEventCreator
+            // 
+            this.nudEventCreator.Location = new System.Drawing.Point(83, 39);
+            this.nudEventCreator.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventCreator.Name = "nudEventCreator";
+            this.nudEventCreator.Size = new System.Drawing.Size(54, 20);
+            this.nudEventCreator.TabIndex = 169;
+            this.nudEventCreator.ValueChanged += new System.EventHandler(this.nudEventCreator_ValueChanged);
+            // 
+            // nudEventAttribute
+            // 
+            this.nudEventAttribute.Location = new System.Drawing.Point(83, 99);
+            this.nudEventAttribute.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventAttribute.Name = "nudEventAttribute";
+            this.nudEventAttribute.Size = new System.Drawing.Size(54, 20);
+            this.nudEventAttribute.TabIndex = 175;
+            this.nudEventAttribute.ValueChanged += new System.EventHandler(this.nudEventAttribute_ValueChanged);
+            // 
+            // label451
+            // 
+            this.label451.AutoSize = true;
+            this.label451.Location = new System.Drawing.Point(6, 21);
+            this.label451.Name = "label451";
+            this.label451.Size = new System.Drawing.Size(52, 13);
+            this.label451.TabIndex = 168;
+            this.label451.Text = "Event ID:";
+            // 
+            // label455
+            // 
+            this.label455.AutoSize = true;
+            this.label455.Location = new System.Drawing.Point(6, 101);
+            this.label455.Name = "label455";
+            this.label455.Size = new System.Drawing.Size(49, 13);
+            this.label455.TabIndex = 176;
+            this.label455.Text = "Attribute:";
+            // 
+            // label456
+            // 
+            this.label456.AutoSize = true;
+            this.label456.Location = new System.Drawing.Point(6, 121);
+            this.label456.Name = "label456";
+            this.label456.Size = new System.Drawing.Size(58, 13);
+            this.label456.TabIndex = 178;
+            this.label456.Text = "ExtraParts:";
+            // 
+            // nudEventExtraParts
+            // 
+            this.nudEventExtraParts.Location = new System.Drawing.Point(83, 119);
+            this.nudEventExtraParts.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventExtraParts.Name = "nudEventExtraParts";
+            this.nudEventExtraParts.Size = new System.Drawing.Size(54, 20);
+            this.nudEventExtraParts.TabIndex = 177;
+            this.nudEventExtraParts.ValueChanged += new System.EventHandler(this.nudEventExtraParts_ValueChanged);
+            // 
+            // groupBox154
+            // 
+            this.groupBox154.Controls.Add(this.label459);
+            this.groupBox154.Controls.Add(this.label458);
+            this.groupBox154.Controls.Add(this.nudEventWeapon1);
+            this.groupBox154.Controls.Add(this.nudEventWeapon10);
+            this.groupBox154.Controls.Add(this.nudEventWeapon2);
+            this.groupBox154.Controls.Add(this.label467);
+            this.groupBox154.Controls.Add(this.label460);
+            this.groupBox154.Controls.Add(this.nudEventWeapon9);
+            this.groupBox154.Controls.Add(this.nudEventWeapon3);
+            this.groupBox154.Controls.Add(this.label466);
+            this.groupBox154.Controls.Add(this.label461);
+            this.groupBox154.Controls.Add(this.nudEventWeapon8);
+            this.groupBox154.Controls.Add(this.nudEventWeapon4);
+            this.groupBox154.Controls.Add(this.label465);
+            this.groupBox154.Controls.Add(this.label462);
+            this.groupBox154.Controls.Add(this.nudEventWeapon7);
+            this.groupBox154.Controls.Add(this.nudEventWeapon5);
+            this.groupBox154.Controls.Add(this.label464);
+            this.groupBox154.Controls.Add(this.label463);
+            this.groupBox154.Controls.Add(this.nudEventWeapon6);
+            this.groupBox154.Location = new System.Drawing.Point(156, 33);
+            this.groupBox154.Name = "groupBox154";
+            this.groupBox154.Size = new System.Drawing.Size(140, 227);
+            this.groupBox154.TabIndex = 223;
+            this.groupBox154.TabStop = false;
+            this.groupBox154.Text = "Weapons";
+            // 
+            // label459
+            // 
+            this.label459.AutoSize = true;
+            this.label459.Location = new System.Drawing.Point(6, 42);
+            this.label459.Name = "label459";
+            this.label459.Size = new System.Drawing.Size(60, 13);
+            this.label459.TabIndex = 184;
+            this.label459.Text = "Weapon 2:";
+            // 
+            // label458
+            // 
+            this.label458.AutoSize = true;
+            this.label458.Location = new System.Drawing.Point(6, 22);
+            this.label458.Name = "label458";
+            this.label458.Size = new System.Drawing.Size(60, 13);
+            this.label458.TabIndex = 182;
+            this.label458.Text = "Weapon 1:";
+            // 
+            // nudEventWeapon1
+            // 
+            this.nudEventWeapon1.Location = new System.Drawing.Point(78, 20);
+            this.nudEventWeapon1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon1.Name = "nudEventWeapon1";
+            this.nudEventWeapon1.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon1.TabIndex = 181;
+            this.nudEventWeapon1.ValueChanged += new System.EventHandler(this.nudEventWeapon1_ValueChanged);
+            // 
+            // nudEventWeapon10
+            // 
+            this.nudEventWeapon10.Location = new System.Drawing.Point(78, 200);
+            this.nudEventWeapon10.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon10.Name = "nudEventWeapon10";
+            this.nudEventWeapon10.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon10.TabIndex = 199;
+            this.nudEventWeapon10.ValueChanged += new System.EventHandler(this.nudEventWeapon10_ValueChanged);
+            // 
+            // nudEventWeapon2
+            // 
+            this.nudEventWeapon2.Location = new System.Drawing.Point(78, 40);
+            this.nudEventWeapon2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon2.Name = "nudEventWeapon2";
+            this.nudEventWeapon2.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon2.TabIndex = 183;
+            this.nudEventWeapon2.ValueChanged += new System.EventHandler(this.nudEventWeapon2_ValueChanged);
+            // 
+            // label467
+            // 
+            this.label467.AutoSize = true;
+            this.label467.Location = new System.Drawing.Point(6, 202);
+            this.label467.Name = "label467";
+            this.label467.Size = new System.Drawing.Size(66, 13);
+            this.label467.TabIndex = 200;
+            this.label467.Text = "Weapon 10:";
+            // 
+            // label460
+            // 
+            this.label460.AutoSize = true;
+            this.label460.Location = new System.Drawing.Point(6, 62);
+            this.label460.Name = "label460";
+            this.label460.Size = new System.Drawing.Size(60, 13);
+            this.label460.TabIndex = 186;
+            this.label460.Text = "Weapon 3:";
+            // 
+            // nudEventWeapon9
+            // 
+            this.nudEventWeapon9.Location = new System.Drawing.Point(78, 180);
+            this.nudEventWeapon9.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon9.Name = "nudEventWeapon9";
+            this.nudEventWeapon9.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon9.TabIndex = 197;
+            this.nudEventWeapon9.ValueChanged += new System.EventHandler(this.nudEventWeapon9_ValueChanged);
+            // 
+            // nudEventWeapon3
+            // 
+            this.nudEventWeapon3.Location = new System.Drawing.Point(78, 60);
+            this.nudEventWeapon3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon3.Name = "nudEventWeapon3";
+            this.nudEventWeapon3.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon3.TabIndex = 185;
+            this.nudEventWeapon3.ValueChanged += new System.EventHandler(this.nudEventWeapon3_ValueChanged);
+            // 
+            // label466
+            // 
+            this.label466.AutoSize = true;
+            this.label466.Location = new System.Drawing.Point(6, 182);
+            this.label466.Name = "label466";
+            this.label466.Size = new System.Drawing.Size(60, 13);
+            this.label466.TabIndex = 198;
+            this.label466.Text = "Weapon 9:";
+            // 
+            // label461
+            // 
+            this.label461.AutoSize = true;
+            this.label461.Location = new System.Drawing.Point(6, 82);
+            this.label461.Name = "label461";
+            this.label461.Size = new System.Drawing.Size(60, 13);
+            this.label461.TabIndex = 188;
+            this.label461.Text = "Weapon 4:";
+            // 
+            // nudEventWeapon8
+            // 
+            this.nudEventWeapon8.Location = new System.Drawing.Point(78, 160);
+            this.nudEventWeapon8.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon8.Name = "nudEventWeapon8";
+            this.nudEventWeapon8.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon8.TabIndex = 195;
+            this.nudEventWeapon8.ValueChanged += new System.EventHandler(this.nudEventWeapon8_ValueChanged);
+            // 
+            // nudEventWeapon4
+            // 
+            this.nudEventWeapon4.Location = new System.Drawing.Point(78, 80);
+            this.nudEventWeapon4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon4.Name = "nudEventWeapon4";
+            this.nudEventWeapon4.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon4.TabIndex = 187;
+            this.nudEventWeapon4.ValueChanged += new System.EventHandler(this.nudEventWeapon4_ValueChanged);
+            // 
+            // label465
+            // 
+            this.label465.AutoSize = true;
+            this.label465.Location = new System.Drawing.Point(6, 162);
+            this.label465.Name = "label465";
+            this.label465.Size = new System.Drawing.Size(60, 13);
+            this.label465.TabIndex = 196;
+            this.label465.Text = "Weapon 8:";
+            // 
+            // label462
+            // 
+            this.label462.AutoSize = true;
+            this.label462.Location = new System.Drawing.Point(6, 102);
+            this.label462.Name = "label462";
+            this.label462.Size = new System.Drawing.Size(60, 13);
+            this.label462.TabIndex = 190;
+            this.label462.Text = "Weapon 5:";
+            // 
+            // nudEventWeapon7
+            // 
+            this.nudEventWeapon7.Location = new System.Drawing.Point(78, 140);
+            this.nudEventWeapon7.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon7.Name = "nudEventWeapon7";
+            this.nudEventWeapon7.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon7.TabIndex = 193;
+            this.nudEventWeapon7.ValueChanged += new System.EventHandler(this.nudEventWeapon7_ValueChanged);
+            // 
+            // nudEventWeapon5
+            // 
+            this.nudEventWeapon5.Location = new System.Drawing.Point(78, 100);
+            this.nudEventWeapon5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon5.Name = "nudEventWeapon5";
+            this.nudEventWeapon5.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon5.TabIndex = 189;
+            this.nudEventWeapon5.ValueChanged += new System.EventHandler(this.nudEventWeapon5_ValueChanged);
+            // 
+            // label464
+            // 
+            this.label464.AutoSize = true;
+            this.label464.Location = new System.Drawing.Point(6, 142);
+            this.label464.Name = "label464";
+            this.label464.Size = new System.Drawing.Size(60, 13);
+            this.label464.TabIndex = 194;
+            this.label464.Text = "Weapon 7:";
+            // 
+            // label463
+            // 
+            this.label463.AutoSize = true;
+            this.label463.Location = new System.Drawing.Point(6, 122);
+            this.label463.Name = "label463";
+            this.label463.Size = new System.Drawing.Size(60, 13);
+            this.label463.TabIndex = 192;
+            this.label463.Text = "Weapon 6:";
+            // 
+            // nudEventWeapon6
+            // 
+            this.nudEventWeapon6.Location = new System.Drawing.Point(78, 120);
+            this.nudEventWeapon6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventWeapon6.Name = "nudEventWeapon6";
+            this.nudEventWeapon6.Size = new System.Drawing.Size(54, 20);
+            this.nudEventWeapon6.TabIndex = 191;
+            this.nudEventWeapon6.ValueChanged += new System.EventHandler(this.nudEventWeapon6_ValueChanged);
+            // 
+            // groupBox153
+            // 
+            this.groupBox153.Controls.Add(this.nudEventBladeID1);
+            this.groupBox153.Controls.Add(this.label477);
+            this.groupBox153.Controls.Add(this.nudEventBladeID10);
+            this.groupBox153.Controls.Add(this.label476);
+            this.groupBox153.Controls.Add(this.label468);
+            this.groupBox153.Controls.Add(this.nudEventBladeID2);
+            this.groupBox153.Controls.Add(this.nudEventBladeID9);
+            this.groupBox153.Controls.Add(this.label475);
+            this.groupBox153.Controls.Add(this.label469);
+            this.groupBox153.Controls.Add(this.nudEventBladeID3);
+            this.groupBox153.Controls.Add(this.nudEventBladeID8);
+            this.groupBox153.Controls.Add(this.label474);
+            this.groupBox153.Controls.Add(this.label470);
+            this.groupBox153.Controls.Add(this.nudEventBladeID4);
+            this.groupBox153.Controls.Add(this.nudEventBladeID7);
+            this.groupBox153.Controls.Add(this.label473);
+            this.groupBox153.Controls.Add(this.label471);
+            this.groupBox153.Controls.Add(this.nudEventBladeID5);
+            this.groupBox153.Controls.Add(this.nudEventBladeID6);
+            this.groupBox153.Controls.Add(this.label472);
+            this.groupBox153.Location = new System.Drawing.Point(302, 33);
+            this.groupBox153.Name = "groupBox153";
+            this.groupBox153.Size = new System.Drawing.Size(140, 227);
+            this.groupBox153.TabIndex = 222;
+            this.groupBox153.TabStop = false;
+            this.groupBox153.Text = "Blade IDs";
+            // 
+            // nudEventBladeID1
+            // 
+            this.nudEventBladeID1.Location = new System.Drawing.Point(78, 19);
+            this.nudEventBladeID1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID1.Name = "nudEventBladeID1";
+            this.nudEventBladeID1.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID1.TabIndex = 201;
+            this.nudEventBladeID1.ValueChanged += new System.EventHandler(this.nudEventBladeID1_ValueChanged);
+            // 
+            // label477
+            // 
+            this.label477.AutoSize = true;
+            this.label477.Location = new System.Drawing.Point(6, 21);
+            this.label477.Name = "label477";
+            this.label477.Size = new System.Drawing.Size(60, 13);
+            this.label477.TabIndex = 202;
+            this.label477.Text = "Blade ID 1:";
+            // 
+            // nudEventBladeID10
+            // 
+            this.nudEventBladeID10.Location = new System.Drawing.Point(78, 199);
+            this.nudEventBladeID10.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID10.Name = "nudEventBladeID10";
+            this.nudEventBladeID10.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID10.TabIndex = 219;
+            this.nudEventBladeID10.ValueChanged += new System.EventHandler(this.nudEventBladeID10_ValueChanged);
+            // 
+            // label476
+            // 
+            this.label476.AutoSize = true;
+            this.label476.Location = new System.Drawing.Point(6, 41);
+            this.label476.Name = "label476";
+            this.label476.Size = new System.Drawing.Size(60, 13);
+            this.label476.TabIndex = 204;
+            this.label476.Text = "Blade ID 2:";
+            // 
+            // label468
+            // 
+            this.label468.AutoSize = true;
+            this.label468.Location = new System.Drawing.Point(6, 201);
+            this.label468.Name = "label468";
+            this.label468.Size = new System.Drawing.Size(66, 13);
+            this.label468.TabIndex = 220;
+            this.label468.Text = "Blade ID 10:";
+            // 
+            // nudEventBladeID2
+            // 
+            this.nudEventBladeID2.Location = new System.Drawing.Point(78, 39);
+            this.nudEventBladeID2.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID2.Name = "nudEventBladeID2";
+            this.nudEventBladeID2.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID2.TabIndex = 203;
+            this.nudEventBladeID2.ValueChanged += new System.EventHandler(this.nudEventBladeID2_ValueChanged);
+            // 
+            // nudEventBladeID9
+            // 
+            this.nudEventBladeID9.Location = new System.Drawing.Point(78, 179);
+            this.nudEventBladeID9.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID9.Name = "nudEventBladeID9";
+            this.nudEventBladeID9.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID9.TabIndex = 217;
+            this.nudEventBladeID9.ValueChanged += new System.EventHandler(this.nudEventBladeID9_ValueChanged);
+            // 
+            // label475
+            // 
+            this.label475.AutoSize = true;
+            this.label475.Location = new System.Drawing.Point(6, 61);
+            this.label475.Name = "label475";
+            this.label475.Size = new System.Drawing.Size(60, 13);
+            this.label475.TabIndex = 206;
+            this.label475.Text = "Blade ID 3:";
+            // 
+            // label469
+            // 
+            this.label469.AutoSize = true;
+            this.label469.Location = new System.Drawing.Point(6, 181);
+            this.label469.Name = "label469";
+            this.label469.Size = new System.Drawing.Size(60, 13);
+            this.label469.TabIndex = 218;
+            this.label469.Text = "Blade ID 9:";
+            // 
+            // nudEventBladeID3
+            // 
+            this.nudEventBladeID3.Location = new System.Drawing.Point(78, 59);
+            this.nudEventBladeID3.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID3.Name = "nudEventBladeID3";
+            this.nudEventBladeID3.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID3.TabIndex = 205;
+            this.nudEventBladeID3.ValueChanged += new System.EventHandler(this.nudEventBladeID3_ValueChanged);
+            // 
+            // nudEventBladeID8
+            // 
+            this.nudEventBladeID8.Location = new System.Drawing.Point(78, 159);
+            this.nudEventBladeID8.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID8.Name = "nudEventBladeID8";
+            this.nudEventBladeID8.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID8.TabIndex = 215;
+            this.nudEventBladeID8.ValueChanged += new System.EventHandler(this.nudEventBladeID8_ValueChanged);
+            // 
+            // label474
+            // 
+            this.label474.AutoSize = true;
+            this.label474.Location = new System.Drawing.Point(6, 81);
+            this.label474.Name = "label474";
+            this.label474.Size = new System.Drawing.Size(60, 13);
+            this.label474.TabIndex = 208;
+            this.label474.Text = "Blade ID 4:";
+            // 
+            // label470
+            // 
+            this.label470.AutoSize = true;
+            this.label470.Location = new System.Drawing.Point(6, 161);
+            this.label470.Name = "label470";
+            this.label470.Size = new System.Drawing.Size(60, 13);
+            this.label470.TabIndex = 216;
+            this.label470.Text = "Blade ID 8:";
+            // 
+            // nudEventBladeID4
+            // 
+            this.nudEventBladeID4.Location = new System.Drawing.Point(78, 79);
+            this.nudEventBladeID4.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID4.Name = "nudEventBladeID4";
+            this.nudEventBladeID4.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID4.TabIndex = 207;
+            this.nudEventBladeID4.ValueChanged += new System.EventHandler(this.nudEventBladeID4_ValueChanged);
+            // 
+            // nudEventBladeID7
+            // 
+            this.nudEventBladeID7.Location = new System.Drawing.Point(78, 139);
+            this.nudEventBladeID7.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID7.Name = "nudEventBladeID7";
+            this.nudEventBladeID7.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID7.TabIndex = 213;
+            this.nudEventBladeID7.ValueChanged += new System.EventHandler(this.nudEventBladeID7_ValueChanged);
+            // 
+            // label473
+            // 
+            this.label473.AutoSize = true;
+            this.label473.Location = new System.Drawing.Point(6, 101);
+            this.label473.Name = "label473";
+            this.label473.Size = new System.Drawing.Size(60, 13);
+            this.label473.TabIndex = 210;
+            this.label473.Text = "Blade ID 5:";
+            // 
+            // label471
+            // 
+            this.label471.AutoSize = true;
+            this.label471.Location = new System.Drawing.Point(6, 141);
+            this.label471.Name = "label471";
+            this.label471.Size = new System.Drawing.Size(60, 13);
+            this.label471.TabIndex = 214;
+            this.label471.Text = "Blade ID 7:";
+            // 
+            // nudEventBladeID5
+            // 
+            this.nudEventBladeID5.Location = new System.Drawing.Point(78, 99);
+            this.nudEventBladeID5.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID5.Name = "nudEventBladeID5";
+            this.nudEventBladeID5.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID5.TabIndex = 209;
+            this.nudEventBladeID5.ValueChanged += new System.EventHandler(this.nudEventBladeID5_ValueChanged);
+            // 
+            // nudEventBladeID6
+            // 
+            this.nudEventBladeID6.Location = new System.Drawing.Point(78, 119);
+            this.nudEventBladeID6.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventBladeID6.Name = "nudEventBladeID6";
+            this.nudEventBladeID6.Size = new System.Drawing.Size(54, 20);
+            this.nudEventBladeID6.TabIndex = 211;
+            this.nudEventBladeID6.ValueChanged += new System.EventHandler(this.nudEventBladeID6_ValueChanged);
+            // 
+            // label472
+            // 
+            this.label472.AutoSize = true;
+            this.label472.Location = new System.Drawing.Point(6, 121);
+            this.label472.Name = "label472";
+            this.label472.Size = new System.Drawing.Size(60, 13);
+            this.label472.TabIndex = 212;
+            this.label472.Text = "Blade ID 6:";
+            // 
+            // groupBox152
+            // 
+            this.groupBox152.Controls.Add(this.nudEventTimeDay);
+            this.groupBox152.Controls.Add(this.label478);
+            this.groupBox152.Controls.Add(this.nudEventTimeSecond);
+            this.groupBox152.Controls.Add(this.label479);
+            this.groupBox152.Controls.Add(this.nudEventTimeMinute);
+            this.groupBox152.Controls.Add(this.nudEventTimeHour);
+            this.groupBox152.Controls.Add(this.label480);
+            this.groupBox152.Controls.Add(this.label481);
+            this.groupBox152.Location = new System.Drawing.Point(6, 266);
+            this.groupBox152.Name = "groupBox152";
+            this.groupBox152.Size = new System.Drawing.Size(297, 46);
+            this.groupBox152.TabIndex = 221;
+            this.groupBox152.TabStop = false;
+            this.groupBox152.Text = "Time";
+            // 
+            // nudEventTimeDay
+            // 
+            this.nudEventTimeDay.Location = new System.Drawing.Point(45, 19);
+            this.nudEventTimeDay.Maximum = new decimal(new int[] {
+            32767,
+            0,
+            0,
+            0});
+            this.nudEventTimeDay.Name = "nudEventTimeDay";
+            this.nudEventTimeDay.Size = new System.Drawing.Size(49, 20);
+            this.nudEventTimeDay.TabIndex = 23;
+            this.nudEventTimeDay.ValueChanged += new System.EventHandler(this.nudEventTimeDay_ValueChanged);
+            // 
+            // label478
+            // 
+            this.label478.AutoSize = true;
+            this.label478.Location = new System.Drawing.Point(6, 21);
+            this.label478.Name = "label478";
+            this.label478.Size = new System.Drawing.Size(29, 13);
+            this.label478.TabIndex = 4;
+            this.label478.Text = "Day:";
+            // 
+            // nudEventTimeSecond
+            // 
+            this.nudEventTimeSecond.Location = new System.Drawing.Point(251, 19);
+            this.nudEventTimeSecond.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudEventTimeSecond.Name = "nudEventTimeSecond";
+            this.nudEventTimeSecond.Size = new System.Drawing.Size(39, 20);
+            this.nudEventTimeSecond.TabIndex = 30;
+            this.nudEventTimeSecond.ValueChanged += new System.EventHandler(this.nudEventTimeSecond_ValueChanged);
+            // 
+            // label479
+            // 
+            this.label479.AutoSize = true;
+            this.label479.Location = new System.Drawing.Point(102, 21);
+            this.label479.Name = "label479";
+            this.label479.Size = new System.Drawing.Size(33, 13);
+            this.label479.TabIndex = 16;
+            this.label479.Text = "Time:";
+            // 
+            // nudEventTimeMinute
+            // 
+            this.nudEventTimeMinute.Location = new System.Drawing.Point(201, 19);
+            this.nudEventTimeMinute.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudEventTimeMinute.Name = "nudEventTimeMinute";
+            this.nudEventTimeMinute.Size = new System.Drawing.Size(39, 20);
+            this.nudEventTimeMinute.TabIndex = 29;
+            this.nudEventTimeMinute.ValueChanged += new System.EventHandler(this.nudEventTimeMinute_ValueChanged);
+            // 
+            // nudEventTimeHour
+            // 
+            this.nudEventTimeHour.Location = new System.Drawing.Point(141, 19);
+            this.nudEventTimeHour.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.nudEventTimeHour.Name = "nudEventTimeHour";
+            this.nudEventTimeHour.Size = new System.Drawing.Size(49, 20);
+            this.nudEventTimeHour.TabIndex = 28;
+            this.nudEventTimeHour.ValueChanged += new System.EventHandler(this.nudEventTimeHour_ValueChanged);
+            // 
+            // label480
+            // 
+            this.label480.AutoSize = true;
+            this.label480.Location = new System.Drawing.Point(241, 21);
+            this.label480.Name = "label480";
+            this.label480.Size = new System.Drawing.Size(10, 13);
+            this.label480.TabIndex = 27;
+            this.label480.Text = ":";
+            // 
+            // label481
+            // 
+            this.label481.AutoSize = true;
+            this.label481.Location = new System.Drawing.Point(191, 21);
+            this.label481.Name = "label481";
+            this.label481.Size = new System.Drawing.Size(10, 13);
+            this.label481.TabIndex = 26;
+            this.label481.Text = ":";
+            // 
+            // cbxEvents
+            // 
+            this.cbxEvents.FormattingEnabled = true;
+            this.cbxEvents.Location = new System.Drawing.Point(98, 6);
+            this.cbxEvents.Name = "cbxEvents";
+            this.cbxEvents.Size = new System.Drawing.Size(121, 21);
+            this.cbxEvents.TabIndex = 180;
+            this.cbxEvents.SelectedIndexChanged += new System.EventHandler(this.cbxEvents_SelectedIndexChanged);
+            // 
+            // label457
+            // 
+            this.label457.AutoSize = true;
+            this.label457.Location = new System.Drawing.Point(9, 9);
+            this.label457.Name = "label457";
+            this.label457.Size = new System.Drawing.Size(83, 13);
+            this.label457.TabIndex = 179;
+            this.label457.Text = "Selected Event:";
             // 
             // tabUnknown
             // 
@@ -18396,23 +20136,49 @@
             this.splitContainer3.SplitterDistance = 48;
             this.splitContainer3.TabIndex = 34;
             // 
-            // cbxMercGroupPresets
+            // nudAchievementTaskCount
             // 
-            this.cbxMercGroupPresets.FormattingEnabled = true;
-            this.cbxMercGroupPresets.Location = new System.Drawing.Point(58, 19);
-            this.cbxMercGroupPresets.Name = "cbxMercGroupPresets";
-            this.cbxMercGroupPresets.Size = new System.Drawing.Size(69, 21);
-            this.cbxMercGroupPresets.TabIndex = 178;
-            this.cbxMercGroupPresets.SelectedIndexChanged += new System.EventHandler(this.cbxMercGroupPresets_SelectedIndexChanged);
+            this.nudAchievementTaskCount.Location = new System.Drawing.Point(156, 84);
+            this.nudAchievementTaskCount.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudAchievementTaskCount.Name = "nudAchievementTaskCount";
+            this.nudAchievementTaskCount.Size = new System.Drawing.Size(63, 20);
+            this.nudAchievementTaskCount.TabIndex = 163;
+            this.nudAchievementTaskCount.ValueChanged += new System.EventHandler(this.nudAchievementTaskCount_ValueChanged);
             // 
-            // label430
+            // label1
             // 
-            this.label430.AutoSize = true;
-            this.label430.Location = new System.Drawing.Point(12, 22);
-            this.label430.Name = "label430";
-            this.label430.Size = new System.Drawing.Size(40, 13);
-            this.label430.TabIndex = 179;
-            this.label430.Text = "Preset:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "Achievement Tasks Count:";
+            // 
+            // nudEventsCount
+            // 
+            this.nudEventsCount.Location = new System.Drawing.Point(318, 7);
+            this.nudEventsCount.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventsCount.Name = "nudEventsCount";
+            this.nudEventsCount.Size = new System.Drawing.Size(63, 20);
+            this.nudEventsCount.TabIndex = 234;
+            this.nudEventsCount.ValueChanged += new System.EventHandler(this.nudEventsCount_ValueChanged);
+            // 
+            // label484
+            // 
+            this.label484.AutoSize = true;
+            this.label484.Location = new System.Drawing.Point(238, 9);
+            this.label484.Name = "label484";
+            this.label484.Size = new System.Drawing.Size(74, 13);
+            this.label484.TabIndex = 233;
+            this.label484.Text = "Events Count:";
             // 
             // frmMain
             // 
@@ -18424,10 +20190,50 @@
             this.Text = "XC2SaveNETThingy";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox147.ResumeLayout(false);
+            this.groupBox147.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeHour)).EndInit();
+            this.groupBox146.ResumeLayout(false);
+            this.groupBox146.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentInGameTimeHour)).EndInit();
+            this.groupBox145.ResumeLayout(false);
+            this.groupBox145.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Year)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2UnkB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2UnkA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2MSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Second)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Hour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Month)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime2Day)).EndInit();
+            this.gbxTimeSaved.ResumeLayout(false);
+            this.gbxTimeSaved.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedUnkB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedUnkA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedDay)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
+            this.groupBox150.ResumeLayout(false);
+            this.groupBox150.PerformLayout();
+            this.groupBox151.ResumeLayout(false);
+            this.groupBox149.ResumeLayout(false);
+            this.groupBox149.PerformLayout();
+            this.groupBox148.ResumeLayout(false);
+            this.groupBox148.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -19017,16 +20823,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).EndInit();
-            this.tabTigerTiger.ResumeLayout(false);
-            this.groupBox118.ResumeLayout(false);
-            this.groupBox117.ResumeLayout(false);
-            this.gourpBox119.ResumeLayout(false);
-            this.gourpBox119.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
+            this.tabFlags.ResumeLayout(false);
             this.tabMapLocation.ResumeLayout(false);
             this.tabMapLocation.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -19136,7 +20933,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).EndInit();
-            this.tabFlags.ResumeLayout(false);
+            this.tabTigerTiger.ResumeLayout(false);
+            this.groupBox118.ResumeLayout(false);
+            this.groupBox117.ResumeLayout(false);
+            this.gourpBox119.ResumeLayout(false);
+            this.gourpBox119.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
+            this.tabEvents.ResumeLayout(false);
+            this.tabEvents.PerformLayout();
+            this.groupBox159.ResumeLayout(false);
+            this.groupBox158.ResumeLayout(false);
+            this.groupBox157.ResumeLayout(false);
+            this.groupBox156.ResumeLayout(false);
+            this.groupBox155.ResumeLayout(false);
+            this.groupBox155.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCurrentWeatherType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCurrentMapWeatherID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventPlayBladeID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventVoiceID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventCreator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventAttribute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventExtraParts)).EndInit();
+            this.groupBox154.ResumeLayout(false);
+            this.groupBox154.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventWeapon6)).EndInit();
+            this.groupBox153.ResumeLayout(false);
+            this.groupBox153.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventBladeID6)).EndInit();
+            this.groupBox152.ResumeLayout(false);
+            this.groupBox152.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventTimeHour)).EndInit();
             this.tabUnknown.ResumeLayout(false);
             this.tabControl6.ResumeLayout(false);
             this.tabUnkMain.ResumeLayout(false);
@@ -19169,6 +21021,8 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -19176,28 +21030,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTimeDay;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTimeUnkB;
-        private System.Windows.Forms.TextBox txtTimeMonth;
-        private System.Windows.Forms.TextBox txtTimeYear;
-        private System.Windows.Forms.TextBox txtTimeUnkA;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTimeMSecond;
-        private System.Windows.Forms.TextBox txtTimeSecond;
-        private System.Windows.Forms.TextBox txtTimeMinute;
-        private System.Windows.Forms.TextBox txtTimeHour;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblMagic;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label21;
@@ -19587,7 +21426,6 @@
         private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r2;
         private System.Windows.Forms.ComboBox cbxDriverHiddenSkill_c1r1;
         private System.Windows.Forms.NumericUpDown nudDriverHiddenSkill_c1r3;
-        private System.Windows.Forms.Label lblPlayTime;
         private System.Windows.Forms.CheckBox chkBladeFavoriteItem1Unlocked;
         private System.Windows.Forms.CheckBox chkBladeFavoriteCategory1Unlocked;
         private System.Windows.Forms.CheckBox chkBladeFavoriteItem0Unlocked;
@@ -20581,6 +22419,151 @@
         private System.Windows.Forms.Label label426;
         private System.Windows.Forms.Label label430;
         private System.Windows.Forms.ComboBox cbxMercGroupPresets;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedDay;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedMonth;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedYear;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedSecond;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedMinute;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedHour;
+        private System.Windows.Forms.Label label431;
+        private System.Windows.Forms.Label label432;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedMSecond;
+        private System.Windows.Forms.Label label433;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedUnkB;
+        private System.Windows.Forms.NumericUpDown nudTimeSavedUnkA;
+        private System.Windows.Forms.GroupBox groupBox145;
+        private System.Windows.Forms.NumericUpDown nudTime2Year;
+        private System.Windows.Forms.NumericUpDown nudTime2UnkB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown nudTime2UnkA;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown nudTime2MSecond;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label434;
+        private System.Windows.Forms.Label label435;
+        private System.Windows.Forms.NumericUpDown nudTime2Second;
+        private System.Windows.Forms.Label label436;
+        private System.Windows.Forms.NumericUpDown nudTime2Minute;
+        private System.Windows.Forms.Label label437;
+        private System.Windows.Forms.NumericUpDown nudTime2Hour;
+        private System.Windows.Forms.NumericUpDown nudTime2Month;
+        private System.Windows.Forms.Label label438;
+        private System.Windows.Forms.NumericUpDown nudTime2Day;
+        private System.Windows.Forms.Label label439;
+        private System.Windows.Forms.GroupBox gbxTimeSaved;
+        private System.Windows.Forms.GroupBox groupBox146;
+        private System.Windows.Forms.NumericUpDown nudCurrentInGameTimeDay;
+        private System.Windows.Forms.Label label442;
+        private System.Windows.Forms.NumericUpDown nudCurrentInGameTimeSecond;
+        private System.Windows.Forms.Label label445;
+        private System.Windows.Forms.NumericUpDown nudCurrentInGameTimeMinute;
+        private System.Windows.Forms.NumericUpDown nudCurrentInGameTimeHour;
+        private System.Windows.Forms.Label label447;
+        private System.Windows.Forms.Label label448;
+        private System.Windows.Forms.GroupBox groupBox147;
+        private System.Windows.Forms.NumericUpDown nudTotalPlayTimeSecond;
+        private System.Windows.Forms.Label label441;
+        private System.Windows.Forms.NumericUpDown nudTotalPlayTimeMinute;
+        private System.Windows.Forms.NumericUpDown nudTotalPlayTimeHour;
+        private System.Windows.Forms.Label label443;
+        private System.Windows.Forms.Label label444;
+        private System.Windows.Forms.GroupBox groupBox148;
+        private System.Windows.Forms.NumericUpDown nudEtherCrystals;
+        private System.Windows.Forms.Label label440;
+        private System.Windows.Forms.GroupBox groupBox149;
+        private System.Windows.Forms.ComboBox cbxAchievementTasks;
+        private System.Windows.Forms.Label label446;
+        private Be.Windows.Forms.HexBox hbxAchievementTask;
+        private System.Windows.Forms.GroupBox groupBox150;
+        private System.Windows.Forms.Label label449;
+        private Be.Windows.Forms.HexBox hbxWeatherInfoUnk_0x04;
+        private System.Windows.Forms.ComboBox cbxWeatherInfo;
+        private System.Windows.Forms.TextBox txtWeatherInfoName;
+        private System.Windows.Forms.Label label450;
+        private System.Windows.Forms.GroupBox groupBox151;
+        private System.Windows.Forms.TabPage tabEvents;
+        private System.Windows.Forms.Label label456;
+        private System.Windows.Forms.NumericUpDown nudEventExtraParts;
+        private System.Windows.Forms.Label label455;
+        private System.Windows.Forms.NumericUpDown nudEventAttribute;
+        private System.Windows.Forms.Label label454;
+        private System.Windows.Forms.NumericUpDown nudEventVoiceID;
+        private System.Windows.Forms.Label label453;
+        private System.Windows.Forms.NumericUpDown nudEventPlayBladeID;
+        private System.Windows.Forms.Label label452;
+        private System.Windows.Forms.NumericUpDown nudEventCreator;
+        private System.Windows.Forms.Label label451;
+        private System.Windows.Forms.NumericUpDown nudEventID;
+        private System.Windows.Forms.ComboBox cbxEvents;
+        private System.Windows.Forms.Label label457;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon1;
+        private System.Windows.Forms.Label label458;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID10;
+        private System.Windows.Forms.Label label468;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID9;
+        private System.Windows.Forms.Label label469;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID8;
+        private System.Windows.Forms.Label label470;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID7;
+        private System.Windows.Forms.Label label471;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID6;
+        private System.Windows.Forms.Label label472;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID5;
+        private System.Windows.Forms.Label label473;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID4;
+        private System.Windows.Forms.Label label474;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID3;
+        private System.Windows.Forms.Label label475;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID2;
+        private System.Windows.Forms.Label label476;
+        private System.Windows.Forms.NumericUpDown nudEventBladeID1;
+        private System.Windows.Forms.Label label477;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon10;
+        private System.Windows.Forms.Label label467;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon9;
+        private System.Windows.Forms.Label label466;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon8;
+        private System.Windows.Forms.Label label465;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon7;
+        private System.Windows.Forms.Label label464;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon6;
+        private System.Windows.Forms.Label label463;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon5;
+        private System.Windows.Forms.Label label462;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon4;
+        private System.Windows.Forms.Label label461;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon3;
+        private System.Windows.Forms.Label label460;
+        private System.Windows.Forms.NumericUpDown nudEventWeapon2;
+        private System.Windows.Forms.Label label459;
+        private System.Windows.Forms.GroupBox groupBox154;
+        private System.Windows.Forms.GroupBox groupBox153;
+        private System.Windows.Forms.GroupBox groupBox152;
+        private System.Windows.Forms.NumericUpDown nudEventTimeDay;
+        private System.Windows.Forms.Label label478;
+        private System.Windows.Forms.NumericUpDown nudEventTimeSecond;
+        private System.Windows.Forms.Label label479;
+        private System.Windows.Forms.NumericUpDown nudEventTimeMinute;
+        private System.Windows.Forms.NumericUpDown nudEventTimeHour;
+        private System.Windows.Forms.Label label480;
+        private System.Windows.Forms.Label label481;
+        private System.Windows.Forms.NumericUpDown nudEventCurrentWeatherType;
+        private System.Windows.Forms.NumericUpDown nudEventCurrentMapWeatherID;
+        private System.Windows.Forms.Label label483;
+        private System.Windows.Forms.Label label482;
+        private System.Windows.Forms.GroupBox groupBox155;
+        private System.Windows.Forms.GroupBox groupBox157;
+        private Be.Windows.Forms.HexBox hbxEventUnk_0x22;
+        private System.Windows.Forms.GroupBox groupBox156;
+        private Be.Windows.Forms.HexBox hbxEventUnk_0x0C;
+        private System.Windows.Forms.GroupBox groupBox159;
+        private Be.Windows.Forms.HexBox hbxEventUnk_0x54;
+        private System.Windows.Forms.GroupBox groupBox158;
+        private Be.Windows.Forms.HexBox hbxEventUnk_0x42;
+        private System.Windows.Forms.NumericUpDown nudAchievementTaskCount;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudEventsCount;
+        private System.Windows.Forms.Label label484;
     }
 }
 

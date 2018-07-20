@@ -59,9 +59,14 @@ namespace XC2SaveNETThingy
         {
             string query = "";
 
-            if ((args_bits & 1) == 1) // get pre-1.5.0 weapons
-                query += "SELECT * FROM Weapons WHERE ID >= 0 AND ID < 27";
+            query += "SELECT * FROM Weapons WHERE ID = 0";
 
+            if ((args_bits & 1) == 1) // get pre-1.5.0 weapons
+            {
+                if (query != "")
+                    query += " UNION ";
+                query += "SELECT * FROM Weapons WHERE ID >= 1 AND ID < 27";
+            }
 
             if ((args_bits & 2) >> 1 == 1) // get 1.5.0 unknown weapons
             {

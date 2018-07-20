@@ -88,7 +88,6 @@ namespace XC2SaveNETThingy
 
     public class XC2Save : IXC2SaveObject
     {
-
         public class GameTime : IXC2SaveObject
         {
             public const int SIZE = 0x4;
@@ -122,7 +121,6 @@ namespace XC2SaveNETThingy
                 return BitConverter.GetBytes(result);
             }
         };
-
         public class RealTime : IXC2SaveObject
         {
             public const int SIZE = 0x8;
@@ -199,7 +197,6 @@ namespace XC2SaveNETThingy
                 return String.Format("{0:0000}-{1:00}-{2:00} {3:00}:{4:00}:{5:00}.{6:000}", Year, Month, Day, Hour, Minute, Second, MSecond);
             }
         }
-
         public class PartyMember : IXC2SaveObject
         {
             public const int SIZE = 0x6;
@@ -237,7 +234,6 @@ namespace XC2SaveNETThingy
                 return (string)XC2Data.Drivers().Select("Name WHERE ID = " + DriverId)[0][0];
             }
         }
-
         public class XC2Party : IXC2SaveObject
         {
             public const int SIZE = 0x54;
@@ -298,7 +294,6 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class MapData : IXC2SaveObject
         {
             public const int SIZE = 0xC4;
@@ -360,7 +355,6 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class MercGroup : IXC2SaveObject
         {
             public const int SIZE = 0x28;
@@ -428,7 +422,6 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class MercGroupPreset : IXC2SaveObject
         {
             public const int SIZE = 0xC;
@@ -465,31 +458,35 @@ namespace XC2SaveNETThingy
         public class TaskAchieve : IXC2SaveObject
         {
             public const int SIZE = 0xC;
+            public const int COUNT = 128;
 
-            public UInt16 Unk_0x0 { get; set; }
-            public UInt16 Unk_0x2 { get; set; }
-            public UInt16 Unk_0x4 { get; set; }
-            public UInt16 Unk_0x6 { get; set; }
-            public UInt32 Unk_0x8 { get; set; }
+            //public UInt16 Unk_0x0 { get; set; }
+            //public UInt16 Unk_0x2 { get; set; }
+            //public UInt16 Unk_0x4 { get; set; }
+            //public UInt16 Unk_0x6 { get; set; }
+            //public UInt32 Unk_0x8 { get; set; }
+            public Byte[] Unk { get; set; }
 
             public TaskAchieve(Byte[] data)
             {
-                Unk_0x0 = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
-                Unk_0x2 = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
-                Unk_0x4 = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
-                Unk_0x6 = BitConverter.ToUInt16(data.GetByteSubArray(6, 2), 0);
-                Unk_0x8 = BitConverter.ToUInt32(data.GetByteSubArray(8, 4), 0);
+                //Unk_0x0 = BitConverter.ToUInt16(data.GetByteSubArray(0, 2), 0);
+                //Unk_0x2 = BitConverter.ToUInt16(data.GetByteSubArray(2, 2), 0);
+                //Unk_0x4 = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
+                //Unk_0x6 = BitConverter.ToUInt16(data.GetByteSubArray(6, 2), 0);
+                //Unk_0x8 = BitConverter.ToUInt32(data.GetByteSubArray(8, 4), 0);
+                Unk = data;
             }
 
             public Byte[] ToRawData()
             {
                 List<Byte> result = new List<byte>();
 
-                result.AddRange(BitConverter.GetBytes(Unk_0x0));
-                result.AddRange(BitConverter.GetBytes(Unk_0x2));
-                result.AddRange(BitConverter.GetBytes(Unk_0x4));
-                result.AddRange(BitConverter.GetBytes(Unk_0x6));
-                result.AddRange(BitConverter.GetBytes(Unk_0x8));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x0));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x2));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x4));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x6));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x8));
+                result.AddRange(Unk);
 
                 if (result.Count != SIZE)
                 {
@@ -503,30 +500,33 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class WeatherInfo : IXC2SaveObject
         {
             public const int SIZE = 0x20;
+            public const int COUNT = 64;
 
             public string Name { get; set; }
-            public UInt32 Unk_0x04 { get; set; }
-            public UInt32 Unk_0x08 { get; set; }
-            public UInt32 Unk_0x0C { get; set; }
-            public float Unk_0x10 { get; set; }
-            public float Unk_0x14 { get; set; }
-            public UInt32 Unk_0x18 { get; set; }
-            public UInt32 Unk_0x1C { get; set; }
+            public Byte[] Unk_0x04 { get; set; }
+            //public UInt32 Unk_0x04 { get; set; }
+            //public UInt32 Unk_0x08 { get; set; }
+            //public UInt32 Unk_0x0C { get; set; }
+            //public float Unk_0x10 { get; set; }
+            //public float Unk_0x14 { get; set; }
+            //public UInt32 Unk_0x18 { get; set; }
+            //public UInt32 Unk_0x1C { get; set; }
 
             public WeatherInfo(Byte[] data)
             {
-                Name = Encoding.ASCII.GetString(data.GetByteSubArray(0x0, 4));
-                Unk_0x04 = BitConverter.ToUInt32(data.GetByteSubArray(0x4, 4), 0);
-                Unk_0x08 = BitConverter.ToUInt32(data.GetByteSubArray(0x8, 4), 0);
-                Unk_0x0C = BitConverter.ToUInt32(data.GetByteSubArray(0xC, 4), 0);
-                Unk_0x10 = BitConverter.ToSingle(data.GetByteSubArray(0x10, 4), 0);
-                Unk_0x14 = BitConverter.ToSingle(data.GetByteSubArray(0x14, 4), 0);
-                Unk_0x18 = BitConverter.ToUInt32(data.GetByteSubArray(0x18, 4), 0);
-                Unk_0x1C = BitConverter.ToUInt32(data.GetByteSubArray(0x1C, 4), 0);
+                Name = Encoding.ASCII.GetString(data.GetByteSubArray(0x00, 4));
+                Unk_0x04 = data.GetByteSubArray(0x04, 0x1C);
+                //Unk_0x04 = BitConverter.ToUInt32(data.GetByteSubArray(0x4, 4), 0);
+                //Unk_0x08 = BitConverter.ToUInt32(data.GetByteSubArray(0x8, 4), 0);
+                //Unk_0x0C = BitConverter.ToUInt32(data.GetByteSubArray(0xC, 4), 0);
+                //Unk_0x10 = BitConverter.ToSingle(data.GetByteSubArray(0x10, 4), 0);
+                //Unk_0x14 = BitConverter.ToSingle(data.GetByteSubArray(0x14, 4), 0);
+                //Unk_0x18 = BitConverter.ToUInt32(data.GetByteSubArray(0x18, 4), 0);
+                //Unk_0x1C = BitConverter.ToUInt32(data.GetByteSubArray(0x1C, 4), 0);
+
             }
 
             public Byte[] ToRawData()
@@ -534,13 +534,14 @@ namespace XC2SaveNETThingy
                 List<Byte> result = new List<byte>();
 
                 result.AddRange(Encoding.ASCII.GetBytes(Name));
-                result.AddRange(BitConverter.GetBytes(Unk_0x04));
-                result.AddRange(BitConverter.GetBytes(Unk_0x08));
-                result.AddRange(BitConverter.GetBytes(Unk_0x0C));
-                result.AddRange(BitConverter.GetBytes(Unk_0x10));
-                result.AddRange(BitConverter.GetBytes(Unk_0x14));
-                result.AddRange(BitConverter.GetBytes(Unk_0x18));
-                result.AddRange(BitConverter.GetBytes(Unk_0x1C));
+                result.AddRange(Unk_0x04);
+                //result.AddRange(BitConverter.GetBytes(Unk_0x04));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x08));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x0C));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x10));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x14));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x18));
+                //result.AddRange(BitConverter.GetBytes(Unk_0x1C));
 
                 if (result.Count != SIZE)
                 {
@@ -554,10 +555,10 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class Event : IXC2SaveObject
         {
             public const int SIZE = 0x64;
+            public const int COUNT = 500;
 
             private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
             {
@@ -584,15 +585,15 @@ namespace XC2SaveNETThingy
             public UInt16 VoiceID { get; set; }
             public UInt16 Attribute { get; set; }
             public UInt16 ExtraParts { get; set; }
-            public UInt16 Unk_0x0C { get; set; }
+            public Byte[] Unk_0x0C { get; set; }
             public UInt16[] Weapons { get; set; }
-            public UInt16[] Unk_0x22 { get; set; }
+            public Byte[] Unk_0x22 { get; set; }
             public UInt16[] BladeIDs { get; set; }
-            public UInt16[] Unk_0x42 { get; set; }
+            public Byte[] Unk_0x42 { get; set; }
             public GameTime Time { get; set; }
             public UInt16 CurrentMapWeatherID { get; set; }
             public UInt16 CurrentWeatherType { get; set; }
-            public UInt16[] Unk_0x54 { get; set; }
+            public Byte[] Unk_0x54 { get; set; }
 
             public Event(Byte[] data)
             {
@@ -602,31 +603,34 @@ namespace XC2SaveNETThingy
                 VoiceID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["VoiceID"], 2), 0);
                 Attribute = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Attribute"], 2), 0);
                 ExtraParts = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ExtraParts"], 2), 0);
-                Unk_0x0C = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x0C"], 2), 0);
+                Unk_0x0C = data.GetByteSubArray(LOC["Unk_0x0C"], 2);
 
                 Weapons = new UInt16[10];
                 for (int i = 0; i < Weapons.Length; i++)
                     Weapons[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Weapons"] + (i * 2), 2), 0);
 
-                Unk_0x22 = new UInt16[6];
-                for (int i = 0; i < Unk_0x22.Length; i++)
-                    Unk_0x22[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x22"] + (i * 2), 2), 0);
+                //Unk_0x22 = new UInt16[6];
+                //for (int i = 0; i < Unk_0x22.Length; i++)
+                //    Unk_0x22[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x22"] + (i * 2), 2), 0);
+                Unk_0x22 = data.GetByteSubArray(LOC["Unk_0x22"], 0x0C);
 
                 BladeIDs = new UInt16[10];
                 for (int i = 0; i < BladeIDs.Length; i++)
                     BladeIDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeIDs"] + (i * 2), 2), 0);
 
-                Unk_0x42 = new UInt16[5];
-                for (int i = 0; i < Unk_0x42.Length; i++)
-                    Unk_0x42[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x42"] + (i * 2), 2), 0);
+                //Unk_0x42 = new UInt16[5];
+                //for (int i = 0; i < Unk_0x42.Length; i++)
+                //    Unk_0x42[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x42"] + (i * 2), 2), 0);
+                Unk_0x42 = data.GetByteSubArray(LOC["Unk_0x42"], 0x0A);
 
                 Time = new GameTime(data.GetByteSubArray(LOC["Time"], 4));
                 CurrentMapWeatherID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CurrentMapWeatherID"], 2), 0);
                 CurrentWeatherType = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CurrentWeatherType"], 2), 0);
 
-                Unk_0x54 = new UInt16[8];
-                for (int i = 0; i < Unk_0x54.Length; i++)
-                    Unk_0x54[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x54"], 2), 0);
+                //Unk_0x54 = new UInt16[8];
+                //for (int i = 0; i < Unk_0x54.Length; i++)
+                //    Unk_0x54[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["Unk_0x54"], 2), 0);
+                Unk_0x54 = data.GetByteSubArray(LOC["Unk_0x54"], 0x10);
             }
 
             public Byte[] ToRawData()
@@ -639,26 +643,28 @@ namespace XC2SaveNETThingy
                 result.AddRange(BitConverter.GetBytes(VoiceID));
                 result.AddRange(BitConverter.GetBytes(Attribute));
                 result.AddRange(BitConverter.GetBytes(ExtraParts));
-                result.AddRange(BitConverter.GetBytes(Unk_0x0C));
+                result.AddRange(Unk_0x0C);
 
                 foreach (UInt16 w in Weapons)
                     result.AddRange(BitConverter.GetBytes(w));
 
-                foreach (UInt16 u in Unk_0x22)
-                    result.AddRange(BitConverter.GetBytes(u));
+                //foreach (UInt16 u in Unk_0x22)
+                //    result.AddRange(BitConverter.GetBytes(u));
+                result.AddRange(Unk_0x22);
 
                 foreach (UInt16 u in BladeIDs)
                     result.AddRange(BitConverter.GetBytes(u));
 
-                foreach (UInt16 u in Unk_0x42)
-                    result.AddRange(BitConverter.GetBytes(u));
-
+                //foreach (UInt16 u in Unk_0x42)
+                //    result.AddRange(BitConverter.GetBytes(u));
+                result.AddRange(Unk_0x42);
                 result.AddRange(Time.ToRawData());
                 result.AddRange(BitConverter.GetBytes(CurrentMapWeatherID));
                 result.AddRange(BitConverter.GetBytes(CurrentWeatherType));
 
-                foreach (UInt16 u in Unk_0x54)
-                    result.AddRange(BitConverter.GetBytes(u));
+                //foreach (UInt16 u in Unk_0x54)
+                //    result.AddRange(BitConverter.GetBytes(u));
+                result.AddRange(Unk_0x54);
 
                 if (result.Count != SIZE)
                 {
@@ -672,7 +678,6 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
-
         public class TigerTigerData : IXC2SaveObject
         {
             public const int SIZE = 0x100;
@@ -845,9 +850,9 @@ namespace XC2SaveNETThingy
             { "sg_field_11769C", 0x11769C },
         };
 
-        public UInt32 Magic { get; }
+        public Byte[] Magic { get; }
         public Byte[] Unk_0x000004 { get; set; }
-        public RealTime Time { get; set; }
+        public RealTime TimeSaved { get; set; }
         public UInt32 Money { get; set; }
         public UInt32 LastVisitedLandmarkMapJumpId { get; set; }
         public Byte[] Unk_0x000018 { get; set; }
@@ -906,17 +911,19 @@ namespace XC2SaveNETThingy
         public Byte CameraSide { get; set; }
         public Byte Unk_0x10AE93 { get; set; }
         public Event[] Events { get; set; }
-        public UInt32 EventsLength { get; set; }
+        public UInt32 EventsCount { get; set; }
         public Byte[] Unk_0x1171E8 { get; set; }
         public UInt32[] ContentVersions { get; set; }
         public Byte[] Unk_0x117390 { get; set; }
 
         public const int SIZE = 0x1176A0;
+        public static readonly Byte[] CORRECT_MAGIC = new Byte[] { 0x5B, 0xA1, 0x03, 0x00 };
+
         public XC2Save(Byte[] data)
         {
-            Magic = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Magic"], 4), 0);
+            Magic = data.GetByteSubArray(LOC["Magic"], 4);
             Unk_0x000004 = data.GetByteSubArray(LOC["ss_field_4"], 4);
-            Time = new RealTime(data.GetByteSubArray(LOC["Time"], RealTime.SIZE));
+            TimeSaved = new RealTime(data.GetByteSubArray(LOC["Time"], RealTime.SIZE));
             Money = BitConverter.ToUInt32(data.GetByteSubArray(LOC["Money"], 4), 0);
             LastVisitedLandmarkMapJumpId = BitConverter.ToUInt32(data.GetByteSubArray(LOC["MapJumpId"], 4), 0);
             Unk_0x000018 = data.GetByteSubArray(LOC["sg_field_18"], 8);
@@ -1009,7 +1016,7 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < Events.Length; i++)
                 Events[i] = new Event(data.GetByteSubArray(LOC["Events"] + (i * Event.SIZE), Event.SIZE));
 
-            EventsLength = BitConverter.ToUInt32(data.GetByteSubArray(LOC["EventsLength"], 4), 0);
+            EventsCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["EventsLength"], 4), 0);
             Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 404);
 
             ContentVersions = new UInt32[5];
@@ -1023,9 +1030,9 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<byte>();
 
-            result.AddRange(BitConverter.GetBytes(Magic));
+            result.AddRange(Magic);
             result.AddRange(Unk_0x000004);
-            result.AddRange(Time.ToRawData());
+            result.AddRange(TimeSaved.ToRawData());
             result.AddRange(BitConverter.GetBytes(Money));
             result.AddRange(BitConverter.GetBytes(LastVisitedLandmarkMapJumpId));
             result.AddRange(Unk_0x000018);
@@ -1111,7 +1118,7 @@ namespace XC2SaveNETThingy
             foreach (Event e in Events)
                 result.AddRange(e.ToRawData());
 
-            result.AddRange(BitConverter.GetBytes(EventsLength));
+            result.AddRange(BitConverter.GetBytes(EventsCount));
             result.AddRange(Unk_0x1171E8);
 
             foreach (UInt32 u in ContentVersions)
@@ -1231,10 +1238,25 @@ namespace XC2SaveNETThingy
         }
     }
 
-    public static class XC2SaveParser
+    public static class XC2SaveDeserializer
     {
         public static XC2Save Deserialize(Byte[] data)
         {
+            Byte[] magic = data.GetByteSubArray(0, 4);
+
+            if (!(magic.SequenceEqual(XC2Save.CORRECT_MAGIC)))
+            {
+                string message =
+                    "ERROR: Given Data has incorrect Magic value!" + Environment.NewLine +
+                    Environment.NewLine +
+                    "Ecpercted Magic Value: " + XC2Save.CORRECT_MAGIC[0].ToString("X2") + XC2Save.CORRECT_MAGIC[1].ToString("X2") + XC2Save.CORRECT_MAGIC[2].ToString("X2") + XC2Save.CORRECT_MAGIC[3].ToString("X2") + Environment.NewLine +
+                    "Actual Magic Value: " + magic[0].ToString("X2") + magic[1].ToString("X2") + magic[2].ToString("X2") + magic[3].ToString("X2") + Environment.NewLine +
+                    Environment.NewLine +
+                    "Data is most likely not a valid Xenoblade Chronicles 2 Save File!" + Environment.NewLine +
+                    "Data has not been loaded.";
+                throw new Exception(message);
+            }
+
             switch (data.Length)
             {
                 case XC2Save.SIZE:
