@@ -87,16 +87,13 @@
             this.label432 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblLandmarkRotY = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lblIsTimeStopped = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.lblChapterSaveScenarioFlag = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblChapterSaveEventId = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbcMain = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
+            this.nudChapterSaveEventID = new System.Windows.Forms.NumericUpDown();
+            this.label487 = new System.Windows.Forms.Label();
+            this.nudChapterSaveScenarioFlag = new System.Windows.Forms.NumericUpDown();
+            this.label486 = new System.Windows.Forms.Label();
+            this.chkTimeIsStopped = new System.Windows.Forms.CheckBox();
             this.groupBox150 = new System.Windows.Forms.GroupBox();
             this.groupBox151 = new System.Windows.Forms.GroupBox();
             this.hbxWeatherInfoUnk_0x04 = new Be.Windows.Forms.HexBox();
@@ -105,6 +102,8 @@
             this.cbxWeatherInfo = new System.Windows.Forms.ComboBox();
             this.label449 = new System.Windows.Forms.Label();
             this.groupBox149 = new System.Windows.Forms.GroupBox();
+            this.nudAchievementTaskCount = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.hbxAchievementTask = new Be.Windows.Forms.HexBox();
             this.cbxAchievementTasks = new System.Windows.Forms.ComboBox();
             this.label446 = new System.Windows.Forms.Label();
@@ -1212,7 +1211,9 @@
             this.hbxFlags = new Be.Windows.Forms.HexBox();
             this.tabMapLocation = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label485 = new System.Windows.Forms.Label();
             this.nudLastVisitedLandmarkMapJumpID = new System.Windows.Forms.NumericUpDown();
+            this.nudLastVisitedLandmarkRotY = new System.Windows.Forms.NumericUpDown();
             this.nudLastVisitedLandmarkMapPositionZ = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.nudLastVisitedLandmarkMapPositionY = new System.Windows.Forms.NumericUpDown();
@@ -1438,6 +1439,8 @@
             this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
             this.label66 = new System.Windows.Forms.Label();
             this.tabEvents = new System.Windows.Forms.TabPage();
+            this.nudEventsCount = new System.Windows.Forms.NumericUpDown();
+            this.label484 = new System.Windows.Forms.Label();
             this.groupBox159 = new System.Windows.Forms.GroupBox();
             this.hbxEventUnk_0x54 = new Be.Windows.Forms.HexBox();
             this.groupBox158 = new System.Windows.Forms.GroupBox();
@@ -1547,23 +1550,81 @@
             this.groupBox131 = new System.Windows.Forms.GroupBox();
             this.tbc150RawData = new System.Windows.Forms.TabControl();
             this.tab150RawDataUnk_0x1176A0 = new System.Windows.Forms.TabPage();
-            this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
             this.tab150RawDataUnk_0x117728 = new System.Windows.Forms.TabPage();
             this.hbx150RawDataUnk_0x117728 = new Be.Windows.Forms.HexBox();
             this.tab150RawDataUnk_0x117A4C = new System.Windows.Forms.TabPage();
             this.hbx150RawDataUnk_0x117A4C = new Be.Windows.Forms.HexBox();
             this.tab150RawDataUnk_0x117D70 = new System.Windows.Forms.TabPage();
-            this.hbx150RawDataUnk_0x117D70 = new Be.Windows.Forms.HexBox();
             this.tab150RawDataUnk_0x1186DC = new System.Windows.Forms.TabPage();
             this.hbx150RawDataUnk_0x1186DC = new Be.Windows.Forms.HexBox();
             this.ofdSaveFile = new System.Windows.Forms.OpenFileDialog();
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.nudAchievementTaskCount = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudEventsCount = new System.Windows.Forms.NumericUpDown();
-            this.label484 = new System.Windows.Forms.Label();
+            this.nudScenarioQuest = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.nudCurrentQuest = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.groupBox160 = new System.Windows.Forms.GroupBox();
+            this.cbxCommonBladeIDs = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.nudCommonBladeID = new System.Windows.Forms.NumericUpDown();
+            this.label488 = new System.Windows.Forms.Label();
+            this.nudPlayerCameraDistance = new System.Windows.Forms.NumericUpDown();
+            this.nudGameClearCount = new System.Windows.Forms.NumericUpDown();
+            this.label489 = new System.Windows.Forms.Label();
+            this.groupBox161 = new System.Windows.Forms.GroupBox();
+            this.nudQuestID = new System.Windows.Forms.NumericUpDown();
+            this.label490 = new System.Windows.Forms.Label();
+            this.cbxQuestIDs = new System.Windows.Forms.ComboBox();
+            this.label491 = new System.Windows.Forms.Label();
+            this.nudQuestCount = new System.Windows.Forms.NumericUpDown();
+            this.label492 = new System.Windows.Forms.Label();
+            this.label493 = new System.Windows.Forms.Label();
+            this.nudMoveDistance = new System.Windows.Forms.NumericUpDown();
+            this.label494 = new System.Windows.Forms.Label();
+            this.nudMoveDistanceB = new System.Windows.Forms.NumericUpDown();
+            this.nudAssurePoint = new System.Windows.Forms.NumericUpDown();
+            this.label495 = new System.Windows.Forms.Label();
+            this.nudAssureCount = new System.Windows.Forms.NumericUpDown();
+            this.label496 = new System.Windows.Forms.Label();
+            this.nudRareBladeAppearType = new System.Windows.Forms.NumericUpDown();
+            this.label497 = new System.Windows.Forms.Label();
+            this.nudCoinCount = new System.Windows.Forms.NumericUpDown();
+            this.label498 = new System.Windows.Forms.Label();
+            this.groupBox162 = new System.Windows.Forms.GroupBox();
+            this.nudSavedEnemyHP1 = new System.Windows.Forms.NumericUpDown();
+            this.label499 = new System.Windows.Forms.Label();
+            this.nudSavedEnemyHP2 = new System.Windows.Forms.NumericUpDown();
+            this.label500 = new System.Windows.Forms.Label();
+            this.nudSavedEnemyHP3 = new System.Windows.Forms.NumericUpDown();
+            this.label501 = new System.Windows.Forms.Label();
+            this.groupBox163 = new System.Windows.Forms.GroupBox();
+            this.nudCameraHeight = new System.Windows.Forms.NumericUpDown();
+            this.label502 = new System.Windows.Forms.Label();
+            this.nudCameraYaw = new System.Windows.Forms.NumericUpDown();
+            this.label503 = new System.Windows.Forms.Label();
+            this.nudCameraPitch = new System.Windows.Forms.NumericUpDown();
+            this.label504 = new System.Windows.Forms.Label();
+            this.nudCameraFreeMode = new System.Windows.Forms.NumericUpDown();
+            this.label505 = new System.Windows.Forms.Label();
+            this.groupBox164 = new System.Windows.Forms.GroupBox();
+            this.radAegisFormePyra = new System.Windows.Forms.RadioButton();
+            this.radAegisFormeMythra = new System.Windows.Forms.RadioButton();
+            this.chkIsCollectFlagNewVersion = new System.Windows.Forms.CheckBox();
+            this.chkIsClearDataSave = new System.Windows.Forms.CheckBox();
+            this.label506 = new System.Windows.Forms.Label();
+            this.nudAutoEventAfterLoad = new System.Windows.Forms.NumericUpDown();
+            this.nudCameraSide = new System.Windows.Forms.NumericUpDown();
+            this.label507 = new System.Windows.Forms.Label();
+            this.groupBox165 = new System.Windows.Forms.GroupBox();
+            this.nudContentVersion = new System.Windows.Forms.NumericUpDown();
+            this.label508 = new System.Windows.Forms.Label();
+            this.cbxContentVersions = new System.Windows.Forms.ComboBox();
+            this.label509 = new System.Windows.Forms.Label();
+            this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
+            this.hbx150RawDataUnk_0x117D70 = new Be.Windows.Forms.HexBox();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1594,11 +1655,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedDay)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tbcMain.SuspendLayout();
             this.tabMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChapterSaveEventID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChapterSaveScenarioFlag)).BeginInit();
             this.groupBox150.SuspendLayout();
             this.groupBox151.SuspendLayout();
             this.groupBox149.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).BeginInit();
             this.groupBox148.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).BeginInit();
@@ -2130,6 +2194,7 @@
             this.tabMapLocation.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapJumpID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkRotY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionZ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionX)).BeginInit();
@@ -2235,6 +2300,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
             this.tabEvents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).BeginInit();
             this.groupBox159.SuspendLayout();
             this.groupBox158.SuspendLayout();
             this.groupBox157.SuspendLayout();
@@ -2305,8 +2371,35 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScenarioQuest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentQuest)).BeginInit();
+            this.groupBox160.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCommonBladeID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayerCameraDistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGameClearCount)).BeginInit();
+            this.groupBox161.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuestID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuestCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMoveDistance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMoveDistanceB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAssurePoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAssureCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRareBladeAppearType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCoinCount)).BeginInit();
+            this.groupBox162.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP3)).BeginInit();
+            this.groupBox163.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraYaw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraPitch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraFreeMode)).BeginInit();
+            this.groupBox164.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAutoEventAfterLoad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraSide)).BeginInit();
+            this.groupBox165.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudContentVersion)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -2990,121 +3083,102 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "G";
             // 
-            // label21
+            // tbcMain
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(933, 68);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(81, 13);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "LandmarkRotY:";
-            // 
-            // lblLandmarkRotY
-            // 
-            this.lblLandmarkRotY.AutoSize = true;
-            this.lblLandmarkRotY.Location = new System.Drawing.Point(1014, 72);
-            this.lblLandmarkRotY.Name = "lblLandmarkRotY";
-            this.lblLandmarkRotY.Size = new System.Drawing.Size(41, 13);
-            this.lblLandmarkRotY.TabIndex = 23;
-            this.lblLandmarkRotY.Text = "label22";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(936, 106);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 13);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "IsTimeStopped:";
-            // 
-            // lblIsTimeStopped
-            // 
-            this.lblIsTimeStopped.AutoSize = true;
-            this.lblIsTimeStopped.Location = new System.Drawing.Point(1024, 107);
-            this.lblIsTimeStopped.Name = "lblIsTimeStopped";
-            this.lblIsTimeStopped.Size = new System.Drawing.Size(41, 13);
-            this.lblIsTimeStopped.TabIndex = 25;
-            this.lblIsTimeStopped.Text = "label23";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(939, 136);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(134, 13);
-            this.label23.TabIndex = 26;
-            this.label23.Text = "ChapterSaveScenarioFlag:";
-            // 
-            // lblChapterSaveScenarioFlag
-            // 
-            this.lblChapterSaveScenarioFlag.AutoSize = true;
-            this.lblChapterSaveScenarioFlag.Location = new System.Drawing.Point(1071, 132);
-            this.lblChapterSaveScenarioFlag.Name = "lblChapterSaveScenarioFlag";
-            this.lblChapterSaveScenarioFlag.Size = new System.Drawing.Size(41, 13);
-            this.lblChapterSaveScenarioFlag.TabIndex = 27;
-            this.lblChapterSaveScenarioFlag.Text = "label24";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(951, 159);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(109, 13);
-            this.label24.TabIndex = 28;
-            this.label24.Text = "ChapterSaveEventId:";
-            // 
-            // lblChapterSaveEventId
-            // 
-            this.lblChapterSaveEventId.AutoSize = true;
-            this.lblChapterSaveEventId.Location = new System.Drawing.Point(1074, 155);
-            this.lblChapterSaveEventId.Name = "lblChapterSaveEventId";
-            this.lblChapterSaveEventId.Size = new System.Drawing.Size(41, 13);
-            this.lblChapterSaveEventId.TabIndex = 29;
-            this.lblChapterSaveEventId.Text = "label25";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabMain);
-            this.tabControl1.Controls.Add(this.tabDrivers);
-            this.tabControl1.Controls.Add(this.tabBlades);
-            this.tabControl1.Controls.Add(this.tabItems);
-            this.tabControl1.Controls.Add(this.tabFlags);
-            this.tabControl1.Controls.Add(this.tabMapLocation);
-            this.tabControl1.Controls.Add(this.tabMercGroups);
-            this.tabControl1.Controls.Add(this.tabTigerTiger);
-            this.tabControl1.Controls.Add(this.tabEvents);
-            this.tabControl1.Controls.Add(this.tabUnknown);
-            this.tabControl1.Controls.Add(this.tab150RawData);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1142, 607);
-            this.tabControl1.TabIndex = 32;
+            this.tbcMain.Controls.Add(this.tabMain);
+            this.tbcMain.Controls.Add(this.tabDrivers);
+            this.tbcMain.Controls.Add(this.tabBlades);
+            this.tbcMain.Controls.Add(this.tabItems);
+            this.tbcMain.Controls.Add(this.tabFlags);
+            this.tbcMain.Controls.Add(this.tabMapLocation);
+            this.tbcMain.Controls.Add(this.tabMercGroups);
+            this.tbcMain.Controls.Add(this.tabTigerTiger);
+            this.tbcMain.Controls.Add(this.tabEvents);
+            this.tbcMain.Controls.Add(this.tabUnknown);
+            this.tbcMain.Controls.Add(this.tab150RawData);
+            this.tbcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcMain.Enabled = false;
+            this.tbcMain.Location = new System.Drawing.Point(0, 0);
+            this.tbcMain.Name = "tbcMain";
+            this.tbcMain.SelectedIndex = 0;
+            this.tbcMain.Size = new System.Drawing.Size(1142, 607);
+            this.tbcMain.TabIndex = 32;
             // 
             // tabMain
             // 
             this.tabMain.BackColor = System.Drawing.Color.Transparent;
+            this.tabMain.Controls.Add(this.groupBox165);
+            this.tabMain.Controls.Add(this.groupBox164);
+            this.tabMain.Controls.Add(this.groupBox162);
+            this.tabMain.Controls.Add(this.groupBox161);
+            this.tabMain.Controls.Add(this.groupBox160);
             this.tabMain.Controls.Add(this.groupBox150);
             this.tabMain.Controls.Add(this.groupBox149);
             this.tabMain.Controls.Add(this.groupBox148);
             this.tabMain.Controls.Add(this.groupBox11);
             this.tabMain.Controls.Add(this.groupBox1);
-            this.tabMain.Controls.Add(this.lblChapterSaveEventId);
-            this.tabMain.Controls.Add(this.label24);
-            this.tabMain.Controls.Add(this.lblChapterSaveScenarioFlag);
-            this.tabMain.Controls.Add(this.label23);
-            this.tabMain.Controls.Add(this.lblIsTimeStopped);
-            this.tabMain.Controls.Add(this.label22);
-            this.tabMain.Controls.Add(this.lblLandmarkRotY);
-            this.tabMain.Controls.Add(this.label21);
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
             this.tabMain.Size = new System.Drawing.Size(1134, 581);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
+            // 
+            // nudChapterSaveEventID
+            // 
+            this.nudChapterSaveEventID.Location = new System.Drawing.Point(150, 77);
+            this.nudChapterSaveEventID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudChapterSaveEventID.Name = "nudChapterSaveEventID";
+            this.nudChapterSaveEventID.Size = new System.Drawing.Size(63, 20);
+            this.nudChapterSaveEventID.TabIndex = 165;
+            this.nudChapterSaveEventID.ValueChanged += new System.EventHandler(this.nudChapterSaveEventID_ValueChanged);
+            // 
+            // label487
+            // 
+            this.label487.AutoSize = true;
+            this.label487.Location = new System.Drawing.Point(6, 79);
+            this.label487.Name = "label487";
+            this.label487.Size = new System.Drawing.Size(120, 13);
+            this.label487.TabIndex = 164;
+            this.label487.Text = "Chapter Save Event ID:";
+            // 
+            // nudChapterSaveScenarioFlag
+            // 
+            this.nudChapterSaveScenarioFlag.Location = new System.Drawing.Point(150, 97);
+            this.nudChapterSaveScenarioFlag.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudChapterSaveScenarioFlag.Name = "nudChapterSaveScenarioFlag";
+            this.nudChapterSaveScenarioFlag.Size = new System.Drawing.Size(63, 20);
+            this.nudChapterSaveScenarioFlag.TabIndex = 163;
+            this.nudChapterSaveScenarioFlag.ValueChanged += new System.EventHandler(this.nudChapterSaveScenarioFlag_ValueChanged);
+            // 
+            // label486
+            // 
+            this.label486.AutoSize = true;
+            this.label486.Location = new System.Drawing.Point(6, 99);
+            this.label486.Name = "label486";
+            this.label486.Size = new System.Drawing.Size(143, 13);
+            this.label486.TabIndex = 162;
+            this.label486.Text = "Chapter Save Scenario Flag:";
+            // 
+            // chkTimeIsStopped
+            // 
+            this.chkTimeIsStopped.AutoSize = true;
+            this.chkTimeIsStopped.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTimeIsStopped.Location = new System.Drawing.Point(6, 319);
+            this.chkTimeIsStopped.Name = "chkTimeIsStopped";
+            this.chkTimeIsStopped.Size = new System.Drawing.Size(103, 17);
+            this.chkTimeIsStopped.TabIndex = 38;
+            this.chkTimeIsStopped.Text = "Time Is Stopped";
+            this.chkTimeIsStopped.UseVisualStyleBackColor = true;
+            this.chkTimeIsStopped.CheckedChanged += new System.EventHandler(this.chkTimeIsStopped_CheckedChanged);
             // 
             // groupBox150
             // 
@@ -3118,7 +3192,7 @@
             this.groupBox150.Size = new System.Drawing.Size(512, 137);
             this.groupBox150.TabIndex = 37;
             this.groupBox150.TabStop = false;
-            this.groupBox150.Text = "Weather Info Edit";
+            this.groupBox150.Text = "Weather Info";
             // 
             // groupBox151
             // 
@@ -3188,7 +3262,29 @@
             this.groupBox149.Size = new System.Drawing.Size(331, 110);
             this.groupBox149.TabIndex = 36;
             this.groupBox149.TabStop = false;
-            this.groupBox149.Text = "Achievement Tasks Edit";
+            this.groupBox149.Text = "Achievement Tasks";
+            // 
+            // nudAchievementTaskCount
+            // 
+            this.nudAchievementTaskCount.Location = new System.Drawing.Point(156, 84);
+            this.nudAchievementTaskCount.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudAchievementTaskCount.Name = "nudAchievementTaskCount";
+            this.nudAchievementTaskCount.Size = new System.Drawing.Size(63, 20);
+            this.nudAchievementTaskCount.TabIndex = 163;
+            this.nudAchievementTaskCount.ValueChanged += new System.EventHandler(this.nudAchievementTaskCount_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "Achievement Tasks Count:";
             // 
             // hbxAchievementTask
             // 
@@ -3392,7 +3488,7 @@
             this.groupBox12.Size = new System.Drawing.Size(261, 139);
             this.groupBox12.TabIndex = 2;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Party Members Edit";
+            this.groupBox12.Text = "Party Members";
             // 
             // nudPartyMemberDriver
             // 
@@ -15840,6 +15936,7 @@
             // 
             // tabMapLocation
             // 
+            this.tabMapLocation.Controls.Add(this.groupBox163);
             this.tabMapLocation.Controls.Add(this.groupBox2);
             this.tabMapLocation.Controls.Add(this.groupBox122);
             this.tabMapLocation.Controls.Add(this.groupBox121);
@@ -15857,7 +15954,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label485);
             this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapJumpID);
+            this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkRotY);
             this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapPositionZ);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.nudLastVisitedLandmarkMapPositionY);
@@ -15867,14 +15966,23 @@
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Location = new System.Drawing.Point(8, 272);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(160, 114);
+            this.groupBox2.Size = new System.Drawing.Size(171, 131);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Last Visited Landmark";
             // 
+            // label485
+            // 
+            this.label485.AutoSize = true;
+            this.label485.Location = new System.Drawing.Point(3, 107);
+            this.label485.Name = "label485";
+            this.label485.Size = new System.Drawing.Size(34, 13);
+            this.label485.TabIndex = 25;
+            this.label485.Text = "RotY:";
+            // 
             // nudLastVisitedLandmarkMapJumpID
             // 
-            this.nudLastVisitedLandmarkMapJumpID.Location = new System.Drawing.Point(79, 19);
+            this.nudLastVisitedLandmarkMapJumpID.Location = new System.Drawing.Point(90, 19);
             this.nudLastVisitedLandmarkMapJumpID.Maximum = new decimal(new int[] {
             -1,
             0,
@@ -15885,10 +15993,29 @@
             this.nudLastVisitedLandmarkMapJumpID.TabIndex = 23;
             this.nudLastVisitedLandmarkMapJumpID.ValueChanged += new System.EventHandler(this.nudMapJumpID_ValueChanged);
             // 
+            // nudLastVisitedLandmarkRotY
+            // 
+            this.nudLastVisitedLandmarkRotY.DecimalPlaces = 7;
+            this.nudLastVisitedLandmarkRotY.Location = new System.Drawing.Point(43, 105);
+            this.nudLastVisitedLandmarkRotY.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudLastVisitedLandmarkRotY.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudLastVisitedLandmarkRotY.Name = "nudLastVisitedLandmarkRotY";
+            this.nudLastVisitedLandmarkRotY.Size = new System.Drawing.Size(120, 20);
+            this.nudLastVisitedLandmarkRotY.TabIndex = 24;
+            this.nudLastVisitedLandmarkRotY.ValueChanged += new System.EventHandler(this.nudLastVisitedLandmarkRotY_ValueChanged);
+            // 
             // nudLastVisitedLandmarkMapPositionZ
             // 
             this.nudLastVisitedLandmarkMapPositionZ.DecimalPlaces = 7;
-            this.nudLastVisitedLandmarkMapPositionZ.Location = new System.Drawing.Point(32, 85);
+            this.nudLastVisitedLandmarkMapPositionZ.Location = new System.Drawing.Point(43, 85);
             this.nudLastVisitedLandmarkMapPositionZ.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -15916,7 +16043,7 @@
             // nudLastVisitedLandmarkMapPositionY
             // 
             this.nudLastVisitedLandmarkMapPositionY.DecimalPlaces = 7;
-            this.nudLastVisitedLandmarkMapPositionY.Location = new System.Drawing.Point(32, 65);
+            this.nudLastVisitedLandmarkMapPositionY.Location = new System.Drawing.Point(43, 65);
             this.nudLastVisitedLandmarkMapPositionY.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -15944,7 +16071,7 @@
             // nudLastVisitedLandmarkMapPositionX
             // 
             this.nudLastVisitedLandmarkMapPositionX.DecimalPlaces = 7;
-            this.nudLastVisitedLandmarkMapPositionX.Location = new System.Drawing.Point(32, 45);
+            this.nudLastVisitedLandmarkMapPositionX.Location = new System.Drawing.Point(43, 45);
             this.nudLastVisitedLandmarkMapPositionX.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -18724,6 +18851,28 @@
             this.tabEvents.Text = "Events";
             this.tabEvents.UseVisualStyleBackColor = true;
             // 
+            // nudEventsCount
+            // 
+            this.nudEventsCount.Location = new System.Drawing.Point(318, 7);
+            this.nudEventsCount.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudEventsCount.Name = "nudEventsCount";
+            this.nudEventsCount.Size = new System.Drawing.Size(63, 20);
+            this.nudEventsCount.TabIndex = 234;
+            this.nudEventsCount.ValueChanged += new System.EventHandler(this.nudEventsCount_ValueChanged);
+            // 
+            // label484
+            // 
+            this.label484.AutoSize = true;
+            this.label484.Location = new System.Drawing.Point(238, 9);
+            this.label484.Name = "label484";
+            this.label484.Size = new System.Drawing.Size(74, 13);
+            this.label484.TabIndex = 233;
+            this.label484.Text = "Events Count:";
+            // 
             // groupBox159
             // 
             this.groupBox159.Controls.Add(this.hbxEventUnk_0x54);
@@ -19986,21 +20135,6 @@
             this.tab150RawDataUnk_0x1176A0.Text = "Unk_0x1176A0";
             this.tab150RawDataUnk_0x1176A0.UseVisualStyleBackColor = true;
             // 
-            // hbx150RawDataUnk_0x1176A0
-            // 
-            this.hbx150RawDataUnk_0x1176A0.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x1176A0.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x1176A0.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(3, 3);
-            this.hbx150RawDataUnk_0x1176A0.Name = "hbx150RawDataUnk_0x1176A0";
-            this.hbx150RawDataUnk_0x1176A0.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1108, 471);
-            this.hbx150RawDataUnk_0x1176A0.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x1176A0.TabIndex = 154;
-            this.hbx150RawDataUnk_0x1176A0.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x1176A0.VScrollBarVisible = true;
-            // 
             // tab150RawDataUnk_0x117728
             // 
             this.tab150RawDataUnk_0x117728.Controls.Add(this.hbx150RawDataUnk_0x117728);
@@ -20062,21 +20196,6 @@
             this.tab150RawDataUnk_0x117D70.Text = "Unk_0x117D70";
             this.tab150RawDataUnk_0x117D70.UseVisualStyleBackColor = true;
             // 
-            // hbx150RawDataUnk_0x117D70
-            // 
-            this.hbx150RawDataUnk_0x117D70.ColumnInfoVisible = true;
-            this.hbx150RawDataUnk_0x117D70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbx150RawDataUnk_0x117D70.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbx150RawDataUnk_0x117D70.LineInfoVisible = true;
-            this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
-            this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
-            this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
-            this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
-            this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
-            this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
-            this.hbx150RawDataUnk_0x117D70.VScrollBarVisible = true;
-            // 
             // tab150RawDataUnk_0x1186DC
             // 
             this.tab150RawDataUnk_0x1186DC.Controls.Add(this.hbx150RawDataUnk_0x1186DC);
@@ -20131,54 +20250,802 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer3.Panel2.Controls.Add(this.tbcMain);
             this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
             this.splitContainer3.SplitterDistance = 48;
             this.splitContainer3.TabIndex = 34;
             // 
-            // nudAchievementTaskCount
+            // nudScenarioQuest
             // 
-            this.nudAchievementTaskCount.Location = new System.Drawing.Point(156, 84);
-            this.nudAchievementTaskCount.Maximum = new decimal(new int[] {
+            this.nudScenarioQuest.Location = new System.Drawing.Point(150, 297);
+            this.nudScenarioQuest.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudScenarioQuest.Name = "nudScenarioQuest";
+            this.nudScenarioQuest.Size = new System.Drawing.Size(63, 20);
+            this.nudScenarioQuest.TabIndex = 167;
+            this.nudScenarioQuest.ValueChanged += new System.EventHandler(this.nudScenarioQuest_ValueChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 299);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(83, 13);
+            this.label21.TabIndex = 166;
+            this.label21.Text = "Scenario Quest:";
+            // 
+            // nudCurrentQuest
+            // 
+            this.nudCurrentQuest.Location = new System.Drawing.Point(150, 137);
+            this.nudCurrentQuest.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudCurrentQuest.Name = "nudCurrentQuest";
+            this.nudCurrentQuest.Size = new System.Drawing.Size(63, 20);
+            this.nudCurrentQuest.TabIndex = 169;
+            this.nudCurrentQuest.ValueChanged += new System.EventHandler(this.nudCurrentQuest_ValueChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 139);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.TabIndex = 168;
+            this.label22.Text = "Current Quest:";
+            // 
+            // groupBox160
+            // 
+            this.groupBox160.Controls.Add(this.nudCommonBladeID);
+            this.groupBox160.Controls.Add(this.label24);
+            this.groupBox160.Controls.Add(this.cbxCommonBladeIDs);
+            this.groupBox160.Controls.Add(this.label23);
+            this.groupBox160.Location = new System.Drawing.Point(593, 389);
+            this.groupBox160.Name = "groupBox160";
+            this.groupBox160.Size = new System.Drawing.Size(213, 70);
+            this.groupBox160.TabIndex = 154;
+            this.groupBox160.TabStop = false;
+            this.groupBox160.Text = "Common Blade IDs";
+            // 
+            // cbxCommonBladeIDs
+            // 
+            this.cbxCommonBladeIDs.FormattingEnabled = true;
+            this.cbxCommonBladeIDs.Location = new System.Drawing.Point(78, 16);
+            this.cbxCommonBladeIDs.Name = "cbxCommonBladeIDs";
+            this.cbxCommonBladeIDs.Size = new System.Drawing.Size(129, 21);
+            this.cbxCommonBladeIDs.TabIndex = 157;
+            this.cbxCommonBladeIDs.SelectedIndexChanged += new System.EventHandler(this.cbxCommonBladeIDs_SelectedIndexChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 19);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(66, 13);
+            this.label23.TabIndex = 156;
+            this.label23.Text = "Selected ID:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 45);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(21, 13);
+            this.label24.TabIndex = 158;
+            this.label24.Text = "ID:";
+            // 
+            // nudCommonBladeID
+            // 
+            this.nudCommonBladeID.Location = new System.Drawing.Point(78, 43);
+            this.nudCommonBladeID.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.nudAchievementTaskCount.Name = "nudAchievementTaskCount";
-            this.nudAchievementTaskCount.Size = new System.Drawing.Size(63, 20);
-            this.nudAchievementTaskCount.TabIndex = 163;
-            this.nudAchievementTaskCount.ValueChanged += new System.EventHandler(this.nudAchievementTaskCount_ValueChanged);
+            this.nudCommonBladeID.Name = "nudCommonBladeID";
+            this.nudCommonBladeID.Size = new System.Drawing.Size(63, 20);
+            this.nudCommonBladeID.TabIndex = 170;
+            this.nudCommonBladeID.ValueChanged += new System.EventHandler(this.nudCommonBladeID_ValueChanged);
             // 
-            // label1
+            // label488
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
-            this.label1.TabIndex = 162;
-            this.label1.Text = "Achievement Tasks Count:";
+            this.label488.AutoSize = true;
+            this.label488.Location = new System.Drawing.Point(6, 20);
+            this.label488.Name = "label488";
+            this.label488.Size = new System.Drawing.Size(123, 13);
+            this.label488.TabIndex = 27;
+            this.label488.Text = "Player Camera Distance:";
             // 
-            // nudEventsCount
+            // nudPlayerCameraDistance
             // 
-            this.nudEventsCount.Location = new System.Drawing.Point(318, 7);
-            this.nudEventsCount.Maximum = new decimal(new int[] {
+            this.nudPlayerCameraDistance.DecimalPlaces = 7;
+            this.nudPlayerCameraDistance.Location = new System.Drawing.Point(135, 18);
+            this.nudPlayerCameraDistance.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudPlayerCameraDistance.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudPlayerCameraDistance.Name = "nudPlayerCameraDistance";
+            this.nudPlayerCameraDistance.Size = new System.Drawing.Size(120, 20);
+            this.nudPlayerCameraDistance.TabIndex = 26;
+            this.nudPlayerCameraDistance.ValueChanged += new System.EventHandler(this.nudPlayerCameraDistance_ValueChanged);
+            // 
+            // nudGameClearCount
+            // 
+            this.nudGameClearCount.Location = new System.Drawing.Point(150, 157);
+            this.nudGameClearCount.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudGameClearCount.Name = "nudGameClearCount";
+            this.nudGameClearCount.Size = new System.Drawing.Size(63, 20);
+            this.nudGameClearCount.TabIndex = 171;
+            this.nudGameClearCount.ValueChanged += new System.EventHandler(this.nudGameClearCount_ValueChanged);
+            // 
+            // label489
+            // 
+            this.label489.AutoSize = true;
+            this.label489.Location = new System.Drawing.Point(6, 159);
+            this.label489.Name = "label489";
+            this.label489.Size = new System.Drawing.Size(96, 13);
+            this.label489.TabIndex = 170;
+            this.label489.Text = "Game Clear Count:";
+            // 
+            // groupBox161
+            // 
+            this.groupBox161.Controls.Add(this.nudQuestCount);
+            this.groupBox161.Controls.Add(this.label492);
+            this.groupBox161.Controls.Add(this.nudQuestID);
+            this.groupBox161.Controls.Add(this.label490);
+            this.groupBox161.Controls.Add(this.cbxQuestIDs);
+            this.groupBox161.Controls.Add(this.label491);
+            this.groupBox161.Location = new System.Drawing.Point(367, 389);
+            this.groupBox161.Name = "groupBox161";
+            this.groupBox161.Size = new System.Drawing.Size(220, 97);
+            this.groupBox161.TabIndex = 171;
+            this.groupBox161.TabStop = false;
+            this.groupBox161.Text = "Quest IDs";
+            // 
+            // nudQuestID
+            // 
+            this.nudQuestID.Location = new System.Drawing.Point(78, 43);
+            this.nudQuestID.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.nudEventsCount.Name = "nudEventsCount";
-            this.nudEventsCount.Size = new System.Drawing.Size(63, 20);
-            this.nudEventsCount.TabIndex = 234;
-            this.nudEventsCount.ValueChanged += new System.EventHandler(this.nudEventsCount_ValueChanged);
+            this.nudQuestID.Name = "nudQuestID";
+            this.nudQuestID.Size = new System.Drawing.Size(63, 20);
+            this.nudQuestID.TabIndex = 170;
+            this.nudQuestID.ValueChanged += new System.EventHandler(this.nudQuestID_ValueChanged);
             // 
-            // label484
+            // label490
             // 
-            this.label484.AutoSize = true;
-            this.label484.Location = new System.Drawing.Point(238, 9);
-            this.label484.Name = "label484";
-            this.label484.Size = new System.Drawing.Size(74, 13);
-            this.label484.TabIndex = 233;
-            this.label484.Text = "Events Count:";
+            this.label490.AutoSize = true;
+            this.label490.Location = new System.Drawing.Point(6, 45);
+            this.label490.Name = "label490";
+            this.label490.Size = new System.Drawing.Size(21, 13);
+            this.label490.TabIndex = 158;
+            this.label490.Text = "ID:";
+            // 
+            // cbxQuestIDs
+            // 
+            this.cbxQuestIDs.FormattingEnabled = true;
+            this.cbxQuestIDs.Location = new System.Drawing.Point(78, 16);
+            this.cbxQuestIDs.Name = "cbxQuestIDs";
+            this.cbxQuestIDs.Size = new System.Drawing.Size(129, 21);
+            this.cbxQuestIDs.TabIndex = 157;
+            this.cbxQuestIDs.SelectedIndexChanged += new System.EventHandler(this.cbxQuestIDs_SelectedIndexChanged);
+            // 
+            // label491
+            // 
+            this.label491.AutoSize = true;
+            this.label491.Location = new System.Drawing.Point(6, 19);
+            this.label491.Name = "label491";
+            this.label491.Size = new System.Drawing.Size(66, 13);
+            this.label491.TabIndex = 156;
+            this.label491.Text = "Selected ID:";
+            // 
+            // nudQuestCount
+            // 
+            this.nudQuestCount.Location = new System.Drawing.Point(78, 69);
+            this.nudQuestCount.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudQuestCount.Name = "nudQuestCount";
+            this.nudQuestCount.Size = new System.Drawing.Size(63, 20);
+            this.nudQuestCount.TabIndex = 173;
+            this.nudQuestCount.ValueChanged += new System.EventHandler(this.nudQuestCount_ValueChanged);
+            // 
+            // label492
+            // 
+            this.label492.AutoSize = true;
+            this.label492.Location = new System.Drawing.Point(6, 71);
+            this.label492.Name = "label492";
+            this.label492.Size = new System.Drawing.Size(69, 13);
+            this.label492.TabIndex = 172;
+            this.label492.Text = "Quest Count:";
+            // 
+            // label493
+            // 
+            this.label493.AutoSize = true;
+            this.label493.Location = new System.Drawing.Point(6, 179);
+            this.label493.Name = "label493";
+            this.label493.Size = new System.Drawing.Size(82, 13);
+            this.label493.TabIndex = 173;
+            this.label493.Text = "Move Distance:";
+            // 
+            // nudMoveDistance
+            // 
+            this.nudMoveDistance.DecimalPlaces = 7;
+            this.nudMoveDistance.Location = new System.Drawing.Point(113, 177);
+            this.nudMoveDistance.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMoveDistance.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMoveDistance.Name = "nudMoveDistance";
+            this.nudMoveDistance.Size = new System.Drawing.Size(100, 20);
+            this.nudMoveDistance.TabIndex = 172;
+            this.nudMoveDistance.ValueChanged += new System.EventHandler(this.nudMoveDistance_ValueChanged);
+            // 
+            // label494
+            // 
+            this.label494.AutoSize = true;
+            this.label494.Location = new System.Drawing.Point(6, 199);
+            this.label494.Name = "label494";
+            this.label494.Size = new System.Drawing.Size(92, 13);
+            this.label494.TabIndex = 175;
+            this.label494.Text = "Move Distance B:";
+            // 
+            // nudMoveDistanceB
+            // 
+            this.nudMoveDistanceB.DecimalPlaces = 7;
+            this.nudMoveDistanceB.Location = new System.Drawing.Point(113, 197);
+            this.nudMoveDistanceB.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudMoveDistanceB.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudMoveDistanceB.Name = "nudMoveDistanceB";
+            this.nudMoveDistanceB.Size = new System.Drawing.Size(100, 20);
+            this.nudMoveDistanceB.TabIndex = 174;
+            this.nudMoveDistanceB.ValueChanged += new System.EventHandler(this.nudMoveDistanceB_ValueChanged);
+            // 
+            // nudAssurePoint
+            // 
+            this.nudAssurePoint.Location = new System.Drawing.Point(150, 37);
+            this.nudAssurePoint.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudAssurePoint.Name = "nudAssurePoint";
+            this.nudAssurePoint.Size = new System.Drawing.Size(63, 20);
+            this.nudAssurePoint.TabIndex = 177;
+            this.nudAssurePoint.ValueChanged += new System.EventHandler(this.nudAssurePoint_ValueChanged);
+            // 
+            // label495
+            // 
+            this.label495.AutoSize = true;
+            this.label495.Location = new System.Drawing.Point(6, 39);
+            this.label495.Name = "label495";
+            this.label495.Size = new System.Drawing.Size(69, 13);
+            this.label495.TabIndex = 176;
+            this.label495.Text = "Assure Point:";
+            // 
+            // nudAssureCount
+            // 
+            this.nudAssureCount.Location = new System.Drawing.Point(150, 17);
+            this.nudAssureCount.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudAssureCount.Name = "nudAssureCount";
+            this.nudAssureCount.Size = new System.Drawing.Size(63, 20);
+            this.nudAssureCount.TabIndex = 179;
+            this.nudAssureCount.ValueChanged += new System.EventHandler(this.nudAssureCount_ValueChanged);
+            // 
+            // label496
+            // 
+            this.label496.AutoSize = true;
+            this.label496.Location = new System.Drawing.Point(6, 19);
+            this.label496.Name = "label496";
+            this.label496.Size = new System.Drawing.Size(73, 13);
+            this.label496.TabIndex = 178;
+            this.label496.Text = "Assure Count:";
+            // 
+            // nudRareBladeAppearType
+            // 
+            this.nudRareBladeAppearType.Location = new System.Drawing.Point(150, 217);
+            this.nudRareBladeAppearType.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudRareBladeAppearType.Name = "nudRareBladeAppearType";
+            this.nudRareBladeAppearType.Size = new System.Drawing.Size(63, 20);
+            this.nudRareBladeAppearType.TabIndex = 181;
+            this.nudRareBladeAppearType.ValueChanged += new System.EventHandler(this.nudRareBladeAppearType_ValueChanged);
+            // 
+            // label497
+            // 
+            this.label497.AutoSize = true;
+            this.label497.Location = new System.Drawing.Point(6, 219);
+            this.label497.Name = "label497";
+            this.label497.Size = new System.Drawing.Size(127, 13);
+            this.label497.TabIndex = 180;
+            this.label497.Text = "Rare Blade Appear Type:";
+            // 
+            // nudCoinCount
+            // 
+            this.nudCoinCount.Location = new System.Drawing.Point(150, 117);
+            this.nudCoinCount.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudCoinCount.Name = "nudCoinCount";
+            this.nudCoinCount.Size = new System.Drawing.Size(63, 20);
+            this.nudCoinCount.TabIndex = 183;
+            this.nudCoinCount.ValueChanged += new System.EventHandler(this.nudCoinCount_ValueChanged);
+            // 
+            // label498
+            // 
+            this.label498.AutoSize = true;
+            this.label498.Location = new System.Drawing.Point(6, 119);
+            this.label498.Name = "label498";
+            this.label498.Size = new System.Drawing.Size(62, 13);
+            this.label498.TabIndex = 182;
+            this.label498.Text = "Coin Count:";
+            // 
+            // groupBox162
+            // 
+            this.groupBox162.Controls.Add(this.label506);
+            this.groupBox162.Controls.Add(this.nudAutoEventAfterLoad);
+            this.groupBox162.Controls.Add(this.chkIsClearDataSave);
+            this.groupBox162.Controls.Add(this.chkIsCollectFlagNewVersion);
+            this.groupBox162.Controls.Add(this.nudSavedEnemyHP3);
+            this.groupBox162.Controls.Add(this.label501);
+            this.groupBox162.Controls.Add(this.nudSavedEnemyHP2);
+            this.groupBox162.Controls.Add(this.chkTimeIsStopped);
+            this.groupBox162.Controls.Add(this.label500);
+            this.groupBox162.Controls.Add(this.nudSavedEnemyHP1);
+            this.groupBox162.Controls.Add(this.label499);
+            this.groupBox162.Controls.Add(this.label486);
+            this.groupBox162.Controls.Add(this.nudCoinCount);
+            this.groupBox162.Controls.Add(this.nudChapterSaveScenarioFlag);
+            this.groupBox162.Controls.Add(this.label498);
+            this.groupBox162.Controls.Add(this.label487);
+            this.groupBox162.Controls.Add(this.nudRareBladeAppearType);
+            this.groupBox162.Controls.Add(this.nudChapterSaveEventID);
+            this.groupBox162.Controls.Add(this.label497);
+            this.groupBox162.Controls.Add(this.label21);
+            this.groupBox162.Controls.Add(this.nudAssureCount);
+            this.groupBox162.Controls.Add(this.nudScenarioQuest);
+            this.groupBox162.Controls.Add(this.label496);
+            this.groupBox162.Controls.Add(this.label22);
+            this.groupBox162.Controls.Add(this.nudAssurePoint);
+            this.groupBox162.Controls.Add(this.nudCurrentQuest);
+            this.groupBox162.Controls.Add(this.label495);
+            this.groupBox162.Controls.Add(this.label489);
+            this.groupBox162.Controls.Add(this.label494);
+            this.groupBox162.Controls.Add(this.nudGameClearCount);
+            this.groupBox162.Controls.Add(this.nudMoveDistanceB);
+            this.groupBox162.Controls.Add(this.nudMoveDistance);
+            this.groupBox162.Controls.Add(this.label493);
+            this.groupBox162.Location = new System.Drawing.Point(903, 6);
+            this.groupBox162.Name = "groupBox162";
+            this.groupBox162.Size = new System.Drawing.Size(225, 377);
+            this.groupBox162.TabIndex = 184;
+            this.groupBox162.TabStop = false;
+            this.groupBox162.Text = "Other";
+            // 
+            // nudSavedEnemyHP1
+            // 
+            this.nudSavedEnemyHP1.Location = new System.Drawing.Point(150, 237);
+            this.nudSavedEnemyHP1.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudSavedEnemyHP1.Name = "nudSavedEnemyHP1";
+            this.nudSavedEnemyHP1.Size = new System.Drawing.Size(63, 20);
+            this.nudSavedEnemyHP1.TabIndex = 185;
+            this.nudSavedEnemyHP1.ValueChanged += new System.EventHandler(this.nudSavedEnemyHP1_ValueChanged);
+            // 
+            // label499
+            // 
+            this.label499.AutoSize = true;
+            this.label499.Location = new System.Drawing.Point(6, 239);
+            this.label499.Name = "label499";
+            this.label499.Size = new System.Drawing.Size(103, 13);
+            this.label499.TabIndex = 184;
+            this.label499.Text = "Saved Enemy HP 1:";
+            // 
+            // nudSavedEnemyHP2
+            // 
+            this.nudSavedEnemyHP2.Location = new System.Drawing.Point(150, 257);
+            this.nudSavedEnemyHP2.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudSavedEnemyHP2.Name = "nudSavedEnemyHP2";
+            this.nudSavedEnemyHP2.Size = new System.Drawing.Size(63, 20);
+            this.nudSavedEnemyHP2.TabIndex = 187;
+            this.nudSavedEnemyHP2.ValueChanged += new System.EventHandler(this.nudSavedEnemyHP2_ValueChanged);
+            // 
+            // label500
+            // 
+            this.label500.AutoSize = true;
+            this.label500.Location = new System.Drawing.Point(6, 259);
+            this.label500.Name = "label500";
+            this.label500.Size = new System.Drawing.Size(103, 13);
+            this.label500.TabIndex = 186;
+            this.label500.Text = "Saved Enemy HP 2:";
+            // 
+            // nudSavedEnemyHP3
+            // 
+            this.nudSavedEnemyHP3.Location = new System.Drawing.Point(150, 277);
+            this.nudSavedEnemyHP3.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudSavedEnemyHP3.Name = "nudSavedEnemyHP3";
+            this.nudSavedEnemyHP3.Size = new System.Drawing.Size(63, 20);
+            this.nudSavedEnemyHP3.TabIndex = 189;
+            this.nudSavedEnemyHP3.ValueChanged += new System.EventHandler(this.nudSavedEnemyHP3_ValueChanged);
+            // 
+            // label501
+            // 
+            this.label501.AutoSize = true;
+            this.label501.Location = new System.Drawing.Point(6, 279);
+            this.label501.Name = "label501";
+            this.label501.Size = new System.Drawing.Size(103, 13);
+            this.label501.TabIndex = 188;
+            this.label501.Text = "Saved Enemy HP 3:";
+            // 
+            // groupBox163
+            // 
+            this.groupBox163.Controls.Add(this.nudCameraSide);
+            this.groupBox163.Controls.Add(this.label507);
+            this.groupBox163.Controls.Add(this.nudCameraFreeMode);
+            this.groupBox163.Controls.Add(this.label505);
+            this.groupBox163.Controls.Add(this.nudCameraPitch);
+            this.groupBox163.Controls.Add(this.label504);
+            this.groupBox163.Controls.Add(this.nudCameraYaw);
+            this.groupBox163.Controls.Add(this.label503);
+            this.groupBox163.Controls.Add(this.nudCameraHeight);
+            this.groupBox163.Controls.Add(this.label502);
+            this.groupBox163.Controls.Add(this.nudPlayerCameraDistance);
+            this.groupBox163.Controls.Add(this.label488);
+            this.groupBox163.Location = new System.Drawing.Point(185, 272);
+            this.groupBox163.Name = "groupBox163";
+            this.groupBox163.Size = new System.Drawing.Size(261, 145);
+            this.groupBox163.TabIndex = 28;
+            this.groupBox163.TabStop = false;
+            this.groupBox163.Text = "Camera";
+            // 
+            // nudCameraHeight
+            // 
+            this.nudCameraHeight.DecimalPlaces = 7;
+            this.nudCameraHeight.Location = new System.Drawing.Point(135, 38);
+            this.nudCameraHeight.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudCameraHeight.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudCameraHeight.Name = "nudCameraHeight";
+            this.nudCameraHeight.Size = new System.Drawing.Size(120, 20);
+            this.nudCameraHeight.TabIndex = 28;
+            this.nudCameraHeight.ValueChanged += new System.EventHandler(this.nudCameraHeight_ValueChanged);
+            // 
+            // label502
+            // 
+            this.label502.AutoSize = true;
+            this.label502.Location = new System.Drawing.Point(6, 40);
+            this.label502.Name = "label502";
+            this.label502.Size = new System.Drawing.Size(80, 13);
+            this.label502.TabIndex = 29;
+            this.label502.Text = "Camera Height:";
+            // 
+            // nudCameraYaw
+            // 
+            this.nudCameraYaw.DecimalPlaces = 7;
+            this.nudCameraYaw.Location = new System.Drawing.Point(135, 58);
+            this.nudCameraYaw.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudCameraYaw.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudCameraYaw.Name = "nudCameraYaw";
+            this.nudCameraYaw.Size = new System.Drawing.Size(120, 20);
+            this.nudCameraYaw.TabIndex = 30;
+            this.nudCameraYaw.ValueChanged += new System.EventHandler(this.nudCameraYaw_ValueChanged);
+            // 
+            // label503
+            // 
+            this.label503.AutoSize = true;
+            this.label503.Location = new System.Drawing.Point(6, 60);
+            this.label503.Name = "label503";
+            this.label503.Size = new System.Drawing.Size(70, 13);
+            this.label503.TabIndex = 31;
+            this.label503.Text = "Camera Yaw:";
+            // 
+            // nudCameraPitch
+            // 
+            this.nudCameraPitch.DecimalPlaces = 7;
+            this.nudCameraPitch.Location = new System.Drawing.Point(135, 78);
+            this.nudCameraPitch.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nudCameraPitch.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.nudCameraPitch.Name = "nudCameraPitch";
+            this.nudCameraPitch.Size = new System.Drawing.Size(120, 20);
+            this.nudCameraPitch.TabIndex = 32;
+            this.nudCameraPitch.ValueChanged += new System.EventHandler(this.nudCameraPitch_ValueChanged);
+            // 
+            // label504
+            // 
+            this.label504.AutoSize = true;
+            this.label504.Location = new System.Drawing.Point(6, 80);
+            this.label504.Name = "label504";
+            this.label504.Size = new System.Drawing.Size(73, 13);
+            this.label504.TabIndex = 33;
+            this.label504.Text = "Camera Pitch:";
+            // 
+            // nudCameraFreeMode
+            // 
+            this.nudCameraFreeMode.Location = new System.Drawing.Point(135, 98);
+            this.nudCameraFreeMode.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudCameraFreeMode.Name = "nudCameraFreeMode";
+            this.nudCameraFreeMode.Size = new System.Drawing.Size(39, 20);
+            this.nudCameraFreeMode.TabIndex = 35;
+            this.nudCameraFreeMode.ValueChanged += new System.EventHandler(this.nudCameraFreeMode_ValueChanged);
+            // 
+            // label505
+            // 
+            this.label505.AutoSize = true;
+            this.label505.Location = new System.Drawing.Point(6, 100);
+            this.label505.Name = "label505";
+            this.label505.Size = new System.Drawing.Size(100, 13);
+            this.label505.TabIndex = 34;
+            this.label505.Text = "Camera Free Mode:";
+            // 
+            // groupBox164
+            // 
+            this.groupBox164.Controls.Add(this.radAegisFormeMythra);
+            this.groupBox164.Controls.Add(this.radAegisFormePyra);
+            this.groupBox164.Location = new System.Drawing.Point(811, 386);
+            this.groupBox164.Name = "groupBox164";
+            this.groupBox164.Size = new System.Drawing.Size(86, 66);
+            this.groupBox164.TabIndex = 185;
+            this.groupBox164.TabStop = false;
+            this.groupBox164.Text = "Aegis Forme";
+            // 
+            // radAegisFormePyra
+            // 
+            this.radAegisFormePyra.AutoSize = true;
+            this.radAegisFormePyra.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radAegisFormePyra.Location = new System.Drawing.Point(8, 22);
+            this.radAegisFormePyra.Name = "radAegisFormePyra";
+            this.radAegisFormePyra.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radAegisFormePyra.Size = new System.Drawing.Size(55, 17);
+            this.radAegisFormePyra.TabIndex = 0;
+            this.radAegisFormePyra.TabStop = true;
+            this.radAegisFormePyra.Text = "Pyra   ";
+            this.radAegisFormePyra.UseVisualStyleBackColor = true;
+            this.radAegisFormePyra.CheckedChanged += new System.EventHandler(this.radAegisForme_CheckChanged);
+            // 
+            // radAegisFormeMythra
+            // 
+            this.radAegisFormeMythra.AutoSize = true;
+            this.radAegisFormeMythra.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radAegisFormeMythra.Location = new System.Drawing.Point(6, 45);
+            this.radAegisFormeMythra.Name = "radAegisFormeMythra";
+            this.radAegisFormeMythra.Size = new System.Drawing.Size(57, 17);
+            this.radAegisFormeMythra.TabIndex = 1;
+            this.radAegisFormeMythra.TabStop = true;
+            this.radAegisFormeMythra.Text = "Mythra";
+            this.radAegisFormeMythra.UseVisualStyleBackColor = true;
+            this.radAegisFormeMythra.CheckedChanged += new System.EventHandler(this.radAegisForme_CheckChanged);
+            // 
+            // chkIsCollectFlagNewVersion
+            // 
+            this.chkIsCollectFlagNewVersion.AutoSize = true;
+            this.chkIsCollectFlagNewVersion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkIsCollectFlagNewVersion.Location = new System.Drawing.Point(6, 339);
+            this.chkIsCollectFlagNewVersion.Name = "chkIsCollectFlagNewVersion";
+            this.chkIsCollectFlagNewVersion.Size = new System.Drawing.Size(155, 17);
+            this.chkIsCollectFlagNewVersion.TabIndex = 190;
+            this.chkIsCollectFlagNewVersion.Text = "Is Collect Flag New Version";
+            this.chkIsCollectFlagNewVersion.UseVisualStyleBackColor = true;
+            this.chkIsCollectFlagNewVersion.CheckedChanged += new System.EventHandler(this.chkIsCollectFlagNewVersion_CheckedChanged);
+            // 
+            // chkIsClearDataSave
+            // 
+            this.chkIsClearDataSave.AutoSize = true;
+            this.chkIsClearDataSave.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkIsClearDataSave.Location = new System.Drawing.Point(6, 359);
+            this.chkIsClearDataSave.Name = "chkIsClearDataSave";
+            this.chkIsClearDataSave.Size = new System.Drawing.Size(124, 17);
+            this.chkIsClearDataSave.TabIndex = 191;
+            this.chkIsClearDataSave.Text = "Is a Clear Data Save";
+            this.chkIsClearDataSave.UseVisualStyleBackColor = true;
+            this.chkIsClearDataSave.CheckedChanged += new System.EventHandler(this.chkIsClearDataSave_CheckedChanged);
+            // 
+            // label506
+            // 
+            this.label506.AutoSize = true;
+            this.label506.Location = new System.Drawing.Point(6, 59);
+            this.label506.Name = "label506";
+            this.label506.Size = new System.Drawing.Size(115, 13);
+            this.label506.TabIndex = 192;
+            this.label506.Text = "Auto Event After Load:";
+            // 
+            // nudAutoEventAfterLoad
+            // 
+            this.nudAutoEventAfterLoad.Location = new System.Drawing.Point(150, 57);
+            this.nudAutoEventAfterLoad.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudAutoEventAfterLoad.Name = "nudAutoEventAfterLoad";
+            this.nudAutoEventAfterLoad.Size = new System.Drawing.Size(63, 20);
+            this.nudAutoEventAfterLoad.TabIndex = 193;
+            this.nudAutoEventAfterLoad.ValueChanged += new System.EventHandler(this.nudAutoEventAfterLoad_ValueChanged);
+            // 
+            // nudCameraSide
+            // 
+            this.nudCameraSide.Location = new System.Drawing.Point(135, 118);
+            this.nudCameraSide.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudCameraSide.Name = "nudCameraSide";
+            this.nudCameraSide.Size = new System.Drawing.Size(39, 20);
+            this.nudCameraSide.TabIndex = 37;
+            this.nudCameraSide.ValueChanged += new System.EventHandler(this.nudCameraSide_ValueChanged);
+            // 
+            // label507
+            // 
+            this.label507.AutoSize = true;
+            this.label507.Location = new System.Drawing.Point(6, 120);
+            this.label507.Name = "label507";
+            this.label507.Size = new System.Drawing.Size(70, 13);
+            this.label507.TabIndex = 36;
+            this.label507.Text = "Camera Side:";
+            // 
+            // groupBox165
+            // 
+            this.groupBox165.Controls.Add(this.nudContentVersion);
+            this.groupBox165.Controls.Add(this.label508);
+            this.groupBox165.Controls.Add(this.cbxContentVersions);
+            this.groupBox165.Controls.Add(this.label509);
+            this.groupBox165.Location = new System.Drawing.Point(903, 388);
+            this.groupBox165.Name = "groupBox165";
+            this.groupBox165.Size = new System.Drawing.Size(213, 70);
+            this.groupBox165.TabIndex = 171;
+            this.groupBox165.TabStop = false;
+            this.groupBox165.Text = "Content Versions";
+            // 
+            // nudContentVersion
+            // 
+            this.nudContentVersion.Location = new System.Drawing.Point(78, 43);
+            this.nudContentVersion.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudContentVersion.Name = "nudContentVersion";
+            this.nudContentVersion.Size = new System.Drawing.Size(83, 20);
+            this.nudContentVersion.TabIndex = 170;
+            this.nudContentVersion.ValueChanged += new System.EventHandler(this.nudContentVersion_ValueChanged);
+            // 
+            // label508
+            // 
+            this.label508.AutoSize = true;
+            this.label508.Location = new System.Drawing.Point(6, 45);
+            this.label508.Name = "label508";
+            this.label508.Size = new System.Drawing.Size(45, 13);
+            this.label508.TabIndex = 158;
+            this.label508.Text = "Version:";
+            // 
+            // cbxContentVersions
+            // 
+            this.cbxContentVersions.FormattingEnabled = true;
+            this.cbxContentVersions.Location = new System.Drawing.Point(78, 16);
+            this.cbxContentVersions.Name = "cbxContentVersions";
+            this.cbxContentVersions.Size = new System.Drawing.Size(129, 21);
+            this.cbxContentVersions.TabIndex = 157;
+            this.cbxContentVersions.SelectedIndexChanged += new System.EventHandler(this.cbxContentVersions_SelectedIndexChanged);
+            // 
+            // label509
+            // 
+            this.label509.AutoSize = true;
+            this.label509.Location = new System.Drawing.Point(6, 19);
+            this.label509.Name = "label509";
+            this.label509.Size = new System.Drawing.Size(71, 13);
+            this.label509.TabIndex = 156;
+            this.label509.Text = "Selected Ver:";
+            // 
+            // hbx150RawDataUnk_0x1176A0
+            // 
+            this.hbx150RawDataUnk_0x1176A0.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x1176A0.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x1176A0.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.Location = new System.Drawing.Point(3, 3);
+            this.hbx150RawDataUnk_0x1176A0.Name = "hbx150RawDataUnk_0x1176A0";
+            this.hbx150RawDataUnk_0x1176A0.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x1176A0.Size = new System.Drawing.Size(1108, 471);
+            this.hbx150RawDataUnk_0x1176A0.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x1176A0.TabIndex = 154;
+            this.hbx150RawDataUnk_0x1176A0.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x1176A0.VScrollBarVisible = true;
+            // 
+            // hbx150RawDataUnk_0x117D70
+            // 
+            this.hbx150RawDataUnk_0x117D70.ColumnInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbx150RawDataUnk_0x117D70.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbx150RawDataUnk_0x117D70.LineInfoVisible = true;
+            this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
+            this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
+            this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
+            this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
+            this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
+            this.hbx150RawDataUnk_0x117D70.VScrollBarVisible = true;
             // 
             // frmMain
             // 
@@ -20223,14 +21090,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTimeSavedDay)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tbcMain.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
-            this.tabMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChapterSaveEventID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChapterSaveScenarioFlag)).EndInit();
             this.groupBox150.ResumeLayout(false);
             this.groupBox150.PerformLayout();
             this.groupBox151.ResumeLayout(false);
             this.groupBox149.ResumeLayout(false);
             this.groupBox149.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).EndInit();
             this.groupBox148.ResumeLayout(false);
             this.groupBox148.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).EndInit();
@@ -20829,6 +21698,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapJumpID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkRotY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionZ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLastVisitedLandmarkMapPositionX)).EndInit();
@@ -20945,6 +21815,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
             this.tabEvents.ResumeLayout(false);
             this.tabEvents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).EndInit();
             this.groupBox159.ResumeLayout(false);
             this.groupBox158.ResumeLayout(false);
             this.groupBox157.ResumeLayout(false);
@@ -21021,8 +21892,41 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudScenarioQuest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentQuest)).EndInit();
+            this.groupBox160.ResumeLayout(false);
+            this.groupBox160.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCommonBladeID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPlayerCameraDistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGameClearCount)).EndInit();
+            this.groupBox161.ResumeLayout(false);
+            this.groupBox161.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuestID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuestCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMoveDistance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMoveDistanceB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAssurePoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAssureCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRareBladeAppearType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCoinCount)).EndInit();
+            this.groupBox162.ResumeLayout(false);
+            this.groupBox162.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP3)).EndInit();
+            this.groupBox163.ResumeLayout(false);
+            this.groupBox163.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraYaw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraPitch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraFreeMode)).EndInit();
+            this.groupBox164.ResumeLayout(false);
+            this.groupBox164.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAutoEventAfterLoad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCameraSide)).EndInit();
+            this.groupBox165.ResumeLayout(false);
+            this.groupBox165.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudContentVersion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -21039,15 +21943,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label lblLandmarkRotY;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label lblIsTimeStopped;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label lblChapterSaveScenarioFlag;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label lblChapterSaveEventId;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbcMain;
         private System.Windows.Forms.TabPage tabMain;
         private System.Windows.Forms.OpenFileDialog ofdSaveFile;
         private System.Windows.Forms.TabPage tabBlades;
@@ -22284,14 +23180,12 @@
         private System.Windows.Forms.Label label390;
         private System.Windows.Forms.TabControl tbc150RawData;
         private System.Windows.Forms.TabPage tab150RawDataUnk_0x1176A0;
-        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1176A0;
         private System.Windows.Forms.TabPage tab150RawDataUnk_0x117728;
         private System.Windows.Forms.TabPage tab150RawDataUnk_0x117A4C;
         private System.Windows.Forms.TabPage tab150RawDataUnk_0x117D70;
         private System.Windows.Forms.TabPage tab150RawDataUnk_0x1186DC;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117728;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117A4C;
-        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117D70;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1186DC;
         private System.Windows.Forms.TabPage tabFlags;
         private Be.Windows.Forms.HexBox hbxFlags;
@@ -22564,6 +23458,77 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nudEventsCount;
         private System.Windows.Forms.Label label484;
+        private System.Windows.Forms.Label label485;
+        private System.Windows.Forms.NumericUpDown nudLastVisitedLandmarkRotY;
+        private System.Windows.Forms.CheckBox chkTimeIsStopped;
+        private System.Windows.Forms.NumericUpDown nudChapterSaveEventID;
+        private System.Windows.Forms.Label label487;
+        private System.Windows.Forms.NumericUpDown nudChapterSaveScenarioFlag;
+        private System.Windows.Forms.Label label486;
+        private System.Windows.Forms.NumericUpDown nudCurrentQuest;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown nudScenarioQuest;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.GroupBox groupBox160;
+        private System.Windows.Forms.NumericUpDown nudCommonBladeID;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cbxCommonBladeIDs;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label488;
+        private System.Windows.Forms.NumericUpDown nudPlayerCameraDistance;
+        private System.Windows.Forms.NumericUpDown nudGameClearCount;
+        private System.Windows.Forms.Label label489;
+        private System.Windows.Forms.GroupBox groupBox161;
+        private System.Windows.Forms.NumericUpDown nudQuestID;
+        private System.Windows.Forms.Label label490;
+        private System.Windows.Forms.ComboBox cbxQuestIDs;
+        private System.Windows.Forms.Label label491;
+        private System.Windows.Forms.NumericUpDown nudQuestCount;
+        private System.Windows.Forms.Label label492;
+        private System.Windows.Forms.Label label493;
+        private System.Windows.Forms.NumericUpDown nudMoveDistance;
+        private System.Windows.Forms.Label label494;
+        private System.Windows.Forms.NumericUpDown nudMoveDistanceB;
+        private System.Windows.Forms.NumericUpDown nudAssureCount;
+        private System.Windows.Forms.Label label496;
+        private System.Windows.Forms.NumericUpDown nudAssurePoint;
+        private System.Windows.Forms.Label label495;
+        private System.Windows.Forms.NumericUpDown nudRareBladeAppearType;
+        private System.Windows.Forms.Label label497;
+        private System.Windows.Forms.GroupBox groupBox162;
+        private System.Windows.Forms.NumericUpDown nudCoinCount;
+        private System.Windows.Forms.Label label498;
+        private System.Windows.Forms.NumericUpDown nudSavedEnemyHP3;
+        private System.Windows.Forms.Label label501;
+        private System.Windows.Forms.NumericUpDown nudSavedEnemyHP2;
+        private System.Windows.Forms.Label label500;
+        private System.Windows.Forms.NumericUpDown nudSavedEnemyHP1;
+        private System.Windows.Forms.Label label499;
+        private System.Windows.Forms.GroupBox groupBox163;
+        private System.Windows.Forms.NumericUpDown nudCameraPitch;
+        private System.Windows.Forms.Label label504;
+        private System.Windows.Forms.NumericUpDown nudCameraYaw;
+        private System.Windows.Forms.Label label503;
+        private System.Windows.Forms.NumericUpDown nudCameraHeight;
+        private System.Windows.Forms.Label label502;
+        private System.Windows.Forms.NumericUpDown nudCameraFreeMode;
+        private System.Windows.Forms.Label label505;
+        private System.Windows.Forms.GroupBox groupBox164;
+        private System.Windows.Forms.RadioButton radAegisFormeMythra;
+        private System.Windows.Forms.RadioButton radAegisFormePyra;
+        private System.Windows.Forms.CheckBox chkIsClearDataSave;
+        private System.Windows.Forms.CheckBox chkIsCollectFlagNewVersion;
+        private System.Windows.Forms.Label label506;
+        private System.Windows.Forms.NumericUpDown nudAutoEventAfterLoad;
+        private System.Windows.Forms.NumericUpDown nudCameraSide;
+        private System.Windows.Forms.Label label507;
+        private System.Windows.Forms.GroupBox groupBox165;
+        private System.Windows.Forms.NumericUpDown nudContentVersion;
+        private System.Windows.Forms.Label label508;
+        private System.Windows.Forms.ComboBox cbxContentVersions;
+        private System.Windows.Forms.Label label509;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1176A0;
+        private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117D70;
     }
 }
 

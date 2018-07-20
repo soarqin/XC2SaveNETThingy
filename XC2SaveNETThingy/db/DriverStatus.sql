@@ -1,4 +1,4 @@
-﻿DROP TABLE IF EXISIS [DriverStatus];
+﻿DROP TABLE IF EXISTS [DriverStatus];
 CREATE TABLE [DriverStatus] (
   [ID] INTEGER  NOT NULL UNIQUE
 , [Desc] text NOT NULL

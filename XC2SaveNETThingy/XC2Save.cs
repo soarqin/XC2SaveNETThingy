@@ -859,7 +859,7 @@ namespace XC2SaveNETThingy
         public Vec3 LastVisitedLandmarkMapPosition { get; set; }
         public Byte[] Unk_0x00002C { get; set; }
         public float LandmarkRotY { get; set; }
-        public UInt16 isTimeStop { get; set; }
+        public bool TimeIsStopped { get; set; }
         public UInt16 ChapterSaveScenarioFlag { get; set; }
         public UInt16 ChapterSaveEventId { get; set; }
         public Byte[] Unk_0x00003A { get; set; }
@@ -904,10 +904,10 @@ namespace XC2SaveNETThingy
         public float CameraYaw { get; set; }
         public float CameraPitch { get; set; }
         public Byte CameraFreeMode { get; set; }
-        public Byte IsHikariCurrent { get; set; }
+        public bool AegisIsMythra { get; set; }
         public UInt16 AutoEventAfterLoad { get; set; }
-        public Byte IsCollectFlagNewVersion { get; set; }
-        public Byte IsEndGameSave { get; set; }
+        public bool IsCollectFlagNewVersion { get; set; }
+        public bool IsEndGameSave { get; set; }
         public Byte CameraSide { get; set; }
         public Byte Unk_0x10AE93 { get; set; }
         public Event[] Events { get; set; }
@@ -918,6 +918,9 @@ namespace XC2SaveNETThingy
 
         public const int SIZE = 0x1176A0;
         public static readonly Byte[] CORRECT_MAGIC = new Byte[] { 0x5B, 0xA1, 0x03, 0x00 };
+        public const int COMMON_BLADE_IDS_COUNT = 192;
+        public const int QUEST_ID_COUNT = 256;
+        public const int CONTENT_VERSION_COUNT = 5;
 
         public XC2Save(Byte[] data)
         {
@@ -930,7 +933,7 @@ namespace XC2SaveNETThingy
             LastVisitedLandmarkMapPosition = new Vec3(data.GetByteSubArray(LOC["MapPosition"], Vec3.SIZE));
             Unk_0x00002C = data.GetByteSubArray(LOC["sg_field_2C"], 4);
             LandmarkRotY = BitConverter.ToSingle(data.GetByteSubArray(LOC["LandmarkRotY"], 4), 0);
-            isTimeStop = BitConverter.ToUInt16(data.GetByteSubArray(LOC["isTimeStop"], 2), 0);
+            TimeIsStopped = BitConverter.ToUInt16(data.GetByteSubArray(LOC["isTimeStop"], 2), 0) == 1;
             ChapterSaveScenarioFlag = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveScenarioFlag"], 2), 0);
             ChapterSaveEventId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["ChapterSaveEventId"], 2), 0);
             Unk_0x00003A = data.GetByteSubArray(LOC["sg_field_3A"], 2);
@@ -962,7 +965,7 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < MercGroupPresets.Length; i++)
                 MercGroupPresets[i] = new MercGroupPreset(data.GetByteSubArray(LOC["MercenaryTeamPresets"] + (i * MercGroupPreset.SIZE), MercGroupPreset.SIZE));
 
-            CommonBladeIDs = new UInt16[192];
+            CommonBladeIDs = new UInt16[COMMON_BLADE_IDS_COUNT];
             for (int i = 0; i < CommonBladeIDs.Length; i++)
                 CommonBladeIDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(LOC["CommonBladeIDs"] + (i * 2), 2), 0);
 
@@ -975,7 +978,7 @@ namespace XC2SaveNETThingy
 
             AchievementTasksCount = BitConverter.ToUInt64(data.GetByteSubArray(LOC["AchievementTasksCount"], 8), 0);
 
-            QuestIDs = new UInt32[256];
+            QuestIDs = new UInt32[QUEST_ID_COUNT];
             for (int i = 0; i < QuestIDs.Length; i++)
                 QuestIDs[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["QuestIDs"] + (i * 4), 4), 0);
 
@@ -1005,10 +1008,10 @@ namespace XC2SaveNETThingy
             CameraYaw = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraYaw"], 4), 0);
             CameraPitch = BitConverter.ToSingle(data.GetByteSubArray(LOC["CameraPitch"], 4), 0);
             CameraFreeMode = data[LOC["CameraFreeMode"]];
-            IsHikariCurrent = data[LOC["IsHikariCurrent"]];
+            AegisIsMythra = data[LOC["IsHikariCurrent"]] == 1;
             AutoEventAfterLoad = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AutoEventAfterLoad"], 4), 0);
-            IsCollectFlagNewVersion = data[LOC["IsCollectFlagNewVersion"]];
-            IsEndGameSave = data[LOC["IsEndGameSave"]];
+            IsCollectFlagNewVersion = data[LOC["IsCollectFlagNewVersion"]] == 1;
+            IsEndGameSave = data[LOC["IsEndGameSave"]] == 1;
             CameraSide = data[LOC["CameraSide"]];
             Unk_0x10AE93 = data[LOC["gap_10AE93"]];
 
@@ -1019,7 +1022,7 @@ namespace XC2SaveNETThingy
             EventsCount = BitConverter.ToUInt32(data.GetByteSubArray(LOC["EventsLength"], 4), 0);
             Unk_0x1171E8 = data.GetByteSubArray(LOC["sg_gap1171E8"], 404);
 
-            ContentVersions = new UInt32[5];
+            ContentVersions = new UInt32[CONTENT_VERSION_COUNT];
             for (int i = 0; i < ContentVersions.Length; i++)
                 ContentVersions[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ContentVersions"] + (i * 4), 4), 0);
             
@@ -1039,7 +1042,7 @@ namespace XC2SaveNETThingy
             result.AddRange(LastVisitedLandmarkMapPosition.ToRawData());
             result.AddRange(Unk_0x00002C);
             result.AddRange(BitConverter.GetBytes(LandmarkRotY));
-            result.AddRange(BitConverter.GetBytes(isTimeStop));
+            result.AddRange(BitConverter.GetBytes((UInt16)(TimeIsStopped ? 1 : 0)));
             result.AddRange(BitConverter.GetBytes(ChapterSaveScenarioFlag));
             result.AddRange(BitConverter.GetBytes(ChapterSaveEventId));
             result.AddRange(Unk_0x00003A);
@@ -1107,11 +1110,10 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CameraYaw));
             result.AddRange(BitConverter.GetBytes(CameraPitch));
             result.Add(CameraFreeMode);
-            result.Add(IsHikariCurrent);
+            result.Add((Byte)(AegisIsMythra ? 1 : 0));
             result.AddRange(BitConverter.GetBytes(AutoEventAfterLoad));
-            result.Add(IsCollectFlagNewVersion);
-            result.Add(IsEndGameSave);
-
+            result.Add((Byte)(IsCollectFlagNewVersion ? 1 : 0));
+            result.Add((Byte)(IsEndGameSave ? 1 : 0));
             result.Add(CameraSide);
             result.Add(Unk_0x10AE93);
 
@@ -1252,8 +1254,7 @@ namespace XC2SaveNETThingy
                     "Ecpercted Magic Value: " + XC2Save.CORRECT_MAGIC[0].ToString("X2") + XC2Save.CORRECT_MAGIC[1].ToString("X2") + XC2Save.CORRECT_MAGIC[2].ToString("X2") + XC2Save.CORRECT_MAGIC[3].ToString("X2") + Environment.NewLine +
                     "Actual Magic Value: " + magic[0].ToString("X2") + magic[1].ToString("X2") + magic[2].ToString("X2") + magic[3].ToString("X2") + Environment.NewLine +
                     Environment.NewLine +
-                    "Data is most likely not a valid Xenoblade Chronicles 2 Save File!" + Environment.NewLine +
-                    "Data has not been loaded.";
+                    "Data is most likely not a valid Xenoblade Chronicles 2 Save File!";
                 throw new Exception(message);
             }
 
@@ -1274,8 +1275,7 @@ namespace XC2SaveNETThingy
                         String.Format("0x{0:X} for old save data.", XC2Save.SIZE) + Environment.NewLine +
                         String.Format("0x{0:X} for ver 1.5.0 save data.", XC2Save150.SIZE) + Environment.NewLine +
                         Environment.NewLine +
-                        "Actual Size: 0x" + data.Length.ToString("X") + Environment.NewLine +
-                        "Data has not been loaded.";
+                        "Actual Size: 0x" + data.Length.ToString("X");
                     throw new Exception(message);
             }
         }

@@ -45,6 +45,15 @@ namespace XC2SaveNETThingy
 
             for (int i = 0; i < XC2Save.Event.COUNT; i++)
                 cbxEvents.Items.Add("Event " + (i + 1));
+
+            for (int i = 0; i < XC2Save.COMMON_BLADE_IDS_COUNT; i++)
+                cbxCommonBladeIDs.Items.Add("Common Blade ID " + (i + 1));
+
+            for (int i = 0; i < XC2Save.QUEST_ID_COUNT; i++)
+                cbxQuestIDs.Items.Add("Quest ID " + (i + 1));
+
+            for (int i = 0; i < XC2Save.CONTENT_VERSION_COUNT; i++)
+                cbxContentVersions.Items.Add("Content Version " + (i + 1));
             #endregion Misc
 
             #region Driver
@@ -173,8 +182,8 @@ namespace XC2SaveNETThingy
                 if (SAVEDATA.GetType() == typeof(XC2Save150))
                 {
                     Console.WriteLine("Save File Type: 1.5.0+");
-                    if (!tabControl1.TabPages.Contains(tab150RawData))
-                        tabControl1.TabPages.Add(tab150RawData);
+                    if (!tbcMain.TabPages.Contains(tab150RawData))
+                        tbcMain.TabPages.Add(tab150RawData);
                     if (!tbcDrivers.TabPages.Contains(tabDriver150))
                         tbcDrivers.TabPages.Add(tabDriver150);
                     hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
@@ -187,8 +196,8 @@ namespace XC2SaveNETThingy
                 else
                 {
                     Console.WriteLine("Save File Type: Pre-1.5.0 or Unknown");
-                    if (tabControl1.TabPages.Contains(tab150RawData))
-                        tabControl1.TabPages.Remove(tab150RawData);
+                    if (tbcMain.TabPages.Contains(tab150RawData))
+                        tbcMain.TabPages.Remove(tab150RawData);
                     if (tbcDrivers.TabPages.Contains(tabDriver150))
                         tbcDrivers.TabPages.Remove(tabDriver150);
                     hbx150RawDataUnk_0x1176A0.ByteProvider = null;
@@ -235,18 +244,43 @@ namespace XC2SaveNETThingy
 
                 cbxAchievementTasks.SelectedIndex = 1;
                 cbxAchievementTasks.SelectedIndex = 0;
-
                 cbxWeatherInfo.SelectedIndex = 1;
                 cbxWeatherInfo.SelectedIndex = 0;
-
                 cbxEvents.SelectedIndex = 1;
                 cbxEvents.SelectedIndex = 0;
+                cbxCommonBladeIDs.SelectedIndex = 1;
+                cbxCommonBladeIDs.SelectedIndex = 0;
+                cbxQuestIDs.SelectedIndex = 1;
+                cbxQuestIDs.SelectedIndex = 0;
+                nudQuestCount.Value = SAVEDATA.QuestCount;
 
-                lblLandmarkRotY.Text = SAVEDATA.LandmarkRotY.ToString();
-                lblIsTimeStopped.Text = SAVEDATA.isTimeStop.ToString("X4");
-                lblChapterSaveScenarioFlag.Text = SAVEDATA.ChapterSaveScenarioFlag.ToString("X4");
-                lblChapterSaveEventId.Text = SAVEDATA.ChapterSaveEventId.ToString("X4");
+                if (SAVEDATA.AegisIsMythra)
+                    radAegisFormeMythra.Checked = SAVEDATA.AegisIsMythra;
+                else
+                    radAegisFormePyra.Checked = !SAVEDATA.AegisIsMythra;
 
+                nudAssureCount.Value = SAVEDATA.AssureCount;
+                nudAssurePoint.Value = SAVEDATA.AssurePoint;
+                nudAutoEventAfterLoad.Value = SAVEDATA.AutoEventAfterLoad;
+                nudChapterSaveEventID.Value = SAVEDATA.ChapterSaveEventId;
+                nudChapterSaveScenarioFlag.Value = SAVEDATA.ChapterSaveScenarioFlag;
+                nudCoinCount.Value = SAVEDATA.CoinCount;
+                nudCurrentQuest.Value = SAVEDATA.CurrentQuest;
+                nudGameClearCount.Value = SAVEDATA.GameClearCount;
+                nudMoveDistance.Value = (decimal)SAVEDATA.MoveDistance;
+                nudMoveDistanceB.Value = (decimal)SAVEDATA.MoveDistanceB;
+                nudRareBladeAppearType.Value = SAVEDATA.RareBladeAppearType;
+                nudSavedEnemyHP1.Value = SAVEDATA.SavedEnemyHp[0];
+                nudSavedEnemyHP2.Value = SAVEDATA.SavedEnemyHp[1];
+                nudSavedEnemyHP3.Value = SAVEDATA.SavedEnemyHp[2];
+                nudScenarioQuest.Value = SAVEDATA.ScenarioQuest;
+
+                chkTimeIsStopped.Checked = SAVEDATA.TimeIsStopped;
+                chkIsCollectFlagNewVersion.Checked = SAVEDATA.IsCollectFlagNewVersion;
+                chkIsClearDataSave.Checked = SAVEDATA.IsEndGameSave;
+
+                cbxContentVersions.SelectedIndex = 1;
+                cbxContentVersions.SelectedIndex = 0;
                 #endregion Main
 
                 #region Drivers
@@ -387,6 +421,14 @@ namespace XC2SaveNETThingy
                 nudLastVisitedLandmarkMapPositionX.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.X;
                 nudLastVisitedLandmarkMapPositionY.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Y;
                 nudLastVisitedLandmarkMapPositionZ.Value = (decimal)SAVEDATA.LastVisitedLandmarkMapPosition.Z;
+                nudLastVisitedLandmarkRotY.Value = (decimal)SAVEDATA.LandmarkRotY;
+
+                nudPlayerCameraDistance.Value = (decimal)SAVEDATA.PlayerCameraDistance;
+                nudCameraHeight.Value = (decimal)SAVEDATA.CameraHeight;
+                nudCameraYaw.Value = (decimal)SAVEDATA.CameraYaw;
+                nudCameraPitch.Value = (decimal)SAVEDATA.CameraPitch;
+                nudCameraFreeMode.Value = SAVEDATA.CameraFreeMode;
+                nudCameraSide.Value = SAVEDATA.CameraSide;
                 #endregion Map
 
                 #region Merc Groups
@@ -504,6 +546,10 @@ namespace XC2SaveNETThingy
                 hbxFlags.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Flags);
                 #endregion Flags
 
+                #region XC2Save Events
+                nudEventsCount.Value = SAVEDATA.EventsCount;
+                #endregion XC2Save Events
+
                 #region Unknown
                 hbxUnk_0x000004.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000004);
                 hbxUnk_0x000018.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x000018);
@@ -518,12 +564,18 @@ namespace XC2SaveNETThingy
                 hbxUnk_0x117390.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x117390);
                 #endregion Unknownm
 
-                tabControl1.Enabled = true;
+                tbcMain.Enabled = true;
                 Console.WriteLine("File Loaded.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string message =
+                    ex.Message + Environment.NewLine +
+                    Environment.NewLine +
+                    "Data has not been loaded.";
+
+                MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw ex;
             }
 
         }
@@ -1373,7 +1425,7 @@ namespace XC2SaveNETThingy
             Text = Application.ProductName + " ver" + Application.ProductVersion;
 
             // hide 1.5.0+ related tabs
-            tabControl1.TabPages.Remove(tab150RawData);
+            tbcMain.TabPages.Remove(tab150RawData);
             tbcDrivers.TabPages.Remove(tabDriver150);
             gbxDriverWeapons150.Enabled = false;
 
@@ -1449,6 +1501,35 @@ namespace XC2SaveNETThingy
             txtWeatherInfoName.Text = SAVEDATA.Weather[cbxWeatherInfo.SelectedIndex].Name;
             hbxWeatherInfoUnk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Weather[cbxWeatherInfo.SelectedIndex].Unk_0x04);
         }
+        
+        private void cbxCommonBladeIDs_SelectedIndexChanged(object sender, EventArgs e) => nudCommonBladeID.Value = SAVEDATA.CommonBladeIDs[cbxCommonBladeIDs.SelectedIndex];
+        private void nudCommonBladeID_ValueChanged(object sender, EventArgs e) => SAVEDATA.CommonBladeIDs[cbxCommonBladeIDs.SelectedIndex] = (UInt16)nudCommonBladeID.Value;
+        private void cbxQuestIDs_SelectedIndexChanged(object sender, EventArgs e) => nudQuestID.Value = SAVEDATA.QuestIDs[cbxQuestIDs.SelectedIndex];
+        private void nudQuestID_ValueChanged(object sender, EventArgs e) => SAVEDATA.QuestIDs[cbxQuestIDs.SelectedIndex] = (UInt32)nudQuestID.Value;
+        private void nudQuestCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.QuestCount = (UInt32)nudQuestCount.Value;
+        private void radAegisForme_CheckChanged(object sender, EventArgs e) => SAVEDATA.AegisIsMythra = radAegisFormeMythra.Checked;
+
+        private void nudAssureCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.AssureCount = (UInt32)nudAssureCount.Value;
+        private void nudAssurePoint_ValueChanged(object sender, EventArgs e) => SAVEDATA.AssurePoint = (UInt32)nudAssurePoint.Value;
+        private void nudAutoEventAfterLoad_ValueChanged(object sender, EventArgs e) => SAVEDATA.AutoEventAfterLoad = (UInt16)nudAutoEventAfterLoad.Value;
+        private void nudChapterSaveEventID_ValueChanged(object sender, EventArgs e) => SAVEDATA.ChapterSaveEventId = (UInt16)nudChapterSaveEventID.Value;
+        private void nudChapterSaveScenarioFlag_ValueChanged(object sender, EventArgs e) => SAVEDATA.ChapterSaveScenarioFlag = (UInt16)nudChapterSaveScenarioFlag.Value;
+        private void nudCoinCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.CoinCount = (UInt32)nudCoinCount.Value;
+        private void nudCurrentQuest_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentQuest = (UInt32)nudCurrentQuest.Value;
+        private void nudGameClearCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.GameClearCount = (UInt32)nudGameClearCount.Value;
+        private void nudMoveDistance_ValueChanged(object sender, EventArgs e) => SAVEDATA.MoveDistance = (float)nudMoveDistance.Value;
+        private void nudMoveDistanceB_ValueChanged(object sender, EventArgs e) => SAVEDATA.MoveDistanceB = (float)nudMoveDistanceB.Value;
+        private void nudRareBladeAppearType_ValueChanged(object sender, EventArgs e) => SAVEDATA.RareBladeAppearType = (UInt16)nudRareBladeAppearType.Value;
+        private void nudSavedEnemyHP1_ValueChanged(object sender, EventArgs e) => SAVEDATA.SavedEnemyHp[0] = (UInt32)nudSavedEnemyHP1.Value;
+        private void nudSavedEnemyHP2_ValueChanged(object sender, EventArgs e) => SAVEDATA.SavedEnemyHp[1] = (UInt32)nudSavedEnemyHP2.Value;
+        private void nudSavedEnemyHP3_ValueChanged(object sender, EventArgs e) => SAVEDATA.SavedEnemyHp[2] = (UInt32)nudSavedEnemyHP3.Value;
+        private void nudScenarioQuest_ValueChanged(object sender, EventArgs e) => SAVEDATA.ScenarioQuest = (UInt32)nudScenarioQuest.Value;
+        private void chkTimeIsStopped_CheckedChanged(object sender, EventArgs e) => SAVEDATA.TimeIsStopped = chkTimeIsStopped.Checked;
+        private void chkIsCollectFlagNewVersion_CheckedChanged(object sender, EventArgs e) => SAVEDATA.IsCollectFlagNewVersion = chkIsCollectFlagNewVersion.Checked;
+        private void chkIsClearDataSave_CheckedChanged(object sender, EventArgs e) => SAVEDATA.IsEndGameSave = chkIsClearDataSave.Checked;
+
+        private void cbxContentVersions_SelectedIndexChanged(object sender, EventArgs e) => nudContentVersion.Value = SAVEDATA.ContentVersions[cbxContentVersions.SelectedIndex];
+        private void nudContentVersion_ValueChanged(object sender, EventArgs e) => SAVEDATA.ContentVersions[cbxContentVersions.SelectedIndex] = (UInt32)nudContentVersion.Value;
         #endregion Misc
 
         #region Driver
@@ -3455,9 +3536,14 @@ namespace XC2SaveNETThingy
         private void nudMapPositionX_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.X = (float)nudLastVisitedLandmarkMapPositionX.Value;
         private void nudMapPositionY_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.Y = (float)nudLastVisitedLandmarkMapPositionY.Value;
         private void nudMapPositionZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.Z = (float)nudLastVisitedLandmarkMapPositionZ.Value;
+        private void nudLastVisitedLandmarkRotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.LandmarkRotY = (float)nudLastVisitedLandmarkRotY.Value;
 
-
-
+        private void nudPlayerCameraDistance_ValueChanged(object sender, EventArgs e) => SAVEDATA.PlayerCameraDistance = (float)nudPlayerCameraDistance.Value;
+        private void nudCameraHeight_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraHeight = (float)nudCameraHeight.Value;
+        private void nudCameraYaw_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraYaw = (float)nudCameraYaw.Value;
+        private void nudCameraPitch_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraPitch = (float)nudCameraPitch.Value;
+        private void nudCameraFreeMode_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraFreeMode = (Byte)nudCameraFreeMode.Value;
+        private void nudCameraSide_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraSide = (Byte)nudCameraSide.Value;
         #endregion Map
 
         #region Merc Groups
@@ -3694,8 +3780,12 @@ namespace XC2SaveNETThingy
         private void nudEventBladeID8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[7] = (UInt16)nudEventBladeID8.Value;
         private void nudEventBladeID9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[8] = (UInt16)nudEventBladeID9.Value;
         private void nudEventBladeID10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[9] = (UInt16)nudEventBladeID10.Value;
+
+
+
         #endregion XC2Save Events
 
         #endregion Events
     }
 }
+
