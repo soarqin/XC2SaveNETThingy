@@ -50,6 +50,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblAbout
@@ -92,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 136);
+            this.label3.Location = new System.Drawing.Point(9, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 4;
@@ -101,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 82);
+            this.label4.Location = new System.Drawing.Point(9, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(203, 13);
             this.label4.TabIndex = 5;
@@ -110,7 +111,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(146, 95);
+            this.linkLabel2.Location = new System.Drawing.Point(143, 110);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(271, 13);
             this.linkLabel2.TabIndex = 6;
@@ -120,7 +121,7 @@
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(146, 108);
+            this.linkLabel3.Location = new System.Drawing.Point(143, 123);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(209, 13);
             this.linkLabel3.TabIndex = 7;
@@ -130,7 +131,7 @@
             // linkLabel4
             // 
             this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(12, 171);
+            this.linkLabel4.Location = new System.Drawing.Point(9, 186);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(328, 13);
             this.linkLabel4.TabIndex = 8;
@@ -140,7 +141,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 158);
+            this.label5.Location = new System.Drawing.Point(9, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 9;
@@ -149,7 +150,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 199);
+            this.label6.Location = new System.Drawing.Point(9, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 13);
             this.label6.TabIndex = 10;
@@ -158,7 +159,7 @@
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(12, 225);
+            this.linkLabel5.Location = new System.Drawing.Point(9, 240);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(203, 13);
             this.linkLabel5.TabIndex = 11;
@@ -168,7 +169,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 212);
+            this.label7.Location = new System.Drawing.Point(9, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(156, 13);
             this.label7.TabIndex = 12;
@@ -177,7 +178,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 258);
+            this.label8.Location = new System.Drawing.Point(9, 273);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(209, 13);
             this.label8.TabIndex = 13;
@@ -186,7 +187,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 271);
+            this.label9.Location = new System.Drawing.Point(9, 286);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(247, 13);
             this.label9.TabIndex = 14;
@@ -195,7 +196,7 @@
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(12, 284);
+            this.linkLabel6.Location = new System.Drawing.Point(9, 299);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(321, 13);
             this.linkLabel6.TabIndex = 15;
@@ -205,7 +206,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 95);
+            this.label10.Location = new System.Drawing.Point(9, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 13);
             this.label10.TabIndex = 16;
@@ -214,7 +215,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 108);
+            this.label11.Location = new System.Drawing.Point(9, 123);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 13);
             this.label11.TabIndex = 17;
@@ -222,7 +223,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(171, 316);
+            this.btnOK.Location = new System.Drawing.Point(168, 331);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 18;
@@ -248,11 +249,23 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Forum Thread:";
             // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(97, 61);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(294, 26);
+            this.linkLabel7.TabIndex = 21;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "https://gbatemp.net/threads/xc2savenetthingy-a-xenoblade-\r\nchronicles-2-save-edit" +
+    "or.512217/";
+            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 351);
+            this.ClientSize = new System.Drawing.Size(422, 366);
+            this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnOK);
@@ -309,5 +322,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel linkLabel7;
     }
 }

@@ -8,7 +8,8 @@ This includes changing data to values that could not normally be obtained via re
 
 ## Links:
 Gitlab Repo - [https://gitlab.com/damysteryman/XC2SaveNETThingy]
-Forum Thread - []
+
+Forum Thread - [https://gbatemp.net/threads/xc2savenetthingy-a-xenoblade-chronicles-2-save-editor.512217/]
 
 ## How to use:
 
