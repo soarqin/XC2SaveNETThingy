@@ -39,9 +39,9 @@ Finally, load up the game and your save, and enjoy your changes/see your data al
 
 ## NOTES:
 1. The game can behave strangely in reaction to certain changes that are not normally possible in regular gameplay. The game could do a few different things in such a situation:
-- The game may be perfectly happy with your changes and run fine, changes and all
-- The game may refuse your changes and reset them back to what they were supposed to be, as if your edit was never done.
-- The game may try to run with your changes, only to not be programmed to handle your alterations and crash instead.
+	* The game may be perfectly happy with your changes and run fine, changes and all
+	* The game may refuse your changes and reset them back to what they were supposed to be, as if your edit was never done.
+	* The game may try to run with your changes, only to not be programmed to handle your alterations and crash instead.
 
 2. There has been limited testing done on the results of save editing on the game's side of things. While some testing has been done to ensure that the editor does in fact modify the correct part of the save for each field in the app, since there are no "safety gloves" or "hand holding" regarding what data values are allowed or not, the alterations that this app can make have not necessarily been tested in-game, and thus, it is not yet known exactly how the game will react to modifying every single field that is editable, especially if modified to values that cannot be obtained via normal gameplay. If you wish to experiment with this sort of stuff, then by all means do so, and please report your findings if you like. But please do make sure to backup your save file beforehand if you care about it!
 
