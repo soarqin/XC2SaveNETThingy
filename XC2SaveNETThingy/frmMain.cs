@@ -25,7 +25,22 @@ namespace XC2SaveNETThingy
         #endregion Globals
 
         #region Constructor
-        public frmMain() => InitializeComponent();
+        public frmMain()
+        {
+            if (!(File.Exists(@"db\XC2Data.db")))
+            {
+                string message =
+                    "ERROR: XC2Data.db not found!" + Environment.NewLine +
+                    "Please ensure that XC2Data.db exists in this program's \"db\" subfolder!" + Environment.NewLine +
+                    Environment.NewLine +
+                    "Program will now exit.";
+
+                MessageBox.Show(message, "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(1);
+            }
+
+            InitializeComponent();
+        }
         #endregion Constructor
 
         #region Methods
@@ -172,7 +187,7 @@ namespace XC2SaveNETThingy
             cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers());
             #endregion Party
         }
-        private void LoadSaveFile(string path)
+        private void LoadSaveData(string path)
         {
             try
             {
@@ -565,6 +580,8 @@ namespace XC2SaveNETThingy
                 #endregion Unknownm
 
                 tbcMain.Enabled = true;
+                saveFileToolStripMenuItem.Enabled = true;
+                btnSave.Enabled = true;
                 Console.WriteLine("File Loaded.");
             }
             catch (Exception ex)
@@ -578,6 +595,31 @@ namespace XC2SaveNETThingy
                 //throw ex;
             }
 
+        }
+        private void LoadFile()
+        {
+            DialogResult = ofdSaveFile.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+                LoadSaveData(ofdSaveFile.FileName);
+        }
+        private void SaveFile()
+        {
+            DialogResult result = sfdSaveFile.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Byte[] aaaa = SAVEDATA.ToRawData();
+
+                try
+                {
+                    File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //throw ex;
+                }
+            }
         }
         #endregion Main
 
@@ -1422,7 +1464,7 @@ namespace XC2SaveNETThingy
         #region Main
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Text = Application.ProductName + " ver" + Application.ProductVersion;
+            Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
 
             // hide 1.5.0+ related tabs
             tbcMain.TabPages.Remove(tab150RawData);
@@ -1431,31 +1473,20 @@ namespace XC2SaveNETThingy
 
             SetupComboBoxes();
         }
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult = ofdSaveFile.ShowDialog();
-            if (DialogResult == DialogResult.OK)
-                LoadSaveFile(ofdSaveFile.FileName);
+            frmAbout frmAbout = new frmAbout();
+            frmAbout.ShowDialog();
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void fAQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = sfdSaveFile.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                Byte[] aaaa = SAVEDATA.ToRawData();
-
-                try
-                {
-                    File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //throw ex;
-                }
-            }
+            frmFAQ frmFAQ = new frmFAQ();
+            frmFAQ.ShowDialog();
         }
+        private void loadSaveFileToolStripMenuItem_Click(object sender, EventArgs e) => LoadFile();
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e) => SaveFile();
+        private void btnLoad_Click(object sender, EventArgs e) => LoadFile();
+        private void btnSave_Click(object sender, EventArgs e) => SaveFile();
         #endregion Main
 
         #region Misc
@@ -2138,7 +2169,7 @@ namespace XC2SaveNETThingy
         private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e) => LoadBlade(lbxBlades.SelectedIndex);
         #endregion BladeMain
 
-        #region BladeMisc
+        #region Blade Misc
         private void chkBladeIsEnabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].IsEnabled = chkBladeIsEnabled.Checked;
         private void nudBladeID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ID = (UInt16)nudBladeID.Value;
         private void nudBladeCreator_ValueChanged(object sender, EventArgs e)
@@ -2201,7 +2232,7 @@ namespace XC2SaveNETThingy
         private void nudBladeTrustPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].TrustPoints = (UInt32)nudBladeTrustPoints.Value;
         private void nudBladeKeyReleaseLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyReleaseLevel = (UInt16)nudBladeKeyReleaseLevel.Value;
         private void chkBladeReleaseLock_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ReleaseLock = chkBladeReleaseLock.Checked;
-        #endregion BladeMisc
+        #endregion Blade Misc
 
         #region Blade Stats
         private void nudBladePhysDef_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].PhysDef = (Byte)nudBladePhysDef.Value;
@@ -2269,7 +2300,7 @@ namespace XC2SaveNETThingy
         private void nudBladeAuxCore3Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AuxCoreItemHandles[2].Serial = (UInt32)nudBladeAuxCore3Serial.Value;
         #endregion Blade Aux Cores
 
-        #region BladePoppiswap
+        #region Blade Poppiswap
 
         #region Energy Converter
         private void nudBladePoppiswapEnergyConverterLevel_ValueChanged(object sender, EventArgs e)
@@ -2526,9 +2557,9 @@ namespace XC2SaveNETThingy
         private void chkBladePoppiswapSkillUpgrade3Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill2_Enabled = chkBladePoppiswapSkillUpgrade3Enabled.Checked;
         #endregion Skill Upgrade
 
-        #endregion BladePoppiswap
+        #endregion Blade Poppiswap
 
-        #region BladeFavPouchStuff
+        #region Blade Fav Pouch Stuff
         private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory0Unlocked.Checked;
         private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem0Unlocked.Checked;
         private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
@@ -2559,9 +2590,9 @@ namespace XC2SaveNETThingy
         }
         private void cbxBladeFavoriteCategory0_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFavoriteCategory0.Value = Convert.ToUInt16(cbxBladeFavoriteCategory0.SelectedValue);
         private void cbxBladeFavoriteCategory1_SelectedIndexChanged(object sender, EventArgs e) => nudBladeFavoriteCategory1.Value = Convert.ToUInt16(cbxBladeFavoriteCategory1.SelectedValue);
-        #endregion BladeFavPouchStuff
+        #endregion Blade Fav Pouch Stuff
 
-        #region BladeSpecials
+        #region Blade Specials
         private void nudBladeBArt1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].ID = (UInt16)nudBladeBArt1ID.Value;
@@ -2591,9 +2622,9 @@ namespace XC2SaveNETThingy
         private void nudBladeBArt3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].MaxLevel = (Byte)nudBladeBArt3MaxLevel.Value;
         private void nudBladeBArt3RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].RecastRev = (UInt16)nudBladeBArt3RecastRev.Value;
         private void cbxBladeBArt3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBArt3ID.Value = Convert.ToUInt16(cbxBladeBArt3ID.SelectedValue);
-        #endregion BladeSpecials
+        #endregion Blade Specials
 
-        #region BladeArts
+        #region Blade Arts
         private void nudBladeNArt1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].ID = (UInt16)nudBladeNArt1ID.Value;
@@ -2623,9 +2654,9 @@ namespace XC2SaveNETThingy
         private void nudBladeNArt3MaxLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].MaxLevel = (Byte)nudBladeNArt3MaxLevel.Value;
         private void nudBladeNArt3RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].RecastRev = (UInt16)nudBladeNArt3RecastRev.Value;
         private void cbxBladeNArt3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeNArt3ID.Value = Convert.ToUInt16(cbxBladeNArt3ID.SelectedValue);
-        #endregion BladeArts
+        #endregion Blade Arts
 
-        #region BladeBattleSkills
+        #region Blade Battle Skills
         private void nudBladeBattleSkill1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[0].ID = (UInt16)nudBladeBattleSkill1ID.Value;
@@ -2658,9 +2689,9 @@ namespace XC2SaveNETThingy
         private void nudBladeBattleSkill3Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].Unk_0x02 = (Byte)nudBladeBattleSkill3Unk_0x02.Value;
         private void nudBladeBattleSkill3Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].BattleSkills[2].Unk_0x05 = (Byte)nudBladeBattleSkill3Unk_0x05.Value;
         private void cbxBladeBattleSkill3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeBattleSkill3ID.Value = Convert.ToUInt16(cbxBladeBattleSkill3ID.SelectedValue);
-        #endregion BladeBattleSkills
+        #endregion Blade Battle Skills
 
-        #region BladeFieldSkills
+        #region Blade Field Skills
         private void nudBladeFieldSkill1ID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[0].ID = (UInt16)nudBladeFieldSkill1ID.Value;
@@ -2693,18 +2724,18 @@ namespace XC2SaveNETThingy
         private void nudBladeFieldSkill3Unk_0x02_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].Unk_0x02 = (Byte)nudBladeFieldSkill3Unk_0x02.Value;
         private void nudBladeFieldSkill3Unk_0x05_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FieldSkills[2].Unk_0x05 = (Byte)nudBladeFieldSkill3Unk_0x05.Value;
         private void cbxBladeFieldSkill3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFieldSkill3ID.Value = Convert.ToUInt16(cbxBladeFieldSkill3ID.SelectedValue);
-        #endregion BladeFieldSkills
+        #endregion Blade Field Skills
 
-        #region BladeTrust
+        #region Blade Trust
         private void nudBladeTrustRank_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].TrustRank = (UInt32)nudBladeTrustRank.Value;
             cbxBladeTrustRank.SelectedValue = (UInt32)nudBladeTrustRank.Value;
         }
         private void cbxBladeTrustRank_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeTrustRank.Value = Convert.ToUInt32(cbxBladeTrustRank.SelectedValue);
-        #endregion BladeTrust
+        #endregion Blade Trust
 
-        #region BladeAffinityChart
+        #region Blade Affinity Chart
         private void nudBladeKeyAffinityRewardID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.ID = (UInt16)nudBladeKeyAffinityRewardID.Value;
         private void nudBladeKeyAffinityRewardAlignment_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.Alignment = (UInt16)nudBladeKeyAffinityRewardAlignment.Value;
 
@@ -3310,9 +3341,9 @@ namespace XC2SaveNETThingy
         private void btnBladeAff_10_3_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 3));
         private void btnBladeAff_10_4_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 4));
         private void btnBladeAff_10_5_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 5));
-        #endregion BladeAffinityCHart
+        #endregion Blade Affinity Chart
 
-        #region BladeResourceData
+        #region Blade Resource Data
         private void txtBladeModelResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].ModelResourceName.Str = txtBladeModelResourceName.Text;
         private void txtBladeModel2Name_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Model2Name.Str = txtBladeModel2Name.Text;
         private void txtBladeMotionResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].MotionResourceName.Str = txtBladeMotionResourceName.Text;
@@ -3325,7 +3356,7 @@ namespace XC2SaveNETThingy
         private void txtBladeCenterBone_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CenterBone.Str = txtBladeCenterBone.Text;
         private void txtBladeCamBone_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].CamBone.Str = txtBladeCamBone.Text;
         private void txtBladeSeResourceName_TextChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].SeResourceName.Str = txtBladeSeResourceName.Text;
-        #endregion BladeResourceData
+        #endregion Blade Resource Data
 
         #region Blade Other
         private void nudBladeAffinityChartStatus_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].AffinityChartStatus = (Byte)nudBladeAffinityChartStatus.Value;
@@ -3359,9 +3390,9 @@ namespace XC2SaveNETThingy
         private void nudBladeInternalNameLength_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].NameLength = (UInt32)nudBladeInternalNameLength.Value;
         #endregion Blade Other
 
-        #region BladeUnknown
+        #region Blade Unknown
         private void nudBladeUnk_0x0827_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827 = (Byte)nudBladeUnk_0x0827.Value;
-        #endregion BladeUnknown
+        #endregion Blade Unknown
 
         #endregion Blades
 
@@ -3442,8 +3473,6 @@ namespace XC2SaveNETThingy
         private void nudItemsSerial17_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[16] = (UInt32)nudItemsSerial17.Value;
         private void nudItemsSerial18_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[17] = (UInt32)nudItemsSerial18.Value;
         private void nudItemsSerial19_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[18] = (UInt32)nudItemsSerial19.Value;
-
-
         #endregion Items
 
         #region Party
@@ -3780,9 +3809,6 @@ namespace XC2SaveNETThingy
         private void nudEventBladeID8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[7] = (UInt16)nudEventBladeID8.Value;
         private void nudEventBladeID9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[8] = (UInt16)nudEventBladeID9.Value;
         private void nudEventBladeID10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[9] = (UInt16)nudEventBladeID10.Value;
-
-
-
         #endregion XC2Save Events
 
         #endregion Events

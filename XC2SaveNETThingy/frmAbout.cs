@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace XC2SaveNETThingy
+{
+    public partial class frmAbout : Form
+    {
+        public frmAbout() => InitializeComponent();
+        private void frmAbout_Load(object sender, EventArgs e) => lblAbout.Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
+        private void btnOK_Click(object sender, EventArgs e) => Close();
+    }
+}
