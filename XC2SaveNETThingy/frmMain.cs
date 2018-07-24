@@ -453,27 +453,27 @@ namespace XC2SaveNETThingy
                 #region Merc Group 1
                 nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
                 cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
+                cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
 
                 nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
                 cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
+                cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
 
                 nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
                 cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
+                cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
 
                 nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
                 cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
+                cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
 
                 nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
                 cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
+                cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
 
                 nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
                 cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
+                cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
 
                 nudMercGroup1TeamID.Value = SAVEDATA.MercGroup1.TeamID;
                 nudMercGroup1MissionID.Value = SAVEDATA.MercGroup1.MissionID;
@@ -487,27 +487,27 @@ namespace XC2SaveNETThingy
                 #region Merc Group 2
                 nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
                 cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
+                cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
 
                 nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
                 cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
+                cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
 
                 nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
                 cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
+                cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
 
                 nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
                 cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
+                cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
 
                 nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
                 cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
+                cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
 
                 nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
                 cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
+                cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
 
                 nudMercGroup2TeamID.Value = SAVEDATA.MercGroup2.TeamID;
                 nudMercGroup2MissionID.Value = SAVEDATA.MercGroup2.MissionID;
@@ -521,27 +521,27 @@ namespace XC2SaveNETThingy
                 #region Merc Group 3
                 nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
                 cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
+                cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
 
                 nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
                 cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
+                cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
 
                 nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
                 cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
+                cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
 
                 nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
                 cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
+                cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
 
                 nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
                 cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
+                cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
 
                 nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
                 cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
-                cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.First(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
+                cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
 
                 nudMercGroup3TeamID.Value = SAVEDATA.MercGroup3.TeamID;
                 nudMercGroup3MissionID.Value = SAVEDATA.MercGroup3.MissionID;
@@ -590,6 +590,7 @@ namespace XC2SaveNETThingy
                     ex.Message + Environment.NewLine +
                     Environment.NewLine +
                     "Data has not been loaded.";
+                Console.WriteLine(ex.InnerException.StackTrace);
 
                 MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;

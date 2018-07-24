@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,12 @@ namespace XC2SaveNETThingy
         public frmAbout() => InitializeComponent();
         private void frmAbout_Load(object sender, EventArgs e) => lblAbout.Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
         private void btnOK_Click(object sender, EventArgs e) => Close();
+        private void linkLabel_Click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel ll = (LinkLabel)sender;
+
+            ll.LinkVisited = true;
+            Process.Start(ll.Text);
+        }
     }
 }

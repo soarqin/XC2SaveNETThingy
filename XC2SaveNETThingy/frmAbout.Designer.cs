@@ -89,6 +89,7 @@
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://gitlab.com/damysteryman/XC2SaveNETThingy";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // label3
             // 
@@ -117,6 +118,7 @@
             this.linkLabel2.TabIndex = 6;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "https://github.com/x43x61x69/Xenoblade2-Save-Editor";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // linkLabel3
             // 
@@ -127,6 +129,7 @@
             this.linkLabel3.TabIndex = 7;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "https://xenoblade.github.io/xb2/index.html";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // linkLabel4
             // 
@@ -137,6 +140,7 @@
             this.linkLabel4.TabIndex = 8;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // label5
             // 
@@ -165,6 +169,7 @@
             this.linkLabel5.TabIndex = 11;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "https://sourceforge.net/projects/hexbox/";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // label7
             // 
@@ -191,7 +196,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(247, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Copyright © 2006 Régis Brid, Microsoft Corporation";
+            this.label9.Text = "Copyright © 2005 Régis Brid, Microsoft Corporation";
             // 
             // linkLabel6
             // 
@@ -202,6 +207,7 @@
             this.linkLabel6.TabIndex = 15;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "https://msdn.microsoft.com/en-us/library/aa730881(v=vs.80).aspx";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // label10
             // 
@@ -259,6 +265,7 @@
             this.linkLabel7.TabStop = true;
             this.linkLabel7.Text = "https://gbatemp.net/threads/xc2savenetthingy-a-xenoblade-\r\nchronicles-2-save-edit" +
     "or.512217/";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
             // frmAbout
             // 
