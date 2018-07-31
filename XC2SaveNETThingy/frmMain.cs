@@ -609,7 +609,7 @@ namespace XC2SaveNETThingy
 
             if (result == DialogResult.OK)
             {
-                Byte[] aaaa = SAVEDATA.ToRawData();
+                //Byte[] aaaa = SAVEDATA.ToRawData();
 
                 try
                 {
@@ -701,7 +701,7 @@ namespace XC2SaveNETThingy
             #endregion Driver Equipped Blades
 
             #region Driver Arts
-            cbxDriverWeapons.SelectedIndex = 0;
+            cbxDriverWeapons.SelectedValue = 0;
             nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
             nudDriverArtID.Value = 0;
             #endregion Driver Arts
@@ -1425,6 +1425,37 @@ namespace XC2SaveNETThingy
             else
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
+
+        private void LoadBladeAffinityChart()
+        {
+            DialogResult = ofdBladeAffChart.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].ImportAffinityChart(File.ReadAllBytes(ofdBladeAffChart.FileName));
+                LoadBlade(lbxBlades.SelectedIndex);
+            }
+        }
+
+        private void SaveBladeAffinityChart()
+        {
+            Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
+            sfdBladeAffChart.FileName = b.ToString().Replace(":", " -");
+
+            DialogResult result = sfdBladeAffChart.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    File.WriteAllBytes(sfdBladeAffChart.FileName, b.ExportAffinityChart());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //throw ex;
+                }
+            }
+        }
         #endregion Blades
 
         #region Items
@@ -1657,9 +1688,9 @@ namespace XC2SaveNETThingy
             nudDriverWeaponArtId2.Value = w.ArtIds[1];
             nudDriverWeaponArtId3.Value = w.ArtIds[2];
 
-            cbxDriverWeaponArtId1.SelectedIndex = cbxDriverWeaponArtId1.SanitizeCbxIndex((int)w.ArtIds[0]);
-            cbxDriverWeaponArtId2.SelectedIndex = cbxDriverWeaponArtId1.SanitizeCbxIndex((int)w.ArtIds[1]);
-            cbxDriverWeaponArtId3.SelectedIndex = cbxDriverWeaponArtId1.SanitizeCbxIndex((int)w.ArtIds[2]);
+            cbxDriverWeaponArt150Id1.SelectedValue = Convert.ToUInt32(w.ArtIds[0]);
+            cbxDriverWeaponArt150Id2.SelectedValue = Convert.ToUInt32(w.ArtIds[1]);
+            cbxDriverWeaponArt150Id3.SelectedValue = Convert.ToUInt32(w.ArtIds[2]);
 
             nudDriverWeaponPoints.Value = w.WeaponPoints;
             nudDriverTotalWeaponPoints.Value = w.TotalWeaponPoints;
@@ -1667,23 +1698,23 @@ namespace XC2SaveNETThingy
         private void nudDriverWeaponArtId1_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].ArtIds[0] = (UInt32)nudDriverWeaponArtId1.Value;
-            cbxDriverWeaponArtId1.SelectedIndex = cbxDriverWeaponArtId1.SanitizeCbxIndex((int)nudDriverWeaponArtId1.Value);
+            cbxDriverWeaponArtId1.SelectedValue = (UInt32)nudDriverWeaponArtId1.Value;
         }
         private void nudDriverWeaponArtId2_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].ArtIds[1] = (UInt32)nudDriverWeaponArtId2.Value;
-            cbxDriverWeaponArtId2.SelectedIndex = cbxDriverWeaponArtId2.SanitizeCbxIndex((int)nudDriverWeaponArtId2.Value);
+            cbxDriverWeaponArtId2.SelectedValue = (UInt32)nudDriverWeaponArtId2.Value;
         }
         private void nudDriverWeaponArtId3_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].ArtIds[2] = (UInt32)nudDriverWeaponArtId3.Value;
-            cbxDriverWeaponArtId3.SelectedIndex = cbxDriverWeaponArtId3.SanitizeCbxIndex((int)nudDriverWeaponArtId3.Value);
+            cbxDriverWeaponArtId3.SelectedValue = (UInt32)nudDriverWeaponArtId3.Value;
         }
         private void nudDriverWeaponPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].WeaponPoints = (UInt32)nudDriverWeaponPoints.Value;
         private void nudDriverTotalWeaponPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints.Value;
-        private void cbxDriverWeaponArtId1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId1.Value = cbxDriverWeaponArtId1.SelectedIndex.SanitizeUInt16();
-        private void cbxDriverWeaponArtId2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId2.Value = cbxDriverWeaponArtId2.SelectedIndex.SanitizeUInt16();
-        private void cbxDriverWeaponArtId3_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId3.Value = cbxDriverWeaponArtId3.SelectedIndex.SanitizeUInt16();
+        private void cbxDriverWeaponArtId1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId1.Value = Convert.ToUInt32(cbxDriverWeaponArtId1.SelectedValue);
+        private void cbxDriverWeaponArtId2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId2.Value = Convert.ToUInt32(cbxDriverWeaponArtId2.SelectedValue);
+        private void cbxDriverWeaponArtId3_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArtId3.Value = Convert.ToUInt32(cbxDriverWeaponArtId3.SelectedValue);
         #endregion Driver Arts
 
         #region Driver Arts Levels
@@ -2166,9 +2197,9 @@ namespace XC2SaveNETThingy
 
         #region Blades
 
-        #region BladeMain
+        #region Blade Main
         private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e) => LoadBlade(lbxBlades.SelectedIndex);
-        #endregion BladeMain
+        #endregion Blade Main
 
         #region Blade Misc
         private void chkBladeIsEnabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].IsEnabled = chkBladeIsEnabled.Checked;
@@ -3342,6 +3373,9 @@ namespace XC2SaveNETThingy
         private void btnBladeAff_10_3_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 3));
         private void btnBladeAff_10_4_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 4));
         private void btnBladeAff_10_5_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 5));
+
+        private void btnBladeAffChartImport_Click(object sender, EventArgs e) => LoadBladeAffinityChart();
+        private void btnBladeAffChartExport_Click(object sender, EventArgs e) => SaveBladeAffinityChart();
         #endregion Blade Affinity Chart
 
         #region Blade Resource Data
@@ -3810,6 +3844,7 @@ namespace XC2SaveNETThingy
         private void nudEventBladeID8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[7] = (UInt16)nudEventBladeID8.Value;
         private void nudEventBladeID9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[8] = (UInt16)nudEventBladeID9.Value;
         private void nudEventBladeID10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[9] = (UInt16)nudEventBladeID10.Value;
+
         #endregion XC2Save Events
 
         #endregion Events

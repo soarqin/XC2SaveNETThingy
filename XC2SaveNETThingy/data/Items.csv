@@ -652,6 +652,52 @@ ID;Name;ItemTypeID
 650;Buster-Mode Tora [Legendary];2
 651;Dress Uniform Mòrag [Legendary];2
 652;Embercake Zeke [Legendary];2
+642;装備品 [Common];2
+643;装備品 [Rare];2
+644;装備品 [Legendary];2
+645;装備品 [Common];2
+646;装備品 [Rare];2
+647;装備品 [Legendary];2
+648;Prototype Suit Rex [Legendary];2
+649;Candy Stripe Nia [Legendary];2
+650;Buster-Mode Tora [Legendary];2
+651;Dress Uniform Mòrag [Legendary];2
+652;Embercake Zeke [Legendary];2
+653;装備品 [Legendary];2
+654;Cloud Sea King Rex [Legendary];2
+655;Blood Witch Nia [Legendary];2
+656;Scarlet Inquisitor Mòrag [Legendary];2
+657;装備品 [Common];2
+658;装備品 [Rare];2
+659;装備品 [Legendary];2
+660;装備品 [Common];2
+661;装備品 [Rare];2
+662;装備品 [Legendary];2
+663;装備品 [Common];2
+664;装備品 [Rare];2
+665;装備品 [Legendary];2
+666;装備品 [Common];2
+667;装備品 [Rare];2
+668;装備品 [Legendary];2
+669;装備品 [Common];2
+670;装備品 [Rare];2
+671;装備品 [Legendary];2
+672;装備品 [Common];2
+673;装備品 [Rare];2
+674;装備品 [Legendary];2
+675;装備品 [Common];2
+676;装備品 [Rare];2
+677;装備品 [Legendary];2
+678;装備品 [Common];2
+679;装備品 [Rare];2
+680;装備品 [Legendary];2
+681;装備品 [Legendary];2
+682;装備品 [Legendary];2
+683;装備品 [Legendary];2
+684;装備品 [Legendary];2
+685;装備品 [Legendary];2
+686;Skullface Punk Tora [Legendary];2
+687;Shining Justice Zeke [Legendary];2
 10001;Lead Chip;1
 10002;Tin Chip;1
 10003;Bronze Chip;1
@@ -1530,6 +1576,15 @@ ID;Name;ItemTypeID
 17410;Savage Dromarch;3
 17411;Crimson Orchid Brighid;3
 17412;Mermaid-Blue Pandoria;3
+17413;Blue Sky Pyra;3
+17414;Carbon Mythra;3
+17415;Obsidian Dromarch;3
+17416;Jade Orchid Brighid;3
+17417;Magical Pink Pandoria;3
+17418;装備品;3
+17419;装備品;3
+17420;装備品;3
+17421;装備品;3
 20001;Normal Cylinder;5
 20002;Silver Cylinder;5
 20003;Golden Cylinder;5
@@ -2038,7 +2093,7 @@ ID;Name;ItemTypeID
 25496;New Difficulty Levels;6
 25497;あああああああ;6
 25498;あああああああ;6
-25499;あああああああ;6
+25499;A Firecracker of a Gal;6
 26001;Where's Falala's Son?;14
 26002;Switch Parts 1;14
 26003;Broken Crane 1;14
@@ -3168,6 +3223,7 @@ ID;Name;ItemTypeID
 40425;fav_cap_111;10
 40426;fav_cap_112;10
 40427;fav_cap_113;10
+40428;Love Doughnut;10
 45001;Common Core Crystal;11
 45002;Lucky Core Crystal;11
 45003;Inherited Core Crystal;11
@@ -3224,7 +3280,7 @@ ID;Name;ItemTypeID
 45054;Common Core Crystal;11
 45055;Common Core Crystal;11
 45056;ああああああああ;11
-45057;ああああああああ;11
+45057;Ebullient Core Crystal;11
 50001;Bravery Booster;12
 50002;Truth Booster;12
 50003;Compassion Booster;12
@@ -3907,4 +3963,12 @@ ID;Name;ItemTypeID
 60468;Affinity MAX Acc V;20
 60469;Element Orb Ender;20
 60470;Element Orb Prioritizer;20
-60471;アイテム;20
+60471;Cornflower Poppi α;20
+60472;装備品;20
+60473;Antique Princess QT;20
+60474;Nano Orange QTπ;20
+60475;Shackle Blade Resist I;20
+60476;Shackle Blade Resist II;20
+60477;Shackle Blade Resist III;20
+60478;Shackle Blade Resist IV;20
+60479;Shackle Blade Resist V;20

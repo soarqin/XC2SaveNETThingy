@@ -390,6 +390,7 @@ namespace XC2SaveNETThingy
     public class Blade : IXC2SaveObject
     {
         public const int SIZE = 0x8A4;
+        public const int AFF_CHART_SIZE = 0x5A0;
 
         public bool IsEnabled { get; set; }
         public UInt16 Creator { get; set; }
@@ -913,6 +914,63 @@ namespace XC2SaveNETThingy
                 name = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
 
             return ID + ": " + name;
+        }
+
+        public Byte[] ExportAffinityChart()
+        {
+            
+            List<Byte> result = new List<Byte>();
+
+            foreach (AchieveInfo ai in BArtsAchieve)
+                result.AddRange(ai.ToRawData());
+
+            foreach (AchieveInfo ai in BSkillsAchievement)
+                result.AddRange(ai.ToRawData());
+
+            foreach (AchieveInfo ai in FSkillsAchievement)
+                result.AddRange(ai.ToRawData());
+
+            result.AddRange(KeyAchievement.ToRawData());
+
+            if (result.Count != AFF_CHART_SIZE)
+            {
+                string message = "EXPORT Blade Affinity Chart: SIZE ALL WRONG!!!" + Environment.NewLine +
+                    "Size should be " + AFF_CHART_SIZE + " bytes..." + Environment.NewLine +
+                    "...but Size is " + result.Count + " bytes!";
+
+                throw new Exception(message);
+            }
+
+            return result.ToArray();
+        }
+
+        public void ImportAffinityChart(Byte[] data)
+        {
+            if (data.Length != AFF_CHART_SIZE)
+            {
+                string message = "IMPORT Blade Affinity Chart: SIZE ALL WRONG!!!" + Environment.NewLine +
+                    "Size should be " + AFF_CHART_SIZE + " bytes..." + Environment.NewLine +
+                    "...but Size is " + data.Length + " bytes!";
+
+                throw new Exception(message);
+            }
+            else
+            {
+                BArtsAchieve = new AchieveInfo[3];
+                for (int i = 0; i < BArtsAchieve.Length; i++)
+                    BArtsAchieve[i] = new AchieveInfo(data.GetByteSubArray(0x0 + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
+
+                BSkillsAchievement = new AchieveInfo[3];
+                for (int i = 0; i < BSkillsAchievement.Length; i++)
+                    BSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray((0x90 * 3) + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
+
+                FSkillsAchievement = new AchieveInfo[3];
+                for (int i = 0; i < FSkillsAchievement.Length; i++)
+                    FSkillsAchievement[i] = new AchieveInfo(data.GetByteSubArray((0x90 * 6) + (i * AchieveInfo.SIZE), AchieveInfo.SIZE));
+
+                KeyAchievement = new AchieveInfo(data.GetByteSubArray((0x90 * 9), AchieveInfo.SIZE));
+            }
+
         }
     }
 }

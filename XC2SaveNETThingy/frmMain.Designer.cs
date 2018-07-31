@@ -956,6 +956,9 @@
             this.label114 = new System.Windows.Forms.Label();
             this.chkBladePoppiswapSpecials1Enabled = new System.Windows.Forms.CheckBox();
             this.tabBladeAffinityChart = new System.Windows.Forms.TabPage();
+            this.groupBox166 = new System.Windows.Forms.GroupBox();
+            this.btnBladeAffChartImport = new System.Windows.Forms.Button();
+            this.btnBladeAffChartExport = new System.Windows.Forms.Button();
             this.groupBox68 = new System.Windows.Forms.GroupBox();
             this.nudBladeAffFieldSkill3Alignment = new System.Windows.Forms.NumericUpDown();
             this.nudBladeAffFieldSkill3ID = new System.Windows.Forms.NumericUpDown();
@@ -1632,6 +1635,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdBladeAffChart = new System.Windows.Forms.OpenFileDialog();
+            this.sfdBladeAffChart = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -2083,6 +2088,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1RecastRev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ID)).BeginInit();
             this.tabBladeAffinityChart.SuspendLayout();
+            this.groupBox166.SuspendLayout();
             this.groupBox68.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffFieldSkill3Alignment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffFieldSkill3ID)).BeginInit();
@@ -5738,7 +5744,7 @@
             this.tabDriversSkills.Location = new System.Drawing.Point(4, 22);
             this.tabDriversSkills.Name = "tabDriversSkills";
             this.tabDriversSkills.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriversSkills.Size = new System.Drawing.Size(948, 536);
+            this.tabDriversSkills.Size = new System.Drawing.Size(948, 544);
             this.tabDriversSkills.TabIndex = 1;
             this.tabDriversSkills.Text = "Skills";
             this.tabDriversSkills.UseVisualStyleBackColor = true;
@@ -6985,7 +6991,7 @@
             this.tabDriversUnknown.Location = new System.Drawing.Point(4, 22);
             this.tabDriversUnknown.Name = "tabDriversUnknown";
             this.tabDriversUnknown.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriversUnknown.Size = new System.Drawing.Size(948, 536);
+            this.tabDriversUnknown.Size = new System.Drawing.Size(948, 544);
             this.tabDriversUnknown.TabIndex = 2;
             this.tabDriversUnknown.Text = "Unknown";
             this.tabDriversUnknown.UseVisualStyleBackColor = true;
@@ -7165,7 +7171,7 @@
             this.tabDriver150.Location = new System.Drawing.Point(4, 22);
             this.tabDriver150.Name = "tabDriver150";
             this.tabDriver150.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriver150.Size = new System.Drawing.Size(948, 536);
+            this.tabDriver150.Size = new System.Drawing.Size(948, 544);
             this.tabDriver150.TabIndex = 3;
             this.tabDriver150.Text = "1.5.0+";
             this.tabDriver150.UseVisualStyleBackColor = true;
@@ -8958,7 +8964,7 @@
             this.tabBladeArts.Location = new System.Drawing.Point(4, 22);
             this.tabBladeArts.Name = "tabBladeArts";
             this.tabBladeArts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeArts.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeArts.Size = new System.Drawing.Size(948, 544);
             this.tabBladeArts.TabIndex = 1;
             this.tabBladeArts.Text = "Arts";
             this.tabBladeArts.UseVisualStyleBackColor = true;
@@ -9936,7 +9942,7 @@
             this.tabBladeSkills.Location = new System.Drawing.Point(4, 22);
             this.tabBladeSkills.Name = "tabBladeSkills";
             this.tabBladeSkills.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeSkills.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeSkills.Size = new System.Drawing.Size(948, 544);
             this.tabBladeSkills.TabIndex = 4;
             this.tabBladeSkills.Text = "Skills";
             this.tabBladeSkills.UseVisualStyleBackColor = true;
@@ -10817,7 +10823,7 @@
             this.tabBladePoppiswap.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswap.Name = "tabBladePoppiswap";
             this.tabBladePoppiswap.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladePoppiswap.Size = new System.Drawing.Size(948, 536);
+            this.tabBladePoppiswap.Size = new System.Drawing.Size(948, 544);
             this.tabBladePoppiswap.TabIndex = 3;
             this.tabBladePoppiswap.Text = "Poppiswap";
             this.tabBladePoppiswap.UseVisualStyleBackColor = true;
@@ -10831,7 +10837,7 @@
             this.tabControl5.Location = new System.Drawing.Point(3, 3);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(942, 530);
+            this.tabControl5.Size = new System.Drawing.Size(942, 538);
             this.tabControl5.TabIndex = 21;
             // 
             // tabBladePoppiswapMisc
@@ -10844,7 +10850,7 @@
             this.tabBladePoppiswapMisc.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswapMisc.Name = "tabBladePoppiswapMisc";
             this.tabBladePoppiswapMisc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladePoppiswapMisc.Size = new System.Drawing.Size(934, 504);
+            this.tabBladePoppiswapMisc.Size = new System.Drawing.Size(934, 512);
             this.tabBladePoppiswapMisc.TabIndex = 0;
             this.tabBladePoppiswapMisc.Text = "Misc";
             this.tabBladePoppiswapMisc.UseVisualStyleBackColor = true;
@@ -11795,7 +11801,7 @@
             this.tabBladePoppiswapArtsCards.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswapArtsCards.Name = "tabBladePoppiswapArtsCards";
             this.tabBladePoppiswapArtsCards.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladePoppiswapArtsCards.Size = new System.Drawing.Size(934, 504);
+            this.tabBladePoppiswapArtsCards.Size = new System.Drawing.Size(934, 512);
             this.tabBladePoppiswapArtsCards.TabIndex = 2;
             this.tabBladePoppiswapArtsCards.Text = "Arts Cards";
             this.tabBladePoppiswapArtsCards.UseVisualStyleBackColor = true;
@@ -12411,7 +12417,7 @@
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Location = new System.Drawing.Point(4, 22);
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Name = "tabBladePoppiswapMiscSpecialsEnhancingRAM";
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Size = new System.Drawing.Size(934, 504);
+            this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Size = new System.Drawing.Size(934, 512);
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.TabIndex = 1;
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.Text = "Specials Enhancing RAM";
             this.tabBladePoppiswapMiscSpecialsEnhancingRAM.UseVisualStyleBackColor = true;
@@ -13030,15 +13036,47 @@
             // 
             // tabBladeAffinityChart
             // 
+            this.tabBladeAffinityChart.Controls.Add(this.groupBox166);
             this.tabBladeAffinityChart.Controls.Add(this.groupBox68);
             this.tabBladeAffinityChart.Controls.Add(this.groupBox22);
             this.tabBladeAffinityChart.Location = new System.Drawing.Point(4, 22);
             this.tabBladeAffinityChart.Name = "tabBladeAffinityChart";
             this.tabBladeAffinityChart.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeAffinityChart.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeAffinityChart.Size = new System.Drawing.Size(948, 544);
             this.tabBladeAffinityChart.TabIndex = 5;
             this.tabBladeAffinityChart.Text = "Affinity Chart";
             this.tabBladeAffinityChart.UseVisualStyleBackColor = true;
+            // 
+            // groupBox166
+            // 
+            this.groupBox166.Controls.Add(this.btnBladeAffChartImport);
+            this.groupBox166.Controls.Add(this.btnBladeAffChartExport);
+            this.groupBox166.Location = new System.Drawing.Point(458, 271);
+            this.groupBox166.Name = "groupBox166";
+            this.groupBox166.Size = new System.Drawing.Size(230, 57);
+            this.groupBox166.TabIndex = 69;
+            this.groupBox166.TabStop = false;
+            this.groupBox166.Text = "Import/Export";
+            // 
+            // btnBladeAffChartImport
+            // 
+            this.btnBladeAffChartImport.Location = new System.Drawing.Point(6, 16);
+            this.btnBladeAffChartImport.Name = "btnBladeAffChartImport";
+            this.btnBladeAffChartImport.Size = new System.Drawing.Size(103, 35);
+            this.btnBladeAffChartImport.TabIndex = 67;
+            this.btnBladeAffChartImport.Text = "Load Affinity Chart from File...";
+            this.btnBladeAffChartImport.UseVisualStyleBackColor = true;
+            this.btnBladeAffChartImport.Click += new System.EventHandler(this.btnBladeAffChartImport_Click);
+            // 
+            // btnBladeAffChartExport
+            // 
+            this.btnBladeAffChartExport.Location = new System.Drawing.Point(122, 16);
+            this.btnBladeAffChartExport.Name = "btnBladeAffChartExport";
+            this.btnBladeAffChartExport.Size = new System.Drawing.Size(103, 35);
+            this.btnBladeAffChartExport.TabIndex = 68;
+            this.btnBladeAffChartExport.Text = "Save Affinity Chart to File...";
+            this.btnBladeAffChartExport.UseVisualStyleBackColor = true;
+            this.btnBladeAffChartExport.Click += new System.EventHandler(this.btnBladeAffChartExport_Click);
             // 
             // groupBox68
             // 
@@ -14390,7 +14428,7 @@
             this.tabBladeResourceData.Location = new System.Drawing.Point(4, 22);
             this.tabBladeResourceData.Name = "tabBladeResourceData";
             this.tabBladeResourceData.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeResourceData.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeResourceData.Size = new System.Drawing.Size(948, 544);
             this.tabBladeResourceData.TabIndex = 6;
             this.tabBladeResourceData.Text = "Resource Data";
             this.tabBladeResourceData.UseVisualStyleBackColor = true;
@@ -14695,7 +14733,7 @@
             this.tabBladeOther.Location = new System.Drawing.Point(4, 22);
             this.tabBladeOther.Name = "tabBladeOther";
             this.tabBladeOther.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeOther.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeOther.Size = new System.Drawing.Size(948, 544);
             this.tabBladeOther.TabIndex = 7;
             this.tabBladeOther.Text = "Other";
             this.tabBladeOther.UseVisualStyleBackColor = true;
@@ -15400,7 +15438,7 @@
             this.tabBladeUnknown.Location = new System.Drawing.Point(4, 22);
             this.tabBladeUnknown.Name = "tabBladeUnknown";
             this.tabBladeUnknown.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBladeUnknown.Size = new System.Drawing.Size(948, 536);
+            this.tabBladeUnknown.Size = new System.Drawing.Size(948, 544);
             this.tabBladeUnknown.TabIndex = 2;
             this.tabBladeUnknown.Text = "Unknown";
             this.tabBladeUnknown.UseVisualStyleBackColor = true;
@@ -15642,7 +15680,7 @@
             this.tabAccessoryBox.Location = new System.Drawing.Point(4, 22);
             this.tabAccessoryBox.Name = "tabAccessoryBox";
             this.tabAccessoryBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 544);
             this.tabAccessoryBox.TabIndex = 1;
             this.tabAccessoryBox.Text = "Accessories";
             this.tabAccessoryBox.UseVisualStyleBackColor = true;
@@ -15655,7 +15693,7 @@
             this.dgvPcEquipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcEquipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcEquipBox.Name = "dgvPcEquipBox";
-            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvPcEquipBox.TabIndex = 0;
             this.dgvPcEquipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15665,7 +15703,7 @@
             this.tabAuxCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabAuxCoreBox.Name = "tabAuxCoreBox";
             this.tabAuxCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 544);
             this.tabAuxCoreBox.TabIndex = 2;
             this.tabAuxCoreBox.Text = "Aux Cores";
             this.tabAuxCoreBox.UseVisualStyleBackColor = true;
@@ -15678,7 +15716,7 @@
             this.dgvEquipOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
-            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvEquipOrbBox.TabIndex = 0;
             this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15688,7 +15726,7 @@
             this.tabCylinderBox.Location = new System.Drawing.Point(4, 22);
             this.tabCylinderBox.Name = "tabCylinderBox";
             this.tabCylinderBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 544);
             this.tabCylinderBox.TabIndex = 3;
             this.tabCylinderBox.Text = "Cylinders";
             this.tabCylinderBox.UseVisualStyleBackColor = true;
@@ -15701,7 +15739,7 @@
             this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
             this.dgvSalvageBox.Name = "dgvSalvageBox";
-            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvSalvageBox.TabIndex = 0;
             this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15711,7 +15749,7 @@
             this.tabKeyItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabKeyItemBox.Name = "tabKeyItemBox";
             this.tabKeyItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 544);
             this.tabKeyItemBox.TabIndex = 4;
             this.tabKeyItemBox.Text = "Key Items";
             this.tabKeyItemBox.UseVisualStyleBackColor = true;
@@ -15724,7 +15762,7 @@
             this.dgvPreciousBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreciousBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPreciousBox.Name = "dgvPreciousBox";
-            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvPreciousBox.TabIndex = 0;
             this.dgvPreciousBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15734,7 +15772,7 @@
             this.tabInfoItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabInfoItemBox.Name = "tabInfoItemBox";
             this.tabInfoItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 544);
             this.tabInfoItemBox.TabIndex = 5;
             this.tabInfoItemBox.Text = "Info Items";
             this.tabInfoItemBox.UseVisualStyleBackColor = true;
@@ -15747,7 +15785,7 @@
             this.dgvInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInfoBox.Location = new System.Drawing.Point(3, 3);
             this.dgvInfoBox.Name = "dgvInfoBox";
-            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvInfoBox.TabIndex = 0;
             this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15757,7 +15795,7 @@
             this.tabEventItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabEventItemBox.Name = "tabEventItemBox";
             this.tabEventItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 544);
             this.tabEventItemBox.TabIndex = 6;
             this.tabEventItemBox.Text = "Event Items";
             this.tabEventItemBox.UseVisualStyleBackColor = true;
@@ -15770,7 +15808,7 @@
             this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEventBox.Name = "dgvEventBox";
-            this.dgvEventBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvEventBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvEventBox.TabIndex = 0;
             this.dgvEventBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15780,7 +15818,7 @@
             this.tabCollectibleBox.Location = new System.Drawing.Point(4, 22);
             this.tabCollectibleBox.Name = "tabCollectibleBox";
             this.tabCollectibleBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 544);
             this.tabCollectibleBox.TabIndex = 7;
             this.tabCollectibleBox.Text = "Collectibles";
             this.tabCollectibleBox.UseVisualStyleBackColor = true;
@@ -15793,7 +15831,7 @@
             this.dgvCollectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCollectionListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCollectionListBox.Name = "dgvCollectionListBox";
-            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvCollectionListBox.TabIndex = 0;
             this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15803,7 +15841,7 @@
             this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
             this.tabTreasureBox.Name = "tabTreasureBox";
             this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 544);
             this.tabTreasureBox.TabIndex = 8;
             this.tabTreasureBox.Text = "Treasure";
             this.tabTreasureBox.UseVisualStyleBackColor = true;
@@ -15816,7 +15854,7 @@
             this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
             this.dgvTreasureBox.Name = "dgvTreasureBox";
-            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvTreasureBox.TabIndex = 0;
             this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15826,7 +15864,7 @@
             this.tabUnrefinedAuxCoresBox.Location = new System.Drawing.Point(4, 22);
             this.tabUnrefinedAuxCoresBox.Name = "tabUnrefinedAuxCoresBox";
             this.tabUnrefinedAuxCoresBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 544);
             this.tabUnrefinedAuxCoresBox.TabIndex = 9;
             this.tabUnrefinedAuxCoresBox.Text = "Unrefined Aux Cores";
             this.tabUnrefinedAuxCoresBox.UseVisualStyleBackColor = true;
@@ -15839,7 +15877,7 @@
             this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
-            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvEmptyOrbBox.TabIndex = 0;
             this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15849,7 +15887,7 @@
             this.tabPouchItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabPouchItemBox.Name = "tabPouchItemBox";
             this.tabPouchItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPouchItemBox.TabIndex = 10;
             this.tabPouchItemBox.Text = "Pouch Items";
             this.tabPouchItemBox.UseVisualStyleBackColor = true;
@@ -15862,7 +15900,7 @@
             this.dgvFavoriteBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFavoriteBox.Location = new System.Drawing.Point(3, 3);
             this.dgvFavoriteBox.Name = "dgvFavoriteBox";
-            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvFavoriteBox.TabIndex = 0;
             this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15872,7 +15910,7 @@
             this.tabCoreCrystalBox.Location = new System.Drawing.Point(4, 22);
             this.tabCoreCrystalBox.Name = "tabCoreCrystalBox";
             this.tabCoreCrystalBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 544);
             this.tabCoreCrystalBox.TabIndex = 11;
             this.tabCoreCrystalBox.Text = "Core Crystals";
             this.tabCoreCrystalBox.UseVisualStyleBackColor = true;
@@ -15885,7 +15923,7 @@
             this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCrystalListBox.Name = "dgvCrystalListBox";
-            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvCrystalListBox.TabIndex = 0;
             this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15895,7 +15933,7 @@
             this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
             this.tabBoosterBox.Name = "tabBoosterBox";
             this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 544);
             this.tabBoosterBox.TabIndex = 12;
             this.tabBoosterBox.Text = "Boosters";
             this.tabBoosterBox.UseVisualStyleBackColor = true;
@@ -15908,7 +15946,7 @@
             this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
             this.dgvBoosterBox.Name = "dgvBoosterBox";
-            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvBoosterBox.TabIndex = 0;
             this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15918,7 +15956,7 @@
             this.tabPoppiRoleCPUBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiRoleCPUBox.Name = "tabPoppiRoleCPUBox";
             this.tabPoppiRoleCPUBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPoppiRoleCPUBox.TabIndex = 13;
             this.tabPoppiRoleCPUBox.Text = "Poppi Role CPU";
             this.tabPoppiRoleCPUBox.UseVisualStyleBackColor = true;
@@ -15931,7 +15969,7 @@
             this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
-            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvHanaRoleBox.TabIndex = 0;
             this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15941,7 +15979,7 @@
             this.tabPoppiElementCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiElementCoreBox.Name = "tabPoppiElementCoreBox";
             this.tabPoppiElementCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPoppiElementCoreBox.TabIndex = 14;
             this.tabPoppiElementCoreBox.Text = "Poppi Element Cores";
             this.tabPoppiElementCoreBox.UseVisualStyleBackColor = true;
@@ -15954,7 +15992,7 @@
             this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
-            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvHanaAtrBox.TabIndex = 0;
             this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15964,7 +16002,7 @@
             this.tabPoppiSpecialsEnhancingRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSpecialsEnhancingRAMBox.Name = "tabPoppiSpecialsEnhancingRAMBox";
             this.tabPoppiSpecialsEnhancingRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPoppiSpecialsEnhancingRAMBox.TabIndex = 15;
             this.tabPoppiSpecialsEnhancingRAMBox.Text = "Poppi Specials Enhancing RAM";
             this.tabPoppiSpecialsEnhancingRAMBox.UseVisualStyleBackColor = true;
@@ -15977,7 +16015,7 @@
             this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
-            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvHanaArtsBox.TabIndex = 0;
             this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -15987,7 +16025,7 @@
             this.tabPoppiArtsCardBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiArtsCardBox.Name = "tabPoppiArtsCardBox";
             this.tabPoppiArtsCardBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPoppiArtsCardBox.TabIndex = 16;
             this.tabPoppiArtsCardBox.Text = "Poppi Arts Cards";
             this.tabPoppiArtsCardBox.UseVisualStyleBackColor = true;
@@ -16000,7 +16038,7 @@
             this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
-            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvHanaNArtsBox.TabIndex = 0;
             this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -16010,7 +16048,7 @@
             this.tabPoppiSkillRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSkillRAMBox.Name = "tabPoppiSkillRAMBox";
             this.tabPoppiSkillRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 549);
+            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 544);
             this.tabPoppiSkillRAMBox.TabIndex = 17;
             this.tabPoppiSkillRAMBox.Text = "Poppi Skill RAM";
             this.tabPoppiSkillRAMBox.UseVisualStyleBackColor = true;
@@ -16023,7 +16061,7 @@
             this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
-            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 543);
+            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 538);
             this.dgvHanaAssistBox.TabIndex = 0;
             this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
@@ -16032,7 +16070,7 @@
             this.tabItemsSerials.Controls.Add(this.groupBox112);
             this.tabItemsSerials.Location = new System.Drawing.Point(4, 22);
             this.tabItemsSerials.Name = "tabItemsSerials";
-            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 549);
+            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 544);
             this.tabItemsSerials.TabIndex = 18;
             this.tabItemsSerials.Text = "Serials";
             this.tabItemsSerials.UseVisualStyleBackColor = true;
@@ -20785,7 +20823,7 @@
             this.tabUnk_0x1171E8.Location = new System.Drawing.Point(4, 22);
             this.tabUnk_0x1171E8.Name = "tabUnk_0x1171E8";
             this.tabUnk_0x1171E8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnk_0x1171E8.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnk_0x1171E8.Size = new System.Drawing.Size(1120, 544);
             this.tabUnk_0x1171E8.TabIndex = 1;
             this.tabUnk_0x1171E8.Text = "Unk_0x1171E8";
             this.tabUnk_0x1171E8.UseVisualStyleBackColor = true;
@@ -20799,7 +20837,7 @@
             this.hbxUnk_0x1171E8.Location = new System.Drawing.Point(3, 3);
             this.hbxUnk_0x1171E8.Name = "hbxUnk_0x1171E8";
             this.hbxUnk_0x1171E8.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxUnk_0x1171E8.Size = new System.Drawing.Size(1114, 543);
+            this.hbxUnk_0x1171E8.Size = new System.Drawing.Size(1114, 538);
             this.hbxUnk_0x1171E8.StringViewVisible = true;
             this.hbxUnk_0x1171E8.TabIndex = 151;
             this.hbxUnk_0x1171E8.UseFixedBytesPerLine = true;
@@ -20810,7 +20848,7 @@
             this.tabUnk_0x117390.Controls.Add(this.hbxUnk_0x117390);
             this.tabUnk_0x117390.Location = new System.Drawing.Point(4, 22);
             this.tabUnk_0x117390.Name = "tabUnk_0x117390";
-            this.tabUnk_0x117390.Size = new System.Drawing.Size(1120, 549);
+            this.tabUnk_0x117390.Size = new System.Drawing.Size(1120, 544);
             this.tabUnk_0x117390.TabIndex = 2;
             this.tabUnk_0x117390.Text = "Unk_0x117390";
             this.tabUnk_0x117390.UseVisualStyleBackColor = true;
@@ -20824,7 +20862,7 @@
             this.hbxUnk_0x117390.Location = new System.Drawing.Point(0, 0);
             this.hbxUnk_0x117390.Name = "hbxUnk_0x117390";
             this.hbxUnk_0x117390.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxUnk_0x117390.Size = new System.Drawing.Size(1120, 549);
+            this.hbxUnk_0x117390.Size = new System.Drawing.Size(1120, 544);
             this.hbxUnk_0x117390.StringViewVisible = true;
             this.hbxUnk_0x117390.TabIndex = 151;
             this.hbxUnk_0x117390.UseFixedBytesPerLine = true;
@@ -20927,7 +20965,7 @@
             this.tab150RawDataUnk_0x117728.Location = new System.Drawing.Point(4, 22);
             this.tab150RawDataUnk_0x117728.Name = "tab150RawDataUnk_0x117728";
             this.tab150RawDataUnk_0x117728.Padding = new System.Windows.Forms.Padding(3);
-            this.tab150RawDataUnk_0x117728.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117728.Size = new System.Drawing.Size(1114, 473);
             this.tab150RawDataUnk_0x117728.TabIndex = 1;
             this.tab150RawDataUnk_0x117728.Text = "Unk_0x117728";
             this.tab150RawDataUnk_0x117728.UseVisualStyleBackColor = true;
@@ -20941,7 +20979,7 @@
             this.hbx150RawDataUnk_0x117728.Location = new System.Drawing.Point(3, 3);
             this.hbx150RawDataUnk_0x117728.Name = "hbx150RawDataUnk_0x117728";
             this.hbx150RawDataUnk_0x117728.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117728.Size = new System.Drawing.Size(1108, 471);
+            this.hbx150RawDataUnk_0x117728.Size = new System.Drawing.Size(1108, 467);
             this.hbx150RawDataUnk_0x117728.StringViewVisible = true;
             this.hbx150RawDataUnk_0x117728.TabIndex = 155;
             this.hbx150RawDataUnk_0x117728.UseFixedBytesPerLine = true;
@@ -20952,7 +20990,7 @@
             this.tab150RawDataUnk_0x117A4C.Controls.Add(this.hbx150RawDataUnk_0x117A4C);
             this.tab150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(4, 22);
             this.tab150RawDataUnk_0x117A4C.Name = "tab150RawDataUnk_0x117A4C";
-            this.tab150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 473);
             this.tab150RawDataUnk_0x117A4C.TabIndex = 2;
             this.tab150RawDataUnk_0x117A4C.Text = "Unk_0x117A4C";
             this.tab150RawDataUnk_0x117A4C.UseVisualStyleBackColor = true;
@@ -20966,7 +21004,7 @@
             this.hbx150RawDataUnk_0x117A4C.Location = new System.Drawing.Point(0, 0);
             this.hbx150RawDataUnk_0x117A4C.Name = "hbx150RawDataUnk_0x117A4C";
             this.hbx150RawDataUnk_0x117A4C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x117A4C.Size = new System.Drawing.Size(1114, 473);
             this.hbx150RawDataUnk_0x117A4C.StringViewVisible = true;
             this.hbx150RawDataUnk_0x117A4C.TabIndex = 155;
             this.hbx150RawDataUnk_0x117A4C.UseFixedBytesPerLine = true;
@@ -20977,7 +21015,7 @@
             this.tab150RawDataUnk_0x117D70.Controls.Add(this.hbx150RawDataUnk_0x117D70);
             this.tab150RawDataUnk_0x117D70.Location = new System.Drawing.Point(4, 22);
             this.tab150RawDataUnk_0x117D70.Name = "tab150RawDataUnk_0x117D70";
-            this.tab150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 473);
             this.tab150RawDataUnk_0x117D70.TabIndex = 3;
             this.tab150RawDataUnk_0x117D70.Text = "Unk_0x117D70";
             this.tab150RawDataUnk_0x117D70.UseVisualStyleBackColor = true;
@@ -20991,7 +21029,7 @@
             this.hbx150RawDataUnk_0x117D70.Location = new System.Drawing.Point(0, 0);
             this.hbx150RawDataUnk_0x117D70.Name = "hbx150RawDataUnk_0x117D70";
             this.hbx150RawDataUnk_0x117D70.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x117D70.Size = new System.Drawing.Size(1114, 473);
             this.hbx150RawDataUnk_0x117D70.StringViewVisible = true;
             this.hbx150RawDataUnk_0x117D70.TabIndex = 155;
             this.hbx150RawDataUnk_0x117D70.UseFixedBytesPerLine = true;
@@ -21002,7 +21040,7 @@
             this.tab150RawDataUnk_0x1186DC.Controls.Add(this.hbx150RawDataUnk_0x1186DC);
             this.tab150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(4, 22);
             this.tab150RawDataUnk_0x1186DC.Name = "tab150RawDataUnk_0x1186DC";
-            this.tab150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 477);
+            this.tab150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 473);
             this.tab150RawDataUnk_0x1186DC.TabIndex = 4;
             this.tab150RawDataUnk_0x1186DC.Text = "Unk_0x1186DC";
             this.tab150RawDataUnk_0x1186DC.UseVisualStyleBackColor = true;
@@ -21016,7 +21054,7 @@
             this.hbx150RawDataUnk_0x1186DC.Location = new System.Drawing.Point(0, 0);
             this.hbx150RawDataUnk_0x1186DC.Name = "hbx150RawDataUnk_0x1186DC";
             this.hbx150RawDataUnk_0x1186DC.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbx150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 477);
+            this.hbx150RawDataUnk_0x1186DC.Size = new System.Drawing.Size(1114, 473);
             this.hbx150RawDataUnk_0x1186DC.StringViewVisible = true;
             this.hbx150RawDataUnk_0x1186DC.TabIndex = 155;
             this.hbx150RawDataUnk_0x1186DC.UseFixedBytesPerLine = true;
@@ -21122,6 +21160,14 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // ofdBladeAffChart
+            // 
+            this.ofdBladeAffChart.Filter = "XC2SaveNETThingy Blade Affinity Chart File|*.x2bac|All Files|*.*";
+            // 
+            // sfdBladeAffChart
+            // 
+            this.sfdBladeAffChart.Filter = "XC2SaveNETThingy Blade Affinity Chart File|*.x2bac|All Files|*.*";
             // 
             // frmMain
             // 
@@ -21655,6 +21701,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1RecastRev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePoppiswapBArtsEnhance1ID)).EndInit();
             this.tabBladeAffinityChart.ResumeLayout(false);
+            this.groupBox166.ResumeLayout(false);
             this.groupBox68.ResumeLayout(false);
             this.groupBox68.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAffFieldSkill3Alignment)).EndInit();
@@ -23618,6 +23665,11 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox166;
+        private System.Windows.Forms.Button btnBladeAffChartImport;
+        private System.Windows.Forms.Button btnBladeAffChartExport;
+        private System.Windows.Forms.OpenFileDialog ofdBladeAffChart;
+        private System.Windows.Forms.SaveFileDialog sfdBladeAffChart;
     }
 }
 

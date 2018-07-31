@@ -14,6 +14,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,8 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -106,7 +106,13 @@
     <Compile Include="Utils.cs" />
     <Compile Include="XC2Data.cs" />
     <Compile Include="XC2Save.cs" />
+    <Content Include="db\BladeCommonNames.sql" />
+    <Content Include="db\BladeRareNames.sql" />
+    <Content Include="db\Elements.sql" />
     <Content Include="icon.ico" />
+    <None Include="data\BladeCommonNames.csv" />
+    <None Include="data\BladeRareNames.csv" />
+    <None Include="data\Elements.csv" />
     <None Include="Resources\icon.ico" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
