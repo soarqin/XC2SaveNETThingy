@@ -18,7 +18,7 @@ namespace XC2SaveNETThingy
             CheckBox
         }
 
-        public static DataGridViewColumn CreateDgvColumn(DgvColumnType columnType, string dataPropertyName, string headerText, string dataType = null, object dataSource = null, int width = 0, int minimum = 0, int maximum = 100)
+        public static DataGridViewColumn CreateDgvColumn(DgvColumnType columnType, string dataPropertyName, string headerText, string dataType = null, object dataSource = null, int width = 0, int minimum = 0, UInt32 maximum = 100)
         {
             switch (columnType)
             {

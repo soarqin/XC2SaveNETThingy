@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -558,7 +559,8 @@ namespace XC2SaveNETThingy
                 #endregion Merc Groups
 
                 #region Flags
-                hbxFlags.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Flags);
+
+                SetupFlagEditors();
                 #endregion Flags
 
                 #region XC2Save Events
@@ -590,7 +592,7 @@ namespace XC2SaveNETThingy
                     ex.Message + Environment.NewLine +
                     Environment.NewLine +
                     "Data has not been loaded.";
-                Console.WriteLine(ex.InnerException.StackTrace);
+                //Console.WriteLine(ex.InnerException.StackTrace);
 
                 MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;
@@ -1426,6 +1428,44 @@ namespace XC2SaveNETThingy
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
 
+        private void LoadBlade()
+        {
+            DialogResult = ofdBlade.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                
+                UInt16 id = SAVEDATA.Blades[lbxBlades.SelectedIndex].ID;
+                Int16 cbi = SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex;
+
+
+                SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName));
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].ID = id;
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex = cbi;
+                LoadBlade(lbxBlades.SelectedIndex);
+            }
+        }
+
+        private void SaveBlade()
+        {
+            Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
+            sfdBlade.FileName = b.ToString().Replace(":", " -");
+
+            DialogResult result = sfdBlade.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    File.WriteAllBytes(sfdBlade.FileName, b.ToRawData());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //throw ex;
+                }
+            }
+        }
+
         private void LoadBladeAffinityChart()
         {
             DialogResult = ofdBladeAffChart.ShowDialog();
@@ -1477,8 +1517,8 @@ namespace XC2SaveNETThingy
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 50, 0, 1023));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 55));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 50, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 50, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 50, 0, 59));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 50, 0, 59));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 75, 0, 67108863));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1", null, null, 50));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2", null, null, 50));
@@ -1488,6 +1528,54 @@ namespace XC2SaveNETThingy
             return dgv;
         }
         #endregion Items
+
+        private void SetupFlagEditors()
+        {
+            BindingList<XC2Save.FlagData.Flag_1> Flags_1Bit_bl = new BindingList<XC2Save.FlagData.Flag_1>();
+            foreach (XC2Save.FlagData.Flag_1 f in SAVEDATA.Flags.Flags_1Bit)
+                Flags_1Bit_bl.Add(f);
+            dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, Flags_1Bit_bl, "Value", "Set", true, 30);
+
+            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
+            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_2Bit)
+                Flags_2Bit_bl.Add(f);
+            dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, Flags_2Bit_bl, "Value", "Value", false, 40, 3);
+
+            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
+            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_4Bit)
+                Flags_4Bit_bl.Add(f);
+            dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, Flags_4Bit_bl, "Value", "Value", false, 40, 15);
+
+            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
+            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_8Bit)
+                Flags_8Bit_bl.Add(f);
+            dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, Flags_8Bit_bl, "Value", "Value", false, 40, 255);
+
+            BindingList<XC2Save.FlagData.Flag_16> Flags_16Bit_bl = new BindingList<XC2Save.FlagData.Flag_16>();
+            foreach (XC2Save.FlagData.Flag_16 f in SAVEDATA.Flags.Flags_16Bit)
+                Flags_16Bit_bl.Add(f);
+            dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, Flags_16Bit_bl, "Value", "Value", false, 55, 65535);
+
+            BindingList<XC2Save.FlagData.Flag_32> Flags_32Bit_bl = new BindingList<XC2Save.FlagData.Flag_32>();
+            foreach (XC2Save.FlagData.Flag_32 f in SAVEDATA.Flags.Flags_32Bit)
+                Flags_32Bit_bl.Add(f);
+            dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
+        }
+
+        private DataGridView SetupFlagEditor(DataGridView dgv, IBindingList bl, string dataMemberValue, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal = 0)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = null;
+            dgv.Columns.Clear();
+            if (isCheckBox)
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, dataMemberValue, columnHeaderText, null, null, 30));
+            else
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, dataMemberValue, columnHeaderText, null, null, valueColumnWidth, 0, maxVal));
+            dgv.DataSource = bl;
+            dgv.RowHeadersWidth = dgv.Width - dgv.Columns[0].Width - 20;
+
+            return dgv;
+        }
 
         #endregion Methods
 
@@ -3848,6 +3936,243 @@ namespace XC2SaveNETThingy
         #endregion XC2Save Events
 
         #endregion Events
+
+        private void FindInItemBox()
+        {
+            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
+            DataTable items;
+
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0:
+                    items = XC2Data.GetCoreChips();
+                    break;
+
+                case 1:
+                    items = XC2Data.GetAccessories();
+                    break;
+
+                case 2:
+                    items = XC2Data.GetAuxCores();
+                    break;
+
+                case 3:
+                    items = XC2Data.GetCylinders();
+                    break;
+
+                case 4:
+                    items = XC2Data.GetKeyItems();
+                    break;
+
+                case 5:
+                    items = XC2Data.GetInfoItems();
+                    break;
+
+                case 7:
+                    items = XC2Data.GetCollectibles();
+                    break;
+
+                case 8:
+                    items = XC2Data.GetTreasure();
+                    break;
+
+                case 9:
+                    items = XC2Data.GetUnrefinedAuxCores();
+                    break;
+
+                case 10:
+                    items = XC2Data.GetPouchItems();
+                    break;
+
+                case 11:
+                    items = XC2Data.GetCoreCrystals();
+                    break;
+
+                case 12:
+                    items = XC2Data.GetBoosters();
+                    break;
+
+                case 13:
+                    items = XC2Data.GetPoppiRoleCPU();
+                    break;
+
+                case 14:
+                    items = XC2Data.GetPoppiElementCores();
+                    break;
+
+                case 15:
+                    items = XC2Data.GetPoppiSpecialsEnhancingRAM();
+                    break;
+
+                case 16:
+                    items = XC2Data.GetPoppiArtsCards();
+                    break;
+
+                case 17:
+                    items = XC2Data.GetPoppiSkillRAM();
+                    break;
+
+                case 6:
+                default:
+                    return;
+            }
+
+
+
+            items.PrimaryKey = new DataColumn[] { items.Columns[0] };
+            List<string> itemNames = new List<string>();
+
+            foreach (DataGridViewRow r in dgv.Rows)
+            {
+                DataRow[] rows = items.Select("ID = " + r.Cells[0].Value);
+                string derp = "";
+                if (rows.Length > 0)
+                    derp = (string)(rows)[0]["Name"];
+
+                //itemNames.Add((string)items.Rows.Find(r.Cells[0].Value)["Name"]);
+                itemNames.Add(derp);
+            }
+
+            string feck = txtItemSearch.Text;
+            Console.WriteLine(feck);
+
+            int index = itemNames.FindIndex(s => s.ToLower().Contains(feck.ToLower()));
+            Console.WriteLine(index);
+            if (index >= 0)
+            {
+                dgv.ClearSelection();
+                dgv.CurrentCell = dgv.Rows[index].Cells[0];
+                dgv.Rows[index].Selected = true;
+            }
+        }
+
+        private void btnItemSearch_Click(object sender, EventArgs e)
+        {
+
+
+
+            FindInItemBox();
+            //Console.WriteLine(itemNames[0]);
+        }
+
+        private void txtItemSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                FindInItemBox();
+        }
+
+        private void btnBladeExport_Click(object sender, EventArgs e)
+        {
+            SaveBlade();
+        }
+
+        private void btnBladeImport_Click(object sender, EventArgs e)
+        {
+            LoadBlade();
+        }
+
+        private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
+        {
+            foreach (DataGridViewRow r in dgv.Rows)
+            {
+                if (flagNames == null || !flagNames.ContainsKey(r.Index))
+                    r.HeaderCell.Value = String.Format("{0}", r.Index + 1);
+                else
+                    r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
+            }
+
+        }
+
+        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender);
+        }
+
+        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender);
+        }
+
+        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender);
+        }
+
+        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender);
+        }
+
+        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender);
+        }
+
+        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            FlagEditorRowHeaderSet((DataGridView)sender, XC2Save.FlagData.NAMES_32BIT);
+        }
+
+        private UInt32 ItemGetNewSerial(DataGridView dgv)
+        {
+            List<UInt32> serials = new List<UInt32>();
+            foreach (DataGridViewRow r in dgv.Rows)
+                serials.Add((UInt32)r.Cells[9].Value);
+
+            UInt32 serial = 1;
+
+            while (serials.Contains(serial))
+                serial++;
+
+            return serial;
+        }
+
+        private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
+
+            //List<UInt32> serials = new List<UInt32>();
+            //foreach (DataGridViewRow r in dgv.Rows)
+            //    serials.Add((UInt32)r.Cells[9].Value);
+
+            //UInt32 serial = 1;
+
+            //while (serials.Contains(serial))
+            //    serial++;
+
+            dgv.Rows[dgv.SelectedRows[0].Index].Cells[9].Value = ItemGetNewSerial(dgv);
+        }
+
+        private void ItemSetTimeToNow(DataGridView dgv, int rowIndex)
+        {
+            dgv.Rows[rowIndex].Cells[6].Value = SAVEDATA.PlayTime.Hours;
+            dgv.Rows[rowIndex].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
+            dgv.Rows[rowIndex].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
+        }
+
+        private void dgvItemBox_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex >=0)
+            {
+                DataGridView dgv = (DataGridView)sender;
+
+                foreach (DataGridViewRow r in dgv.Rows)
+                    r.Selected = false;
+                dgv.Rows[e.RowIndex].Selected = true;
+
+                cmsItems.Tag = dgv;
+                cmsItems.Show(dgv, dgv.PointToClient(Cursor.Position));
+            }
+        }
+
+        private void tsmiItemUpdateTime_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
+            ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
+            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[6].Value = SAVEDATA.PlayTime.Hours;
+            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
+            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
+        }
     }
 }
 

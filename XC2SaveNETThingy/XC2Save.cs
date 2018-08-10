@@ -294,6 +294,174 @@ namespace XC2SaveNETThingy
                 return result.ToArray();
             }
         }
+
+        public class FlagData : IXC2SaveObject
+        {
+            public class Flag_1
+            {
+                public bool Value { get; set; }
+
+                public Flag_1(bool value)
+                {
+                    Value = value;
+                }
+            }
+
+            public class Flag_2_4_8
+            {
+                public Byte Value { get; set; }
+
+                public Flag_2_4_8(Byte value)
+                {
+                    Value = value;
+                }
+            }
+
+            public class Flag_16
+            {
+                public UInt16 Value { get; set; }
+
+                public Flag_16(UInt16 value)
+                {
+                    Value = value;
+                }
+            }
+
+            public class Flag_32
+            {
+                public UInt32 Value { get; set; }
+
+                public Flag_32(UInt32 value)
+                {
+                    Value = value;
+                }
+            }
+
+            public Flag_1[] Flags_1Bit {get; set;}
+            public Flag_2_4_8[] Flags_2Bit { get; set; }
+            public Flag_2_4_8[] Flags_4Bit { get; set; }
+            public Flag_2_4_8[] Flags_8Bit { get; set; }
+            public Flag_16[] Flags_16Bit { get; set; }
+            public Flag_32[] Flags_32Bit { get; set; }
+
+            public const int FLAGS_1BIT_COUNT = 65536;
+            public const int FLAGS_2BIT_COUNT = 65536;
+            public const int FLAGS_4BIT_COUNT = 8192;
+            public const int FLAGS_8BIT_COUNT = 8192;
+            public const int FLAGS_16BIT_COUNT = 3072;
+            public const int FLAGS_32BIT_COUNT = 3336;
+
+            public const int FLAGS_1BIT_BYTES = 0x2000;
+            public const int FLAGS_2BIT_BYTES = 0x4000;
+            public const int FLAGS_4BIT_BYTES = 0x1000;
+            public const int FLAGS_8BIT_BYTES = 0x2000;
+            public const int FLAGS_16BIT_BYTES = 0x1800;
+            public const int FLAGS_32BIT_BYTES = 0x3420;
+
+            private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
+            {
+                { "Flags_1Bit", 0x0 },
+                { "Flags_2Bit", 0x2000 },
+                { "Flags_4Bit", 0x6000 },
+                { "Flags_8Bit", 0x7000 },
+                { "Flags_16Bit", 0x9000 },
+                { "Flags_32Bit", 0xA800 },
+            };
+
+            public static readonly Dictionary<int, string> NAMES_32BIT = new Dictionary<int, string>()
+            {
+                { 0, "Flag 1" },
+                { 263, "Poppi QT deal critical hits" },
+                { 267, "Poppi QTpi Driver Combp Finishers" },
+                { 269, "Poppi QTpi Blade Combos Finished" },
+                { 276, "Pyra Blade Swaps" },
+                { 294, "Total No. of Quests Completed" },
+                { 300, "Total No. of Treasure Troves Opened" },
+                { 308, "Total No. of Dishes Cooked by Pyra"}
+            };
+
+            public FlagData(Byte[] data)
+            {
+                Flags_1Bit = new Flag_1[FLAGS_1BIT_COUNT];
+                BitArray derp = new BitArray(data.GetByteSubArray(LOC["Flags_1Bit"], FLAGS_1BIT_BYTES));
+                for (int i = 0; i < Flags_1Bit.Length; i++)
+                    Flags_1Bit[i] = new Flag_1(derp[i]);
+
+                Flags_2Bit = new Flag_2_4_8[FLAGS_2BIT_COUNT];
+                BitArray wat = new BitArray(data.GetByteSubArray(LOC["Flags_2Bit"], FLAGS_2BIT_BYTES));
+                for (int i = 0; i < Flags_2Bit.Length; i++)
+                    Flags_2Bit[i] = new Flag_2_4_8((Byte)(
+                        ((wat[(i * 2) + 1] ? 1 : 0) << 1) +
+                        (wat[(i * 2)] ? 1 : 0)));
+
+                Flags_4Bit = new Flag_2_4_8[FLAGS_4BIT_COUNT];
+                wat = new BitArray(data.GetByteSubArray(LOC["Flags_4Bit"], FLAGS_4BIT_BYTES));
+                for (int i = 0; i < Flags_4Bit.Length; i++)
+                    Flags_4Bit[i] = new Flag_2_4_8((Byte)(
+                        ((wat[(i * 4) + 3] ? 1 : 0) << 3) +
+                        ((wat[(i * 4) + 2] ? 1 : 0) << 2) +
+                        ((wat[(i * 4) + 1] ? 1 : 0) << 1) +
+                        (wat[(i * 4)] ? 1 : 0)
+                        ));
+
+                Flags_8Bit = new Flag_2_4_8[FLAGS_8BIT_COUNT];
+                for (int i = 0; i < Flags_8Bit.Length; i++)
+                    Flags_8Bit[i] = new Flag_2_4_8(data[LOC["Flags_8Bit"] + i]);
+
+                Flags_16Bit = new Flag_16[FLAGS_16BIT_COUNT];
+                for (int i = 0; i < Flags_16Bit.Length; i++)
+                    Flags_16Bit[i] = new Flag_16(BitConverter.ToUInt16(data.GetByteSubArray(LOC["Flags_16Bit"] + (i * 2), 2), 0));
+
+                Flags_32Bit = new Flag_32[FLAGS_32BIT_COUNT];
+                for (int i = 0; i < Flags_32Bit.Length; i++)
+                    Flags_32Bit[i] = new Flag_32(BitConverter.ToUInt32(data.GetByteSubArray(LOC["Flags_32Bit"] + (i * 4), 4), 0));
+            }
+
+            public Byte[] ToRawData()
+            {
+                List<Byte> result = new List<Byte>();
+
+                for (int i = 0; i < FLAGS_1BIT_BYTES; i++)
+                    result.Add((Byte)(
+                            ((Flags_1Bit[(i * 8) + 7].Value ? 1 : 0) << 7) +
+                            ((Flags_1Bit[(i * 8) + 6].Value ? 1 : 0) << 6) +
+                            ((Flags_1Bit[(i * 8) + 5].Value ? 1 : 0) << 5) +
+                            ((Flags_1Bit[(i * 8) + 4].Value ? 1 : 0) << 4) +
+                            ((Flags_1Bit[(i * 8) + 3].Value ? 1 : 0) << 3) +
+                            ((Flags_1Bit[(i * 8) + 2].Value ? 1 : 0) << 2) +
+                            ((Flags_1Bit[(i * 8) + 1].Value ? 1 : 0) << 1) +
+                            (Flags_1Bit[i * 8].Value ? 1 : 0)
+                        ));
+
+                for (int i = 0; i < FLAGS_2BIT_BYTES; i++)
+                    result.Add((Byte)
+                        (
+                            (Flags_2Bit[(i * 4) + 3].Value << 6) +
+                            (Flags_2Bit[(i * 4) + 2].Value << 4) +
+                            (Flags_2Bit[(i * 4) + 1].Value << 2) +
+                            (Flags_2Bit[i * 4].Value)
+                        ));
+
+                for (int i = 0; i < FLAGS_4BIT_BYTES; i++)
+                    result.Add((Byte)
+                        (
+                            (Flags_4Bit[(i * 2) + 1].Value << 4) +
+                            (Flags_4Bit[i * 2].Value)
+                        ));
+
+                foreach (Flag_2_4_8 f in Flags_8Bit)
+                    result.Add(f.Value);
+
+                foreach (Flag_16 f in Flags_16Bit)
+                    result.AddRange(BitConverter.GetBytes(f.Value));
+
+                foreach (Flag_32 f in Flags_32Bit)
+                    result.AddRange(BitConverter.GetBytes(f.Value));
+
+                return result.ToArray();
+            }
+
+        }
         public class MapData : IXC2SaveObject
         {
             public const int SIZE = 0xC4;
@@ -798,6 +966,11 @@ namespace XC2SaveNETThingy
             { "Party", 0xE9894 },
             { "ItemBox", 0xE98E8 },
             { "Flags", 0xFBBD4 },
+            //{ "Flags_2Bit", 0xFDBD4 },
+            //{ "Flags_4Bit", 0x101BD4 },
+            //{ "Flags_8Bit", 0x102BD4 },
+            //{ "Flags_16Bit", 0x104BD4 },
+            //{ "Flags_32Bit", 0x1063D4 },
             { "ScenarioQuest", 0x1097F4 },
             { "CurrentQuest", 0x1097F8 },
             { "field_1097FC", 0x1097FC },
@@ -867,7 +1040,7 @@ namespace XC2SaveNETThingy
         public Blade[] Blades { get; set; }
         public XC2Party Party { get; set; }
         public ItemBox ItemBox { get; set; }
-        public Byte[] Flags { get; set; }
+        public FlagData Flags { get; set; }
         public UInt32 ScenarioQuest { get; set; }
         public UInt32 CurrentQuest { get; set; }
         public Byte[] Unk_0x1097FC { get; set; }
@@ -948,7 +1121,7 @@ namespace XC2SaveNETThingy
 
             Party = new XC2Party(data.GetByteSubArray(LOC["Party"], XC2Party.SIZE));
             ItemBox = new ItemBox(data.GetByteSubArray(LOC["ItemBox"], ItemBox.SIZE));
-            Flags = data.GetByteSubArray(LOC["Flags"], 0xDC20);
+            Flags = new FlagData(data.GetByteSubArray(LOC["Flags"], 0xDC20));
             ScenarioQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ScenarioQuest"], 4), 0);
             CurrentQuest = BitConverter.ToUInt32(data.GetByteSubArray(LOC["CurrentQuest"], 4), 0);
             Unk_0x1097FC = data.GetByteSubArray(LOC["field_1097FC"], 4);
@@ -1055,7 +1228,7 @@ namespace XC2SaveNETThingy
 
             result.AddRange(Party.ToRawData());
             result.AddRange(ItemBox.ToRawData());
-            result.AddRange(Flags);
+            result.AddRange(Flags.ToRawData());
             result.AddRange(BitConverter.GetBytes(ScenarioQuest));
             result.AddRange(BitConverter.GetBytes(CurrentQuest));
             result.AddRange(Unk_0x1097FC);

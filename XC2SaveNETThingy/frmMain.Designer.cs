@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnLoad = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -465,6 +466,8 @@
             this.lbxBlades = new System.Windows.Forms.ListBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabBladeMain = new System.Windows.Forms.TabPage();
+            this.btnBladeExport = new System.Windows.Forms.Button();
+            this.btnBladeImport = new System.Windows.Forms.Button();
             this.groupBox107 = new System.Windows.Forms.GroupBox();
             this.groupBox108 = new System.Windows.Forms.GroupBox();
             this.label320 = new System.Windows.Forms.Label();
@@ -1182,7 +1185,10 @@
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabItems = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.btnItemSearch = new System.Windows.Forms.Button();
+            this.txtItemSearch = new System.Windows.Forms.TextBox();
+            this.tbcItems = new System.Windows.Forms.TabControl();
             this.tabCoreChipBox = new System.Windows.Forms.TabPage();
             this.dgvPcWpnChipBox = new System.Windows.Forms.DataGridView();
             this.tabAccessoryBox = new System.Windows.Forms.TabPage();
@@ -1260,7 +1266,21 @@
             this.label337 = new System.Windows.Forms.Label();
             this.nudItemsSerial10 = new System.Windows.Forms.NumericUpDown();
             this.tabFlags = new System.Windows.Forms.TabPage();
-            this.hbxFlags = new Be.Windows.Forms.HexBox();
+            this.tbcFlagData = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox167 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags1Bit = new System.Windows.Forms.DataGridView();
+            this.groupBox168 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags2Bit = new System.Windows.Forms.DataGridView();
+            this.groupBox169 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags4Bit = new System.Windows.Forms.DataGridView();
+            this.groupBox170 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags8Bit = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox171 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags16Bit = new System.Windows.Forms.DataGridView();
+            this.groupBox172 = new System.Windows.Forms.GroupBox();
+            this.dgvFlags32Bit = new System.Windows.Forms.DataGridView();
             this.tabMapLocation = new System.Windows.Forms.TabPage();
             this.groupBox163 = new System.Windows.Forms.GroupBox();
             this.nudCameraSide = new System.Windows.Forms.NumericUpDown();
@@ -1637,6 +1657,20 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdBladeAffChart = new System.Windows.Forms.OpenFileDialog();
             this.sfdBladeAffChart = new System.Windows.Forms.SaveFileDialog();
+            this.ofdBlade = new System.Windows.Forms.OpenFileDialog();
+            this.sfdBlade = new System.Windows.Forms.SaveFileDialog();
+            this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox173 = new System.Windows.Forms.GroupBox();
+            this.label510 = new System.Windows.Forms.Label();
+            this.groupBox174 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label511 = new System.Windows.Forms.Label();
+            this.label512 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -2167,7 +2201,11 @@
             this.groupBox24.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.tabItems.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            this.tbcItems.SuspendLayout();
             this.tabCoreChipBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
             this.tabAccessoryBox.SuspendLayout();
@@ -2226,6 +2264,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).BeginInit();
             this.tabFlags.SuspendLayout();
+            this.tbcFlagData.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.groupBox167.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags1Bit)).BeginInit();
+            this.groupBox168.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags2Bit)).BeginInit();
+            this.groupBox169.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags4Bit)).BeginInit();
+            this.groupBox170.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags8Bit)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox171.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags16Bit)).BeginInit();
+            this.groupBox172.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags32Bit)).BeginInit();
             this.tabMapLocation.SuspendLayout();
             this.groupBox163.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCameraSide)).BeginInit();
@@ -2414,6 +2467,11 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.cmsItems.SuspendLayout();
+            this.groupBox173.SuspendLayout();
+            this.groupBox174.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -7423,6 +7481,8 @@
             // 
             // tabBladeMain
             // 
+            this.tabBladeMain.Controls.Add(this.btnBladeExport);
+            this.tabBladeMain.Controls.Add(this.btnBladeImport);
             this.tabBladeMain.Controls.Add(this.groupBox107);
             this.tabBladeMain.Controls.Add(this.groupBox105);
             this.tabBladeMain.Controls.Add(this.groupBox104);
@@ -7435,6 +7495,26 @@
             this.tabBladeMain.TabIndex = 0;
             this.tabBladeMain.Text = "Main";
             this.tabBladeMain.UseVisualStyleBackColor = true;
+            // 
+            // btnBladeExport
+            // 
+            this.btnBladeExport.Location = new System.Drawing.Point(544, 508);
+            this.btnBladeExport.Name = "btnBladeExport";
+            this.btnBladeExport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeExport.TabIndex = 240;
+            this.btnBladeExport.Text = "button2";
+            this.btnBladeExport.UseVisualStyleBackColor = true;
+            this.btnBladeExport.Click += new System.EventHandler(this.btnBladeExport_Click);
+            // 
+            // btnBladeImport
+            // 
+            this.btnBladeImport.Location = new System.Drawing.Point(529, 447);
+            this.btnBladeImport.Name = "btnBladeImport";
+            this.btnBladeImport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeImport.TabIndex = 239;
+            this.btnBladeImport.Text = "button1";
+            this.btnBladeImport.UseVisualStyleBackColor = true;
+            this.btnBladeImport.Click += new System.EventHandler(this.btnBladeImport_Click);
             // 
             // groupBox107
             // 
@@ -15615,7 +15695,7 @@
             // 
             // tabItems
             // 
-            this.tabItems.Controls.Add(this.tabControl2);
+            this.tabItems.Controls.Add(this.splitContainer5);
             this.tabItems.Location = new System.Drawing.Point(4, 22);
             this.tabItems.Name = "tabItems";
             this.tabItems.Padding = new System.Windows.Forms.Padding(3);
@@ -15624,33 +15704,70 @@
             this.tabItems.Text = "Items";
             this.tabItems.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // splitContainer5
             // 
-            this.tabControl2.Controls.Add(this.tabCoreChipBox);
-            this.tabControl2.Controls.Add(this.tabAccessoryBox);
-            this.tabControl2.Controls.Add(this.tabAuxCoreBox);
-            this.tabControl2.Controls.Add(this.tabCylinderBox);
-            this.tabControl2.Controls.Add(this.tabKeyItemBox);
-            this.tabControl2.Controls.Add(this.tabInfoItemBox);
-            this.tabControl2.Controls.Add(this.tabEventItemBox);
-            this.tabControl2.Controls.Add(this.tabCollectibleBox);
-            this.tabControl2.Controls.Add(this.tabTreasureBox);
-            this.tabControl2.Controls.Add(this.tabUnrefinedAuxCoresBox);
-            this.tabControl2.Controls.Add(this.tabPouchItemBox);
-            this.tabControl2.Controls.Add(this.tabCoreCrystalBox);
-            this.tabControl2.Controls.Add(this.tabBoosterBox);
-            this.tabControl2.Controls.Add(this.tabPoppiRoleCPUBox);
-            this.tabControl2.Controls.Add(this.tabPoppiElementCoreBox);
-            this.tabControl2.Controls.Add(this.tabPoppiSpecialsEnhancingRAMBox);
-            this.tabControl2.Controls.Add(this.tabPoppiArtsCardBox);
-            this.tabControl2.Controls.Add(this.tabPoppiSkillRAMBox);
-            this.tabControl2.Controls.Add(this.tabItemsSerials);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1128, 570);
-            this.tabControl2.TabIndex = 0;
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.groupBox174);
+            this.splitContainer5.Panel1.Controls.Add(this.groupBox173);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.tbcItems);
+            this.splitContainer5.Size = new System.Drawing.Size(1128, 570);
+            this.splitContainer5.SplitterDistance = 72;
+            this.splitContainer5.TabIndex = 1;
+            // 
+            // btnItemSearch
+            // 
+            this.btnItemSearch.Location = new System.Drawing.Point(179, 13);
+            this.btnItemSearch.Name = "btnItemSearch";
+            this.btnItemSearch.Size = new System.Drawing.Size(43, 23);
+            this.btnItemSearch.TabIndex = 1;
+            this.btnItemSearch.Text = "Find";
+            this.btnItemSearch.UseVisualStyleBackColor = true;
+            this.btnItemSearch.Click += new System.EventHandler(this.btnItemSearch_Click);
+            // 
+            // txtItemSearch
+            // 
+            this.txtItemSearch.Location = new System.Drawing.Point(73, 13);
+            this.txtItemSearch.Name = "txtItemSearch";
+            this.txtItemSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtItemSearch.TabIndex = 0;
+            this.txtItemSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItemSearch_KeyUp);
+            // 
+            // tbcItems
+            // 
+            this.tbcItems.Controls.Add(this.tabCoreChipBox);
+            this.tbcItems.Controls.Add(this.tabAccessoryBox);
+            this.tbcItems.Controls.Add(this.tabAuxCoreBox);
+            this.tbcItems.Controls.Add(this.tabCylinderBox);
+            this.tbcItems.Controls.Add(this.tabKeyItemBox);
+            this.tbcItems.Controls.Add(this.tabInfoItemBox);
+            this.tbcItems.Controls.Add(this.tabEventItemBox);
+            this.tbcItems.Controls.Add(this.tabCollectibleBox);
+            this.tbcItems.Controls.Add(this.tabTreasureBox);
+            this.tbcItems.Controls.Add(this.tabUnrefinedAuxCoresBox);
+            this.tbcItems.Controls.Add(this.tabPouchItemBox);
+            this.tbcItems.Controls.Add(this.tabCoreCrystalBox);
+            this.tbcItems.Controls.Add(this.tabBoosterBox);
+            this.tbcItems.Controls.Add(this.tabPoppiRoleCPUBox);
+            this.tbcItems.Controls.Add(this.tabPoppiElementCoreBox);
+            this.tbcItems.Controls.Add(this.tabPoppiSpecialsEnhancingRAMBox);
+            this.tbcItems.Controls.Add(this.tabPoppiArtsCardBox);
+            this.tbcItems.Controls.Add(this.tabPoppiSkillRAMBox);
+            this.tbcItems.Controls.Add(this.tabItemsSerials);
+            this.tbcItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcItems.Location = new System.Drawing.Point(0, 0);
+            this.tbcItems.Name = "tbcItems";
+            this.tbcItems.SelectedIndex = 0;
+            this.tbcItems.Size = new System.Drawing.Size(1128, 494);
+            this.tbcItems.TabIndex = 0;
             // 
             // tabCoreChipBox
             // 
@@ -15659,7 +15776,7 @@
             this.tabCoreChipBox.Location = new System.Drawing.Point(4, 22);
             this.tabCoreChipBox.Name = "tabCoreChipBox";
             this.tabCoreChipBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreChipBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabCoreChipBox.Size = new System.Drawing.Size(1120, 468);
             this.tabCoreChipBox.TabIndex = 0;
             this.tabCoreChipBox.Text = "Core Chips";
             this.tabCoreChipBox.UseVisualStyleBackColor = true;
@@ -15670,8 +15787,9 @@
             this.dgvPcWpnChipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcWpnChipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcWpnChipBox.Name = "dgvPcWpnChipBox";
-            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvPcWpnChipBox.TabIndex = 0;
+            this.dgvPcWpnChipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcWpnChipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabAccessoryBox
@@ -15680,7 +15798,7 @@
             this.tabAccessoryBox.Location = new System.Drawing.Point(4, 22);
             this.tabAccessoryBox.Name = "tabAccessoryBox";
             this.tabAccessoryBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 468);
             this.tabAccessoryBox.TabIndex = 1;
             this.tabAccessoryBox.Text = "Accessories";
             this.tabAccessoryBox.UseVisualStyleBackColor = true;
@@ -15693,8 +15811,9 @@
             this.dgvPcEquipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcEquipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcEquipBox.Name = "dgvPcEquipBox";
-            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvPcEquipBox.TabIndex = 0;
+            this.dgvPcEquipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcEquipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabAuxCoreBox
@@ -15703,7 +15822,7 @@
             this.tabAuxCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabAuxCoreBox.Name = "tabAuxCoreBox";
             this.tabAuxCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 468);
             this.tabAuxCoreBox.TabIndex = 2;
             this.tabAuxCoreBox.Text = "Aux Cores";
             this.tabAuxCoreBox.UseVisualStyleBackColor = true;
@@ -15716,8 +15835,9 @@
             this.dgvEquipOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
-            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvEquipOrbBox.TabIndex = 0;
+            this.dgvEquipOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabCylinderBox
@@ -15726,7 +15846,7 @@
             this.tabCylinderBox.Location = new System.Drawing.Point(4, 22);
             this.tabCylinderBox.Name = "tabCylinderBox";
             this.tabCylinderBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 468);
             this.tabCylinderBox.TabIndex = 3;
             this.tabCylinderBox.Text = "Cylinders";
             this.tabCylinderBox.UseVisualStyleBackColor = true;
@@ -15739,8 +15859,9 @@
             this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
             this.dgvSalvageBox.Name = "dgvSalvageBox";
-            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvSalvageBox.TabIndex = 0;
+            this.dgvSalvageBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabKeyItemBox
@@ -15749,7 +15870,7 @@
             this.tabKeyItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabKeyItemBox.Name = "tabKeyItemBox";
             this.tabKeyItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 468);
             this.tabKeyItemBox.TabIndex = 4;
             this.tabKeyItemBox.Text = "Key Items";
             this.tabKeyItemBox.UseVisualStyleBackColor = true;
@@ -15762,8 +15883,9 @@
             this.dgvPreciousBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreciousBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPreciousBox.Name = "dgvPreciousBox";
-            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvPreciousBox.TabIndex = 0;
+            this.dgvPreciousBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPreciousBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabInfoItemBox
@@ -15772,7 +15894,7 @@
             this.tabInfoItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabInfoItemBox.Name = "tabInfoItemBox";
             this.tabInfoItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 468);
             this.tabInfoItemBox.TabIndex = 5;
             this.tabInfoItemBox.Text = "Info Items";
             this.tabInfoItemBox.UseVisualStyleBackColor = true;
@@ -15785,8 +15907,9 @@
             this.dgvInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInfoBox.Location = new System.Drawing.Point(3, 3);
             this.dgvInfoBox.Name = "dgvInfoBox";
-            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvInfoBox.TabIndex = 0;
+            this.dgvInfoBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabEventItemBox
@@ -15795,7 +15918,7 @@
             this.tabEventItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabEventItemBox.Name = "tabEventItemBox";
             this.tabEventItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 468);
             this.tabEventItemBox.TabIndex = 6;
             this.tabEventItemBox.Text = "Event Items";
             this.tabEventItemBox.UseVisualStyleBackColor = true;
@@ -15808,8 +15931,9 @@
             this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEventBox.Name = "dgvEventBox";
-            this.dgvEventBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvEventBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvEventBox.TabIndex = 0;
+            this.dgvEventBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEventBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabCollectibleBox
@@ -15818,7 +15942,7 @@
             this.tabCollectibleBox.Location = new System.Drawing.Point(4, 22);
             this.tabCollectibleBox.Name = "tabCollectibleBox";
             this.tabCollectibleBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 468);
             this.tabCollectibleBox.TabIndex = 7;
             this.tabCollectibleBox.Text = "Collectibles";
             this.tabCollectibleBox.UseVisualStyleBackColor = true;
@@ -15831,8 +15955,9 @@
             this.dgvCollectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCollectionListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCollectionListBox.Name = "dgvCollectionListBox";
-            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvCollectionListBox.TabIndex = 0;
+            this.dgvCollectionListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabTreasureBox
@@ -15841,7 +15966,7 @@
             this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
             this.tabTreasureBox.Name = "tabTreasureBox";
             this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 468);
             this.tabTreasureBox.TabIndex = 8;
             this.tabTreasureBox.Text = "Treasure";
             this.tabTreasureBox.UseVisualStyleBackColor = true;
@@ -15854,8 +15979,9 @@
             this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
             this.dgvTreasureBox.Name = "dgvTreasureBox";
-            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvTreasureBox.TabIndex = 0;
+            this.dgvTreasureBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabUnrefinedAuxCoresBox
@@ -15864,7 +15990,7 @@
             this.tabUnrefinedAuxCoresBox.Location = new System.Drawing.Point(4, 22);
             this.tabUnrefinedAuxCoresBox.Name = "tabUnrefinedAuxCoresBox";
             this.tabUnrefinedAuxCoresBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 468);
             this.tabUnrefinedAuxCoresBox.TabIndex = 9;
             this.tabUnrefinedAuxCoresBox.Text = "Unrefined Aux Cores";
             this.tabUnrefinedAuxCoresBox.UseVisualStyleBackColor = true;
@@ -15877,8 +16003,9 @@
             this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
-            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvEmptyOrbBox.TabIndex = 0;
+            this.dgvEmptyOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPouchItemBox
@@ -15887,7 +16014,7 @@
             this.tabPouchItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabPouchItemBox.Name = "tabPouchItemBox";
             this.tabPouchItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPouchItemBox.TabIndex = 10;
             this.tabPouchItemBox.Text = "Pouch Items";
             this.tabPouchItemBox.UseVisualStyleBackColor = true;
@@ -15900,8 +16027,9 @@
             this.dgvFavoriteBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFavoriteBox.Location = new System.Drawing.Point(3, 3);
             this.dgvFavoriteBox.Name = "dgvFavoriteBox";
-            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvFavoriteBox.TabIndex = 0;
+            this.dgvFavoriteBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabCoreCrystalBox
@@ -15910,7 +16038,7 @@
             this.tabCoreCrystalBox.Location = new System.Drawing.Point(4, 22);
             this.tabCoreCrystalBox.Name = "tabCoreCrystalBox";
             this.tabCoreCrystalBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 468);
             this.tabCoreCrystalBox.TabIndex = 11;
             this.tabCoreCrystalBox.Text = "Core Crystals";
             this.tabCoreCrystalBox.UseVisualStyleBackColor = true;
@@ -15923,8 +16051,9 @@
             this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCrystalListBox.Name = "dgvCrystalListBox";
-            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvCrystalListBox.TabIndex = 0;
+            this.dgvCrystalListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabBoosterBox
@@ -15933,7 +16062,7 @@
             this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
             this.tabBoosterBox.Name = "tabBoosterBox";
             this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 468);
             this.tabBoosterBox.TabIndex = 12;
             this.tabBoosterBox.Text = "Boosters";
             this.tabBoosterBox.UseVisualStyleBackColor = true;
@@ -15946,8 +16075,9 @@
             this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
             this.dgvBoosterBox.Name = "dgvBoosterBox";
-            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvBoosterBox.TabIndex = 0;
+            this.dgvBoosterBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPoppiRoleCPUBox
@@ -15956,7 +16086,7 @@
             this.tabPoppiRoleCPUBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiRoleCPUBox.Name = "tabPoppiRoleCPUBox";
             this.tabPoppiRoleCPUBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPoppiRoleCPUBox.TabIndex = 13;
             this.tabPoppiRoleCPUBox.Text = "Poppi Role CPU";
             this.tabPoppiRoleCPUBox.UseVisualStyleBackColor = true;
@@ -15969,8 +16099,9 @@
             this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
-            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvHanaRoleBox.TabIndex = 0;
+            this.dgvHanaRoleBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPoppiElementCoreBox
@@ -15979,7 +16110,7 @@
             this.tabPoppiElementCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiElementCoreBox.Name = "tabPoppiElementCoreBox";
             this.tabPoppiElementCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPoppiElementCoreBox.TabIndex = 14;
             this.tabPoppiElementCoreBox.Text = "Poppi Element Cores";
             this.tabPoppiElementCoreBox.UseVisualStyleBackColor = true;
@@ -15992,8 +16123,9 @@
             this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
-            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvHanaAtrBox.TabIndex = 0;
+            this.dgvHanaAtrBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPoppiSpecialsEnhancingRAMBox
@@ -16002,7 +16134,7 @@
             this.tabPoppiSpecialsEnhancingRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSpecialsEnhancingRAMBox.Name = "tabPoppiSpecialsEnhancingRAMBox";
             this.tabPoppiSpecialsEnhancingRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPoppiSpecialsEnhancingRAMBox.TabIndex = 15;
             this.tabPoppiSpecialsEnhancingRAMBox.Text = "Poppi Specials Enhancing RAM";
             this.tabPoppiSpecialsEnhancingRAMBox.UseVisualStyleBackColor = true;
@@ -16015,8 +16147,9 @@
             this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
-            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvHanaArtsBox.TabIndex = 0;
+            this.dgvHanaArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPoppiArtsCardBox
@@ -16025,7 +16158,7 @@
             this.tabPoppiArtsCardBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiArtsCardBox.Name = "tabPoppiArtsCardBox";
             this.tabPoppiArtsCardBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPoppiArtsCardBox.TabIndex = 16;
             this.tabPoppiArtsCardBox.Text = "Poppi Arts Cards";
             this.tabPoppiArtsCardBox.UseVisualStyleBackColor = true;
@@ -16038,8 +16171,9 @@
             this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
-            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvHanaNArtsBox.TabIndex = 0;
+            this.dgvHanaNArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabPoppiSkillRAMBox
@@ -16048,7 +16182,7 @@
             this.tabPoppiSkillRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSkillRAMBox.Name = "tabPoppiSkillRAMBox";
             this.tabPoppiSkillRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 544);
+            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 468);
             this.tabPoppiSkillRAMBox.TabIndex = 17;
             this.tabPoppiSkillRAMBox.Text = "Poppi Skill RAM";
             this.tabPoppiSkillRAMBox.UseVisualStyleBackColor = true;
@@ -16061,8 +16195,9 @@
             this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
-            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 538);
+            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 462);
             this.dgvHanaAssistBox.TabIndex = 0;
+            this.dgvHanaAssistBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             // 
             // tabItemsSerials
@@ -16070,7 +16205,7 @@
             this.tabItemsSerials.Controls.Add(this.groupBox112);
             this.tabItemsSerials.Location = new System.Drawing.Point(4, 22);
             this.tabItemsSerials.Name = "tabItemsSerials";
-            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 544);
+            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 468);
             this.tabItemsSerials.TabIndex = 18;
             this.tabItemsSerials.Text = "Serials";
             this.tabItemsSerials.UseVisualStyleBackColor = true;
@@ -16542,7 +16677,7 @@
             // 
             // tabFlags
             // 
-            this.tabFlags.Controls.Add(this.hbxFlags);
+            this.tabFlags.Controls.Add(this.tbcFlagData);
             this.tabFlags.Location = new System.Drawing.Point(4, 22);
             this.tabFlags.Name = "tabFlags";
             this.tabFlags.Size = new System.Drawing.Size(1134, 576);
@@ -16550,20 +16685,180 @@
             this.tabFlags.Text = "Game Flag Data";
             this.tabFlags.UseVisualStyleBackColor = true;
             // 
-            // hbxFlags
+            // tbcFlagData
             // 
-            this.hbxFlags.ColumnInfoVisible = true;
-            this.hbxFlags.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbxFlags.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxFlags.LineInfoVisible = true;
-            this.hbxFlags.Location = new System.Drawing.Point(0, 0);
-            this.hbxFlags.Name = "hbxFlags";
-            this.hbxFlags.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxFlags.Size = new System.Drawing.Size(1134, 576);
-            this.hbxFlags.StringViewVisible = true;
-            this.hbxFlags.TabIndex = 155;
-            this.hbxFlags.UseFixedBytesPerLine = true;
-            this.hbxFlags.VScrollBarVisible = true;
+            this.tbcFlagData.Controls.Add(this.tabPage1);
+            this.tbcFlagData.Controls.Add(this.tabPage2);
+            this.tbcFlagData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcFlagData.Location = new System.Drawing.Point(0, 0);
+            this.tbcFlagData.Name = "tbcFlagData";
+            this.tbcFlagData.SelectedIndex = 0;
+            this.tbcFlagData.Size = new System.Drawing.Size(1134, 576);
+            this.tbcFlagData.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox167);
+            this.tabPage1.Controls.Add(this.groupBox168);
+            this.tabPage1.Controls.Add(this.groupBox169);
+            this.tabPage1.Controls.Add(this.groupBox170);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1126, 550);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox167
+            // 
+            this.groupBox167.Controls.Add(this.dgvFlags1Bit);
+            this.groupBox167.Location = new System.Drawing.Point(6, 6);
+            this.groupBox167.Name = "groupBox167";
+            this.groupBox167.Size = new System.Drawing.Size(150, 483);
+            this.groupBox167.TabIndex = 2;
+            this.groupBox167.TabStop = false;
+            this.groupBox167.Text = "1-Bit Flags";
+            // 
+            // dgvFlags1Bit
+            // 
+            this.dgvFlags1Bit.AllowUserToAddRows = false;
+            this.dgvFlags1Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags1Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags1Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags1Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags1Bit.MultiSelect = false;
+            this.dgvFlags1Bit.Name = "dgvFlags1Bit";
+            this.dgvFlags1Bit.Size = new System.Drawing.Size(144, 464);
+            this.dgvFlags1Bit.TabIndex = 0;
+            this.dgvFlags1Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags1Bit_RowsAdded);
+            // 
+            // groupBox168
+            // 
+            this.groupBox168.Controls.Add(this.dgvFlags2Bit);
+            this.groupBox168.Location = new System.Drawing.Point(162, 6);
+            this.groupBox168.Name = "groupBox168";
+            this.groupBox168.Size = new System.Drawing.Size(160, 483);
+            this.groupBox168.TabIndex = 3;
+            this.groupBox168.TabStop = false;
+            this.groupBox168.Text = "2-Bit Flags";
+            // 
+            // dgvFlags2Bit
+            // 
+            this.dgvFlags2Bit.AllowUserToAddRows = false;
+            this.dgvFlags2Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags2Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags2Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags2Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags2Bit.MultiSelect = false;
+            this.dgvFlags2Bit.Name = "dgvFlags2Bit";
+            this.dgvFlags2Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags2Bit.TabIndex = 1;
+            this.dgvFlags2Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags2Bit_RowsAdded);
+            // 
+            // groupBox169
+            // 
+            this.groupBox169.Controls.Add(this.dgvFlags4Bit);
+            this.groupBox169.Location = new System.Drawing.Point(328, 6);
+            this.groupBox169.Name = "groupBox169";
+            this.groupBox169.Size = new System.Drawing.Size(160, 483);
+            this.groupBox169.TabIndex = 4;
+            this.groupBox169.TabStop = false;
+            this.groupBox169.Text = "4-Bit Flags";
+            // 
+            // dgvFlags4Bit
+            // 
+            this.dgvFlags4Bit.AllowUserToAddRows = false;
+            this.dgvFlags4Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags4Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags4Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags4Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags4Bit.MultiSelect = false;
+            this.dgvFlags4Bit.Name = "dgvFlags4Bit";
+            this.dgvFlags4Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags4Bit.TabIndex = 1;
+            this.dgvFlags4Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags4Bit_RowsAdded);
+            // 
+            // groupBox170
+            // 
+            this.groupBox170.Controls.Add(this.dgvFlags8Bit);
+            this.groupBox170.Location = new System.Drawing.Point(494, 6);
+            this.groupBox170.Name = "groupBox170";
+            this.groupBox170.Size = new System.Drawing.Size(160, 483);
+            this.groupBox170.TabIndex = 5;
+            this.groupBox170.TabStop = false;
+            this.groupBox170.Text = "8-Bit Flags";
+            // 
+            // dgvFlags8Bit
+            // 
+            this.dgvFlags8Bit.AllowUserToAddRows = false;
+            this.dgvFlags8Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags8Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags8Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags8Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags8Bit.MultiSelect = false;
+            this.dgvFlags8Bit.Name = "dgvFlags8Bit";
+            this.dgvFlags8Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags8Bit.TabIndex = 1;
+            this.dgvFlags8Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags8Bit_RowsAdded);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox171);
+            this.tabPage2.Controls.Add(this.groupBox172);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1126, 550);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox171
+            // 
+            this.groupBox171.Controls.Add(this.dgvFlags16Bit);
+            this.groupBox171.Location = new System.Drawing.Point(6, 6);
+            this.groupBox171.Name = "groupBox171";
+            this.groupBox171.Size = new System.Drawing.Size(216, 535);
+            this.groupBox171.TabIndex = 6;
+            this.groupBox171.TabStop = false;
+            this.groupBox171.Text = "16-Bit Flags";
+            // 
+            // dgvFlags16Bit
+            // 
+            this.dgvFlags16Bit.AllowUserToAddRows = false;
+            this.dgvFlags16Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags16Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags16Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags16Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags16Bit.MultiSelect = false;
+            this.dgvFlags16Bit.Name = "dgvFlags16Bit";
+            this.dgvFlags16Bit.Size = new System.Drawing.Size(210, 516);
+            this.dgvFlags16Bit.TabIndex = 1;
+            this.dgvFlags16Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags16Bit_RowsAdded);
+            // 
+            // groupBox172
+            // 
+            this.groupBox172.Controls.Add(this.dgvFlags32Bit);
+            this.groupBox172.Location = new System.Drawing.Point(259, 6);
+            this.groupBox172.Name = "groupBox172";
+            this.groupBox172.Size = new System.Drawing.Size(352, 538);
+            this.groupBox172.TabIndex = 7;
+            this.groupBox172.TabStop = false;
+            this.groupBox172.Text = "32-Bit Flags";
+            // 
+            // dgvFlags32Bit
+            // 
+            this.dgvFlags32Bit.AllowUserToAddRows = false;
+            this.dgvFlags32Bit.AllowUserToDeleteRows = false;
+            this.dgvFlags32Bit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlags32Bit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlags32Bit.Location = new System.Drawing.Point(3, 16);
+            this.dgvFlags32Bit.MultiSelect = false;
+            this.dgvFlags32Bit.Name = "dgvFlags32Bit";
+            this.dgvFlags32Bit.Size = new System.Drawing.Size(346, 519);
+            this.dgvFlags32Bit.TabIndex = 1;
+            this.dgvFlags32Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags32Bit_RowsAdded);
             // 
             // tabMapLocation
             // 
@@ -21169,6 +21464,122 @@
             // 
             this.sfdBladeAffChart.Filter = "XC2SaveNETThingy Blade Affinity Chart File|*.x2bac|All Files|*.*";
             // 
+            // ofdBlade
+            // 
+            this.ofdBlade.Filter = "XC2SaveNETThingy Blade File|*.x2b|All Files|*.*";
+            // 
+            // sfdBlade
+            // 
+            this.sfdBlade.Filter = "XC2SaveNETThingy Blade File|*.x2b|All Files|*.*";
+            // 
+            // cmsItems
+            // 
+            this.cmsItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiItemGetNewSerial,
+            this.tsmiItemUpdateTime});
+            this.cmsItems.Name = "cmsItems";
+            this.cmsItems.Size = new System.Drawing.Size(259, 48);
+            this.cmsItems.Text = "Item Options";
+            // 
+            // tsmiItemGetNewSerial
+            // 
+            this.tsmiItemGetNewSerial.Name = "tsmiItemGetNewSerial";
+            this.tsmiItemGetNewSerial.Size = new System.Drawing.Size(258, 22);
+            this.tsmiItemGetNewSerial.Text = "Apply Unused Serial to this Item";
+            this.tsmiItemGetNewSerial.Click += new System.EventHandler(this.tsmiItemGetNewSerial_Click);
+            // 
+            // tsmiItemUpdateTime
+            // 
+            this.tsmiItemUpdateTime.Name = "tsmiItemUpdateTime";
+            this.tsmiItemUpdateTime.Size = new System.Drawing.Size(258, 22);
+            this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
+            this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
+            // 
+            // groupBox173
+            // 
+            this.groupBox173.Controls.Add(this.label510);
+            this.groupBox173.Controls.Add(this.btnItemSearch);
+            this.groupBox173.Controls.Add(this.txtItemSearch);
+            this.groupBox173.Location = new System.Drawing.Point(5, 3);
+            this.groupBox173.Name = "groupBox173";
+            this.groupBox173.Size = new System.Drawing.Size(343, 66);
+            this.groupBox173.TabIndex = 2;
+            this.groupBox173.TabStop = false;
+            this.groupBox173.Text = "Find Existing Item in Current Item Box";
+            // 
+            // label510
+            // 
+            this.label510.AutoSize = true;
+            this.label510.Location = new System.Drawing.Point(6, 16);
+            this.label510.Name = "label510";
+            this.label510.Size = new System.Drawing.Size(61, 13);
+            this.label510.TabIndex = 0;
+            this.label510.Text = "Find Name:";
+            // 
+            // groupBox174
+            // 
+            this.groupBox174.Controls.Add(this.button1);
+            this.groupBox174.Controls.Add(this.label512);
+            this.groupBox174.Controls.Add(this.label511);
+            this.groupBox174.Controls.Add(this.numericUpDown2);
+            this.groupBox174.Controls.Add(this.comboBox1);
+            this.groupBox174.Controls.Add(this.numericUpDown1);
+            this.groupBox174.Location = new System.Drawing.Point(354, 3);
+            this.groupBox174.Name = "groupBox174";
+            this.groupBox174.Size = new System.Drawing.Size(393, 66);
+            this.groupBox174.TabIndex = 3;
+            this.groupBox174.TabStop = false;
+            this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown2.TabIndex = 2;
+            // 
+            // label511
+            // 
+            this.label511.AutoSize = true;
+            this.label511.Location = new System.Drawing.Point(6, 16);
+            this.label511.Name = "label511";
+            this.label511.Size = new System.Drawing.Size(30, 13);
+            this.label511.TabIndex = 3;
+            this.label511.Text = "Item:";
+            // 
+            // label512
+            // 
+            this.label512.AutoSize = true;
+            this.label512.Location = new System.Drawing.Point(230, 16);
+            this.label512.Name = "label512";
+            this.label512.Size = new System.Drawing.Size(26, 13);
+            this.label512.TabIndex = 4;
+            this.label512.Text = "Qty:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(316, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -21786,7 +22197,11 @@
             this.groupBox24.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
             this.tabItems.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.tbcItems.ResumeLayout(false);
             this.tabCoreChipBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
             this.tabAccessoryBox.ResumeLayout(false);
@@ -21846,6 +22261,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial10)).EndInit();
             this.tabFlags.ResumeLayout(false);
+            this.tbcFlagData.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox167.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags1Bit)).EndInit();
+            this.groupBox168.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags2Bit)).EndInit();
+            this.groupBox169.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags4Bit)).EndInit();
+            this.groupBox170.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags8Bit)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox171.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags16Bit)).EndInit();
+            this.groupBox172.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFlags32Bit)).EndInit();
             this.tabMapLocation.ResumeLayout(false);
             this.tabMapLocation.PerformLayout();
             this.groupBox163.ResumeLayout(false);
@@ -22056,6 +22486,13 @@
             this.splitContainer3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.cmsItems.ResumeLayout(false);
+            this.groupBox173.ResumeLayout(false);
+            this.groupBox173.PerformLayout();
+            this.groupBox174.ResumeLayout(false);
+            this.groupBox174.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -22084,7 +22521,7 @@
         private System.Windows.Forms.ComboBox cbxPartyMembers;
         private System.Windows.Forms.ComboBox cbxPartyMemberDriver;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tbcItems;
         private System.Windows.Forms.TabPage tabCoreChipBox;
         private System.Windows.Forms.TabPage tabAccessoryBox;
         private System.Windows.Forms.DataGridView dgvPcEquipBox;
@@ -23317,7 +23754,6 @@
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117A4C;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1186DC;
         private System.Windows.Forms.TabPage tabFlags;
-        private Be.Windows.Forms.HexBox hbxFlags;
         private System.Windows.Forms.TabPage tabMercGroups;
         private System.Windows.Forms.GroupBox groupBox132;
         private System.Windows.Forms.ComboBox cbxMercGroup1Blade6;
@@ -23670,6 +24106,40 @@
         private System.Windows.Forms.Button btnBladeAffChartExport;
         private System.Windows.Forms.OpenFileDialog ofdBladeAffChart;
         private System.Windows.Forms.SaveFileDialog sfdBladeAffChart;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.Button btnItemSearch;
+        private System.Windows.Forms.TextBox txtItemSearch;
+        private System.Windows.Forms.Button btnBladeExport;
+        private System.Windows.Forms.Button btnBladeImport;
+        private System.Windows.Forms.OpenFileDialog ofdBlade;
+        private System.Windows.Forms.SaveFileDialog sfdBlade;
+        private System.Windows.Forms.DataGridView dgvFlags1Bit;
+        private System.Windows.Forms.DataGridView dgvFlags2Bit;
+        private System.Windows.Forms.GroupBox groupBox168;
+        private System.Windows.Forms.GroupBox groupBox167;
+        private System.Windows.Forms.GroupBox groupBox172;
+        private System.Windows.Forms.DataGridView dgvFlags32Bit;
+        private System.Windows.Forms.GroupBox groupBox171;
+        private System.Windows.Forms.DataGridView dgvFlags16Bit;
+        private System.Windows.Forms.GroupBox groupBox170;
+        private System.Windows.Forms.DataGridView dgvFlags8Bit;
+        private System.Windows.Forms.GroupBox groupBox169;
+        private System.Windows.Forms.DataGridView dgvFlags4Bit;
+        private System.Windows.Forms.TabControl tbcFlagData;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ContextMenuStrip cmsItems;
+        private System.Windows.Forms.ToolStripMenuItem tsmiItemGetNewSerial;
+        private System.Windows.Forms.ToolStripMenuItem tsmiItemUpdateTime;
+        private System.Windows.Forms.GroupBox groupBox174;
+        private System.Windows.Forms.GroupBox groupBox173;
+        private System.Windows.Forms.Label label510;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label512;
+        private System.Windows.Forms.Label label511;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
