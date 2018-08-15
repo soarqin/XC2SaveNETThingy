@@ -76,9 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blade.cs" />
     <Compile Include="DataGridViewColumnFactory.cs" />
-    <Compile Include="Driver.cs" />
     <Compile Include="FixedLengthByteProvider.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
@@ -98,14 +96,42 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemBox.cs" />
-    <Compile Include="IXC2SaveObject.cs" />
-    <Compile Include="Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveObjects\Blade\AchieveInfo.cs" />
+    <Compile Include="SaveObjects\Blade\AchieveQuest.cs" />
+    <Compile Include="SaveObjects\Blade\ArtsEnhance.cs" />
+    <Compile Include="SaveObjects\Blade\Blade.cs" />
+    <Compile Include="SaveObjects\Blade\BladeArt.cs" />
+    <Compile Include="SaveObjects\Blade\BladeSkill.cs" />
+    <Compile Include="SaveObjects\Blade\HanaCircuits.cs" />
+    <Compile Include="SaveObjects\Blade\PoppiSwapData.cs" />
+    <Compile Include="SaveObjects\Driver\Driver.cs" />
+    <Compile Include="SaveObjects\Driver\DriverSkill.cs" />
+    <Compile Include="SaveObjects\Driver\Pouch.cs" />
+    <Compile Include="SaveObjects\Driver\Weapon.cs" />
+    <Compile Include="SaveObjects\ElapseTime.cs" />
+    <Compile Include="SaveObjects\Event.cs" />
+    <Compile Include="SaveObjects\FlagData.cs" />
+    <Compile Include="SaveObjects\GameTime.cs" />
+    <Compile Include="SaveObjects\Items\Item.cs" />
+    <Compile Include="SaveObjects\Items\ItemBox.cs" />
+    <Compile Include="SaveObjects\Items\ItemHandle.cs" />
+    <Compile Include="SaveObjects\IXC2SaveObject.cs" />
+    <Compile Include="SaveObjects\MapData.cs" />
+    <Compile Include="SaveObjects\MercGroup.cs" />
+    <Compile Include="SaveObjects\MercGroupPreset.cs" />
+    <Compile Include="SaveObjects\PaddedString.cs" />
+    <Compile Include="SaveObjects\PartyMember.cs" />
+    <Compile Include="SaveObjects\RealTime.cs" />
+    <Compile Include="SaveObjects\TaskAchieve.cs" />
+    <Compile Include="SaveObjects\TigerTigerData.cs" />
+    <Compile Include="SaveObjects\Vec.cs" />
+    <Compile Include="SaveObjects\WeatherInfo.cs" />
+    <Compile Include="SaveObjects\XC2Party.cs" />
+    <Compile Include="SaveObjects\XC2Save.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="XC2Data.cs" />
-    <Compile Include="XC2Save.cs" />
     <Content Include="db\BladeCommonNames.sql" />
     <Content Include="db\BladeRareNames.sql" />
     <Content Include="db\Elements.sql" />

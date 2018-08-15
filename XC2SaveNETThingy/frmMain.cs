@@ -50,16 +50,16 @@ namespace XC2SaveNETThingy
         private void SetupComboBoxes()
         {
             #region Misc
-            for (int i = 0; i < XC2Save.TaskAchieve.COUNT; i++)
+            for (int i = 0; i < TaskAchieve.COUNT; i++)
                 cbxAchievementTasks.Items.Add("Achievement Task " + (i + 1));
 
-            for (int i = 0; i < XC2Save.MercGroupPreset.COUNT; i++)
+            for (int i = 0; i < MercGroupPreset.COUNT; i++)
                 cbxMercGroupPresets.Items.Add("Preset " + (i + 1));
 
-            for (int i = 0; i < XC2Save.WeatherInfo.COUNT; i++)
+            for (int i = 0; i < WeatherInfo.COUNT; i++)
                 cbxWeatherInfo.Items.Add("Weather Info " + (i + 1));
 
-            for (int i = 0; i < XC2Save.Event.COUNT; i++)
+            for (int i = 0; i < Event.COUNT; i++)
                 cbxEvents.Items.Add("Event " + (i + 1));
 
             for (int i = 0; i < XC2Save.COMMON_BLADE_IDS_COUNT; i++)
@@ -84,7 +84,7 @@ namespace XC2SaveNETThingy
             cbxDriverArt.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
             cbxDriverWeapons.BindDataTable(XC2Data.Weapons(0b1));
             
-            for (int i = 0; i < Driver.Pouch.COUNT; i++)
+            for (int i = 0; i < Pouch.COUNT; i++)
                 cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
 
             cbxDriverPouchesItemID.BindDataTable(XC2Data.Items());
@@ -181,7 +181,7 @@ namespace XC2SaveNETThingy
             #endregion Blade
 
             #region Party
-            for (int i = 0; i < XC2Save.XC2Party.MEMBERS_COUNT; i++)
+            for (int i = 0; i < XC2Party.MEMBERS_COUNT; i++)
                 cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
 
             cbxPartyLeader.BindDataTable(XC2Data.Drivers());
@@ -1499,14 +1499,14 @@ namespace XC2SaveNETThingy
         #endregion Blades
 
         #region Items
-        private DataGridView SetupItemBox(DataGridView dgv, ItemBox.Item[] items, DataTable ItemIDs)
+        private DataGridView SetupItemBox(DataGridView dgv, Item[] items, DataTable ItemIDs)
         {
             dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(Dgv_CellFormatting);
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = null;
 
-            BindingList<ItemBox.Item> ds = new BindingList<ItemBox.Item>();
-            foreach (ItemBox.Item i in items)
+            BindingList<Item> ds = new BindingList<Item>();
+            foreach (Item i in items)
                 ds.Add(i);
 
             dgv.Columns.Clear();
@@ -1531,33 +1531,33 @@ namespace XC2SaveNETThingy
 
         private void SetupFlagEditors()
         {
-            BindingList<XC2Save.FlagData.Flag_1> Flags_1Bit_bl = new BindingList<XC2Save.FlagData.Flag_1>();
-            foreach (XC2Save.FlagData.Flag_1 f in SAVEDATA.Flags.Flags_1Bit)
+            BindingList<FlagData.Flag_1> Flags_1Bit_bl = new BindingList<FlagData.Flag_1>();
+            foreach (FlagData.Flag_1 f in SAVEDATA.Flags.Flags_1Bit)
                 Flags_1Bit_bl.Add(f);
             dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, Flags_1Bit_bl, "Value", "Set", true, 30);
 
-            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
-            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_2Bit)
+            BindingList<FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_2Bit)
                 Flags_2Bit_bl.Add(f);
             dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, Flags_2Bit_bl, "Value", "Value", false, 40, 3);
 
-            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
-            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_4Bit)
+            BindingList<FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_4Bit)
                 Flags_4Bit_bl.Add(f);
             dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, Flags_4Bit_bl, "Value", "Value", false, 40, 15);
 
-            BindingList<XC2Save.FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<XC2Save.FlagData.Flag_2_4_8>();
-            foreach (XC2Save.FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_8Bit)
+            BindingList<FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_8Bit)
                 Flags_8Bit_bl.Add(f);
             dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, Flags_8Bit_bl, "Value", "Value", false, 40, 255);
 
-            BindingList<XC2Save.FlagData.Flag_16> Flags_16Bit_bl = new BindingList<XC2Save.FlagData.Flag_16>();
-            foreach (XC2Save.FlagData.Flag_16 f in SAVEDATA.Flags.Flags_16Bit)
+            BindingList<FlagData.Flag_16> Flags_16Bit_bl = new BindingList<FlagData.Flag_16>();
+            foreach (FlagData.Flag_16 f in SAVEDATA.Flags.Flags_16Bit)
                 Flags_16Bit_bl.Add(f);
             dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, Flags_16Bit_bl, "Value", "Value", false, 55, 65535);
 
-            BindingList<XC2Save.FlagData.Flag_32> Flags_32Bit_bl = new BindingList<XC2Save.FlagData.Flag_32>();
-            foreach (XC2Save.FlagData.Flag_32 f in SAVEDATA.Flags.Flags_32Bit)
+            BindingList<FlagData.Flag_32> Flags_32Bit_bl = new BindingList<FlagData.Flag_32>();
+            foreach (FlagData.Flag_32 f in SAVEDATA.Flags.Flags_32Bit)
                 Flags_32Bit_bl.Add(f);
             dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
         }
@@ -1770,7 +1770,7 @@ namespace XC2SaveNETThingy
         #region Driver Arts
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Driver.Weapon w = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex];
+            Weapon w = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex];
 
             nudDriverWeaponArtId1.Value = w.ArtIds[0];
             nudDriverWeaponArtId2.Value = w.ArtIds[1];
@@ -3852,7 +3852,7 @@ namespace XC2SaveNETThingy
         #region XC2Save Events
         private void cbxEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            XC2Save.Event ev = SAVEDATA.Events[cbxEvents.SelectedIndex];
+            Event ev = SAVEDATA.Events[cbxEvents.SelectedIndex];
 
             nudEventID.Value = ev.EventID;
             nudEventCreator.Value = ev.Creator;
@@ -4110,7 +4110,7 @@ namespace XC2SaveNETThingy
 
         private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            FlagEditorRowHeaderSet((DataGridView)sender, XC2Save.FlagData.NAMES_32BIT);
+            FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
         }
 
         private UInt32 ItemGetNewSerial(DataGridView dgv)
