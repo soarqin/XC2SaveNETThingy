@@ -109,7 +109,7 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "ID || \": \" || Name AS Name " +
+                "Name || ' [' || ID || ']' AS Name " +
                 "FROM BladeSpecials";
             return GetDataSet(query).Tables[0];
         }
@@ -118,7 +118,7 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "ID || \": \" || Name AS Name " +
+                "Name || ' [' || ID || ']' AS Name " +
                 "FROM BladeArts";
             return GetDataSet(query).Tables[0];
         }
@@ -127,7 +127,7 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "ID || \": \" || Name AS Name " +
+                "Name || ' [' || ID || ']' AS Name " +
                 "FROM BladeSkills";
             return GetDataSet(query).Tables[0];
         }
@@ -136,7 +136,7 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "ID || \": \" || Name AS Name " +
+                "Name || ' [' || ID || ']' AS Name " +
                 "FROM BladeFieldSkills";
             return GetDataSet(query).Tables[0];
         }
@@ -150,7 +150,7 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "ID || \": \" || Name AS Name " +
+                "Name || ' [' || ID || ']' AS Name " +
                 "FROM Items";
 
             return GetDataSet(query).Tables[0];
@@ -172,7 +172,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID -10000) AS ID, " +
-                "REPLACE(ID, ID, ID - 10000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 10000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 1";
 
             return GetDataSet(query).Tables[0];
@@ -184,7 +184,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT ID, " +
-                "ID || ': ' || NAME AS Name " +
+                "NAME || ' [' || ID || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 2";
 
             return GetDataSet(query).Tables[0];
@@ -196,7 +196,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 17000) AS ID, " +
-                "REPLACE(ID, ID, ID - 17000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 17000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 3";
 
             return GetDataSet(query).Tables[0];
@@ -208,7 +208,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 20000) AS ID, " +
-                "REPLACE(ID, ID, ID - 20000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 20000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 5";
 
             return GetDataSet(query).Tables[0];
@@ -220,7 +220,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 25000) AS ID, " +
-                "REPLACE(ID, ID, ID - 25000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 25000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 6";
 
             return GetDataSet(query).Tables[0];
@@ -232,7 +232,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 30000) AS ID, " +
-                "REPLACE(ID, ID, ID - 30000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 30000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 7";
 
             return GetDataSet(query).Tables[0];
@@ -244,7 +244,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 35000) AS ID, " +
-                "REPLACE(ID, ID, ID - 35000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 35000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 8";
 
             return GetDataSet(query).Tables[0];
@@ -256,7 +256,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 15000) AS ID, " +
-                "REPLACE(ID, ID, ID - 15000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 15000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 9";
 
             return GetDataSet(query).Tables[0];
@@ -268,7 +268,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 40000) AS ID, " +
-                "REPLACE(ID, ID, ID - 40000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 40000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 10";
 
             return GetDataSet(query).Tables[0];
@@ -280,7 +280,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 45000) AS ID, " +
-                "REPLACE(ID, ID, ID - 45000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 45000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 11";
 
             return GetDataSet(query).Tables[0];
@@ -292,7 +292,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 50000) AS ID, " +
-                "REPLACE(ID, ID, ID - 50000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 50000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 12";
 
             return GetDataSet(query).Tables[0];
@@ -304,7 +304,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 26000) AS ID, " +
-                "REPLACE(ID, ID, ID - 26000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 26000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 14";
 
             return GetDataSet(query).Tables[0];
@@ -316,7 +316,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 56000) AS ID, " +
-                "REPLACE(ID, ID, ID - 56000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 56000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 16";
 
             return GetDataSet(query).Tables[0];
@@ -328,7 +328,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 57000) AS ID, " +
-                "REPLACE(ID, ID, ID - 57000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 57000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 17";
 
             return GetDataSet(query).Tables[0];
@@ -340,7 +340,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 58000) AS ID, " +
-                "REPLACE(ID, ID, ID - 58000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 58000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 18";
 
             return GetDataSet(query).Tables[0];
@@ -352,7 +352,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 59000) AS ID, " +
-                "REPLACE(ID, ID, ID - 59000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 59000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 19";
 
             return GetDataSet(query).Tables[0];
@@ -364,7 +364,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 60000) AS ID, " +
-                "REPLACE(ID, ID, ID - 60000) || ': ' || NAME AS Name " +
+                "NAME || ' [' || REPLACE(ID, ID, ID - 60000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 20";
 
             return GetDataSet(query).Tables[0];
