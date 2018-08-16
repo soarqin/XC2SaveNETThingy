@@ -1186,6 +1186,15 @@
             this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.groupBox174 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label512 = new System.Windows.Forms.Label();
+            this.label511 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox173 = new System.Windows.Forms.GroupBox();
+            this.label510 = new System.Windows.Forms.Label();
             this.btnItemSearch = new System.Windows.Forms.Button();
             this.txtItemSearch = new System.Windows.Forms.TextBox();
             this.tbcItems = new System.Windows.Forms.TabControl();
@@ -1662,15 +1671,6 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox173 = new System.Windows.Forms.GroupBox();
-            this.label510 = new System.Windows.Forms.Label();
-            this.groupBox174 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label511 = new System.Windows.Forms.Label();
-            this.label512 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -2205,6 +2205,10 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.groupBox174.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox173.SuspendLayout();
             this.tbcItems.SuspendLayout();
             this.tabCoreChipBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
@@ -2468,10 +2472,6 @@
             this.splitContainer3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.cmsItems.SuspendLayout();
-            this.groupBox173.SuspendLayout();
-            this.groupBox174.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -15723,6 +15723,91 @@
             this.splitContainer5.SplitterDistance = 72;
             this.splitContainer5.TabIndex = 1;
             // 
+            // groupBox174
+            // 
+            this.groupBox174.Controls.Add(this.button1);
+            this.groupBox174.Controls.Add(this.label512);
+            this.groupBox174.Controls.Add(this.label511);
+            this.groupBox174.Controls.Add(this.numericUpDown2);
+            this.groupBox174.Controls.Add(this.comboBox1);
+            this.groupBox174.Controls.Add(this.numericUpDown1);
+            this.groupBox174.Location = new System.Drawing.Point(354, 3);
+            this.groupBox174.Name = "groupBox174";
+            this.groupBox174.Size = new System.Drawing.Size(393, 66);
+            this.groupBox174.TabIndex = 3;
+            this.groupBox174.TabStop = false;
+            this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(316, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label512
+            // 
+            this.label512.AutoSize = true;
+            this.label512.Location = new System.Drawing.Point(230, 16);
+            this.label512.Name = "label512";
+            this.label512.Size = new System.Drawing.Size(26, 13);
+            this.label512.TabIndex = 4;
+            this.label512.Text = "Qty:";
+            // 
+            // label511
+            // 
+            this.label511.AutoSize = true;
+            this.label511.Location = new System.Drawing.Point(6, 16);
+            this.label511.Name = "label511";
+            this.label511.Size = new System.Drawing.Size(30, 13);
+            this.label511.TabIndex = 3;
+            this.label511.Text = "Item:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown2.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 0;
+            // 
+            // groupBox173
+            // 
+            this.groupBox173.Controls.Add(this.label510);
+            this.groupBox173.Controls.Add(this.btnItemSearch);
+            this.groupBox173.Controls.Add(this.txtItemSearch);
+            this.groupBox173.Location = new System.Drawing.Point(5, 3);
+            this.groupBox173.Name = "groupBox173";
+            this.groupBox173.Size = new System.Drawing.Size(343, 66);
+            this.groupBox173.TabIndex = 2;
+            this.groupBox173.TabStop = false;
+            this.groupBox173.Text = "Find Existing Item in Current Item Box";
+            // 
+            // label510
+            // 
+            this.label510.AutoSize = true;
+            this.label510.Location = new System.Drawing.Point(6, 16);
+            this.label510.Name = "label510";
+            this.label510.Size = new System.Drawing.Size(61, 13);
+            this.label510.TabIndex = 0;
+            this.label510.Text = "Find Name:";
+            // 
             // btnItemSearch
             // 
             this.btnItemSearch.Location = new System.Drawing.Point(179, 13);
@@ -16707,7 +16792,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1126, 550);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "1-Bit 2-Bit 4-Bit 8-Bit";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox167
@@ -16715,7 +16800,7 @@
             this.groupBox167.Controls.Add(this.dgvFlags1Bit);
             this.groupBox167.Location = new System.Drawing.Point(6, 6);
             this.groupBox167.Name = "groupBox167";
-            this.groupBox167.Size = new System.Drawing.Size(150, 483);
+            this.groupBox167.Size = new System.Drawing.Size(325, 538);
             this.groupBox167.TabIndex = 2;
             this.groupBox167.TabStop = false;
             this.groupBox167.Text = "1-Bit Flags";
@@ -16729,16 +16814,16 @@
             this.dgvFlags1Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags1Bit.MultiSelect = false;
             this.dgvFlags1Bit.Name = "dgvFlags1Bit";
-            this.dgvFlags1Bit.Size = new System.Drawing.Size(144, 464);
+            this.dgvFlags1Bit.Size = new System.Drawing.Size(319, 519);
             this.dgvFlags1Bit.TabIndex = 0;
             this.dgvFlags1Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags1Bit_RowsAdded);
             // 
             // groupBox168
             // 
             this.groupBox168.Controls.Add(this.dgvFlags2Bit);
-            this.groupBox168.Location = new System.Drawing.Point(162, 6);
+            this.groupBox168.Location = new System.Drawing.Point(337, 6);
             this.groupBox168.Name = "groupBox168";
-            this.groupBox168.Size = new System.Drawing.Size(160, 483);
+            this.groupBox168.Size = new System.Drawing.Size(160, 538);
             this.groupBox168.TabIndex = 3;
             this.groupBox168.TabStop = false;
             this.groupBox168.Text = "2-Bit Flags";
@@ -16752,16 +16837,16 @@
             this.dgvFlags2Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags2Bit.MultiSelect = false;
             this.dgvFlags2Bit.Name = "dgvFlags2Bit";
-            this.dgvFlags2Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags2Bit.Size = new System.Drawing.Size(154, 519);
             this.dgvFlags2Bit.TabIndex = 1;
             this.dgvFlags2Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags2Bit_RowsAdded);
             // 
             // groupBox169
             // 
             this.groupBox169.Controls.Add(this.dgvFlags4Bit);
-            this.groupBox169.Location = new System.Drawing.Point(328, 6);
+            this.groupBox169.Location = new System.Drawing.Point(503, 6);
             this.groupBox169.Name = "groupBox169";
-            this.groupBox169.Size = new System.Drawing.Size(160, 483);
+            this.groupBox169.Size = new System.Drawing.Size(160, 538);
             this.groupBox169.TabIndex = 4;
             this.groupBox169.TabStop = false;
             this.groupBox169.Text = "4-Bit Flags";
@@ -16775,16 +16860,16 @@
             this.dgvFlags4Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags4Bit.MultiSelect = false;
             this.dgvFlags4Bit.Name = "dgvFlags4Bit";
-            this.dgvFlags4Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags4Bit.Size = new System.Drawing.Size(154, 519);
             this.dgvFlags4Bit.TabIndex = 1;
             this.dgvFlags4Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags4Bit_RowsAdded);
             // 
             // groupBox170
             // 
             this.groupBox170.Controls.Add(this.dgvFlags8Bit);
-            this.groupBox170.Location = new System.Drawing.Point(494, 6);
+            this.groupBox170.Location = new System.Drawing.Point(669, 6);
             this.groupBox170.Name = "groupBox170";
-            this.groupBox170.Size = new System.Drawing.Size(160, 483);
+            this.groupBox170.Size = new System.Drawing.Size(253, 538);
             this.groupBox170.TabIndex = 5;
             this.groupBox170.TabStop = false;
             this.groupBox170.Text = "8-Bit Flags";
@@ -16798,7 +16883,7 @@
             this.dgvFlags8Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags8Bit.MultiSelect = false;
             this.dgvFlags8Bit.Name = "dgvFlags8Bit";
-            this.dgvFlags8Bit.Size = new System.Drawing.Size(154, 464);
+            this.dgvFlags8Bit.Size = new System.Drawing.Size(247, 519);
             this.dgvFlags8Bit.TabIndex = 1;
             this.dgvFlags8Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags8Bit_RowsAdded);
             // 
@@ -16811,7 +16896,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1126, 550);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "16-Bit 32-Bit";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox171
@@ -16819,7 +16904,7 @@
             this.groupBox171.Controls.Add(this.dgvFlags16Bit);
             this.groupBox171.Location = new System.Drawing.Point(6, 6);
             this.groupBox171.Name = "groupBox171";
-            this.groupBox171.Size = new System.Drawing.Size(216, 535);
+            this.groupBox171.Size = new System.Drawing.Size(265, 538);
             this.groupBox171.TabIndex = 6;
             this.groupBox171.TabStop = false;
             this.groupBox171.Text = "16-Bit Flags";
@@ -16833,16 +16918,16 @@
             this.dgvFlags16Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags16Bit.MultiSelect = false;
             this.dgvFlags16Bit.Name = "dgvFlags16Bit";
-            this.dgvFlags16Bit.Size = new System.Drawing.Size(210, 516);
+            this.dgvFlags16Bit.Size = new System.Drawing.Size(259, 519);
             this.dgvFlags16Bit.TabIndex = 1;
             this.dgvFlags16Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags16Bit_RowsAdded);
             // 
             // groupBox172
             // 
             this.groupBox172.Controls.Add(this.dgvFlags32Bit);
-            this.groupBox172.Location = new System.Drawing.Point(259, 6);
+            this.groupBox172.Location = new System.Drawing.Point(274, 6);
             this.groupBox172.Name = "groupBox172";
-            this.groupBox172.Size = new System.Drawing.Size(352, 538);
+            this.groupBox172.Size = new System.Drawing.Size(377, 538);
             this.groupBox172.TabIndex = 7;
             this.groupBox172.TabStop = false;
             this.groupBox172.Text = "32-Bit Flags";
@@ -16856,7 +16941,7 @@
             this.dgvFlags32Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags32Bit.MultiSelect = false;
             this.dgvFlags32Bit.Name = "dgvFlags32Bit";
-            this.dgvFlags32Bit.Size = new System.Drawing.Size(346, 519);
+            this.dgvFlags32Bit.Size = new System.Drawing.Size(371, 519);
             this.dgvFlags32Bit.TabIndex = 1;
             this.dgvFlags32Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags32Bit_RowsAdded);
             // 
@@ -21495,91 +21580,6 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
-            // groupBox173
-            // 
-            this.groupBox173.Controls.Add(this.label510);
-            this.groupBox173.Controls.Add(this.btnItemSearch);
-            this.groupBox173.Controls.Add(this.txtItemSearch);
-            this.groupBox173.Location = new System.Drawing.Point(5, 3);
-            this.groupBox173.Name = "groupBox173";
-            this.groupBox173.Size = new System.Drawing.Size(343, 66);
-            this.groupBox173.TabIndex = 2;
-            this.groupBox173.TabStop = false;
-            this.groupBox173.Text = "Find Existing Item in Current Item Box";
-            // 
-            // label510
-            // 
-            this.label510.AutoSize = true;
-            this.label510.Location = new System.Drawing.Point(6, 16);
-            this.label510.Name = "label510";
-            this.label510.Size = new System.Drawing.Size(61, 13);
-            this.label510.TabIndex = 0;
-            this.label510.Text = "Find Name:";
-            // 
-            // groupBox174
-            // 
-            this.groupBox174.Controls.Add(this.button1);
-            this.groupBox174.Controls.Add(this.label512);
-            this.groupBox174.Controls.Add(this.label511);
-            this.groupBox174.Controls.Add(this.numericUpDown2);
-            this.groupBox174.Controls.Add(this.comboBox1);
-            this.groupBox174.Controls.Add(this.numericUpDown1);
-            this.groupBox174.Location = new System.Drawing.Point(354, 3);
-            this.groupBox174.Name = "groupBox174";
-            this.groupBox174.Size = new System.Drawing.Size(393, 66);
-            this.groupBox174.TabIndex = 3;
-            this.groupBox174.TabStop = false;
-            this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown2.TabIndex = 2;
-            // 
-            // label511
-            // 
-            this.label511.AutoSize = true;
-            this.label511.Location = new System.Drawing.Point(6, 16);
-            this.label511.Name = "label511";
-            this.label511.Size = new System.Drawing.Size(30, 13);
-            this.label511.TabIndex = 3;
-            this.label511.Text = "Item:";
-            // 
-            // label512
-            // 
-            this.label512.AutoSize = true;
-            this.label512.Location = new System.Drawing.Point(230, 16);
-            this.label512.Name = "label512";
-            this.label512.Size = new System.Drawing.Size(26, 13);
-            this.label512.TabIndex = 4;
-            this.label512.Text = "Qty:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(316, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -22201,6 +22201,12 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.groupBox174.ResumeLayout(false);
+            this.groupBox174.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox173.ResumeLayout(false);
+            this.groupBox173.PerformLayout();
             this.tbcItems.ResumeLayout(false);
             this.tabCoreChipBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
@@ -22487,12 +22493,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.cmsItems.ResumeLayout(false);
-            this.groupBox173.ResumeLayout(false);
-            this.groupBox173.PerformLayout();
-            this.groupBox174.ResumeLayout(false);
-            this.groupBox174.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }

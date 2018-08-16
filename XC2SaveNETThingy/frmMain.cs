@@ -592,7 +592,6 @@ namespace XC2SaveNETThingy
                     ex.Message + Environment.NewLine +
                     Environment.NewLine +
                     "Data has not been loaded.";
-                //Console.WriteLine(ex.InnerException.StackTrace);
 
                 MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;
@@ -611,8 +610,6 @@ namespace XC2SaveNETThingy
 
             if (result == DialogResult.OK)
             {
-                //Byte[] aaaa = SAVEDATA.ToRawData();
-
                 try
                 {
                     File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
@@ -1428,7 +1425,7 @@ namespace XC2SaveNETThingy
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
 
-        private void LoadBlade()
+        private void ImportBlade()
         {
             DialogResult = ofdBlade.ShowDialog();
             if (DialogResult == DialogResult.OK)
@@ -1445,7 +1442,7 @@ namespace XC2SaveNETThingy
             }
         }
 
-        private void SaveBlade()
+        private void ExportBlade()
         {
             Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
             sfdBlade.FileName = b.ToString().Replace(":", " -");
@@ -1511,9 +1508,9 @@ namespace XC2SaveNETThingy
 
             dgv.Columns.Clear();
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 50, 0, 8191));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "Item Name", null, ItemIDs, 150));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "Item Name", null, ItemIDs, 175));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 50, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "Item Type Name", null, XC2Data.ItemTypes(), 150));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "Item Type Name", null, XC2Data.ItemTypes(), 175));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 50, 0, 1023));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 55));
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 50, 0, 67108863));
@@ -1573,6 +1570,7 @@ namespace XC2SaveNETThingy
                 dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, dataMemberValue, columnHeaderText, null, null, valueColumnWidth, 0, maxVal));
             dgv.DataSource = bl;
             dgv.RowHeadersWidth = dgv.Width - dgv.Columns[0].Width - 20;
+            dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 
             return dgv;
         }
@@ -4017,8 +4015,6 @@ namespace XC2SaveNETThingy
                     return;
             }
 
-
-
             items.PrimaryKey = new DataColumn[] { items.Columns[0] };
             List<string> itemNames = new List<string>();
 
@@ -4028,15 +4024,10 @@ namespace XC2SaveNETThingy
                 string derp = "";
                 if (rows.Length > 0)
                     derp = (string)(rows)[0]["Name"];
-
-                //itemNames.Add((string)items.Rows.Find(r.Cells[0].Value)["Name"]);
                 itemNames.Add(derp);
             }
 
-            string feck = txtItemSearch.Text;
-            Console.WriteLine(feck);
-
-            int index = itemNames.FindIndex(s => s.ToLower().Contains(feck.ToLower()));
+            int index = itemNames.FindIndex(s => s.ToLower().Contains(txtItemSearch.Text.ToLower()));
             Console.WriteLine(index);
             if (index >= 0)
             {
@@ -4046,14 +4037,7 @@ namespace XC2SaveNETThingy
             }
         }
 
-        private void btnItemSearch_Click(object sender, EventArgs e)
-        {
-
-
-
-            FindInItemBox();
-            //Console.WriteLine(itemNames[0]);
-        }
+        private void btnItemSearch_Click(object sender, EventArgs e) => FindInItemBox();
 
         private void txtItemSearch_KeyUp(object sender, KeyEventArgs e)
         {
@@ -4063,12 +4047,12 @@ namespace XC2SaveNETThingy
 
         private void btnBladeExport_Click(object sender, EventArgs e)
         {
-            SaveBlade();
+            ExportBlade();
         }
 
         private void btnBladeImport_Click(object sender, EventArgs e)
         {
-            LoadBlade();
+            ImportBlade();
         }
 
         private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
@@ -4080,38 +4064,14 @@ namespace XC2SaveNETThingy
                 else
                     r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
             }
-
         }
 
-        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender);
-        }
-
-        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender);
-        }
-
-        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender);
-        }
-
-        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender);
-        }
-
-        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender);
-        }
-
-        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
-        }
+        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_1BIT);
+        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
+        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
+        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_8BIT);
+        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_16BIT);
+        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
 
         private UInt32 ItemGetNewSerial(DataGridView dgv)
         {
@@ -4130,16 +4090,6 @@ namespace XC2SaveNETThingy
         private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
-
-            //List<UInt32> serials = new List<UInt32>();
-            //foreach (DataGridViewRow r in dgv.Rows)
-            //    serials.Add((UInt32)r.Cells[9].Value);
-
-            //UInt32 serial = 1;
-
-            //while (serials.Contains(serial))
-            //    serial++;
-
             dgv.Rows[dgv.SelectedRows[0].Index].Cells[9].Value = ItemGetNewSerial(dgv);
         }
 
@@ -4169,9 +4119,6 @@ namespace XC2SaveNETThingy
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
             ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[6].Value = SAVEDATA.PlayTime.Hours;
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
         }
     }
 }
