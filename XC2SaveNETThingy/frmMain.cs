@@ -19,6 +19,8 @@ namespace XC2SaveNETThingy
         private XC2Save SAVEDATA;
         
         private bool IsReloadingDrivers = false;
+        private bool IsReloadingBlades = false;
+        private bool CurrentlyLoadingBlade = false;
         private bool dgvIsEditing = false;
 
         private bool BladeAffinityRewardEditorIsLoading = false;
@@ -642,6 +644,20 @@ namespace XC2SaveNETThingy
 
             IsReloadingDrivers = false;
         }
+
+        private void ReloadDriverSetBladeComboBoxes()
+        {
+            int i1 = cbxDriverBlade1.SelectedIndex;
+            int i2 = cbxDriverBlade2.SelectedIndex;
+            int i3 = cbxDriverBlade3.SelectedIndex;
+            cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
+            cbxDriverBlade2.DataSource = SAVEDATA.Blades.ToList();
+            cbxDriverBlade3.DataSource = SAVEDATA.Blades.ToList();
+            cbxDriverBlade1.SelectedIndex = i1;
+            cbxDriverBlade2.SelectedIndex = i2;
+            cbxDriverBlade3.SelectedIndex = i3;
+        }
+
         private void LoadDriver(int index)
         {
             Driver d = SAVEDATA.Drivers[index];
@@ -686,18 +702,16 @@ namespace XC2SaveNETThingy
             #endregion Driver Status
 
             #region Driver Equipped Blades
+            ReloadDriverSetBladeComboBoxes();
             nudDriverBlade1.Value = d.EquippedBlades[0];
-            cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade1.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[0]);
 
             nudDriverBlade2.Value = d.EquippedBlades[1];
-            cbxDriverBlade2.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade2.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[1]);
 
             nudDriverBlade3.Value = d.EquippedBlades[2];
-            cbxDriverBlade3.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade3.SelectedItem = SAVEDATA.Blades.First(b => b.ID == d.EquippedBlades[2]);
-
+            
             nudDriverSetBlade.Value = d.SetBlade;
             cbxDriverSetBlade.SelectedValue = d.SetBlade;
             #endregion Driver Equipped Blades
@@ -885,6 +899,8 @@ namespace XC2SaveNETThingy
         {
             if (SAVEDATA != null)
             {
+                CurrentlyLoadingBlade = true;
+
                 Blade b = SAVEDATA.Blades[index];
 
                 #region Blade Misc
@@ -1313,6 +1329,8 @@ namespace XC2SaveNETThingy
                 hbxBladeUnk_0x084E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x084E);
                 hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x08A2);
                 #endregion Blade Unknown
+
+                CurrentlyLoadingBlade = false;
             }
         }
         private void LoadBladeAffinityReward(Point affRewardChartLoc)
@@ -1428,24 +1446,24 @@ namespace XC2SaveNETThingy
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
 
-        private void LoadBlade()
+        private void ImportBlade()
         {
             DialogResult = ofdBlade.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                
                 UInt16 id = SAVEDATA.Blades[lbxBlades.SelectedIndex].ID;
                 Int16 cbi = SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex;
-
 
                 SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName));
                 SAVEDATA.Blades[lbxBlades.SelectedIndex].ID = id;
                 SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex = cbi;
                 LoadBlade(lbxBlades.SelectedIndex);
+                ReloadDriverSetBladeComboBoxes();
+                UpdateBladeListBox();
             }
         }
 
-        private void SaveBlade()
+        private void ExportBlade()
         {
             Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
             sfdBlade.FileName = b.ToString().Replace(":", " -");
@@ -1494,6 +1512,19 @@ namespace XC2SaveNETThingy
                     MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //throw ex;
                 }
+            }
+        }
+
+        private void UpdateBladeListBox()
+        {
+            if (!(CurrentlyLoadingBlade))
+            {
+                IsReloadingBlades = true;
+                int i = lbxBlades.SelectedIndex;
+                lbxBlades.DataSource = null;
+                lbxBlades.DataSource = SAVEDATA.Blades;
+                lbxBlades.SelectedIndex = i;
+                IsReloadingBlades = false;
             }
         }
         #endregion Blades
@@ -2286,7 +2317,11 @@ namespace XC2SaveNETThingy
         #region Blades
 
         #region Blade Main
-        private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e) => LoadBlade(lbxBlades.SelectedIndex);
+        private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!(IsReloadingBlades))
+                LoadBlade(lbxBlades.SelectedIndex);
+        }
         #endregion Blade Main
 
         #region Blade Misc
@@ -2341,12 +2376,17 @@ namespace XC2SaveNETThingy
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].RareNameId = (UInt16)nudBladeRareNameID.Value;
             cbxBladeRareNameID.SelectedValue = (UInt16)nudBladeRareNameID.Value;
+
+            UpdateBladeListBox();
         }
         private void cbxBladeRareNameID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeRareNameID.Value = Convert.ToUInt16(cbxBladeRareNameID.SelectedValue);
         private void nudBladeCommonNameID_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonNameId = (UInt16)nudBladeCommonNameID.Value;
             cbxBladeCommonNameID.SelectedValue = (UInt16)nudBladeCommonNameID.Value;
+
+            if (!(SAVEDATA.Blades[lbxBlades.SelectedIndex].RareNameId > 0))
+                UpdateBladeListBox();
         }
         private void cbxBladeCommonNameID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeCommonNameID.Value = Convert.ToUInt16(cbxBladeCommonNameID.SelectedValue);
         private void nudBladeTrustPoints_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].TrustPoints = (UInt32)nudBladeTrustPoints.Value;
@@ -4046,14 +4086,7 @@ namespace XC2SaveNETThingy
             }
         }
 
-        private void btnItemSearch_Click(object sender, EventArgs e)
-        {
-
-
-
-            FindInItemBox();
-            //Console.WriteLine(itemNames[0]);
-        }
+        private void btnItemSearch_Click(object sender, EventArgs e) => FindInItemBox();
 
         private void txtItemSearch_KeyUp(object sender, KeyEventArgs e)
         {
@@ -4063,12 +4096,12 @@ namespace XC2SaveNETThingy
 
         private void btnBladeExport_Click(object sender, EventArgs e)
         {
-            SaveBlade();
+            ExportBlade();
         }
 
         private void btnBladeImport_Click(object sender, EventArgs e)
         {
-            LoadBlade();
+            ImportBlade();
         }
 
         private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
@@ -4130,16 +4163,6 @@ namespace XC2SaveNETThingy
         private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
-
-            //List<UInt32> serials = new List<UInt32>();
-            //foreach (DataGridViewRow r in dgv.Rows)
-            //    serials.Add((UInt32)r.Cells[9].Value);
-
-            //UInt32 serial = 1;
-
-            //while (serials.Contains(serial))
-            //    serial++;
-
             dgv.Rows[dgv.SelectedRows[0].Index].Cells[9].Value = ItemGetNewSerial(dgv);
         }
 
@@ -4169,9 +4192,6 @@ namespace XC2SaveNETThingy
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
             ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[6].Value = SAVEDATA.PlayTime.Hours;
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
-            //dgv.Rows[dgv.SelectedRows[0].Index].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
         }
     }
 }

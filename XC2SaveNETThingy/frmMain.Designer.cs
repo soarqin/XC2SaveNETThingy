@@ -1186,6 +1186,15 @@
             this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.groupBox174 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label512 = new System.Windows.Forms.Label();
+            this.label511 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox173 = new System.Windows.Forms.GroupBox();
+            this.label510 = new System.Windows.Forms.Label();
             this.btnItemSearch = new System.Windows.Forms.Button();
             this.txtItemSearch = new System.Windows.Forms.TextBox();
             this.tbcItems = new System.Windows.Forms.TabControl();
@@ -1662,15 +1671,8 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox173 = new System.Windows.Forms.GroupBox();
-            this.label510 = new System.Windows.Forms.Label();
-            this.groupBox174 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label511 = new System.Windows.Forms.Label();
-            this.label512 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox175 = new System.Windows.Forms.GroupBox();
+            this.label513 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -2205,6 +2207,10 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.groupBox174.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox173.SuspendLayout();
             this.tbcItems.SuspendLayout();
             this.tabCoreChipBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).BeginInit();
@@ -2468,10 +2474,7 @@
             this.splitContainer3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.cmsItems.SuspendLayout();
-            this.groupBox173.SuspendLayout();
-            this.groupBox174.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.groupBox175.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -7481,8 +7484,7 @@
             // 
             // tabBladeMain
             // 
-            this.tabBladeMain.Controls.Add(this.btnBladeExport);
-            this.tabBladeMain.Controls.Add(this.btnBladeImport);
+            this.tabBladeMain.Controls.Add(this.groupBox175);
             this.tabBladeMain.Controls.Add(this.groupBox107);
             this.tabBladeMain.Controls.Add(this.groupBox105);
             this.tabBladeMain.Controls.Add(this.groupBox104);
@@ -7498,21 +7500,21 @@
             // 
             // btnBladeExport
             // 
-            this.btnBladeExport.Location = new System.Drawing.Point(544, 508);
+            this.btnBladeExport.Location = new System.Drawing.Point(87, 13);
             this.btnBladeExport.Name = "btnBladeExport";
-            this.btnBladeExport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeExport.Size = new System.Drawing.Size(75, 34);
             this.btnBladeExport.TabIndex = 240;
-            this.btnBladeExport.Text = "button2";
+            this.btnBladeExport.Text = "Export Blade to File...";
             this.btnBladeExport.UseVisualStyleBackColor = true;
             this.btnBladeExport.Click += new System.EventHandler(this.btnBladeExport_Click);
             // 
             // btnBladeImport
             // 
-            this.btnBladeImport.Location = new System.Drawing.Point(529, 447);
+            this.btnBladeImport.Location = new System.Drawing.Point(6, 13);
             this.btnBladeImport.Name = "btnBladeImport";
-            this.btnBladeImport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeImport.Size = new System.Drawing.Size(75, 34);
             this.btnBladeImport.TabIndex = 239;
-            this.btnBladeImport.Text = "button1";
+            this.btnBladeImport.Text = "Import Blade from File...";
             this.btnBladeImport.UseVisualStyleBackColor = true;
             this.btnBladeImport.Click += new System.EventHandler(this.btnBladeImport_Click);
             // 
@@ -15723,6 +15725,91 @@
             this.splitContainer5.SplitterDistance = 72;
             this.splitContainer5.TabIndex = 1;
             // 
+            // groupBox174
+            // 
+            this.groupBox174.Controls.Add(this.button1);
+            this.groupBox174.Controls.Add(this.label512);
+            this.groupBox174.Controls.Add(this.label511);
+            this.groupBox174.Controls.Add(this.numericUpDown2);
+            this.groupBox174.Controls.Add(this.comboBox1);
+            this.groupBox174.Controls.Add(this.numericUpDown1);
+            this.groupBox174.Location = new System.Drawing.Point(354, 3);
+            this.groupBox174.Name = "groupBox174";
+            this.groupBox174.Size = new System.Drawing.Size(393, 66);
+            this.groupBox174.TabIndex = 3;
+            this.groupBox174.TabStop = false;
+            this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(316, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label512
+            // 
+            this.label512.AutoSize = true;
+            this.label512.Location = new System.Drawing.Point(230, 16);
+            this.label512.Name = "label512";
+            this.label512.Size = new System.Drawing.Size(26, 13);
+            this.label512.TabIndex = 4;
+            this.label512.Text = "Qty:";
+            // 
+            // label511
+            // 
+            this.label511.AutoSize = true;
+            this.label511.Location = new System.Drawing.Point(6, 16);
+            this.label511.Name = "label511";
+            this.label511.Size = new System.Drawing.Size(30, 13);
+            this.label511.TabIndex = 3;
+            this.label511.Text = "Item:";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDown2.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
+            this.numericUpDown1.TabIndex = 0;
+            // 
+            // groupBox173
+            // 
+            this.groupBox173.Controls.Add(this.label510);
+            this.groupBox173.Controls.Add(this.btnItemSearch);
+            this.groupBox173.Controls.Add(this.txtItemSearch);
+            this.groupBox173.Location = new System.Drawing.Point(5, 3);
+            this.groupBox173.Name = "groupBox173";
+            this.groupBox173.Size = new System.Drawing.Size(343, 66);
+            this.groupBox173.TabIndex = 2;
+            this.groupBox173.TabStop = false;
+            this.groupBox173.Text = "Find Existing Item in Current Item Box";
+            // 
+            // label510
+            // 
+            this.label510.AutoSize = true;
+            this.label510.Location = new System.Drawing.Point(6, 16);
+            this.label510.Name = "label510";
+            this.label510.Size = new System.Drawing.Size(61, 13);
+            this.label510.TabIndex = 0;
+            this.label510.Text = "Find Name:";
+            // 
             // btnItemSearch
             // 
             this.btnItemSearch.Location = new System.Drawing.Point(179, 13);
@@ -21495,90 +21582,27 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
-            // groupBox173
+            // groupBox175
             // 
-            this.groupBox173.Controls.Add(this.label510);
-            this.groupBox173.Controls.Add(this.btnItemSearch);
-            this.groupBox173.Controls.Add(this.txtItemSearch);
-            this.groupBox173.Location = new System.Drawing.Point(5, 3);
-            this.groupBox173.Name = "groupBox173";
-            this.groupBox173.Size = new System.Drawing.Size(343, 66);
-            this.groupBox173.TabIndex = 2;
-            this.groupBox173.TabStop = false;
-            this.groupBox173.Text = "Find Existing Item in Current Item Box";
+            this.groupBox175.Controls.Add(this.label513);
+            this.groupBox175.Controls.Add(this.btnBladeExport);
+            this.groupBox175.Controls.Add(this.btnBladeImport);
+            this.groupBox175.Location = new System.Drawing.Point(429, 424);
+            this.groupBox175.Name = "groupBox175";
+            this.groupBox175.Size = new System.Drawing.Size(427, 53);
+            this.groupBox175.TabIndex = 241;
+            this.groupBox175.TabStop = false;
+            this.groupBox175.Text = "Blade Import/Export";
             // 
-            // label510
+            // label513
             // 
-            this.label510.AutoSize = true;
-            this.label510.Location = new System.Drawing.Point(6, 16);
-            this.label510.Name = "label510";
-            this.label510.Size = new System.Drawing.Size(61, 13);
-            this.label510.TabIndex = 0;
-            this.label510.Text = "Find Name:";
-            // 
-            // groupBox174
-            // 
-            this.groupBox174.Controls.Add(this.button1);
-            this.groupBox174.Controls.Add(this.label512);
-            this.groupBox174.Controls.Add(this.label511);
-            this.groupBox174.Controls.Add(this.numericUpDown2);
-            this.groupBox174.Controls.Add(this.comboBox1);
-            this.groupBox174.Controls.Add(this.numericUpDown1);
-            this.groupBox174.Location = new System.Drawing.Point(354, 3);
-            this.groupBox174.Name = "groupBox174";
-            this.groupBox174.Size = new System.Drawing.Size(393, 66);
-            this.groupBox174.TabIndex = 3;
-            this.groupBox174.TabStop = false;
-            this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown2.TabIndex = 2;
-            // 
-            // label511
-            // 
-            this.label511.AutoSize = true;
-            this.label511.Location = new System.Drawing.Point(6, 16);
-            this.label511.Name = "label511";
-            this.label511.Size = new System.Drawing.Size(30, 13);
-            this.label511.TabIndex = 3;
-            this.label511.Text = "Item:";
-            // 
-            // label512
-            // 
-            this.label512.AutoSize = true;
-            this.label512.Location = new System.Drawing.Point(230, 16);
-            this.label512.Name = "label512";
-            this.label512.Size = new System.Drawing.Size(26, 13);
-            this.label512.TabIndex = 4;
-            this.label512.Text = "Qty:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(316, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label513.AutoSize = true;
+            this.label513.Location = new System.Drawing.Point(168, 16);
+            this.label513.Name = "label513";
+            this.label513.Size = new System.Drawing.Size(220, 26);
+            this.label513.TabIndex = 241;
+            this.label513.Text = "NOTE: Blade ID and CommonBladeIndex are\r\nNOT overwritten by data imported from fi" +
+    "le.";
             // 
             // frmMain
             // 
@@ -22201,6 +22225,12 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.groupBox174.ResumeLayout(false);
+            this.groupBox174.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox173.ResumeLayout(false);
+            this.groupBox173.PerformLayout();
             this.tbcItems.ResumeLayout(false);
             this.tabCoreChipBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcWpnChipBox)).EndInit();
@@ -22487,12 +22517,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.cmsItems.ResumeLayout(false);
-            this.groupBox173.ResumeLayout(false);
-            this.groupBox173.PerformLayout();
-            this.groupBox174.ResumeLayout(false);
-            this.groupBox174.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.groupBox175.ResumeLayout(false);
+            this.groupBox175.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -24140,6 +24166,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.GroupBox groupBox175;
+        private System.Windows.Forms.Label label513;
     }
 }
 
