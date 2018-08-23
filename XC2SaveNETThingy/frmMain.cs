@@ -19,6 +19,8 @@ namespace XC2SaveNETThingy
         private XC2Save SAVEDATA;
         
         private bool IsReloadingDrivers = false;
+        private bool IsReloadingBlades = false;
+        private bool CurrentlyLoadingBlade = false;
         private bool dgvIsEditing = false;
 
         private bool BladeAffinityRewardEditorIsLoading = false;
@@ -187,6 +189,10 @@ namespace XC2SaveNETThingy
             cbxPartyLeader.BindDataTable(XC2Data.Drivers());
             cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers());
             #endregion Party
+
+            #region Items
+            UpdateNewItemComboBox();
+            #endregion Items
         }
         private void LoadSaveData(string path)
         {
@@ -1430,14 +1436,14 @@ namespace XC2SaveNETThingy
             DialogResult = ofdBlade.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                
                 UInt16 id = SAVEDATA.Blades[lbxBlades.SelectedIndex].ID;
                 Int16 cbi = SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex;
 
-
-                SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName));
-                SAVEDATA.Blades[lbxBlades.SelectedIndex].ID = id;
-                SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex = cbi;
+                SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName))
+                {
+                    ID = id,
+                    CommonBladeIndex = cbi
+                };
                 LoadBlade(lbxBlades.SelectedIndex);
             }
         }
@@ -4119,6 +4125,191 @@ namespace XC2SaveNETThingy
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
             ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
+        }
+
+        private void btnItemAddNew_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                if ((UInt16)dgv.Rows[i].Cells[0].Value == 0)
+                {
+                    dgv.Rows[i].Cells[0].Value = nudItemAddNewID.Value;
+
+                    switch (tbcItems.SelectedIndex)
+                    {
+                        case 0:
+                            dgv.Rows[i].Cells[2].Value = 1;
+                            break;
+
+                        case 1:
+                            dgv.Rows[i].Cells[2].Value = 2;
+                            break;
+
+                        case 2:
+                            dgv.Rows[i].Cells[2].Value = 3;
+                            break;
+
+                        case 3:
+                            dgv.Rows[i].Cells[2].Value = 5;
+                            break;
+
+                        case 4:
+                            dgv.Rows[i].Cells[2].Value = 6;
+                            break;
+
+                        case 5:
+                            dgv.Rows[i].Cells[2].Value = 14;
+                            break;
+
+                        case 7:
+                            dgv.Rows[i].Cells[2].Value = 7;
+                            break;
+
+                        case 8:
+                            dgv.Rows[i].Cells[2].Value = 8;
+                            break;
+
+                        case 9:
+                            dgv.Rows[i].Cells[2].Value = 9;
+                            break;
+
+                        case 10:
+                            dgv.Rows[i].Cells[2].Value = 10;
+                            break;
+
+                        case 11:
+                            dgv.Rows[i].Cells[2].Value = 11;
+                            break;
+
+                        case 12:
+                            dgv.Rows[i].Cells[2].Value = 12;
+                            break;
+
+                        case 13:
+                            dgv.Rows[i].Cells[2].Value = 16;
+                            break;
+
+                        case 14:
+                            dgv.Rows[i].Cells[2].Value = 17;
+                            break;
+
+                        case 15:
+                            dgv.Rows[i].Cells[2].Value = 18;
+                            break;
+
+                        case 16:
+                            dgv.Rows[i].Cells[2].Value = 19;
+                            break;
+
+                        case 17:
+                            dgv.Rows[i].Cells[2].Value = 20;
+                            break;
+                    }
+
+
+                    dgv.Rows[i].Cells[4].Value = nudItemAddNewQty.Value;
+                    ItemSetTimeToNow(dgv, i);
+                    dgv.Rows[i].Cells[9].Value = ItemGetNewSerial(dgv);
+
+                    dgv.ClearSelection();
+                    dgv.CurrentCell = dgv.Rows[i].Cells[0];
+                    dgv.Rows[i].Selected = true;
+
+                    return;
+                }
+            }
+
+            string message =
+                "Unable to add New Item to " + tbcItems.TabPages[tbcItems.SelectedIndex].Text + ", ItemBox is full.";
+
+            MessageBox.Show(message, "Add New Item Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void UpdateNewItemComboBox()
+        {
+            cbxItemAddNewID.DataSource = null;
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips());
+                    break;
+
+                case 1:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories());
+                    break;
+
+                case 2:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores());
+                    break;
+
+                case 3:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders());
+                    break;
+
+                case 4:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems());
+                    break;
+
+                case 5:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems());
+                    break;
+
+                case 7:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles());
+                    break;
+
+                case 8:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure());
+                    break;
+
+                case 9:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores());
+                    break;
+
+                case 10:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems());
+                    break;
+
+                case 11:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals());
+                    break;
+
+                case 12:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters());
+                    break;
+
+                case 13:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU());
+                    break;
+
+                case 14:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores());
+                    break;
+
+                case 15:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM());
+                    break;
+
+                case 16:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards());
+                    break;
+
+                case 17:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM());
+                    break;
+            }
+
+            cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
+        }
+
+        private void nudItemAddNewID_ValueChanged(object sender, EventArgs e) => cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
+        private void cbxItemAddNewID_SelectionChangeCommitted(object sender, EventArgs e) => nudItemAddNewID.Value = Convert.ToUInt16(cbxItemAddNewID.SelectedValue);
+
+        private void tbcItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateNewItemComboBox();
         }
     }
 }

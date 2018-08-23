@@ -1187,12 +1187,12 @@
             this.tabItems = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.groupBox174 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnItemAddNew = new System.Windows.Forms.Button();
             this.label512 = new System.Windows.Forms.Label();
             this.label511 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudItemAddNewQty = new System.Windows.Forms.NumericUpDown();
+            this.cbxItemAddNewID = new System.Windows.Forms.ComboBox();
+            this.nudItemAddNewID = new System.Windows.Forms.NumericUpDown();
             this.groupBox173 = new System.Windows.Forms.GroupBox();
             this.label510 = new System.Windows.Forms.Label();
             this.btnItemSearch = new System.Windows.Forms.Button();
@@ -2206,8 +2206,8 @@
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             this.groupBox174.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewID)).BeginInit();
             this.groupBox173.SuspendLayout();
             this.tbcItems.SuspendLayout();
             this.tabCoreChipBox.SuspendLayout();
@@ -15725,12 +15725,12 @@
             // 
             // groupBox174
             // 
-            this.groupBox174.Controls.Add(this.button1);
+            this.groupBox174.Controls.Add(this.btnItemAddNew);
             this.groupBox174.Controls.Add(this.label512);
             this.groupBox174.Controls.Add(this.label511);
-            this.groupBox174.Controls.Add(this.numericUpDown2);
-            this.groupBox174.Controls.Add(this.comboBox1);
-            this.groupBox174.Controls.Add(this.numericUpDown1);
+            this.groupBox174.Controls.Add(this.nudItemAddNewQty);
+            this.groupBox174.Controls.Add(this.cbxItemAddNewID);
+            this.groupBox174.Controls.Add(this.nudItemAddNewID);
             this.groupBox174.Location = new System.Drawing.Point(354, 3);
             this.groupBox174.Name = "groupBox174";
             this.groupBox174.Size = new System.Drawing.Size(393, 66);
@@ -15738,14 +15738,15 @@
             this.groupBox174.TabStop = false;
             this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
             // 
-            // button1
+            // btnItemAddNew
             // 
-            this.button1.Location = new System.Drawing.Point(316, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnItemAddNew.Location = new System.Drawing.Point(316, 11);
+            this.btnItemAddNew.Name = "btnItemAddNew";
+            this.btnItemAddNew.Size = new System.Drawing.Size(43, 23);
+            this.btnItemAddNew.TabIndex = 2;
+            this.btnItemAddNew.Text = "Add";
+            this.btnItemAddNew.UseVisualStyleBackColor = true;
+            this.btnItemAddNew.Click += new System.EventHandler(this.btnItemAddNew_Click);
             // 
             // label512
             // 
@@ -15765,27 +15766,44 @@
             this.label511.TabIndex = 3;
             this.label511.Text = "Item:";
             // 
-            // numericUpDown2
+            // nudItemAddNewQty
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(262, 13);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 20);
-            this.numericUpDown2.TabIndex = 2;
+            this.nudItemAddNewQty.Location = new System.Drawing.Point(262, 13);
+            this.nudItemAddNewQty.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudItemAddNewQty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudItemAddNewQty.Name = "nudItemAddNewQty";
+            this.nudItemAddNewQty.Size = new System.Drawing.Size(48, 20);
+            this.nudItemAddNewQty.TabIndex = 2;
+            this.nudItemAddNewQty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // comboBox1
+            // cbxItemAddNewID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbxItemAddNewID.FormattingEnabled = true;
+            this.cbxItemAddNewID.Location = new System.Drawing.Point(103, 12);
+            this.cbxItemAddNewID.Name = "cbxItemAddNewID";
+            this.cbxItemAddNewID.Size = new System.Drawing.Size(121, 21);
+            this.cbxItemAddNewID.TabIndex = 1;
+            this.cbxItemAddNewID.SelectionChangeCommitted += new System.EventHandler(this.cbxItemAddNewID_SelectionChangeCommitted);
             // 
-            // numericUpDown1
+            // nudItemAddNewID
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(42, 13);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.nudItemAddNewID.Location = new System.Drawing.Point(42, 13);
+            this.nudItemAddNewID.Name = "nudItemAddNewID";
+            this.nudItemAddNewID.Size = new System.Drawing.Size(55, 20);
+            this.nudItemAddNewID.TabIndex = 0;
+            this.nudItemAddNewID.ValueChanged += new System.EventHandler(this.nudItemAddNewID_ValueChanged);
             // 
             // groupBox173
             // 
@@ -15853,6 +15871,7 @@
             this.tbcItems.SelectedIndex = 0;
             this.tbcItems.Size = new System.Drawing.Size(1128, 494);
             this.tbcItems.TabIndex = 0;
+            this.tbcItems.SelectedIndexChanged += new System.EventHandler(this.tbcItems_SelectedIndexChanged);
             // 
             // tabCoreChipBox
             // 
@@ -22203,8 +22222,8 @@
             this.splitContainer5.ResumeLayout(false);
             this.groupBox174.ResumeLayout(false);
             this.groupBox174.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewID)).EndInit();
             this.groupBox173.ResumeLayout(false);
             this.groupBox173.PerformLayout();
             this.tbcItems.ResumeLayout(false);
@@ -24134,12 +24153,12 @@
         private System.Windows.Forms.GroupBox groupBox174;
         private System.Windows.Forms.GroupBox groupBox173;
         private System.Windows.Forms.Label label510;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnItemAddNew;
         private System.Windows.Forms.Label label512;
         private System.Windows.Forms.Label label511;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudItemAddNewQty;
+        private System.Windows.Forms.ComboBox cbxItemAddNewID;
+        private System.Windows.Forms.NumericUpDown nudItemAddNewID;
     }
 }
 
