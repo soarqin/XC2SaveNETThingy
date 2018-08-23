@@ -45,9 +45,29 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM DriverBladeSetStatus").Tables[0];
         }
 
-        public static DataTable DriverArts()
+        public static DataTable DriverArts(Byte args_bits)
         {
-            return GetDataSet("SELECT * FROM viewDriverArts").Tables[0];
+            //return GetDataSet("SELECT * FROM viewDriverArts").Tables[0];
+
+            string query = "";
+
+            query += "SELECT * FROM viewDriverArts WHERE ID = 0";
+
+            if ((args_bits & 1) == 1) // get 1.5.1 and lower arts
+            {
+                if (query != "")
+                    query += " UNION ";
+                query += "SELECT * FROM viewDriverArts WHERE ID >= 1 AND ID < 582";
+            }
+
+            if ((args_bits & 2) >> 1 == 1) // get higher than 1.5.1 arts
+            {
+                if (query != "")
+                    query += " UNION ";
+                query += "SELECT * FROM viewDriverArts WHERE ID >= 582 AND ID < 743";
+            }
+
+            return GetDataSet(query).Tables[0];
         }
 
         public static DataTable DriverSkills()

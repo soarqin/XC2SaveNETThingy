@@ -79,11 +79,11 @@ namespace XC2SaveNETThingy
             cbxDriverIsActive.BindDataTable(XC2Data.DriverStatus(), "Desc");
             cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(), "Desc");
 
-            cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
-            cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
-            cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
+            cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
 
-            cbxDriverArt.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
+            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1), "FriendlyName");
             cbxDriverWeapons.BindDataTable(XC2Data.Weapons(0b1));
             
             for (int i = 0; i < Pouch.COUNT; i++)
@@ -100,9 +100,9 @@ namespace XC2SaveNETThingy
 
             #region 1.5.0
             cbxDriverWeapons150.BindDataTable(XC2Data.Weapons(4));
-            cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
-            cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
-            cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(), "FriendlyName");
+            cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
             #endregion 1.5.0
 
             #endregion Driver
@@ -1331,6 +1331,11 @@ namespace XC2SaveNETThingy
                 hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x08A2);
                 #endregion Blade Unknown
 
+                if (lbxBlades.SelectedIndex < 196)
+                    ToggleBladeEditControls(false);
+                else
+                    ToggleBladeEditControls(true);
+
                 CurrentlyLoadingBlade = false;
             }
         }
@@ -1446,7 +1451,6 @@ namespace XC2SaveNETThingy
             else
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
-
         private void ImportBlade()
         {
             DialogResult = ofdBlade.ShowDialog();
@@ -1466,7 +1470,6 @@ namespace XC2SaveNETThingy
                 UpdateBladeListBox();
             }
         }
-
         private void ExportBlade()
         {
             Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
@@ -1487,8 +1490,7 @@ namespace XC2SaveNETThingy
                 }
             }
         }
-
-        private void LoadBladeAffinityChart()
+        private void ImportBladeAffinityChart()
         {
             DialogResult = ofdBladeAffChart.ShowDialog();
             if (DialogResult == DialogResult.OK)
@@ -1497,8 +1499,7 @@ namespace XC2SaveNETThingy
                 LoadBlade(lbxBlades.SelectedIndex);
             }
         }
-
-        private void SaveBladeAffinityChart()
+        private void ExportBladeAffinityChart()
         {
             Blade b = SAVEDATA.Blades[lbxBlades.SelectedIndex];
             sfdBladeAffChart.FileName = b.ToString().Replace(":", " -");
@@ -1518,7 +1519,6 @@ namespace XC2SaveNETThingy
                 }
             }
         }
-
         private void UpdateBladeListBox()
         {
             if (!(CurrentlyLoadingBlade))
@@ -1530,6 +1530,96 @@ namespace XC2SaveNETThingy
                 lbxBlades.SelectedIndex = i;
                 IsReloadingBlades = false;
             }
+        }
+        private void ToggleBladeEditControls(bool enabled)
+        {
+            nudBladeRace.Enabled = enabled;
+            nudBladeGender.Enabled = enabled;
+            nudBladeStill.Enabled = enabled;
+            nudBladeWeaponType.Enabled = enabled;
+            cbxBladeWeaponType.Enabled = enabled;
+            nudBladeElement.Enabled = enabled;
+            cbxBladeElement.Enabled = enabled;
+            nudBladeRareNameID.Enabled = enabled;
+            cbxBladeRareNameID.Enabled = enabled;
+            nudBladeCommonNameID.Enabled = enabled;
+            cbxBladeCommonNameID.Enabled = enabled;
+            nudBladeOrbNum.Enabled = enabled;
+            chkBladeReleaseLock.Enabled = enabled;
+
+            nudBladePhysDef.Enabled = enabled;
+            nudBladeEtherDef.Enabled = enabled;
+            nudBladeHP.Enabled = enabled;
+            nudBladeStrength.Enabled = enabled;
+            nudBladeEther.Enabled = enabled;
+            nudBladeDexterity.Enabled = enabled;
+            nudBladeAgility.Enabled = enabled;
+            nudBladeLuck.Enabled = enabled;
+
+            nudBladeFavoriteCategory0.Enabled = enabled;
+            cbxBladeFavoriteCategory0.Enabled = enabled;
+            nudBladeFavoriteCategory1.Enabled = enabled;
+            cbxBladeFavoriteCategory1.Enabled = enabled;
+            nudBladeFavoriteItem0.Enabled = enabled;
+            cbxBladeFavoriteItem0.Enabled = enabled;
+            nudBladeFavoriteItem1.Enabled = enabled;
+            cbxBladeFavoriteItem1.Enabled = enabled;
+
+            nudBladeBArt1ID.Enabled = enabled;
+            cbxBladeBArt1ID.Enabled = enabled;
+            nudBladeBArt2ID.Enabled = enabled;
+            cbxBladeBArt2ID.Enabled = enabled;
+            nudBladeBArt3ID.Enabled = enabled;
+            cbxBladeBArt3ID.Enabled = enabled;
+
+            nudBladeNArt1ID.Enabled = enabled;
+            cbxBladeNArt1ID.Enabled = enabled;
+            nudBladeNArt2ID.Enabled = enabled;
+            cbxBladeNArt2ID.Enabled = enabled;
+            nudBladeNArt3ID.Enabled = enabled;
+            cbxBladeNArt3ID.Enabled = enabled;
+
+            nudBladeBattleSkill1ID.Enabled = enabled;
+            cbxBladeBattleSkill1ID.Enabled = enabled;
+            nudBladeBattleSkill2ID.Enabled = enabled;
+            cbxBladeBattleSkill2ID.Enabled = enabled;
+            nudBladeBattleSkill3ID.Enabled = enabled;
+            cbxBladeBattleSkill3ID.Enabled = enabled;
+
+            nudBladeFieldSkill1ID.Enabled = enabled;
+            cbxBladeFieldSkill1ID.Enabled = enabled;
+            nudBladeFieldSkill2ID.Enabled = enabled;
+            cbxBladeFieldSkill2ID.Enabled = enabled;
+            nudBladeFieldSkill3ID.Enabled = enabled;
+            cbxBladeFieldSkill3ID.Enabled = enabled;
+
+            nudBladeBArtExId.Enabled = enabled;
+            nudBladeBladeArtsExH.Enabled = enabled;
+            nudBladeChestHeight.Enabled = enabled;
+            nudBladeCollisionID.Enabled = enabled;
+            nudBladeCondition.Enabled = enabled;
+            nudBladeCoolTime.Enabled = enabled;
+            nudBladeCreateEventID.Enabled = enabled;
+            nudBladeEyeRot.Enabled = enabled;
+            nudBladeKizunaLinkSet.Enabled = enabled;
+            nudBladeNormalTalk.Enabled = enabled;
+            nudBladeOffsetID.Enabled = enabled;
+            nudBladePersonality.Enabled = enabled;
+            hbxBladeInternalName.Enabled = enabled;
+            nudBladeInternalNameLength.Enabled = enabled;
+
+            txtBladeModelResourceName.Enabled = enabled;
+            txtBladeModel2Name.Enabled = enabled;
+            txtBladeMotionResourceName.Enabled = enabled;
+            txtBladeMotion2Name.Enabled = enabled;
+            txtBladeAddMotionName.Enabled = enabled;
+            hbxBladeClipEvent.Enabled = enabled;
+            txtBladeComSE.Enabled = enabled;
+            txtBladeEffectResourceName.Enabled = enabled;
+            txtBladeComVo.Enabled = enabled;
+            txtBladeCenterBone.Enabled = enabled;
+            txtBladeCamBone.Enabled = enabled;
+            txtBladeSeResourceName.Enabled = enabled;
         }
         #endregion Blades
 
@@ -1844,10 +1934,10 @@ namespace XC2SaveNETThingy
         #region Driver Arts Levels
         private void nudDriverArtID_ValueChanged(object sender, EventArgs e)
         {
-            cbxDriverArt.SelectedIndex = cbxDriverArt.SanitizeCbxIndex((int)nudDriverArtID.Value);
+            cbxDriverArtID.SelectedValue = (UInt16)nudDriverArtID.Value;
             nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value];
         }
-        private void cbxDriverArt_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverArtID.Value = cbxDriverArt.SelectedIndex.SanitizeUInt16();
+        private void cbxDriverArt_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverArtID.Value = Convert.ToUInt16(cbxDriverArtID.SelectedValue);
         private void nudDriverArtLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value] = (Byte)nudDriverArtLevel.Value;
         #endregion Driver Arts Levels
 
@@ -3507,8 +3597,8 @@ namespace XC2SaveNETThingy
         private void btnBladeAff_10_4_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 4));
         private void btnBladeAff_10_5_Click(object sender, EventArgs e) => LoadBladeAffinityReward(new Point(10, 5));
 
-        private void btnBladeAffChartImport_Click(object sender, EventArgs e) => LoadBladeAffinityChart();
-        private void btnBladeAffChartExport_Click(object sender, EventArgs e) => SaveBladeAffinityChart();
+        private void btnBladeAffChartImport_Click(object sender, EventArgs e) => ImportBladeAffinityChart();
+        private void btnBladeAffChartExport_Click(object sender, EventArgs e) => ExportBladeAffinityChart();
         #endregion Blade Affinity Chart
 
         #region Blade Resource Data
