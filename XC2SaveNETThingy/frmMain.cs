@@ -1652,8 +1652,207 @@ namespace XC2SaveNETThingy
 
             return dgv;
         }
+        private void UpdateNewItemComboBox()
+        {
+            cbxItemAddNewID.DataSource = null;
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips());
+                    break;
+
+                case 1:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories());
+                    break;
+
+                case 2:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores());
+                    break;
+
+                case 3:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders());
+                    break;
+
+                case 4:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems());
+                    break;
+
+                case 5:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems());
+                    break;
+
+                case 7:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles());
+                    break;
+
+                case 8:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure());
+                    break;
+
+                case 9:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores());
+                    break;
+
+                case 10:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems());
+                    break;
+
+                case 11:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals());
+                    break;
+
+                case 12:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters());
+                    break;
+
+                case 13:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU());
+                    break;
+
+                case 14:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores());
+                    break;
+
+                case 15:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM());
+                    break;
+
+                case 16:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards());
+                    break;
+
+                case 17:
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM());
+                    break;
+            }
+
+            cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
+        }
+        private UInt32 ItemGetNewSerial(DataGridView dgv)
+        {
+            List<UInt32> serials = new List<UInt32>();
+            foreach (DataGridViewRow r in dgv.Rows)
+                serials.Add((UInt32)r.Cells[9].Value);
+
+            UInt32 serial = 1;
+
+            while (serials.Contains(serial))
+                serial++;
+
+            return serial;
+        }
+        private void ItemSetTimeToNow(DataGridView dgv, int rowIndex)
+        {
+            dgv.Rows[rowIndex].Cells[6].Value = SAVEDATA.PlayTime.Hours;
+            dgv.Rows[rowIndex].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
+            dgv.Rows[rowIndex].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
+        }
+        private void FindInItemBox()
+        {
+            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
+            DataTable items;
+
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0:
+                    items = XC2Data.GetCoreChips();
+                    break;
+
+                case 1:
+                    items = XC2Data.GetAccessories();
+                    break;
+
+                case 2:
+                    items = XC2Data.GetAuxCores();
+                    break;
+
+                case 3:
+                    items = XC2Data.GetCylinders();
+                    break;
+
+                case 4:
+                    items = XC2Data.GetKeyItems();
+                    break;
+
+                case 5:
+                    items = XC2Data.GetInfoItems();
+                    break;
+
+                case 7:
+                    items = XC2Data.GetCollectibles();
+                    break;
+
+                case 8:
+                    items = XC2Data.GetTreasure();
+                    break;
+
+                case 9:
+                    items = XC2Data.GetUnrefinedAuxCores();
+                    break;
+
+                case 10:
+                    items = XC2Data.GetPouchItems();
+                    break;
+
+                case 11:
+                    items = XC2Data.GetCoreCrystals();
+                    break;
+
+                case 12:
+                    items = XC2Data.GetBoosters();
+                    break;
+
+                case 13:
+                    items = XC2Data.GetPoppiRoleCPU();
+                    break;
+
+                case 14:
+                    items = XC2Data.GetPoppiElementCores();
+                    break;
+
+                case 15:
+                    items = XC2Data.GetPoppiSpecialsEnhancingRAM();
+                    break;
+
+                case 16:
+                    items = XC2Data.GetPoppiArtsCards();
+                    break;
+
+                case 17:
+                    items = XC2Data.GetPoppiSkillRAM();
+                    break;
+
+                case 6:
+                default:
+                    return;
+            }
+
+            items.PrimaryKey = new DataColumn[] { items.Columns[0] };
+            List<string> itemNames = new List<string>();
+
+            foreach (DataGridViewRow r in dgv.Rows)
+            {
+                DataRow[] rows = items.Select("ID = " + r.Cells[0].Value);
+                string derp = "";
+                if (rows.Length > 0)
+                    derp = (string)(rows)[0]["Name"];
+                itemNames.Add(derp);
+            }
+
+            int index = itemNames.FindIndex(s => s.ToLower().Contains(txtItemSearch.Text.ToLower()));
+            Console.WriteLine(index);
+            if (index >= 0)
+            {
+                dgv.ClearSelection();
+                dgv.CurrentCell = dgv.Rows[index].Cells[0];
+                dgv.Rows[index].Selected = true;
+            }
+        }
+
+
         #endregion Items
 
+        #region Game Flag Data
         private void SetupFlagEditors()
         {
             BindingList<FlagData.Flag_1> Flags_1Bit_bl = new BindingList<FlagData.Flag_1>();
@@ -1686,7 +1885,6 @@ namespace XC2SaveNETThingy
                 Flags_32Bit_bl.Add(f);
             dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
         }
-
         private DataGridView SetupFlagEditor(DataGridView dgv, IBindingList bl, string dataMemberValue, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal = 0)
         {
             dgv.AutoGenerateColumns = false;
@@ -1702,6 +1900,7 @@ namespace XC2SaveNETThingy
 
             return dgv;
         }
+        #endregion Game Flag Data
 
         #endregion Methods
 
@@ -1731,6 +1930,7 @@ namespace XC2SaveNETThingy
         }
         private void loadSaveFileToolStripMenuItem_Click(object sender, EventArgs e) => LoadFile();
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e) => SaveFile();
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
         private void btnLoad_Click(object sender, EventArgs e) => LoadFile();
         private void btnSave_Click(object sender, EventArgs e) => SaveFile();
         #endregion Main
@@ -2417,6 +2617,8 @@ namespace XC2SaveNETThingy
             if (!(IsReloadingBlades))
                 LoadBlade(lbxBlades.SelectedIndex);
         }
+        private void btnBladeImport_Click(object sender, EventArgs e) => ImportBlade();
+        private void btnBladeExport_Click(object sender, EventArgs e) => ExportBlade();
         #endregion Blade Main
 
         #region Blade Misc
@@ -3655,6 +3857,7 @@ namespace XC2SaveNETThingy
         #endregion Blades
 
         #region Items
+        private void tbcItems_SelectedIndexChanged(object sender, EventArgs e) => UpdateNewItemComboBox();
         private void Dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (!dgvIsEditing)
@@ -3712,6 +3915,137 @@ namespace XC2SaveNETThingy
                 dgvIsEditing = false;
             }
         }
+        private void dgvItemBox_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridView dgv = (DataGridView)sender;
+
+                foreach (DataGridViewRow r in dgv.Rows)
+                    r.Selected = false;
+                dgv.Rows[e.RowIndex].Selected = true;
+
+                cmsItems.Tag = dgv;
+                cmsItems.Show(dgv, dgv.PointToClient(Cursor.Position));
+            }
+        }
+        private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
+            dgv.Rows[dgv.SelectedRows[0].Index].Cells[9].Value = ItemGetNewSerial(dgv);
+        }
+        private void tsmiItemUpdateTime_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
+            ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
+        }
+        private void btnItemSearch_Click(object sender, EventArgs e) => FindInItemBox();
+        private void txtItemSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                FindInItemBox();
+        }
+        private void nudItemAddNewID_ValueChanged(object sender, EventArgs e) => cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
+        private void cbxItemAddNewID_SelectionChangeCommitted(object sender, EventArgs e) => nudItemAddNewID.Value = Convert.ToUInt16(cbxItemAddNewID.SelectedValue);
+        private void btnItemAddNew_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                if ((UInt16)dgv.Rows[i].Cells[0].Value == 0)
+                {
+                    dgv.Rows[i].Cells[0].Value = nudItemAddNewID.Value;
+
+                    switch (tbcItems.SelectedIndex)
+                    {
+                        case 0:
+                            dgv.Rows[i].Cells[2].Value = 1;
+                            break;
+
+                        case 1:
+                            dgv.Rows[i].Cells[2].Value = 2;
+                            break;
+
+                        case 2:
+                            dgv.Rows[i].Cells[2].Value = 3;
+                            break;
+
+                        case 3:
+                            dgv.Rows[i].Cells[2].Value = 5;
+                            break;
+
+                        case 4:
+                            dgv.Rows[i].Cells[2].Value = 6;
+                            break;
+
+                        case 5:
+                            dgv.Rows[i].Cells[2].Value = 14;
+                            break;
+
+                        case 7:
+                            dgv.Rows[i].Cells[2].Value = 7;
+                            break;
+
+                        case 8:
+                            dgv.Rows[i].Cells[2].Value = 8;
+                            break;
+
+                        case 9:
+                            dgv.Rows[i].Cells[2].Value = 9;
+                            break;
+
+                        case 10:
+                            dgv.Rows[i].Cells[2].Value = 10;
+                            break;
+
+                        case 11:
+                            dgv.Rows[i].Cells[2].Value = 11;
+                            break;
+
+                        case 12:
+                            dgv.Rows[i].Cells[2].Value = 12;
+                            break;
+
+                        case 13:
+                            dgv.Rows[i].Cells[2].Value = 16;
+                            break;
+
+                        case 14:
+                            dgv.Rows[i].Cells[2].Value = 17;
+                            break;
+
+                        case 15:
+                            dgv.Rows[i].Cells[2].Value = 18;
+                            break;
+
+                        case 16:
+                            dgv.Rows[i].Cells[2].Value = 19;
+                            break;
+
+                        case 17:
+                            dgv.Rows[i].Cells[2].Value = 20;
+                            break;
+                    }
+
+
+                    dgv.Rows[i].Cells[4].Value = nudItemAddNewQty.Value;
+                    ItemSetTimeToNow(dgv, i);
+                    dgv.Rows[i].Cells[9].Value = ItemGetNewSerial(dgv);
+
+                    dgv.ClearSelection();
+                    dgv.CurrentCell = dgv.Rows[i].Cells[0];
+                    dgv.Rows[i].Selected = true;
+
+                    return;
+                }
+            }
+
+            string message =
+                "Unable to add New Item to " + tbcItems.TabPages[tbcItems.SelectedIndex].Text + ", ItemBox is full.";
+
+            MessageBox.Show(message, "Add New Item Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
         private void nudItemsSerial2_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[1] = (UInt32)nudItemsSerial2.Value;
         private void nudItemsSerial3_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[2] = (UInt32)nudItemsSerial3.Value;
@@ -3732,6 +4066,25 @@ namespace XC2SaveNETThingy
         private void nudItemsSerial18_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[17] = (UInt32)nudItemsSerial18.Value;
         private void nudItemsSerial19_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[18] = (UInt32)nudItemsSerial19.Value;
         #endregion Items
+
+        #region Game Flag Data
+        private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
+        {
+            foreach (DataGridViewRow r in dgv.Rows)
+            {
+                if (flagNames == null || !flagNames.ContainsKey(r.Index))
+                    r.HeaderCell.Value = String.Format("{0}", r.Index + 1);
+                else
+                    r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
+            }
+        }
+        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_1BIT);
+        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
+        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
+        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_8BIT);
+        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_16BIT);
+        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
+        #endregion Game Flag Data
 
         #region Party
         private void cbxPartyMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -4070,378 +4423,7 @@ namespace XC2SaveNETThingy
 
         #endregion XC2Save Events
 
-        #endregion Events
-
-        private void FindInItemBox()
-        {
-            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
-            DataTable items;
-
-            switch (tbcItems.SelectedIndex)
-            {
-                case 0:
-                    items = XC2Data.GetCoreChips();
-                    break;
-
-                case 1:
-                    items = XC2Data.GetAccessories();
-                    break;
-
-                case 2:
-                    items = XC2Data.GetAuxCores();
-                    break;
-
-                case 3:
-                    items = XC2Data.GetCylinders();
-                    break;
-
-                case 4:
-                    items = XC2Data.GetKeyItems();
-                    break;
-
-                case 5:
-                    items = XC2Data.GetInfoItems();
-                    break;
-
-                case 7:
-                    items = XC2Data.GetCollectibles();
-                    break;
-
-                case 8:
-                    items = XC2Data.GetTreasure();
-                    break;
-
-                case 9:
-                    items = XC2Data.GetUnrefinedAuxCores();
-                    break;
-
-                case 10:
-                    items = XC2Data.GetPouchItems();
-                    break;
-
-                case 11:
-                    items = XC2Data.GetCoreCrystals();
-                    break;
-
-                case 12:
-                    items = XC2Data.GetBoosters();
-                    break;
-
-                case 13:
-                    items = XC2Data.GetPoppiRoleCPU();
-                    break;
-
-                case 14:
-                    items = XC2Data.GetPoppiElementCores();
-                    break;
-
-                case 15:
-                    items = XC2Data.GetPoppiSpecialsEnhancingRAM();
-                    break;
-
-                case 16:
-                    items = XC2Data.GetPoppiArtsCards();
-                    break;
-
-                case 17:
-                    items = XC2Data.GetPoppiSkillRAM();
-                    break;
-
-                case 6:
-                default:
-                    return;
-            }
-
-            items.PrimaryKey = new DataColumn[] { items.Columns[0] };
-            List<string> itemNames = new List<string>();
-
-            foreach (DataGridViewRow r in dgv.Rows)
-            {
-                DataRow[] rows = items.Select("ID = " + r.Cells[0].Value);
-                string derp = "";
-                if (rows.Length > 0)
-                    derp = (string)(rows)[0]["Name"];
-                itemNames.Add(derp);
-            }
-
-            int index = itemNames.FindIndex(s => s.ToLower().Contains(txtItemSearch.Text.ToLower()));
-            Console.WriteLine(index);
-            if (index >= 0)
-            {
-                dgv.ClearSelection();
-                dgv.CurrentCell = dgv.Rows[index].Cells[0];
-                dgv.Rows[index].Selected = true;
-            }
-        }
-
-        private void btnItemSearch_Click(object sender, EventArgs e) => FindInItemBox();
-
-        private void txtItemSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                FindInItemBox();
-        }
-
-        private void btnBladeExport_Click(object sender, EventArgs e)
-        {
-            ExportBlade();
-        }
-
-        private void btnBladeImport_Click(object sender, EventArgs e)
-        {
-            ImportBlade();
-        }
-
-        private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
-        {
-            foreach (DataGridViewRow r in dgv.Rows)
-            {
-                if (flagNames == null || !flagNames.ContainsKey(r.Index))
-                    r.HeaderCell.Value = String.Format("{0}", r.Index + 1);
-                else
-                    r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
-            }
-        }
-
-        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_1BIT);
-        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
-        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
-        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_8BIT);
-        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_16BIT);
-        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
-
-        private UInt32 ItemGetNewSerial(DataGridView dgv)
-        {
-            List<UInt32> serials = new List<UInt32>();
-            foreach (DataGridViewRow r in dgv.Rows)
-                serials.Add((UInt32)r.Cells[9].Value);
-
-            UInt32 serial = 1;
-
-            while (serials.Contains(serial))
-                serial++;
-
-            return serial;
-        }
-
-        private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
-        {
-            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
-            dgv.Rows[dgv.SelectedRows[0].Index].Cells[9].Value = ItemGetNewSerial(dgv);
-        }
-
-        private void ItemSetTimeToNow(DataGridView dgv, int rowIndex)
-        {
-            dgv.Rows[rowIndex].Cells[6].Value = SAVEDATA.PlayTime.Hours;
-            dgv.Rows[rowIndex].Cells[7].Value = SAVEDATA.PlayTime.Minutes;
-            dgv.Rows[rowIndex].Cells[8].Value = SAVEDATA.PlayTime.Seconds;
-        }
-
-        private void dgvItemBox_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
-        {
-            if (e.RowIndex >=0)
-            {
-                DataGridView dgv = (DataGridView)sender;
-
-                foreach (DataGridViewRow r in dgv.Rows)
-                    r.Selected = false;
-                dgv.Rows[e.RowIndex].Selected = true;
-
-                cmsItems.Tag = dgv;
-                cmsItems.Show(dgv, dgv.PointToClient(Cursor.Position));
-            }
-        }
-
-        private void tsmiItemUpdateTime_Click(object sender, EventArgs e)
-        {
-            DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
-            ItemSetTimeToNow(dgv, dgv.SelectedRows[0].Index);
-        }
-
-        private void btnItemAddNew_Click(object sender, EventArgs e)
-        {
-            DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
-
-            for (int i = 0; i < dgv.Rows.Count; i++)
-            {
-                if ((UInt16)dgv.Rows[i].Cells[0].Value == 0)
-                {
-                    dgv.Rows[i].Cells[0].Value = nudItemAddNewID.Value;
-
-                    switch (tbcItems.SelectedIndex)
-                    {
-                        case 0:
-                            dgv.Rows[i].Cells[2].Value = 1;
-                            break;
-
-                        case 1:
-                            dgv.Rows[i].Cells[2].Value = 2;
-                            break;
-
-                        case 2:
-                            dgv.Rows[i].Cells[2].Value = 3;
-                            break;
-
-                        case 3:
-                            dgv.Rows[i].Cells[2].Value = 5;
-                            break;
-
-                        case 4:
-                            dgv.Rows[i].Cells[2].Value = 6;
-                            break;
-
-                        case 5:
-                            dgv.Rows[i].Cells[2].Value = 14;
-                            break;
-
-                        case 7:
-                            dgv.Rows[i].Cells[2].Value = 7;
-                            break;
-
-                        case 8:
-                            dgv.Rows[i].Cells[2].Value = 8;
-                            break;
-
-                        case 9:
-                            dgv.Rows[i].Cells[2].Value = 9;
-                            break;
-
-                        case 10:
-                            dgv.Rows[i].Cells[2].Value = 10;
-                            break;
-
-                        case 11:
-                            dgv.Rows[i].Cells[2].Value = 11;
-                            break;
-
-                        case 12:
-                            dgv.Rows[i].Cells[2].Value = 12;
-                            break;
-
-                        case 13:
-                            dgv.Rows[i].Cells[2].Value = 16;
-                            break;
-
-                        case 14:
-                            dgv.Rows[i].Cells[2].Value = 17;
-                            break;
-
-                        case 15:
-                            dgv.Rows[i].Cells[2].Value = 18;
-                            break;
-
-                        case 16:
-                            dgv.Rows[i].Cells[2].Value = 19;
-                            break;
-
-                        case 17:
-                            dgv.Rows[i].Cells[2].Value = 20;
-                            break;
-                    }
-
-
-                    dgv.Rows[i].Cells[4].Value = nudItemAddNewQty.Value;
-                    ItemSetTimeToNow(dgv, i);
-                    dgv.Rows[i].Cells[9].Value = ItemGetNewSerial(dgv);
-
-                    dgv.ClearSelection();
-                    dgv.CurrentCell = dgv.Rows[i].Cells[0];
-                    dgv.Rows[i].Selected = true;
-
-                    return;
-                }
-            }
-
-            string message =
-                "Unable to add New Item to " + tbcItems.TabPages[tbcItems.SelectedIndex].Text + ", ItemBox is full.";
-
-            MessageBox.Show(message, "Add New Item Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void UpdateNewItemComboBox()
-        {
-            cbxItemAddNewID.DataSource = null;
-            switch (tbcItems.SelectedIndex)
-            {
-                case 0:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips());
-                    break;
-
-                case 1:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories());
-                    break;
-
-                case 2:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores());
-                    break;
-
-                case 3:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders());
-                    break;
-
-                case 4:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems());
-                    break;
-
-                case 5:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems());
-                    break;
-
-                case 7:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles());
-                    break;
-
-                case 8:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure());
-                    break;
-
-                case 9:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores());
-                    break;
-
-                case 10:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems());
-                    break;
-
-                case 11:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals());
-                    break;
-
-                case 12:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters());
-                    break;
-
-                case 13:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU());
-                    break;
-
-                case 14:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores());
-                    break;
-
-                case 15:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM());
-                    break;
-
-                case 16:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards());
-                    break;
-
-                case 17:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM());
-                    break;
-            }
-
-            cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
-        }
-
-        private void nudItemAddNewID_ValueChanged(object sender, EventArgs e) => cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
-        private void cbxItemAddNewID_SelectionChangeCommitted(object sender, EventArgs e) => nudItemAddNewID.Value = Convert.ToUInt16(cbxItemAddNewID.SelectedValue);
-
-        private void tbcItems_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateNewItemComboBox();
-        }
+        #endregion Events 
     }
 }
 

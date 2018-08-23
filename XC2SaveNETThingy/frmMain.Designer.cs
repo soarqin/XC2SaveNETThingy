@@ -96,6 +96,8 @@
             this.cbxContentVersions = new System.Windows.Forms.ComboBox();
             this.label509 = new System.Windows.Forms.Label();
             this.groupBox164 = new System.Windows.Forms.GroupBox();
+            this.label515 = new System.Windows.Forms.Label();
+            this.label514 = new System.Windows.Forms.Label();
             this.radAegisFormeMythra = new System.Windows.Forms.RadioButton();
             this.radAegisFormePyra = new System.Windows.Forms.RadioButton();
             this.groupBox162 = new System.Windows.Forms.GroupBox();
@@ -186,6 +188,15 @@
             this.lbxDrivers = new System.Windows.Forms.ListBox();
             this.tbcDrivers = new System.Windows.Forms.TabControl();
             this.tabDriversMisc = new System.Windows.Forms.TabPage();
+            this.groupBox176 = new System.Windows.Forms.GroupBox();
+            this.nudDriverBonusExp = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
             this.label51 = new System.Windows.Forms.Label();
             this.cbxDriverID = new System.Windows.Forms.ComboBox();
@@ -253,10 +264,6 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverBonusExp = new System.Windows.Forms.NumericUpDown();
             this.nudDriverGuardRate = new System.Windows.Forms.NumericUpDown();
             this.nudDriverCriticalRate = new System.Windows.Forms.NumericUpDown();
             this.nudDriverEtherDef = new System.Windows.Forms.NumericUpDown();
@@ -268,10 +275,6 @@
             this.nudDriverStrength = new System.Windows.Forms.NumericUpDown();
             this.nudDriverHpMax = new System.Windows.Forms.NumericUpDown();
             this.nudDriverLevel = new System.Windows.Forms.NumericUpDown();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
@@ -1673,9 +1676,7 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox176 = new System.Windows.Forms.GroupBox();
-            this.label514 = new System.Windows.Forms.Label();
-            this.label515 = new System.Windows.Forms.Label();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox147.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1755,6 +1756,11 @@
             this.splitContainer2.SuspendLayout();
             this.tbcDrivers.SuspendLayout();
             this.tabDriversMisc.SuspendLayout();
+            this.groupBox176.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).BeginInit();
             this.groupBox34.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).BeginInit();
             this.groupBox30.SuspendLayout();
@@ -1783,10 +1789,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId1)).BeginInit();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).BeginInit();
@@ -2478,7 +2480,6 @@
             this.splitContainer3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.cmsItems.SuspendLayout();
-            this.groupBox176.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -3268,6 +3269,24 @@
             this.groupBox164.TabIndex = 185;
             this.groupBox164.TabStop = false;
             this.groupBox164.Text = "Aegis Forme";
+            // 
+            // label515
+            // 
+            this.label515.AutoSize = true;
+            this.label515.Location = new System.Drawing.Point(6, 45);
+            this.label515.Name = "label515";
+            this.label515.Size = new System.Drawing.Size(39, 13);
+            this.label515.TabIndex = 3;
+            this.label515.Text = "Mythra";
+            // 
+            // label514
+            // 
+            this.label514.AutoSize = true;
+            this.label514.Location = new System.Drawing.Point(6, 22);
+            this.label514.Name = "label514";
+            this.label514.Size = new System.Drawing.Size(28, 13);
+            this.label514.TabIndex = 2;
+            this.label514.Text = "Pyra";
             // 
             // radAegisFormeMythra
             // 
@@ -4313,6 +4332,111 @@
             this.tabDriversMisc.Text = "Misc";
             this.tabDriversMisc.UseVisualStyleBackColor = true;
             // 
+            // groupBox176
+            // 
+            this.groupBox176.Controls.Add(this.nudDriverBonusExp);
+            this.groupBox176.Controls.Add(this.nudDriverTotalSkillPoints);
+            this.groupBox176.Controls.Add(this.label56);
+            this.groupBox176.Controls.Add(this.label55);
+            this.groupBox176.Controls.Add(this.nudDriverCurrentSkillPoints);
+            this.groupBox176.Controls.Add(this.label54);
+            this.groupBox176.Controls.Add(this.label53);
+            this.groupBox176.Controls.Add(this.nudDriverBattleExp);
+            this.groupBox176.Location = new System.Drawing.Point(6, 336);
+            this.groupBox176.Name = "groupBox176";
+            this.groupBox176.Size = new System.Drawing.Size(195, 98);
+            this.groupBox176.TabIndex = 46;
+            this.groupBox176.TabStop = false;
+            this.groupBox176.Text = "Exp/Skill Points";
+            // 
+            // nudDriverBonusExp
+            // 
+            this.nudDriverBonusExp.Location = new System.Drawing.Point(108, 12);
+            this.nudDriverBonusExp.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBonusExp.Name = "nudDriverBonusExp";
+            this.nudDriverBonusExp.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverBonusExp.TabIndex = 35;
+            this.nudDriverBonusExp.ValueChanged += new System.EventHandler(this.nudDriverBonusExp_ValueChanged);
+            // 
+            // nudDriverTotalSkillPoints
+            // 
+            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(108, 72);
+            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
+            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverTotalSkillPoints.TabIndex = 38;
+            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(8, 74);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(88, 13);
+            this.label56.TabIndex = 20;
+            this.label56.Text = "Total Skill Points:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(8, 54);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(98, 13);
+            this.label55.TabIndex = 19;
+            this.label55.Text = "Current Skill Points:";
+            // 
+            // nudDriverCurrentSkillPoints
+            // 
+            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(108, 52);
+            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
+            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverCurrentSkillPoints.TabIndex = 37;
+            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(8, 34);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(58, 13);
+            this.label54.TabIndex = 18;
+            this.label54.Text = "Battle Exp:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(8, 14);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(61, 13);
+            this.label53.TabIndex = 17;
+            this.label53.Text = "Bonus Exp:";
+            // 
+            // nudDriverBattleExp
+            // 
+            this.nudDriverBattleExp.Location = new System.Drawing.Point(108, 32);
+            this.nudDriverBattleExp.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverBattleExp.Name = "nudDriverBattleExp";
+            this.nudDriverBattleExp.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverBattleExp.TabIndex = 36;
+            this.nudDriverBattleExp.ValueChanged += new System.EventHandler(this.nudDriverBattleExp_ValueChanged);
+            // 
             // groupBox34
             // 
             this.groupBox34.Controls.Add(this.label51);
@@ -4838,11 +4962,11 @@
             this.label52.TabIndex = 3;
             this.label52.Text = "Art Level:";
             // 
-            // cbxDriverArt
+            // cbxDriverArtID
             // 
             this.cbxDriverArtID.FormattingEnabled = true;
             this.cbxDriverArtID.Location = new System.Drawing.Point(118, 14);
-            this.cbxDriverArtID.Name = "cbxDriverArt";
+            this.cbxDriverArtID.Name = "cbxDriverArtID";
             this.cbxDriverArtID.Size = new System.Drawing.Size(261, 21);
             this.cbxDriverArtID.TabIndex = 2;
             this.cbxDriverArtID.SelectionChangeCommitted += new System.EventHandler(this.cbxDriverArt_SelectionChangeCommitted);
@@ -5079,58 +5203,6 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Base Stats (Read Only)";
             // 
-            // nudDriverTotalSkillPoints
-            // 
-            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(108, 72);
-            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
-            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverTotalSkillPoints.TabIndex = 38;
-            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
-            // 
-            // nudDriverCurrentSkillPoints
-            // 
-            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(108, 52);
-            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
-            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverCurrentSkillPoints.TabIndex = 37;
-            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
-            // 
-            // nudDriverBattleExp
-            // 
-            this.nudDriverBattleExp.Location = new System.Drawing.Point(108, 32);
-            this.nudDriverBattleExp.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBattleExp.Name = "nudDriverBattleExp";
-            this.nudDriverBattleExp.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverBattleExp.TabIndex = 36;
-            this.nudDriverBattleExp.ValueChanged += new System.EventHandler(this.nudDriverBattleExp_ValueChanged);
-            // 
-            // nudDriverBonusExp
-            // 
-            this.nudDriverBonusExp.Location = new System.Drawing.Point(108, 12);
-            this.nudDriverBonusExp.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverBonusExp.Name = "nudDriverBonusExp";
-            this.nudDriverBonusExp.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverBonusExp.TabIndex = 35;
-            this.nudDriverBonusExp.ValueChanged += new System.EventHandler(this.nudDriverBonusExp_ValueChanged);
-            // 
             // nudDriverGuardRate
             // 
             this.nudDriverGuardRate.Enabled = false;
@@ -5284,42 +5356,6 @@
             this.nudDriverLevel.Size = new System.Drawing.Size(62, 20);
             this.nudDriverLevel.TabIndex = 24;
             this.nudDriverLevel.ValueChanged += new System.EventHandler(this.nudDriverLevel_ValueChanged);
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(8, 74);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(88, 13);
-            this.label56.TabIndex = 20;
-            this.label56.Text = "Total Skill Points:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(8, 54);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(98, 13);
-            this.label55.TabIndex = 19;
-            this.label55.Text = "Current Skill Points:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(8, 34);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(58, 13);
-            this.label54.TabIndex = 18;
-            this.label54.Text = "Battle Exp:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(8, 14);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(61, 13);
-            this.label53.TabIndex = 17;
-            this.label53.Text = "Bonus Exp:";
             // 
             // label50
             // 
@@ -15934,7 +15970,7 @@
             this.tabAccessoryBox.Location = new System.Drawing.Point(4, 22);
             this.tabAccessoryBox.Name = "tabAccessoryBox";
             this.tabAccessoryBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabAccessoryBox.Size = new System.Drawing.Size(1120, 493);
             this.tabAccessoryBox.TabIndex = 1;
             this.tabAccessoryBox.Text = "Accessories";
             this.tabAccessoryBox.UseVisualStyleBackColor = true;
@@ -15947,7 +15983,7 @@
             this.dgvPcEquipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcEquipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcEquipBox.Name = "dgvPcEquipBox";
-            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvPcEquipBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvPcEquipBox.TabIndex = 0;
             this.dgvPcEquipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcEquipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -15958,7 +15994,7 @@
             this.tabAuxCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabAuxCoreBox.Name = "tabAuxCoreBox";
             this.tabAuxCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabAuxCoreBox.Size = new System.Drawing.Size(1120, 493);
             this.tabAuxCoreBox.TabIndex = 2;
             this.tabAuxCoreBox.Text = "Aux Cores";
             this.tabAuxCoreBox.UseVisualStyleBackColor = true;
@@ -15971,7 +16007,7 @@
             this.dgvEquipOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEquipOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEquipOrbBox.Name = "dgvEquipOrbBox";
-            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvEquipOrbBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvEquipOrbBox.TabIndex = 0;
             this.dgvEquipOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -15982,7 +16018,7 @@
             this.tabCylinderBox.Location = new System.Drawing.Point(4, 22);
             this.tabCylinderBox.Name = "tabCylinderBox";
             this.tabCylinderBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 493);
             this.tabCylinderBox.TabIndex = 3;
             this.tabCylinderBox.Text = "Cylinders";
             this.tabCylinderBox.UseVisualStyleBackColor = true;
@@ -15995,7 +16031,7 @@
             this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
             this.dgvSalvageBox.Name = "dgvSalvageBox";
-            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvSalvageBox.TabIndex = 0;
             this.dgvSalvageBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16006,7 +16042,7 @@
             this.tabKeyItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabKeyItemBox.Name = "tabKeyItemBox";
             this.tabKeyItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabKeyItemBox.Size = new System.Drawing.Size(1120, 493);
             this.tabKeyItemBox.TabIndex = 4;
             this.tabKeyItemBox.Text = "Key Items";
             this.tabKeyItemBox.UseVisualStyleBackColor = true;
@@ -16019,7 +16055,7 @@
             this.dgvPreciousBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreciousBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPreciousBox.Name = "dgvPreciousBox";
-            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvPreciousBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvPreciousBox.TabIndex = 0;
             this.dgvPreciousBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPreciousBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16030,7 +16066,7 @@
             this.tabInfoItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabInfoItemBox.Name = "tabInfoItemBox";
             this.tabInfoItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabInfoItemBox.Size = new System.Drawing.Size(1120, 493);
             this.tabInfoItemBox.TabIndex = 5;
             this.tabInfoItemBox.Text = "Info Items";
             this.tabInfoItemBox.UseVisualStyleBackColor = true;
@@ -16043,7 +16079,7 @@
             this.dgvInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInfoBox.Location = new System.Drawing.Point(3, 3);
             this.dgvInfoBox.Name = "dgvInfoBox";
-            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvInfoBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvInfoBox.TabIndex = 0;
             this.dgvInfoBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16054,7 +16090,7 @@
             this.tabEventItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabEventItemBox.Name = "tabEventItemBox";
             this.tabEventItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 493);
             this.tabEventItemBox.TabIndex = 6;
             this.tabEventItemBox.Text = "Event Items";
             this.tabEventItemBox.UseVisualStyleBackColor = true;
@@ -16067,7 +16103,7 @@
             this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEventBox.Name = "dgvEventBox";
-            this.dgvEventBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvEventBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvEventBox.TabIndex = 0;
             this.dgvEventBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEventBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16078,7 +16114,7 @@
             this.tabCollectibleBox.Location = new System.Drawing.Point(4, 22);
             this.tabCollectibleBox.Name = "tabCollectibleBox";
             this.tabCollectibleBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabCollectibleBox.Size = new System.Drawing.Size(1120, 493);
             this.tabCollectibleBox.TabIndex = 7;
             this.tabCollectibleBox.Text = "Collectibles";
             this.tabCollectibleBox.UseVisualStyleBackColor = true;
@@ -16091,7 +16127,7 @@
             this.dgvCollectionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCollectionListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCollectionListBox.Name = "dgvCollectionListBox";
-            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvCollectionListBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvCollectionListBox.TabIndex = 0;
             this.dgvCollectionListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16102,7 +16138,7 @@
             this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
             this.tabTreasureBox.Name = "tabTreasureBox";
             this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 493);
             this.tabTreasureBox.TabIndex = 8;
             this.tabTreasureBox.Text = "Treasure";
             this.tabTreasureBox.UseVisualStyleBackColor = true;
@@ -16115,7 +16151,7 @@
             this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
             this.dgvTreasureBox.Name = "dgvTreasureBox";
-            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvTreasureBox.TabIndex = 0;
             this.dgvTreasureBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16126,7 +16162,7 @@
             this.tabUnrefinedAuxCoresBox.Location = new System.Drawing.Point(4, 22);
             this.tabUnrefinedAuxCoresBox.Name = "tabUnrefinedAuxCoresBox";
             this.tabUnrefinedAuxCoresBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 493);
             this.tabUnrefinedAuxCoresBox.TabIndex = 9;
             this.tabUnrefinedAuxCoresBox.Text = "Unrefined Aux Cores";
             this.tabUnrefinedAuxCoresBox.UseVisualStyleBackColor = true;
@@ -16139,7 +16175,7 @@
             this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
             this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
-            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvEmptyOrbBox.TabIndex = 0;
             this.dgvEmptyOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16150,7 +16186,7 @@
             this.tabPouchItemBox.Location = new System.Drawing.Point(4, 22);
             this.tabPouchItemBox.Name = "tabPouchItemBox";
             this.tabPouchItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPouchItemBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPouchItemBox.TabIndex = 10;
             this.tabPouchItemBox.Text = "Pouch Items";
             this.tabPouchItemBox.UseVisualStyleBackColor = true;
@@ -16163,7 +16199,7 @@
             this.dgvFavoriteBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFavoriteBox.Location = new System.Drawing.Point(3, 3);
             this.dgvFavoriteBox.Name = "dgvFavoriteBox";
-            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvFavoriteBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvFavoriteBox.TabIndex = 0;
             this.dgvFavoriteBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16174,7 +16210,7 @@
             this.tabCoreCrystalBox.Location = new System.Drawing.Point(4, 22);
             this.tabCoreCrystalBox.Name = "tabCoreCrystalBox";
             this.tabCoreCrystalBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 493);
             this.tabCoreCrystalBox.TabIndex = 11;
             this.tabCoreCrystalBox.Text = "Core Crystals";
             this.tabCoreCrystalBox.UseVisualStyleBackColor = true;
@@ -16187,7 +16223,7 @@
             this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
             this.dgvCrystalListBox.Name = "dgvCrystalListBox";
-            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvCrystalListBox.TabIndex = 0;
             this.dgvCrystalListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16198,7 +16234,7 @@
             this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
             this.tabBoosterBox.Name = "tabBoosterBox";
             this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 493);
             this.tabBoosterBox.TabIndex = 12;
             this.tabBoosterBox.Text = "Boosters";
             this.tabBoosterBox.UseVisualStyleBackColor = true;
@@ -16211,7 +16247,7 @@
             this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
             this.dgvBoosterBox.Name = "dgvBoosterBox";
-            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvBoosterBox.TabIndex = 0;
             this.dgvBoosterBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16222,7 +16258,7 @@
             this.tabPoppiRoleCPUBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiRoleCPUBox.Name = "tabPoppiRoleCPUBox";
             this.tabPoppiRoleCPUBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPoppiRoleCPUBox.TabIndex = 13;
             this.tabPoppiRoleCPUBox.Text = "Poppi Role CPU";
             this.tabPoppiRoleCPUBox.UseVisualStyleBackColor = true;
@@ -16235,7 +16271,7 @@
             this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
-            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvHanaRoleBox.TabIndex = 0;
             this.dgvHanaRoleBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16246,7 +16282,7 @@
             this.tabPoppiElementCoreBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiElementCoreBox.Name = "tabPoppiElementCoreBox";
             this.tabPoppiElementCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPoppiElementCoreBox.TabIndex = 14;
             this.tabPoppiElementCoreBox.Text = "Poppi Element Cores";
             this.tabPoppiElementCoreBox.UseVisualStyleBackColor = true;
@@ -16259,7 +16295,7 @@
             this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
-            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvHanaAtrBox.TabIndex = 0;
             this.dgvHanaAtrBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16270,7 +16306,7 @@
             this.tabPoppiSpecialsEnhancingRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSpecialsEnhancingRAMBox.Name = "tabPoppiSpecialsEnhancingRAMBox";
             this.tabPoppiSpecialsEnhancingRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPoppiSpecialsEnhancingRAMBox.TabIndex = 15;
             this.tabPoppiSpecialsEnhancingRAMBox.Text = "Poppi Specials Enhancing RAM";
             this.tabPoppiSpecialsEnhancingRAMBox.UseVisualStyleBackColor = true;
@@ -16283,7 +16319,7 @@
             this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
-            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvHanaArtsBox.TabIndex = 0;
             this.dgvHanaArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16294,7 +16330,7 @@
             this.tabPoppiArtsCardBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiArtsCardBox.Name = "tabPoppiArtsCardBox";
             this.tabPoppiArtsCardBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPoppiArtsCardBox.TabIndex = 16;
             this.tabPoppiArtsCardBox.Text = "Poppi Arts Cards";
             this.tabPoppiArtsCardBox.UseVisualStyleBackColor = true;
@@ -16307,7 +16343,7 @@
             this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
-            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvHanaNArtsBox.TabIndex = 0;
             this.dgvHanaNArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16318,7 +16354,7 @@
             this.tabPoppiSkillRAMBox.Location = new System.Drawing.Point(4, 22);
             this.tabPoppiSkillRAMBox.Name = "tabPoppiSkillRAMBox";
             this.tabPoppiSkillRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 493);
             this.tabPoppiSkillRAMBox.TabIndex = 17;
             this.tabPoppiSkillRAMBox.Text = "Poppi Skill RAM";
             this.tabPoppiSkillRAMBox.UseVisualStyleBackColor = true;
@@ -16331,7 +16367,7 @@
             this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
             this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
-            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvHanaAssistBox.TabIndex = 0;
             this.dgvHanaAssistBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16341,7 +16377,7 @@
             this.tabItemsSerials.Controls.Add(this.groupBox112);
             this.tabItemsSerials.Location = new System.Drawing.Point(4, 22);
             this.tabItemsSerials.Name = "tabItemsSerials";
-            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 468);
+            this.tabItemsSerials.Size = new System.Drawing.Size(1120, 493);
             this.tabItemsSerials.TabIndex = 18;
             this.tabItemsSerials.Text = "Serials";
             this.tabItemsSerials.UseVisualStyleBackColor = true;
@@ -21549,7 +21585,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadSaveFileToolStripMenuItem,
-            this.saveFileToolStripMenuItem});
+            this.saveFileToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -21557,7 +21594,8 @@
             // loadSaveFileToolStripMenuItem
             // 
             this.loadSaveFileToolStripMenuItem.Name = "loadSaveFileToolStripMenuItem";
-            this.loadSaveFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.loadSaveFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.loadSaveFileToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.loadSaveFileToolStripMenuItem.Text = "Load File...";
             this.loadSaveFileToolStripMenuItem.Click += new System.EventHandler(this.loadSaveFileToolStripMenuItem_Click);
             // 
@@ -21565,7 +21603,8 @@
             // 
             this.saveFileToolStripMenuItem.Enabled = false;
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.saveFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.saveFileToolStripMenuItem.Text = "Save File As...";
             this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
             // 
@@ -21581,14 +21620,16 @@
             // fAQToolStripMenuItem
             // 
             this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.fAQToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fAQToolStripMenuItem.Text = "FAQ";
             this.fAQToolStripMenuItem.Click += new System.EventHandler(this.fAQToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -21631,40 +21672,13 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
-            // groupBox176
+            // exitToolStripMenuItem
             // 
-            this.groupBox176.Controls.Add(this.nudDriverBonusExp);
-            this.groupBox176.Controls.Add(this.nudDriverTotalSkillPoints);
-            this.groupBox176.Controls.Add(this.label56);
-            this.groupBox176.Controls.Add(this.label55);
-            this.groupBox176.Controls.Add(this.nudDriverCurrentSkillPoints);
-            this.groupBox176.Controls.Add(this.label54);
-            this.groupBox176.Controls.Add(this.label53);
-            this.groupBox176.Controls.Add(this.nudDriverBattleExp);
-            this.groupBox176.Location = new System.Drawing.Point(6, 336);
-            this.groupBox176.Name = "groupBox176";
-            this.groupBox176.Size = new System.Drawing.Size(195, 98);
-            this.groupBox176.TabIndex = 46;
-            this.groupBox176.TabStop = false;
-            this.groupBox176.Text = "Exp/Skill Points";
-            // 
-            // label514
-            // 
-            this.label514.AutoSize = true;
-            this.label514.Location = new System.Drawing.Point(6, 22);
-            this.label514.Name = "label514";
-            this.label514.Size = new System.Drawing.Size(28, 13);
-            this.label514.TabIndex = 2;
-            this.label514.Text = "Pyra";
-            // 
-            // label515
-            // 
-            this.label515.AutoSize = true;
-            this.label515.Location = new System.Drawing.Point(6, 45);
-            this.label515.Name = "label515";
-            this.label515.Size = new System.Drawing.Size(39, 13);
-            this.label515.TabIndex = 3;
-            this.label515.Text = "Mythra";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -21771,6 +21785,12 @@
             this.splitContainer2.ResumeLayout(false);
             this.tbcDrivers.ResumeLayout(false);
             this.tabDriversMisc.ResumeLayout(false);
+            this.groupBox176.ResumeLayout(false);
+            this.groupBox176.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).EndInit();
             this.groupBox34.ResumeLayout(false);
             this.groupBox34.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).EndInit();
@@ -21807,10 +21827,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponArtId1)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverGuardRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverCriticalRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverEtherDef)).EndInit();
@@ -22581,8 +22597,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.cmsItems.ResumeLayout(false);
-            this.groupBox176.ResumeLayout(false);
-            this.groupBox176.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -24235,6 +24249,7 @@
         private System.Windows.Forms.GroupBox groupBox176;
         private System.Windows.Forms.Label label515;
         private System.Windows.Forms.Label label514;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
