@@ -466,6 +466,8 @@
             this.lbxBlades = new System.Windows.Forms.ListBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabBladeMain = new System.Windows.Forms.TabPage();
+            this.groupBox175 = new System.Windows.Forms.GroupBox();
+            this.label513 = new System.Windows.Forms.Label();
             this.btnBladeExport = new System.Windows.Forms.Button();
             this.btnBladeImport = new System.Windows.Forms.Button();
             this.groupBox107 = new System.Windows.Forms.GroupBox();
@@ -1887,6 +1889,7 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabBladeMain.SuspendLayout();
+            this.groupBox175.SuspendLayout();
             this.groupBox107.SuspendLayout();
             this.groupBox108.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeAuxCore3Serial)).BeginInit();
@@ -7481,8 +7484,7 @@
             // 
             // tabBladeMain
             // 
-            this.tabBladeMain.Controls.Add(this.btnBladeExport);
-            this.tabBladeMain.Controls.Add(this.btnBladeImport);
+            this.tabBladeMain.Controls.Add(this.groupBox175);
             this.tabBladeMain.Controls.Add(this.groupBox107);
             this.tabBladeMain.Controls.Add(this.groupBox105);
             this.tabBladeMain.Controls.Add(this.groupBox104);
@@ -7496,23 +7498,45 @@
             this.tabBladeMain.Text = "Main";
             this.tabBladeMain.UseVisualStyleBackColor = true;
             // 
+            // groupBox175
+            // 
+            this.groupBox175.Controls.Add(this.label513);
+            this.groupBox175.Controls.Add(this.btnBladeExport);
+            this.groupBox175.Controls.Add(this.btnBladeImport);
+            this.groupBox175.Location = new System.Drawing.Point(429, 424);
+            this.groupBox175.Name = "groupBox175";
+            this.groupBox175.Size = new System.Drawing.Size(427, 53);
+            this.groupBox175.TabIndex = 241;
+            this.groupBox175.TabStop = false;
+            this.groupBox175.Text = "Blade Import/Export";
+            // 
+            // label513
+            // 
+            this.label513.AutoSize = true;
+            this.label513.Location = new System.Drawing.Point(168, 16);
+            this.label513.Name = "label513";
+            this.label513.Size = new System.Drawing.Size(220, 26);
+            this.label513.TabIndex = 241;
+            this.label513.Text = "NOTE: Blade ID and CommonBladeIndex are\r\nNOT overwritten by data imported from fi" +
+    "le.";
+            // 
             // btnBladeExport
             // 
-            this.btnBladeExport.Location = new System.Drawing.Point(544, 508);
+            this.btnBladeExport.Location = new System.Drawing.Point(87, 13);
             this.btnBladeExport.Name = "btnBladeExport";
-            this.btnBladeExport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeExport.Size = new System.Drawing.Size(75, 34);
             this.btnBladeExport.TabIndex = 240;
-            this.btnBladeExport.Text = "button2";
+            this.btnBladeExport.Text = "Export Blade to File...";
             this.btnBladeExport.UseVisualStyleBackColor = true;
             this.btnBladeExport.Click += new System.EventHandler(this.btnBladeExport_Click);
             // 
             // btnBladeImport
             // 
-            this.btnBladeImport.Location = new System.Drawing.Point(529, 447);
+            this.btnBladeImport.Location = new System.Drawing.Point(6, 13);
             this.btnBladeImport.Name = "btnBladeImport";
-            this.btnBladeImport.Size = new System.Drawing.Size(75, 23);
+            this.btnBladeImport.Size = new System.Drawing.Size(75, 34);
             this.btnBladeImport.TabIndex = 239;
-            this.btnBladeImport.Text = "button1";
+            this.btnBladeImport.Text = "Import Blade from File...";
             this.btnBladeImport.UseVisualStyleBackColor = true;
             this.btnBladeImport.Click += new System.EventHandler(this.btnBladeImport_Click);
             // 
@@ -15720,7 +15744,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.tbcItems);
             this.splitContainer5.Size = new System.Drawing.Size(1128, 570);
-            this.splitContainer5.SplitterDistance = 72;
+            this.splitContainer5.SplitterDistance = 47;
             this.splitContainer5.TabIndex = 1;
             // 
             // groupBox174
@@ -15731,16 +15755,16 @@
             this.groupBox174.Controls.Add(this.nudItemAddNewQty);
             this.groupBox174.Controls.Add(this.cbxItemAddNewID);
             this.groupBox174.Controls.Add(this.nudItemAddNewID);
-            this.groupBox174.Location = new System.Drawing.Point(354, 3);
+            this.groupBox174.Location = new System.Drawing.Point(239, 3);
             this.groupBox174.Name = "groupBox174";
-            this.groupBox174.Size = new System.Drawing.Size(393, 66);
+            this.groupBox174.Size = new System.Drawing.Size(365, 40);
             this.groupBox174.TabIndex = 3;
             this.groupBox174.TabStop = false;
             this.groupBox174.Text = "Easy-Add New Item to Current Item Box";
             // 
             // btnItemAddNew
             // 
-            this.btnItemAddNew.Location = new System.Drawing.Point(316, 11);
+            this.btnItemAddNew.Location = new System.Drawing.Point(316, 12);
             this.btnItemAddNew.Name = "btnItemAddNew";
             this.btnItemAddNew.Size = new System.Drawing.Size(43, 23);
             this.btnItemAddNew.TabIndex = 2;
@@ -15791,7 +15815,7 @@
             // cbxItemAddNewID
             // 
             this.cbxItemAddNewID.FormattingEnabled = true;
-            this.cbxItemAddNewID.Location = new System.Drawing.Point(103, 12);
+            this.cbxItemAddNewID.Location = new System.Drawing.Point(103, 13);
             this.cbxItemAddNewID.Name = "cbxItemAddNewID";
             this.cbxItemAddNewID.Size = new System.Drawing.Size(121, 21);
             this.cbxItemAddNewID.TabIndex = 1;
@@ -15812,7 +15836,7 @@
             this.groupBox173.Controls.Add(this.txtItemSearch);
             this.groupBox173.Location = new System.Drawing.Point(5, 3);
             this.groupBox173.Name = "groupBox173";
-            this.groupBox173.Size = new System.Drawing.Size(343, 66);
+            this.groupBox173.Size = new System.Drawing.Size(228, 40);
             this.groupBox173.TabIndex = 2;
             this.groupBox173.TabStop = false;
             this.groupBox173.Text = "Find Existing Item in Current Item Box";
@@ -15828,7 +15852,7 @@
             // 
             // btnItemSearch
             // 
-            this.btnItemSearch.Location = new System.Drawing.Point(179, 13);
+            this.btnItemSearch.Location = new System.Drawing.Point(179, 12);
             this.btnItemSearch.Name = "btnItemSearch";
             this.btnItemSearch.Size = new System.Drawing.Size(43, 23);
             this.btnItemSearch.TabIndex = 1;
@@ -15869,7 +15893,7 @@
             this.tbcItems.Location = new System.Drawing.Point(0, 0);
             this.tbcItems.Name = "tbcItems";
             this.tbcItems.SelectedIndex = 0;
-            this.tbcItems.Size = new System.Drawing.Size(1128, 494);
+            this.tbcItems.Size = new System.Drawing.Size(1128, 519);
             this.tbcItems.TabIndex = 0;
             this.tbcItems.SelectedIndexChanged += new System.EventHandler(this.tbcItems_SelectedIndexChanged);
             // 
@@ -15880,7 +15904,7 @@
             this.tabCoreChipBox.Location = new System.Drawing.Point(4, 22);
             this.tabCoreChipBox.Name = "tabCoreChipBox";
             this.tabCoreChipBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreChipBox.Size = new System.Drawing.Size(1120, 468);
+            this.tabCoreChipBox.Size = new System.Drawing.Size(1120, 493);
             this.tabCoreChipBox.TabIndex = 0;
             this.tabCoreChipBox.Text = "Core Chips";
             this.tabCoreChipBox.UseVisualStyleBackColor = true;
@@ -15891,7 +15915,7 @@
             this.dgvPcWpnChipBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPcWpnChipBox.Location = new System.Drawing.Point(3, 3);
             this.dgvPcWpnChipBox.Name = "dgvPcWpnChipBox";
-            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1114, 462);
+            this.dgvPcWpnChipBox.Size = new System.Drawing.Size(1114, 487);
             this.dgvPcWpnChipBox.TabIndex = 0;
             this.dgvPcWpnChipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcWpnChipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
@@ -16819,7 +16843,7 @@
             this.groupBox167.Controls.Add(this.dgvFlags1Bit);
             this.groupBox167.Location = new System.Drawing.Point(6, 6);
             this.groupBox167.Name = "groupBox167";
-            this.groupBox167.Size = new System.Drawing.Size(325, 538);
+            this.groupBox167.Size = new System.Drawing.Size(358, 538);
             this.groupBox167.TabIndex = 2;
             this.groupBox167.TabStop = false;
             this.groupBox167.Text = "1-Bit Flags";
@@ -16833,14 +16857,14 @@
             this.dgvFlags1Bit.Location = new System.Drawing.Point(3, 16);
             this.dgvFlags1Bit.MultiSelect = false;
             this.dgvFlags1Bit.Name = "dgvFlags1Bit";
-            this.dgvFlags1Bit.Size = new System.Drawing.Size(319, 519);
+            this.dgvFlags1Bit.Size = new System.Drawing.Size(352, 519);
             this.dgvFlags1Bit.TabIndex = 0;
             this.dgvFlags1Bit.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFlags1Bit_RowsAdded);
             // 
             // groupBox168
             // 
             this.groupBox168.Controls.Add(this.dgvFlags2Bit);
-            this.groupBox168.Location = new System.Drawing.Point(337, 6);
+            this.groupBox168.Location = new System.Drawing.Point(370, 6);
             this.groupBox168.Name = "groupBox168";
             this.groupBox168.Size = new System.Drawing.Size(160, 538);
             this.groupBox168.TabIndex = 3;
@@ -16863,7 +16887,7 @@
             // groupBox169
             // 
             this.groupBox169.Controls.Add(this.dgvFlags4Bit);
-            this.groupBox169.Location = new System.Drawing.Point(503, 6);
+            this.groupBox169.Location = new System.Drawing.Point(536, 6);
             this.groupBox169.Name = "groupBox169";
             this.groupBox169.Size = new System.Drawing.Size(160, 538);
             this.groupBox169.TabIndex = 4;
@@ -16886,7 +16910,7 @@
             // groupBox170
             // 
             this.groupBox170.Controls.Add(this.dgvFlags8Bit);
-            this.groupBox170.Location = new System.Drawing.Point(669, 6);
+            this.groupBox170.Location = new System.Drawing.Point(702, 6);
             this.groupBox170.Name = "groupBox170";
             this.groupBox170.Size = new System.Drawing.Size(253, 538);
             this.groupBox170.TabIndex = 5;
@@ -21858,6 +21882,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabBladeMain.ResumeLayout(false);
+            this.groupBox175.ResumeLayout(false);
+            this.groupBox175.PerformLayout();
             this.groupBox107.ResumeLayout(false);
             this.groupBox108.ResumeLayout(false);
             this.groupBox108.PerformLayout();
@@ -24159,6 +24185,8 @@
         private System.Windows.Forms.NumericUpDown nudItemAddNewQty;
         private System.Windows.Forms.ComboBox cbxItemAddNewID;
         private System.Windows.Forms.NumericUpDown nudItemAddNewID;
+        private System.Windows.Forms.GroupBox groupBox175;
+        private System.Windows.Forms.Label label513;
     }
 }
 
