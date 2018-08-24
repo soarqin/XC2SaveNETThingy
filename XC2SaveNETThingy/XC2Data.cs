@@ -35,11 +35,6 @@ namespace XC2SaveNETThingy
             return IDs.Contains(id);
         }
 
-        public static DataTable DriverStatus()
-        {
-            return GetDataSet("SELECT * FROM DriverStatus").Tables[0];
-        }
-
         public static DataTable DriverBladeSetStatus()
         {
             return GetDataSet("SELECT * FROM DriverBladeSetStatus").Tables[0];

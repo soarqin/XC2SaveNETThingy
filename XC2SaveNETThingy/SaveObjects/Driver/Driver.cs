@@ -71,7 +71,8 @@ namespace XC2SaveNETThingy
         public UInt32 CompassionLevel { get; set; }
         public UInt32 JusticePoints { get; set; }
         public UInt32 JusticeLevel { get; set; }
-        public UInt16 IsActive { get; set; }
+        //public UInt16 IsActive { get; set; }
+        public bool IsInParty { get; set; }
         public UInt16 ID { get; set; }
         public Int16 SetBlade { get; set; }
         public UInt16[] EquippedBlades { get; set; }
@@ -120,7 +121,8 @@ namespace XC2SaveNETThingy
             CompassionLevel = BitConverter.ToUInt32( data.GetByteSubArray(LOC["CompassionLevel"], 4), 0);
             JusticePoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticePoints"], 4), 0);
             JusticeLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticeLevel"], 4), 0);
-            IsActive = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0);
+            //IsActive = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0);
+            IsInParty = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0) == 1;
             ID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["DriverId"], 2), 0);
             SetBlade = BitConverter.ToInt16(data.GetByteSubArray(LOC["SetBlade"], 2), 0);
 
@@ -191,7 +193,8 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CompassionLevel));
             result.AddRange(BitConverter.GetBytes(JusticePoints));
             result.AddRange(BitConverter.GetBytes(JusticeLevel));
-            result.AddRange(BitConverter.GetBytes(IsActive));
+            //result.AddRange(BitConverter.GetBytes(IsActive));
+            result.AddRange(BitConverter.GetBytes((UInt16)(IsInParty ? 1 : 0)));
             result.AddRange(BitConverter.GetBytes(ID));
             result.AddRange(BitConverter.GetBytes(SetBlade));
 

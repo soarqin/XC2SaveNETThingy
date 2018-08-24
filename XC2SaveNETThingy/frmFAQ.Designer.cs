@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFAQ));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gbxFAQ = new System.Windows.Forms.GroupBox();
+            this.lblAnswer2 = new System.Windows.Forms.Label();
+            this.lblQuestion2 = new System.Windows.Forms.Label();
+            this.lblAnswer1 = new System.Windows.Forms.Label();
+            this.lblQuestion1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gbxFAQ.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbxFAQ
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(5, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(581, 158);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "FAQ";
+            this.gbxFAQ.Controls.Add(this.lblAnswer2);
+            this.gbxFAQ.Controls.Add(this.lblQuestion2);
+            this.gbxFAQ.Controls.Add(this.lblAnswer1);
+            this.gbxFAQ.Controls.Add(this.lblQuestion1);
+            this.gbxFAQ.Location = new System.Drawing.Point(5, 3);
+            this.gbxFAQ.Name = "gbxFAQ";
+            this.gbxFAQ.Size = new System.Drawing.Size(581, 158);
+            this.gbxFAQ.TabIndex = 0;
+            this.gbxFAQ.TabStop = false;
+            this.gbxFAQ.Text = "FAQ";
             // 
-            // label4
+            // lblAnswer2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(557, 26);
-            this.label4.TabIndex = 3;
-            this.label4.Text = resources.GetString("label4.Text");
+            this.lblAnswer2.AutoSize = true;
+            this.lblAnswer2.Location = new System.Drawing.Point(6, 126);
+            this.lblAnswer2.Name = "lblAnswer2";
+            this.lblAnswer2.Size = new System.Drawing.Size(557, 26);
+            this.lblAnswer2.TabIndex = 3;
+            this.lblAnswer2.Text = resources.GetString("lblAnswer2.Text");
             // 
-            // label3
+            // lblQuestion2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(338, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Q: Can this edit fields to values that cannot be done normally in-game?";
+            this.lblQuestion2.AutoSize = true;
+            this.lblQuestion2.Location = new System.Drawing.Point(6, 103);
+            this.lblQuestion2.Name = "lblQuestion2";
+            this.lblQuestion2.Size = new System.Drawing.Size(338, 13);
+            this.lblQuestion2.TabIndex = 2;
+            this.lblQuestion2.Text = "Q: Can this edit fields to values that cannot be done normally in-game?";
             // 
-            // label2
+            // lblAnswer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(570, 39);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.lblAnswer1.AutoSize = true;
+            this.lblAnswer1.Location = new System.Drawing.Point(6, 42);
+            this.lblAnswer1.Name = "lblAnswer1";
+            this.lblAnswer1.Size = new System.Drawing.Size(573, 39);
+            this.lblAnswer1.TabIndex = 1;
+            this.lblAnswer1.Text = resources.GetString("lblAnswer1.Text");
             // 
-            // label1
+            // lblQuestion1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Q: Why does some stuff I\'ve edited not seem to save?";
+            this.lblQuestion1.AutoSize = true;
+            this.lblQuestion1.Location = new System.Drawing.Point(6, 16);
+            this.lblQuestion1.Name = "lblQuestion1";
+            this.lblQuestion1.Size = new System.Drawing.Size(262, 13);
+            this.lblQuestion1.TabIndex = 0;
+            this.lblQuestion1.Text = "Q: Why does some stuff I\'ve edited not seem to save?";
             // 
             // btnOK
             // 
@@ -103,26 +103,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 202);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxFAQ);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmFAQ";
             this.Text = "FAQ";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxFAQ.ResumeLayout(false);
+            this.gbxFAQ.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gbxFAQ;
+        private System.Windows.Forms.Label lblAnswer2;
+        private System.Windows.Forms.Label lblQuestion2;
+        private System.Windows.Forms.Label lblAnswer1;
+        private System.Windows.Forms.Label lblQuestion1;
         private System.Windows.Forms.Button btnOK;
     }
 }

@@ -117,12 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="lblAnswer2.Text" xml:space="preserve">
     <value>A: For most things, yes. This may be useful to some users, but it is not know how the game will react to such changes
 in your save data. Of course, backup your save file before making any changes to it!</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>A: Some fields cannot be edited without he game changing those field's values back to what they were supposed to be.
+  <data name="lblAnswer1.Text" xml:space="preserve">
+    <value>A: Some fields cannot be edited without the game changing those field's values back to what they were supposed to be.
 For Example, modifying Pyra's Element (or that of other Rare/Story Blades) will be overwritten by the game back to its
 original value by the game upon game load.</value>
   </data>

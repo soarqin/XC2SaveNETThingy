@@ -76,7 +76,6 @@ namespace XC2SaveNETThingy
 
             #region Driver
             cbxDriverID.BindDataTable(XC2Data.Drivers());
-            cbxDriverIsActive.BindDataTable(XC2Data.DriverStatus(), "Desc");
             cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(), "Desc");
 
             cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
@@ -602,7 +601,6 @@ namespace XC2SaveNETThingy
                 MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;
             }
-
         }
         private void LoadFile()
         {
@@ -645,7 +643,6 @@ namespace XC2SaveNETThingy
 
             IsReloadingDrivers = false;
         }
-
         private void ReloadDriverSetBladeComboBoxes()
         {
             int i1 = cbxDriverBlade1.SelectedIndex;
@@ -658,7 +655,6 @@ namespace XC2SaveNETThingy
             cbxDriverBlade2.SelectedIndex = i2;
             cbxDriverBlade3.SelectedIndex = i3;
         }
-
         private void LoadDriver(int index)
         {
             Driver d = SAVEDATA.Drivers[index];
@@ -699,7 +695,7 @@ namespace XC2SaveNETThingy
             #endregion Driver Ideas
 
             #region Driver Status
-            cbxDriverIsActive.SelectedValue = d.IsActive;
+            chkDriverInParty.Checked = d.IsInParty;
             #endregion Driver Status
 
             #region Driver Equipped Blades
@@ -2030,7 +2026,7 @@ namespace XC2SaveNETThingy
             RefreshDriverList();
         }
         private void cbxDriverID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverID.Value = cbxDriverID.SelectedIndex;
-        private void cbxDriverIsActive_SelectionChangeCommitted(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].IsActive = (UInt16)cbxDriverIsActive.SelectedIndex;
+        private void chkDriverInParty_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].IsInParty = chkDriverInParty.Checked;
         #endregion Driver Misc
 
         #region Driver Equipped Blades
@@ -4423,7 +4419,7 @@ namespace XC2SaveNETThingy
 
         #endregion XC2Save Events
 
-        #endregion Events 
+        #endregion Events
     }
 }
 
