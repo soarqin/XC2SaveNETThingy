@@ -11,125 +11,6 @@ namespace XC2SaveNETThingy
         public static int SIZE = 0x5A0;
         public const int DRIVER_ARTS_COUNT = 526;
 
-        public class DriverSkill : IXC2SaveObject
-        {
-            public const int SIZE = 0xA;
-
-            public UInt16[] IDs { get; set; }
-            public UInt16 ColumnNo { get; set; }
-            public UInt16 Level { get; set; }
-
-            public DriverSkill(Byte[] data)
-            {
-                IDs = new UInt16[3];
-                for (int i = 0; i < IDs.Length; i++)
-                    IDs[i] = BitConverter.ToUInt16(data.GetByteSubArray(i * 2, 2), 0);
-
-                ColumnNo = BitConverter.ToUInt16(data.GetByteSubArray(0x6, 2), 0);
-                Level = BitConverter.ToUInt16(data.GetByteSubArray(0x8, 2), 0);
-            }
-
-            public Byte[] ToRawData()
-            {
-                List<Byte> result = new List<byte>();
-
-                foreach (UInt16 u in IDs)
-                    result.AddRange(BitConverter.GetBytes(u));
-
-                result.AddRange(BitConverter.GetBytes(ColumnNo));
-                result.AddRange(BitConverter.GetBytes(Level));
-
-                if (result.Count != SIZE)
-                {
-                    string message = "DriverSkill: SIZE ALL WRONG!!!" + Environment.NewLine +
-                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
-                    "...but Size is " + result.Count + " bytes!";
-
-                    throw new Exception(message);
-                }
-
-                return result.ToArray();
-            }
-        }
-
-        public class Weapon : IXC2SaveObject
-        {
-            public const int SIZE = 0x14;
-
-            public UInt32[] ArtIds { get; set; }
-            public UInt32 WeaponPoints { get; set; }
-            public UInt32 TotalWeaponPoints { get; set; }
-
-            public Weapon(Byte[] data)
-            {
-                ArtIds = new UInt32[3];
-                for (int i = 0; i < ArtIds.Length; i++)
-                    ArtIds[i] = BitConverter.ToUInt32(data.GetByteSubArray(i * 4, 4), 0);
-
-                WeaponPoints = BitConverter.ToUInt32(data.GetByteSubArray(0xC, 4), 0);
-                TotalWeaponPoints = BitConverter.ToUInt32(data.GetByteSubArray(0x10, 4), 0);
-            }
-
-            public Byte[] ToRawData()
-            {
-                List<Byte> result = new List<Byte>();
-
-                foreach (UInt32 u in ArtIds)
-                    result.AddRange(BitConverter.GetBytes(u));
-
-                result.AddRange(BitConverter.GetBytes(WeaponPoints));
-                result.AddRange(BitConverter.GetBytes(TotalWeaponPoints));
-
-                if (result.Count != SIZE)
-                {
-                    string message = "Weapon: SIZE ALL WRONG!!!" + Environment.NewLine +
-                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
-                    "...but Size is " + result.Count + " bytes!";
-
-                    throw new Exception(message);
-                }
-
-                return result.ToArray();
-            }
-        }
-
-        public class Pouch : IXC2SaveObject
-        {
-            public const int SIZE = 0x8;
-            public const int COUNT = 3;
-
-            public float Time { get; set; }
-            public UInt16 ItemId { get; set; }
-            public bool IsEnabled { get; set; }
-
-            public Pouch(Byte[] data)
-            {
-                Time = BitConverter.ToSingle(data.GetByteSubArray(0, 4), 0);
-                ItemId = BitConverter.ToUInt16(data.GetByteSubArray(4, 2), 0);
-                IsEnabled = BitConverter.ToUInt16(data.GetByteSubArray(6, 2), 0) == 1;
-            }
-
-            public Byte[] ToRawData()
-            {
-                List<Byte> result = new List<Byte>();
-
-                result.AddRange(BitConverter.GetBytes(Time));
-                result.AddRange(BitConverter.GetBytes(ItemId));
-                result.AddRange(BitConverter.GetBytes((UInt16)(IsEnabled ? 1 : 0)));
-
-                if (result.Count != SIZE)
-                {
-                    string message = "Pouch: SIZE ALL WRONG!!!" + Environment.NewLine +
-                    "Size should be " + SIZE + " bytes..." + Environment.NewLine +
-                    "...but Size is " + result.Count + " bytes!";
-
-                    throw new Exception(message);
-                }
-
-                return result.ToArray();
-            }
-        }
-
         private static Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
             { "BraveryPoints", 0x0 },
@@ -190,7 +71,8 @@ namespace XC2SaveNETThingy
         public UInt32 CompassionLevel { get; set; }
         public UInt32 JusticePoints { get; set; }
         public UInt32 JusticeLevel { get; set; }
-        public UInt16 IsActive { get; set; }
+        //public UInt16 IsActive { get; set; }
+        public bool IsInParty { get; set; }
         public UInt16 ID { get; set; }
         public Int16 SetBlade { get; set; }
         public UInt16[] EquippedBlades { get; set; }
@@ -239,7 +121,8 @@ namespace XC2SaveNETThingy
             CompassionLevel = BitConverter.ToUInt32( data.GetByteSubArray(LOC["CompassionLevel"], 4), 0);
             JusticePoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticePoints"], 4), 0);
             JusticeLevel = BitConverter.ToUInt32(data.GetByteSubArray(LOC["JusticeLevel"], 4), 0);
-            IsActive = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0);
+            //IsActive = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0);
+            IsInParty = BitConverter.ToUInt16(data.GetByteSubArray(LOC["IsActive"], 2), 0) == 1;
             ID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["DriverId"], 2), 0);
             SetBlade = BitConverter.ToInt16(data.GetByteSubArray(LOC["SetBlade"], 2), 0);
 
@@ -310,7 +193,8 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CompassionLevel));
             result.AddRange(BitConverter.GetBytes(JusticePoints));
             result.AddRange(BitConverter.GetBytes(JusticeLevel));
-            result.AddRange(BitConverter.GetBytes(IsActive));
+            //result.AddRange(BitConverter.GetBytes(IsActive));
+            result.AddRange(BitConverter.GetBytes((UInt16)(IsInParty ? 1 : 0)));
             result.AddRange(BitConverter.GetBytes(ID));
             result.AddRange(BitConverter.GetBytes(SetBlade));
 
