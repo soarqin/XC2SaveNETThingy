@@ -141,7 +141,7 @@ namespace XC2SaveNETThingy
             { 47043, "Knuckle Claws Brute's Awakening Viewed" },
             { 47044, "Twin Rings Beast's Awakening Viewed" },
             { 47045, "T-elos's Awakening Viewed" },
-            { 47046, "UNRELEASED BLADE PLACEHOLDER?" },
+            { 47046, "Corvin's Awakening Viewed" },
             { 47047, "Crossette's Awakening Viewed" }
         };
 

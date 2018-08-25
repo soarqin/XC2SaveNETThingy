@@ -189,7 +189,6 @@
     <Content Include="db\Items.sql" />
     <Content Include="db\ItemTypes.sql" />
     <Content Include="db\PoppiPowerLevels.sql" />
-    <Content Include="db\viewWeaponNames.sql" />
     <Content Include="db\Weapons.sql" />
     <Content Include="db\XC2Data.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -225,7 +224,6 @@
     <Content Include="db\DriverBladeSetStatus.sql" />
     <Content Include="db\Drivers.sql" />
     <Content Include="db\DriverSkills.sql" />
-    <Content Include="db\viewDriverArts.sql" />
     <Content Include="db\WeaponTypes.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

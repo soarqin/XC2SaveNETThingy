@@ -1609,6 +1609,7 @@ namespace XC2SaveNETThingy
             txtBladeMotionResourceName.Enabled = enabled;
             txtBladeMotion2Name.Enabled = enabled;
             txtBladeAddMotionName.Enabled = enabled;
+            txtBladeVoiceName.Enabled = enabled;
             hbxBladeClipEvent.Enabled = enabled;
             txtBladeComSE.Enabled = enabled;
             txtBladeEffectResourceName.Enabled = enabled;

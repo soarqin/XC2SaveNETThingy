@@ -73,7 +73,7 @@ namespace XC2SaveNETThingy
                 "SELECT ID, " +
                 "(SELECT CASE(ID) " +
                 "WHEN 0 THEN(Name_" + LANG_STR[l] + ") " +
-                "ELSE(Name_" + LANG_STR[l] + " || '[' || (SELECT Name_" + LANG_STR[l] + " FROM WeaponTypes WHERE ID = WeaponTypeID) || '](' || (SELECT Name_" + LANG_STR[l] + " FROM Drivers WHERE ID = DriverID) || ')') " +
+                "ELSE(Name_" + LANG_STR[l] + " || ' [' || (SELECT Name_" + LANG_STR[l] + " FROM WeaponTypes WHERE ID = WeaponTypeID) || '] (' || (SELECT Name_" + LANG_STR[l] + " FROM Drivers WHERE ID = DriverID) || ')') " +
                 "END) AS FriendlyName " +
                 "FROM DriverArts";
 
@@ -143,14 +143,14 @@ namespace XC2SaveNETThingy
                     "FROM WeaponTypes WHERE ID >= 27 AND ID < 33";
             }
 
-            if ((args_bits & 4) >> 2 == 1) // get 1.5.0 monado + knives
+            if ((args_bits & 4) >> 2 == 1) // get 1.5.0+ weapons
             {
                 if (query != "")
                     query += " UNION ";
                 query +=
                     "SELECT ID, " +
                     "Name_" + LANG_STR[l] + " AS Name " +
-                    "FROM WeaponTypes WHERE ID >= 33 AND ID < 35";
+                    "FROM WeaponTypes WHERE ID >= 33 AND ID < 37";
             }
 
             return GetDataSet(query).Tables[0];
@@ -261,7 +261,7 @@ namespace XC2SaveNETThingy
                 "Name_" + LANG_STR[l] + " AS Name " +
                 "FROM FavCategories";
 
-            return GetDataSet("SELECT * FROM FavCategories").Tables[0];
+            return GetDataSet(query).Tables[0];
         }
 
         public static DataTable GetCoreChips(LANG l = LANG.EN)

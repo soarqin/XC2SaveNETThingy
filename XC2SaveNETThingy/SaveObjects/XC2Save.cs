@@ -398,42 +398,42 @@ namespace XC2SaveNETThingy
         {
             { "Unk_0x1176A0", 0x1176A0 },
             { "Driver1Weapons150", 0x117700 },
-            { "Unk_0x117728", 0x117728 },
+            { "Unk_0x117750", 0x117750 },
             { "Driver2Weapons150", 0x117A24 },
-            { "Unk_0x117A4C", 0x117A4C },
+            { "Unk_0x117A74", 0x117A74 },
             { "Driver3Weapons150", 0x117D48 },
-            { "Unk_0x117D70", 0x117D70 },
+            { "Unk_0x117D98", 0x117D98 },
             { "Driver6Weapons150", 0x1186B4 },
-            { "Unk_0x1186DC", 0x1186DC }
+            { "Unk_0x118704", 0x118704 }
         };
 
         public XC2Save150(Byte[] data) : base(data)
         {
             Unk_0x1176A0 = data.GetByteSubArray(LOC["Unk_0x1176A0"], 0x60);
 
-            Driver1Weapons150 = new Weapon[2];
+            Driver1Weapons150 = new Weapon[4];
             for (int i = 0; i < Driver1Weapons150.Length; i++)
                 Driver1Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver1Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
 
-            Unk_0x117728 = data.GetByteSubArray(LOC["Unk_0x117728"], 0x2FC);
+            Unk_0x117728 = data.GetByteSubArray(LOC["Unk_0x117750"], 0x2D4);
 
-            Driver2Weapons150 = new Weapon[2];
+            Driver2Weapons150 = new Weapon[4];
             for (int i = 0; i < Driver2Weapons150.Length; i++)
                 Driver2Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver2Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
 
-            Unk_0x117A4C = data.GetByteSubArray(LOC["Unk_0x117A4C"], 0x2FC);
+            Unk_0x117A4C = data.GetByteSubArray(LOC["Unk_0x117A74"], 0x2D4);
 
-            Driver3Weapons150 = new Weapon[2];
+            Driver3Weapons150 = new Weapon[4];
             for (int i = 0; i < Driver3Weapons150.Length; i++)
                 Driver3Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver3Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
 
-            Unk_0x117D70 = data.GetByteSubArray(LOC["Unk_0x117D70"], 0x944);
+            Unk_0x117D70 = data.GetByteSubArray(LOC["Unk_0x117D98"], 0x91C);
 
-            Driver6Weapons150 = new Weapon[2];
+            Driver6Weapons150 = new Weapon[4];
             for (int i = 0; i < Driver6Weapons150.Length; i++)
                 Driver6Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver6Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
 
-            Unk_0x1186DC = data.GetByteSubArray(LOC["Unk_0x1186DC"], 0xE6B4);
+            Unk_0x1186DC = data.GetByteSubArray(LOC["Unk_0x118704"], 0xE68C);
         }
 
         public override Byte[] ToRawData()

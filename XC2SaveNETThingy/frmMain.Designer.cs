@@ -198,6 +198,7 @@
             this.lblDriverBonusExp = new System.Windows.Forms.Label();
             this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
             this.gbxDriver = new System.Windows.Forms.GroupBox();
+            this.chkDriverInParty = new System.Windows.Forms.CheckBox();
             this.lblDriverID = new System.Windows.Forms.Label();
             this.cbxDriverID = new System.Windows.Forms.ComboBox();
             this.nudDriverID = new System.Windows.Forms.NumericUpDown();
@@ -1675,7 +1676,6 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.chkDriverInParty = new System.Windows.Forms.CheckBox();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -4448,6 +4448,18 @@
             this.gbxDriver.TabIndex = 45;
             this.gbxDriver.TabStop = false;
             this.gbxDriver.Text = "Driver";
+            // 
+            // chkDriverInParty
+            // 
+            this.chkDriverInParty.AutoSize = true;
+            this.chkDriverInParty.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkDriverInParty.Location = new System.Drawing.Point(6, 39);
+            this.chkDriverInParty.Name = "chkDriverInParty";
+            this.chkDriverInParty.Size = new System.Drawing.Size(72, 17);
+            this.chkDriverInParty.TabIndex = 42;
+            this.chkDriverInParty.Text = "Is in Party";
+            this.chkDriverInParty.UseVisualStyleBackColor = true;
+            this.chkDriverInParty.CheckedChanged += new System.EventHandler(this.chkDriverInParty_CheckedChanged);
             // 
             // lblDriverID
             // 
@@ -8004,7 +8016,7 @@
             // chkBladeFavoriteCategory0Unlocked
             // 
             this.chkBladeFavoriteCategory0Unlocked.AutoSize = true;
-            this.chkBladeFavoriteCategory0Unlocked.Location = new System.Drawing.Point(350, 22);
+            this.chkBladeFavoriteCategory0Unlocked.Location = new System.Drawing.Point(349, 22);
             this.chkBladeFavoriteCategory0Unlocked.Name = "chkBladeFavoriteCategory0Unlocked";
             this.chkBladeFavoriteCategory0Unlocked.Size = new System.Drawing.Size(76, 17);
             this.chkBladeFavoriteCategory0Unlocked.TabIndex = 128;
@@ -8037,7 +8049,7 @@
             // chkBladeFavoriteItem1Unlocked
             // 
             this.chkBladeFavoriteItem1Unlocked.AutoSize = true;
-            this.chkBladeFavoriteItem1Unlocked.Location = new System.Drawing.Point(350, 82);
+            this.chkBladeFavoriteItem1Unlocked.Location = new System.Drawing.Point(349, 82);
             this.chkBladeFavoriteItem1Unlocked.Name = "chkBladeFavoriteItem1Unlocked";
             this.chkBladeFavoriteItem1Unlocked.Size = new System.Drawing.Size(76, 17);
             this.chkBladeFavoriteItem1Unlocked.TabIndex = 131;
@@ -8121,7 +8133,7 @@
             this.groupBox104.Size = new System.Drawing.Size(593, 259);
             this.groupBox104.TabIndex = 236;
             this.groupBox104.TabStop = false;
-            this.groupBox104.Text = "Misc";
+            this.groupBox104.Text = "Misc (Some stats for Rare Blades are Read Only)";
             // 
             // cbxBladeRareNameID
             // 
@@ -15755,6 +15767,7 @@
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer5.Location = new System.Drawing.Point(3, 3);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -15848,6 +15861,11 @@
             // nudItemAddNewID
             // 
             this.nudItemAddNewID.Location = new System.Drawing.Point(42, 13);
+            this.nudItemAddNewID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
             this.nudItemAddNewID.Name = "nudItemAddNewID";
             this.nudItemAddNewID.Size = new System.Drawing.Size(55, 20);
             this.nudItemAddNewID.TabIndex = 0;
@@ -21659,18 +21677,6 @@
             this.tsmiItemUpdateTime.Size = new System.Drawing.Size(258, 22);
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
-            // 
-            // chkDriverInParty
-            // 
-            this.chkDriverInParty.AutoSize = true;
-            this.chkDriverInParty.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkDriverInParty.Location = new System.Drawing.Point(6, 39);
-            this.chkDriverInParty.Name = "chkDriverInParty";
-            this.chkDriverInParty.Size = new System.Drawing.Size(72, 17);
-            this.chkDriverInParty.TabIndex = 42;
-            this.chkDriverInParty.Text = "Is in Party";
-            this.chkDriverInParty.UseVisualStyleBackColor = true;
-            this.chkDriverInParty.CheckedChanged += new System.EventHandler(this.chkDriverInParty_CheckedChanged);
             // 
             // frmMain
             // 
