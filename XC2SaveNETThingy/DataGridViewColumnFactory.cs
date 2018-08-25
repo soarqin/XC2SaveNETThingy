@@ -18,60 +18,60 @@ namespace XC2SaveNETThingy
             CheckBox
         }
 
-        public static DataGridViewColumn CreateDgvColumn(DgvColumnType columnType, string dataPropertyName, string headerText, string dataType = null, object dataSource = null, int width = 0, int minimum = 0, int maximum = 100)
+        public static DataGridViewColumn CreateDgvColumn(DgvColumnType columnType, string dataPropertyName, string headerText, string dataType = null, object dataSource = null, int width = 0, int minimum = 0, UInt32 maximum = 100)
         {
+            DataGridViewColumn col = null;
+
             switch (columnType)
             {
                 case DgvColumnType.TextBox:
-                    DataGridViewTextBoxColumn cTxt = new DataGridViewTextBoxColumn();
-                    cTxt.DataPropertyName = dataPropertyName;
-                    cTxt.HeaderText = headerText;
-                    if (width != 0)
-                        cTxt.Width = width;
-                    return cTxt;
+                    col = new DataGridViewTextBoxColumn();
+                    break;
 
                 case DgvColumnType.NumericUpDown:
-                    DataGridViewNumericUpDownColumn cNud = new DataGridViewNumericUpDownColumn();
-                    cNud.DataPropertyName = dataPropertyName;
-                    cNud.HeaderText = headerText;
+                    col = new DataGridViewNumericUpDownColumn();
                     if (dataType != null)
-                        cNud.ValueType = Type.GetType(dataType);
-                    if (width != 0)
-                        cNud.Width = width;
-                    cNud.Maximum = maximum;
-                    cNud.Minimum = minimum;
-                    return cNud;
+                        col.ValueType = Type.GetType(dataType);
+                    ((DataGridViewNumericUpDownColumn)col).Maximum = maximum;
+                    ((DataGridViewNumericUpDownColumn)col).Minimum = minimum;
+                    break;
 
                 case DgvColumnType.ComboBox:
-                    DataGridViewComboBoxColumn cCbx = new DataGridViewComboBoxColumn();
-                    cCbx.HeaderText = headerText;
-                    cCbx.DisplayMember = "Name";
-                    cCbx.ValueMember = "ID";
-                    cCbx.DataSource = dataSource;
-                    if (width != 0)
-                        cCbx.Width = width;
-                    return cCbx;
+                    col = new DataGridViewComboBoxColumn();
+                    ((DataGridViewComboBoxColumn)col).DisplayMember = "Name";
+                    ((DataGridViewComboBoxColumn)col).ValueMember = "ID";
+                    ((DataGridViewComboBoxColumn)col).DataSource = dataSource;
+                    break;
 
                 case DgvColumnType.CheckBox:
-                    DataGridViewCheckBoxColumn cChk = new DataGridViewCheckBoxColumn();
-                    cChk.DataPropertyName = dataPropertyName;
-                    cChk.HeaderText = headerText;
-                    if (width != 0)
-                        cChk.Width = width;
-                    return cChk;
+                    col = new DataGridViewCheckBoxColumn();
+                    break;
             }
+            if (col != null)
+            {
+                if (!(col.GetType() == typeof(DataGridViewComboBoxColumn)))
+                    col.DataPropertyName = dataPropertyName;
+                col.HeaderText = headerText;
+                if (width != 0)
+                    col.Width = width;
+                col.Resizable = DataGridViewTriState.False;
 
-            string message = "Invalid Column Type was specified." + Environment.NewLine +
-                Environment.NewLine +
-                "Valid Column Types:" + Environment.NewLine +
-                "0: TextBox Column" + Environment.NewLine +
-                "1: NumericUpDown Column" + Environment.NewLine +
-                "2: ComboBox Column" + Environment.NewLine +
-                "3: CheckBox Column" + Environment.NewLine +
-                 Environment.NewLine +
-                 "Requested Column Type: " + columnType;
+                return col;
+            }
+            else
+            {
+                string message = "Invalid Column Type was specified." + Environment.NewLine +
+                        Environment.NewLine +
+                        "Valid Column Types:" + Environment.NewLine +
+                        "0: TextBox Column" + Environment.NewLine +
+                        "1: NumericUpDown Column" + Environment.NewLine +
+                        "2: ComboBox Column" + Environment.NewLine +
+                        "3: CheckBox Column" + Environment.NewLine +
+                         Environment.NewLine +
+                         "Requested Column Type: " + columnType;
 
-            throw new Exception(message);
+                throw new Exception(message);
+            }
         }
     }
 }

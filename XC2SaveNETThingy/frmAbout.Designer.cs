@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.lblAbout = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLibUsed = new System.Windows.Forms.Label();
+            this.lblResUsed = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -45,11 +45,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblStructure = new System.Windows.Forms.Label();
+            this.lblGameData = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblRepo = new System.Windows.Forms.Label();
+            this.lblForum = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
@@ -71,14 +71,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Copyright ©  2018 damysteryman";
             // 
-            // label2
+            // lblDesc
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Save Editor for Xenoblade Chronicles 2 Save Files";
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(12, 22);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(244, 13);
+            this.lblDesc.TabIndex = 2;
+            this.lblDesc.Text = "Save Editor for Xenoblade Chronicles 2 Save Files";
             // 
             // linkLabel1
             // 
@@ -91,23 +91,23 @@
             this.linkLabel1.Text = "https://gitlab.com/damysteryman/XC2SaveNETThingy";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
-            // label3
+            // lblLibUsed
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "This program makes use of:";
+            this.lblLibUsed.AutoSize = true;
+            this.lblLibUsed.Location = new System.Drawing.Point(9, 151);
+            this.lblLibUsed.Name = "lblLibUsed";
+            this.lblLibUsed.Size = new System.Drawing.Size(137, 13);
+            this.lblLibUsed.TabIndex = 4;
+            this.lblLibUsed.Text = "This program makes use of:";
             // 
-            // label4
+            // lblResUsed
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "This program makes use of data found at:";
+            this.lblResUsed.AutoSize = true;
+            this.lblResUsed.Location = new System.Drawing.Point(9, 97);
+            this.lblResUsed.Name = "lblResUsed";
+            this.lblResUsed.Size = new System.Drawing.Size(203, 13);
+            this.lblResUsed.TabIndex = 5;
+            this.lblResUsed.Text = "This program makes use of data found at:";
             // 
             // linkLabel2
             // 
@@ -209,23 +209,23 @@
             this.linkLabel6.Text = "https://msdn.microsoft.com/en-us/library/aa730881(v=vs.80).aspx";
             this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
-            // label10
+            // lblStructure
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 110);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 13);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Save File Structure Info:";
+            this.lblStructure.AutoSize = true;
+            this.lblStructure.Location = new System.Drawing.Point(9, 110);
+            this.lblStructure.Name = "lblStructure";
+            this.lblStructure.Size = new System.Drawing.Size(121, 13);
+            this.lblStructure.TabIndex = 16;
+            this.lblStructure.Text = "Save File Structure Info:";
             // 
-            // label11
+            // lblGameData
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 123);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Various Internal game Info:";
+            this.lblGameData.AutoSize = true;
+            this.lblGameData.Location = new System.Drawing.Point(9, 123);
+            this.lblGameData.Name = "lblGameData";
+            this.lblGameData.Size = new System.Drawing.Size(133, 13);
+            this.lblGameData.TabIndex = 17;
+            this.lblGameData.Text = "Various Internal game Info:";
             // 
             // btnOK
             // 
@@ -237,23 +237,23 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // label12
+            // lblRepo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 48);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 13);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "GitLab Repo:";
+            this.lblRepo.AutoSize = true;
+            this.lblRepo.Location = new System.Drawing.Point(12, 48);
+            this.lblRepo.Name = "lblRepo";
+            this.lblRepo.Size = new System.Drawing.Size(70, 13);
+            this.lblRepo.TabIndex = 19;
+            this.lblRepo.Text = "GitLab Repo:";
             // 
-            // label13
+            // lblForum
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 61);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Forum Thread:";
+            this.lblForum.AutoSize = true;
+            this.lblForum.Location = new System.Drawing.Point(12, 61);
+            this.lblForum.Name = "lblForum";
+            this.lblForum.Size = new System.Drawing.Size(76, 13);
+            this.lblForum.TabIndex = 20;
+            this.lblForum.Text = "Forum Thread:";
             // 
             // linkLabel7
             // 
@@ -273,11 +273,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 366);
             this.Controls.Add(this.linkLabel7);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.lblForum);
+            this.Controls.Add(this.lblRepo);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblGameData);
+            this.Controls.Add(this.lblStructure);
             this.Controls.Add(this.linkLabel6);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -288,10 +288,10 @@
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblResUsed);
+            this.Controls.Add(this.lblLibUsed);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAbout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -310,10 +310,10 @@
 
         private System.Windows.Forms.Label lblAbout;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLibUsed;
+        private System.Windows.Forms.Label lblResUsed;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
@@ -324,11 +324,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblStructure;
+        private System.Windows.Forms.Label lblGameData;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblRepo;
+        private System.Windows.Forms.Label lblForum;
         private System.Windows.Forms.LinkLabel linkLabel7;
     }
 }

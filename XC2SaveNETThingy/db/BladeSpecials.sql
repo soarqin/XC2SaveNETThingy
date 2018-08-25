@@ -1,8 +1,9 @@
 DROP TABLE IF EXISTS [BladeSpecials];
 CREATE TABLE [BladeSpecials] (
   [ID] INTEGER  NOT NULL UNIQUE
-, [Name] text NOT NULL
 , [WpnBaseID] INTEGER  NOT NULL
+, [Name_EN] text NOT NULL
+, [Name_CN] text NOT NULL
 , CONSTRAINT [sqlite_master_PK_Weapons] PRIMARY KEY ([ID])
 , FOREIGN KEY ([WpnBaseID]) REFERENCES [Weapons] ([ID]) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
