@@ -10,19 +10,41 @@ namespace XC2SaveNETThingy
 {
     public static class XC2Data
     {
+        public enum LANG
+        {
+            EN,
+            CN
+        }
+
+        public static readonly Dictionary<LANG, string> LANG_STR = new Dictionary<LANG, string>()
+        {
+            { LANG.EN, "EN" },
+            { LANG.CN, "CN" }
+        };
+
         private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=db\XC2Data.db");
         private static SQLiteDataAdapter dbAdapter;
         private static SQLiteCommand dbCmd;
         private static DataSet ds;
 
-        public static DataTable Elements()
+        public static DataTable Elements(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM Elements").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM Elements";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable Drivers()
+        public static DataTable Drivers(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM Drivers").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM Drivers";
+
+            return GetDataSet(query).Tables[0];
         }
 
         public static bool ContainsDriver(UInt16 id)
@@ -35,123 +57,174 @@ namespace XC2SaveNETThingy
             return IDs.Contains(id);
         }
 
-        public static DataTable DriverBladeSetStatus()
+        public static DataTable DriverBladeSetStatus(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM DriverBladeSetStatus").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Desc_" + LANG_STR[l] + " AS Desc " +
+                "FROM DriverBladeSetStatus";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable DriverArts(Byte args_bits)
+        public static DataTable DriverArts(Byte args_bits, LANG l = LANG.EN)
         {
-            //return GetDataSet("SELECT * FROM viewDriverArts").Tables[0];
+            string viewDriverArts = 
+                "SELECT ID, " +
+                "(SELECT CASE(ID) " +
+                "WHEN 0 THEN(Name_" + LANG_STR[l] + ") " +
+                "ELSE(Name_" + LANG_STR[l] + " || '[' || (SELECT Name_" + LANG_STR[l] + " FROM WeaponTypes WHERE ID = WeaponTypeID) || '](' || (SELECT Name_" + LANG_STR[l] + " FROM Drivers WHERE ID = DriverID) || ')') " +
+                "END) AS FriendlyName " +
+                "FROM DriverArts";
 
             string query = "";
 
-            query += "SELECT * FROM viewDriverArts WHERE ID = 0";
+            query +=
+                viewDriverArts + " " +
+                "WHERE ID = 0";
 
             if ((args_bits & 1) == 1) // get 1.5.1 and lower arts
             {
                 if (query != "")
                     query += " UNION ";
-                query += "SELECT * FROM viewDriverArts WHERE ID >= 1 AND ID < 582";
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID >= 1 AND ID < 582";
             }
 
             if ((args_bits & 2) >> 1 == 1) // get higher than 1.5.1 arts
             {
                 if (query != "")
                     query += " UNION ";
-                query += "SELECT * FROM viewDriverArts WHERE ID >= 582 AND ID < 743";
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID >= 582 AND ID < 743";
             }
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable DriverSkills()
+        public static DataTable DriverSkills(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM DriverSkills").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
+                "FROM DriverSkills";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable Weapons(Byte args_bits)
+        public static DataTable WeaponTypes(Byte args_bits, LANG l = LANG.EN)
         {
             string query = "";
 
-            query += "SELECT * FROM Weapons WHERE ID = 0";
+            query +=
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM WeaponTypes WHERE ID = 0";
 
             if ((args_bits & 1) == 1) // get pre-1.5.0 weapons
             {
                 if (query != "")
                     query += " UNION ";
-                query += "SELECT * FROM Weapons WHERE ID >= 1 AND ID < 27";
+                query +=
+                    "SELECT ID, " +
+                    "Name_" + LANG_STR[l] + " AS Name " +
+                    "FROM WeaponTypes WHERE ID >= 1 AND ID < 27";
             }
 
             if ((args_bits & 2) >> 1 == 1) // get 1.5.0 unknown weapons
             {
                 if (query != "")
                     query += " UNION ";
-                query += "SELECT * FROM Weapons WHERE ID >= 27 AND ID < 33";
+                query +=
+                    "SELECT ID, " +
+                    "Name_" + LANG_STR[l] + " AS Name " +
+                    "FROM WeaponTypes WHERE ID >= 27 AND ID < 33";
             }
 
             if ((args_bits & 4) >> 2 == 1) // get 1.5.0 monado + knives
             {
                 if (query != "")
                     query += " UNION ";
-                query += "SELECT * FROM Weapons WHERE ID >= 33 AND ID < 35";
+                query +=
+                    "SELECT ID, " +
+                    "Name_" + LANG_STR[l] + " AS Name " +
+                    "FROM WeaponTypes WHERE ID >= 33 AND ID < 35";
             }
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeWeaponNames()
+        public static DataTable Weapons(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * from viewWeaponNames").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "(SELECT CASE(ID) " + 
+                "WHEN 0 THEN(Name_" + LANG_STR[l] + ") " +
+                "ELSE(Name_" + LANG_STR[l] + " || ' [' || (SELECT Name_" + LANG_STR[l] + " FROM Items WHERE ID = CoreChipID) || ']') END) AS FriendlyName " +
+                "FROM Weapons";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeCommonNames()
+        public static DataTable BladeCommonNames(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM BladeCommonNames").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM BladeCommonNames";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeRareNames()
+        public static DataTable BladeRareNames(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM BladeRareNames").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM BladeRareNames";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeTrustRanks()
+        public static DataTable BladeTrustRanks(LANG l = LANG.EN)
         {
             return GetDataSet("SELECT * FROM BladeTrustRanks").Tables[0];
         }
 
-        public static DataTable BladeSpecials()
+        public static DataTable BladeSpecials(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ID, " +
-                "Name || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM BladeSpecials";
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeArts()
+        public static DataTable BladeArts(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ID, " +
-                "Name || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM BladeArts";
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeSkills()
+        public static DataTable BladeSkills(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ID, " +
-                "Name || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM BladeSkills";
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable BladeFieldSkills()
+        public static DataTable BladeFieldSkills(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ID, " +
-                "Name || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM BladeFieldSkills";
             return GetDataSet(query).Tables[0];
         }
@@ -161,225 +234,235 @@ namespace XC2SaveNETThingy
             return GetDataSet("SELECT * FROM PoppiPowerLevels").Tables[0];
         }
 
-        public static DataTable Items()
+        public static DataTable Items(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ID, " +
-                "Name || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM Items";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable ItemTypes()
+        public static DataTable ItemTypes(LANG l = LANG.EN)
         {
-            return GetDataSet("SELECT * FROM ItemTypes").Tables[0];
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM ItemTypes";
+
+            return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable FavCategories()
+        public static DataTable FavCategories(LANG l = LANG.EN)
         {
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM FavCategories";
+
             return GetDataSet("SELECT * FROM FavCategories").Tables[0];
         }
 
-        public static DataTable GetCoreChips()
+        public static DataTable GetCoreChips(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID -10000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 10000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 10000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 1";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetAccessories()
+        public static DataTable GetAccessories(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT ID, " +
-                "NAME || ' [' || ID || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 2";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetAuxCores()
+        public static DataTable GetAuxCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 17000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 17000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 17000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 3";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetCylinders()
+        public static DataTable GetCylinders(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 20000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 20000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 20000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 5";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetKeyItems()
+        public static DataTable GetKeyItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 25000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 25000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 25000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 6";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetCollectibles()
+        public static DataTable GetCollectibles(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 30000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 30000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 30000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 7";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetTreasure()
+        public static DataTable GetTreasure(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 35000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 35000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 35000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 8";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetUnrefinedAuxCores()
+        public static DataTable GetUnrefinedAuxCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 15000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 15000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 15000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 9";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPouchItems()
+        public static DataTable GetPouchItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 40000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 40000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 40000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 10";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetCoreCrystals()
+        public static DataTable GetCoreCrystals(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 45000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 45000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 45000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 11";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetBoosters()
+        public static DataTable GetBoosters(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 50000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 50000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 50000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 12";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetInfoItems()
+        public static DataTable GetInfoItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 26000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 26000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 26000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 14";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPoppiRoleCPU()
+        public static DataTable GetPoppiRoleCPU(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 56000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 56000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 56000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 16";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPoppiElementCores()
+        public static DataTable GetPoppiElementCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 57000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 57000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 57000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 17";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPoppiSpecialsEnhancingRAM()
+        public static DataTable GetPoppiSpecialsEnhancingRAM(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 58000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 58000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 58000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 18";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPoppiArtsCards()
+        public static DataTable GetPoppiArtsCards(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 59000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 59000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 59000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 19";
 
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetPoppiSkillRAM()
+        public static DataTable GetPoppiSkillRAM(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 60000) AS ID, " +
-                "NAME || ' [' || REPLACE(ID, ID, ID - 60000) || ']' AS Name " +
+                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 60000) || ']' AS Name " +
                 "FROM Items WHERE ItemTypeID = 20";
 
             return GetDataSet(query).Tables[0];

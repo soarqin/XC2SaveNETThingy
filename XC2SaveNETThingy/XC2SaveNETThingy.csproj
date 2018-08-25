@@ -135,10 +135,18 @@
     <Content Include="db\BladeCommonNames.sql" />
     <Content Include="db\BladeRareNames.sql" />
     <Content Include="db\Elements.sql" />
+    <Content Include="db\FrmAboutText.sql" />
+    <Content Include="db\FrmFAQText.sql" />
+    <Content Include="db\FrmMainText.sql" />
     <Content Include="icon.ico" />
     <None Include="data\BladeCommonNames.csv" />
     <None Include="data\BladeRareNames.csv" />
+    <None Include="data\BladeTrustRanks.csv" />
     <None Include="data\Elements.csv" />
+    <None Include="data\FrmAboutText.csv" />
+    <None Include="data\FrmFAQText.csv" />
+    <None Include="data\FrmMainText.csv" />
+    <None Include="data\WeaponTypes.csv" />
     <None Include="Resources\icon.ico" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
@@ -159,7 +167,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="data\BadeTrustRanks.csv" />
     <None Include="data\BladeArts.csv" />
     <None Include="data\BladeFieldSkills.csv" />
     <None Include="data\BladeSkills.csv" />
@@ -168,12 +175,10 @@
     <None Include="data\DriverBladeSetStatus.csv" />
     <None Include="data\Drivers.csv" />
     <None Include="data\DriverSkills.csv" />
-    <None Include="data\DriverStatus.csv" />
     <None Include="data\FavCategories.csv" />
     <None Include="data\Items.csv" />
     <None Include="data\ItemTypes.csv" />
     <None Include="data\PoppiPowerLevels.csv" />
-    <None Include="data\WeaponNames.csv" />
     <None Include="data\Weapons.csv" />
     <Content Include="db\BladeArts.sql" />
     <Content Include="db\BladeFieldSkills.sql" />
@@ -185,7 +190,7 @@
     <Content Include="db\ItemTypes.sql" />
     <Content Include="db\PoppiPowerLevels.sql" />
     <Content Include="db\viewWeaponNames.sql" />
-    <Content Include="db\WeaponNames.sql" />
+    <Content Include="db\Weapons.sql" />
     <Content Include="db\XC2Data.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -220,9 +225,8 @@
     <Content Include="db\DriverBladeSetStatus.sql" />
     <Content Include="db\Drivers.sql" />
     <Content Include="db\DriverSkills.sql" />
-    <Content Include="db\DriverStatus.sql" />
     <Content Include="db\viewDriverArts.sql" />
-    <Content Include="db\Weapons.sql" />
+    <Content Include="db\WeaponTypes.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />

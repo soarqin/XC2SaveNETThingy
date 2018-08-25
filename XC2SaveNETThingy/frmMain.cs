@@ -83,7 +83,7 @@ namespace XC2SaveNETThingy
             cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
 
             cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1), "FriendlyName");
-            cbxDriverWeapons.BindDataTable(XC2Data.Weapons(0b1));
+            cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1));
             
             for (int i = 0; i < Pouch.COUNT; i++)
                 cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
@@ -98,7 +98,7 @@ namespace XC2SaveNETThingy
             cbxDriverAccessory3Type.BindDataTable(XC2Data.ItemTypes());
 
             #region 1.5.0
-            cbxDriverWeapons150.BindDataTable(XC2Data.Weapons(4));
+            cbxDriverWeapons150.BindDataTable(XC2Data.WeaponTypes(4));
             cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
             cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
             cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
@@ -109,8 +109,8 @@ namespace XC2SaveNETThingy
             #region Blade
             cbxBladeCreator.BindDataTable(XC2Data.Drivers());
             cbxBladeSetDriver.BindDataTable(XC2Data.Drivers());
-            cbxBladeWeaponType.BindDataTable(XC2Data.Weapons(7));
-            cbxBladeDefWeapon.BindDataTable(XC2Data.BladeWeaponNames(), "FriendlyName");
+            cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(7));
+            cbxBladeDefWeapon.BindDataTable(XC2Data.Weapons(), "FriendlyName");
             cbxBladeElement.BindDataTable(XC2Data.Elements());
             cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames());
             cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames());
