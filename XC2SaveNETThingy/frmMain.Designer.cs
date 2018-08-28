@@ -15961,6 +15961,7 @@
             this.dgvPcWpnChipBox.TabIndex = 0;
             this.dgvPcWpnChipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcWpnChipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvPcWpnChipBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPcWpnChipBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabAccessoryBox
             // 

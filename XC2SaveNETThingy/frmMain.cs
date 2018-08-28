@@ -596,7 +596,10 @@ namespace XC2SaveNETThingy
                 string message =
                     ex.Message + Environment.NewLine +
                     Environment.NewLine +
-                    "Data has not been loaded.";
+                    "Data has not been loaded." + Environment.NewLine +
+                    Environment.NewLine + 
+                    "Stacktrace for developer:" + Environment.NewLine + 
+                    ex.StackTrace;
 
                 MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //throw ex;
@@ -1627,9 +1630,9 @@ namespace XC2SaveNETThingy
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = null;
 
-            BindingList<Item> ds = new BindingList<Item>();
-            foreach (Item i in items)
-                ds.Add(i);
+            BindingList<Item> ds = new BindingList<Item>(items);
+            //foreach (Item i in items)
+            //    ds.Add(i);
 
             dgv.Columns.Clear();
             dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 50, 0, 8191));
@@ -4421,6 +4424,33 @@ namespace XC2SaveNETThingy
         #endregion XC2Save Events
 
         #endregion Events
+
+        private void dgvPcWpnChipBox_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView dgv = ((DataGridView)sender);
+            Item[] box = SAVEDATA.ItemBox.PcWpnChipBox;
+            if (dgv.Columns[e.ColumnIndex].Tag == null)
+                dgv.Columns[e.ColumnIndex].Tag = false;
+
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(Item.CMP_FIELD.ID, (bool)dgv.Columns[e.ColumnIndex].Tag));
+                    break;
+
+                case 1:
+                    Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[e.ColumnIndex].Tag));
+                    break;
+
+                default:
+                    return;
+            }
+            dgv.Columns[e.ColumnIndex].Tag = !(bool)dgv.Columns[e.ColumnIndex].Tag;
+            //Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(e.ColumnIndex));
+
+            ((BindingList<Item>)dgv.DataSource).ResetBindings();
+        }
     }
 }
 
