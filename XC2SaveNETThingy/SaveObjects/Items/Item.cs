@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -140,7 +141,7 @@ namespace XC2SaveNETThingy
             Serial = (UInt32)(pt2 & (UInt32)(Math.Pow(2, SERIAL_BITS) - 1));
             Unk3 = (Byte)(pt2 >> (32 - UNK3_BITS));
 
-            SetName();
+            //SetName();
         }
 
         public Byte[] ToRawData()
@@ -282,10 +283,12 @@ namespace XC2SaveNETThingy
             ID,
             NAME,
             QTY,
-            TIME
+            EQUIPPED,
+            TIME,
+            SERIAL
         }
 
-        public static IComparer<Item> GetComparer(CMP_FIELD f, bool desc)
+        public static IComparer GetComparer(CMP_FIELD f, bool desc)
         {
             switch (f)
             {
@@ -302,11 +305,29 @@ namespace XC2SaveNETThingy
                     else
                         return new ItemComparerNameAsc();
 
-                //case CMP_FIELD.QTY:
-                //    break;
+                case CMP_FIELD.QTY:
+                    if (desc)
+                        return new ItemComparerQtyDesc();
+                    else
+                        return new ItemComparerQtyAsc();
 
-                //case CMP_FIELD.TIME:
-                //    break;
+                case CMP_FIELD.EQUIPPED:
+                    if (desc)
+                        return new ItemComparerNotEquip();
+                    else
+                        return new ItemComparerEquip();
+
+                case CMP_FIELD.TIME:
+                    if (desc)
+                        return new ItemComparerTimeDesc();
+                    else
+                        return new ItemComparerTimeAsc();
+
+                case CMP_FIELD.SERIAL:
+                    if (desc)
+                        return new ItemComparerSerialDesc();
+                    else
+                        return new ItemComparerSerialAsc();
             }
         }
 
@@ -338,15 +359,77 @@ namespace XC2SaveNETThingy
                     return -1;
                 else
                     if (x.ID > y.ID)
+                        return -1;
+                    else if (x.ID < y.ID)
+                        return 1;
+                    else
+                        return 0;
+            }
+        }
+
+        //private class ItemComparerNameAsc : Comparer<Item>
+        //{
+        //    public override int Compare(Item x, Item y)
+        //    {
+        //        if (x.IsEmptyItem())
+        //            return 1;
+        //        else if (y.IsEmptyItem())
+        //            return -1;
+        //        else
+        //            return String.Compare(x.Name, y.Name);
+        //    }
+        //}
+
+        //private class ItemComparerNameDesc : Comparer<Item>
+        //{
+        //    public override int Compare(Item x, Item y)
+        //    {
+        //        if (x.IsEmptyItem())
+        //            return 1;
+        //        else if (y.IsEmptyItem())
+        //            return -1;
+        //        else
+        //            return String.Compare(x.Name, y.Name) * -1;
+        //    }
+        //}
+
+        private class ItemComparerQtyAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
                     return -1;
-                else if (x.ID < y.ID)
+                else
+                    if (x.Qty < y.Qty)
+                        return -1;
+                    else if (x.Qty > y.Qty)
+                        return 1;
+                    else
+                        return 0;
+            }
+        }
+
+        private class ItemComparerQtyDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Qty > y.Qty)
+                    return -1;
+                else if (x.Qty < y.Qty)
                     return 1;
                 else
                     return 0;
             }
         }
 
-        private class ItemComparerNameAsc : Comparer<Item>
+        private class ItemComparerTimeAsc : Comparer<Item>
         {
             public override int Compare(Item x, Item y)
             {
@@ -355,11 +438,11 @@ namespace XC2SaveNETThingy
                 else if (y.IsEmptyItem())
                     return -1;
                 else
-                    return String.Compare(x.Name, y.Name);
+                    return x.Time.CompareTo(y.Time);
             }
         }
 
-        private class ItemComparerNameDesc : Comparer<Item>
+        private class ItemComparerEquip : Comparer<Item>
         {
             public override int Compare(Item x, Item y)
             {
@@ -368,9 +451,105 @@ namespace XC2SaveNETThingy
                 else if (y.IsEmptyItem())
                     return -1;
                 else
-                    return String.Compare(x.Name, y.Name) * -1;
+                    if (x.Equipped && y.Equipped)
+                        return 0;
+                    else if (x.Equipped)
+                        return -1;
+                    else
+                        return 1;
+            }
+        }
+        private class ItemComparerNotEquip : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (!x.Equipped && !y.Equipped)
+                        return 0;
+                    else if (!x.Equipped)
+                        return -1;
+                    else
+                        return 1;
             }
         }
 
+        private class ItemComparerTimeDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    return x.Time.CompareTo(y.Time) * -1;
+            }
+        }
+
+        private class ItemComparerSerialAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Serial < y.Serial)
+                    return -1;
+                else if (x.Serial > y.Serial)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        private class ItemComparerSerialDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Serial > y.Serial)
+                    return -1;
+                else if (x.Serial < y.Serial)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        public class ItemComparerNameAsc : Comparer<string>
+        {
+            public override int Compare(string x, string y)
+            {
+                if (x == "" || x.StartsWith("("))
+                    return 1;
+                else if (y == "" || y.StartsWith("("))
+                    return -1;
+                else
+                    return x.ToLower().CompareTo(y.ToLower());
+            }
+        }
+
+        public class ItemComparerNameDesc : Comparer<string>
+        {
+            public override int Compare(string x, string y)
+            {
+                if (x == "" || x.StartsWith("("))
+                    return 1;
+                else if (y == "" || y.StartsWith("("))
+                    return -1;
+                else
+                    return x.ToLower().CompareTo(y.ToLower()) * -1;
+            }
+        }
     }
 }

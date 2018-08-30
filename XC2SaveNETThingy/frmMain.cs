@@ -317,24 +317,24 @@ namespace XC2SaveNETThingy
                 #endregion Blades
 
                 #region Items
-                SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.PcWpnChipBox, XC2Data.GetCoreChips());
-                SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.PcEquipBox, XC2Data.GetAccessories());
-                SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.EquipOrbBox, XC2Data.GetAuxCores());
-                SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.SalvageBox, XC2Data.GetCylinders());
-                SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.PreciousBox, XC2Data.GetKeyItems());
-                SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoBox, XC2Data.GetInfoItems());
+                SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.CoreChipBox, XC2Data.GetCoreChips());
+                SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.AccessoryBox, XC2Data.GetAccessories());
+                SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.AuxCoreBox, XC2Data.GetAuxCores());
+                SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.CylinderBox, XC2Data.GetCylinders());
+                SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.KeyItemBox, XC2Data.GetKeyItems());
+                SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoItemBox, XC2Data.GetInfoItems());
                 SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
-                SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectionListBox, XC2Data.GetCollectibles());
+                SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectibleBox, XC2Data.GetCollectibles());
                 SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
-                SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.EmptyOrbBox, XC2Data.GetUnrefinedAuxCores());
-                SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.FavoriteBox, XC2Data.GetPouchItems());
-                SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CrystalListBox, XC2Data.GetCoreCrystals());
+                SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.UnrefinedAuxCoreBox, XC2Data.GetUnrefinedAuxCores());
+                SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.PouchItemBox, XC2Data.GetPouchItems());
+                SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CoreCrystalBox, XC2Data.GetCoreCrystals());
                 SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
-                SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.HanaRoleBox, XC2Data.GetPoppiRoleCPU());
-                SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.HanaAtrBox, XC2Data.GetPoppiElementCores());
-                SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.HanaArtsBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
-                SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.HanaNArtsBox, XC2Data.GetPoppiArtsCards());
-                SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.HanaAssistBox, XC2Data.GetPoppiSkillRAM());
+                SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.PoppiRoleCPUBox, XC2Data.GetPoppiRoleCPU());
+                SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.PoppiElementCoreBox, XC2Data.GetPoppiElementCores());
+                SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
+                SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.PoppiArtsCardBox, XC2Data.GetPoppiArtsCards());
+                SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.PoppiSkillRAMBox, XC2Data.GetPoppiSkillRAM());
 
                 nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
                 nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
@@ -4425,31 +4425,142 @@ namespace XC2SaveNETThingy
 
         #endregion Events
 
-        private void dgvPcWpnChipBox_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DgvItemBox_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            int c = e.ColumnIndex;
+            if (c == 7 || c == 8)
+                c = 6;
+
             DataGridView dgv = ((DataGridView)sender);
-            Item[] box = SAVEDATA.ItemBox.PcWpnChipBox;
-            if (dgv.Columns[e.ColumnIndex].Tag == null)
-                dgv.Columns[e.ColumnIndex].Tag = false;
+            Item[] box = null;
 
-
-            switch (e.ColumnIndex)
+            switch (tbcItems.SelectedIndex)
             {
                 case 0:
-                    Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(Item.CMP_FIELD.ID, (bool)dgv.Columns[e.ColumnIndex].Tag));
+                    box = SAVEDATA.ItemBox.CoreChipBox;
                     break;
 
                 case 1:
-                    Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[e.ColumnIndex].Tag));
+                    box = SAVEDATA.ItemBox.AccessoryBox;
+                    break;
+
+                case 2:
+                    box = SAVEDATA.ItemBox.AuxCoreBox;
+                    break;
+
+                case 3:
+                    box = SAVEDATA.ItemBox.CylinderBox;
+                    break;
+
+                case 4:
+                    box = SAVEDATA.ItemBox.KeyItemBox;
+                    break;
+
+                case 5:
+                    box = SAVEDATA.ItemBox.InfoItemBox;
+                    break;
+
+                case 7:
+                    box = SAVEDATA.ItemBox.CollectibleBox;
+                    break;
+
+                case 8:
+                    box = SAVEDATA.ItemBox.TreasureBox;
+                    break;
+
+                case 9:
+                    box = SAVEDATA.ItemBox.UnrefinedAuxCoreBox;
+                    break;
+
+                case 10:
+                    box = SAVEDATA.ItemBox.PouchItemBox;
+                    break;
+
+                case 11:
+                    box = SAVEDATA.ItemBox.CoreCrystalBox;
+                    break;
+
+                case 12:
+                    box = SAVEDATA.ItemBox.BoosterBox;
+                    break;
+
+                case 13:
+                    box = SAVEDATA.ItemBox.PoppiRoleCPUBox;
+                    break;
+
+                case 14:
+                    box = SAVEDATA.ItemBox.PoppiElementCoreBox;
+                    break;
+
+                case 15:
+                    box = SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox;
+                    break;
+
+                case 16:
+                    box = SAVEDATA.ItemBox.PoppiArtsCardBox;
+                    break;
+
+                case 17:
+                    box = SAVEDATA.ItemBox.PoppiSkillRAMBox;
+                    break;
+            }
+
+            if (dgv.Columns[c].Tag == null)
+                dgv.Columns[c].Tag = false;
+
+            switch (c)
+            {
+                case 0:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.ID, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 1:
+                    string[] names = new string[box.Length];
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dgv.Rows[i].Cells[1];
+                        names[i] = (string)((DataRowView)cell.Items[Convert.ToInt32(cell.Value)]).Row[1];
+                    }
+
+                    Array.Sort(names, box, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 4:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.QTY, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 5:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.EQUIPPED, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 6:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.TIME, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 9:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.SERIAL, (bool)dgv.Columns[c].Tag));
                     break;
 
                 default:
                     return;
             }
-            dgv.Columns[e.ColumnIndex].Tag = !(bool)dgv.Columns[e.ColumnIndex].Tag;
-            //Array.Sort(SAVEDATA.ItemBox.PcWpnChipBox, Item.GetComparer(e.ColumnIndex));
+            dgv.Columns[c].Tag = !(bool)dgv.Columns[c].Tag;
 
             ((BindingList<Item>)dgv.DataSource).ResetBindings();
+        }
+
+        private void btnItemCheatMaxQty_Click(object sender, EventArgs e)
+        {
+            if (tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0].GetType() == typeof(DataGridView))
+            {
+                BindingList<Item> items = ((BindingList<Item>)((DataGridView)tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0]).DataSource);
+
+                foreach (Item i in items)
+                    if (!i.IsEmptyItem())
+                        i.Qty = 1023;
+            
+                items.ResetBindings();
+            }
         }
     }
 }
