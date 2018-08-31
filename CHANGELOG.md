@@ -1,6 +1,11 @@
 # CHANGELOG
 
-# v1.2
+## v1.3
+New Features from User Requests
+- NEW FEATURE: Added Item sort function (Can sort by ID, Name, Qty, Equipped, Time Obtained, or Serial by clicking respective column header in Item grid
+- NEW FEATURE: Added button to Max out Qty of all Items in currently viewed Item Box
+
+## v1.2
 New Features + Ver 1.5.2 Support
 - NEW FEATURE: Added Blade Import/Export to/from File
 - NEW FEATURE: Added Existing Item search function
