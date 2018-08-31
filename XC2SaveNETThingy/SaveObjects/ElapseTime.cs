@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XC2SaveNETThingy
 {
-    public class ElapseTime : IXC2SaveObject
+    public class ElapseTime : IXC2SaveObject, IComparable
     {
         public const int SIZE = 0x4;
 
@@ -41,6 +41,28 @@ namespace XC2SaveNETThingy
         public override string ToString()
         {
             return Hours + ":" + Minutes.ToString("D2") + ":" + Seconds.ToString("D2");
+        }
+
+        public int CompareTo(object obj)
+        {
+            ElapseTime other = (ElapseTime)obj;
+
+            if (Hours < other.Hours)
+                return -1;
+            else if (Hours > other.Hours)
+                return 1;
+            else
+                if (Minutes < other.Minutes)
+                    return -1;
+                else if (Minutes > other.Minutes)
+                    return 1;
+                else
+                    if (Seconds < other.Seconds)
+                        return -1;
+                    else if (Seconds > other.Seconds)
+                        return 1;
+                    else
+                        return 0;
         }
     }
 }

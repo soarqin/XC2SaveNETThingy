@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,31 @@ namespace XC2SaveNETThingy
 {
     public class Item : IXC2SaveObject
     {
+        //public enum TYPE
+        //{
+        //    NONE = 0,
+        //    CoreChip = 1,
+        //    Accessory = 2,
+        //    AuxCore = 3,
+        //    UNKNOWN_4 = 4,
+        //    Cylinder = 5,
+        //    KeyItem = 6,
+        //    Collectible = 7,
+        //    Treasure = 8,
+        //    UnrefinedAuxCore = 9,
+        //    PouchItem = 10,
+        //    CoreCrystal = 11,
+        //    Booster = 12,
+        //    UNKNOWN_13 = 13,
+        //    InfoItem = 14,
+        //    UNKNOWN_15 = 15,
+        //    PoppiRoleCPU = 16,
+        //    PoppiElementCore = 17,
+        //    PoppiSpecialsEnhancingRAM = 18,
+        //    PoppiArtsCard = 19,
+        //    PoppiSkillRAM = 20
+        //}
+
         public const int SIZE = 0xC;
 
         public UInt16 ID { get; set; }
@@ -35,8 +61,6 @@ namespace XC2SaveNETThingy
 
         public Byte Unk3 { get; set; }
         private const int UNK3_BITS = 6;
-
-        public string Name { get { return ToString(); } }
 
         // janky properties to allow DataGridView to access Time sub-properties
         public UInt32 Time_Hours
@@ -78,7 +102,6 @@ namespace XC2SaveNETThingy
             }
         }
 
-
         public Item(Byte[] data)
         {
             UInt32 pt1 = BitConverter.ToUInt32(data.GetByteSubArray(0, 4), 0);
@@ -91,9 +114,7 @@ namespace XC2SaveNETThingy
             Unk2 = (pt1 >> (32 - UNK2_BITS)) == 1;
 
             Time = new ElapseTime(data.GetByteSubArray(4, 4));
-
             UInt32 pt2 = BitConverter.ToUInt32(data.GetByteSubArray(8, 4), 0);
-
             Serial = (UInt32)(pt2 & (UInt32)(Math.Pow(2, SERIAL_BITS) - 1));
             Unk3 = (Byte)(pt2 >> (32 - UNK3_BITS));
         }
@@ -125,6 +146,271 @@ namespace XC2SaveNETThingy
             }
 
             return result.ToArray();
+        }
+
+        public bool IsEmptyItem()
+        {
+            return (
+                ID == 0 &&
+                Type == 0 &&
+                Qty == 0 &&
+                !Unk1 &&
+                !Equipped &&
+                !Unk2 &&
+                Time.Hours == 0 &&
+                Time.Minutes == 0 &&
+                Time.Seconds == 0 &&
+                Serial == 0 &&
+                Unk3 == 0
+                );
+        }
+
+        public enum CMP_FIELD
+        {
+            ID,
+            NAME,
+            QTY,
+            EQUIPPED,
+            TIME,
+            SERIAL
+        }
+
+        public static IComparer GetComparer(CMP_FIELD f, bool desc)
+        {
+            switch (f)
+            {
+                case CMP_FIELD.ID:
+                default:
+                    if (desc)
+                        return new ItemComparerIDDesc();
+                    else
+                        return new ItemComparerIDAsc();
+
+                case CMP_FIELD.NAME:
+                    if (desc)
+                        return new ItemComparerNameDesc();
+                    else
+                        return new ItemComparerNameAsc();
+
+                case CMP_FIELD.QTY:
+                    if (desc)
+                        return new ItemComparerQtyDesc();
+                    else
+                        return new ItemComparerQtyAsc();
+
+                case CMP_FIELD.EQUIPPED:
+                    if (desc)
+                        return new ItemComparerNotEquip();
+                    else
+                        return new ItemComparerEquip();
+
+                case CMP_FIELD.TIME:
+                    if (desc)
+                        return new ItemComparerTimeDesc();
+                    else
+                        return new ItemComparerTimeAsc();
+
+                case CMP_FIELD.SERIAL:
+                    if (desc)
+                        return new ItemComparerSerialDesc();
+                    else
+                        return new ItemComparerSerialAsc();
+            }
+        }
+
+        private class ItemComparerIDAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.ID < y.ID)
+                    return -1;
+                else if (x.ID > y.ID)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        private class ItemComparerIDDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.ID > y.ID)
+                        return -1;
+                    else if (x.ID < y.ID)
+                        return 1;
+                    else
+                        return 0;
+            }
+        }
+
+        private class ItemComparerQtyAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Qty < y.Qty)
+                        return -1;
+                    else if (x.Qty > y.Qty)
+                        return 1;
+                    else
+                        return 0;
+            }
+        }
+
+        private class ItemComparerQtyDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Qty > y.Qty)
+                    return -1;
+                else if (x.Qty < y.Qty)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        private class ItemComparerTimeAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    return x.Time.CompareTo(y.Time);
+            }
+        }
+
+        private class ItemComparerEquip : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Equipped && y.Equipped)
+                        return 0;
+                    else if (x.Equipped)
+                        return -1;
+                    else
+                        return 1;
+            }
+        }
+        private class ItemComparerNotEquip : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (!x.Equipped && !y.Equipped)
+                        return 0;
+                    else if (!x.Equipped)
+                        return -1;
+                    else
+                        return 1;
+            }
+        }
+
+        private class ItemComparerTimeDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    return x.Time.CompareTo(y.Time) * -1;
+            }
+        }
+
+        private class ItemComparerSerialAsc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Serial < y.Serial)
+                    return -1;
+                else if (x.Serial > y.Serial)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        private class ItemComparerSerialDesc : Comparer<Item>
+        {
+            public override int Compare(Item x, Item y)
+            {
+                if (x.IsEmptyItem())
+                    return 1;
+                else if (y.IsEmptyItem())
+                    return -1;
+                else
+                    if (x.Serial > y.Serial)
+                    return -1;
+                else if (x.Serial < y.Serial)
+                    return 1;
+                else
+                    return 0;
+            }
+        }
+
+        public class ItemComparerNameAsc : Comparer<string>
+        {
+            public override int Compare(string x, string y)
+            {
+                if (x == "" || x.StartsWith("("))
+                    return 1;
+                else if (y == "" || y.StartsWith("("))
+                    return -1;
+                else
+                    return x.ToLower().CompareTo(y.ToLower());
+            }
+        }
+
+        public class ItemComparerNameDesc : Comparer<string>
+        {
+            public override int Compare(string x, string y)
+            {
+                if (x == "" || x.StartsWith("("))
+                    return 1;
+                else if (y == "" || y.StartsWith("("))
+                    return -1;
+                else
+                    return x.ToLower().CompareTo(y.ToLower()) * -1;
+            }
         }
     }
 }

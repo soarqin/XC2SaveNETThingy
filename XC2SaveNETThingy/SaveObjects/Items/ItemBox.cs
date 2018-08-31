@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XC2SaveNETThingy
 {
@@ -10,24 +7,24 @@ namespace XC2SaveNETThingy
     {
         public const int SIZE = 0x122EC;
 
-        public Item[] PcWpnChipBox { get; set; }
-        public Item[] PcEquipBox { get; set; }
-        public Item[] EquipOrbBox { get; set; }
-        public Item[] SalvageBox { get; set; }
-        public Item[] PreciousBox { get; set; }
-        public Item[] InfoBox { get; set; }
+        public Item[] CoreChipBox { get; set; }
+        public Item[] AccessoryBox { get; set; }
+        public Item[] AuxCoreBox { get; set; }
+        public Item[] CylinderBox { get; set; }
+        public Item[] KeyItemBox { get; set; }
+        public Item[] InfoItemBox { get; set; }
         public Item[] EventBox { get; set; }
-        public Item[] CollectionListBox { get; set; }
+        public Item[] CollectibleBox { get; set; }
         public Item[] TreasureBox { get; set; }
-        public Item[] EmptyOrbBox { get; set; }
-        public Item[] FavoriteBox { get; set; }
-        public Item[] CrystalListBox { get; set; }
+        public Item[] UnrefinedAuxCoreBox { get; set; }
+        public Item[] PouchItemBox { get; set; }
+        public Item[] CoreCrystalBox { get; set; }
         public Item[] BoosterBox { get; set; }
-        public Item[] HanaRoleBox { get; set; }
-        public Item[] HanaAtrBox { get; set; }
-        public Item[] HanaArtsBox { get; set; }
-        public Item[] HanaNArtsBox { get; set; }
-        public Item[] HanaAssistBox { get; set; }
+        public Item[] PoppiRoleCPUBox { get; set; }
+        public Item[] PoppiElementCoreBox { get; set; }
+        public Item[] PoppiSpecialsEnhancingRAMBox { get; set; }
+        public Item[] PoppiArtsCardBox { get; set; }
+        public Item[] PoppiSkillRAMBox { get; set; }
         public UInt32[] Serials { get; set; }
 
         private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
@@ -55,77 +52,77 @@ namespace XC2SaveNETThingy
 
         public ItemBox(Byte[] data)
         {
-            PcWpnChipBox = new Item[200];
-            for (int i = 0; i < PcWpnChipBox.Length; i++)
-                PcWpnChipBox[i] = new Item(data.GetByteSubArray(LOC["PcWpnChipBox"] + (i * Item.SIZE), Item.SIZE));
+            CoreChipBox = new Item[200];
+            for (int i = 0; i < CoreChipBox.Length; i++)
+                CoreChipBox[i] = new Item(data.GetByteSubArray(LOC["PcWpnChipBox"] + (i * Item.SIZE), Item.SIZE));
 
-            PcEquipBox = new Item[900];
-            for (int i = 0; i < PcEquipBox.Length; i++)
-                PcEquipBox[i] = new Item(data.GetByteSubArray(LOC["PcEquipBox"] + (i * Item.SIZE), Item.SIZE));
+            AccessoryBox = new Item[900];
+            for (int i = 0; i < AccessoryBox.Length; i++)
+                AccessoryBox[i] = new Item(data.GetByteSubArray(LOC["PcEquipBox"] + (i * Item.SIZE), Item.SIZE));
 
-            EquipOrbBox = new Item[500];
-            for (int i = 0; i < EquipOrbBox.Length; i++)
-                EquipOrbBox[i] = new Item(data.GetByteSubArray(LOC["EquipOrbBox"] + (i * Item.SIZE), Item.SIZE));
+            AuxCoreBox = new Item[500];
+            for (int i = 0; i < AuxCoreBox.Length; i++)
+                AuxCoreBox[i] = new Item(data.GetByteSubArray(LOC["EquipOrbBox"] + (i * Item.SIZE), Item.SIZE));
 
-            SalvageBox = new Item[200];
-            for (int i = 0; i < SalvageBox.Length; i++)
-                SalvageBox[i] = new Item(data.GetByteSubArray(LOC["SalvageBox"] + (i * Item.SIZE), Item.SIZE));
+            CylinderBox = new Item[200];
+            for (int i = 0; i < CylinderBox.Length; i++)
+                CylinderBox[i] = new Item(data.GetByteSubArray(LOC["SalvageBox"] + (i * Item.SIZE), Item.SIZE));
 
-            PreciousBox = new Item[500];
-            for (int i = 0; i < PreciousBox.Length; i++)
-                PreciousBox[i] = new Item(data.GetByteSubArray(LOC["PreciousBox"] + (i * Item.SIZE), Item.SIZE));
+            KeyItemBox = new Item[500];
+            for (int i = 0; i < KeyItemBox.Length; i++)
+                KeyItemBox[i] = new Item(data.GetByteSubArray(LOC["PreciousBox"] + (i * Item.SIZE), Item.SIZE));
 
-            InfoBox = new Item[200];
-            for (int i = 0; i < InfoBox.Length; i++)
-                InfoBox[i] = new Item(data.GetByteSubArray(LOC["InfoBox"] + (i * Item.SIZE), Item.SIZE));
+            InfoItemBox = new Item[200];
+            for (int i = 0; i < InfoItemBox.Length; i++)
+                InfoItemBox[i] = new Item(data.GetByteSubArray(LOC["InfoBox"] + (i * Item.SIZE), Item.SIZE));
 
             EventBox = new Item[100];
             for (int i = 0; i < EventBox.Length; i++)
                 EventBox[i] = new Item(data.GetByteSubArray(LOC["EventBox"] + (i * Item.SIZE), Item.SIZE));
 
-            CollectionListBox = new Item[500];
-            for (int i = 0; i < CollectionListBox.Length; i++)
-                CollectionListBox[i] = new Item(data.GetByteSubArray(LOC["CollectionListBox"] + (i * Item.SIZE), Item.SIZE));
+            CollectibleBox = new Item[500];
+            for (int i = 0; i < CollectibleBox.Length; i++)
+                CollectibleBox[i] = new Item(data.GetByteSubArray(LOC["CollectionListBox"] + (i * Item.SIZE), Item.SIZE));
 
             TreasureBox = new Item[200];
             for (int i = 0; i < TreasureBox.Length; i++)
                 TreasureBox[i] = new Item(data.GetByteSubArray(LOC["TreasureBox"] + (i * Item.SIZE), Item.SIZE));
 
-            EmptyOrbBox = new Item[500];
-            for (int i = 0; i < EmptyOrbBox.Length; i++)
-                EmptyOrbBox[i] = new Item(data.GetByteSubArray(LOC["EmptyOrbBox"] + (i * Item.SIZE), Item.SIZE));
+            UnrefinedAuxCoreBox = new Item[500];
+            for (int i = 0; i < UnrefinedAuxCoreBox.Length; i++)
+                UnrefinedAuxCoreBox[i] = new Item(data.GetByteSubArray(LOC["EmptyOrbBox"] + (i * Item.SIZE), Item.SIZE));
 
-            FavoriteBox = new Item[500];
-            for (int i = 0; i < FavoriteBox.Length; i++)
-                FavoriteBox[i] = new Item(data.GetByteSubArray(LOC["FavoriteBox"] + (i * Item.SIZE), Item.SIZE));
+            PouchItemBox = new Item[500];
+            for (int i = 0; i < PouchItemBox.Length; i++)
+                PouchItemBox[i] = new Item(data.GetByteSubArray(LOC["FavoriteBox"] + (i * Item.SIZE), Item.SIZE));
 
-            CrystalListBox = new Item[200];
-            for (int i = 0; i < CrystalListBox.Length; i++)
-                CrystalListBox[i] = new Item(data.GetByteSubArray(LOC["CrystalListBox"] + (i * Item.SIZE), Item.SIZE));
+            CoreCrystalBox = new Item[200];
+            for (int i = 0; i < CoreCrystalBox.Length; i++)
+                CoreCrystalBox[i] = new Item(data.GetByteSubArray(LOC["CrystalListBox"] + (i * Item.SIZE), Item.SIZE));
 
             BoosterBox = new Item[200];
             for (int i = 0; i < BoosterBox.Length; i++)
                 BoosterBox[i] = new Item(data.GetByteSubArray(LOC["BoosterBox"] + (i * Item.SIZE), Item.SIZE));
                 
-            HanaRoleBox = new Item[200];
-            for (int i = 0; i < HanaRoleBox.Length; i++)
-                HanaRoleBox[i] = new Item(data.GetByteSubArray(LOC["HanaRoleBox"] + (i * Item.SIZE), Item.SIZE));
+            PoppiRoleCPUBox = new Item[200];
+            for (int i = 0; i < PoppiRoleCPUBox.Length; i++)
+                PoppiRoleCPUBox[i] = new Item(data.GetByteSubArray(LOC["HanaRoleBox"] + (i * Item.SIZE), Item.SIZE));
 
-            HanaAtrBox = new Item[200];
-            for (int i = 0; i < HanaAtrBox.Length; i++)
-                HanaAtrBox[i] = new Item(data.GetByteSubArray(LOC["HanaAtrBox"] + (i * Item.SIZE), Item.SIZE));
+            PoppiElementCoreBox = new Item[200];
+            for (int i = 0; i < PoppiElementCoreBox.Length; i++)
+                PoppiElementCoreBox[i] = new Item(data.GetByteSubArray(LOC["HanaAtrBox"] + (i * Item.SIZE), Item.SIZE));
 
-            HanaArtsBox = new Item[200];
-            for (int i = 0; i < HanaArtsBox.Length; i++)
-                HanaArtsBox[i] = new Item(data.GetByteSubArray(LOC["HanaArtsBox"] + (i * Item.SIZE), Item.SIZE));
+            PoppiSpecialsEnhancingRAMBox = new Item[200];
+            for (int i = 0; i < PoppiSpecialsEnhancingRAMBox.Length; i++)
+                PoppiSpecialsEnhancingRAMBox[i] = new Item(data.GetByteSubArray(LOC["HanaArtsBox"] + (i * Item.SIZE), Item.SIZE));
 
-            HanaNArtsBox = new Item[200];
-            for (int i = 0; i < HanaNArtsBox.Length; i++)
-                HanaNArtsBox[i] = new Item(data.GetByteSubArray(LOC["HanaNArtsBox"] + (i * Item.SIZE), Item.SIZE));
+            PoppiArtsCardBox = new Item[200];
+            for (int i = 0; i < PoppiArtsCardBox.Length; i++)
+                PoppiArtsCardBox[i] = new Item(data.GetByteSubArray(LOC["HanaNArtsBox"] + (i * Item.SIZE), Item.SIZE));
 
-            HanaAssistBox = new Item[700];
-            for (int i = 0; i < HanaAssistBox.Length; i++)
-                HanaAssistBox[i] = new Item(data.GetByteSubArray(LOC["HanaAssistBox"] + (i * Item.SIZE), Item.SIZE));
+            PoppiSkillRAMBox = new Item[700];
+            for (int i = 0; i < PoppiSkillRAMBox.Length; i++)
+                PoppiSkillRAMBox[i] = new Item(data.GetByteSubArray(LOC["HanaAssistBox"] + (i * Item.SIZE), Item.SIZE));
 
             Serials = new UInt32[19];
             for (int i = 0; i < Serials.Length; i++)
@@ -136,58 +133,58 @@ namespace XC2SaveNETThingy
         {
             List<Byte> result = new List<Byte>();
 
-            foreach (Item i in PcWpnChipBox)
+            foreach (Item i in CoreChipBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in PcEquipBox)
+            foreach (Item i in AccessoryBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in EquipOrbBox)
+            foreach (Item i in AuxCoreBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in SalvageBox)
+            foreach (Item i in CylinderBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in PreciousBox)
+            foreach (Item i in KeyItemBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in InfoBox)
+            foreach (Item i in InfoItemBox)
                 result.AddRange(i.ToRawData());
 
             foreach (Item i in EventBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in CollectionListBox)
+            foreach (Item i in CollectibleBox)
                 result.AddRange(i.ToRawData());
 
             foreach (Item i in TreasureBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in EmptyOrbBox)
+            foreach (Item i in UnrefinedAuxCoreBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in FavoriteBox)
+            foreach (Item i in PouchItemBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in CrystalListBox)
+            foreach (Item i in CoreCrystalBox)
                 result.AddRange(i.ToRawData());
 
             foreach (Item i in BoosterBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in HanaRoleBox)
+            foreach (Item i in PoppiRoleCPUBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in HanaAtrBox)
+            foreach (Item i in PoppiElementCoreBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in HanaArtsBox)
+            foreach (Item i in PoppiSpecialsEnhancingRAMBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in HanaNArtsBox)
+            foreach (Item i in PoppiArtsCardBox)
                 result.AddRange(i.ToRawData());
 
-            foreach (Item i in HanaAssistBox)
+            foreach (Item i in PoppiSkillRAMBox)
                 result.AddRange(i.ToRawData());
 
             foreach (UInt32 u in Serials)

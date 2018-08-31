@@ -1190,6 +1190,8 @@
             this.hbxBladeUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabItems = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnItemCheatMaxQty = new System.Windows.Forms.Button();
             this.groupBox174 = new System.Windows.Forms.GroupBox();
             this.btnItemAddNew = new System.Windows.Forms.Button();
             this.label512 = new System.Windows.Forms.Label();
@@ -1676,6 +1678,7 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -2212,6 +2215,7 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox174.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewID)).BeginInit();
@@ -15774,6 +15778,8 @@
             // 
             // splitContainer5.Panel1
             // 
+            this.splitContainer5.Panel1.Controls.Add(this.label1);
+            this.splitContainer5.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer5.Panel1.Controls.Add(this.groupBox174);
             this.splitContainer5.Panel1.Controls.Add(this.groupBox173);
             // 
@@ -15783,6 +15789,26 @@
             this.splitContainer5.Size = new System.Drawing.Size(1128, 570);
             this.splitContainer5.SplitterDistance = 47;
             this.splitContainer5.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnItemCheatMaxQty);
+            this.groupBox1.Location = new System.Drawing.Point(610, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(212, 40);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Easy-Cheat";
+            // 
+            // btnItemCheatMaxQty
+            // 
+            this.btnItemCheatMaxQty.Location = new System.Drawing.Point(6, 12);
+            this.btnItemCheatMaxQty.Name = "btnItemCheatMaxQty";
+            this.btnItemCheatMaxQty.Size = new System.Drawing.Size(200, 23);
+            this.btnItemCheatMaxQty.TabIndex = 4;
+            this.btnItemCheatMaxQty.Text = "Max Out Qty for all Items in Current Box";
+            this.btnItemCheatMaxQty.UseVisualStyleBackColor = true;
+            this.btnItemCheatMaxQty.Click += new System.EventHandler(this.btnItemCheatMaxQty_Click);
             // 
             // groupBox174
             // 
@@ -15961,6 +15987,7 @@
             this.dgvPcWpnChipBox.TabIndex = 0;
             this.dgvPcWpnChipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcWpnChipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvPcWpnChipBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabAccessoryBox
             // 
@@ -15985,6 +16012,7 @@
             this.dgvPcEquipBox.TabIndex = 0;
             this.dgvPcEquipBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPcEquipBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvPcEquipBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabAuxCoreBox
             // 
@@ -16009,6 +16037,7 @@
             this.dgvEquipOrbBox.TabIndex = 0;
             this.dgvEquipOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvEquipOrbBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabCylinderBox
             // 
@@ -16033,6 +16062,7 @@
             this.dgvSalvageBox.TabIndex = 0;
             this.dgvSalvageBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvSalvageBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabKeyItemBox
             // 
@@ -16057,6 +16087,7 @@
             this.dgvPreciousBox.TabIndex = 0;
             this.dgvPreciousBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvPreciousBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvPreciousBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabInfoItemBox
             // 
@@ -16081,6 +16112,7 @@
             this.dgvInfoBox.TabIndex = 0;
             this.dgvInfoBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvInfoBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabEventItemBox
             // 
@@ -16129,6 +16161,7 @@
             this.dgvCollectionListBox.TabIndex = 0;
             this.dgvCollectionListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvCollectionListBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabTreasureBox
             // 
@@ -16153,6 +16186,7 @@
             this.dgvTreasureBox.TabIndex = 0;
             this.dgvTreasureBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvTreasureBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabUnrefinedAuxCoresBox
             // 
@@ -16177,6 +16211,7 @@
             this.dgvEmptyOrbBox.TabIndex = 0;
             this.dgvEmptyOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvEmptyOrbBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPouchItemBox
             // 
@@ -16201,6 +16236,7 @@
             this.dgvFavoriteBox.TabIndex = 0;
             this.dgvFavoriteBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvFavoriteBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabCoreCrystalBox
             // 
@@ -16225,6 +16261,7 @@
             this.dgvCrystalListBox.TabIndex = 0;
             this.dgvCrystalListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvCrystalListBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabBoosterBox
             // 
@@ -16249,6 +16286,7 @@
             this.dgvBoosterBox.TabIndex = 0;
             this.dgvBoosterBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvBoosterBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPoppiRoleCPUBox
             // 
@@ -16273,6 +16311,7 @@
             this.dgvHanaRoleBox.TabIndex = 0;
             this.dgvHanaRoleBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvHanaRoleBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPoppiElementCoreBox
             // 
@@ -16297,6 +16336,7 @@
             this.dgvHanaAtrBox.TabIndex = 0;
             this.dgvHanaAtrBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvHanaAtrBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPoppiSpecialsEnhancingRAMBox
             // 
@@ -16321,6 +16361,7 @@
             this.dgvHanaArtsBox.TabIndex = 0;
             this.dgvHanaArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvHanaArtsBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPoppiArtsCardBox
             // 
@@ -16345,6 +16386,7 @@
             this.dgvHanaNArtsBox.TabIndex = 0;
             this.dgvHanaNArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvHanaNArtsBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabPoppiSkillRAMBox
             // 
@@ -16369,6 +16411,7 @@
             this.dgvHanaAssistBox.TabIndex = 0;
             this.dgvHanaAssistBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
+            this.dgvHanaAssistBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabItemsSerials
             // 
@@ -21678,6 +21721,16 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(828, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 26);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Double-click ID, Name, Qty, Equipped, Time Obtained,\r\nor Serial column headers to" +
+    " sort Items by that field.";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -22300,9 +22353,11 @@
             this.groupBox23.ResumeLayout(false);
             this.tabItems.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox174.ResumeLayout(false);
             this.groupBox174.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemAddNewQty)).EndInit();
@@ -24247,6 +24302,9 @@
         private System.Windows.Forms.Label lblAegisFormePyra;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkDriverInParty;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnItemCheatMaxQty;
+        private System.Windows.Forms.Label label1;
     }
 }
 
