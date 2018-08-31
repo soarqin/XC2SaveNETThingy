@@ -9,34 +9,33 @@ namespace XC2SaveNETThingy
 {
     public class Item : IXC2SaveObject
     {
-        public enum TYPE
-        {
-            NONE = 0,
-            CoreChip = 1,
-            Accessory = 2,
-            AuxCore = 3,
-            UNKNOWN_4 = 4,
-            Cylinder = 5,
-            KeyItem = 6,
-            Collectible = 7,
-            Treasure = 8,
-            UnrefinedAuxCore = 9,
-            PouchItem = 10,
-            CoreCrystal = 11,
-            Booster = 12,
-            UNKNOWN_13 = 13,
-            InfoItem = 14,
-            UNKNOWN_15 = 15,
-            PoppiRoleCPU = 16,
-            PoppiElementCore = 17,
-            PoppiSpecialsEnhancingRAM = 18,
-            PoppiArtsCard = 19,
-            PoppiSkillRAM = 20
-        }
+        //public enum TYPE
+        //{
+        //    NONE = 0,
+        //    CoreChip = 1,
+        //    Accessory = 2,
+        //    AuxCore = 3,
+        //    UNKNOWN_4 = 4,
+        //    Cylinder = 5,
+        //    KeyItem = 6,
+        //    Collectible = 7,
+        //    Treasure = 8,
+        //    UnrefinedAuxCore = 9,
+        //    PouchItem = 10,
+        //    CoreCrystal = 11,
+        //    Booster = 12,
+        //    UNKNOWN_13 = 13,
+        //    InfoItem = 14,
+        //    UNKNOWN_15 = 15,
+        //    PoppiRoleCPU = 16,
+        //    PoppiElementCore = 17,
+        //    PoppiSpecialsEnhancingRAM = 18,
+        //    PoppiArtsCard = 19,
+        //    PoppiSkillRAM = 20
+        //}
 
         public const int SIZE = 0xC;
 
-        private UInt16 _oldId;
         public UInt16 ID { get; set; }
         private const int ID_BITS = 13;
 
@@ -62,24 +61,6 @@ namespace XC2SaveNETThingy
 
         public Byte Unk3 { get; set; }
         private const int UNK3_BITS = 6;
-
-        private string _name;
-        public string Name
-        {
-            get
-            {
-                if (ID != _oldId)
-                {
-                    SetName();
-                }
-
-                return _name;
-            }
-            private set
-            {
-                _name = value;
-            }
-        }
 
         // janky properties to allow DataGridView to access Time sub-properties
         public UInt32 Time_Hours
@@ -121,13 +102,11 @@ namespace XC2SaveNETThingy
             }
         }
 
-
         public Item(Byte[] data)
         {
             UInt32 pt1 = BitConverter.ToUInt32(data.GetByteSubArray(0, 4), 0);
 
             ID = (UInt16)(pt1 & (UInt16)(Math.Pow(2, ID_BITS) - 1));
-            _oldId = ID;
             Type = (Byte)((pt1 >> ID_BITS) & (Byte)((Math.Pow(2, TYPE_BITS) - 1)));
             Qty = (UInt16)((pt1 >> (ID_BITS + TYPE_BITS)) & (UInt16)(Math.Pow(2, QTY_BITS) - 1));
             Unk1 = ((pt1 >> (ID_BITS + TYPE_BITS + QTY_BITS)) & (UInt32)(Math.Pow(2, UNK1_BITS) - 1)) == 1;
@@ -135,13 +114,9 @@ namespace XC2SaveNETThingy
             Unk2 = (pt1 >> (32 - UNK2_BITS)) == 1;
 
             Time = new ElapseTime(data.GetByteSubArray(4, 4));
-
             UInt32 pt2 = BitConverter.ToUInt32(data.GetByteSubArray(8, 4), 0);
-
             Serial = (UInt32)(pt2 & (UInt32)(Math.Pow(2, SERIAL_BITS) - 1));
             Unk3 = (Byte)(pt2 >> (32 - UNK3_BITS));
-
-            //SetName();
         }
 
         public Byte[] ToRawData()
@@ -171,94 +146,6 @@ namespace XC2SaveNETThingy
             }
 
             return result.ToArray();
-        }
-
-        private void SetName()
-        {
-            switch ((TYPE)Type)
-            {
-                case TYPE.NONE:
-                    Name = "(none)";
-                    break;
-
-                case TYPE.Accessory:
-                    Name =  (string)XC2Data.GetAccessories().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.AuxCore:
-                    Name = (string)XC2Data.GetAuxCores().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.Booster:
-                    Name = (string)XC2Data.GetBoosters().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.Collectible:
-                    Name = (string)XC2Data.GetCollectibles().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.CoreChip:
-                    Name = (string)XC2Data.GetCoreChips().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.CoreCrystal:
-                    Name = (string)XC2Data.GetCoreCrystals().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.Cylinder:
-                    Name = (string)XC2Data.GetCylinders().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.InfoItem:
-                    Name = (string)XC2Data.GetInfoItems().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-
-                case TYPE.KeyItem:
-                    Name = (string)XC2Data.GetKeyItems().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PoppiArtsCard:
-                    Name = (string)XC2Data.GetPoppiArtsCards().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PoppiElementCore:
-                    Name = (string)XC2Data.GetPoppiElementCores().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PoppiRoleCPU:
-                    Name = (string)XC2Data.GetPoppiRoleCPU().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PoppiSkillRAM:
-                    Name = (string)XC2Data.GetPoppiSkillRAM().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PoppiSpecialsEnhancingRAM:
-                    Name = (string)XC2Data.GetPoppiSpecialsEnhancingRAM().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.PouchItem:
-                    Name = (string)XC2Data.GetPouchItems().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.Treasure:
-                    Name = (string)XC2Data.GetTreasure().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                case TYPE.UnrefinedAuxCore:
-                    Name = (string)XC2Data.GetUnrefinedAuxCores().Select("ID = " + ID)[0]["Name"];
-                    break;
-
-                default:
-                    Name = "UNKNOWN";
-                    break;
-            }
-        }
-
-        public override string ToString()
-        {
-            return Name;
         }
 
         public bool IsEmptyItem()
@@ -366,32 +253,6 @@ namespace XC2SaveNETThingy
                         return 0;
             }
         }
-
-        //private class ItemComparerNameAsc : Comparer<Item>
-        //{
-        //    public override int Compare(Item x, Item y)
-        //    {
-        //        if (x.IsEmptyItem())
-        //            return 1;
-        //        else if (y.IsEmptyItem())
-        //            return -1;
-        //        else
-        //            return String.Compare(x.Name, y.Name);
-        //    }
-        //}
-
-        //private class ItemComparerNameDesc : Comparer<Item>
-        //{
-        //    public override int Compare(Item x, Item y)
-        //    {
-        //        if (x.IsEmptyItem())
-        //            return 1;
-        //        else if (y.IsEmptyItem())
-        //            return -1;
-        //        else
-        //            return String.Compare(x.Name, y.Name) * -1;
-        //    }
-        //}
 
         private class ItemComparerQtyAsc : Comparer<Item>
         {

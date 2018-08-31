@@ -1678,6 +1678,7 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -15777,6 +15778,7 @@
             // 
             // splitContainer5.Panel1
             // 
+            this.splitContainer5.Panel1.Controls.Add(this.label1);
             this.splitContainer5.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer5.Panel1.Controls.Add(this.groupBox174);
             this.splitContainer5.Panel1.Controls.Add(this.groupBox173);
@@ -21719,6 +21721,16 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(828, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 26);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Double-click ID, Name, Qty, Equipped, Time Obtained,\r\nor Serial column headers to" +
+    " sort Items by that field.";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -22341,6 +22353,7 @@
             this.groupBox23.ResumeLayout(false);
             this.tabItems.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
@@ -24291,6 +24304,7 @@
         private System.Windows.Forms.CheckBox chkDriverInParty;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnItemCheatMaxQty;
+        private System.Windows.Forms.Label label1;
     }
 }
 

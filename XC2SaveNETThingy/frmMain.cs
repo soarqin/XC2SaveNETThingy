@@ -1848,8 +1848,6 @@ namespace XC2SaveNETThingy
                 dgv.Rows[index].Selected = true;
             }
         }
-
-
         #endregion Items
 
         #region Game Flag Data
@@ -3929,6 +3927,129 @@ namespace XC2SaveNETThingy
                 cmsItems.Show(dgv, dgv.PointToClient(Cursor.Position));
             }
         }
+        private void DgvItemBox_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int c = e.ColumnIndex;
+            if (c == 7 || c == 8)
+                c = 6;
+
+            DataGridView dgv = ((DataGridView)sender);
+            Item[] box = null;
+
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0:
+                    box = SAVEDATA.ItemBox.CoreChipBox;
+                    break;
+
+                case 1:
+                    box = SAVEDATA.ItemBox.AccessoryBox;
+                    break;
+
+                case 2:
+                    box = SAVEDATA.ItemBox.AuxCoreBox;
+                    break;
+
+                case 3:
+                    box = SAVEDATA.ItemBox.CylinderBox;
+                    break;
+
+                case 4:
+                    box = SAVEDATA.ItemBox.KeyItemBox;
+                    break;
+
+                case 5:
+                    box = SAVEDATA.ItemBox.InfoItemBox;
+                    break;
+
+                case 7:
+                    box = SAVEDATA.ItemBox.CollectibleBox;
+                    break;
+
+                case 8:
+                    box = SAVEDATA.ItemBox.TreasureBox;
+                    break;
+
+                case 9:
+                    box = SAVEDATA.ItemBox.UnrefinedAuxCoreBox;
+                    break;
+
+                case 10:
+                    box = SAVEDATA.ItemBox.PouchItemBox;
+                    break;
+
+                case 11:
+                    box = SAVEDATA.ItemBox.CoreCrystalBox;
+                    break;
+
+                case 12:
+                    box = SAVEDATA.ItemBox.BoosterBox;
+                    break;
+
+                case 13:
+                    box = SAVEDATA.ItemBox.PoppiRoleCPUBox;
+                    break;
+
+                case 14:
+                    box = SAVEDATA.ItemBox.PoppiElementCoreBox;
+                    break;
+
+                case 15:
+                    box = SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox;
+                    break;
+
+                case 16:
+                    box = SAVEDATA.ItemBox.PoppiArtsCardBox;
+                    break;
+
+                case 17:
+                    box = SAVEDATA.ItemBox.PoppiSkillRAMBox;
+                    break;
+            }
+
+            if (dgv.Columns[c].Tag == null)
+                dgv.Columns[c].Tag = false;
+
+            switch (c)
+            {
+                case 0:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.ID, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 1:
+                    string[] names = new string[box.Length];
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dgv.Rows[i].Cells[1];
+                        names[i] = (string)((DataRowView)cell.Items[Convert.ToInt32(cell.Value)]).Row[1];
+                    }
+
+                    Array.Sort(names, box, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 4:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.QTY, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 5:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.EQUIPPED, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 6:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.TIME, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                case 9:
+                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.SERIAL, (bool)dgv.Columns[c].Tag));
+                    break;
+
+                default:
+                    return;
+            }
+            dgv.Columns[c].Tag = !(bool)dgv.Columns[c].Tag;
+
+            ((BindingList<Item>)dgv.DataSource).ResetBindings();
+        }
         private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)((ToolStripMenuItem)sender).GetCurrentParent().Tag;
@@ -4045,6 +4166,19 @@ namespace XC2SaveNETThingy
                 "Unable to add New Item to " + tbcItems.TabPages[tbcItems.SelectedIndex].Text + ", ItemBox is full.";
 
             MessageBox.Show(message, "Add New Item Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void btnItemCheatMaxQty_Click(object sender, EventArgs e)
+        {
+            if (tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0].GetType() == typeof(DataGridView))
+            {
+                BindingList<Item> items = ((BindingList<Item>)((DataGridView)tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0]).DataSource);
+
+                foreach (Item i in items)
+                    if (!i.IsEmptyItem())
+                        i.Qty = 1023;
+
+                items.ResetBindings();
+            }
         }
         private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
         private void nudItemsSerial2_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[1] = (UInt32)nudItemsSerial2.Value;
@@ -4424,144 +4558,6 @@ namespace XC2SaveNETThingy
         #endregion XC2Save Events
 
         #endregion Events
-
-        private void DgvItemBox_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int c = e.ColumnIndex;
-            if (c == 7 || c == 8)
-                c = 6;
-
-            DataGridView dgv = ((DataGridView)sender);
-            Item[] box = null;
-
-            switch (tbcItems.SelectedIndex)
-            {
-                case 0:
-                    box = SAVEDATA.ItemBox.CoreChipBox;
-                    break;
-
-                case 1:
-                    box = SAVEDATA.ItemBox.AccessoryBox;
-                    break;
-
-                case 2:
-                    box = SAVEDATA.ItemBox.AuxCoreBox;
-                    break;
-
-                case 3:
-                    box = SAVEDATA.ItemBox.CylinderBox;
-                    break;
-
-                case 4:
-                    box = SAVEDATA.ItemBox.KeyItemBox;
-                    break;
-
-                case 5:
-                    box = SAVEDATA.ItemBox.InfoItemBox;
-                    break;
-
-                case 7:
-                    box = SAVEDATA.ItemBox.CollectibleBox;
-                    break;
-
-                case 8:
-                    box = SAVEDATA.ItemBox.TreasureBox;
-                    break;
-
-                case 9:
-                    box = SAVEDATA.ItemBox.UnrefinedAuxCoreBox;
-                    break;
-
-                case 10:
-                    box = SAVEDATA.ItemBox.PouchItemBox;
-                    break;
-
-                case 11:
-                    box = SAVEDATA.ItemBox.CoreCrystalBox;
-                    break;
-
-                case 12:
-                    box = SAVEDATA.ItemBox.BoosterBox;
-                    break;
-
-                case 13:
-                    box = SAVEDATA.ItemBox.PoppiRoleCPUBox;
-                    break;
-
-                case 14:
-                    box = SAVEDATA.ItemBox.PoppiElementCoreBox;
-                    break;
-
-                case 15:
-                    box = SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox;
-                    break;
-
-                case 16:
-                    box = SAVEDATA.ItemBox.PoppiArtsCardBox;
-                    break;
-
-                case 17:
-                    box = SAVEDATA.ItemBox.PoppiSkillRAMBox;
-                    break;
-            }
-
-            if (dgv.Columns[c].Tag == null)
-                dgv.Columns[c].Tag = false;
-
-            switch (c)
-            {
-                case 0:
-                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.ID, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                case 1:
-                    string[] names = new string[box.Length];
-                    for (int i = 0; i < names.Length; i++)
-                    {
-                        DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dgv.Rows[i].Cells[1];
-                        names[i] = (string)((DataRowView)cell.Items[Convert.ToInt32(cell.Value)]).Row[1];
-                    }
-
-                    Array.Sort(names, box, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                case 4:
-                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.QTY, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                case 5:
-                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.EQUIPPED, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                case 6:
-                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.TIME, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                case 9:
-                    Array.Sort(box, Item.GetComparer(Item.CMP_FIELD.SERIAL, (bool)dgv.Columns[c].Tag));
-                    break;
-
-                default:
-                    return;
-            }
-            dgv.Columns[c].Tag = !(bool)dgv.Columns[c].Tag;
-
-            ((BindingList<Item>)dgv.DataSource).ResetBindings();
-        }
-
-        private void btnItemCheatMaxQty_Click(object sender, EventArgs e)
-        {
-            if (tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0].GetType() == typeof(DataGridView))
-            {
-                BindingList<Item> items = ((BindingList<Item>)((DataGridView)tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0]).DataSource);
-
-                foreach (Item i in items)
-                    if (!i.IsEmptyItem())
-                        i.Qty = 1023;
-            
-                items.ResetBindings();
-            }
-        }
     }
 }
 
