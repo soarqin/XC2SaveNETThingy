@@ -25,6 +25,9 @@ namespace XC2SaveNETThingy
 
         private bool BladeAffinityRewardEditorIsLoading = false;
         private Point BladeAffinityRewardCurrentlyEditingPoint = new Point(0, 0);
+
+        private XC2Data.LANG lang = XC2Data.LANG.CN;
+        private DataTable FrmMainText;
         #endregion Globals
 
         #region Constructor
@@ -32,13 +35,24 @@ namespace XC2SaveNETThingy
         {
             if (!(File.Exists(@"db\XC2Data.db")))
             {
-                string message =
-                    "ERROR: XC2Data.db not found!" + Environment.NewLine +
-                    "Please ensure that XC2Data.db exists in this program's \"db\" subfolder!" + Environment.NewLine +
-                    Environment.NewLine +
-                    "Program will now exit.";
+                string title = "";
+                string message = "";
 
-                MessageBox.Show(message, "Database Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                switch (lang)
+                {
+                    case XC2Data.LANG.EN:
+                    default:
+                        title = "Database Error!";
+                        message =
+                            "ERROR: XC2Data.db not found!" + Environment.NewLine +
+                            "Please ensure that XC2Data.db exists in this program's \"db\" subfolder!" + Environment.NewLine +
+                            Environment.NewLine +
+                            "Program will now exit.";
+                        break;
+
+                }
+
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(1);
             }
 
@@ -75,118 +89,117 @@ namespace XC2SaveNETThingy
             #endregion Misc
 
             #region Driver
-            cbxDriverID.BindDataTable(XC2Data.Drivers());
-            cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(), "Desc");
+            cbxDriverID.BindDataTable(XC2Data.Drivers(lang));
+            cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(lang), "Desc");
 
-            cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
-            cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
-            cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+            cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+            cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
 
-            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1), "FriendlyName");
-            cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1));
+            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1, lang), "FriendlyName");
+            cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1, lang));
             
             for (int i = 0; i < Pouch.COUNT; i++)
                 cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
 
-            cbxDriverPouchesItemID.BindDataTable(XC2Data.Items());
+            cbxDriverPouchesItemID.BindDataTable(XC2Data.Items(lang));
 
-            cbxDriverAccessory1ID.BindDataTable(XC2Data.GetAccessories());
-            cbxDriverAccessory2ID.BindDataTable(XC2Data.GetAccessories());
-            cbxDriverAccessory3ID.BindDataTable(XC2Data.GetAccessories());
-            cbxDriverAccessory1Type.BindDataTable(XC2Data.ItemTypes());
-            cbxDriverAccessory2Type.BindDataTable(XC2Data.ItemTypes());
-            cbxDriverAccessory3Type.BindDataTable(XC2Data.ItemTypes());
-
+            cbxDriverAccessory1ID.BindDataTable(XC2Data.GetAccessories(lang));
+            cbxDriverAccessory2ID.BindDataTable(XC2Data.GetAccessories(lang));
+            cbxDriverAccessory3ID.BindDataTable(XC2Data.GetAccessories(lang));
+            cbxDriverAccessory1Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxDriverAccessory2Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxDriverAccessory3Type.BindDataTable(XC2Data.ItemTypes(lang));
             #region 1.5.0
-            cbxDriverWeapons150.BindDataTable(XC2Data.WeaponTypes(4));
-            cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
-            cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
-            cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(3), "FriendlyName");
+            cbxDriverWeapons150.BindDataTable(XC2Data.WeaponTypes(4, lang));
+            cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+            cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+            cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
             #endregion 1.5.0
 
             #endregion Driver
 
             #region Blade
-            cbxBladeCreator.BindDataTable(XC2Data.Drivers());
-            cbxBladeSetDriver.BindDataTable(XC2Data.Drivers());
-            cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(7));
-            cbxBladeDefWeapon.BindDataTable(XC2Data.Weapons(), "FriendlyName");
-            cbxBladeElement.BindDataTable(XC2Data.Elements());
-            cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames());
-            cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames());
+            cbxBladeCreator.BindDataTable(XC2Data.Drivers(lang));
+            cbxBladeSetDriver.BindDataTable(XC2Data.Drivers(lang));
+            cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(7, lang));
+            cbxBladeDefWeapon.BindDataTable(XC2Data.Weapons(lang), "FriendlyName");
+            cbxBladeElement.BindDataTable(XC2Data.Elements(lang));
+            cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames(lang));
+            cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames(lang));
 
-            cbxBladeAuxCore1ID.BindDataTable(XC2Data.Items());
-            cbxBladeAuxCore2ID.BindDataTable(XC2Data.Items());
-            cbxBladeAuxCore3ID.BindDataTable(XC2Data.Items());
-            cbxBladeAuxCore1Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes());
+            cbxBladeAuxCore1ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladeAuxCore2ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladeAuxCore3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladeAuxCore1Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories());
-            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories());
-            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items());
-            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items());
+            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories(lang));
+            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories(lang));
+            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang));
+            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang));
 
-            cbxBladeTrustRank.BindDataTable(XC2Data.BladeTrustRanks());
+            cbxBladeTrustRank.BindDataTable(XC2Data.BladeTrustRanks(lang));
 
-            cbxBladeBArt1ID.BindDataTable(XC2Data.BladeSpecials());
-            cbxBladeBArt2ID.BindDataTable(XC2Data.BladeSpecials());
-            cbxBladeBArt3ID.BindDataTable(XC2Data.BladeSpecials());
+            cbxBladeBArt1ID.BindDataTable(XC2Data.BladeSpecials(lang));
+            cbxBladeBArt2ID.BindDataTable(XC2Data.BladeSpecials(lang));
+            cbxBladeBArt3ID.BindDataTable(XC2Data.BladeSpecials(lang));
 
-            cbxBladeNArt1ID.BindDataTable(XC2Data.BladeArts());
-            cbxBladeNArt2ID.BindDataTable(XC2Data.BladeArts());
-            cbxBladeNArt3ID.BindDataTable(XC2Data.BladeArts());
+            cbxBladeNArt1ID.BindDataTable(XC2Data.BladeArts(lang));
+            cbxBladeNArt2ID.BindDataTable(XC2Data.BladeArts(lang));
+            cbxBladeNArt3ID.BindDataTable(XC2Data.BladeArts(lang));
 
-            cbxBladeBattleSkill1ID.BindDataTable(XC2Data.BladeSkills());
-            cbxBladeBattleSkill2ID.BindDataTable(XC2Data.BladeSkills());
-            cbxBladeBattleSkill3ID.BindDataTable(XC2Data.BladeSkills());
+            cbxBladeBattleSkill1ID.BindDataTable(XC2Data.BladeSkills(lang));
+            cbxBladeBattleSkill2ID.BindDataTable(XC2Data.BladeSkills(lang));
+            cbxBladeBattleSkill3ID.BindDataTable(XC2Data.BladeSkills(lang));
 
-            cbxBladeFieldSkill1ID.BindDataTable(XC2Data.BladeFieldSkills());
-            cbxBladeFieldSkill2ID.BindDataTable(XC2Data.BladeFieldSkills());
-            cbxBladeFieldSkill3ID.BindDataTable(XC2Data.BladeFieldSkills());
+            cbxBladeFieldSkill1ID.BindDataTable(XC2Data.BladeFieldSkills(lang));
+            cbxBladeFieldSkill2ID.BindDataTable(XC2Data.BladeFieldSkills(lang));
+            cbxBladeFieldSkill3ID.BindDataTable(XC2Data.BladeFieldSkills(lang));
 
-            cbxBladePoppiswapRoleCPUID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapRoleCPUType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapElementCoreID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapElementCoreType.BindDataTable(XC2Data.ItemTypes());
+            cbxBladePoppiswapRoleCPUID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapRoleCPUType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapElementCoreID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapElementCoreType.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladePoppiswapNArts1ID.BindDataTable(XC2Data.BladeArts());
-            cbxBladePoppiswapNArts1ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapNArts1ItemType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapNArts2ID.BindDataTable(XC2Data.BladeArts());
-            cbxBladePoppiswapNArts2ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapNArts2ItemType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapNArts3ID.BindDataTable(XC2Data.BladeArts());
-            cbxBladePoppiswapNArts3ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapNArts3ItemType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapBArtsEnhance1ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapBArtsEnhance1ItemType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapBArtsEnhance2ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapBArtsEnhance2ItemType.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapBArtsEnhance3ItemID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapBArtsEnhance3ItemType.BindDataTable(XC2Data.ItemTypes());
+            cbxBladePoppiswapNArts1ID.BindDataTable(XC2Data.BladeArts(lang));
+            cbxBladePoppiswapNArts1ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts1ItemType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapNArts2ID.BindDataTable(XC2Data.BladeArts(lang));
+            cbxBladePoppiswapNArts2ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts2ItemType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapNArts3ID.BindDataTable(XC2Data.BladeArts(lang));
+            cbxBladePoppiswapNArts3ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts3ItemType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapBArtsEnhance1ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance1ItemType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapBArtsEnhance2ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance2ItemType.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapBArtsEnhance3ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance3ItemType.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladePoppiswapSkillRAM1ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillRAM1Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapSkillRAM2ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillRAM2Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapSkillRAM3ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillRAM3Type.BindDataTable(XC2Data.ItemTypes());
+            cbxBladePoppiswapSkillRAM1ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM1Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapSkillRAM2ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM2Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapSkillRAM3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladePoppiswapSkillUpgrade1ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillUpgrade1Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapSkillUpgrade2ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillUpgrade2Type.BindDataTable(XC2Data.ItemTypes());
-            cbxBladePoppiswapSkillUpgrade3ID.BindDataTable(XC2Data.Items());
-            cbxBladePoppiswapSkillUpgrade3Type.BindDataTable(XC2Data.ItemTypes());
+            cbxBladePoppiswapSkillUpgrade1ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade1Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapSkillUpgrade2ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade2Type.BindDataTable(XC2Data.ItemTypes(lang));
+            cbxBladePoppiswapSkillUpgrade3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade3Type.BindDataTable(XC2Data.ItemTypes(lang));
             #endregion Blade
 
             #region Party
             for (int i = 0; i < XC2Party.MEMBERS_COUNT; i++)
                 cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
 
-            cbxPartyLeader.BindDataTable(XC2Data.Drivers());
-            cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers());
+            cbxPartyLeader.BindDataTable(XC2Data.Drivers(lang));
+            cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers(lang));
             #endregion Party
 
             #region Items
@@ -986,19 +999,19 @@ namespace XC2SaveNETThingy
                 #region Blade Favorite Pouch Stuff
                 nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
                 cbxBladeFavoriteCategory0.SelectedValue = b.FavoriteCategory0;
-                chkBladeFavoriteCategory0Unlocked.Checked = b.FavoriteCategory0Unlocked;
+                chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory0Unlocked;
 
                 nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
                 cbxBladeFavoriteCategory1.SelectedValue = b.FavoriteCategory1;
-                chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory1Unlocked;
+                chkBladeFavoriteCategory2Unlocked.Checked = b.FavoriteCategory1Unlocked;
 
                 nudBladeFavoriteItem0.Value = b.FavoriteItem0;
                 cbxBladeFavoriteItem0.SelectedValue = b.FavoriteItem0;
-                chkBladeFavoriteItem0Unlocked.Checked = b.FavoriteItem0Unlocked;
+                chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem0Unlocked;
 
                 nudBladeFavoriteItem1.Value = b.FavoriteItem1;
                 cbxBladeFavoriteItem1.SelectedValue = b.FavoriteItem1;
-                chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem1Unlocked;
+                chkBladeFavoriteItem2Unlocked.Checked = b.FavoriteItem1Unlocked;
                 #endregion Blade Favorite Pouch Stuff
 
                 #region Blade Specials
@@ -1132,7 +1145,7 @@ namespace XC2SaveNETThingy
                 nudBladePoppiswapEnergyConverterLevel.Value = b.Poppiswap.PowerCapacity;
                 if (b.Poppiswap.PowerCapacity >= trbBladePoppiswapEnergyConverterLevel.Minimum && b.Poppiswap.PowerCapacity <= trbBladePoppiswapEnergyConverterLevel.Maximum)
                     trbBladePoppiswapEnergyConverterLevel.Value = b.Poppiswap.PowerCapacity;
-                lblPoppiswapEnergyConverterMaxOutput.Text = GetPoppiEnergyConverterOutput(b);
+                lblPoppiswapMiscEnergyConverterMaxOutputValue.Text = GetPoppiEnergyConverterOutput(b);
 
                 nudBladePoppiswapRoleCPUID.Value = b.Poppiswap.RoleCPU;
                 cbxBladePoppiswapRoleCPUID.SelectedValue = b.Poppiswap.RoleCPU;
@@ -1183,7 +1196,7 @@ namespace XC2SaveNETThingy
                 #endregion Blade Poppiswap Arts Cards
 
                 #region Blade Poppiswap Specials Enhancing RAM
-                chkBladePoppiswapSpecials1Enabled.Checked = b.Poppiswap.OpenCircuits.Specials0_Enabled;
+                chkBladePoppiswapSpecial1Enabled.Checked = b.Poppiswap.OpenCircuits.Specials0_Enabled;
                 chkBladePoppiswapSpecials2Enabled.Checked = b.Poppiswap.OpenCircuits.Specials1_Enabled;
                 chkBladePoppiswapSpecials3Enabled.Checked = b.Poppiswap.OpenCircuits.Specials2_Enabled;
 
@@ -1257,9 +1270,9 @@ namespace XC2SaveNETThingy
                 cbxBladePoppiswapSkillUpgrade3Type.SelectedValue = b.Poppiswap.SkillUpgradeItemHandles[2].Type;
                 nudBladePoppiswapSkillUpgrade3Serial.Value = b.Poppiswap.SkillUpgradeItemHandles[2].Serial;
 
-                chkBladePoppiswapSkillUpgrade1Enabled.Checked = b.Poppiswap.OpenCircuits.Skill0_Enabled;
-                chkBladePoppiswapSkillUpgrade2Enabled.Checked = b.Poppiswap.OpenCircuits.Skill1_Enabled;
-                chkBladePoppiswapSkillUpgrade3Enabled.Checked = b.Poppiswap.OpenCircuits.Skill2_Enabled;
+                chkBladePoppiswapMiscSkillUpgrade1Enabled.Checked = b.Poppiswap.OpenCircuits.Skill0_Enabled;
+                chkBladePoppiswapMiscSkillUpgrade2Enabled.Checked = b.Poppiswap.OpenCircuits.Skill1_Enabled;
+                chkBladePoppiswapMiscSkillUpgrade3Enabled.Checked = b.Poppiswap.OpenCircuits.Skill2_Enabled;
                 #endregion Blade Poppiswap Skill Upgrade
 
                 #endregion Blade Poppiswap
@@ -1658,71 +1671,71 @@ namespace XC2SaveNETThingy
             switch (tbcItems.SelectedIndex)
             {
                 case 0:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips(lang));
                     break;
 
                 case 1:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories(lang));
                     break;
 
                 case 2:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores(lang));
                     break;
 
                 case 3:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders(lang));
                     break;
 
                 case 4:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems(lang));
                     break;
 
                 case 5:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems(lang));
                     break;
 
                 case 7:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles(lang));
                     break;
 
                 case 8:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure(lang));
                     break;
 
                 case 9:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores(lang));
                     break;
 
                 case 10:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems(lang));
                     break;
 
                 case 11:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals(lang));
                     break;
 
                 case 12:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters(lang));
                     break;
 
                 case 13:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU(lang));
                     break;
 
                 case 14:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores(lang));
                     break;
 
                 case 15:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
                     break;
 
                 case 16:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards(lang));
                     break;
 
                 case 17:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM());
+                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
                     break;
             }
 
@@ -1913,6 +1926,8 @@ namespace XC2SaveNETThingy
             tbcMain.TabPages.Remove(tab150RawData);
             tbcDrivers.TabPages.Remove(tabDriver150);
             gbxDriverWeapons150.Enabled = false;
+
+            FrmMainText = XC2Data.GetFrmMainText(lang);
 
             SetupComboBoxes();
         }
@@ -2766,7 +2781,7 @@ namespace XC2SaveNETThingy
             if (ecl >= trbBladePoppiswapEnergyConverterLevel.Minimum && ecl <= trbBladePoppiswapEnergyConverterLevel.Maximum)
                 trbBladePoppiswapEnergyConverterLevel.Value = ecl;
 
-            lblPoppiswapEnergyConverterMaxOutput.Text = GetPoppiEnergyConverterOutput(SAVEDATA.Blades[lbxBlades.SelectedIndex]);
+            lblPoppiswapMiscEnergyConverterMaxOutputValue.Text = GetPoppiEnergyConverterOutput(SAVEDATA.Blades[lbxBlades.SelectedIndex]);
         }
         private void trbBladePoppiswapEnergyConverterLevel_ValueChanged(object sender, EventArgs e) => nudBladePoppiswapEnergyConverterLevel.Value = trbBladePoppiswapEnergyConverterLevel.Value;
         #endregion Energy Converter
@@ -2848,7 +2863,7 @@ namespace XC2SaveNETThingy
         #endregion Skill RAM
 
         #region Specials Enhancing RAM
-        private void chkBladePoppiswapSpecials1Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials0_Enabled = chkBladePoppiswapSpecials1Enabled.Checked;
+        private void chkBladePoppiswapSpecials1Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials0_Enabled = chkBladePoppiswapSpecial1Enabled.Checked;
         private void nudBladePoppiswapBArtsEnhance1ID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[0].EnhanceID = (UInt16)nudBladePoppiswapBArtsEnhance1ID.Value;
         private void nudBladePoppiswapBArtsEnhance1RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[0].RecastRev = (UInt16)nudBladePoppiswapBArtsEnhance1RecastRev.Value;
         private void nudBladePoppiswapBArtsEnhance1ItemID_ValueChanged(object sender, EventArgs e)
@@ -2979,7 +2994,7 @@ namespace XC2SaveNETThingy
         private void nudBladePoppiswapSkillUpgrade1Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.SkillUpgradeItemHandles[0].Serial = (UInt32)nudBladePoppiswapSkillUpgrade1Serial.Value;
         private void cbxBladePoppiswapSkillUpgrade1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade1ID.Value = Convert.ToUInt16(cbxBladePoppiswapSkillUpgrade1ID.SelectedValue);
         private void cbxBladePoppiswapSkillUpgrade1Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade1Type.Value = Convert.ToByte(cbxBladePoppiswapSkillUpgrade1Type.SelectedValue);
-        private void chkBladePoppiswapSkillUpgrade1Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill0_Enabled = chkBladePoppiswapSkillUpgrade1Enabled.Checked;
+        private void chkBladePoppiswapSkillUpgrade1Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill0_Enabled = chkBladePoppiswapMiscSkillUpgrade1Enabled.Checked;
 
         private void nudBladePoppiswapSkillUpgrade2ID_ValueChanged(object sender, EventArgs e)
         {
@@ -2994,7 +3009,7 @@ namespace XC2SaveNETThingy
         private void nudBladePoppiswapSkillUpgrade2Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.SkillUpgradeItemHandles[1].Serial = (UInt32)nudBladePoppiswapSkillUpgrade2Serial.Value;
         private void cbxBladePoppiswapSkillUpgrade2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade2ID.Value = Convert.ToUInt16(cbxBladePoppiswapSkillUpgrade2ID.SelectedValue);
         private void cbxBladePoppiswapSkillUpgrade2Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade2Type.Value = Convert.ToByte(cbxBladePoppiswapSkillUpgrade2Type.SelectedValue);
-        private void chkBladePoppiswapSkillUpgrade2Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill1_Enabled = chkBladePoppiswapSkillUpgrade2Enabled.Checked;
+        private void chkBladePoppiswapSkillUpgrade2Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill1_Enabled = chkBladePoppiswapMiscSkillUpgrade2Enabled.Checked;
 
         private void nudBladePoppiswapSkillUpgrade3ID_ValueChanged(object sender, EventArgs e)
         {
@@ -3009,16 +3024,16 @@ namespace XC2SaveNETThingy
         private void nudBladePoppiswapSkillUpgrade3Serial_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.SkillUpgradeItemHandles[2].Serial = (UInt32)nudBladePoppiswapSkillUpgrade3Serial.Value;
         private void cbxBladePoppiswapSkillUpgrade3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade3ID.Value = Convert.ToUInt16(cbxBladePoppiswapSkillUpgrade3ID.SelectedValue);
         private void cbxBladePoppiswapSkillUpgrade3Type_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapSkillUpgrade3Type.Value = Convert.ToByte(cbxBladePoppiswapSkillUpgrade3Type.SelectedValue);
-        private void chkBladePoppiswapSkillUpgrade3Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill2_Enabled = chkBladePoppiswapSkillUpgrade3Enabled.Checked;
+        private void chkBladePoppiswapSkillUpgrade3Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Skill2_Enabled = chkBladePoppiswapMiscSkillUpgrade3Enabled.Checked;
         #endregion Skill Upgrade
 
         #endregion Blade Poppiswap
 
         #region Blade Fav Pouch Stuff
-        private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory0Unlocked.Checked;
-        private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem0Unlocked.Checked;
-        private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
-        private void chkBladeFavoriteItem1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1Unlocked = chkBladeFavoriteItem1Unlocked.Checked;
+        private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
+        private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem1Unlocked.Checked;
+        private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory2Unlocked.Checked;
+        private void chkBladeFavoriteItem1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1Unlocked = chkBladeFavoriteItem2Unlocked.Checked;
 
         private void nudBladeFavoriteItem0_ValueChanged(object sender, EventArgs e)
         {
@@ -4558,6 +4573,14 @@ namespace XC2SaveNETThingy
         #endregion XC2Save Events
 
         #endregion Events
+
+        void UpdateControlText()
+        {
+            foreach (GroupBox gbx in tabMain.Controls)
+            {
+                //gbx.Text = FrmMainText.Rows["" + gbx.Name]
+            }
+        }
     }
 }
 

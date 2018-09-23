@@ -468,6 +468,14 @@ namespace XC2SaveNETThingy
             return GetDataSet(query).Tables[0];
         }
 
+        public static DataTable GetFrmMainText(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ControlName, Text_" + LANG_STR[l] + " AS Text FROM FrmMainText";
+
+            return GetDataSet(query).Tables[0];
+        }
+
         /// <summary>
         /// Method for getting data from database and binding to DataSet
         /// </summary>

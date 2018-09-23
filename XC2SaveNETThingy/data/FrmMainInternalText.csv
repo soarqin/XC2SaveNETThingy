@@ -1,0 +1,25 @@
+Name	Text_EN	Text_CN
+		
+// ITEMS COLUMNS		
+ItemColumnID	Item ID	
+ItemColumnName	Item Name	
+ItemColumnType	Item Type	
+ItemColumnTypeName	Item Type Name	
+ItemColumnQty	Quantity	
+ItemColumnEquipped	Equipped	
+ItemColumnTimeAcquiredHour	Hour	
+ItemColumnITimeAcquiredMinute	Minute	
+ItemColumnTimeAcquiredSecond	Second	
+ItemColumnSerial	Serial	
+ItemColumnUnk1	Unk1	
+ItemColumnUnk2	Unk2	
+ItemColumnUnk3	Unk3	
+		
+// COMBO BOX GENERIC TEXT		
+AchievementTasks	Achievement Task	
+MercGroupPresets	Preset 	
+WeatherInfos	Weather Info	
+Events	Event 	
+CommonBladeIDs	Common Blade ID 	
+QuestIDs	Quest ID 	
+ContentVersions	Content Version 	
