@@ -264,6 +264,16 @@ namespace XC2SaveNETThingy
             return GetDataSet(query).Tables[0];
         }
 
+        public static DataTable FavCategoriesIra(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM FavCategoriesIra";
+
+            return GetDataSet(query).Tables[0];
+        }
+
         public static DataTable GetCoreChips(LANG l = LANG.EN)
         {
             string query =
@@ -468,12 +478,116 @@ namespace XC2SaveNETThingy
             return GetDataSet(query).Tables[0];
         }
 
-        public static DataTable GetFrmMainText(LANG l = LANG.EN)
+        public static Dictionary<int, string> Flags1Bit(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Flags1Bit";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(Convert.ToInt32(r[0]), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<int, string> Flags8Bit(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Flags8Bit";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(Convert.ToInt32(r[0]), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<int, string> Flags16Bit(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Flags16Bit";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(Convert.ToInt32(r[0]), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<int, string> Flags32Bit(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Flags32Bit";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(Convert.ToInt32(r[0]), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<string, string> GetFrmAboutText(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ControlName, Text_" + LANG_STR[l] + " AS Text FROM FrmAboutText";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(r[0].ToString(), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<string, string> GetFrmMFAQText(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ControlName, Text_" + LANG_STR[l] + " AS Text FROM FrmFAQText";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(r[0].ToString(), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<string, string> GetFrmMainText(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ControlName, Text_" + LANG_STR[l] + " AS Text FROM FrmMainText";
 
-            return GetDataSet(query).Tables[0];
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(r[0].ToString(), r[1].ToString());
+
+            return dict;
+        }
+
+        public static Dictionary<string, string> GetFrmMainInternalText(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT Name, Text_" + LANG_STR[l] + " AS Text FROM FrmMainInternalText";
+
+            DataTable dt = GetDataSet(query).Tables[0];
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            foreach (DataRow r in dt.Rows)
+                dict.Add(r[0].ToString(), r[1].ToString());
+
+            return dict;
         }
 
         /// <summary>

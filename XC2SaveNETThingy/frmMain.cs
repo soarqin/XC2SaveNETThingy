@@ -26,8 +26,11 @@ namespace XC2SaveNETThingy
         private bool BladeAffinityRewardEditorIsLoading = false;
         private Point BladeAffinityRewardCurrentlyEditingPoint = new Point(0, 0);
 
-        private XC2Data.LANG lang = XC2Data.LANG.CN;
-        private DataTable FrmMainText;
+        private Dictionary<string, string> config;
+
+        private XC2Data.LANG lang = XC2Data.LANG.EN;
+        private Dictionary<string, string> FrmMainText;
+        private Dictionary<string, string> FrmMainInternalText;
         #endregion Globals
 
         #region Constructor
@@ -66,29 +69,61 @@ namespace XC2SaveNETThingy
         private void SetupComboBoxes()
         {
             #region Misc
+            int cbxAchievementTasksIndex = cbxAchievementTasks.SelectedIndex;
+            int cbxMercGroupPresetsIndex = cbxMercGroupPresets.SelectedIndex;
+            int cbxWeatherInfoIndex = cbxWeatherInfo.SelectedIndex;
+            int cbxEventsIndex = cbxEvents.SelectedIndex;
+            int cbxCommonBladeIDsIndex = cbxCommonBladeIDs.SelectedIndex;
+            int cbxQuestIDsIndex = cbxQuestIDs.SelectedIndex;
+            int cbxContentVersionsIndex = cbxContentVersions.SelectedIndex;
+            
+            cbxAchievementTasks.Items.Clear();
+            cbxMercGroupPresets.Items.Clear();
+            cbxWeatherInfo.Items.Clear();
+            cbxEvents.Items.Clear();
+            cbxCommonBladeIDs.Items.Clear();
+            cbxQuestIDs.Items.Clear();
+            cbxContentVersions.Items.Clear();
+            
             for (int i = 0; i < TaskAchieve.COUNT; i++)
-                cbxAchievementTasks.Items.Add("Achievement Task " + (i + 1));
+                cbxAchievementTasks.Items.Add(FrmMainInternalText["AchievementTasks"] + (i + 1));
 
             for (int i = 0; i < MercGroupPreset.COUNT; i++)
-                cbxMercGroupPresets.Items.Add("Preset " + (i + 1));
+                cbxMercGroupPresets.Items.Add(FrmMainInternalText["MercGroupPresets"] + (i + 1));
 
             for (int i = 0; i < WeatherInfo.COUNT; i++)
-                cbxWeatherInfo.Items.Add("Weather Info " + (i + 1));
+                cbxWeatherInfo.Items.Add(FrmMainInternalText["WeatherInfos"] + (i + 1));
 
             for (int i = 0; i < Event.COUNT; i++)
-                cbxEvents.Items.Add("Event " + (i + 1));
+                cbxEvents.Items.Add(FrmMainInternalText["Events"] + (i + 1));
 
             for (int i = 0; i < XC2Save.COMMON_BLADE_IDS_COUNT; i++)
-                cbxCommonBladeIDs.Items.Add("Common Blade ID " + (i + 1));
+                cbxCommonBladeIDs.Items.Add(FrmMainInternalText["CommonBladeIDs"] + (i + 1));
 
             for (int i = 0; i < XC2Save.QUEST_ID_COUNT; i++)
-                cbxQuestIDs.Items.Add("Quest ID " + (i + 1));
+                cbxQuestIDs.Items.Add(FrmMainInternalText["QuestIDs"] + (i + 1));
 
             for (int i = 0; i < XC2Save.CONTENT_VERSION_COUNT; i++)
-                cbxContentVersions.Items.Add("Content Version " + (i + 1));
+                cbxContentVersions.Items.Add(FrmMainInternalText["ContentVersions"] + (i + 1));
+
+            cbxAchievementTasks.SelectedIndex = cbxAchievementTasksIndex;
+            cbxMercGroupPresets.SelectedIndex = cbxMercGroupPresetsIndex;
+            cbxWeatherInfo.SelectedIndex = cbxWeatherInfoIndex;
+            cbxEvents.SelectedIndex = cbxEventsIndex;
+            cbxCommonBladeIDs.SelectedIndex = cbxCommonBladeIDsIndex;
+            cbxQuestIDs.SelectedIndex = cbxQuestIDsIndex;
+            cbxContentVersions.SelectedIndex = cbxContentVersionsIndex;
             #endregion Misc
 
             #region Driver
+            int cbxDriverPouchesIndex = cbxDriverPouches.SelectedIndex;
+            cbxDriverPouches.Items.Clear();
+
+            for (int i = 0; i < Pouch.COUNT; i++)
+                cbxDriverPouches.Items.Add(FrmMainInternalText["Pouches"] + (i + 1).ToString());
+
+            cbxDriverPouches.SelectedIndex = cbxDriverPouchesIndex;
+
             cbxDriverID.BindDataTable(XC2Data.Drivers(lang));
             cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(lang), "Desc");
 
@@ -98,9 +133,6 @@ namespace XC2SaveNETThingy
 
             cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1, lang), "FriendlyName");
             cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1, lang));
-            
-            for (int i = 0; i < Pouch.COUNT; i++)
-                cbxDriverPouches.Items.Add("Pouch " + (i + 1).ToString());
 
             cbxDriverPouchesItemID.BindDataTable(XC2Data.Items(lang));
 
@@ -110,6 +142,7 @@ namespace XC2SaveNETThingy
             cbxDriverAccessory1Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxDriverAccessory2Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxDriverAccessory3Type.BindDataTable(XC2Data.ItemTypes(lang));
+
             #region 1.5.0
             cbxDriverWeapons150.BindDataTable(XC2Data.WeaponTypes(4, lang));
             cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
@@ -195,8 +228,13 @@ namespace XC2SaveNETThingy
             #endregion Blade
 
             #region Party
+            int cbxPartyMembersIndex = cbxPartyMembers.SelectedIndex;
+            cbxPartyMembers.Items.Clear();
+
             for (int i = 0; i < XC2Party.MEMBERS_COUNT; i++)
-                cbxPartyMembers.Items.Add("Member " + (i + 1).ToString());
+                cbxPartyMembers.Items.Add(FrmMainInternalText["PartyMembers"] + (i + 1).ToString());
+
+            cbxPartyMembers.SelectedIndex = cbxPartyMembersIndex;
 
             cbxPartyLeader.BindDataTable(XC2Data.Drivers(lang));
             cbxPartyMemberDriver.BindDataTable(XC2Data.Drivers(lang));
@@ -218,8 +256,8 @@ namespace XC2SaveNETThingy
                     Console.WriteLine("Save File Type: 1.5.0+");
                     if (!tbcMain.TabPages.Contains(tab150RawData))
                         tbcMain.TabPages.Add(tab150RawData);
-                    if (!tbcDrivers.TabPages.Contains(tabDriver150))
-                        tbcDrivers.TabPages.Add(tabDriver150);
+                    if (!tbcDrivers.TabPages.Contains(tabDrivers150))
+                        tbcDrivers.TabPages.Add(tabDrivers150);
                     hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
                     hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117728);
                     hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117A4C);
@@ -232,8 +270,8 @@ namespace XC2SaveNETThingy
                     Console.WriteLine("Save File Type: Pre-1.5.0 or Unknown");
                     if (tbcMain.TabPages.Contains(tab150RawData))
                         tbcMain.TabPages.Remove(tab150RawData);
-                    if (tbcDrivers.TabPages.Contains(tabDriver150))
-                        tbcDrivers.TabPages.Remove(tabDriver150);
+                    if (tbcDrivers.TabPages.Contains(tabDrivers150))
+                        tbcDrivers.TabPages.Remove(tabDrivers150);
                     hbx150RawDataUnk_0x1176A0.ByteProvider = null;
                     hbx150RawDataUnk_0x117728.ByteProvider = null;
                     hbx150RawDataUnk_0x117A4C.ByteProvider = null;
@@ -317,37 +355,39 @@ namespace XC2SaveNETThingy
                 cbxContentVersions.SelectedIndex = 0;
                 #endregion Main
 
-                #region Drivers
+                #region Drivers                
+                lbxDrivers.DataSource = null;
+                lbxDrivers.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 lbxDrivers.DataSource = SAVEDATA.Drivers;
-                lbxDrivers.SelectedIndex = 0;
 
                 RefreshDriverList();
                 #endregion Drivers
 
                 #region Blades
+                lbxBlades.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 lbxBlades.DataSource = SAVEDATA.Blades;
                 lbxBlades.SelectedIndex = 0;
                 #endregion Blades
 
                 #region Items
-                SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.CoreChipBox, XC2Data.GetCoreChips());
-                SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.AccessoryBox, XC2Data.GetAccessories());
-                SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.AuxCoreBox, XC2Data.GetAuxCores());
-                SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.CylinderBox, XC2Data.GetCylinders());
-                SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.KeyItemBox, XC2Data.GetKeyItems());
-                SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoItemBox, XC2Data.GetInfoItems());
+                SetupItemBox(dgvPcWpnChipBox, SAVEDATA.ItemBox.CoreChipBox, XC2Data.GetCoreChips(lang));
+                SetupItemBox(dgvPcEquipBox, SAVEDATA.ItemBox.AccessoryBox, XC2Data.GetAccessories(lang));
+                SetupItemBox(dgvEquipOrbBox, SAVEDATA.ItemBox.AuxCoreBox, XC2Data.GetAuxCores(lang));
+                SetupItemBox(dgvSalvageBox, SAVEDATA.ItemBox.CylinderBox, XC2Data.GetCylinders(lang));
+                SetupItemBox(dgvPreciousBox, SAVEDATA.ItemBox.KeyItemBox, XC2Data.GetKeyItems(lang));
+                SetupItemBox(dgvInfoBox, SAVEDATA.ItemBox.InfoItemBox, XC2Data.GetInfoItems(lang));
                 SetupItemBox(dgvEventBox, SAVEDATA.ItemBox.EventBox, null);
-                SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectibleBox, XC2Data.GetCollectibles());
-                SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure());
-                SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.UnrefinedAuxCoreBox, XC2Data.GetUnrefinedAuxCores());
-                SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.PouchItemBox, XC2Data.GetPouchItems());
-                SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CoreCrystalBox, XC2Data.GetCoreCrystals());
-                SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters());
-                SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.PoppiRoleCPUBox, XC2Data.GetPoppiRoleCPU());
-                SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.PoppiElementCoreBox, XC2Data.GetPoppiElementCores());
-                SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox, XC2Data.GetPoppiSpecialsEnhancingRAM());
-                SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.PoppiArtsCardBox, XC2Data.GetPoppiArtsCards());
-                SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.PoppiSkillRAMBox, XC2Data.GetPoppiSkillRAM());
+                SetupItemBox(dgvCollectionListBox, SAVEDATA.ItemBox.CollectibleBox, XC2Data.GetCollectibles(lang));
+                SetupItemBox(dgvTreasureBox, SAVEDATA.ItemBox.TreasureBox, XC2Data.GetTreasure(lang));
+                SetupItemBox(dgvEmptyOrbBox, SAVEDATA.ItemBox.UnrefinedAuxCoreBox, XC2Data.GetUnrefinedAuxCores(lang));
+                SetupItemBox(dgvFavoriteBox, SAVEDATA.ItemBox.PouchItemBox, XC2Data.GetPouchItems(lang));
+                SetupItemBox(dgvCrystalListBox, SAVEDATA.ItemBox.CoreCrystalBox, XC2Data.GetCoreCrystals(lang));
+                SetupItemBox(dgvBoosterBox, SAVEDATA.ItemBox.BoosterBox, XC2Data.GetBoosters(lang));
+                SetupItemBox(dgvHanaRoleBox, SAVEDATA.ItemBox.PoppiRoleCPUBox, XC2Data.GetPoppiRoleCPU(lang));
+                SetupItemBox(dgvHanaAtrBox, SAVEDATA.ItemBox.PoppiElementCoreBox, XC2Data.GetPoppiElementCores(lang));
+                SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox, XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
+                SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.PoppiArtsCardBox, XC2Data.GetPoppiArtsCards(lang));
+                SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.PoppiSkillRAMBox, XC2Data.GetPoppiSkillRAM(lang));
 
                 nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
                 nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
@@ -466,31 +506,36 @@ namespace XC2SaveNETThingy
                 #endregion Map
 
                 #region Merc Groups
-
                 nudMercGroupsCount.Value = SAVEDATA.MercGroupCount;
 
                 #region Merc Group 1
                 nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
+                cbxMercGroup1Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
 
                 nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
+                cbxMercGroup1Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
 
                 nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
+                cbxMercGroup1Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
 
                 nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
+                cbxMercGroup1Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
 
                 nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
+                cbxMercGroup1Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
 
                 nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
+                cbxMercGroup1Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
 
@@ -505,26 +550,32 @@ namespace XC2SaveNETThingy
 
                 #region Merc Group 2
                 nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
+                cbxMercGroup2Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
 
                 nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
+                cbxMercGroup2Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
 
                 nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
+                cbxMercGroup2Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
 
                 nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
+                cbxMercGroup2Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
 
                 nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
+                cbxMercGroup2Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
 
                 nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
+                cbxMercGroup2Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
 
@@ -539,26 +590,32 @@ namespace XC2SaveNETThingy
 
                 #region Merc Group 3
                 nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
+                cbxMercGroup3Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
 
                 nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
+                cbxMercGroup3Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
 
                 nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
+                cbxMercGroup3Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
 
                 nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
+                cbxMercGroup3Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
 
                 nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
+                cbxMercGroup3Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
 
                 nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
+                cbxMercGroup3Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
                 cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
 
@@ -573,16 +630,15 @@ namespace XC2SaveNETThingy
 
                 cbxMercGroupPresets.SelectedIndex = 1;
                 cbxMercGroupPresets.SelectedIndex = 0;
-
                 #endregion Merc Groups
 
                 #region Flags
-
                 SetupFlagEditors();
                 #endregion Flags
 
                 #region XC2Save Events
                 nudEventsCount.Value = SAVEDATA.EventsCount;
+                cbxEvents.SelectedIndex = 0;
                 #endregion XC2Save Events
 
                 #region Unknown
@@ -607,15 +663,15 @@ namespace XC2SaveNETThingy
             catch (Exception ex)
             {
                 string message =
-                    ex.Message + Environment.NewLine +
-                    Environment.NewLine +
-                    "Data has not been loaded." + Environment.NewLine +
+                    "Unable to Load save file!" + Environment.NewLine + 
                     Environment.NewLine + 
-                    "Stacktrace for developer:" + Environment.NewLine + 
-                    ex.StackTrace;
+                    ex.Message;
+                string title = "ERROR: Cannot load save file!";
 
-                MessageBox.Show(message, "File Load Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //throw ex;
+                FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                ebx.ShowDialog();
+
+                throw ex;
             }
         }
         private void LoadFile()
@@ -636,7 +692,14 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string title = "ERROR: Cannot save save file!";
+                    string message =
+                        "Unable to save the save file!" + Environment.NewLine + 
+                        Environment.NewLine + 
+                        ex.Message;
+
+                    FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                    ebx.ShowDialog();
                     //throw ex;
                 }
             }
@@ -650,6 +713,7 @@ namespace XC2SaveNETThingy
             int index = lbxDrivers.SelectedIndex;
 
             lbxDrivers.DataSource = null;
+            lbxDrivers.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
             lbxDrivers.DataSource = SAVEDATA.Drivers;
 
             if (lbxDrivers.SelectedIndex != index)
@@ -664,6 +728,9 @@ namespace XC2SaveNETThingy
             int i1 = cbxDriverBlade1.SelectedIndex;
             int i2 = cbxDriverBlade2.SelectedIndex;
             int i3 = cbxDriverBlade3.SelectedIndex;
+            cbxDriverBlade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
+            cbxDriverBlade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
+            cbxDriverBlade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
             cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade2.DataSource = SAVEDATA.Blades.ToList();
             cbxDriverBlade3.DataSource = SAVEDATA.Blades.ToList();
@@ -898,9 +965,9 @@ namespace XC2SaveNETThingy
             }
             #endregion Driver 1.5.0
         }
-        private static void CreateDriverSkillComboBox(ComboBox box, int value = 0)
+        private void CreateDriverSkillComboBox(ComboBox box, int value = 0)
         {
-            box.DataSource = XC2Data.DriverSkills();
+            box.DataSource = XC2Data.DriverSkills(lang);
             box.DisplayMember = "Name";
             box.ValueMember = "ID";
             box.SelectedValue = value;
@@ -1020,24 +1087,24 @@ namespace XC2SaveNETThingy
                 nudBladeBArt1RecastRev.Value = b.BArts[0].RecastRev;
                 nudBladeBArt1Level.Value = b.BArts[0].Level;
                 nudBladeBArt1MaxLevel.Value = b.BArts[0].MaxLevel;
-                hbxBladeBArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].Unk_0x04);
-                hbxBladeBArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[0].Unk_0x09);
+                hbxBladeBArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.BArts[0].Unk_0x04);
+                hbxBladeBArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.BArts[0].Unk_0x09);
 
                 nudBladeBArt2ID.Value = b.BArts[1].ID;
                 cbxBladeBArt2ID.SelectedValue = b.BArts[1].ID;
                 nudBladeBArt2RecastRev.Value = b.BArts[1].RecastRev;
                 nudBladeBArt2Level.Value = b.BArts[1].Level;
                 nudBladeBArt2MaxLevel.Value = b.BArts[1].MaxLevel;
-                hbxBladeBArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].Unk_0x04);
-                hbxBladeBArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[1].Unk_0x09);
+                hbxBladeBArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.BArts[1].Unk_0x04);
+                hbxBladeBArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.BArts[1].Unk_0x09);
 
                 nudBladeBArt3ID.Value = b.BArts[2].ID;
                 cbxBladeBArt3ID.SelectedValue = b.BArts[2].ID;
                 nudBladeBArt3RecastRev.Value = b.BArts[2].RecastRev;
                 nudBladeBArt3Level.Value = b.BArts[2].Level;
                 nudBladeBArt3MaxLevel.Value = b.BArts[2].MaxLevel;
-                hbxBladeBArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x04);
-                hbxBladeBArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].BArts[2].Unk_0x09);
+                hbxBladeBArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.BArts[2].Unk_0x04);
+                hbxBladeBArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.BArts[2].Unk_0x09);
                 #endregion Blade Specials
 
                 #region Blade Arts
@@ -1046,24 +1113,24 @@ namespace XC2SaveNETThingy
                 nudBladeNArt1RecastRev.Value = b.NArts[0].RecastRev;
                 nudBladeNArt1Level.Value = b.NArts[0].Level;
                 nudBladeNArt1MaxLevel.Value = b.NArts[0].MaxLevel;
-                hbxBladeNArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].Unk_0x04);
-                hbxBladeNArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[0].Unk_0x09);
+                hbxBladeNArt1Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.NArts[0].Unk_0x04);
+                hbxBladeNArt1Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.NArts[0].Unk_0x09);
 
                 nudBladeNArt2ID.Value = b.NArts[1].ID;
                 cbxBladeNArt2ID.SelectedValue = b.NArts[1].ID;
                 nudBladeNArt2RecastRev.Value = b.NArts[1].RecastRev;
                 nudBladeNArt2Level.Value = b.NArts[1].Level;
                 nudBladeNArt2MaxLevel.Value = b.NArts[1].MaxLevel;
-                hbxBladeNArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].Unk_0x04);
-                hbxBladeNArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[1].Unk_0x09);
+                hbxBladeNArt2Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.NArts[1].Unk_0x04);
+                hbxBladeNArt2Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.NArts[1].Unk_0x09);
 
                 nudBladeNArt3ID.Value = b.NArts[2].ID;
                 cbxBladeNArt3ID.SelectedValue = b.NArts[2].ID;
                 nudBladeNArt3RecastRev.Value = b.NArts[2].RecastRev;
                 nudBladeNArt3Level.Value = b.NArts[2].Level;
                 nudBladeNArt3MaxLevel.Value = b.NArts[2].MaxLevel;
-                hbxBladeNArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x04);
-                hbxBladeNArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].NArts[2].Unk_0x09);
+                hbxBladeNArt3Unk_0x04.ByteProvider = new FixedLengthByteProvider(b.NArts[2].Unk_0x04);
+                hbxBladeNArt3Unk_0x09.ByteProvider = new FixedLengthByteProvider(b.NArts[2].Unk_0x09);
                 #endregion Blade Arts
 
                 #region Blade Battle Skills
@@ -1114,29 +1181,29 @@ namespace XC2SaveNETThingy
                 #endregion Blade Field Skills
 
                 #region Blade Affinity Chart
-                nudBladeKeyAffinityRewardID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.ID;
-                nudBladeKeyAffinityRewardAlignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.Alignment;
+                nudBladeKeyAffinityRewardID.Value = b.KeyAchievement.ID;
+                nudBladeKeyAffinityRewardAlignment.Value = b.KeyAchievement.Alignment;
 
-                nudBladeAffBladeSpecial1ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[0].ID;
-                nudBladeAffBladeSpecial1Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[0].Alignment;
-                nudBladeAffBladeSpecial2ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[1].ID;
-                nudBladeAffBladeSpecial2Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[1].Alignment;
-                nudBladeAffBladeSpecial3ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[2].ID;
-                nudBladeAffBladeSpecial3Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[2].Alignment;
+                nudBladeAffBladeSpecial1ID.Value = b.BArtsAchieve[0].ID;
+                nudBladeAffBladeSpecial1Alignment.Value = b.BArtsAchieve[0].Alignment;
+                nudBladeAffBladeSpecial2ID.Value = b.BArtsAchieve[1].ID;
+                nudBladeAffBladeSpecial2Alignment.Value = b.BArtsAchieve[1].Alignment;
+                nudBladeAffBladeSpecial3ID.Value = b.BArtsAchieve[2].ID;
+                nudBladeAffBladeSpecial3Alignment.Value = b.BArtsAchieve[2].Alignment;
 
-                nudBladeAffBattleSkill1ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[0].ID;
-                nudBladeAffBattleSkill1Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[1].Alignment;
-                nudBladeAffBattleSkill2ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[1].ID;
-                nudBladeAffBattleSkill2Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[1].Alignment;
-                nudBladeAffBattleSkill3ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[2].ID;
-                nudBladeAffBattleSkill3Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[2].Alignment;
+                nudBladeAffBattleSkill1ID.Value = b.BSkillsAchievement[0].ID;
+                nudBladeAffBattleSkill1Alignment.Value = b.BSkillsAchievement[1].Alignment;
+                nudBladeAffBattleSkill2ID.Value = b.BSkillsAchievement[1].ID;
+                nudBladeAffBattleSkill2Alignment.Value = b.BSkillsAchievement[1].Alignment;
+                nudBladeAffBattleSkill3ID.Value = b.BSkillsAchievement[2].ID;
+                nudBladeAffBattleSkill3Alignment.Value = b.BSkillsAchievement[2].Alignment;
 
-                nudBladeAffFieldSkill1ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[0].ID;
-                nudBladeAffFieldSkill1Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[0].Alignment;
-                nudBladeAffFieldSkill2ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[1].ID;
-                nudBladeAffFieldSkill2Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[1].Alignment;
-                nudBladeAffFieldSkill3ID.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].ID;
-                nudBladeAffFieldSkill3Alignment.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].Alignment;
+                nudBladeAffFieldSkill1ID.Value = b.FSkillsAchievement[0].ID;
+                nudBladeAffFieldSkill1Alignment.Value = b.FSkillsAchievement[0].Alignment;
+                nudBladeAffFieldSkill2ID.Value = b.FSkillsAchievement[1].ID;
+                nudBladeAffFieldSkill2Alignment.Value = b.FSkillsAchievement[1].Alignment;
+                nudBladeAffFieldSkill3ID.Value = b.FSkillsAchievement[2].ID;
+                nudBladeAffFieldSkill3Alignment.Value = b.FSkillsAchievement[2].Alignment;
                 #endregion Blade Affinity Chart
 
                 #region Blade Poppiswap
@@ -1197,8 +1264,8 @@ namespace XC2SaveNETThingy
 
                 #region Blade Poppiswap Specials Enhancing RAM
                 chkBladePoppiswapSpecial1Enabled.Checked = b.Poppiswap.OpenCircuits.Specials0_Enabled;
-                chkBladePoppiswapSpecials2Enabled.Checked = b.Poppiswap.OpenCircuits.Specials1_Enabled;
-                chkBladePoppiswapSpecials3Enabled.Checked = b.Poppiswap.OpenCircuits.Specials2_Enabled;
+                chkBladePoppiswapSpecial2Enabled.Checked = b.Poppiswap.OpenCircuits.Specials1_Enabled;
+                chkBladePoppiswapSpecial3Enabled.Checked = b.Poppiswap.OpenCircuits.Specials2_Enabled;
 
                 nudBladePoppiswapBArtsEnhance1ID.Value = b.Poppiswap.BArtsEnhance[0].EnhanceID;
                 nudBladePoppiswapBArtsEnhance1RecastRev.Value = b.Poppiswap.BArtsEnhance[0].RecastRev;
@@ -1333,14 +1400,14 @@ namespace XC2SaveNETThingy
                 #endregion Blade Other
 
                 #region Blade Unknown
-                hbxBladeUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x002C);
-                hbxBladeUnk_0x0088.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0088);
-                hbxBladeUnk_0x0094.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0094);
-                hbxBladeUnk_0x0676.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0676);
-                hbxBladeUnk_0x067E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x067E);
-                nudBladeUnk_0x0827.Value = SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x0827;
-                hbxBladeUnk_0x084E.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x084E);
-                hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Blades[lbxBlades.SelectedIndex].Unk_0x08A2);
+                hbxBladeUnk_0x002C.ByteProvider = new FixedLengthByteProvider(b.Unk_0x002C);
+                hbxBladeUnk_0x0088.ByteProvider = new FixedLengthByteProvider(b.Unk_0x0088);
+                hbxBladeUnk_0x0094.ByteProvider = new FixedLengthByteProvider(b.Unk_0x0094);
+                hbxBladeUnk_0x0676.ByteProvider = new FixedLengthByteProvider(b.Unk_0x0676);
+                hbxBladeUnk_0x067E.ByteProvider = new FixedLengthByteProvider(b.Unk_0x067E);
+                nudBladeUnk_0x0827.Value = b.Unk_0x0827;
+                hbxBladeUnk_0x084E.ByteProvider = new FixedLengthByteProvider(b.Unk_0x084E);
+                hbxBladeUnk_0x08A2.ByteProvider = new FixedLengthByteProvider(b.Unk_0x08A2);
                 #endregion Blade Unknown
 
                 if (lbxBlades.SelectedIndex < 196)
@@ -1362,7 +1429,7 @@ namespace XC2SaveNETThingy
                 affRewardChartLoc.X > 10 ||
                 affRewardChartLoc.Y > 5)
             {
-                lblBladeAffCurrentRewardEdit.Text = "(none)";
+                lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["AffinityRewardNone"];
                 nudBladeAffRewardQuestID.Value = 0;
                 nudBladeAffRewardCount.Value = 0;
                 nudBladeAffRewardMaxCount.Value = 0;
@@ -1384,52 +1451,52 @@ namespace XC2SaveNETThingy
                 {
                     case 1: // Key Affinity Reward
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Key Affinity Reward, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["KeyAffinityReward"] + " -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 2: // Blade Special 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Blade Special 1, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 3: // Blade Special 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Blade Special 2, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 4: // Blade Special 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Blade Special 3, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 5: // Battle Skill 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Battle Skill 1, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 6: // Battle Skill 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Battle Skill 2, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 7: // Battle Skill 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Battle Skill 3, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 8: // Field Skill 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Field Skill 1, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 9: // Field Skill 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Field Skill 2, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
 
                     case 10: // Field Skill 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = "Field Skill 3, Row " + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
                         break;
                 }
                 if (aq != null)
@@ -1459,7 +1526,7 @@ namespace XC2SaveNETThingy
                 blade.Poppiswap.PowerCapacity < 1 ||
                 blade.Poppiswap.PowerCapacity > 20
                 )
-                return "UNKNOWN";
+                return FrmMainInternalText["PoppiswapUnknownText"];
             else
                 return Convert.ToString(XC2Data.PoppiPowerLevels().Select("ID = " + blade.Poppiswap.PowerCapacity)[0][blade.ID.ToString()]);
         }
@@ -1538,6 +1605,7 @@ namespace XC2SaveNETThingy
                 IsReloadingBlades = true;
                 int i = lbxBlades.SelectedIndex;
                 lbxBlades.DataSource = null;
+                lbxBlades.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
                 lbxBlades.DataSource = SAVEDATA.Blades;
                 lbxBlades.SelectedIndex = i;
                 IsReloadingBlades = false;
@@ -1644,23 +1712,21 @@ namespace XC2SaveNETThingy
             dgv.DataSource = null;
 
             BindingList<Item> ds = new BindingList<Item>(items);
-            //foreach (Item i in items)
-            //    ds.Add(i);
 
             dgv.Columns.Clear();
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", "Item ID", "UInt16", null, 50, 0, 8191));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", "Item Name", null, ItemIDs, 175));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", "Item Type", "Byte", null, 50, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", "Item Type Name", null, XC2Data.ItemTypes(), 175));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", "Quantity", "UInt16", null, 50, 0, 1023));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", "Equipped", null, null, 55));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", "Hour", "UInt32", null, 50, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", "Minute", "Byte", null, 50, 0, 59));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", "Second", "Byte", null, 50, 0, 59));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", "Serial", "UInt32", null, 75, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", "Unk1", null, null, 50));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", "Unk2", null, null, 50));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", "Unk3", "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", FrmMainInternalText["ItemColumnID"], "UInt16", null, 50, 0, 8191));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", FrmMainInternalText["ItemColumnName"], null, ItemIDs, 175));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", FrmMainInternalText["ItemColumnType"], "Byte", null, 50, 0, 63));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", FrmMainInternalText["ItemColumnTypeName"], null, XC2Data.ItemTypes(lang), 175));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", FrmMainInternalText["ItemColumnQty"], "UInt16", null, 50, 0, 1023));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", FrmMainInternalText["ItemColumnEquipped"], null, null, 55));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", FrmMainInternalText["ItemColumnTimeAcquiredHour"], "UInt32", null, 50, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", FrmMainInternalText["ItemColumnTimeAcquiredMinute"], "Byte", null, 50, 0, 59));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", FrmMainInternalText["ItemColumnTimeAcquiredSecond"], "Byte", null, 50, 0, 59));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", FrmMainInternalText["ItemColumnSerial"], "UInt32", null, 75, 0, 67108863));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", FrmMainInternalText["ItemColumnUnk1"], null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", FrmMainInternalText["ItemColumnUnk2"], null, null, 50));
+            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", FrmMainInternalText["ItemColumnUnk3"], "Byte", null, 50, 0, 63));
             dgv.DataSource = ds;
 
             return dgv;
@@ -1922,14 +1988,18 @@ namespace XC2SaveNETThingy
         {
             Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
 
+            config = LoadConfig("settings.cfg");
+            if (config != null)
+            {
+                lang = XC2Data.LANG_STR.FirstOrDefault(l => l.Value == config["Language"]).Key;
+            }
+
+            ReloadLanguage();
+
             // hide 1.5.0+ related tabs
             tbcMain.TabPages.Remove(tab150RawData);
-            tbcDrivers.TabPages.Remove(tabDriver150);
+            tbcDrivers.TabPages.Remove(tabDrivers150);
             gbxDriverWeapons150.Enabled = false;
-
-            FrmMainText = XC2Data.GetFrmMainText(lang);
-
-            SetupComboBoxes();
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2880,7 +2950,7 @@ namespace XC2SaveNETThingy
         private void cbxBladePoppiswapBArtsEnhance1ItemID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapBArtsEnhance1ItemID.Value = Convert.ToUInt16(cbxBladePoppiswapBArtsEnhance1ItemID.SelectedValue);
         private void cbxBladePoppiswapBArtsEnhance1ItemType_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapBArtsEnhance1ItemType.Value = Convert.ToByte(cbxBladePoppiswapBArtsEnhance1ItemType.SelectedValue);
 
-        private void chkBladePoppiswapSpecials2Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials1_Enabled = chkBladePoppiswapSpecials2Enabled.Checked;
+        private void chkBladePoppiswapSpecials2Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials1_Enabled = chkBladePoppiswapSpecial2Enabled.Checked;
         private void nudBladePoppiswapBArtsEnhance2ID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[1].EnhanceID = (UInt16)nudBladePoppiswapBArtsEnhance2ID.Value;
         private void nudBladePoppiswapBArtsEnhance2RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[1].RecastRev = (UInt16)nudBladePoppiswapBArtsEnhance2RecastRev.Value;
         private void nudBladePoppiswapBArtsEnhance2ItemID_ValueChanged(object sender, EventArgs e)
@@ -2897,7 +2967,7 @@ namespace XC2SaveNETThingy
         private void cbxBladePoppiswapBArtsEnhance2ItemID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapBArtsEnhance2ItemID.Value = Convert.ToUInt16(cbxBladePoppiswapBArtsEnhance2ItemID.SelectedValue);
         private void cbxBladePoppiswapBArtsEnhance2ItemType_SelectionChangeCommitted(object sender, EventArgs e) => nudBladePoppiswapBArtsEnhance2ItemType.Value = Convert.ToByte(cbxBladePoppiswapBArtsEnhance2ItemType.SelectedValue);
 
-        private void chkBladePoppiswapSpecials3Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials2_Enabled = chkBladePoppiswapSpecials3Enabled.Checked;
+        private void chkBladePoppiswapSpecials3Enabled_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.OpenCircuits.Specials2_Enabled = chkBladePoppiswapSpecial3Enabled.Checked;
         private void nudBladePoppiswapBArtsEnhance3ID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[2].EnhanceID = (UInt16)nudBladePoppiswapBArtsEnhance3ID.Value;
         private void nudBladePoppiswapBArtsEnhance3RecastRev_ValueChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].Poppiswap.BArtsEnhance[2].RecastRev = (UInt16)nudBladePoppiswapBArtsEnhance3RecastRev.Value;
         private void nudBladePoppiswapBArtsEnhance3ItemID_ValueChanged(object sender, EventArgs e)
@@ -4227,12 +4297,12 @@ namespace XC2SaveNETThingy
                     r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
             }
         }
-        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_1BIT);
+        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags1Bit());
         private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
         private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
-        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_8BIT);
-        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_16BIT);
-        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, FlagData.NAMES_32BIT);
+        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags8Bit());
+        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags16Bit());
+        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags32Bit());
         #endregion Game Flag Data
 
         #region Party
@@ -4379,7 +4449,6 @@ namespace XC2SaveNETThingy
         private void nudMercGroup1MissionID_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionID = (UInt32)nudMercGroup1MissionID.Value;
         private void nudMercGroup1MissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionTime = (UInt32)nudMercGroup1MissionTime.Value;
         private void nudMercGroup1OriginalMissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup1.MissionTimeOriginal = (UInt32)nudMercGroup1OriginalMissionTime.Value;
-
         #endregion Marc Group 1
 
         #region Merc Group 2
@@ -4483,7 +4552,6 @@ namespace XC2SaveNETThingy
         private void nudMercGroupPresetMember4_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[3] = (UInt16)nudMercGroupPresetMember4.Value;
         private void nudMercGroupPresetMember5_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[4] = (UInt16)nudMercGroupPresetMember5.Value;
         private void nudMercGroupPresetMember6_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5] = (UInt16)nudMercGroupPresetMember6.Value;
-
         #endregion Merc Groups
 
         #region XC2Save Events
@@ -4569,16 +4637,130 @@ namespace XC2SaveNETThingy
         private void nudEventBladeID8_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[7] = (UInt16)nudEventBladeID8.Value;
         private void nudEventBladeID9_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[8] = (UInt16)nudEventBladeID9.Value;
         private void nudEventBladeID10_ValueChanged(object sender, EventArgs e) => SAVEDATA.Events[cbxEvents.SelectedIndex].BladeIDs[9] = (UInt16)nudEventBladeID10.Value;
-
         #endregion XC2Save Events
 
         #endregion Events
 
-        void UpdateControlText()
+        void UpdateControlText(Control ctl)
         {
-            foreach (GroupBox gbx in tabMain.Controls)
+            if (FrmMainText.ContainsKey(ctl.Name))
+                ctl.Text = FrmMainText[ctl.Name].Replace(@"\n", Environment.NewLine);
+
+            foreach (Control chctl in ctl.Controls)
+                UpdateControlText(chctl);
+        }
+        void UpdateMenuStripText(MenuStrip ms)
+        {
+            foreach (ToolStripMenuItem tsmi in ms.Items)
             {
-                //gbx.Text = FrmMainText.Rows["" + gbx.Name]
+                if (FrmMainText.ContainsKey(tsmi.Name))
+                    tsmi.Text = FrmMainText[tsmi.Name].Replace(@"\n", Environment.NewLine);
+
+                foreach (ToolStripDropDownItem ddi in tsmi.DropDownItems)
+                    if (FrmMainText.ContainsKey(ddi.Name))
+                        ddi.Text = FrmMainText[ddi.Name].Replace(@"\n", Environment.NewLine);
+            }
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigLanguageUpdate(XC2Data.LANG.EN);
+        }
+        private void chineseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigLanguageUpdate(XC2Data.LANG.CN);
+        }
+
+        private void ConfigLanguageUpdate(XC2Data.LANG l)
+        {
+            config["Language"] = XC2Data.LANG_STR[l];
+            SaveConfig(config, "settings.cfg");
+            MessageBox.Show("Language setting has been changed. Please restart the program for changes to take effect.", "INFO: Language Setting Changed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ReloadLanguage()
+        {
+            FrmMainText = XC2Data.GetFrmMainText(lang);
+            FrmMainInternalText = XC2Data.GetFrmMainInternalText(lang);
+            UpdateControlText(this);
+            UpdateMenuStripText(menuStrip1);
+
+            SetupComboBoxes();
+        }
+
+        private Dictionary<string, string> CreateNewConfig()
+        {
+            Dictionary<string, string> conf = new Dictionary<string, string>();
+
+            conf.Add("Language", "EN");
+
+            return conf;
+        }
+
+        private Dictionary<string, string> LoadConfig(string path)
+        {
+            try
+            {
+                Dictionary<string, string> conf = new Dictionary<string, string>();
+                string[] data = File.ReadAllLines(path);
+
+                foreach (string line in data)
+                {
+                    if (line.Contains("="))
+                    {
+                        string[] setting = line.Split('=');
+                        conf.Add(setting[0], setting[1]);
+                    }
+                }
+
+                return conf;
+            }
+            catch (FileNotFoundException)
+            {
+                string message =
+                    "Settings file not found, creating new one with default values.";
+
+                MessageBox.Show(message, "WARNING: Settings file not found.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Dictionary<string, string> conf = CreateNewConfig();
+                SaveConfig(conf, "settings.cfg");
+
+                return conf;
+            }
+
+            catch (Exception e)
+            {
+                string message =
+                    "Unable to load settings file, using default values..." + Environment.NewLine +
+                    "Error message for developer:" + Environment.NewLine +
+                    e.Message;
+
+                MessageBox.Show(message, "WARNING: Cannot load settings file!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return CreateNewConfig();
+            }
+        }
+
+        private void SaveConfig(Dictionary<string, string> conf, string path)
+        {
+            string output = "";
+            foreach (KeyValuePair<string, string> kv in conf)
+                output += kv.Key + "=" + kv.Value + Environment.NewLine;
+
+            try
+            {
+                File.WriteAllText(path, output);
+            }
+            catch (Exception ex)
+            {
+                string title = "ERROR: Cannot save settings file!";
+                string message =
+                    "Unable to save settings file!" + Environment.NewLine +
+                    Environment.NewLine +
+                    ex.Message;
+
+                //MessageBox.Show(message, "ERROR: Cannot save settings file!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                ebx.ShowDialog();
             }
         }
     }

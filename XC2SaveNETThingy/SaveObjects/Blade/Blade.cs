@@ -116,6 +116,22 @@ namespace XC2SaveNETThingy
         public Byte AffinityChartStatus { get; set; }
         public Byte[] Unk_0x08A2 { get; set; }
 
+        public string Name_EN
+        {
+            get
+            {
+                return ToString(XC2Data.LANG.EN);
+            }
+        }
+
+        public string Name_CN
+        {
+            get
+            {
+                return ToString(XC2Data.LANG.CN);
+            }
+        }
+
         private static Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
             { "DataType", 0x00 },
@@ -526,20 +542,36 @@ namespace XC2SaveNETThingy
             return result.ToArray();
         }
 
-        public override string ToString()
-        {
-            string name = "";
+        //public override string ToString()
+        //{
+        //    string name = "";
 
+        //    if (CommonNameId > 0)
+        //        name = (string)XC2Data.BladeCommonNames().Select("ID = " + CommonNameId)[0]["Name"];
+
+        //    if (RareNameId > 0)
+        //        name = (string)XC2Data.BladeRareNames().Select("ID = " + RareNameId)[0]["Name"];
+
+        //    if (name == "")
+        //        name = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
+
+        //    return ID + ": " + name;
+        //}
+
+        public string ToString(XC2Data.LANG l)
+        {
             if (CommonNameId > 0)
-                name = (string)XC2Data.BladeCommonNames().Select("ID = " + CommonNameId)[0]["Name"];
+                return ID + ": " + (string)XC2Data.BladeCommonNames(l).Select("ID = " + CommonNameId)[0]["Name"];
 
             if (RareNameId > 0)
-                name = (string)XC2Data.BladeRareNames().Select("ID = " + RareNameId)[0]["Name"];
+                return ID + ": " + (string)XC2Data.BladeRareNames(l).Select("ID = " + RareNameId)[0]["Name"];
 
-            if (name == "")
-                name = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
+            return ToString();
+        }
 
-            return ID + ": " + name;
+        public override string ToString()
+        {
+            return ID + ": " + Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
         }
 
         public Byte[] ExportAffinityChart()

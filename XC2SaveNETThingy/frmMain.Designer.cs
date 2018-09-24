@@ -211,7 +211,7 @@
             this.lblDriverPouchItemID = new System.Windows.Forms.Label();
             this.chkDriverPouchesIsUnlocked = new System.Windows.Forms.CheckBox();
             this.cbxDriverPouches = new System.Windows.Forms.ComboBox();
-            this.label67 = new System.Windows.Forms.Label();
+            this.lblDriverPouch = new System.Windows.Forms.Label();
             this.gbxDriverAccessories = new System.Windows.Forms.GroupBox();
             this.gbxDriverAccessory3 = new System.Windows.Forms.GroupBox();
             this.cbxDriverAccessory3Type = new System.Windows.Forms.ComboBox();
@@ -277,7 +277,7 @@
             this.lblDriverGuardRate = new System.Windows.Forms.Label();
             this.lblDriverEtherDef = new System.Windows.Forms.Label();
             this.lblDriverCriticalRate = new System.Windows.Forms.Label();
-            this.lblDriverPlysDef = new System.Windows.Forms.Label();
+            this.lblDriverPhysDef = new System.Windows.Forms.Label();
             this.lblDriverLuck = new System.Windows.Forms.Label();
             this.lblDriverAgility = new System.Windows.Forms.Label();
             this.lblDriverDexterity = new System.Windows.Forms.Label();
@@ -445,7 +445,7 @@
             this.hbxDriverUnk_0x00A8 = new Be.Windows.Forms.HexBox();
             this.gbxDriverUnk_0x002C = new System.Windows.Forms.GroupBox();
             this.hbxDriverUnk_0x002C = new Be.Windows.Forms.HexBox();
-            this.tabDriver150 = new System.Windows.Forms.TabPage();
+            this.tabDrivers150 = new System.Windows.Forms.TabPage();
             this.lblDriver150Note = new System.Windows.Forms.Label();
             this.gbxDriverWeapons150 = new System.Windows.Forms.GroupBox();
             this.cbxDriverWeaponArt150Id3 = new System.Windows.Forms.ComboBox();
@@ -457,8 +457,8 @@
             this.nudDriverWeaponArt150Id2 = new System.Windows.Forms.NumericUpDown();
             this.nudDriverWeaponArt150Id1 = new System.Windows.Forms.NumericUpDown();
             this.lblDriverWeapon150 = new System.Windows.Forms.Label();
-            this.label386 = new System.Windows.Forms.Label();
-            this.label387 = new System.Windows.Forms.Label();
+            this.lblDriverWeapon150TotalWeaponPoints = new System.Windows.Forms.Label();
+            this.lblDriverWeapon150WeaponPoints = new System.Windows.Forms.Label();
             this.lblDriverWeapon150Art3ID = new System.Windows.Forms.Label();
             this.cbxDriverWeapons150 = new System.Windows.Forms.ComboBox();
             this.lblDriverWeapon150Art1ID = new System.Windows.Forms.Label();
@@ -594,7 +594,7 @@
             this.nudBladeCompassionLevel = new System.Windows.Forms.NumericUpDown();
             this.lblBladeIdeasCompassionLevel = new System.Windows.Forms.Label();
             this.lblBladeIdeasCompassionPoints = new System.Windows.Forms.Label();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.gbxBladeIdeasBravery = new System.Windows.Forms.GroupBox();
             this.nudBladeBraveryPoints = new System.Windows.Forms.NumericUpDown();
             this.nudBladeBraveryLevel = new System.Windows.Forms.NumericUpDown();
             this.lblBladeIdeasBraveryLevel = new System.Windows.Forms.Label();
@@ -896,7 +896,7 @@
             this.nudBladePoppiswapNArts1ItemType = new System.Windows.Forms.NumericUpDown();
             this.gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x08 = new System.Windows.Forms.GroupBox();
             this.hbxBladePoppiswapNArts1Unk_0x08 = new Be.Windows.Forms.HexBox();
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8 = new System.Windows.Forms.Label();
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial = new System.Windows.Forms.Label();
             this.lblBladePoppiswapArtsCardsBattleSkill1Type = new System.Windows.Forms.Label();
             this.gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x06 = new System.Windows.Forms.GroupBox();
             this.hbxBladePoppiswapNArts1Unk_0x06 = new Be.Windows.Forms.HexBox();
@@ -925,7 +925,7 @@
             this.lblBladePoppiswapSpecial3RecastRev = new System.Windows.Forms.Label();
             this.lblBladePoppiswapSpecial3ItemID = new System.Windows.Forms.Label();
             this.lblBladePoppiswapSpecial3EnhanceID = new System.Windows.Forms.Label();
-            this.chkBladePoppiswapSpecials3Enabled = new System.Windows.Forms.CheckBox();
+            this.chkBladePoppiswapSpecial3Enabled = new System.Windows.Forms.CheckBox();
             this.gbxBladePoppiswapSpecial2 = new System.Windows.Forms.GroupBox();
             this.cbxBladePoppiswapBArtsEnhance2ItemType = new System.Windows.Forms.ComboBox();
             this.nudBladePoppiswapBArtsEnhance2ItemSerial = new System.Windows.Forms.NumericUpDown();
@@ -943,7 +943,7 @@
             this.lblBladePoppiswapSpecial2RecastRev = new System.Windows.Forms.Label();
             this.lblBladePoppiswapSpecial2ItemID = new System.Windows.Forms.Label();
             this.lblBladePoppiswapSpecial2EnhanceID = new System.Windows.Forms.Label();
-            this.chkBladePoppiswapSpecials2Enabled = new System.Windows.Forms.CheckBox();
+            this.chkBladePoppiswapSpecial2Enabled = new System.Windows.Forms.CheckBox();
             this.gbxBladePoppiswapSpecial1 = new System.Windows.Forms.GroupBox();
             this.cbxBladePoppiswapBArtsEnhance1ItemType = new System.Windows.Forms.ComboBox();
             this.nudBladePoppiswapBArtsEnhance1ItemSerial = new System.Windows.Forms.NumericUpDown();
@@ -1223,7 +1223,7 @@
             this.dgvCollectionListBox = new System.Windows.Forms.DataGridView();
             this.tabTreasureBox = new System.Windows.Forms.TabPage();
             this.dgvTreasureBox = new System.Windows.Forms.DataGridView();
-            this.tabUnrefinedAuxCoresBox = new System.Windows.Forms.TabPage();
+            this.tabUnrefinedAuxCoreBox = new System.Windows.Forms.TabPage();
             this.dgvEmptyOrbBox = new System.Windows.Forms.DataGridView();
             this.tabPouchItemBox = new System.Windows.Forms.TabPage();
             this.dgvFavoriteBox = new System.Windows.Forms.DataGridView();
@@ -1648,7 +1648,7 @@
             this.tab150RawData = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.lbl150RawDataNote = new System.Windows.Forms.Label();
-            this.groupBox131 = new System.Windows.Forms.GroupBox();
+            this.gbx150RawData = new System.Windows.Forms.GroupBox();
             this.tbc150RawData = new System.Windows.Forms.TabControl();
             this.tab150RawDataUnk_0x1176A0 = new System.Windows.Forms.TabPage();
             this.hbx150RawDataUnk_0x1176A0 = new Be.Windows.Forms.HexBox();
@@ -1679,6 +1679,9 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1882,7 +1885,7 @@
             this.gbxDriverUnk_0x02DC.SuspendLayout();
             this.gbxDriverUnk_0x00A8.SuspendLayout();
             this.gbxDriverUnk_0x002C.SuspendLayout();
-            this.tabDriver150.SuspendLayout();
+            this.tabDrivers150.SuspendLayout();
             this.gbxDriverWeapons150.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints150)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverWeaponPoints150)).BeginInit();
@@ -1951,7 +1954,7 @@
             this.lblBladeIdeasCompassion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCompassionPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCompassionLevel)).BeginInit();
-            this.groupBox17.SuspendLayout();
+            this.gbxBladeIdeasBravery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBraveryPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBraveryLevel)).BeginInit();
             this.gbxBladeIdeasTruth.SuspendLayout();
@@ -2239,7 +2242,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).BeginInit();
             this.tabTreasureBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).BeginInit();
-            this.tabUnrefinedAuxCoresBox.SuspendLayout();
+            this.tabUnrefinedAuxCoreBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).BeginInit();
             this.tabPouchItemBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).BeginInit();
@@ -2470,7 +2473,7 @@
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            this.groupBox131.SuspendLayout();
+            this.gbx150RawData.SuspendLayout();
             this.tbc150RawData.SuspendLayout();
             this.tab150RawDataUnk_0x1176A0.SuspendLayout();
             this.tab150RawDataUnk_0x117728.SuspendLayout();
@@ -4308,7 +4311,7 @@
             this.tbcDrivers.Controls.Add(this.tabDriversMisc);
             this.tbcDrivers.Controls.Add(this.tabDriversSkills);
             this.tbcDrivers.Controls.Add(this.tabDriversUnknown);
-            this.tbcDrivers.Controls.Add(this.tabDriver150);
+            this.tbcDrivers.Controls.Add(this.tabDrivers150);
             this.tbcDrivers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcDrivers.Location = new System.Drawing.Point(0, 0);
             this.tbcDrivers.Name = "tbcDrivers";
@@ -4506,7 +4509,7 @@
             this.gbxDriverPouches.Controls.Add(this.lblDriverPouchItemID);
             this.gbxDriverPouches.Controls.Add(this.chkDriverPouchesIsUnlocked);
             this.gbxDriverPouches.Controls.Add(this.cbxDriverPouches);
-            this.gbxDriverPouches.Controls.Add(this.label67);
+            this.gbxDriverPouches.Controls.Add(this.lblDriverPouch);
             this.gbxDriverPouches.Location = new System.Drawing.Point(227, 137);
             this.gbxDriverPouches.Name = "gbxDriverPouches";
             this.gbxDriverPouches.Size = new System.Drawing.Size(278, 123);
@@ -4598,14 +4601,14 @@
             this.cbxDriverPouches.TabIndex = 1;
             this.cbxDriverPouches.SelectedIndexChanged += new System.EventHandler(this.cbxDriverPouches_SelectedIndexChanged);
             // 
-            // label67
+            // lblDriverPouch
             // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(7, 23);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(41, 13);
-            this.label67.TabIndex = 0;
-            this.label67.Text = "Pouch:";
+            this.lblDriverPouch.AutoSize = true;
+            this.lblDriverPouch.Location = new System.Drawing.Point(7, 23);
+            this.lblDriverPouch.Name = "lblDriverPouch";
+            this.lblDriverPouch.Size = new System.Drawing.Size(41, 13);
+            this.lblDriverPouch.TabIndex = 0;
+            this.lblDriverPouch.Text = "Pouch:";
             // 
             // gbxDriverAccessories
             // 
@@ -5184,7 +5187,7 @@
             this.gbxDriverStats.Controls.Add(this.lblDriverGuardRate);
             this.gbxDriverStats.Controls.Add(this.lblDriverEtherDef);
             this.gbxDriverStats.Controls.Add(this.lblDriverCriticalRate);
-            this.gbxDriverStats.Controls.Add(this.lblDriverPlysDef);
+            this.gbxDriverStats.Controls.Add(this.lblDriverPhysDef);
             this.gbxDriverStats.Controls.Add(this.lblDriverLuck);
             this.gbxDriverStats.Controls.Add(this.lblDriverAgility);
             this.gbxDriverStats.Controls.Add(this.lblDriverDexterity);
@@ -5380,14 +5383,14 @@
             this.lblDriverCriticalRate.TabIndex = 7;
             this.lblDriverCriticalRate.Text = "Critical Rate:";
             // 
-            // lblDriverPlysDef
+            // lblDriverPhysDef
             // 
-            this.lblDriverPlysDef.AutoSize = true;
-            this.lblDriverPlysDef.Location = new System.Drawing.Point(7, 155);
-            this.lblDriverPlysDef.Name = "lblDriverPlysDef";
-            this.lblDriverPlysDef.Size = new System.Drawing.Size(72, 13);
-            this.lblDriverPlysDef.TabIndex = 11;
-            this.lblDriverPlysDef.Text = "Physical Def.:";
+            this.lblDriverPhysDef.AutoSize = true;
+            this.lblDriverPhysDef.Location = new System.Drawing.Point(7, 155);
+            this.lblDriverPhysDef.Name = "lblDriverPhysDef";
+            this.lblDriverPhysDef.Size = new System.Drawing.Size(72, 13);
+            this.lblDriverPhysDef.TabIndex = 11;
+            this.lblDriverPhysDef.Text = "Physical Def.:";
             // 
             // lblDriverLuck
             // 
@@ -7265,17 +7268,17 @@
             this.hbxDriverUnk_0x002C.Size = new System.Drawing.Size(204, 41);
             this.hbxDriverUnk_0x002C.TabIndex = 151;
             // 
-            // tabDriver150
+            // tabDrivers150
             // 
-            this.tabDriver150.Controls.Add(this.lblDriver150Note);
-            this.tabDriver150.Controls.Add(this.gbxDriverWeapons150);
-            this.tabDriver150.Location = new System.Drawing.Point(4, 22);
-            this.tabDriver150.Name = "tabDriver150";
-            this.tabDriver150.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriver150.Size = new System.Drawing.Size(948, 544);
-            this.tabDriver150.TabIndex = 3;
-            this.tabDriver150.Text = "1.5.0+";
-            this.tabDriver150.UseVisualStyleBackColor = true;
+            this.tabDrivers150.Controls.Add(this.lblDriver150Note);
+            this.tabDrivers150.Controls.Add(this.gbxDriverWeapons150);
+            this.tabDrivers150.Location = new System.Drawing.Point(4, 22);
+            this.tabDrivers150.Name = "tabDrivers150";
+            this.tabDrivers150.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDrivers150.Size = new System.Drawing.Size(948, 544);
+            this.tabDrivers150.TabIndex = 3;
+            this.tabDrivers150.Text = "1.5.0+";
+            this.tabDrivers150.UseVisualStyleBackColor = true;
             // 
             // lblDriver150Note
             // 
@@ -7297,8 +7300,8 @@
             this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponArt150Id2);
             this.gbxDriverWeapons150.Controls.Add(this.nudDriverWeaponArt150Id1);
             this.gbxDriverWeapons150.Controls.Add(this.lblDriverWeapon150);
-            this.gbxDriverWeapons150.Controls.Add(this.label386);
-            this.gbxDriverWeapons150.Controls.Add(this.label387);
+            this.gbxDriverWeapons150.Controls.Add(this.lblDriverWeapon150TotalWeaponPoints);
+            this.gbxDriverWeapons150.Controls.Add(this.lblDriverWeapon150WeaponPoints);
             this.gbxDriverWeapons150.Controls.Add(this.lblDriverWeapon150Art3ID);
             this.gbxDriverWeapons150.Controls.Add(this.cbxDriverWeapons150);
             this.gbxDriverWeapons150.Controls.Add(this.lblDriverWeapon150Art1ID);
@@ -7411,23 +7414,23 @@
             this.lblDriverWeapon150.TabIndex = 11;
             this.lblDriverWeapon150.Text = "Weapon:";
             // 
-            // label386
+            // lblDriverWeapon150TotalWeaponPoints
             // 
-            this.label386.AutoSize = true;
-            this.label386.Location = new System.Drawing.Point(6, 126);
-            this.label386.Name = "label386";
-            this.label386.Size = new System.Drawing.Size(110, 13);
-            this.label386.TabIndex = 5;
-            this.label386.Text = "Total Weapon Points:";
+            this.lblDriverWeapon150TotalWeaponPoints.AutoSize = true;
+            this.lblDriverWeapon150TotalWeaponPoints.Location = new System.Drawing.Point(6, 126);
+            this.lblDriverWeapon150TotalWeaponPoints.Name = "lblDriverWeapon150TotalWeaponPoints";
+            this.lblDriverWeapon150TotalWeaponPoints.Size = new System.Drawing.Size(110, 13);
+            this.lblDriverWeapon150TotalWeaponPoints.TabIndex = 5;
+            this.lblDriverWeapon150TotalWeaponPoints.Text = "Total Weapon Points:";
             // 
-            // label387
+            // lblDriverWeapon150WeaponPoints
             // 
-            this.label387.AutoSize = true;
-            this.label387.Location = new System.Drawing.Point(6, 107);
-            this.label387.Name = "label387";
-            this.label387.Size = new System.Drawing.Size(83, 13);
-            this.label387.TabIndex = 4;
-            this.label387.Text = "Weapon Points:";
+            this.lblDriverWeapon150WeaponPoints.AutoSize = true;
+            this.lblDriverWeapon150WeaponPoints.Location = new System.Drawing.Point(6, 107);
+            this.lblDriverWeapon150WeaponPoints.Name = "lblDriverWeapon150WeaponPoints";
+            this.lblDriverWeapon150WeaponPoints.Size = new System.Drawing.Size(83, 13);
+            this.lblDriverWeapon150WeaponPoints.TabIndex = 4;
+            this.lblDriverWeapon150WeaponPoints.Text = "Weapon Points:";
             // 
             // lblDriverWeapon150Art3ID
             // 
@@ -8864,7 +8867,7 @@
             // 
             this.gbxBladeIdeas.Controls.Add(this.gbxBladeIdeasJustice);
             this.gbxBladeIdeas.Controls.Add(this.lblBladeIdeasCompassion);
-            this.gbxBladeIdeas.Controls.Add(this.groupBox17);
+            this.gbxBladeIdeas.Controls.Add(this.gbxBladeIdeasBravery);
             this.gbxBladeIdeas.Controls.Add(this.gbxBladeIdeasTruth);
             this.gbxBladeIdeas.Location = new System.Drawing.Point(158, 272);
             this.gbxBladeIdeas.Name = "gbxBladeIdeas";
@@ -8987,18 +8990,18 @@
             this.lblBladeIdeasCompassionPoints.TabIndex = 1;
             this.lblBladeIdeasCompassionPoints.Text = "Points:";
             // 
-            // groupBox17
+            // gbxBladeIdeasBravery
             // 
-            this.groupBox17.Controls.Add(this.nudBladeBraveryPoints);
-            this.groupBox17.Controls.Add(this.nudBladeBraveryLevel);
-            this.groupBox17.Controls.Add(this.lblBladeIdeasBraveryLevel);
-            this.groupBox17.Controls.Add(this.lblBladeIdeasBraveryPoints);
-            this.groupBox17.Location = new System.Drawing.Point(6, 19);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(247, 40);
-            this.groupBox17.TabIndex = 2;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Bravery";
+            this.gbxBladeIdeasBravery.Controls.Add(this.nudBladeBraveryPoints);
+            this.gbxBladeIdeasBravery.Controls.Add(this.nudBladeBraveryLevel);
+            this.gbxBladeIdeasBravery.Controls.Add(this.lblBladeIdeasBraveryLevel);
+            this.gbxBladeIdeasBravery.Controls.Add(this.lblBladeIdeasBraveryPoints);
+            this.gbxBladeIdeasBravery.Location = new System.Drawing.Point(6, 19);
+            this.gbxBladeIdeasBravery.Name = "gbxBladeIdeasBravery";
+            this.gbxBladeIdeasBravery.Size = new System.Drawing.Size(247, 40);
+            this.gbxBladeIdeasBravery.TabIndex = 2;
+            this.gbxBladeIdeasBravery.TabStop = false;
+            this.gbxBladeIdeasBravery.Text = "Bravery";
             // 
             // nudBladeBraveryPoints
             // 
@@ -12359,7 +12362,7 @@
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.nudBladePoppiswapNArts1ItemSerial);
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.nudBladePoppiswapNArts1ItemType);
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x08);
-            this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8);
+            this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.lblBladePoppiswapArtsCardsBattleSkill1Serial);
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.lblBladePoppiswapArtsCardsBattleSkill1Type);
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x06);
             this.gbxBladePoppiswapArtsCardsBattleSkill1.Controls.Add(this.cbxBladePoppiswapNArts1ItemID);
@@ -12440,14 +12443,14 @@
             this.hbxBladePoppiswapNArts1Unk_0x08.Size = new System.Drawing.Size(86, 41);
             this.hbxBladePoppiswapNArts1Unk_0x08.TabIndex = 152;
             // 
-            // label23lblBladePoppiswapArtsCardsBattleSkill1Serial8
+            // lblBladePoppiswapArtsCardsBattleSkill1Serial
             // 
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.AutoSize = true;
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.Location = new System.Drawing.Point(143, 66);
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.Name = "label23lblBladePoppiswapArtsCardsBattleSkill1Serial8";
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.Size = new System.Drawing.Size(36, 13);
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.TabIndex = 1;
-            this.label23lblBladePoppiswapArtsCardsBattleSkill1Serial8.Text = "Serial:";
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.AutoSize = true;
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.Location = new System.Drawing.Point(143, 66);
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.Name = "lblBladePoppiswapArtsCardsBattleSkill1Serial";
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.Size = new System.Drawing.Size(36, 13);
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.TabIndex = 1;
+            this.lblBladePoppiswapArtsCardsBattleSkill1Serial.Text = "Serial:";
             // 
             // lblBladePoppiswapArtsCardsBattleSkill1Type
             // 
@@ -12582,7 +12585,7 @@
             this.gbxBladePoppiswapSpecial3.Controls.Add(this.lblBladePoppiswapSpecial3RecastRev);
             this.gbxBladePoppiswapSpecial3.Controls.Add(this.lblBladePoppiswapSpecial3ItemID);
             this.gbxBladePoppiswapSpecial3.Controls.Add(this.lblBladePoppiswapSpecial3EnhanceID);
-            this.gbxBladePoppiswapSpecial3.Controls.Add(this.chkBladePoppiswapSpecials3Enabled);
+            this.gbxBladePoppiswapSpecial3.Controls.Add(this.chkBladePoppiswapSpecial3Enabled);
             this.gbxBladePoppiswapSpecial3.Location = new System.Drawing.Point(6, 202);
             this.gbxBladePoppiswapSpecial3.Name = "gbxBladePoppiswapSpecial3";
             this.gbxBladePoppiswapSpecial3.Size = new System.Drawing.Size(644, 92);
@@ -12758,17 +12761,17 @@
             this.lblBladePoppiswapSpecial3EnhanceID.TabIndex = 1;
             this.lblBladePoppiswapSpecial3EnhanceID.Text = "Enhance ID:";
             // 
-            // chkBladePoppiswapSpecials3Enabled
+            // chkBladePoppiswapSpecial3Enabled
             // 
-            this.chkBladePoppiswapSpecials3Enabled.AutoSize = true;
-            this.chkBladePoppiswapSpecials3Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkBladePoppiswapSpecials3Enabled.Location = new System.Drawing.Point(6, 18);
-            this.chkBladePoppiswapSpecials3Enabled.Name = "chkBladePoppiswapSpecials3Enabled";
-            this.chkBladePoppiswapSpecials3Enabled.Size = new System.Drawing.Size(83, 17);
-            this.chkBladePoppiswapSpecials3Enabled.TabIndex = 7;
-            this.chkBladePoppiswapSpecials3Enabled.Text = "Is Unlocked";
-            this.chkBladePoppiswapSpecials3Enabled.UseVisualStyleBackColor = true;
-            this.chkBladePoppiswapSpecials3Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials3Enabled_CheckedChanged);
+            this.chkBladePoppiswapSpecial3Enabled.AutoSize = true;
+            this.chkBladePoppiswapSpecial3Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSpecial3Enabled.Location = new System.Drawing.Point(6, 18);
+            this.chkBladePoppiswapSpecial3Enabled.Name = "chkBladePoppiswapSpecial3Enabled";
+            this.chkBladePoppiswapSpecial3Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSpecial3Enabled.TabIndex = 7;
+            this.chkBladePoppiswapSpecial3Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSpecial3Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSpecial3Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials3Enabled_CheckedChanged);
             // 
             // gbxBladePoppiswapSpecial2
             // 
@@ -12786,7 +12789,7 @@
             this.gbxBladePoppiswapSpecial2.Controls.Add(this.lblBladePoppiswapSpecial2RecastRev);
             this.gbxBladePoppiswapSpecial2.Controls.Add(this.lblBladePoppiswapSpecial2ItemID);
             this.gbxBladePoppiswapSpecial2.Controls.Add(this.lblBladePoppiswapSpecial2EnhanceID);
-            this.gbxBladePoppiswapSpecial2.Controls.Add(this.chkBladePoppiswapSpecials2Enabled);
+            this.gbxBladePoppiswapSpecial2.Controls.Add(this.chkBladePoppiswapSpecial2Enabled);
             this.gbxBladePoppiswapSpecial2.Location = new System.Drawing.Point(6, 104);
             this.gbxBladePoppiswapSpecial2.Name = "gbxBladePoppiswapSpecial2";
             this.gbxBladePoppiswapSpecial2.Size = new System.Drawing.Size(644, 92);
@@ -12962,17 +12965,17 @@
             this.lblBladePoppiswapSpecial2EnhanceID.TabIndex = 1;
             this.lblBladePoppiswapSpecial2EnhanceID.Text = "Enhance ID:";
             // 
-            // chkBladePoppiswapSpecials2Enabled
+            // chkBladePoppiswapSpecial2Enabled
             // 
-            this.chkBladePoppiswapSpecials2Enabled.AutoSize = true;
-            this.chkBladePoppiswapSpecials2Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkBladePoppiswapSpecials2Enabled.Location = new System.Drawing.Point(6, 18);
-            this.chkBladePoppiswapSpecials2Enabled.Name = "chkBladePoppiswapSpecials2Enabled";
-            this.chkBladePoppiswapSpecials2Enabled.Size = new System.Drawing.Size(83, 17);
-            this.chkBladePoppiswapSpecials2Enabled.TabIndex = 7;
-            this.chkBladePoppiswapSpecials2Enabled.Text = "Is Unlocked";
-            this.chkBladePoppiswapSpecials2Enabled.UseVisualStyleBackColor = true;
-            this.chkBladePoppiswapSpecials2Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials2Enabled_CheckedChanged);
+            this.chkBladePoppiswapSpecial2Enabled.AutoSize = true;
+            this.chkBladePoppiswapSpecial2Enabled.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkBladePoppiswapSpecial2Enabled.Location = new System.Drawing.Point(6, 18);
+            this.chkBladePoppiswapSpecial2Enabled.Name = "chkBladePoppiswapSpecial2Enabled";
+            this.chkBladePoppiswapSpecial2Enabled.Size = new System.Drawing.Size(83, 17);
+            this.chkBladePoppiswapSpecial2Enabled.TabIndex = 7;
+            this.chkBladePoppiswapSpecial2Enabled.Text = "Is Unlocked";
+            this.chkBladePoppiswapSpecial2Enabled.UseVisualStyleBackColor = true;
+            this.chkBladePoppiswapSpecial2Enabled.CheckedChanged += new System.EventHandler(this.chkBladePoppiswapSpecials2Enabled_CheckedChanged);
             // 
             // gbxBladePoppiswapSpecial1
             // 
@@ -15957,7 +15960,7 @@
             this.tbcItems.Controls.Add(this.tabEventItemBox);
             this.tbcItems.Controls.Add(this.tabCollectibleBox);
             this.tbcItems.Controls.Add(this.tabTreasureBox);
-            this.tbcItems.Controls.Add(this.tabUnrefinedAuxCoresBox);
+            this.tbcItems.Controls.Add(this.tabUnrefinedAuxCoreBox);
             this.tbcItems.Controls.Add(this.tabPouchItemBox);
             this.tbcItems.Controls.Add(this.tabCoreCrystalBox);
             this.tbcItems.Controls.Add(this.tabBoosterBox);
@@ -16198,16 +16201,16 @@
             this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             this.dgvTreasureBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
-            // tabUnrefinedAuxCoresBox
+            // tabUnrefinedAuxCoreBox
             // 
-            this.tabUnrefinedAuxCoresBox.Controls.Add(this.dgvEmptyOrbBox);
-            this.tabUnrefinedAuxCoresBox.Location = new System.Drawing.Point(4, 22);
-            this.tabUnrefinedAuxCoresBox.Name = "tabUnrefinedAuxCoresBox";
-            this.tabUnrefinedAuxCoresBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnrefinedAuxCoresBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabUnrefinedAuxCoresBox.TabIndex = 9;
-            this.tabUnrefinedAuxCoresBox.Text = "Unrefined Aux Cores";
-            this.tabUnrefinedAuxCoresBox.UseVisualStyleBackColor = true;
+            this.tabUnrefinedAuxCoreBox.Controls.Add(this.dgvEmptyOrbBox);
+            this.tabUnrefinedAuxCoreBox.Location = new System.Drawing.Point(4, 22);
+            this.tabUnrefinedAuxCoreBox.Name = "tabUnrefinedAuxCoreBox";
+            this.tabUnrefinedAuxCoreBox.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUnrefinedAuxCoreBox.Size = new System.Drawing.Size(1120, 493);
+            this.tabUnrefinedAuxCoreBox.TabIndex = 9;
+            this.tabUnrefinedAuxCoreBox.Text = "Unrefined Aux Cores";
+            this.tabUnrefinedAuxCoreBox.UseVisualStyleBackColor = true;
             // 
             // dgvEmptyOrbBox
             // 
@@ -21412,7 +21415,7 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.groupBox131);
+            this.splitContainer4.Panel2.Controls.Add(this.gbx150RawData);
             this.splitContainer4.Size = new System.Drawing.Size(1128, 570);
             this.splitContainer4.SplitterDistance = 48;
             this.splitContainer4.TabIndex = 1;
@@ -21426,16 +21429,16 @@
             this.lbl150RawDataNote.TabIndex = 1;
             this.lbl150RawDataNote.Text = resources.GetString("lbl150RawDataNote.Text");
             // 
-            // groupBox131
+            // gbx150RawData
             // 
-            this.groupBox131.Controls.Add(this.tbc150RawData);
-            this.groupBox131.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox131.Location = new System.Drawing.Point(0, 0);
-            this.groupBox131.Name = "groupBox131";
-            this.groupBox131.Size = new System.Drawing.Size(1128, 518);
-            this.groupBox131.TabIndex = 0;
-            this.groupBox131.TabStop = false;
-            this.groupBox131.Text = "1.5.0+ New Extra Data";
+            this.gbx150RawData.Controls.Add(this.tbc150RawData);
+            this.gbx150RawData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbx150RawData.Location = new System.Drawing.Point(0, 0);
+            this.gbx150RawData.Name = "gbx150RawData";
+            this.gbx150RawData.Size = new System.Drawing.Size(1128, 518);
+            this.gbx150RawData.TabIndex = 0;
+            this.gbx150RawData.TabStop = false;
+            this.gbx150RawData.Text = "1.5.0+ New Extra Data";
             // 
             // tbc150RawData
             // 
@@ -21625,7 +21628,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.languageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1142, 24);
@@ -21730,6 +21734,29 @@
             this.tsmiItemUpdateTime.Size = new System.Drawing.Size(258, 22);
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.chineseToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chineseToolStripMenuItem.Text = "Chinese";
+            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -21976,8 +22003,8 @@
             this.gbxDriverUnk_0x02DC.ResumeLayout(false);
             this.gbxDriverUnk_0x00A8.ResumeLayout(false);
             this.gbxDriverUnk_0x002C.ResumeLayout(false);
-            this.tabDriver150.ResumeLayout(false);
-            this.tabDriver150.PerformLayout();
+            this.tabDrivers150.ResumeLayout(false);
+            this.tabDrivers150.PerformLayout();
             this.gbxDriverWeapons150.ResumeLayout(false);
             this.gbxDriverWeapons150.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalWeaponPoints150)).EndInit();
@@ -22057,8 +22084,8 @@
             this.lblBladeIdeasCompassion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCompassionPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCompassionLevel)).EndInit();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
+            this.gbxBladeIdeasBravery.ResumeLayout(false);
+            this.gbxBladeIdeasBravery.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBraveryPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeBraveryLevel)).EndInit();
             this.gbxBladeIdeasTruth.ResumeLayout(false);
@@ -22383,7 +22410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).EndInit();
             this.tabTreasureBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).EndInit();
-            this.tabUnrefinedAuxCoresBox.ResumeLayout(false);
+            this.tabUnrefinedAuxCoreBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).EndInit();
             this.tabPouchItemBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).EndInit();
@@ -22635,7 +22662,7 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            this.groupBox131.ResumeLayout(false);
+            this.gbx150RawData.ResumeLayout(false);
             this.tbc150RawData.ResumeLayout(false);
             this.tab150RawDataUnk_0x1176A0.ResumeLayout(false);
             this.tab150RawDataUnk_0x117728.ResumeLayout(false);
@@ -22689,7 +22716,7 @@
         private System.Windows.Forms.TabPage tabEventItemBox;
         private System.Windows.Forms.TabPage tabCollectibleBox;
         private System.Windows.Forms.TabPage tabTreasureBox;
-        private System.Windows.Forms.TabPage tabUnrefinedAuxCoresBox;
+        private System.Windows.Forms.TabPage tabUnrefinedAuxCoreBox;
         private System.Windows.Forms.TabPage tabPouchItemBox;
         private System.Windows.Forms.TabPage tabCoreCrystalBox;
         private System.Windows.Forms.TabPage tabBoosterBox;
@@ -22749,7 +22776,7 @@
         private System.Windows.Forms.NumericUpDown nudBladeCompassionLevel;
         private System.Windows.Forms.Label lblBladeIdeasCompassionLevel;
         private System.Windows.Forms.Label lblBladeIdeasCompassionPoints;
-        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox gbxBladeIdeasBravery;
         private System.Windows.Forms.NumericUpDown nudBladeBraveryPoints;
         private System.Windows.Forms.NumericUpDown nudBladeBraveryLevel;
         private System.Windows.Forms.Label lblBladeIdeasBraveryLevel;
@@ -22819,7 +22846,7 @@
         private System.Windows.Forms.Label lblDriverGuardRate;
         private System.Windows.Forms.Label lblDriverEtherDef;
         private System.Windows.Forms.Label lblDriverCriticalRate;
-        private System.Windows.Forms.Label lblDriverPlysDef;
+        private System.Windows.Forms.Label lblDriverPhysDef;
         private System.Windows.Forms.Label lblDriverLuck;
         private System.Windows.Forms.Label lblDriverAgility;
         private System.Windows.Forms.Label lblDriverDexterity;
@@ -22886,7 +22913,7 @@
         private System.Windows.Forms.Label lblDriverPouchItemID;
         private System.Windows.Forms.CheckBox chkDriverPouchesIsUnlocked;
         private System.Windows.Forms.ComboBox cbxDriverPouches;
-        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label lblDriverPouch;
         private System.Windows.Forms.Label lblDriverPouchSec;
         private System.Windows.Forms.NumericUpDown nudDriverAccessory1Serial;
         private System.Windows.Forms.NumericUpDown nudDriverAccessory1Type;
@@ -23367,7 +23394,7 @@
         private System.Windows.Forms.Label lblBladePoppiswapSpecial3RecastRev;
         private System.Windows.Forms.Label lblBladePoppiswapSpecial3ItemID;
         private System.Windows.Forms.Label lblBladePoppiswapSpecial3EnhanceID;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials3Enabled;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecial3Enabled;
         private System.Windows.Forms.GroupBox gbxBladePoppiswapSpecial2;
         private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance2ItemType;
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance2ItemSerial;
@@ -23385,7 +23412,7 @@
         private System.Windows.Forms.Label lblBladePoppiswapSpecial2RecastRev;
         private System.Windows.Forms.Label lblBladePoppiswapSpecial2ItemID;
         private System.Windows.Forms.Label lblBladePoppiswapSpecial2EnhanceID;
-        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecials2Enabled;
+        private System.Windows.Forms.CheckBox chkBladePoppiswapSpecial2Enabled;
         private System.Windows.Forms.GroupBox gbxBladePoppiswapSpecial1;
         private System.Windows.Forms.ComboBox cbxBladePoppiswapBArtsEnhance1ItemType;
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapBArtsEnhance1ItemSerial;
@@ -23412,7 +23439,7 @@
         private System.Windows.Forms.NumericUpDown nudBladePoppiswapNArts1ItemType;
         private System.Windows.Forms.GroupBox gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x08;
         private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts1Unk_0x08;
-        private System.Windows.Forms.Label label23lblBladePoppiswapArtsCardsBattleSkill1Serial8;
+        private System.Windows.Forms.Label lblBladePoppiswapArtsCardsBattleSkill1Serial;
         private System.Windows.Forms.Label lblBladePoppiswapArtsCardsBattleSkill1Type;
         private System.Windows.Forms.GroupBox gbxBladePoppiswapArtsCardsBattleSkill1Unk_0x06;
         private Be.Windows.Forms.HexBox hbxBladePoppiswapNArts1Unk_0x06;
@@ -23879,9 +23906,9 @@
         private System.Windows.Forms.TabPage tabUnk_0x1171E8;
         private System.Windows.Forms.TabPage tabUnk_0x117390;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.GroupBox groupBox131;
+        private System.Windows.Forms.GroupBox gbx150RawData;
         private System.Windows.Forms.Label lbl150RawDataNote;
-        private System.Windows.Forms.TabPage tabDriver150;
+        private System.Windows.Forms.TabPage tabDrivers150;
         private System.Windows.Forms.Label lblDriver150Note;
         private System.Windows.Forms.GroupBox gbxDriverWeapons150;
         private System.Windows.Forms.ComboBox cbxDriverWeaponArt150Id3;
@@ -23893,8 +23920,8 @@
         private System.Windows.Forms.NumericUpDown nudDriverWeaponArt150Id2;
         private System.Windows.Forms.NumericUpDown nudDriverWeaponArt150Id1;
         private System.Windows.Forms.Label lblDriverWeapon150;
-        private System.Windows.Forms.Label label386;
-        private System.Windows.Forms.Label label387;
+        private System.Windows.Forms.Label lblDriverWeapon150TotalWeaponPoints;
+        private System.Windows.Forms.Label lblDriverWeapon150WeaponPoints;
         private System.Windows.Forms.Label lblDriverWeapon150Art3ID;
         private System.Windows.Forms.ComboBox cbxDriverWeapons150;
         private System.Windows.Forms.Label lblDriverWeapon150Art1ID;
@@ -24305,6 +24332,9 @@
         private System.Windows.Forms.GroupBox gbxItemCheat;
         private System.Windows.Forms.Button btnItemCheatMaxQty;
         private System.Windows.Forms.Label lblItemSortTip;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chineseToolStripMenuItem;
     }
 }
 
