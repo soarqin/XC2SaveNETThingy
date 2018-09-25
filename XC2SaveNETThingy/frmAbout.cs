@@ -13,7 +13,15 @@ namespace XC2SaveNETThingy
 {
     public partial class frmAbout : Form
     {
+        private Dictionary<string, string> FrmAboutText;
+
         public frmAbout() => InitializeComponent();
+        public frmAbout(XC2Data.LANG l) : this()
+        {
+            FrmAboutText = XC2Data.GetFrmAboutText(l);
+
+            UpdateControlText(this);
+        }
         private void frmAbout_Load(object sender, EventArgs e) => lblAbout.Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
         private void btnOK_Click(object sender, EventArgs e) => Close();
         private void linkLabel_Click(object sender, LinkLabelLinkClickedEventArgs e)
@@ -22,6 +30,15 @@ namespace XC2SaveNETThingy
 
             ll.LinkVisited = true;
             Process.Start(ll.Text);
+        }
+
+        void UpdateControlText(Control ctl)
+        {
+            if (FrmAboutText.ContainsKey(ctl.Name))
+                ctl.Text = FrmAboutText[ctl.Name].Replace(@"\n", Environment.NewLine);
+
+            foreach (Control chctl in ctl.Controls)
+                UpdateControlText(chctl);
         }
     }
 }

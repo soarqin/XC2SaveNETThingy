@@ -22,9 +22,9 @@ namespace XC2SaveNETThingy
             { LANG.CN, "CN" }
         };
 
-        private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=db\XC2Data.db");
+        private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=db\XC2Data.db; Read Only=True;");
         private static SQLiteDataAdapter dbAdapter;
-        private static SQLiteCommand dbCmd;
+        //private static SQLiteCommand dbCmd;
         private static DataSet ds;
 
         public static DataTable Elements(LANG l = LANG.EN)
@@ -548,7 +548,7 @@ namespace XC2SaveNETThingy
             return dict;
         }
 
-        public static Dictionary<string, string> GetFrmMFAQText(LANG l = LANG.EN)
+        public static Dictionary<string, string> GetFrmFAQText(LANG l = LANG.EN)
         {
             string query =
                 "SELECT ControlName, Text_" + LANG_STR[l] + " AS Text FROM FrmFAQText";
@@ -610,21 +610,21 @@ namespace XC2SaveNETThingy
         /// Method for executing commands on database
         /// </summary>
         /// <param name="query">SQL query to send to the database</param>
-        public static void SendNonQuery(string query)
-        {
-            dbCmd = new SQLiteCommand(query, dbConn);        // Make new dbCmd using supplied query
+        //public static void SendNonQuery(string query)
+        //{
+        //    dbCmd = new SQLiteCommand(query, dbConn);        // Make new dbCmd using supplied query
 
-            dbConn.Open();                                  // Open connection to database
-            dbCmd.ExecuteNonQuery();                        // Send the query to database
-            System.Threading.Thread.Sleep(500);             // A quick sleep to ensure database is finished before closing connection
-            dbConn.Close();                                 // Close connection to database
-        }
+        //    dbConn.Open();                                  // Open connection to database
+        //    dbCmd.ExecuteNonQuery();                        // Send the query to database
+        //    System.Threading.Thread.Sleep(500);             // A quick sleep to ensure database is finished before closing connection
+        //    dbConn.Close();                                 // Close connection to database
+        //}
 
-        public static bool Contains(this DataTable dt, object value, string columnName)
-        {
-            List<object> elements = dt.AsEnumerable().Select(r => r.Field<object>(columnName)).ToList();
+        //public static bool Contains(this DataTable dt, object value, string columnName)
+        //{
+        //    List<object> elements = dt.AsEnumerable().Select(r => r.Field<object>(columnName)).ToList();
 
-            return elements.Contains(value);
-        }
+        //    return elements.Contains(value);
+        //}
     }
 }

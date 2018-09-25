@@ -9,31 +9,6 @@ namespace XC2SaveNETThingy
 {
     public class Item : IXC2SaveObject
     {
-        //public enum TYPE
-        //{
-        //    NONE = 0,
-        //    CoreChip = 1,
-        //    Accessory = 2,
-        //    AuxCore = 3,
-        //    UNKNOWN_4 = 4,
-        //    Cylinder = 5,
-        //    KeyItem = 6,
-        //    Collectible = 7,
-        //    Treasure = 8,
-        //    UnrefinedAuxCore = 9,
-        //    PouchItem = 10,
-        //    CoreCrystal = 11,
-        //    Booster = 12,
-        //    UNKNOWN_13 = 13,
-        //    InfoItem = 14,
-        //    UNKNOWN_15 = 15,
-        //    PoppiRoleCPU = 16,
-        //    PoppiElementCore = 17,
-        //    PoppiSpecialsEnhancingRAM = 18,
-        //    PoppiArtsCard = 19,
-        //    PoppiSkillRAM = 20
-        //}
-
         public const int SIZE = 0xC;
 
         public UInt16 ID { get; set; }
@@ -320,6 +295,7 @@ namespace XC2SaveNETThingy
                         return 1;
             }
         }
+
         private class ItemComparerNotEquip : Comparer<Item>
         {
             public override int Compare(Item x, Item y)

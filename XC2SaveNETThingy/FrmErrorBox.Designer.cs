@@ -41,7 +41,7 @@
             // lblErrorTitle
             // 
             this.lblErrorTitle.AutoSize = true;
-            this.lblErrorTitle.Location = new System.Drawing.Point(118, 12);
+            this.lblErrorTitle.Location = new System.Drawing.Point(68, 12);
             this.lblErrorTitle.Name = "lblErrorTitle";
             this.lblErrorTitle.Size = new System.Drawing.Size(35, 13);
             this.lblErrorTitle.TabIndex = 0;
@@ -53,6 +53,7 @@
             this.txtErrorStacktrace.Multiline = true;
             this.txtErrorStacktrace.Name = "txtErrorStacktrace";
             this.txtErrorStacktrace.ReadOnly = true;
+            this.txtErrorStacktrace.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtErrorStacktrace.Size = new System.Drawing.Size(470, 179);
             this.txtErrorStacktrace.TabIndex = 1;
             // 
@@ -79,7 +80,7 @@
             // 
             this.pbxError.Location = new System.Drawing.Point(12, 12);
             this.pbxError.Name = "pbxError";
-            this.pbxError.Size = new System.Drawing.Size(100, 50);
+            this.pbxError.Size = new System.Drawing.Size(50, 50);
             this.pbxError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbxError.TabIndex = 4;
             this.pbxError.TabStop = false;
@@ -87,7 +88,7 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(118, 34);
+            this.lblError.Location = new System.Drawing.Point(68, 34);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(78, 13);
             this.lblError.TabIndex = 5;
@@ -95,11 +96,12 @@
             // 
             // txtErrorMsg
             // 
-            this.txtErrorMsg.Location = new System.Drawing.Point(121, 50);
+            this.txtErrorMsg.Location = new System.Drawing.Point(71, 50);
             this.txtErrorMsg.Multiline = true;
             this.txtErrorMsg.Name = "txtErrorMsg";
             this.txtErrorMsg.ReadOnly = true;
-            this.txtErrorMsg.Size = new System.Drawing.Size(361, 158);
+            this.txtErrorMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtErrorMsg.Size = new System.Drawing.Size(411, 158);
             this.txtErrorMsg.TabIndex = 6;
             // 
             // FrmErrorBox
@@ -114,6 +116,9 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtErrorStacktrace);
             this.Controls.Add(this.lblErrorTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmErrorBox";
             this.Text = "FrmErrorBox";
             ((System.ComponentModel.ISupportInitialize)(this.pbxError)).EndInit();

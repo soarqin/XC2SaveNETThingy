@@ -663,15 +663,15 @@ namespace XC2SaveNETThingy
             catch (Exception ex)
             {
                 string message =
-                    "Unable to Load save file!" + Environment.NewLine + 
+                    FrmMainInternalText["UnableToLoadSaveFile"] + Environment.NewLine + 
                     Environment.NewLine + 
                     ex.Message;
-                string title = "ERROR: Cannot load save file!";
+                string title = FrmMainInternalText["ErrorCannotLoadSaveFile"];
 
                 FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
                 ebx.ShowDialog();
 
-                throw ex;
+                //throw ex;
             }
         }
         private void LoadFile()
@@ -692,9 +692,9 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    string title = "ERROR: Cannot save save file!";
+                    string title = FrmMainInternalText["ErrorCannotSaveSaveFile"];
                     string message =
-                        "Unable to save the save file!" + Environment.NewLine + 
+                        FrmMainInternalText["UnableToSaveSaveFile"] + Environment.NewLine + 
                         Environment.NewLine + 
                         ex.Message;
 
@@ -702,6 +702,118 @@ namespace XC2SaveNETThingy
                     ebx.ShowDialog();
                     //throw ex;
                 }
+            }
+        }
+        void UpdateControlText(Control ctl)
+        {
+            if (FrmMainText.ContainsKey(ctl.Name))
+                ctl.Text = FrmMainText[ctl.Name].Replace(@"\n", Environment.NewLine);
+
+            foreach (Control chctl in ctl.Controls)
+                UpdateControlText(chctl);
+        }
+        void UpdateMenuStripText(MenuStrip ms)
+        {
+            foreach (ToolStripMenuItem tsmi in ms.Items)
+            {
+                if (FrmMainText.ContainsKey(tsmi.Name))
+                    tsmi.Text = FrmMainText[tsmi.Name].Replace(@"\n", Environment.NewLine);
+
+                foreach (ToolStripDropDownItem ddi in tsmi.DropDownItems)
+                    if (FrmMainText.ContainsKey(ddi.Name))
+                        ddi.Text = FrmMainText[ddi.Name].Replace(@"\n", Environment.NewLine);
+            }
+        }
+        private void ReloadLanguage()
+        {
+            FrmMainText = XC2Data.GetFrmMainText(lang);
+            FrmMainInternalText = XC2Data.GetFrmMainInternalText(lang);
+            UpdateControlText(this);
+            UpdateMenuStripText(menuStrip1);
+
+            SetupComboBoxes();
+
+            ofdSaveFile.Filter = FrmMainInternalText["XC2SaveFileDesc"] + "|*.sav|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+            sfdSaveFile.Filter = FrmMainInternalText["XC2SaveFileDesc"] + "|*.sav|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+            ofdBlade.Filter = FrmMainInternalText["XC2BladeFileDesc"] + "|*.x2b|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+            sfdBlade.Filter = FrmMainInternalText["XC2BladeFileDesc"] + "|*.x2b|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+            ofdBladeAffChart.Filter = FrmMainInternalText["XC2BladeAffChartFileDesc"] + "|*.x2bac|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+            sfdBladeAffChart.Filter = FrmMainInternalText["XC2BladeAffChartFileDesc"] + "|*.x2bac|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
+        }
+        private void ConfigLanguageUpdate(XC2Data.LANG l)
+        {
+            config["Language"] = XC2Data.LANG_STR[l];
+            SaveConfig(config, "settings.cfg");
+            MessageBox.Show(FrmMainInternalText["LanguageSettingHasBeenChanged"], FrmMainInternalText["InfoLanguageSettingChanged"], MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private Dictionary<string, string> CreateNewConfig()
+        {
+            Dictionary<string, string> conf = new Dictionary<string, string>();
+
+            conf.Add("Language", "EN");
+
+            return conf;
+        }
+        private Dictionary<string, string> LoadConfig(string path)
+        {
+            try
+            {
+                Dictionary<string, string> conf = new Dictionary<string, string>();
+                string[] data = File.ReadAllLines(path);
+
+                foreach (string line in data)
+                {
+                    if (line.Contains("="))
+                    {
+                        string[] setting = line.Split('=');
+                        conf.Add(setting[0], setting[1]);
+                    }
+                }
+
+                return conf;
+            }
+            catch (FileNotFoundException)
+            {
+                string message =
+                    FrmMainInternalText["SettingsFileNotFound"];
+
+                MessageBox.Show(message, FrmMainInternalText["WarningSettingsFileNotFound"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Dictionary<string, string> conf = CreateNewConfig();
+                SaveConfig(conf, "settings.cfg");
+
+                return conf;
+            }
+
+            catch (Exception e)
+            {
+                string message =
+                    FrmMainInternalText["UnableToLoadSettingsFile"] + Environment.NewLine +
+                    e.Message;
+
+                MessageBox.Show(message, FrmMainInternalText["WarningCannotLoadSettingsFile"], MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return CreateNewConfig();
+            }
+        }
+        private void SaveConfig(Dictionary<string, string> conf, string path)
+        {
+            string output = "";
+            foreach (KeyValuePair<string, string> kv in conf)
+                output += kv.Key + "=" + kv.Value + Environment.NewLine;
+
+            try
+            {
+                File.WriteAllText(path, output);
+            }
+            catch (Exception ex)
+            {
+                string title = FrmMainInternalText["ErrorCannotSaveSettingsFile"];
+                string message =
+                    FrmMainInternalText["UnableToSaveSettingsFile"] + Environment.NewLine +
+                    Environment.NewLine +
+                    ex.Message;
+
+                FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                ebx.ShowDialog();
             }
         }
         #endregion Main
@@ -1535,18 +1647,32 @@ namespace XC2SaveNETThingy
             DialogResult = ofdBlade.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                UInt16 id = SAVEDATA.Blades[lbxBlades.SelectedIndex].ID;
-                Int16 cbi = SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex;
-
-                SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName))
+                try
                 {
-                    ID = id,
-                    CommonBladeIndex = cbi
-                };
+                    UInt16 id = SAVEDATA.Blades[lbxBlades.SelectedIndex].ID;
+                    Int16 cbi = SAVEDATA.Blades[lbxBlades.SelectedIndex].CommonBladeIndex;
 
-                LoadBlade(lbxBlades.SelectedIndex);
-                ReloadDriverSetBladeComboBoxes();
-                UpdateBladeListBox();
+                    SAVEDATA.Blades[lbxBlades.SelectedIndex] = new Blade(File.ReadAllBytes(ofdBlade.FileName))
+                    {
+                        ID = id,
+                        CommonBladeIndex = cbi
+                    };
+
+                    LoadBlade(lbxBlades.SelectedIndex);
+                    ReloadDriverSetBladeComboBoxes();
+                    UpdateBladeListBox();
+                }
+                catch (Exception ex)
+                {
+                    string message =
+                        FrmMainInternalText["UnableToImportBladeFile"] + Environment.NewLine +
+                        Environment.NewLine +
+                        ex.Message;
+                    string title = FrmMainInternalText["ErrorCannotImportBladeFile"];
+
+                    FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                    ebx.ShowDialog();
+                }
             }
         }
         private void ExportBlade()
@@ -1564,7 +1690,14 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string message =
+                        FrmMainInternalText["UnableToExportBladeFile"] + Environment.NewLine +
+                        Environment.NewLine +
+                        ex.Message;
+                    string title = FrmMainInternalText["ErrorCannotExportBladeFile"];
+
+                    FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                    ebx.ShowDialog();
                     //throw ex;
                 }
             }
@@ -1574,8 +1707,22 @@ namespace XC2SaveNETThingy
             DialogResult = ofdBladeAffChart.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                SAVEDATA.Blades[lbxBlades.SelectedIndex].ImportAffinityChart(File.ReadAllBytes(ofdBladeAffChart.FileName));
-                LoadBlade(lbxBlades.SelectedIndex);
+                try
+                {
+                    SAVEDATA.Blades[lbxBlades.SelectedIndex].ImportAffinityChart(File.ReadAllBytes(ofdBladeAffChart.FileName));
+                    LoadBlade(lbxBlades.SelectedIndex);
+                }
+                catch (Exception ex)
+                {
+                    string message =
+                        FrmMainInternalText["UnableToImportBladeFile"] + Environment.NewLine +
+                        Environment.NewLine +
+                        ex.Message;
+                    string title = FrmMainInternalText["ErrorCannotImportBladeFile"];
+
+                    FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                    ebx.ShowDialog();
+                }
             }
         }
         private void ExportBladeAffinityChart()
@@ -1593,7 +1740,14 @@ namespace XC2SaveNETThingy
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string message =
+                        FrmMainInternalText["UnableToExportBladeFile"] + Environment.NewLine +
+                        Environment.NewLine +
+                        ex.Message;
+                    string title = FrmMainInternalText["ErrorCannotExportBladeFile"];
+
+                    FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
+                    ebx.ShowDialog();
                     //throw ex;
                 }
             }
@@ -1988,12 +2142,9 @@ namespace XC2SaveNETThingy
         {
             Text = Application.ProductName + " ver" + Application.ProductVersion + " by " + Application.CompanyName;
 
+            ReloadLanguage();   // have to do twice to have SOME default text
             config = LoadConfig("settings.cfg");
-            if (config != null)
-            {
-                lang = XC2Data.LANG_STR.FirstOrDefault(l => l.Value == config["Language"]).Key;
-            }
-
+            lang = XC2Data.LANG_STR.FirstOrDefault(l => l.Value == config["Language"]).Key;
             ReloadLanguage();
 
             // hide 1.5.0+ related tabs
@@ -2003,17 +2154,19 @@ namespace XC2SaveNETThingy
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAbout frmAbout = new frmAbout();
+            frmAbout frmAbout = new frmAbout(lang);
             frmAbout.ShowDialog();
         }
         private void fAQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmFAQ frmFAQ = new frmFAQ();
+            frmFAQ frmFAQ = new frmFAQ(lang);
             frmFAQ.ShowDialog();
         }
         private void loadSaveFileToolStripMenuItem_Click(object sender, EventArgs e) => LoadFile();
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e) => SaveFile();
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e) => ConfigLanguageUpdate(XC2Data.LANG.EN);
+        private void chineseToolStripMenuItem_Click(object sender, EventArgs e) => ConfigLanguageUpdate(XC2Data.LANG.CN);
         private void btnLoad_Click(object sender, EventArgs e) => LoadFile();
         private void btnSave_Click(object sender, EventArgs e) => SaveFile();
         #endregion Main
@@ -4537,6 +4690,7 @@ namespace XC2SaveNETThingy
         private void nudMercGroup3OriginalMissionTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroup3.MissionTimeOriginal = (UInt32)nudMercGroup3OriginalMissionTime.Value;
         #endregion Merc Group 3
 
+        #region Merc Group Presets
         private void cbxMercGroupPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
             nudMercGroupPresetMember1.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[0];
@@ -4552,6 +4706,8 @@ namespace XC2SaveNETThingy
         private void nudMercGroupPresetMember4_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[3] = (UInt16)nudMercGroupPresetMember4.Value;
         private void nudMercGroupPresetMember5_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[4] = (UInt16)nudMercGroupPresetMember5.Value;
         private void nudMercGroupPresetMember6_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5] = (UInt16)nudMercGroupPresetMember6.Value;
+        #endregion Merc Group Presets
+
         #endregion Merc Groups
 
         #region XC2Save Events
@@ -4640,129 +4796,6 @@ namespace XC2SaveNETThingy
         #endregion XC2Save Events
 
         #endregion Events
-
-        void UpdateControlText(Control ctl)
-        {
-            if (FrmMainText.ContainsKey(ctl.Name))
-                ctl.Text = FrmMainText[ctl.Name].Replace(@"\n", Environment.NewLine);
-
-            foreach (Control chctl in ctl.Controls)
-                UpdateControlText(chctl);
-        }
-        void UpdateMenuStripText(MenuStrip ms)
-        {
-            foreach (ToolStripMenuItem tsmi in ms.Items)
-            {
-                if (FrmMainText.ContainsKey(tsmi.Name))
-                    tsmi.Text = FrmMainText[tsmi.Name].Replace(@"\n", Environment.NewLine);
-
-                foreach (ToolStripDropDownItem ddi in tsmi.DropDownItems)
-                    if (FrmMainText.ContainsKey(ddi.Name))
-                        ddi.Text = FrmMainText[ddi.Name].Replace(@"\n", Environment.NewLine);
-            }
-        }
-
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConfigLanguageUpdate(XC2Data.LANG.EN);
-        }
-        private void chineseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConfigLanguageUpdate(XC2Data.LANG.CN);
-        }
-
-        private void ConfigLanguageUpdate(XC2Data.LANG l)
-        {
-            config["Language"] = XC2Data.LANG_STR[l];
-            SaveConfig(config, "settings.cfg");
-            MessageBox.Show("Language setting has been changed. Please restart the program for changes to take effect.", "INFO: Language Setting Changed.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void ReloadLanguage()
-        {
-            FrmMainText = XC2Data.GetFrmMainText(lang);
-            FrmMainInternalText = XC2Data.GetFrmMainInternalText(lang);
-            UpdateControlText(this);
-            UpdateMenuStripText(menuStrip1);
-
-            SetupComboBoxes();
-        }
-
-        private Dictionary<string, string> CreateNewConfig()
-        {
-            Dictionary<string, string> conf = new Dictionary<string, string>();
-
-            conf.Add("Language", "EN");
-
-            return conf;
-        }
-
-        private Dictionary<string, string> LoadConfig(string path)
-        {
-            try
-            {
-                Dictionary<string, string> conf = new Dictionary<string, string>();
-                string[] data = File.ReadAllLines(path);
-
-                foreach (string line in data)
-                {
-                    if (line.Contains("="))
-                    {
-                        string[] setting = line.Split('=');
-                        conf.Add(setting[0], setting[1]);
-                    }
-                }
-
-                return conf;
-            }
-            catch (FileNotFoundException)
-            {
-                string message =
-                    "Settings file not found, creating new one with default values.";
-
-                MessageBox.Show(message, "WARNING: Settings file not found.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Dictionary<string, string> conf = CreateNewConfig();
-                SaveConfig(conf, "settings.cfg");
-
-                return conf;
-            }
-
-            catch (Exception e)
-            {
-                string message =
-                    "Unable to load settings file, using default values..." + Environment.NewLine +
-                    "Error message for developer:" + Environment.NewLine +
-                    e.Message;
-
-                MessageBox.Show(message, "WARNING: Cannot load settings file!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return CreateNewConfig();
-            }
-        }
-
-        private void SaveConfig(Dictionary<string, string> conf, string path)
-        {
-            string output = "";
-            foreach (KeyValuePair<string, string> kv in conf)
-                output += kv.Key + "=" + kv.Value + Environment.NewLine;
-
-            try
-            {
-                File.WriteAllText(path, output);
-            }
-            catch (Exception ex)
-            {
-                string title = "ERROR: Cannot save settings file!";
-                string message =
-                    "Unable to save settings file!" + Environment.NewLine +
-                    Environment.NewLine +
-                    ex.Message;
-
-                //MessageBox.Show(message, "ERROR: Cannot save settings file!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                FrmErrorBox ebx = new FrmErrorBox(message, title, ex.StackTrace);
-                ebx.ShowDialog();
-            }
-        }
     }
 }
 
