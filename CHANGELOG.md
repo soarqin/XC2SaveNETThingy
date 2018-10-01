@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v1.4
+Quick Bugfix Release + DB update to handle 2.0.0 content
+- UPDATE: Identified BladeArtsExId and BladeArtsEx2Id as Blade Special IV IDs
+- BUGFIX: BladeArtsExH and BladeArtsEx2H were being replaced by Blade Special IV IDs
+- UPDATE: Added controls to more easily edit Blade Special IV
+- UPDATE: Moved Blade Specials to new tab, separate from Blade Arts
+- UPDATE: Added 2.0.0/Torna DLC Content to db (Names, Arts, Items etc.)
+- NEW FEATURE: Added setting to enable/disable the ability to edit Read-Only fields
+
 ## v1.3
 New Features from User Requests
 - NEW FEATURE: Added Item sort function (Can sort by ID, Name, Qty, Equipped, Time Obtained, or Serial by clicking respective column header in Item grid

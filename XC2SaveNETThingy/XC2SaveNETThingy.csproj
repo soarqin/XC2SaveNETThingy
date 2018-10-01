@@ -84,6 +84,12 @@
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmErrorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmErrorBox.Designer.cs">
+      <DependentUpon>FrmErrorBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFAQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <None Include="Resources\icon.ico" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmErrorBox.resx">
+      <DependentUpon>FrmErrorBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFAQ.resx">
       <DependentUpon>frmFAQ.cs</DependentUpon>

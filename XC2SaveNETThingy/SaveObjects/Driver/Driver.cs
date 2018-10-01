@@ -111,6 +111,22 @@ namespace XC2SaveNETThingy
         public Pouch[] PouchInfo { get; set; }
         public Byte[] Unk_0x059C { get; set; }
 
+        public string Name_EN
+        {
+            get
+            {
+                return ToString(XC2Data.LANG.EN);
+            }
+        }
+
+        public string Name_CN
+        {
+            get
+            {
+                return ToString(XC2Data.LANG.CN);
+            }
+        }
+
         public Driver(Byte[] data)
         {
             BraveryPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BraveryPoints"], 4), 0);
@@ -259,12 +275,17 @@ namespace XC2SaveNETThingy
             return result.ToArray();
         }
 
-        public override string ToString()
+        public string ToString(XC2Data.LANG l)
         {
             if (XC2Data.ContainsDriver(ID))
-                return ID + ": " + XC2Data.Drivers().Select("ID = " + ID)[0]["Name"];
+                return ID + ": " + XC2Data.Drivers(l).Select("ID = " + ID)[0]["Name"];
             else
                 return "INVALID ID";
+        }
+
+        public override string ToString()
+        {
+            return ToString(XC2Data.LANG.EN);
         }
     }
 }
