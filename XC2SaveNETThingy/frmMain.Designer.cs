@@ -604,6 +604,62 @@
             this.nudBladeTruthLevel = new System.Windows.Forms.NumericUpDown();
             this.lblBladeIdeasTruthLevel = new System.Windows.Forms.Label();
             this.lblBladeIdeasTruthPoints = new System.Windows.Forms.Label();
+            this.tabBladeSpecials = new System.Windows.Forms.TabPage();
+            this.gbxBladeBladeSpecials = new System.Windows.Forms.GroupBox();
+            this.gbxBladeBladeSpecial4Alt = new System.Windows.Forms.GroupBox();
+            this.cbxBladeSpecial4AltID = new System.Windows.Forms.ComboBox();
+            this.nudBladeSpecial4AltH = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial4AltID = new System.Windows.Forms.NumericUpDown();
+            this.lblBladeBladeSpecial4AltID = new System.Windows.Forms.Label();
+            this.lblBladeBladeArtsEx2H = new System.Windows.Forms.Label();
+            this.gbxBladeBladeSpecial4 = new System.Windows.Forms.GroupBox();
+            this.cbxBladeSpecial4ID = new System.Windows.Forms.ComboBox();
+            this.nudBladeSpecial4H = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial4ID = new System.Windows.Forms.NumericUpDown();
+            this.lblBladeBladeSpecial4ID = new System.Windows.Forms.Label();
+            this.lblBladeBladeArtsExH = new System.Windows.Forms.Label();
+            this.gbxBladeBladeSpecial3 = new System.Windows.Forms.GroupBox();
+            this.gbxBladeBladeSpecial3Unk_0x09 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt3Unk_0x09 = new Be.Windows.Forms.HexBox();
+            this.gbxBladeBladeSpecial3Unk_0x04 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt3Unk_0x04 = new Be.Windows.Forms.HexBox();
+            this.cbxBladeSpecial3ID = new System.Windows.Forms.ComboBox();
+            this.lblBladeBladeSpecial3MaxLevel = new System.Windows.Forms.Label();
+            this.nudBladeSpecial3ID = new System.Windows.Forms.NumericUpDown();
+            this.lblBladeBladeSpecial3Level = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial3ID = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial3RecastRev = new System.Windows.Forms.Label();
+            this.nudBladeSpecial3RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial3MaxLevel = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial3Level = new System.Windows.Forms.NumericUpDown();
+            this.gbxBladeBladeSpecial2 = new System.Windows.Forms.GroupBox();
+            this.gbxBladeBladeSpecial2Unk_0x09 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt2Unk_0x09 = new Be.Windows.Forms.HexBox();
+            this.gbxBladeBladeSpecial2Unk_0x04 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt2Unk_0x04 = new Be.Windows.Forms.HexBox();
+            this.cbxBladeSpecial2ID = new System.Windows.Forms.ComboBox();
+            this.lblBladeBladeSpecial2MaxLevel = new System.Windows.Forms.Label();
+            this.nudBladeSpecial2ID = new System.Windows.Forms.NumericUpDown();
+            this.lblBladeBladeSpecial2Level = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial2ID = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial2RecastRev = new System.Windows.Forms.Label();
+            this.nudBladeSpecial2RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial2MaxLevel = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial2Level = new System.Windows.Forms.NumericUpDown();
+            this.gbxBladeBladeSpecial1 = new System.Windows.Forms.GroupBox();
+            this.gbxBladeBladeSpecial1Unk_0x09 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt1Unk_0x09 = new Be.Windows.Forms.HexBox();
+            this.gbxBladeBladeSpecial1Unk_0x04 = new System.Windows.Forms.GroupBox();
+            this.hbxBladeBArt1Unk_0x04 = new Be.Windows.Forms.HexBox();
+            this.cbxBladeSpecial1ID = new System.Windows.Forms.ComboBox();
+            this.lblBladeBladeSpecial1MaxLevel = new System.Windows.Forms.Label();
+            this.nudBladeSpecial1ID = new System.Windows.Forms.NumericUpDown();
+            this.lblBladeBladeSpecial1Level = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial1ID = new System.Windows.Forms.Label();
+            this.lblBladeBladeSpecial1RecastRev = new System.Windows.Forms.Label();
+            this.nudBladeSpecial1RecastRev = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial1MaxLevel = new System.Windows.Forms.NumericUpDown();
+            this.nudBladeSpecial1Level = new System.Windows.Forms.NumericUpDown();
             this.tabBladeArts = new System.Windows.Forms.TabPage();
             this.gbxBladeBladeArts = new System.Windows.Forms.GroupBox();
             this.gbxBladeBladeArt3 = new System.Windows.Forms.GroupBox();
@@ -648,49 +704,6 @@
             this.nudBladeNArt1RecastRev = new System.Windows.Forms.NumericUpDown();
             this.nudBladeNArt1MaxLevel = new System.Windows.Forms.NumericUpDown();
             this.nudBladeNArt1Level = new System.Windows.Forms.NumericUpDown();
-            this.gbxBladeBladeSpecials = new System.Windows.Forms.GroupBox();
-            this.gbxBladeBladeSpecial3 = new System.Windows.Forms.GroupBox();
-            this.gbxBladeBladeSpecial3Unk_0x09 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt3Unk_0x09 = new Be.Windows.Forms.HexBox();
-            this.gbxBladeBladeSpecial3Unk_0x04 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt3Unk_0x04 = new Be.Windows.Forms.HexBox();
-            this.cbxBladeBArt3ID = new System.Windows.Forms.ComboBox();
-            this.lblBladeBladeSpecial3MaxLevel = new System.Windows.Forms.Label();
-            this.nudBladeBArt3ID = new System.Windows.Forms.NumericUpDown();
-            this.lblBladeBladeSpecial3Level = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial3ID = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial3RecastRev = new System.Windows.Forms.Label();
-            this.nudBladeBArt3RecastRev = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt3MaxLevel = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt3Level = new System.Windows.Forms.NumericUpDown();
-            this.gbxBladeBladeSpecial2 = new System.Windows.Forms.GroupBox();
-            this.gbxBladeBladeSpecial2Unk_0x09 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt2Unk_0x09 = new Be.Windows.Forms.HexBox();
-            this.gbxBladeBladeSpecial2Unk_0x04 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt2Unk_0x04 = new Be.Windows.Forms.HexBox();
-            this.cbxBladeBArt2ID = new System.Windows.Forms.ComboBox();
-            this.lblBladeBladeSpecial2MaxLevel = new System.Windows.Forms.Label();
-            this.nudBladeBArt2ID = new System.Windows.Forms.NumericUpDown();
-            this.lblBladeBladeSpecial2Level = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial2ID = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial2RecastRev = new System.Windows.Forms.Label();
-            this.nudBladeBArt2RecastRev = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt2MaxLevel = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt2Level = new System.Windows.Forms.NumericUpDown();
-            this.gbxBladeBladeSpecial1 = new System.Windows.Forms.GroupBox();
-            this.gbxBladeBladeSpecial1Unk_0x09 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt1Unk_0x09 = new Be.Windows.Forms.HexBox();
-            this.gbxBladeBladeSpecial1Unk_0x04 = new System.Windows.Forms.GroupBox();
-            this.hbxBladeBArt1Unk_0x04 = new Be.Windows.Forms.HexBox();
-            this.cbxBladeBArt1ID = new System.Windows.Forms.ComboBox();
-            this.lblBladeBladeSpecial1MaxLevel = new System.Windows.Forms.Label();
-            this.nudBladeBArt1ID = new System.Windows.Forms.NumericUpDown();
-            this.lblBladeBladeSpecial1Level = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial1ID = new System.Windows.Forms.Label();
-            this.lblBladeBladeSpecial1RecastRev = new System.Windows.Forms.Label();
-            this.nudBladeBArt1RecastRev = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt1MaxLevel = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArt1Level = new System.Windows.Forms.NumericUpDown();
             this.tabBladeSkills = new System.Windows.Forms.TabPage();
             this.gbxFieldSkills = new System.Windows.Forms.GroupBox();
             this.gbxBladeFieldSkill3 = new System.Windows.Forms.GroupBox();
@@ -1153,14 +1166,6 @@
             this.nudBladePersonality = new System.Windows.Forms.NumericUpDown();
             this.gbxBladeExtraParts2 = new System.Windows.Forms.GroupBox();
             this.hbxBladeExtraParts2 = new Be.Windows.Forms.HexBox();
-            this.nudBladeBladeArtsEx2H = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArtEx2Id = new System.Windows.Forms.NumericUpDown();
-            this.lblBladeBladeArtsEx2H = new System.Windows.Forms.Label();
-            this.lblBladeBArtEx2Id = new System.Windows.Forms.Label();
-            this.lblBladeBladeArtsExH = new System.Windows.Forms.Label();
-            this.lblBladeBArtExId = new System.Windows.Forms.Label();
-            this.nudBladeBladeArtsExH = new System.Windows.Forms.NumericUpDown();
-            this.nudBladeBArtExId = new System.Windows.Forms.NumericUpDown();
             this.nudBladeMountObject = new System.Windows.Forms.NumericUpDown();
             this.lblBladeMountObject = new System.Windows.Forms.Label();
             this.nudBladeMountPoint = new System.Windows.Forms.NumericUpDown();
@@ -1672,9 +1677,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdBladeAffChart = new System.Windows.Forms.OpenFileDialog();
             this.sfdBladeAffChart = new System.Windows.Forms.SaveFileDialog();
             this.ofdBlade = new System.Windows.Forms.OpenFileDialog();
@@ -1682,6 +1684,11 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1960,6 +1967,35 @@
             this.gbxBladeIdeasTruth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeTruthPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeTruthLevel)).BeginInit();
+            this.tabBladeSpecials.SuspendLayout();
+            this.gbxBladeBladeSpecials.SuspendLayout();
+            this.gbxBladeBladeSpecial4Alt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4AltH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4AltID)).BeginInit();
+            this.gbxBladeBladeSpecial4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4H)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4ID)).BeginInit();
+            this.gbxBladeBladeSpecial3.SuspendLayout();
+            this.gbxBladeBladeSpecial3Unk_0x09.SuspendLayout();
+            this.gbxBladeBladeSpecial3Unk_0x04.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3MaxLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3Level)).BeginInit();
+            this.gbxBladeBladeSpecial2.SuspendLayout();
+            this.gbxBladeBladeSpecial2Unk_0x09.SuspendLayout();
+            this.gbxBladeBladeSpecial2Unk_0x04.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2MaxLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2Level)).BeginInit();
+            this.gbxBladeBladeSpecial1.SuspendLayout();
+            this.gbxBladeBladeSpecial1Unk_0x09.SuspendLayout();
+            this.gbxBladeBladeSpecial1Unk_0x04.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1RecastRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1MaxLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1Level)).BeginInit();
             this.tabBladeArts.SuspendLayout();
             this.gbxBladeBladeArts.SuspendLayout();
             this.gbxBladeBladeArt3.SuspendLayout();
@@ -1983,28 +2019,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1RecastRev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1MaxLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1Level)).BeginInit();
-            this.gbxBladeBladeSpecials.SuspendLayout();
-            this.gbxBladeBladeSpecial3.SuspendLayout();
-            this.gbxBladeBladeSpecial3Unk_0x09.SuspendLayout();
-            this.gbxBladeBladeSpecial3Unk_0x04.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3RecastRev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3MaxLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3Level)).BeginInit();
-            this.gbxBladeBladeSpecial2.SuspendLayout();
-            this.gbxBladeBladeSpecial2Unk_0x09.SuspendLayout();
-            this.gbxBladeBladeSpecial2Unk_0x04.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2RecastRev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2MaxLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2Level)).BeginInit();
-            this.gbxBladeBladeSpecial1.SuspendLayout();
-            this.gbxBladeBladeSpecial1Unk_0x09.SuspendLayout();
-            this.gbxBladeBladeSpecial1Unk_0x04.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1ID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1RecastRev)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1MaxLevel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1Level)).BeginInit();
             this.tabBladeSkills.SuspendLayout();
             this.gbxFieldSkills.SuspendLayout();
             this.gbxBladeFieldSkill3.SuspendLayout();
@@ -2195,10 +2209,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeExtraParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePersonality)).BeginInit();
             this.gbxBladeExtraParts2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBladeArtsEx2H)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArtEx2Id)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBladeArtsExH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArtExId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeMountObject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeMountPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCreateEventID)).BeginInit();
@@ -5204,7 +5214,6 @@
             // 
             // nudDriverGuardRate
             // 
-            this.nudDriverGuardRate.Enabled = false;
             this.nudDriverGuardRate.Location = new System.Drawing.Point(109, 213);
             this.nudDriverGuardRate.Maximum = new decimal(new int[] {
             255,
@@ -5344,7 +5353,6 @@
             // 
             // nudDriverLevel
             // 
-            this.nudDriverLevel.Enabled = false;
             this.nudDriverLevel.Location = new System.Drawing.Point(89, 13);
             this.nudDriverLevel.Maximum = new decimal(new int[] {
             65535,
@@ -7511,6 +7519,7 @@
             // tbcBlades
             // 
             this.tbcBlades.Controls.Add(this.tabBladeMain);
+            this.tbcBlades.Controls.Add(this.tabBladeSpecials);
             this.tbcBlades.Controls.Add(this.tabBladeArts);
             this.tbcBlades.Controls.Add(this.tabBladeSkills);
             this.tbcBlades.Controls.Add(this.tabBladePoppiswap);
@@ -9104,15 +9113,643 @@
             this.lblBladeIdeasTruthPoints.TabIndex = 1;
             this.lblBladeIdeasTruthPoints.Text = "Points:";
             // 
+            // tabBladeSpecials
+            // 
+            this.tabBladeSpecials.Controls.Add(this.gbxBladeBladeSpecials);
+            this.tabBladeSpecials.Location = new System.Drawing.Point(4, 22);
+            this.tabBladeSpecials.Name = "tabBladeSpecials";
+            this.tabBladeSpecials.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBladeSpecials.Size = new System.Drawing.Size(948, 544);
+            this.tabBladeSpecials.TabIndex = 1;
+            this.tabBladeSpecials.Text = "Specials";
+            this.tabBladeSpecials.UseVisualStyleBackColor = true;
+            // 
+            // gbxBladeBladeSpecials
+            // 
+            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial4Alt);
+            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial4);
+            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial3);
+            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial2);
+            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial1);
+            this.gbxBladeBladeSpecials.Location = new System.Drawing.Point(6, 6);
+            this.gbxBladeBladeSpecials.Name = "gbxBladeBladeSpecials";
+            this.gbxBladeBladeSpecials.Size = new System.Drawing.Size(661, 334);
+            this.gbxBladeBladeSpecials.TabIndex = 104;
+            this.gbxBladeBladeSpecials.TabStop = false;
+            this.gbxBladeBladeSpecials.Text = "Blade Specials";
+            // 
+            // gbxBladeBladeSpecial4Alt
+            // 
+            this.gbxBladeBladeSpecial4Alt.Controls.Add(this.cbxBladeSpecial4AltID);
+            this.gbxBladeBladeSpecial4Alt.Controls.Add(this.nudBladeSpecial4AltH);
+            this.gbxBladeBladeSpecial4Alt.Controls.Add(this.nudBladeSpecial4AltID);
+            this.gbxBladeBladeSpecial4Alt.Controls.Add(this.lblBladeBladeSpecial4AltID);
+            this.gbxBladeBladeSpecial4Alt.Controls.Add(this.lblBladeBladeArtsEx2H);
+            this.gbxBladeBladeSpecial4Alt.Location = new System.Drawing.Point(333, 261);
+            this.gbxBladeBladeSpecial4Alt.Name = "gbxBladeBladeSpecial4Alt";
+            this.gbxBladeBladeSpecial4Alt.Size = new System.Drawing.Size(321, 66);
+            this.gbxBladeBladeSpecial4Alt.TabIndex = 247;
+            this.gbxBladeBladeSpecial4Alt.TabStop = false;
+            this.gbxBladeBladeSpecial4Alt.Text = "Blade Special IV ALT";
+            // 
+            // cbxBladeSpecial4AltID
+            // 
+            this.cbxBladeSpecial4AltID.FormattingEnabled = true;
+            this.cbxBladeSpecial4AltID.Location = new System.Drawing.Point(152, 13);
+            this.cbxBladeSpecial4AltID.Name = "cbxBladeSpecial4AltID";
+            this.cbxBladeSpecial4AltID.Size = new System.Drawing.Size(162, 21);
+            this.cbxBladeSpecial4AltID.TabIndex = 18;
+            this.cbxBladeSpecial4AltID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeBArt4AltID_SelectionChangeCommitted);
+            // 
+            // nudBladeSpecial4AltH
+            // 
+            this.nudBladeSpecial4AltH.Location = new System.Drawing.Point(87, 37);
+            this.nudBladeSpecial4AltH.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial4AltH.Name = "nudBladeSpecial4AltH";
+            this.nudBladeSpecial4AltH.Size = new System.Drawing.Size(61, 20);
+            this.nudBladeSpecial4AltH.TabIndex = 244;
+            this.nudBladeSpecial4AltH.ValueChanged += new System.EventHandler(this.nudBladeSpecial4AltH_ValueChanged);
+            // 
+            // nudBladeSpecial4AltID
+            // 
+            this.nudBladeSpecial4AltID.Location = new System.Drawing.Point(87, 13);
+            this.nudBladeSpecial4AltID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial4AltID.Name = "nudBladeSpecial4AltID";
+            this.nudBladeSpecial4AltID.Size = new System.Drawing.Size(61, 20);
+            this.nudBladeSpecial4AltID.TabIndex = 10;
+            this.nudBladeSpecial4AltID.ValueChanged += new System.EventHandler(this.nudBladeSpecial4AltID_ValueChanged);
+            // 
+            // lblBladeBladeSpecial4AltID
+            // 
+            this.lblBladeBladeSpecial4AltID.AutoSize = true;
+            this.lblBladeBladeSpecial4AltID.Location = new System.Drawing.Point(6, 16);
+            this.lblBladeBladeSpecial4AltID.Name = "lblBladeBladeSpecial4AltID";
+            this.lblBladeBladeSpecial4AltID.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial4AltID.TabIndex = 11;
+            this.lblBladeBladeSpecial4AltID.Text = "Blade Art ID:";
+            // 
+            // lblBladeBladeArtsEx2H
+            // 
+            this.lblBladeBladeArtsEx2H.AutoSize = true;
+            this.lblBladeBladeArtsEx2H.Location = new System.Drawing.Point(6, 39);
+            this.lblBladeBladeArtsEx2H.Name = "lblBladeBladeArtsEx2H";
+            this.lblBladeBladeArtsEx2H.Size = new System.Drawing.Size(81, 13);
+            this.lblBladeBladeArtsEx2H.TabIndex = 246;
+            this.lblBladeBladeArtsEx2H.Text = "BladeArtsEx2H:";
+            // 
+            // gbxBladeBladeSpecial4
+            // 
+            this.gbxBladeBladeSpecial4.Controls.Add(this.cbxBladeSpecial4ID);
+            this.gbxBladeBladeSpecial4.Controls.Add(this.nudBladeSpecial4H);
+            this.gbxBladeBladeSpecial4.Controls.Add(this.nudBladeSpecial4ID);
+            this.gbxBladeBladeSpecial4.Controls.Add(this.lblBladeBladeSpecial4ID);
+            this.gbxBladeBladeSpecial4.Controls.Add(this.lblBladeBladeArtsExH);
+            this.gbxBladeBladeSpecial4.Location = new System.Drawing.Point(333, 181);
+            this.gbxBladeBladeSpecial4.Name = "gbxBladeBladeSpecial4";
+            this.gbxBladeBladeSpecial4.Size = new System.Drawing.Size(321, 66);
+            this.gbxBladeBladeSpecial4.TabIndex = 156;
+            this.gbxBladeBladeSpecial4.TabStop = false;
+            this.gbxBladeBladeSpecial4.Text = "Blade Special IV";
+            // 
+            // cbxBladeSpecial4ID
+            // 
+            this.cbxBladeSpecial4ID.FormattingEnabled = true;
+            this.cbxBladeSpecial4ID.Location = new System.Drawing.Point(152, 13);
+            this.cbxBladeSpecial4ID.Name = "cbxBladeSpecial4ID";
+            this.cbxBladeSpecial4ID.Size = new System.Drawing.Size(162, 21);
+            this.cbxBladeSpecial4ID.TabIndex = 18;
+            this.cbxBladeSpecial4ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeBArt4ID_SelectionChangeCommitted);
+            // 
+            // nudBladeSpecial4H
+            // 
+            this.nudBladeSpecial4H.Location = new System.Drawing.Point(87, 37);
+            this.nudBladeSpecial4H.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial4H.Name = "nudBladeSpecial4H";
+            this.nudBladeSpecial4H.Size = new System.Drawing.Size(61, 20);
+            this.nudBladeSpecial4H.TabIndex = 244;
+            this.nudBladeSpecial4H.ValueChanged += new System.EventHandler(this.nudBladeSpecial4H_ValueChanged);
+            // 
+            // nudBladeSpecial4ID
+            // 
+            this.nudBladeSpecial4ID.Location = new System.Drawing.Point(87, 13);
+            this.nudBladeSpecial4ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial4ID.Name = "nudBladeSpecial4ID";
+            this.nudBladeSpecial4ID.Size = new System.Drawing.Size(61, 20);
+            this.nudBladeSpecial4ID.TabIndex = 10;
+            this.nudBladeSpecial4ID.ValueChanged += new System.EventHandler(this.nudBladeSpecial4ID_ValueChanged);
+            // 
+            // lblBladeBladeSpecial4ID
+            // 
+            this.lblBladeBladeSpecial4ID.AutoSize = true;
+            this.lblBladeBladeSpecial4ID.Location = new System.Drawing.Point(6, 16);
+            this.lblBladeBladeSpecial4ID.Name = "lblBladeBladeSpecial4ID";
+            this.lblBladeBladeSpecial4ID.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial4ID.TabIndex = 11;
+            this.lblBladeBladeSpecial4ID.Text = "Blade Art ID:";
+            // 
+            // lblBladeBladeArtsExH
+            // 
+            this.lblBladeBladeArtsExH.AutoSize = true;
+            this.lblBladeBladeArtsExH.Location = new System.Drawing.Point(6, 39);
+            this.lblBladeBladeArtsExH.Name = "lblBladeBladeArtsExH";
+            this.lblBladeBladeArtsExH.Size = new System.Drawing.Size(75, 13);
+            this.lblBladeBladeArtsExH.TabIndex = 246;
+            this.lblBladeBladeArtsExH.Text = "BladeArtsExH:";
+            // 
+            // gbxBladeBladeSpecial3
+            // 
+            this.gbxBladeBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x09);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x04);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.cbxBladeSpecial3ID);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3MaxLevel);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeSpecial3ID);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3Level);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3ID);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3RecastRev);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeSpecial3RecastRev);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeSpecial3MaxLevel);
+            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeSpecial3Level);
+            this.gbxBladeBladeSpecial3.Location = new System.Drawing.Point(333, 19);
+            this.gbxBladeBladeSpecial3.Name = "gbxBladeBladeSpecial3";
+            this.gbxBladeBladeSpecial3.Size = new System.Drawing.Size(321, 151);
+            this.gbxBladeBladeSpecial3.TabIndex = 20;
+            this.gbxBladeBladeSpecial3.TabStop = false;
+            this.gbxBladeBladeSpecial3.Text = "Blade Special III";
+            // 
+            // gbxBladeBladeSpecial3Unk_0x09
+            // 
+            this.gbxBladeBladeSpecial3Unk_0x09.Controls.Add(this.hbxBladeBArt3Unk_0x09);
+            this.gbxBladeBladeSpecial3Unk_0x09.Location = new System.Drawing.Point(142, 77);
+            this.gbxBladeBladeSpecial3Unk_0x09.Name = "gbxBladeBladeSpecial3Unk_0x09";
+            this.gbxBladeBladeSpecial3Unk_0x09.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial3Unk_0x09.TabIndex = 155;
+            this.gbxBladeBladeSpecial3Unk_0x09.TabStop = false;
+            this.gbxBladeBladeSpecial3Unk_0x09.Text = "Unk_0x09";
+            // 
+            // hbxBladeBArt3Unk_0x09
+            // 
+            this.hbxBladeBArt3Unk_0x09.ColumnInfoVisible = true;
+            this.hbxBladeBArt3Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt3Unk_0x09.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt3Unk_0x09.Name = "hbxBladeBArt3Unk_0x09";
+            this.hbxBladeBArt3Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt3Unk_0x09.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt3Unk_0x09.TabIndex = 152;
+            // 
+            // gbxBladeBladeSpecial3Unk_0x04
+            // 
+            this.gbxBladeBladeSpecial3Unk_0x04.Controls.Add(this.hbxBladeBArt3Unk_0x04);
+            this.gbxBladeBladeSpecial3Unk_0x04.Location = new System.Drawing.Point(9, 77);
+            this.gbxBladeBladeSpecial3Unk_0x04.Name = "gbxBladeBladeSpecial3Unk_0x04";
+            this.gbxBladeBladeSpecial3Unk_0x04.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial3Unk_0x04.TabIndex = 155;
+            this.gbxBladeBladeSpecial3Unk_0x04.TabStop = false;
+            this.gbxBladeBladeSpecial3Unk_0x04.Text = "Unk_0x04";
+            // 
+            // hbxBladeBArt3Unk_0x04
+            // 
+            this.hbxBladeBArt3Unk_0x04.ColumnInfoVisible = true;
+            this.hbxBladeBArt3Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt3Unk_0x04.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt3Unk_0x04.Name = "hbxBladeBArt3Unk_0x04";
+            this.hbxBladeBArt3Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt3Unk_0x04.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt3Unk_0x04.TabIndex = 152;
+            // 
+            // cbxBladeSpecial3ID
+            // 
+            this.cbxBladeSpecial3ID.FormattingEnabled = true;
+            this.cbxBladeSpecial3ID.Location = new System.Drawing.Point(152, 13);
+            this.cbxBladeSpecial3ID.Name = "cbxBladeSpecial3ID";
+            this.cbxBladeSpecial3ID.Size = new System.Drawing.Size(162, 21);
+            this.cbxBladeSpecial3ID.TabIndex = 18;
+            this.cbxBladeSpecial3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeSpecial3ID_SelectionChangeCommitted);
+            // 
+            // lblBladeBladeSpecial3MaxLevel
+            // 
+            this.lblBladeBladeSpecial3MaxLevel.AutoSize = true;
+            this.lblBladeBladeSpecial3MaxLevel.Location = new System.Drawing.Point(6, 53);
+            this.lblBladeBladeSpecial3MaxLevel.Name = "lblBladeBladeSpecial3MaxLevel";
+            this.lblBladeBladeSpecial3MaxLevel.Size = new System.Drawing.Size(59, 13);
+            this.lblBladeBladeSpecial3MaxLevel.TabIndex = 17;
+            this.lblBladeBladeSpecial3MaxLevel.Text = "Max Level:";
+            // 
+            // nudBladeSpecial3ID
+            // 
+            this.nudBladeSpecial3ID.Location = new System.Drawing.Point(79, 13);
+            this.nudBladeSpecial3ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial3ID.Name = "nudBladeSpecial3ID";
+            this.nudBladeSpecial3ID.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial3ID.TabIndex = 10;
+            this.nudBladeSpecial3ID.ValueChanged += new System.EventHandler(this.nudBladeSpecial3ID_ValueChanged);
+            // 
+            // lblBladeBladeSpecial3Level
+            // 
+            this.lblBladeBladeSpecial3Level.AutoSize = true;
+            this.lblBladeBladeSpecial3Level.Location = new System.Drawing.Point(6, 34);
+            this.lblBladeBladeSpecial3Level.Name = "lblBladeBladeSpecial3Level";
+            this.lblBladeBladeSpecial3Level.Size = new System.Drawing.Size(36, 13);
+            this.lblBladeBladeSpecial3Level.TabIndex = 16;
+            this.lblBladeBladeSpecial3Level.Text = "Level:";
+            // 
+            // lblBladeBladeSpecial3ID
+            // 
+            this.lblBladeBladeSpecial3ID.AutoSize = true;
+            this.lblBladeBladeSpecial3ID.Location = new System.Drawing.Point(6, 16);
+            this.lblBladeBladeSpecial3ID.Name = "lblBladeBladeSpecial3ID";
+            this.lblBladeBladeSpecial3ID.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial3ID.TabIndex = 11;
+            this.lblBladeBladeSpecial3ID.Text = "Blade Art ID:";
+            // 
+            // lblBladeBladeSpecial3RecastRev
+            // 
+            this.lblBladeBladeSpecial3RecastRev.AutoSize = true;
+            this.lblBladeBladeSpecial3RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial3RecastRev.Name = "lblBladeBladeSpecial3RecastRev";
+            this.lblBladeBladeSpecial3RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial3RecastRev.TabIndex = 15;
+            this.lblBladeBladeSpecial3RecastRev.Text = "Recast Rev:";
+            // 
+            // nudBladeSpecial3RecastRev
+            // 
+            this.nudBladeSpecial3RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial3RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial3RecastRev.Name = "nudBladeSpecial3RecastRev";
+            this.nudBladeSpecial3RecastRev.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial3RecastRev.TabIndex = 12;
+            this.nudBladeSpecial3RecastRev.ValueChanged += new System.EventHandler(this.nudBladeSpecial3RecastRev_ValueChanged);
+            // 
+            // nudBladeSpecial3MaxLevel
+            // 
+            this.nudBladeSpecial3MaxLevel.Location = new System.Drawing.Point(79, 51);
+            this.nudBladeSpecial3MaxLevel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial3MaxLevel.Name = "nudBladeSpecial3MaxLevel";
+            this.nudBladeSpecial3MaxLevel.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial3MaxLevel.TabIndex = 14;
+            this.nudBladeSpecial3MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeSpecial3MaxLevel_ValueChanged);
+            // 
+            // nudBladeSpecial3Level
+            // 
+            this.nudBladeSpecial3Level.Location = new System.Drawing.Point(79, 32);
+            this.nudBladeSpecial3Level.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial3Level.Name = "nudBladeSpecial3Level";
+            this.nudBladeSpecial3Level.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial3Level.TabIndex = 13;
+            this.nudBladeSpecial3Level.ValueChanged += new System.EventHandler(this.nudBladeSpecial3Level_ValueChanged);
+            // 
+            // gbxBladeBladeSpecial2
+            // 
+            this.gbxBladeBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x09);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x04);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.cbxBladeSpecial2ID);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2MaxLevel);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeSpecial2ID);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2Level);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2ID);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2RecastRev);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeSpecial2RecastRev);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeSpecial2MaxLevel);
+            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeSpecial2Level);
+            this.gbxBladeBladeSpecial2.Location = new System.Drawing.Point(6, 176);
+            this.gbxBladeBladeSpecial2.Name = "gbxBladeBladeSpecial2";
+            this.gbxBladeBladeSpecial2.Size = new System.Drawing.Size(321, 151);
+            this.gbxBladeBladeSpecial2.TabIndex = 19;
+            this.gbxBladeBladeSpecial2.TabStop = false;
+            this.gbxBladeBladeSpecial2.Text = "Blade Special II";
+            // 
+            // gbxBladeBladeSpecial2Unk_0x09
+            // 
+            this.gbxBladeBladeSpecial2Unk_0x09.Controls.Add(this.hbxBladeBArt2Unk_0x09);
+            this.gbxBladeBladeSpecial2Unk_0x09.Location = new System.Drawing.Point(142, 77);
+            this.gbxBladeBladeSpecial2Unk_0x09.Name = "gbxBladeBladeSpecial2Unk_0x09";
+            this.gbxBladeBladeSpecial2Unk_0x09.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial2Unk_0x09.TabIndex = 155;
+            this.gbxBladeBladeSpecial2Unk_0x09.TabStop = false;
+            this.gbxBladeBladeSpecial2Unk_0x09.Text = "Unk_0x09";
+            // 
+            // hbxBladeBArt2Unk_0x09
+            // 
+            this.hbxBladeBArt2Unk_0x09.ColumnInfoVisible = true;
+            this.hbxBladeBArt2Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt2Unk_0x09.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt2Unk_0x09.Name = "hbxBladeBArt2Unk_0x09";
+            this.hbxBladeBArt2Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt2Unk_0x09.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt2Unk_0x09.TabIndex = 152;
+            // 
+            // gbxBladeBladeSpecial2Unk_0x04
+            // 
+            this.gbxBladeBladeSpecial2Unk_0x04.Controls.Add(this.hbxBladeBArt2Unk_0x04);
+            this.gbxBladeBladeSpecial2Unk_0x04.Location = new System.Drawing.Point(9, 77);
+            this.gbxBladeBladeSpecial2Unk_0x04.Name = "gbxBladeBladeSpecial2Unk_0x04";
+            this.gbxBladeBladeSpecial2Unk_0x04.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial2Unk_0x04.TabIndex = 155;
+            this.gbxBladeBladeSpecial2Unk_0x04.TabStop = false;
+            this.gbxBladeBladeSpecial2Unk_0x04.Text = "Unk_0x04";
+            // 
+            // hbxBladeBArt2Unk_0x04
+            // 
+            this.hbxBladeBArt2Unk_0x04.ColumnInfoVisible = true;
+            this.hbxBladeBArt2Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt2Unk_0x04.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt2Unk_0x04.Name = "hbxBladeBArt2Unk_0x04";
+            this.hbxBladeBArt2Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt2Unk_0x04.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt2Unk_0x04.TabIndex = 152;
+            // 
+            // cbxBladeSpecial2ID
+            // 
+            this.cbxBladeSpecial2ID.FormattingEnabled = true;
+            this.cbxBladeSpecial2ID.Location = new System.Drawing.Point(152, 13);
+            this.cbxBladeSpecial2ID.Name = "cbxBladeSpecial2ID";
+            this.cbxBladeSpecial2ID.Size = new System.Drawing.Size(162, 21);
+            this.cbxBladeSpecial2ID.TabIndex = 18;
+            this.cbxBladeSpecial2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeSpecial2ID_SelectionChangeCommitted);
+            // 
+            // lblBladeBladeSpecial2MaxLevel
+            // 
+            this.lblBladeBladeSpecial2MaxLevel.AutoSize = true;
+            this.lblBladeBladeSpecial2MaxLevel.Location = new System.Drawing.Point(6, 53);
+            this.lblBladeBladeSpecial2MaxLevel.Name = "lblBladeBladeSpecial2MaxLevel";
+            this.lblBladeBladeSpecial2MaxLevel.Size = new System.Drawing.Size(59, 13);
+            this.lblBladeBladeSpecial2MaxLevel.TabIndex = 17;
+            this.lblBladeBladeSpecial2MaxLevel.Text = "Max Level:";
+            // 
+            // nudBladeSpecial2ID
+            // 
+            this.nudBladeSpecial2ID.Location = new System.Drawing.Point(79, 13);
+            this.nudBladeSpecial2ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial2ID.Name = "nudBladeSpecial2ID";
+            this.nudBladeSpecial2ID.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial2ID.TabIndex = 10;
+            this.nudBladeSpecial2ID.ValueChanged += new System.EventHandler(this.nudBladeSpecial2ID_ValueChanged);
+            // 
+            // lblBladeBladeSpecial2Level
+            // 
+            this.lblBladeBladeSpecial2Level.AutoSize = true;
+            this.lblBladeBladeSpecial2Level.Location = new System.Drawing.Point(6, 34);
+            this.lblBladeBladeSpecial2Level.Name = "lblBladeBladeSpecial2Level";
+            this.lblBladeBladeSpecial2Level.Size = new System.Drawing.Size(36, 13);
+            this.lblBladeBladeSpecial2Level.TabIndex = 16;
+            this.lblBladeBladeSpecial2Level.Text = "Level:";
+            // 
+            // lblBladeBladeSpecial2ID
+            // 
+            this.lblBladeBladeSpecial2ID.AutoSize = true;
+            this.lblBladeBladeSpecial2ID.Location = new System.Drawing.Point(6, 16);
+            this.lblBladeBladeSpecial2ID.Name = "lblBladeBladeSpecial2ID";
+            this.lblBladeBladeSpecial2ID.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial2ID.TabIndex = 11;
+            this.lblBladeBladeSpecial2ID.Text = "Blade Art ID:";
+            // 
+            // lblBladeBladeSpecial2RecastRev
+            // 
+            this.lblBladeBladeSpecial2RecastRev.AutoSize = true;
+            this.lblBladeBladeSpecial2RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial2RecastRev.Name = "lblBladeBladeSpecial2RecastRev";
+            this.lblBladeBladeSpecial2RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial2RecastRev.TabIndex = 15;
+            this.lblBladeBladeSpecial2RecastRev.Text = "Recast Rev:";
+            // 
+            // nudBladeSpecial2RecastRev
+            // 
+            this.nudBladeSpecial2RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial2RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial2RecastRev.Name = "nudBladeSpecial2RecastRev";
+            this.nudBladeSpecial2RecastRev.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial2RecastRev.TabIndex = 12;
+            this.nudBladeSpecial2RecastRev.ValueChanged += new System.EventHandler(this.nudBladeSpecial2RecastRev_ValueChanged);
+            // 
+            // nudBladeSpecial2MaxLevel
+            // 
+            this.nudBladeSpecial2MaxLevel.Location = new System.Drawing.Point(79, 51);
+            this.nudBladeSpecial2MaxLevel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial2MaxLevel.Name = "nudBladeSpecial2MaxLevel";
+            this.nudBladeSpecial2MaxLevel.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial2MaxLevel.TabIndex = 14;
+            this.nudBladeSpecial2MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeSpecial2MaxLevel_ValueChanged);
+            // 
+            // nudBladeSpecial2Level
+            // 
+            this.nudBladeSpecial2Level.Location = new System.Drawing.Point(79, 32);
+            this.nudBladeSpecial2Level.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial2Level.Name = "nudBladeSpecial2Level";
+            this.nudBladeSpecial2Level.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial2Level.TabIndex = 13;
+            this.nudBladeSpecial2Level.ValueChanged += new System.EventHandler(this.nudBladeSpecial2Level_ValueChanged);
+            // 
+            // gbxBladeBladeSpecial1
+            // 
+            this.gbxBladeBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x09);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x04);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.cbxBladeSpecial1ID);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1MaxLevel);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeSpecial1ID);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1Level);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1ID);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1RecastRev);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeSpecial1RecastRev);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeSpecial1MaxLevel);
+            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeSpecial1Level);
+            this.gbxBladeBladeSpecial1.Location = new System.Drawing.Point(6, 19);
+            this.gbxBladeBladeSpecial1.Name = "gbxBladeBladeSpecial1";
+            this.gbxBladeBladeSpecial1.Size = new System.Drawing.Size(321, 151);
+            this.gbxBladeBladeSpecial1.TabIndex = 9;
+            this.gbxBladeBladeSpecial1.TabStop = false;
+            this.gbxBladeBladeSpecial1.Text = "Blade Special I";
+            // 
+            // gbxBladeBladeSpecial1Unk_0x09
+            // 
+            this.gbxBladeBladeSpecial1Unk_0x09.Controls.Add(this.hbxBladeBArt1Unk_0x09);
+            this.gbxBladeBladeSpecial1Unk_0x09.Location = new System.Drawing.Point(142, 77);
+            this.gbxBladeBladeSpecial1Unk_0x09.Name = "gbxBladeBladeSpecial1Unk_0x09";
+            this.gbxBladeBladeSpecial1Unk_0x09.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial1Unk_0x09.TabIndex = 155;
+            this.gbxBladeBladeSpecial1Unk_0x09.TabStop = false;
+            this.gbxBladeBladeSpecial1Unk_0x09.Text = "Unk_0x09";
+            // 
+            // hbxBladeBArt1Unk_0x09
+            // 
+            this.hbxBladeBArt1Unk_0x09.ColumnInfoVisible = true;
+            this.hbxBladeBArt1Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt1Unk_0x09.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt1Unk_0x09.Name = "hbxBladeBArt1Unk_0x09";
+            this.hbxBladeBArt1Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt1Unk_0x09.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt1Unk_0x09.TabIndex = 152;
+            // 
+            // gbxBladeBladeSpecial1Unk_0x04
+            // 
+            this.gbxBladeBladeSpecial1Unk_0x04.Controls.Add(this.hbxBladeBArt1Unk_0x04);
+            this.gbxBladeBladeSpecial1Unk_0x04.Location = new System.Drawing.Point(9, 77);
+            this.gbxBladeBladeSpecial1Unk_0x04.Name = "gbxBladeBladeSpecial1Unk_0x04";
+            this.gbxBladeBladeSpecial1Unk_0x04.Size = new System.Drawing.Size(117, 67);
+            this.gbxBladeBladeSpecial1Unk_0x04.TabIndex = 154;
+            this.gbxBladeBladeSpecial1Unk_0x04.TabStop = false;
+            this.gbxBladeBladeSpecial1Unk_0x04.Text = "Unk_0x04";
+            // 
+            // hbxBladeBArt1Unk_0x04
+            // 
+            this.hbxBladeBArt1Unk_0x04.ColumnInfoVisible = true;
+            this.hbxBladeBArt1Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxBladeBArt1Unk_0x04.Location = new System.Drawing.Point(6, 19);
+            this.hbxBladeBArt1Unk_0x04.Name = "hbxBladeBArt1Unk_0x04";
+            this.hbxBladeBArt1Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxBladeBArt1Unk_0x04.Size = new System.Drawing.Size(104, 41);
+            this.hbxBladeBArt1Unk_0x04.TabIndex = 152;
+            // 
+            // cbxBladeSpecial1ID
+            // 
+            this.cbxBladeSpecial1ID.FormattingEnabled = true;
+            this.cbxBladeSpecial1ID.Location = new System.Drawing.Point(152, 13);
+            this.cbxBladeSpecial1ID.Name = "cbxBladeSpecial1ID";
+            this.cbxBladeSpecial1ID.Size = new System.Drawing.Size(162, 21);
+            this.cbxBladeSpecial1ID.TabIndex = 18;
+            this.cbxBladeSpecial1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeSpecial1ID_SelectionChangeCommitted);
+            // 
+            // lblBladeBladeSpecial1MaxLevel
+            // 
+            this.lblBladeBladeSpecial1MaxLevel.AutoSize = true;
+            this.lblBladeBladeSpecial1MaxLevel.Location = new System.Drawing.Point(6, 53);
+            this.lblBladeBladeSpecial1MaxLevel.Name = "lblBladeBladeSpecial1MaxLevel";
+            this.lblBladeBladeSpecial1MaxLevel.Size = new System.Drawing.Size(59, 13);
+            this.lblBladeBladeSpecial1MaxLevel.TabIndex = 17;
+            this.lblBladeBladeSpecial1MaxLevel.Text = "Max Level:";
+            // 
+            // nudBladeSpecial1ID
+            // 
+            this.nudBladeSpecial1ID.Location = new System.Drawing.Point(79, 13);
+            this.nudBladeSpecial1ID.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial1ID.Name = "nudBladeSpecial1ID";
+            this.nudBladeSpecial1ID.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial1ID.TabIndex = 10;
+            this.nudBladeSpecial1ID.ValueChanged += new System.EventHandler(this.nudBladeSpecial1ID_ValueChanged);
+            // 
+            // lblBladeBladeSpecial1Level
+            // 
+            this.lblBladeBladeSpecial1Level.AutoSize = true;
+            this.lblBladeBladeSpecial1Level.Location = new System.Drawing.Point(6, 34);
+            this.lblBladeBladeSpecial1Level.Name = "lblBladeBladeSpecial1Level";
+            this.lblBladeBladeSpecial1Level.Size = new System.Drawing.Size(36, 13);
+            this.lblBladeBladeSpecial1Level.TabIndex = 16;
+            this.lblBladeBladeSpecial1Level.Text = "Level:";
+            // 
+            // lblBladeBladeSpecial1ID
+            // 
+            this.lblBladeBladeSpecial1ID.AutoSize = true;
+            this.lblBladeBladeSpecial1ID.Location = new System.Drawing.Point(6, 16);
+            this.lblBladeBladeSpecial1ID.Name = "lblBladeBladeSpecial1ID";
+            this.lblBladeBladeSpecial1ID.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial1ID.TabIndex = 11;
+            this.lblBladeBladeSpecial1ID.Text = "Blade Art ID:";
+            // 
+            // lblBladeBladeSpecial1RecastRev
+            // 
+            this.lblBladeBladeSpecial1RecastRev.AutoSize = true;
+            this.lblBladeBladeSpecial1RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial1RecastRev.Name = "lblBladeBladeSpecial1RecastRev";
+            this.lblBladeBladeSpecial1RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial1RecastRev.TabIndex = 15;
+            this.lblBladeBladeSpecial1RecastRev.Text = "Recast Rev:";
+            // 
+            // nudBladeSpecial1RecastRev
+            // 
+            this.nudBladeSpecial1RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial1RecastRev.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial1RecastRev.Name = "nudBladeSpecial1RecastRev";
+            this.nudBladeSpecial1RecastRev.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial1RecastRev.TabIndex = 12;
+            this.nudBladeSpecial1RecastRev.ValueChanged += new System.EventHandler(this.nudBladeSpecial1RecastRev_ValueChanged);
+            // 
+            // nudBladeSpecial1MaxLevel
+            // 
+            this.nudBladeSpecial1MaxLevel.Location = new System.Drawing.Point(79, 51);
+            this.nudBladeSpecial1MaxLevel.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial1MaxLevel.Name = "nudBladeSpecial1MaxLevel";
+            this.nudBladeSpecial1MaxLevel.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial1MaxLevel.TabIndex = 14;
+            this.nudBladeSpecial1MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeSpecial1MaxLevel_ValueChanged);
+            // 
+            // nudBladeSpecial1Level
+            // 
+            this.nudBladeSpecial1Level.Location = new System.Drawing.Point(79, 32);
+            this.nudBladeSpecial1Level.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudBladeSpecial1Level.Name = "nudBladeSpecial1Level";
+            this.nudBladeSpecial1Level.Size = new System.Drawing.Size(69, 20);
+            this.nudBladeSpecial1Level.TabIndex = 13;
+            this.nudBladeSpecial1Level.ValueChanged += new System.EventHandler(this.nudBladeSpecial1Level_ValueChanged);
+            // 
             // tabBladeArts
             // 
             this.tabBladeArts.Controls.Add(this.gbxBladeBladeArts);
-            this.tabBladeArts.Controls.Add(this.gbxBladeBladeSpecials);
             this.tabBladeArts.Location = new System.Drawing.Point(4, 22);
             this.tabBladeArts.Name = "tabBladeArts";
-            this.tabBladeArts.Padding = new System.Windows.Forms.Padding(3);
             this.tabBladeArts.Size = new System.Drawing.Size(948, 544);
-            this.tabBladeArts.TabIndex = 1;
+            this.tabBladeArts.TabIndex = 8;
             this.tabBladeArts.Text = "Arts";
             this.tabBladeArts.UseVisualStyleBackColor = true;
             // 
@@ -9121,7 +9758,7 @@
             this.gbxBladeBladeArts.Controls.Add(this.gbxBladeBladeArt3);
             this.gbxBladeBladeArts.Controls.Add(this.gbxBladeBladeArt2);
             this.gbxBladeBladeArts.Controls.Add(this.gbxBladeBladeArt1);
-            this.gbxBladeBladeArts.Location = new System.Drawing.Point(347, 6);
+            this.gbxBladeBladeArts.Location = new System.Drawing.Point(3, 3);
             this.gbxBladeBladeArts.Name = "gbxBladeBladeArts";
             this.gbxBladeBladeArts.Size = new System.Drawing.Size(335, 491);
             this.gbxBladeBladeArts.TabIndex = 105;
@@ -9598,489 +10235,6 @@
             this.nudBladeNArt1Level.Size = new System.Drawing.Size(69, 20);
             this.nudBladeNArt1Level.TabIndex = 13;
             this.nudBladeNArt1Level.ValueChanged += new System.EventHandler(this.nudBladeNArt1Level_ValueChanged);
-            // 
-            // gbxBladeBladeSpecials
-            // 
-            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial3);
-            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial2);
-            this.gbxBladeBladeSpecials.Controls.Add(this.gbxBladeBladeSpecial1);
-            this.gbxBladeBladeSpecials.Location = new System.Drawing.Point(6, 6);
-            this.gbxBladeBladeSpecials.Name = "gbxBladeBladeSpecials";
-            this.gbxBladeBladeSpecials.Size = new System.Drawing.Size(335, 491);
-            this.gbxBladeBladeSpecials.TabIndex = 104;
-            this.gbxBladeBladeSpecials.TabStop = false;
-            this.gbxBladeBladeSpecials.Text = "Blade Specials";
-            // 
-            // gbxBladeBladeSpecial3
-            // 
-            this.gbxBladeBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x09);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x04);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.cbxBladeBArt3ID);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3MaxLevel);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeBArt3ID);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3Level);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3ID);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.lblBladeBladeSpecial3RecastRev);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeBArt3RecastRev);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeBArt3MaxLevel);
-            this.gbxBladeBladeSpecial3.Controls.Add(this.nudBladeBArt3Level);
-            this.gbxBladeBladeSpecial3.Location = new System.Drawing.Point(6, 333);
-            this.gbxBladeBladeSpecial3.Name = "gbxBladeBladeSpecial3";
-            this.gbxBladeBladeSpecial3.Size = new System.Drawing.Size(321, 151);
-            this.gbxBladeBladeSpecial3.TabIndex = 20;
-            this.gbxBladeBladeSpecial3.TabStop = false;
-            this.gbxBladeBladeSpecial3.Text = "Blade Special Lv3";
-            // 
-            // gbxBladeBladeSpecial3Unk_0x09
-            // 
-            this.gbxBladeBladeSpecial3Unk_0x09.Controls.Add(this.hbxBladeBArt3Unk_0x09);
-            this.gbxBladeBladeSpecial3Unk_0x09.Location = new System.Drawing.Point(142, 77);
-            this.gbxBladeBladeSpecial3Unk_0x09.Name = "gbxBladeBladeSpecial3Unk_0x09";
-            this.gbxBladeBladeSpecial3Unk_0x09.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial3Unk_0x09.TabIndex = 155;
-            this.gbxBladeBladeSpecial3Unk_0x09.TabStop = false;
-            this.gbxBladeBladeSpecial3Unk_0x09.Text = "Unk_0x09";
-            // 
-            // hbxBladeBArt3Unk_0x09
-            // 
-            this.hbxBladeBArt3Unk_0x09.ColumnInfoVisible = true;
-            this.hbxBladeBArt3Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt3Unk_0x09.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt3Unk_0x09.Name = "hbxBladeBArt3Unk_0x09";
-            this.hbxBladeBArt3Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt3Unk_0x09.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt3Unk_0x09.TabIndex = 152;
-            // 
-            // gbxBladeBladeSpecial3Unk_0x04
-            // 
-            this.gbxBladeBladeSpecial3Unk_0x04.Controls.Add(this.hbxBladeBArt3Unk_0x04);
-            this.gbxBladeBladeSpecial3Unk_0x04.Location = new System.Drawing.Point(9, 77);
-            this.gbxBladeBladeSpecial3Unk_0x04.Name = "gbxBladeBladeSpecial3Unk_0x04";
-            this.gbxBladeBladeSpecial3Unk_0x04.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial3Unk_0x04.TabIndex = 155;
-            this.gbxBladeBladeSpecial3Unk_0x04.TabStop = false;
-            this.gbxBladeBladeSpecial3Unk_0x04.Text = "Unk_0x04";
-            // 
-            // hbxBladeBArt3Unk_0x04
-            // 
-            this.hbxBladeBArt3Unk_0x04.ColumnInfoVisible = true;
-            this.hbxBladeBArt3Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt3Unk_0x04.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt3Unk_0x04.Name = "hbxBladeBArt3Unk_0x04";
-            this.hbxBladeBArt3Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt3Unk_0x04.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt3Unk_0x04.TabIndex = 152;
-            // 
-            // cbxBladeBArt3ID
-            // 
-            this.cbxBladeBArt3ID.FormattingEnabled = true;
-            this.cbxBladeBArt3ID.Location = new System.Drawing.Point(152, 13);
-            this.cbxBladeBArt3ID.Name = "cbxBladeBArt3ID";
-            this.cbxBladeBArt3ID.Size = new System.Drawing.Size(162, 21);
-            this.cbxBladeBArt3ID.TabIndex = 18;
-            this.cbxBladeBArt3ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeBArt3ID_SelectionChangeCommitted);
-            // 
-            // lblBladeBladeSpecial3MaxLevel
-            // 
-            this.lblBladeBladeSpecial3MaxLevel.AutoSize = true;
-            this.lblBladeBladeSpecial3MaxLevel.Location = new System.Drawing.Point(6, 53);
-            this.lblBladeBladeSpecial3MaxLevel.Name = "lblBladeBladeSpecial3MaxLevel";
-            this.lblBladeBladeSpecial3MaxLevel.Size = new System.Drawing.Size(59, 13);
-            this.lblBladeBladeSpecial3MaxLevel.TabIndex = 17;
-            this.lblBladeBladeSpecial3MaxLevel.Text = "Max Level:";
-            // 
-            // nudBladeBArt3ID
-            // 
-            this.nudBladeBArt3ID.Location = new System.Drawing.Point(79, 13);
-            this.nudBladeBArt3ID.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt3ID.Name = "nudBladeBArt3ID";
-            this.nudBladeBArt3ID.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt3ID.TabIndex = 10;
-            this.nudBladeBArt3ID.ValueChanged += new System.EventHandler(this.nudBladeBArt3ID_ValueChanged);
-            // 
-            // lblBladeBladeSpecial3Level
-            // 
-            this.lblBladeBladeSpecial3Level.AutoSize = true;
-            this.lblBladeBladeSpecial3Level.Location = new System.Drawing.Point(6, 34);
-            this.lblBladeBladeSpecial3Level.Name = "lblBladeBladeSpecial3Level";
-            this.lblBladeBladeSpecial3Level.Size = new System.Drawing.Size(36, 13);
-            this.lblBladeBladeSpecial3Level.TabIndex = 16;
-            this.lblBladeBladeSpecial3Level.Text = "Level:";
-            // 
-            // lblBladeBladeSpecial3ID
-            // 
-            this.lblBladeBladeSpecial3ID.AutoSize = true;
-            this.lblBladeBladeSpecial3ID.Location = new System.Drawing.Point(6, 16);
-            this.lblBladeBladeSpecial3ID.Name = "lblBladeBladeSpecial3ID";
-            this.lblBladeBladeSpecial3ID.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial3ID.TabIndex = 11;
-            this.lblBladeBladeSpecial3ID.Text = "Blade Art ID:";
-            // 
-            // lblBladeBladeSpecial3RecastRev
-            // 
-            this.lblBladeBladeSpecial3RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial3RecastRev.Location = new System.Drawing.Point(162, 53);
-            this.lblBladeBladeSpecial3RecastRev.Name = "lblBladeBladeSpecial3RecastRev";
-            this.lblBladeBladeSpecial3RecastRev.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial3RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial3RecastRev.Text = "Recast Rev:";
-            // 
-            // nudBladeBArt3RecastRev
-            // 
-            this.nudBladeBArt3RecastRev.Location = new System.Drawing.Point(235, 51);
-            this.nudBladeBArt3RecastRev.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt3RecastRev.Name = "nudBladeBArt3RecastRev";
-            this.nudBladeBArt3RecastRev.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt3RecastRev.TabIndex = 12;
-            this.nudBladeBArt3RecastRev.ValueChanged += new System.EventHandler(this.nudBladeBArt3RecastRev_ValueChanged);
-            // 
-            // nudBladeBArt3MaxLevel
-            // 
-            this.nudBladeBArt3MaxLevel.Location = new System.Drawing.Point(79, 51);
-            this.nudBladeBArt3MaxLevel.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt3MaxLevel.Name = "nudBladeBArt3MaxLevel";
-            this.nudBladeBArt3MaxLevel.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt3MaxLevel.TabIndex = 14;
-            this.nudBladeBArt3MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeBArt3MaxLevel_ValueChanged);
-            // 
-            // nudBladeBArt3Level
-            // 
-            this.nudBladeBArt3Level.Location = new System.Drawing.Point(79, 32);
-            this.nudBladeBArt3Level.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt3Level.Name = "nudBladeBArt3Level";
-            this.nudBladeBArt3Level.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt3Level.TabIndex = 13;
-            this.nudBladeBArt3Level.ValueChanged += new System.EventHandler(this.nudBladeBArt3Level_ValueChanged);
-            // 
-            // gbxBladeBladeSpecial2
-            // 
-            this.gbxBladeBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x09);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x04);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.cbxBladeBArt2ID);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2MaxLevel);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeBArt2ID);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2Level);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2ID);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.lblBladeBladeSpecial2RecastRev);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeBArt2RecastRev);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeBArt2MaxLevel);
-            this.gbxBladeBladeSpecial2.Controls.Add(this.nudBladeBArt2Level);
-            this.gbxBladeBladeSpecial2.Location = new System.Drawing.Point(6, 176);
-            this.gbxBladeBladeSpecial2.Name = "gbxBladeBladeSpecial2";
-            this.gbxBladeBladeSpecial2.Size = new System.Drawing.Size(321, 151);
-            this.gbxBladeBladeSpecial2.TabIndex = 19;
-            this.gbxBladeBladeSpecial2.TabStop = false;
-            this.gbxBladeBladeSpecial2.Text = "Blade Special Lv2";
-            // 
-            // gbxBladeBladeSpecial2Unk_0x09
-            // 
-            this.gbxBladeBladeSpecial2Unk_0x09.Controls.Add(this.hbxBladeBArt2Unk_0x09);
-            this.gbxBladeBladeSpecial2Unk_0x09.Location = new System.Drawing.Point(142, 77);
-            this.gbxBladeBladeSpecial2Unk_0x09.Name = "gbxBladeBladeSpecial2Unk_0x09";
-            this.gbxBladeBladeSpecial2Unk_0x09.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial2Unk_0x09.TabIndex = 155;
-            this.gbxBladeBladeSpecial2Unk_0x09.TabStop = false;
-            this.gbxBladeBladeSpecial2Unk_0x09.Text = "Unk_0x09";
-            // 
-            // hbxBladeBArt2Unk_0x09
-            // 
-            this.hbxBladeBArt2Unk_0x09.ColumnInfoVisible = true;
-            this.hbxBladeBArt2Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt2Unk_0x09.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt2Unk_0x09.Name = "hbxBladeBArt2Unk_0x09";
-            this.hbxBladeBArt2Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt2Unk_0x09.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt2Unk_0x09.TabIndex = 152;
-            // 
-            // gbxBladeBladeSpecial2Unk_0x04
-            // 
-            this.gbxBladeBladeSpecial2Unk_0x04.Controls.Add(this.hbxBladeBArt2Unk_0x04);
-            this.gbxBladeBladeSpecial2Unk_0x04.Location = new System.Drawing.Point(9, 77);
-            this.gbxBladeBladeSpecial2Unk_0x04.Name = "gbxBladeBladeSpecial2Unk_0x04";
-            this.gbxBladeBladeSpecial2Unk_0x04.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial2Unk_0x04.TabIndex = 155;
-            this.gbxBladeBladeSpecial2Unk_0x04.TabStop = false;
-            this.gbxBladeBladeSpecial2Unk_0x04.Text = "Unk_0x04";
-            // 
-            // hbxBladeBArt2Unk_0x04
-            // 
-            this.hbxBladeBArt2Unk_0x04.ColumnInfoVisible = true;
-            this.hbxBladeBArt2Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt2Unk_0x04.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt2Unk_0x04.Name = "hbxBladeBArt2Unk_0x04";
-            this.hbxBladeBArt2Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt2Unk_0x04.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt2Unk_0x04.TabIndex = 152;
-            // 
-            // cbxBladeBArt2ID
-            // 
-            this.cbxBladeBArt2ID.FormattingEnabled = true;
-            this.cbxBladeBArt2ID.Location = new System.Drawing.Point(152, 13);
-            this.cbxBladeBArt2ID.Name = "cbxBladeBArt2ID";
-            this.cbxBladeBArt2ID.Size = new System.Drawing.Size(162, 21);
-            this.cbxBladeBArt2ID.TabIndex = 18;
-            this.cbxBladeBArt2ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeBArt2ID_SelectionChangeCommitted);
-            // 
-            // lblBladeBladeSpecial2MaxLevel
-            // 
-            this.lblBladeBladeSpecial2MaxLevel.AutoSize = true;
-            this.lblBladeBladeSpecial2MaxLevel.Location = new System.Drawing.Point(6, 53);
-            this.lblBladeBladeSpecial2MaxLevel.Name = "lblBladeBladeSpecial2MaxLevel";
-            this.lblBladeBladeSpecial2MaxLevel.Size = new System.Drawing.Size(59, 13);
-            this.lblBladeBladeSpecial2MaxLevel.TabIndex = 17;
-            this.lblBladeBladeSpecial2MaxLevel.Text = "Max Level:";
-            // 
-            // nudBladeBArt2ID
-            // 
-            this.nudBladeBArt2ID.Location = new System.Drawing.Point(79, 13);
-            this.nudBladeBArt2ID.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt2ID.Name = "nudBladeBArt2ID";
-            this.nudBladeBArt2ID.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt2ID.TabIndex = 10;
-            this.nudBladeBArt2ID.ValueChanged += new System.EventHandler(this.nudBladeBArt2ID_ValueChanged);
-            // 
-            // lblBladeBladeSpecial2Level
-            // 
-            this.lblBladeBladeSpecial2Level.AutoSize = true;
-            this.lblBladeBladeSpecial2Level.Location = new System.Drawing.Point(6, 34);
-            this.lblBladeBladeSpecial2Level.Name = "lblBladeBladeSpecial2Level";
-            this.lblBladeBladeSpecial2Level.Size = new System.Drawing.Size(36, 13);
-            this.lblBladeBladeSpecial2Level.TabIndex = 16;
-            this.lblBladeBladeSpecial2Level.Text = "Level:";
-            // 
-            // lblBladeBladeSpecial2ID
-            // 
-            this.lblBladeBladeSpecial2ID.AutoSize = true;
-            this.lblBladeBladeSpecial2ID.Location = new System.Drawing.Point(6, 16);
-            this.lblBladeBladeSpecial2ID.Name = "lblBladeBladeSpecial2ID";
-            this.lblBladeBladeSpecial2ID.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial2ID.TabIndex = 11;
-            this.lblBladeBladeSpecial2ID.Text = "Blade Art ID:";
-            // 
-            // lblBladeBladeSpecial2RecastRev
-            // 
-            this.lblBladeBladeSpecial2RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial2RecastRev.Location = new System.Drawing.Point(162, 53);
-            this.lblBladeBladeSpecial2RecastRev.Name = "lblBladeBladeSpecial2RecastRev";
-            this.lblBladeBladeSpecial2RecastRev.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial2RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial2RecastRev.Text = "Recast Rev:";
-            // 
-            // nudBladeBArt2RecastRev
-            // 
-            this.nudBladeBArt2RecastRev.Location = new System.Drawing.Point(235, 51);
-            this.nudBladeBArt2RecastRev.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt2RecastRev.Name = "nudBladeBArt2RecastRev";
-            this.nudBladeBArt2RecastRev.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt2RecastRev.TabIndex = 12;
-            this.nudBladeBArt2RecastRev.ValueChanged += new System.EventHandler(this.nudBladeBArt2RecastRev_ValueChanged);
-            // 
-            // nudBladeBArt2MaxLevel
-            // 
-            this.nudBladeBArt2MaxLevel.Location = new System.Drawing.Point(79, 51);
-            this.nudBladeBArt2MaxLevel.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt2MaxLevel.Name = "nudBladeBArt2MaxLevel";
-            this.nudBladeBArt2MaxLevel.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt2MaxLevel.TabIndex = 14;
-            this.nudBladeBArt2MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeBArt2MaxLevel_ValueChanged);
-            // 
-            // nudBladeBArt2Level
-            // 
-            this.nudBladeBArt2Level.Location = new System.Drawing.Point(79, 32);
-            this.nudBladeBArt2Level.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt2Level.Name = "nudBladeBArt2Level";
-            this.nudBladeBArt2Level.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt2Level.TabIndex = 13;
-            this.nudBladeBArt2Level.ValueChanged += new System.EventHandler(this.nudBladeBArt2Level_ValueChanged);
-            // 
-            // gbxBladeBladeSpecial1
-            // 
-            this.gbxBladeBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x09);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x04);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.cbxBladeBArt1ID);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1MaxLevel);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeBArt1ID);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1Level);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1ID);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.lblBladeBladeSpecial1RecastRev);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeBArt1RecastRev);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeBArt1MaxLevel);
-            this.gbxBladeBladeSpecial1.Controls.Add(this.nudBladeBArt1Level);
-            this.gbxBladeBladeSpecial1.Location = new System.Drawing.Point(6, 19);
-            this.gbxBladeBladeSpecial1.Name = "gbxBladeBladeSpecial1";
-            this.gbxBladeBladeSpecial1.Size = new System.Drawing.Size(321, 151);
-            this.gbxBladeBladeSpecial1.TabIndex = 9;
-            this.gbxBladeBladeSpecial1.TabStop = false;
-            this.gbxBladeBladeSpecial1.Text = "Blade Special Lv1";
-            // 
-            // gbxBladeBladeSpecial1Unk_0x09
-            // 
-            this.gbxBladeBladeSpecial1Unk_0x09.Controls.Add(this.hbxBladeBArt1Unk_0x09);
-            this.gbxBladeBladeSpecial1Unk_0x09.Location = new System.Drawing.Point(142, 77);
-            this.gbxBladeBladeSpecial1Unk_0x09.Name = "gbxBladeBladeSpecial1Unk_0x09";
-            this.gbxBladeBladeSpecial1Unk_0x09.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial1Unk_0x09.TabIndex = 155;
-            this.gbxBladeBladeSpecial1Unk_0x09.TabStop = false;
-            this.gbxBladeBladeSpecial1Unk_0x09.Text = "Unk_0x09";
-            // 
-            // hbxBladeBArt1Unk_0x09
-            // 
-            this.hbxBladeBArt1Unk_0x09.ColumnInfoVisible = true;
-            this.hbxBladeBArt1Unk_0x09.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt1Unk_0x09.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt1Unk_0x09.Name = "hbxBladeBArt1Unk_0x09";
-            this.hbxBladeBArt1Unk_0x09.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt1Unk_0x09.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt1Unk_0x09.TabIndex = 152;
-            // 
-            // gbxBladeBladeSpecial1Unk_0x04
-            // 
-            this.gbxBladeBladeSpecial1Unk_0x04.Controls.Add(this.hbxBladeBArt1Unk_0x04);
-            this.gbxBladeBladeSpecial1Unk_0x04.Location = new System.Drawing.Point(9, 77);
-            this.gbxBladeBladeSpecial1Unk_0x04.Name = "gbxBladeBladeSpecial1Unk_0x04";
-            this.gbxBladeBladeSpecial1Unk_0x04.Size = new System.Drawing.Size(117, 67);
-            this.gbxBladeBladeSpecial1Unk_0x04.TabIndex = 154;
-            this.gbxBladeBladeSpecial1Unk_0x04.TabStop = false;
-            this.gbxBladeBladeSpecial1Unk_0x04.Text = "Unk_0x04";
-            // 
-            // hbxBladeBArt1Unk_0x04
-            // 
-            this.hbxBladeBArt1Unk_0x04.ColumnInfoVisible = true;
-            this.hbxBladeBArt1Unk_0x04.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxBladeBArt1Unk_0x04.Location = new System.Drawing.Point(6, 19);
-            this.hbxBladeBArt1Unk_0x04.Name = "hbxBladeBArt1Unk_0x04";
-            this.hbxBladeBArt1Unk_0x04.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeBArt1Unk_0x04.Size = new System.Drawing.Size(104, 41);
-            this.hbxBladeBArt1Unk_0x04.TabIndex = 152;
-            // 
-            // cbxBladeBArt1ID
-            // 
-            this.cbxBladeBArt1ID.FormattingEnabled = true;
-            this.cbxBladeBArt1ID.Location = new System.Drawing.Point(152, 13);
-            this.cbxBladeBArt1ID.Name = "cbxBladeBArt1ID";
-            this.cbxBladeBArt1ID.Size = new System.Drawing.Size(162, 21);
-            this.cbxBladeBArt1ID.TabIndex = 18;
-            this.cbxBladeBArt1ID.SelectionChangeCommitted += new System.EventHandler(this.cbxBladeBArt1ID_SelectionChangeCommitted);
-            // 
-            // lblBladeBladeSpecial1MaxLevel
-            // 
-            this.lblBladeBladeSpecial1MaxLevel.AutoSize = true;
-            this.lblBladeBladeSpecial1MaxLevel.Location = new System.Drawing.Point(6, 53);
-            this.lblBladeBladeSpecial1MaxLevel.Name = "lblBladeBladeSpecial1MaxLevel";
-            this.lblBladeBladeSpecial1MaxLevel.Size = new System.Drawing.Size(59, 13);
-            this.lblBladeBladeSpecial1MaxLevel.TabIndex = 17;
-            this.lblBladeBladeSpecial1MaxLevel.Text = "Max Level:";
-            // 
-            // nudBladeBArt1ID
-            // 
-            this.nudBladeBArt1ID.Location = new System.Drawing.Point(79, 13);
-            this.nudBladeBArt1ID.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt1ID.Name = "nudBladeBArt1ID";
-            this.nudBladeBArt1ID.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt1ID.TabIndex = 10;
-            this.nudBladeBArt1ID.ValueChanged += new System.EventHandler(this.nudBladeBArt1ID_ValueChanged);
-            // 
-            // lblBladeBladeSpecial1Level
-            // 
-            this.lblBladeBladeSpecial1Level.AutoSize = true;
-            this.lblBladeBladeSpecial1Level.Location = new System.Drawing.Point(6, 34);
-            this.lblBladeBladeSpecial1Level.Name = "lblBladeBladeSpecial1Level";
-            this.lblBladeBladeSpecial1Level.Size = new System.Drawing.Size(36, 13);
-            this.lblBladeBladeSpecial1Level.TabIndex = 16;
-            this.lblBladeBladeSpecial1Level.Text = "Level:";
-            // 
-            // lblBladeBladeSpecial1ID
-            // 
-            this.lblBladeBladeSpecial1ID.AutoSize = true;
-            this.lblBladeBladeSpecial1ID.Location = new System.Drawing.Point(6, 16);
-            this.lblBladeBladeSpecial1ID.Name = "lblBladeBladeSpecial1ID";
-            this.lblBladeBladeSpecial1ID.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial1ID.TabIndex = 11;
-            this.lblBladeBladeSpecial1ID.Text = "Blade Art ID:";
-            // 
-            // lblBladeBladeSpecial1RecastRev
-            // 
-            this.lblBladeBladeSpecial1RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial1RecastRev.Location = new System.Drawing.Point(162, 53);
-            this.lblBladeBladeSpecial1RecastRev.Name = "lblBladeBladeSpecial1RecastRev";
-            this.lblBladeBladeSpecial1RecastRev.Size = new System.Drawing.Size(67, 13);
-            this.lblBladeBladeSpecial1RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial1RecastRev.Text = "Recast Rev:";
-            // 
-            // nudBladeBArt1RecastRev
-            // 
-            this.nudBladeBArt1RecastRev.Location = new System.Drawing.Point(235, 51);
-            this.nudBladeBArt1RecastRev.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArt1RecastRev.Name = "nudBladeBArt1RecastRev";
-            this.nudBladeBArt1RecastRev.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt1RecastRev.TabIndex = 12;
-            this.nudBladeBArt1RecastRev.ValueChanged += new System.EventHandler(this.nudBladeBArt1RecastRev_ValueChanged);
-            // 
-            // nudBladeBArt1MaxLevel
-            // 
-            this.nudBladeBArt1MaxLevel.Location = new System.Drawing.Point(79, 51);
-            this.nudBladeBArt1MaxLevel.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt1MaxLevel.Name = "nudBladeBArt1MaxLevel";
-            this.nudBladeBArt1MaxLevel.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt1MaxLevel.TabIndex = 14;
-            this.nudBladeBArt1MaxLevel.ValueChanged += new System.EventHandler(this.nudBladeBArt1MaxLevel_ValueChanged);
-            // 
-            // nudBladeBArt1Level
-            // 
-            this.nudBladeBArt1Level.Location = new System.Drawing.Point(79, 32);
-            this.nudBladeBArt1Level.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudBladeBArt1Level.Name = "nudBladeBArt1Level";
-            this.nudBladeBArt1Level.Size = new System.Drawing.Size(69, 20);
-            this.nudBladeBArt1Level.TabIndex = 13;
-            this.nudBladeBArt1Level.ValueChanged += new System.EventHandler(this.nudBladeBArt1Level_ValueChanged);
             // 
             // tabBladeSkills
             // 
@@ -14859,14 +15013,6 @@
             this.tabBladeOther.Controls.Add(this.nudBladeExtraParts);
             this.tabBladeOther.Controls.Add(this.nudBladePersonality);
             this.tabBladeOther.Controls.Add(this.gbxBladeExtraParts2);
-            this.tabBladeOther.Controls.Add(this.nudBladeBladeArtsEx2H);
-            this.tabBladeOther.Controls.Add(this.nudBladeBArtEx2Id);
-            this.tabBladeOther.Controls.Add(this.lblBladeBladeArtsEx2H);
-            this.tabBladeOther.Controls.Add(this.lblBladeBArtEx2Id);
-            this.tabBladeOther.Controls.Add(this.lblBladeBladeArtsExH);
-            this.tabBladeOther.Controls.Add(this.lblBladeBArtExId);
-            this.tabBladeOther.Controls.Add(this.nudBladeBladeArtsExH);
-            this.tabBladeOther.Controls.Add(this.nudBladeBArtExId);
             this.tabBladeOther.Controls.Add(this.nudBladeMountObject);
             this.tabBladeOther.Controls.Add(this.lblBladeMountObject);
             this.tabBladeOther.Controls.Add(this.nudBladeMountPoint);
@@ -14890,9 +15036,9 @@
             this.gbxBladeInternalName.Controls.Add(this.nudBladeInternalNameLength);
             this.gbxBladeInternalName.Controls.Add(this.lblBladeInternalNameLength);
             this.gbxBladeInternalName.Controls.Add(this.hbxBladeInternalName);
-            this.gbxBladeInternalName.Location = new System.Drawing.Point(198, 195);
+            this.gbxBladeInternalName.Location = new System.Drawing.Point(6, 173);
             this.gbxBladeInternalName.Name = "gbxBladeInternalName";
-            this.gbxBladeInternalName.Size = new System.Drawing.Size(488, 165);
+            this.gbxBladeInternalName.Size = new System.Drawing.Size(670, 165);
             this.gbxBladeInternalName.TabIndex = 252;
             this.gbxBladeInternalName.TabStop = false;
             this.gbxBladeInternalName.Text = "Internal Name";
@@ -14927,13 +15073,14 @@
             this.hbxBladeInternalName.Location = new System.Drawing.Point(6, 19);
             this.hbxBladeInternalName.Name = "hbxBladeInternalName";
             this.hbxBladeInternalName.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxBladeInternalName.Size = new System.Drawing.Size(474, 112);
+            this.hbxBladeInternalName.Size = new System.Drawing.Size(626, 112);
+            this.hbxBladeInternalName.StringViewVisible = true;
             this.hbxBladeInternalName.TabIndex = 152;
             // 
             // lblBladeBladeSize
             // 
             this.lblBladeBladeSize.AutoSize = true;
-            this.lblBladeBladeSize.Location = new System.Drawing.Point(15, 129);
+            this.lblBladeBladeSize.Location = new System.Drawing.Point(15, 49);
             this.lblBladeBladeSize.Name = "lblBladeBladeSize";
             this.lblBladeBladeSize.Size = new System.Drawing.Size(57, 13);
             this.lblBladeBladeSize.TabIndex = 291;
@@ -14941,7 +15088,7 @@
             // 
             // nudBladeSize
             // 
-            this.nudBladeSize.Location = new System.Drawing.Point(126, 127);
+            this.nudBladeSize.Location = new System.Drawing.Point(126, 47);
             this.nudBladeSize.Maximum = new decimal(new int[] {
             255,
             0,
@@ -14954,7 +15101,7 @@
             // 
             // nudBladeCoolTime
             // 
-            this.nudBladeCoolTime.Location = new System.Drawing.Point(281, 47);
+            this.nudBladeCoolTime.Location = new System.Drawing.Point(126, 147);
             this.nudBladeCoolTime.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -14968,7 +15115,7 @@
             // lblBladeCoolTime
             // 
             this.lblBladeCoolTime.AutoSize = true;
-            this.lblBladeCoolTime.Location = new System.Drawing.Point(195, 49);
+            this.lblBladeCoolTime.Location = new System.Drawing.Point(15, 149);
             this.lblBladeCoolTime.Name = "lblBladeCoolTime";
             this.lblBladeCoolTime.Size = new System.Drawing.Size(54, 13);
             this.lblBladeCoolTime.TabIndex = 288;
@@ -14976,7 +15123,7 @@
             // 
             // nudBladeCollisionID
             // 
-            this.nudBladeCollisionID.Location = new System.Drawing.Point(281, 7);
+            this.nudBladeCollisionID.Location = new System.Drawing.Point(126, 107);
             this.nudBladeCollisionID.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -14990,7 +15137,7 @@
             // lblBladeCollisionID
             // 
             this.lblBladeCollisionID.AutoSize = true;
-            this.lblBladeCollisionID.Location = new System.Drawing.Point(195, 9);
+            this.lblBladeCollisionID.Location = new System.Drawing.Point(15, 109);
             this.lblBladeCollisionID.Name = "lblBladeCollisionID";
             this.lblBladeCollisionID.Size = new System.Drawing.Size(62, 13);
             this.lblBladeCollisionID.TabIndex = 286;
@@ -14998,7 +15145,7 @@
             // 
             // nudBladeOffsetID
             // 
-            this.nudBladeOffsetID.Location = new System.Drawing.Point(435, 89);
+            this.nudBladeOffsetID.Location = new System.Drawing.Point(435, 49);
             this.nudBladeOffsetID.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15012,7 +15159,7 @@
             // lblBladeOffsetID
             // 
             this.lblBladeOffsetID.AutoSize = true;
-            this.lblBladeOffsetID.Location = new System.Drawing.Point(350, 89);
+            this.lblBladeOffsetID.Location = new System.Drawing.Point(350, 49);
             this.lblBladeOffsetID.Name = "lblBladeOffsetID";
             this.lblBladeOffsetID.Size = new System.Drawing.Size(52, 13);
             this.lblBladeOffsetID.TabIndex = 284;
@@ -15020,7 +15167,7 @@
             // 
             // nudBladeWeaponScale
             // 
-            this.nudBladeWeaponScale.Location = new System.Drawing.Point(435, 169);
+            this.nudBladeWeaponScale.Location = new System.Drawing.Point(435, 129);
             this.nudBladeWeaponScale.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15034,7 +15181,7 @@
             // lblBladeWeaponScale
             // 
             this.lblBladeWeaponScale.AutoSize = true;
-            this.lblBladeWeaponScale.Location = new System.Drawing.Point(350, 169);
+            this.lblBladeWeaponScale.Location = new System.Drawing.Point(350, 129);
             this.lblBladeWeaponScale.Name = "lblBladeWeaponScale";
             this.lblBladeWeaponScale.Size = new System.Drawing.Size(81, 13);
             this.lblBladeWeaponScale.TabIndex = 282;
@@ -15042,7 +15189,7 @@
             // 
             // nudBladeScale
             // 
-            this.nudBladeScale.Location = new System.Drawing.Point(435, 149);
+            this.nudBladeScale.Location = new System.Drawing.Point(435, 109);
             this.nudBladeScale.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15056,7 +15203,7 @@
             // lblBladeScale
             // 
             this.lblBladeScale.AutoSize = true;
-            this.lblBladeScale.Location = new System.Drawing.Point(350, 149);
+            this.lblBladeScale.Location = new System.Drawing.Point(350, 109);
             this.lblBladeScale.Name = "lblBladeScale";
             this.lblBladeScale.Size = new System.Drawing.Size(37, 13);
             this.lblBladeScale.TabIndex = 280;
@@ -15064,7 +15211,7 @@
             // 
             // nudBladeLandingHeight
             // 
-            this.nudBladeLandingHeight.Location = new System.Drawing.Point(435, 9);
+            this.nudBladeLandingHeight.Location = new System.Drawing.Point(281, 127);
             this.nudBladeLandingHeight.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15078,7 +15225,7 @@
             // lblBladeLandingHeight
             // 
             this.lblBladeLandingHeight.AutoSize = true;
-            this.lblBladeLandingHeight.Location = new System.Drawing.Point(350, 9);
+            this.lblBladeLandingHeight.Location = new System.Drawing.Point(195, 129);
             this.lblBladeLandingHeight.Name = "lblBladeLandingHeight";
             this.lblBladeLandingHeight.Size = new System.Drawing.Size(79, 13);
             this.lblBladeLandingHeight.TabIndex = 278;
@@ -15086,7 +15233,7 @@
             // 
             // nudBladeChestHeight
             // 
-            this.nudBladeChestHeight.Location = new System.Drawing.Point(126, 147);
+            this.nudBladeChestHeight.Location = new System.Drawing.Point(126, 67);
             this.nudBladeChestHeight.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15100,7 +15247,7 @@
             // lblBladeChestHeight
             // 
             this.lblBladeChestHeight.AutoSize = true;
-            this.lblBladeChestHeight.Location = new System.Drawing.Point(15, 149);
+            this.lblBladeChestHeight.Location = new System.Drawing.Point(15, 69);
             this.lblBladeChestHeight.Name = "lblBladeChestHeight";
             this.lblBladeChestHeight.Size = new System.Drawing.Size(68, 13);
             this.lblBladeChestHeight.TabIndex = 276;
@@ -15108,7 +15255,7 @@
             // 
             // nudBladeCondition
             // 
-            this.nudBladeCondition.Location = new System.Drawing.Point(281, 27);
+            this.nudBladeCondition.Location = new System.Drawing.Point(126, 127);
             this.nudBladeCondition.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15122,7 +15269,7 @@
             // lblBladeCondition
             // 
             this.lblBladeCondition.AutoSize = true;
-            this.lblBladeCondition.Location = new System.Drawing.Point(195, 29);
+            this.lblBladeCondition.Location = new System.Drawing.Point(15, 129);
             this.lblBladeCondition.Name = "lblBladeCondition";
             this.lblBladeCondition.Size = new System.Drawing.Size(54, 13);
             this.lblBladeCondition.TabIndex = 272;
@@ -15131,7 +15278,7 @@
             // lblBladeCommonBladeIndex
             // 
             this.lblBladeCommonBladeIndex.AutoSize = true;
-            this.lblBladeCommonBladeIndex.Location = new System.Drawing.Point(15, 169);
+            this.lblBladeCommonBladeIndex.Location = new System.Drawing.Point(15, 89);
             this.lblBladeCommonBladeIndex.Name = "lblBladeCommonBladeIndex";
             this.lblBladeCommonBladeIndex.Size = new System.Drawing.Size(104, 13);
             this.lblBladeCommonBladeIndex.TabIndex = 271;
@@ -15139,7 +15286,7 @@
             // 
             // nudBladeCommonBladeIndex
             // 
-            this.nudBladeCommonBladeIndex.Location = new System.Drawing.Point(126, 167);
+            this.nudBladeCommonBladeIndex.Location = new System.Drawing.Point(126, 87);
             this.nudBladeCommonBladeIndex.Maximum = new decimal(new int[] {
             32767,
             0,
@@ -15180,7 +15327,7 @@
             // lblBladeIsUnselect
             // 
             this.lblBladeIsUnselect.AutoSize = true;
-            this.lblBladeIsUnselect.Location = new System.Drawing.Point(195, 149);
+            this.lblBladeIsUnselect.Location = new System.Drawing.Point(195, 89);
             this.lblBladeIsUnselect.Name = "lblBladeIsUnselect";
             this.lblBladeIsUnselect.Size = new System.Drawing.Size(60, 13);
             this.lblBladeIsUnselect.TabIndex = 267;
@@ -15188,7 +15335,7 @@
             // 
             // nudBladeIsUnselect
             // 
-            this.nudBladeIsUnselect.Location = new System.Drawing.Point(281, 147);
+            this.nudBladeIsUnselect.Location = new System.Drawing.Point(281, 87);
             this.nudBladeIsUnselect.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15202,7 +15349,7 @@
             // lblBladeBladeReleaseStatus
             // 
             this.lblBladeBladeReleaseStatus.AutoSize = true;
-            this.lblBladeBladeReleaseStatus.Location = new System.Drawing.Point(15, 109);
+            this.lblBladeBladeReleaseStatus.Location = new System.Drawing.Point(15, 29);
             this.lblBladeBladeReleaseStatus.Name = "lblBladeBladeReleaseStatus";
             this.lblBladeBladeReleaseStatus.Size = new System.Drawing.Size(106, 13);
             this.lblBladeBladeReleaseStatus.TabIndex = 265;
@@ -15210,7 +15357,7 @@
             // 
             // nudBladeReleaseStatus
             // 
-            this.nudBladeReleaseStatus.Location = new System.Drawing.Point(126, 107);
+            this.nudBladeReleaseStatus.Location = new System.Drawing.Point(126, 27);
             this.nudBladeReleaseStatus.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15224,7 +15371,7 @@
             // lblBladeQuestRace
             // 
             this.lblBladeQuestRace.AutoSize = true;
-            this.lblBladeQuestRace.Location = new System.Drawing.Point(350, 129);
+            this.lblBladeQuestRace.Location = new System.Drawing.Point(350, 89);
             this.lblBladeQuestRace.Name = "lblBladeQuestRace";
             this.lblBladeQuestRace.Size = new System.Drawing.Size(64, 13);
             this.lblBladeQuestRace.TabIndex = 263;
@@ -15232,7 +15379,7 @@
             // 
             // nudBladeQuestRace
             // 
-            this.nudBladeQuestRace.Location = new System.Drawing.Point(435, 129);
+            this.nudBladeQuestRace.Location = new System.Drawing.Point(435, 89);
             this.nudBladeQuestRace.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15246,7 +15393,7 @@
             // lblBladeFootStepEffect
             // 
             this.lblBladeFootStepEffect.AutoSize = true;
-            this.lblBladeFootStepEffect.Location = new System.Drawing.Point(195, 129);
+            this.lblBladeFootStepEffect.Location = new System.Drawing.Point(195, 69);
             this.lblBladeFootStepEffect.Name = "lblBladeFootStepEffect";
             this.lblBladeFootStepEffect.Size = new System.Drawing.Size(81, 13);
             this.lblBladeFootStepEffect.TabIndex = 261;
@@ -15254,7 +15401,7 @@
             // 
             // nudBladeFootStepEffect
             // 
-            this.nudBladeFootStepEffect.Location = new System.Drawing.Point(281, 127);
+            this.nudBladeFootStepEffect.Location = new System.Drawing.Point(281, 67);
             this.nudBladeFootStepEffect.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15268,7 +15415,7 @@
             // lblBladeFootStep
             // 
             this.lblBladeFootStep.AutoSize = true;
-            this.lblBladeFootStep.Location = new System.Drawing.Point(195, 109);
+            this.lblBladeFootStep.Location = new System.Drawing.Point(195, 49);
             this.lblBladeFootStep.Name = "lblBladeFootStep";
             this.lblBladeFootStep.Size = new System.Drawing.Size(53, 13);
             this.lblBladeFootStep.TabIndex = 259;
@@ -15276,7 +15423,7 @@
             // 
             // nudBladeFootStep
             // 
-            this.nudBladeFootStep.Location = new System.Drawing.Point(281, 107);
+            this.nudBladeFootStep.Location = new System.Drawing.Point(281, 47);
             this.nudBladeFootStep.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15290,7 +15437,7 @@
             // lblBladeEyeRot
             // 
             this.lblBladeEyeRot.AutoSize = true;
-            this.lblBladeEyeRot.Location = new System.Drawing.Point(195, 89);
+            this.lblBladeEyeRot.Location = new System.Drawing.Point(195, 29);
             this.lblBladeEyeRot.Name = "lblBladeEyeRot";
             this.lblBladeEyeRot.Size = new System.Drawing.Size(45, 13);
             this.lblBladeEyeRot.TabIndex = 257;
@@ -15299,7 +15446,7 @@
             // lblBladeExtraParts
             // 
             this.lblBladeExtraParts.AutoSize = true;
-            this.lblBladeExtraParts.Location = new System.Drawing.Point(19, 216);
+            this.lblBladeExtraParts.Location = new System.Drawing.Point(520, 56);
             this.lblBladeExtraParts.Name = "lblBladeExtraParts";
             this.lblBladeExtraParts.Size = new System.Drawing.Size(58, 13);
             this.lblBladeExtraParts.TabIndex = 256;
@@ -15308,7 +15455,7 @@
             // lblBladePersonality
             // 
             this.lblBladePersonality.AutoSize = true;
-            this.lblBladePersonality.Location = new System.Drawing.Point(350, 109);
+            this.lblBladePersonality.Location = new System.Drawing.Point(350, 69);
             this.lblBladePersonality.Name = "lblBladePersonality";
             this.lblBladePersonality.Size = new System.Drawing.Size(61, 13);
             this.lblBladePersonality.TabIndex = 255;
@@ -15316,7 +15463,7 @@
             // 
             // nudBladeEyeRot
             // 
-            this.nudBladeEyeRot.Location = new System.Drawing.Point(281, 87);
+            this.nudBladeEyeRot.Location = new System.Drawing.Point(281, 27);
             this.nudBladeEyeRot.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15329,7 +15476,7 @@
             // 
             // nudBladeExtraParts
             // 
-            this.nudBladeExtraParts.Location = new System.Drawing.Point(95, 214);
+            this.nudBladeExtraParts.Location = new System.Drawing.Point(596, 54);
             this.nudBladeExtraParts.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15342,7 +15489,7 @@
             // 
             // nudBladePersonality
             // 
-            this.nudBladePersonality.Location = new System.Drawing.Point(435, 109);
+            this.nudBladePersonality.Location = new System.Drawing.Point(435, 69);
             this.nudBladePersonality.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15356,7 +15503,7 @@
             // gbxBladeExtraParts2
             // 
             this.gbxBladeExtraParts2.Controls.Add(this.hbxBladeExtraParts2);
-            this.gbxBladeExtraParts2.Location = new System.Drawing.Point(22, 237);
+            this.gbxBladeExtraParts2.Location = new System.Drawing.Point(523, 77);
             this.gbxBladeExtraParts2.Name = "gbxBladeExtraParts2";
             this.gbxBladeExtraParts2.Size = new System.Drawing.Size(136, 67);
             this.gbxBladeExtraParts2.TabIndex = 251;
@@ -15373,97 +15520,9 @@
             this.hbxBladeExtraParts2.Size = new System.Drawing.Size(124, 41);
             this.hbxBladeExtraParts2.TabIndex = 152;
             // 
-            // nudBladeBladeArtsEx2H
-            // 
-            this.nudBladeBladeArtsEx2H.Location = new System.Drawing.Point(126, 87);
-            this.nudBladeBladeArtsEx2H.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBladeArtsEx2H.Name = "nudBladeBladeArtsEx2H";
-            this.nudBladeBladeArtsEx2H.Size = new System.Drawing.Size(63, 20);
-            this.nudBladeBladeArtsEx2H.TabIndex = 250;
-            this.nudBladeBladeArtsEx2H.ValueChanged += new System.EventHandler(this.nudBladeBladeArtsEx2H_ValueChanged);
-            // 
-            // nudBladeBArtEx2Id
-            // 
-            this.nudBladeBArtEx2Id.Location = new System.Drawing.Point(126, 47);
-            this.nudBladeBArtEx2Id.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArtEx2Id.Name = "nudBladeBArtEx2Id";
-            this.nudBladeBArtEx2Id.Size = new System.Drawing.Size(63, 20);
-            this.nudBladeBArtEx2Id.TabIndex = 249;
-            this.nudBladeBArtEx2Id.ValueChanged += new System.EventHandler(this.nudBladeBArtEx2Id_ValueChanged);
-            // 
-            // lblBladeBladeArtsEx2H
-            // 
-            this.lblBladeBladeArtsEx2H.AutoSize = true;
-            this.lblBladeBladeArtsEx2H.Location = new System.Drawing.Point(15, 89);
-            this.lblBladeBladeArtsEx2H.Name = "lblBladeBladeArtsEx2H";
-            this.lblBladeBladeArtsEx2H.Size = new System.Drawing.Size(81, 13);
-            this.lblBladeBladeArtsEx2H.TabIndex = 248;
-            this.lblBladeBladeArtsEx2H.Text = "BladeArtsEx2H:";
-            // 
-            // lblBladeBArtEx2Id
-            // 
-            this.lblBladeBArtEx2Id.AutoSize = true;
-            this.lblBladeBArtEx2Id.Location = new System.Drawing.Point(15, 49);
-            this.lblBladeBArtEx2Id.Name = "lblBladeBArtEx2Id";
-            this.lblBladeBArtEx2Id.Size = new System.Drawing.Size(57, 13);
-            this.lblBladeBArtEx2Id.TabIndex = 247;
-            this.lblBladeBArtEx2Id.Text = "BArtEx2Id:";
-            // 
-            // lblBladeBladeArtsExH
-            // 
-            this.lblBladeBladeArtsExH.AutoSize = true;
-            this.lblBladeBladeArtsExH.Location = new System.Drawing.Point(15, 69);
-            this.lblBladeBladeArtsExH.Name = "lblBladeBladeArtsExH";
-            this.lblBladeBladeArtsExH.Size = new System.Drawing.Size(75, 13);
-            this.lblBladeBladeArtsExH.TabIndex = 246;
-            this.lblBladeBladeArtsExH.Text = "BladeArtsExH:";
-            // 
-            // lblBladeBArtExId
-            // 
-            this.lblBladeBArtExId.AutoSize = true;
-            this.lblBladeBArtExId.Location = new System.Drawing.Point(15, 29);
-            this.lblBladeBArtExId.Name = "lblBladeBArtExId";
-            this.lblBladeBArtExId.Size = new System.Drawing.Size(51, 13);
-            this.lblBladeBArtExId.TabIndex = 245;
-            this.lblBladeBArtExId.Text = "BArtExId:";
-            // 
-            // nudBladeBladeArtsExH
-            // 
-            this.nudBladeBladeArtsExH.Location = new System.Drawing.Point(126, 67);
-            this.nudBladeBladeArtsExH.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBladeArtsExH.Name = "nudBladeBladeArtsExH";
-            this.nudBladeBladeArtsExH.Size = new System.Drawing.Size(63, 20);
-            this.nudBladeBladeArtsExH.TabIndex = 244;
-            this.nudBladeBladeArtsExH.ValueChanged += new System.EventHandler(this.nudBladeBladeArtsExH_ValueChanged);
-            // 
-            // nudBladeBArtExId
-            // 
-            this.nudBladeBArtExId.Location = new System.Drawing.Point(126, 27);
-            this.nudBladeBArtExId.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudBladeBArtExId.Name = "nudBladeBArtExId";
-            this.nudBladeBArtExId.Size = new System.Drawing.Size(63, 20);
-            this.nudBladeBArtExId.TabIndex = 243;
-            this.nudBladeBArtExId.ValueChanged += new System.EventHandler(this.nudBladeBArtExId_ValueChanged);
-            // 
             // nudBladeMountObject
             // 
-            this.nudBladeMountObject.Location = new System.Drawing.Point(435, 29);
+            this.nudBladeMountObject.Location = new System.Drawing.Point(281, 147);
             this.nudBladeMountObject.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15477,7 +15536,7 @@
             // lblBladeMountObject
             // 
             this.lblBladeMountObject.AutoSize = true;
-            this.lblBladeMountObject.Location = new System.Drawing.Point(350, 29);
+            this.lblBladeMountObject.Location = new System.Drawing.Point(195, 149);
             this.lblBladeMountObject.Name = "lblBladeMountObject";
             this.lblBladeMountObject.Size = new System.Drawing.Size(71, 13);
             this.lblBladeMountObject.TabIndex = 241;
@@ -15485,7 +15544,7 @@
             // 
             // nudBladeMountPoint
             // 
-            this.nudBladeMountPoint.Location = new System.Drawing.Point(435, 49);
+            this.nudBladeMountPoint.Location = new System.Drawing.Point(435, 9);
             this.nudBladeMountPoint.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15499,7 +15558,7 @@
             // lblBladeMountPoint
             // 
             this.lblBladeMountPoint.AutoSize = true;
-            this.lblBladeMountPoint.Location = new System.Drawing.Point(350, 49);
+            this.lblBladeMountPoint.Location = new System.Drawing.Point(350, 9);
             this.lblBladeMountPoint.Name = "lblBladeMountPoint";
             this.lblBladeMountPoint.Size = new System.Drawing.Size(64, 13);
             this.lblBladeMountPoint.TabIndex = 239;
@@ -15507,7 +15566,7 @@
             // 
             // nudBladeCreateEventID
             // 
-            this.nudBladeCreateEventID.Location = new System.Drawing.Point(281, 67);
+            this.nudBladeCreateEventID.Location = new System.Drawing.Point(281, 7);
             this.nudBladeCreateEventID.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15521,7 +15580,7 @@
             // lblBladeCreateEventID
             // 
             this.lblBladeCreateEventID.AutoSize = true;
-            this.lblBladeCreateEventID.Location = new System.Drawing.Point(195, 69);
+            this.lblBladeCreateEventID.Location = new System.Drawing.Point(195, 9);
             this.lblBladeCreateEventID.Name = "lblBladeCreateEventID";
             this.lblBladeCreateEventID.Size = new System.Drawing.Size(80, 13);
             this.lblBladeCreateEventID.TabIndex = 237;
@@ -15529,7 +15588,7 @@
             // 
             // nudBladeNormalTalk
             // 
-            this.nudBladeNormalTalk.Location = new System.Drawing.Point(435, 69);
+            this.nudBladeNormalTalk.Location = new System.Drawing.Point(435, 29);
             this.nudBladeNormalTalk.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15543,7 +15602,7 @@
             // lblBladeNormalTalk
             // 
             this.lblBladeNormalTalk.AutoSize = true;
-            this.lblBladeNormalTalk.Location = new System.Drawing.Point(350, 69);
+            this.lblBladeNormalTalk.Location = new System.Drawing.Point(350, 29);
             this.lblBladeNormalTalk.Name = "lblBladeNormalTalk";
             this.lblBladeNormalTalk.Size = new System.Drawing.Size(64, 13);
             this.lblBladeNormalTalk.TabIndex = 235;
@@ -15551,7 +15610,7 @@
             // 
             // nudBladeKizunaLinkSet
             // 
-            this.nudBladeKizunaLinkSet.Location = new System.Drawing.Point(281, 167);
+            this.nudBladeKizunaLinkSet.Location = new System.Drawing.Point(281, 107);
             this.nudBladeKizunaLinkSet.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15565,7 +15624,7 @@
             // lblBladeKizunaLinkSet
             // 
             this.lblBladeKizunaLinkSet.AutoSize = true;
-            this.lblBladeKizunaLinkSet.Location = new System.Drawing.Point(195, 169);
+            this.lblBladeKizunaLinkSet.Location = new System.Drawing.Point(195, 109);
             this.lblBladeKizunaLinkSet.Name = "lblBladeKizunaLinkSet";
             this.lblBladeKizunaLinkSet.Size = new System.Drawing.Size(78, 13);
             this.lblBladeKizunaLinkSet.TabIndex = 233;
@@ -21628,7 +21687,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.languageToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -21696,29 +21755,6 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // languageToolStripMenuItem
-            // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.chineseToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.languageToolStripMenuItem.Text = "Language";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.englishToolStripMenuItem.Text = "English";
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // chineseToolStripMenuItem
-            // 
-            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
-            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.chineseToolStripMenuItem.Text = "Chinese";
-            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
-            // 
             // ofdBladeAffChart
             // 
             this.ofdBladeAffChart.Filter = "XC2SaveNETThingy Blade Affinity Chart File|*.x2bac|All Files|*.*";
@@ -21757,6 +21793,45 @@
             this.tsmiItemUpdateTime.Size = new System.Drawing.Size(258, 22);
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem,
+            this.languageToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // allowEditingOfReadOnlyValuesToolStripMenuItem
+            // 
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Name = "allowEditingOfReadOnlyValuesToolStripMenuItem";
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Text = "Allow Editing of Read-Only Values";
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Click += new System.EventHandler(this.allowEditingOfReadOnlyValuesToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.chineseToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chineseToolStripMenuItem.Text = "Chinese";
+            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -22092,6 +22167,40 @@
             this.gbxBladeIdeasTruth.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeTruthPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeTruthLevel)).EndInit();
+            this.tabBladeSpecials.ResumeLayout(false);
+            this.gbxBladeBladeSpecials.ResumeLayout(false);
+            this.gbxBladeBladeSpecial4Alt.ResumeLayout(false);
+            this.gbxBladeBladeSpecial4Alt.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4AltH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4AltID)).EndInit();
+            this.gbxBladeBladeSpecial4.ResumeLayout(false);
+            this.gbxBladeBladeSpecial4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4H)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial4ID)).EndInit();
+            this.gbxBladeBladeSpecial3.ResumeLayout(false);
+            this.gbxBladeBladeSpecial3.PerformLayout();
+            this.gbxBladeBladeSpecial3Unk_0x09.ResumeLayout(false);
+            this.gbxBladeBladeSpecial3Unk_0x04.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3MaxLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial3Level)).EndInit();
+            this.gbxBladeBladeSpecial2.ResumeLayout(false);
+            this.gbxBladeBladeSpecial2.PerformLayout();
+            this.gbxBladeBladeSpecial2Unk_0x09.ResumeLayout(false);
+            this.gbxBladeBladeSpecial2Unk_0x04.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2MaxLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial2Level)).EndInit();
+            this.gbxBladeBladeSpecial1.ResumeLayout(false);
+            this.gbxBladeBladeSpecial1.PerformLayout();
+            this.gbxBladeBladeSpecial1Unk_0x09.ResumeLayout(false);
+            this.gbxBladeBladeSpecial1Unk_0x04.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1RecastRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1MaxLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBladeSpecial1Level)).EndInit();
             this.tabBladeArts.ResumeLayout(false);
             this.gbxBladeBladeArts.ResumeLayout(false);
             this.gbxBladeBladeArt3.ResumeLayout(false);
@@ -22118,31 +22227,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1RecastRev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1MaxLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeNArt1Level)).EndInit();
-            this.gbxBladeBladeSpecials.ResumeLayout(false);
-            this.gbxBladeBladeSpecial3.ResumeLayout(false);
-            this.gbxBladeBladeSpecial3.PerformLayout();
-            this.gbxBladeBladeSpecial3Unk_0x09.ResumeLayout(false);
-            this.gbxBladeBladeSpecial3Unk_0x04.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3RecastRev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3MaxLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt3Level)).EndInit();
-            this.gbxBladeBladeSpecial2.ResumeLayout(false);
-            this.gbxBladeBladeSpecial2.PerformLayout();
-            this.gbxBladeBladeSpecial2Unk_0x09.ResumeLayout(false);
-            this.gbxBladeBladeSpecial2Unk_0x04.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2RecastRev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2MaxLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt2Level)).EndInit();
-            this.gbxBladeBladeSpecial1.ResumeLayout(false);
-            this.gbxBladeBladeSpecial1.PerformLayout();
-            this.gbxBladeBladeSpecial1Unk_0x09.ResumeLayout(false);
-            this.gbxBladeBladeSpecial1Unk_0x04.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1ID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1RecastRev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1MaxLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArt1Level)).EndInit();
             this.tabBladeSkills.ResumeLayout(false);
             this.gbxFieldSkills.ResumeLayout(false);
             this.gbxBladeFieldSkill3.ResumeLayout(false);
@@ -22359,10 +22443,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeExtraParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladePersonality)).EndInit();
             this.gbxBladeExtraParts2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBladeArtsEx2H)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArtEx2Id)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBladeArtsExH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBladeBArtExId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeMountObject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeMountPoint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBladeCreateEventID)).EndInit();
@@ -22796,7 +22876,7 @@
         private System.Windows.Forms.Label lblBladeID;
         private System.Windows.Forms.Label lblBladeSetDriver;
         private System.Windows.Forms.Label lblBladeCreator;
-        private System.Windows.Forms.TabPage tabBladeArts;
+        private System.Windows.Forms.TabPage tabBladeSpecials;
         private System.Windows.Forms.GroupBox gbxBladeBladeSpecials;
         private System.Windows.Forms.TabPage tabBladeUnknown;
         private System.Windows.Forms.TabPage tabBladePoppiswap;
@@ -23080,35 +23160,35 @@
         private System.Windows.Forms.ComboBox cbxBladeFavoriteCategory0;
         private System.Windows.Forms.ComboBox cbxDriverPouchesItemID;
         private System.Windows.Forms.GroupBox gbxBladeBladeSpecial1;
-        private System.Windows.Forms.ComboBox cbxBladeBArt1ID;
+        private System.Windows.Forms.ComboBox cbxBladeSpecial1ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial1MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt1ID;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial1ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial1Level;
         private System.Windows.Forms.Label lblBladeBladeSpecial1ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial1RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt1RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt1MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt1Level;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial1RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial1MaxLevel;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial1Level;
         private System.Windows.Forms.GroupBox gbxBladeBladeSpecial3;
-        private System.Windows.Forms.ComboBox cbxBladeBArt3ID;
+        private System.Windows.Forms.ComboBox cbxBladeSpecial3ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial3MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt3ID;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial3ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial3Level;
         private System.Windows.Forms.Label lblBladeBladeSpecial3ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial3RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt3RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt3MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt3Level;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial3RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial3MaxLevel;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial3Level;
         private System.Windows.Forms.GroupBox gbxBladeBladeSpecial2;
-        private System.Windows.Forms.ComboBox cbxBladeBArt2ID;
+        private System.Windows.Forms.ComboBox cbxBladeSpecial2ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial2MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt2ID;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial2ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial2Level;
         private System.Windows.Forms.Label lblBladeBladeSpecial2ID;
         private System.Windows.Forms.Label lblBladeBladeSpecial2RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt2RecastRev;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt2MaxLevel;
-        private System.Windows.Forms.NumericUpDown nudBladeBArt2Level;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial2RecastRev;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial2MaxLevel;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial2Level;
         private System.Windows.Forms.GroupBox gbxBladeBladeArts;
         private System.Windows.Forms.GroupBox gbxBladeBladeArt3;
         private System.Windows.Forms.ComboBox cbxBladeNArt3ID;
@@ -23622,14 +23702,8 @@
         private System.Windows.Forms.NumericUpDown nudBladeEtherDef;
         private System.Windows.Forms.NumericUpDown nudBladePhysDef;
         private System.Windows.Forms.TabPage tabBladeOther;
-        private System.Windows.Forms.NumericUpDown nudBladeBladeArtsEx2H;
-        private System.Windows.Forms.NumericUpDown nudBladeBArtEx2Id;
-        private System.Windows.Forms.Label lblBladeBladeArtsEx2H;
-        private System.Windows.Forms.Label lblBladeBArtEx2Id;
         private System.Windows.Forms.Label lblBladeBladeArtsExH;
-        private System.Windows.Forms.Label lblBladeBArtExId;
-        private System.Windows.Forms.NumericUpDown nudBladeBladeArtsExH;
-        private System.Windows.Forms.NumericUpDown nudBladeBArtExId;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial4H;
         private System.Windows.Forms.NumericUpDown nudBladeMountObject;
         private System.Windows.Forms.Label lblBladeMountObject;
         private System.Windows.Forms.NumericUpDown nudBladeMountPoint;
@@ -24332,6 +24406,19 @@
         private System.Windows.Forms.GroupBox gbxItemCheat;
         private System.Windows.Forms.Button btnItemCheatMaxQty;
         private System.Windows.Forms.Label lblItemSortTip;
+        private System.Windows.Forms.TabPage tabBladeArts;
+        private System.Windows.Forms.GroupBox gbxBladeBladeSpecial4;
+        private System.Windows.Forms.ComboBox cbxBladeSpecial4ID;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial4ID;
+        private System.Windows.Forms.Label lblBladeBladeSpecial4ID;
+        private System.Windows.Forms.GroupBox gbxBladeBladeSpecial4Alt;
+        private System.Windows.Forms.ComboBox cbxBladeSpecial4AltID;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial4AltH;
+        private System.Windows.Forms.NumericUpDown nudBladeSpecial4AltID;
+        private System.Windows.Forms.Label lblBladeBladeSpecial4AltID;
+        private System.Windows.Forms.Label lblBladeBladeArtsEx2H;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allowEditingOfReadOnlyValuesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chineseToolStripMenuItem;

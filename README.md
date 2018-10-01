@@ -45,15 +45,15 @@ Finally, load up the game and your save, and enjoy your changes/see your data al
 	* The game may refuse your changes and reset them back to what they were supposed to be, as if your edit was never done.
 	* The game may try to run with your changes, only to not be programmed to handle your alterations and crash instead.
 
-2. There has been limited testing done on the results of save editing on the game's side of things. While some testing has been done to ensure that the editor does in fact modify the correct part of the save for each field in the app, since there are no "safety gloves" or "hand holding" regarding what data values are allowed or not, the alterations that this app can make have not necessarily been tested in-game, and thus, it is not yet known exactly how the game will react to modifying every single field that is editable, especially if modified to values that cannot be obtained via normal gameplay. If you wish to experiment with this sort of stuff, then by all means do so, and please report your findings if you like. But please do make sure to backup your save file beforehand if you care about it! (So far, this app has only been tested with saves from versions 1.3.0 and 1.5.0/1.5.1/1.5.2 of Game + DLC)
+2. There has been limited testing done on the results of save editing on the game's side of things. While some testing has been done to ensure that the editor does in fact modify the correct part of the save for each field in the app, since there are no "safety gloves" or "hand holding" regarding what data values are allowed or not, the alterations that this app can make have not necessarily been tested in-game, and thus, it is not yet known exactly how the game will react to modifying every single field that is editable, especially if modified to values that cannot be obtained via normal gameplay. If you wish to experiment with this sort of stuff, then by all means do so, and please report your findings if you like. But please do make sure to backup your save file beforehand if you care about it! (So far, this app has only been tested with saves from versions 1.3.0 and 1.5.0/1.5.1/1.5.2/2.0.0 of Game + DLC)
 
 ## Some Screenshots
-![Main](SCR_1.PNG)
+![Main](Screenshots/SCR_1.PNG)
 
-![Driver](SCR_2.PNG)
+![Driver](Screenshots/SCR_2.PNG)
 
-![Blade](SCR_3.PNG)
+![Blade](Screenshots/SCR_3.PNG)
 
-![Item](SCR_4.PNG)
+![Item](Screenshots/SCR_4.PNG)
 
-![FlagData](SCR_5.PNG)
+![FlagData](Screenshots/SCR_5.PNG)

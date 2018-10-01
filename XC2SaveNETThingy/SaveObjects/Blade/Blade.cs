@@ -25,13 +25,13 @@ namespace XC2SaveNETThingy
         public Byte[] Unk_0x002C { get; set; }
         public UInt32 TrustPoints { get; set; }
         public UInt32 TrustRank { get; set; }
-        public BladeArt[] BArts { get; set; }
-        public BladeArt[] NArts { get; set; }
-        public UInt16 BArtExId { get; set; }
-        public UInt16 BladeArtsExH { get; set; }
+        public BladeArt[] Specials { get; set; }
+        public BladeArt[] Arts { get; set; }
+        public UInt16 SpecialLv4ID { get; set; }
+        public UInt16 SpecialLv4H { get; set; }
         public Byte[] Unk_0x0088 { get; set; }
-        public UInt16 BArtEx2Id { get; set; }
-        public UInt16 BladeArtsEx2H { get; set; }
+        public UInt16 SpecialLv4AltID { get; set; }
+        public UInt16 SpecialLv4AltH { get; set; }
         public Byte[] Unk_0x0094 { get; set; }
         public BladeSkill[] BattleSkills { get; set; }
         public BladeSkill[] FieldSkills { get; set; }
@@ -73,7 +73,7 @@ namespace XC2SaveNETThingy
         public Byte BladeSize { get; set; }
         public Byte WeaponType { get; set; }
         public Byte OrbNum { get; set; }
-        public Byte Atr { get; set; }
+        public Byte Element { get; set; }
         public Byte Personality { get; set; }
         public Byte ExtraParts { get; set; }
         public Byte EyeRot { get; set; }
@@ -270,19 +270,19 @@ namespace XC2SaveNETThingy
             TrustPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustPoints"], 4), 0);
             TrustRank = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TrustRank"], 4), 0);
 
-            BArts = new BladeArt[3];
-            for (int i = 0; i < BArts.Length; i++)
-                BArts[i] = new BladeArt(data.GetByteSubArray(LOC["BArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
+            Specials = new BladeArt[3];
+            for (int i = 0; i < Specials.Length; i++)
+                Specials[i] = new BladeArt(data.GetByteSubArray(LOC["BArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
 
-            NArts = new BladeArt[3];
-            for (int i = 0; i < NArts.Length; i++)
-                NArts[i] = new BladeArt(data.GetByteSubArray(LOC["NArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
+            Arts = new BladeArt[3];
+            for (int i = 0; i < Arts.Length; i++)
+                Arts[i] = new BladeArt(data.GetByteSubArray(LOC["NArts"] + (i * BladeArt.SIZE), BladeArt.SIZE));
 
-            BArtExId = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtExId"], 2), 0);
-            BladeArtsExH = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsExH"], 2), 0);
+            SpecialLv4ID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtExId"], 2), 0);
+            SpecialLv4H = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsExH"], 2), 0);
             Unk_0x0088 = data.GetByteSubArray(LOC["Unk_0x0088"], 8);
-            BArtEx2Id = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtEx2Id"], 2), 0);
-            BladeArtsEx2H = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsEx2H"], 2), 0);
+            SpecialLv4AltID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BArtEx2Id"], 2), 0);
+            SpecialLv4AltH = BitConverter.ToUInt16(data.GetByteSubArray(LOC["BladeArtsEx2H"], 2), 0);
             Unk_0x0094 = data.GetByteSubArray(LOC["Unk_0x0094"], 8);
 
             BattleSkills = new BladeSkill[3];
@@ -352,7 +352,7 @@ namespace XC2SaveNETThingy
             BladeSize = data[LOC["BladeSize"]];
             WeaponType = data[LOC["WeaponType"]];
             OrbNum = data[LOC["OrbNum"]];
-            Atr = data[LOC["Atr"]];
+            Element = data[LOC["Atr"]];
             Personality = data[LOC["Personality"]];
             ExtraParts = data[LOC["ExtraParts"]];
             EyeRot = data[LOC["EyeRot"]];
@@ -417,17 +417,17 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(TrustPoints));
             result.AddRange(BitConverter.GetBytes(TrustRank));
 
-            foreach (BladeArt ba in BArts)
+            foreach (BladeArt ba in Specials)
                 result.AddRange(ba.ToRawData());
 
-            foreach (BladeArt ba in NArts)
+            foreach (BladeArt ba in Arts)
                 result.AddRange(ba.ToRawData());
 
-            result.AddRange(BitConverter.GetBytes(BArtExId));
-            result.AddRange(BitConverter.GetBytes(BladeArtsExH));
+            result.AddRange(BitConverter.GetBytes(SpecialLv4ID));
+            result.AddRange(BitConverter.GetBytes(SpecialLv4H));
             result.AddRange(Unk_0x0088);
-            result.AddRange(BitConverter.GetBytes(BArtEx2Id));
-            result.AddRange(BitConverter.GetBytes(BladeArtsEx2H));
+            result.AddRange(BitConverter.GetBytes(SpecialLv4AltID));
+            result.AddRange(BitConverter.GetBytes(SpecialLv4AltH));
             result.AddRange(Unk_0x0094);
 
             foreach (BladeSkill bs in BattleSkills)
@@ -487,7 +487,7 @@ namespace XC2SaveNETThingy
             result.Add(BladeSize);
             result.Add(WeaponType);
             result.Add(OrbNum);
-            result.Add(Atr);
+            result.Add(Element);
             result.Add(Personality);
             result.Add(ExtraParts);
             result.Add(EyeRot);

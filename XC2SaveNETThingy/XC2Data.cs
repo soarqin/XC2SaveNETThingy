@@ -19,12 +19,11 @@ namespace XC2SaveNETThingy
         public static readonly Dictionary<LANG, string> LANG_STR = new Dictionary<LANG, string>()
         {
             { LANG.EN, "EN" },
-            { LANG.CN, "CN" }
+            //{ LANG.CN, "CN" }
         };
 
         private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=db\XC2Data.db; Read Only=True;");
         private static SQLiteDataAdapter dbAdapter;
-        //private static SQLiteCommand dbCmd;
         private static DataSet ds;
 
         public static DataTable Elements(LANG l = LANG.EN)
@@ -199,6 +198,15 @@ namespace XC2SaveNETThingy
                 "SELECT ID, " +
                 "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
                 "FROM BladeSpecials";
+            return GetDataSet(query).Tables[0];
+        }
+
+        public static DataTable BladeSpecialsLv4(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
+                "FROM BladeSpecialsLv4";
             return GetDataSet(query).Tables[0];
         }
 
@@ -605,26 +613,5 @@ namespace XC2SaveNETThingy
 
             return ds;
         }
-
-        /// <summary>
-        /// Method for executing commands on database
-        /// </summary>
-        /// <param name="query">SQL query to send to the database</param>
-        //public static void SendNonQuery(string query)
-        //{
-        //    dbCmd = new SQLiteCommand(query, dbConn);        // Make new dbCmd using supplied query
-
-        //    dbConn.Open();                                  // Open connection to database
-        //    dbCmd.ExecuteNonQuery();                        // Send the query to database
-        //    System.Threading.Thread.Sleep(500);             // A quick sleep to ensure database is finished before closing connection
-        //    dbConn.Close();                                 // Close connection to database
-        //}
-
-        //public static bool Contains(this DataTable dt, object value, string columnName)
-        //{
-        //    List<object> elements = dt.AsEnumerable().Select(r => r.Field<object>(columnName)).ToList();
-
-        //    return elements.Contains(value);
-        //}
     }
 }
