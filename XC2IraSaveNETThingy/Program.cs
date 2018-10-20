@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace XC2SaveNETThingy
+namespace XC2IraSaveNETThingy
 {
     static class Program
     {

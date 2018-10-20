@@ -477,9 +477,21 @@ namespace XC2SaveNETThingy
     public class XC2SaveIra : XC2Save150, IXC2SaveObject
     {
         public new const int SIZE = 0x137B10;
+
+        Byte[] Unk_0x126D90;
         public XC2SaveIra(byte[] data) : base(data)
         {
+            Unk_0x126D90 = data.GetByteSubArray(0x126D90, SIZE - 0x126D90);
+        }
 
+        public override Byte[] ToRawData()
+        {
+            List<Byte> result = new List<Byte>();
+
+            result.AddRange(base.ToRawData());
+            result.AddRange(Unk_0x126D90);
+
+            return result.ToArray();
         }
     }
 
@@ -518,15 +530,20 @@ namespace XC2SaveNETThingy
                     Console.WriteLine("XC2Save150 detected.");
                     return new XC2Save150(data);
 
+                case XC2SaveIra.SIZE:
+                    Console.WriteLine("XC2SaveIra detected.");
+                    return new XC2SaveIra(data);
+
                 default:
                     string message = "Given save data has incorrect filesize!" + Environment.NewLine +
                         Environment.NewLine +
                         "Expected Size:" + Environment.NewLine +
                         String.Format("0x{0:X} for old save data.", XC2Save.SIZE) + Environment.NewLine +
                         String.Format("0x{0:X} for ver 1.5.0 save data.", XC2Save150.SIZE) + Environment.NewLine +
+                        String.Format("0x{0:X} for Torna Golden Country DLC save data.", XC2SaveIra.SIZE) + Environment.NewLine +
                         Environment.NewLine +
                         "Actual Size: 0x" + data.Length.ToString("X");
-                    File.WriteAllBytes("derp.sav", data);
+                    //File.WriteAllBytes("derp.sav", data);
                     throw new Exception(message);
             }
         }

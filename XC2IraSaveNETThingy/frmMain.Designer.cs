@@ -1,4 +1,4 @@
-﻿namespace XC2SaveNETThingy
+﻿namespace XC2IraSaveNETThingy
 {
     partial class frmMain
     {
@@ -95,11 +95,6 @@
             this.lblContentVersionsVersion = new System.Windows.Forms.Label();
             this.cbxContentVersions = new System.Windows.Forms.ComboBox();
             this.lblContentVersionsSelectedVer = new System.Windows.Forms.Label();
-            this.gbxAegisForme = new System.Windows.Forms.GroupBox();
-            this.lblAegisFormeMythra = new System.Windows.Forms.Label();
-            this.lblAegisFormePyra = new System.Windows.Forms.Label();
-            this.radAegisFormeMythra = new System.Windows.Forms.RadioButton();
-            this.radAegisFormePyra = new System.Windows.Forms.RadioButton();
             this.gbxOther = new System.Windows.Forms.GroupBox();
             this.lblAutoEventAfterLoad = new System.Windows.Forms.Label();
             this.nudAutoEventAfterLoad = new System.Windows.Forms.NumericUpDown();
@@ -141,11 +136,6 @@
             this.lblQuestIDID = new System.Windows.Forms.Label();
             this.cbxQuestIDs = new System.Windows.Forms.ComboBox();
             this.lblQuestIDSelectedID = new System.Windows.Forms.Label();
-            this.gbxCommonBladeIDs = new System.Windows.Forms.GroupBox();
-            this.nudCommonBladeID = new System.Windows.Forms.NumericUpDown();
-            this.lblCommonBladeIDID = new System.Windows.Forms.Label();
-            this.cbxCommonBladeIDs = new System.Windows.Forms.ComboBox();
-            this.lblCommonBladeIDSelectedID = new System.Windows.Forms.Label();
             this.gbxWeatherInfo = new System.Windows.Forms.GroupBox();
             this.gbxWeatherInfoUnk_0x04 = new System.Windows.Forms.GroupBox();
             this.hbxWeatherInfoUnk_0x04 = new Be.Windows.Forms.HexBox();
@@ -160,8 +150,6 @@
             this.cbxAchievementTasks = new System.Windows.Forms.ComboBox();
             this.lblSelectedAchievementTask = new System.Windows.Forms.Label();
             this.gbxMoney = new System.Windows.Forms.GroupBox();
-            this.nudEtherCrystals = new System.Windows.Forms.NumericUpDown();
-            this.lblEtherCrystals = new System.Windows.Forms.Label();
             this.nudMoney = new System.Windows.Forms.NumericUpDown();
             this.gbxParty = new System.Windows.Forms.GroupBox();
             this.gbxPartyUnk_0x4E = new System.Windows.Forms.GroupBox();
@@ -1216,36 +1204,14 @@
             this.dgvPcEquipBox = new System.Windows.Forms.DataGridView();
             this.tabAuxCoreBox = new System.Windows.Forms.TabPage();
             this.dgvEquipOrbBox = new System.Windows.Forms.DataGridView();
-            this.tabCylinderBox = new System.Windows.Forms.TabPage();
-            this.dgvSalvageBox = new System.Windows.Forms.DataGridView();
             this.tabKeyItemBox = new System.Windows.Forms.TabPage();
             this.dgvPreciousBox = new System.Windows.Forms.DataGridView();
             this.tabInfoItemBox = new System.Windows.Forms.TabPage();
             this.dgvInfoBox = new System.Windows.Forms.DataGridView();
-            this.tabEventItemBox = new System.Windows.Forms.TabPage();
-            this.dgvEventBox = new System.Windows.Forms.DataGridView();
             this.tabCollectibleBox = new System.Windows.Forms.TabPage();
             this.dgvCollectionListBox = new System.Windows.Forms.DataGridView();
-            this.tabTreasureBox = new System.Windows.Forms.TabPage();
-            this.dgvTreasureBox = new System.Windows.Forms.DataGridView();
-            this.tabUnrefinedAuxCoreBox = new System.Windows.Forms.TabPage();
-            this.dgvEmptyOrbBox = new System.Windows.Forms.DataGridView();
             this.tabPouchItemBox = new System.Windows.Forms.TabPage();
             this.dgvFavoriteBox = new System.Windows.Forms.DataGridView();
-            this.tabCoreCrystalBox = new System.Windows.Forms.TabPage();
-            this.dgvCrystalListBox = new System.Windows.Forms.DataGridView();
-            this.tabBoosterBox = new System.Windows.Forms.TabPage();
-            this.dgvBoosterBox = new System.Windows.Forms.DataGridView();
-            this.tabPoppiRoleCPUBox = new System.Windows.Forms.TabPage();
-            this.dgvHanaRoleBox = new System.Windows.Forms.DataGridView();
-            this.tabPoppiElementCoreBox = new System.Windows.Forms.TabPage();
-            this.dgvHanaAtrBox = new System.Windows.Forms.DataGridView();
-            this.tabPoppiSpecialsEnhancingRAMBox = new System.Windows.Forms.TabPage();
-            this.dgvHanaArtsBox = new System.Windows.Forms.DataGridView();
-            this.tabPoppiArtsCardBox = new System.Windows.Forms.TabPage();
-            this.dgvHanaNArtsBox = new System.Windows.Forms.DataGridView();
-            this.tabPoppiSkillRAMBox = new System.Windows.Forms.TabPage();
-            this.dgvHanaAssistBox = new System.Windows.Forms.DataGridView();
             this.tabItemsSerials = new System.Windows.Forms.TabPage();
             this.gbxItemBoxSerials = new System.Windows.Forms.GroupBox();
             this.nudItemsSerial1 = new System.Windows.Forms.NumericUpDown();
@@ -1393,157 +1359,6 @@
             this.lblMapDriver1Position = new System.Windows.Forms.Label();
             this.lblMapMapJumpID = new System.Windows.Forms.Label();
             this.nudMapMapJumpID = new System.Windows.Forms.NumericUpDown();
-            this.tabMercGroups = new System.Windows.Forms.TabPage();
-            this.gbxMercGroupPresets = new System.Windows.Forms.GroupBox();
-            this.lblMercGroupPreset = new System.Windows.Forms.Label();
-            this.cbxMercGroupPresets = new System.Windows.Forms.ComboBox();
-            this.lblMercGroupPresetMember1 = new System.Windows.Forms.Label();
-            this.nudMercGroupPresetMember6 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroupPresetMember2 = new System.Windows.Forms.Label();
-            this.nudMercGroupPresetMember5 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroupPresetMember3 = new System.Windows.Forms.Label();
-            this.nudMercGroupPresetMember1 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroupPresetMember4 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroupPresetMember2 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroupPresetMember6 = new System.Windows.Forms.Label();
-            this.nudMercGroupPresetMember3 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroupPresetMember5 = new System.Windows.Forms.Label();
-            this.lblMercGroupPresetMember4 = new System.Windows.Forms.Label();
-            this.nudMercGroupsCount = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroupsUnlocked = new System.Windows.Forms.Label();
-            this.gbxMercGroup3 = new System.Windows.Forms.GroupBox();
-            this.lblMercGroup3OriginalMissionTimeSec = new System.Windows.Forms.Label();
-            this.lblMercGroup3MissionTimeSec = new System.Windows.Forms.Label();
-            this.gbxMercGroup3Unk_0x24 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup3Unk_0x24 = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup3Unk_0x0C = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup3Unk_0x0C = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup3Unk_0x18 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup3Unk_0x18 = new Be.Windows.Forms.HexBox();
-            this.nudMercGroup3OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3OriginalMissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup3MissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3MissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup3MissionID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3MissionID = new System.Windows.Forms.Label();
-            this.nudMercGroup3TeamID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3TeamID = new System.Windows.Forms.Label();
-            this.cbxMercGroup3Blade6 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup3Blade5 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup3Blade6 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup3Blade5 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup3Blade4 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup3Blade4 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3Blade6 = new System.Windows.Forms.Label();
-            this.lblMercGroup3Blade5 = new System.Windows.Forms.Label();
-            this.lblMercGroup3Blade4 = new System.Windows.Forms.Label();
-            this.cbxMercGroup3Blade3 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup3Blade2 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup3Blade3 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup3Blade2 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup3Blade1 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup3Blade1 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup3Blade3 = new System.Windows.Forms.Label();
-            this.lblMercGroup3Blade2 = new System.Windows.Forms.Label();
-            this.lblMercGroup3Blade1 = new System.Windows.Forms.Label();
-            this.gbxMercGroup2 = new System.Windows.Forms.GroupBox();
-            this.lblMercGroup2OriginalMissionTimeSec = new System.Windows.Forms.Label();
-            this.lblMercGroup2MissionTimeSec = new System.Windows.Forms.Label();
-            this.gbxMercGroup2Unk_0x24 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup2Unk_0x24 = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup2Unk_0x0C = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup2Unk_0x0C = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup2Unk_0x18 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup2Unk_0x18 = new Be.Windows.Forms.HexBox();
-            this.nudMercGroup2OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2OriginalMissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup2MissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2MissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup2MissionID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2MissionID = new System.Windows.Forms.Label();
-            this.nudMercGroup2TeamID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2TeamID = new System.Windows.Forms.Label();
-            this.cbxMercGroup2Blade6 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup2Blade5 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup2Blade6 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup2Blade5 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup2Blade4 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup2Blade4 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2Blade6 = new System.Windows.Forms.Label();
-            this.lblMercGroup2Blade5 = new System.Windows.Forms.Label();
-            this.lblMercGroup2Blade4 = new System.Windows.Forms.Label();
-            this.cbxMercGroup2Blade3 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup2Blade2 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup2Blade3 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup2Blade2 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup2Blade1 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup2Blade1 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup2Blade3 = new System.Windows.Forms.Label();
-            this.lblMercGroup2Blade2 = new System.Windows.Forms.Label();
-            this.lblMercGroup2Blade1 = new System.Windows.Forms.Label();
-            this.gbxMercGroup1 = new System.Windows.Forms.GroupBox();
-            this.lblMercGroup1OriginalMissionTimeSec = new System.Windows.Forms.Label();
-            this.lblMercGroup1MissionTimeSec = new System.Windows.Forms.Label();
-            this.gbxMercGroup1Unk_0x24 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup1Unk_0x24 = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup1Unk_0x0C = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup1Unk_0x0C = new Be.Windows.Forms.HexBox();
-            this.gbxMercGroup1Unk_0x18 = new System.Windows.Forms.GroupBox();
-            this.hbxMercGroup1Unk_0x18 = new Be.Windows.Forms.HexBox();
-            this.nudMercGroup1OriginalMissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1OriginalMissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup1MissionTime = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1MissionTime = new System.Windows.Forms.Label();
-            this.nudMercGroup1MissionID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1MissionID = new System.Windows.Forms.Label();
-            this.nudMercGroup1TeamID = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1TeamID = new System.Windows.Forms.Label();
-            this.cbxMercGroup1Blade6 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup1Blade5 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup1Blade6 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup1Blade5 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup1Blade4 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup1Blade4 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1Blade6 = new System.Windows.Forms.Label();
-            this.lblMercGroup1Blade5 = new System.Windows.Forms.Label();
-            this.lblMercGroup1Blade4 = new System.Windows.Forms.Label();
-            this.cbxMercGroup1Blade3 = new System.Windows.Forms.ComboBox();
-            this.cbxMercGroup1Blade2 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup1Blade3 = new System.Windows.Forms.NumericUpDown();
-            this.nudMercGroup1Blade2 = new System.Windows.Forms.NumericUpDown();
-            this.cbxMercGroup1Blade1 = new System.Windows.Forms.ComboBox();
-            this.nudMercGroup1Blade1 = new System.Windows.Forms.NumericUpDown();
-            this.lblMercGroup1Blade3 = new System.Windows.Forms.Label();
-            this.lblMercGroup1Blade2 = new System.Windows.Forms.Label();
-            this.lblMercGroup1Blade1 = new System.Windows.Forms.Label();
-            this.tabTigerTiger = new System.Windows.Forms.TabPage();
-            this.gbxTigerTigerUnk_0x30 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x30 = new Be.Windows.Forms.HexBox();
-            this.gbxTigerTigerUnk_0x00 = new System.Windows.Forms.GroupBox();
-            this.hbxTigerTigerUnk_0x00 = new Be.Windows.Forms.HexBox();
-            this.gbxTigerTigerHighScores = new System.Windows.Forms.GroupBox();
-            this.chkTigerTigerStage5IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage5Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage5Score = new System.Windows.Forms.NumericUpDown();
-            this.lblTigerTigerStage5 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage4IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage4Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage4Score = new System.Windows.Forms.NumericUpDown();
-            this.lblTigerTigerStage4 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage3IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage3Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage3Score = new System.Windows.Forms.NumericUpDown();
-            this.lblTigerTigerStage3 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage2IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.txtTigerTigerStage2Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage2Score = new System.Windows.Forms.NumericUpDown();
-            this.lblTigerTigerStage2 = new System.Windows.Forms.Label();
-            this.chkTigerTigerStage1IsEasyMode = new System.Windows.Forms.CheckBox();
-            this.lblTigerTigerInitials = new System.Windows.Forms.Label();
-            this.lblTIgerTigerScore = new System.Windows.Forms.Label();
-            this.txtTigerTigerStage1Initials = new System.Windows.Forms.TextBox();
-            this.nudTigerTigerStage1Score = new System.Windows.Forms.NumericUpDown();
-            this.lblTigerTigerStage1 = new System.Windows.Forms.Label();
             this.tabEvents = new System.Windows.Forms.TabPage();
             this.nudEventsCount = new System.Windows.Forms.NumericUpDown();
             this.lblEventsCount = new System.Windows.Forms.Label();
@@ -1674,6 +1489,11 @@
             this.loadSaveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1684,11 +1504,6 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1723,7 +1538,6 @@
             this.tabMain.SuspendLayout();
             this.gbxContentVersions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudContentVersion)).BeginInit();
-            this.gbxAegisForme.SuspendLayout();
             this.gbxOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAutoEventAfterLoad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSavedEnemyHP3)).BeginInit();
@@ -1743,14 +1557,11 @@
             this.gbxQuestIDs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuestCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuestID)).BeginInit();
-            this.gbxCommonBladeIDs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCommonBladeID)).BeginInit();
             this.gbxWeatherInfo.SuspendLayout();
             this.gbxWeatherInfoUnk_0x04.SuspendLayout();
             this.gbxAchievementTasks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).BeginInit();
             this.gbxMoney.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).BeginInit();
             this.gbxParty.SuspendLayout();
             this.gbxPartyUnk_0x4E.SuspendLayout();
@@ -2240,36 +2051,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).BeginInit();
             this.tabAuxCoreBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipOrbBox)).BeginInit();
-            this.tabCylinderBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalvageBox)).BeginInit();
             this.tabKeyItemBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreciousBox)).BeginInit();
             this.tabInfoItemBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBox)).BeginInit();
-            this.tabEventItemBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEventBox)).BeginInit();
             this.tabCollectibleBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).BeginInit();
-            this.tabTreasureBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).BeginInit();
-            this.tabUnrefinedAuxCoreBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).BeginInit();
             this.tabPouchItemBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).BeginInit();
-            this.tabCoreCrystalBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCrystalListBox)).BeginInit();
-            this.tabBoosterBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBoosterBox)).BeginInit();
-            this.tabPoppiRoleCPUBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaRoleBox)).BeginInit();
-            this.tabPoppiElementCoreBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAtrBox)).BeginInit();
-            this.tabPoppiSpecialsEnhancingRAMBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaArtsBox)).BeginInit();
-            this.tabPoppiArtsCardBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).BeginInit();
-            this.tabPoppiSkillRAMBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).BeginInit();
             this.tabItemsSerials.SuspendLayout();
             this.gbxItemBoxSerials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudItemsSerial1)).BeginInit();
@@ -2362,66 +2151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).BeginInit();
-            this.tabMercGroups.SuspendLayout();
-            this.gbxMercGroupPresets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupsCount)).BeginInit();
-            this.gbxMercGroup3.SuspendLayout();
-            this.gbxMercGroup3Unk_0x24.SuspendLayout();
-            this.gbxMercGroup3Unk_0x0C.SuspendLayout();
-            this.gbxMercGroup3Unk_0x18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3OriginalMissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3TeamID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade1)).BeginInit();
-            this.gbxMercGroup2.SuspendLayout();
-            this.gbxMercGroup2Unk_0x24.SuspendLayout();
-            this.gbxMercGroup2Unk_0x0C.SuspendLayout();
-            this.gbxMercGroup2Unk_0x18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2OriginalMissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2TeamID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade1)).BeginInit();
-            this.gbxMercGroup1.SuspendLayout();
-            this.gbxMercGroup1Unk_0x24.SuspendLayout();
-            this.gbxMercGroup1Unk_0x0C.SuspendLayout();
-            this.gbxMercGroup1Unk_0x18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1OriginalMissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1TeamID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).BeginInit();
-            this.tabTigerTiger.SuspendLayout();
-            this.gbxTigerTigerUnk_0x30.SuspendLayout();
-            this.gbxTigerTigerUnk_0x00.SuspendLayout();
-            this.gbxTigerTigerHighScores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).BeginInit();
             this.tabEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).BeginInit();
             this.gbxEventsUnk_0x54.SuspendLayout();
@@ -3187,8 +2916,6 @@
             this.tbcMain.Controls.Add(this.tabItems);
             this.tbcMain.Controls.Add(this.tabFlags);
             this.tbcMain.Controls.Add(this.tabMapLocation);
-            this.tbcMain.Controls.Add(this.tabMercGroups);
-            this.tbcMain.Controls.Add(this.tabTigerTiger);
             this.tbcMain.Controls.Add(this.tabEvents);
             this.tbcMain.Controls.Add(this.tabUnknown);
             this.tbcMain.Controls.Add(this.tab150RawData);
@@ -3204,10 +2931,8 @@
             // 
             this.tabMain.BackColor = System.Drawing.Color.Transparent;
             this.tabMain.Controls.Add(this.gbxContentVersions);
-            this.tabMain.Controls.Add(this.gbxAegisForme);
             this.tabMain.Controls.Add(this.gbxOther);
             this.tabMain.Controls.Add(this.gbxQuestIDs);
-            this.tabMain.Controls.Add(this.gbxCommonBladeIDs);
             this.tabMain.Controls.Add(this.gbxWeatherInfo);
             this.tabMain.Controls.Add(this.gbxAchievementTasks);
             this.tabMain.Controls.Add(this.gbxMoney);
@@ -3272,62 +2997,6 @@
             this.lblContentVersionsSelectedVer.Size = new System.Drawing.Size(71, 13);
             this.lblContentVersionsSelectedVer.TabIndex = 156;
             this.lblContentVersionsSelectedVer.Text = "Selected Ver:";
-            // 
-            // gbxAegisForme
-            // 
-            this.gbxAegisForme.Controls.Add(this.lblAegisFormeMythra);
-            this.gbxAegisForme.Controls.Add(this.lblAegisFormePyra);
-            this.gbxAegisForme.Controls.Add(this.radAegisFormeMythra);
-            this.gbxAegisForme.Controls.Add(this.radAegisFormePyra);
-            this.gbxAegisForme.Location = new System.Drawing.Point(811, 386);
-            this.gbxAegisForme.Name = "gbxAegisForme";
-            this.gbxAegisForme.Size = new System.Drawing.Size(79, 66);
-            this.gbxAegisForme.TabIndex = 185;
-            this.gbxAegisForme.TabStop = false;
-            this.gbxAegisForme.Text = "Aegis Forme";
-            // 
-            // lblAegisFormeMythra
-            // 
-            this.lblAegisFormeMythra.AutoSize = true;
-            this.lblAegisFormeMythra.Location = new System.Drawing.Point(6, 45);
-            this.lblAegisFormeMythra.Name = "lblAegisFormeMythra";
-            this.lblAegisFormeMythra.Size = new System.Drawing.Size(39, 13);
-            this.lblAegisFormeMythra.TabIndex = 3;
-            this.lblAegisFormeMythra.Text = "Mythra";
-            // 
-            // lblAegisFormePyra
-            // 
-            this.lblAegisFormePyra.AutoSize = true;
-            this.lblAegisFormePyra.Location = new System.Drawing.Point(6, 22);
-            this.lblAegisFormePyra.Name = "lblAegisFormePyra";
-            this.lblAegisFormePyra.Size = new System.Drawing.Size(28, 13);
-            this.lblAegisFormePyra.TabIndex = 2;
-            this.lblAegisFormePyra.Text = "Pyra";
-            // 
-            // radAegisFormeMythra
-            // 
-            this.radAegisFormeMythra.AutoSize = true;
-            this.radAegisFormeMythra.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radAegisFormeMythra.Location = new System.Drawing.Point(59, 45);
-            this.radAegisFormeMythra.Name = "radAegisFormeMythra";
-            this.radAegisFormeMythra.Size = new System.Drawing.Size(14, 13);
-            this.radAegisFormeMythra.TabIndex = 1;
-            this.radAegisFormeMythra.TabStop = true;
-            this.radAegisFormeMythra.UseVisualStyleBackColor = true;
-            this.radAegisFormeMythra.CheckedChanged += new System.EventHandler(this.radAegisForme_CheckChanged);
-            // 
-            // radAegisFormePyra
-            // 
-            this.radAegisFormePyra.AutoSize = true;
-            this.radAegisFormePyra.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radAegisFormePyra.Location = new System.Drawing.Point(59, 22);
-            this.radAegisFormePyra.Name = "radAegisFormePyra";
-            this.radAegisFormePyra.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radAegisFormePyra.Size = new System.Drawing.Size(14, 13);
-            this.radAegisFormePyra.TabIndex = 0;
-            this.radAegisFormePyra.TabStop = true;
-            this.radAegisFormePyra.UseVisualStyleBackColor = true;
-            this.radAegisFormePyra.CheckedChanged += new System.EventHandler(this.radAegisForme_CheckChanged);
             // 
             // gbxOther
             // 
@@ -3826,59 +3495,6 @@
             this.lblQuestIDSelectedID.TabIndex = 156;
             this.lblQuestIDSelectedID.Text = "Selected ID:";
             // 
-            // gbxCommonBladeIDs
-            // 
-            this.gbxCommonBladeIDs.Controls.Add(this.nudCommonBladeID);
-            this.gbxCommonBladeIDs.Controls.Add(this.lblCommonBladeIDID);
-            this.gbxCommonBladeIDs.Controls.Add(this.cbxCommonBladeIDs);
-            this.gbxCommonBladeIDs.Controls.Add(this.lblCommonBladeIDSelectedID);
-            this.gbxCommonBladeIDs.Location = new System.Drawing.Point(593, 389);
-            this.gbxCommonBladeIDs.Name = "gbxCommonBladeIDs";
-            this.gbxCommonBladeIDs.Size = new System.Drawing.Size(213, 70);
-            this.gbxCommonBladeIDs.TabIndex = 154;
-            this.gbxCommonBladeIDs.TabStop = false;
-            this.gbxCommonBladeIDs.Text = "Common Blade IDs";
-            // 
-            // nudCommonBladeID
-            // 
-            this.nudCommonBladeID.Location = new System.Drawing.Point(78, 43);
-            this.nudCommonBladeID.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudCommonBladeID.Name = "nudCommonBladeID";
-            this.nudCommonBladeID.Size = new System.Drawing.Size(63, 20);
-            this.nudCommonBladeID.TabIndex = 170;
-            this.nudCommonBladeID.ValueChanged += new System.EventHandler(this.nudCommonBladeID_ValueChanged);
-            // 
-            // lblCommonBladeIDID
-            // 
-            this.lblCommonBladeIDID.AutoSize = true;
-            this.lblCommonBladeIDID.Location = new System.Drawing.Point(6, 45);
-            this.lblCommonBladeIDID.Name = "lblCommonBladeIDID";
-            this.lblCommonBladeIDID.Size = new System.Drawing.Size(21, 13);
-            this.lblCommonBladeIDID.TabIndex = 158;
-            this.lblCommonBladeIDID.Text = "ID:";
-            // 
-            // cbxCommonBladeIDs
-            // 
-            this.cbxCommonBladeIDs.FormattingEnabled = true;
-            this.cbxCommonBladeIDs.Location = new System.Drawing.Point(78, 16);
-            this.cbxCommonBladeIDs.Name = "cbxCommonBladeIDs";
-            this.cbxCommonBladeIDs.Size = new System.Drawing.Size(129, 21);
-            this.cbxCommonBladeIDs.TabIndex = 157;
-            this.cbxCommonBladeIDs.SelectedIndexChanged += new System.EventHandler(this.cbxCommonBladeIDs_SelectedIndexChanged);
-            // 
-            // lblCommonBladeIDSelectedID
-            // 
-            this.lblCommonBladeIDSelectedID.AutoSize = true;
-            this.lblCommonBladeIDSelectedID.Location = new System.Drawing.Point(6, 19);
-            this.lblCommonBladeIDSelectedID.Name = "lblCommonBladeIDSelectedID";
-            this.lblCommonBladeIDSelectedID.Size = new System.Drawing.Size(66, 13);
-            this.lblCommonBladeIDSelectedID.TabIndex = 156;
-            this.lblCommonBladeIDSelectedID.Text = "Selected ID:";
-            // 
             // gbxWeatherInfo
             // 
             this.gbxWeatherInfo.Controls.Add(this.gbxWeatherInfoUnk_0x04);
@@ -4015,39 +3631,15 @@
             // 
             // gbxMoney
             // 
-            this.gbxMoney.Controls.Add(this.nudEtherCrystals);
-            this.gbxMoney.Controls.Add(this.lblEtherCrystals);
             this.gbxMoney.Controls.Add(this.nudMoney);
             this.gbxMoney.Controls.Add(this.label13);
             this.gbxMoney.Controls.Add(this.lblMoney);
             this.gbxMoney.Location = new System.Drawing.Point(6, 6);
             this.gbxMoney.Name = "gbxMoney";
-            this.gbxMoney.Size = new System.Drawing.Size(340, 45);
+            this.gbxMoney.Size = new System.Drawing.Size(167, 45);
             this.gbxMoney.TabIndex = 35;
             this.gbxMoney.TabStop = false;
             this.gbxMoney.Text = "Money";
-            // 
-            // nudEtherCrystals
-            // 
-            this.nudEtherCrystals.Location = new System.Drawing.Point(245, 19);
-            this.nudEtherCrystals.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudEtherCrystals.Name = "nudEtherCrystals";
-            this.nudEtherCrystals.Size = new System.Drawing.Size(88, 20);
-            this.nudEtherCrystals.TabIndex = 35;
-            this.nudEtherCrystals.ValueChanged += new System.EventHandler(this.nudEtherCrystals_ValueChanged);
-            // 
-            // lblEtherCrystals
-            // 
-            this.lblEtherCrystals.AutoSize = true;
-            this.lblEtherCrystals.Location = new System.Drawing.Point(165, 21);
-            this.lblEtherCrystals.Name = "lblEtherCrystals";
-            this.lblEtherCrystals.Size = new System.Drawing.Size(74, 13);
-            this.lblEtherCrystals.TabIndex = 34;
-            this.lblEtherCrystals.Text = "Ether Crystals:";
             // 
             // nudMoney
             // 
@@ -16013,21 +15605,10 @@
             this.tbcItems.Controls.Add(this.tabCoreChipBox);
             this.tbcItems.Controls.Add(this.tabAccessoryBox);
             this.tbcItems.Controls.Add(this.tabAuxCoreBox);
-            this.tbcItems.Controls.Add(this.tabCylinderBox);
             this.tbcItems.Controls.Add(this.tabKeyItemBox);
             this.tbcItems.Controls.Add(this.tabInfoItemBox);
-            this.tbcItems.Controls.Add(this.tabEventItemBox);
             this.tbcItems.Controls.Add(this.tabCollectibleBox);
-            this.tbcItems.Controls.Add(this.tabTreasureBox);
-            this.tbcItems.Controls.Add(this.tabUnrefinedAuxCoreBox);
             this.tbcItems.Controls.Add(this.tabPouchItemBox);
-            this.tbcItems.Controls.Add(this.tabCoreCrystalBox);
-            this.tbcItems.Controls.Add(this.tabBoosterBox);
-            this.tbcItems.Controls.Add(this.tabPoppiRoleCPUBox);
-            this.tbcItems.Controls.Add(this.tabPoppiElementCoreBox);
-            this.tbcItems.Controls.Add(this.tabPoppiSpecialsEnhancingRAMBox);
-            this.tbcItems.Controls.Add(this.tabPoppiArtsCardBox);
-            this.tbcItems.Controls.Add(this.tabPoppiSkillRAMBox);
             this.tbcItems.Controls.Add(this.tabItemsSerials);
             this.tbcItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcItems.Location = new System.Drawing.Point(0, 0);
@@ -16111,31 +15692,6 @@
             this.dgvEquipOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             this.dgvEquipOrbBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
-            // tabCylinderBox
-            // 
-            this.tabCylinderBox.Controls.Add(this.dgvSalvageBox);
-            this.tabCylinderBox.Location = new System.Drawing.Point(4, 22);
-            this.tabCylinderBox.Name = "tabCylinderBox";
-            this.tabCylinderBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCylinderBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabCylinderBox.TabIndex = 3;
-            this.tabCylinderBox.Text = "Cylinders";
-            this.tabCylinderBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvSalvageBox
-            // 
-            this.dgvSalvageBox.AllowUserToAddRows = false;
-            this.dgvSalvageBox.AllowUserToDeleteRows = false;
-            this.dgvSalvageBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalvageBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSalvageBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvSalvageBox.Name = "dgvSalvageBox";
-            this.dgvSalvageBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvSalvageBox.TabIndex = 0;
-            this.dgvSalvageBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvSalvageBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvSalvageBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
             // tabKeyItemBox
             // 
             this.tabKeyItemBox.Controls.Add(this.dgvPreciousBox);
@@ -16186,30 +15742,6 @@
             this.dgvInfoBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             this.dgvInfoBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
-            // tabEventItemBox
-            // 
-            this.tabEventItemBox.Controls.Add(this.dgvEventBox);
-            this.tabEventItemBox.Location = new System.Drawing.Point(4, 22);
-            this.tabEventItemBox.Name = "tabEventItemBox";
-            this.tabEventItemBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEventItemBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabEventItemBox.TabIndex = 6;
-            this.tabEventItemBox.Text = "Event Items";
-            this.tabEventItemBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvEventBox
-            // 
-            this.dgvEventBox.AllowUserToAddRows = false;
-            this.dgvEventBox.AllowUserToDeleteRows = false;
-            this.dgvEventBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEventBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvEventBox.Name = "dgvEventBox";
-            this.dgvEventBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvEventBox.TabIndex = 0;
-            this.dgvEventBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvEventBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            // 
             // tabCollectibleBox
             // 
             this.tabCollectibleBox.Controls.Add(this.dgvCollectionListBox);
@@ -16235,56 +15767,6 @@
             this.dgvCollectionListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             this.dgvCollectionListBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
-            // tabTreasureBox
-            // 
-            this.tabTreasureBox.Controls.Add(this.dgvTreasureBox);
-            this.tabTreasureBox.Location = new System.Drawing.Point(4, 22);
-            this.tabTreasureBox.Name = "tabTreasureBox";
-            this.tabTreasureBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTreasureBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabTreasureBox.TabIndex = 8;
-            this.tabTreasureBox.Text = "Treasure";
-            this.tabTreasureBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvTreasureBox
-            // 
-            this.dgvTreasureBox.AllowUserToAddRows = false;
-            this.dgvTreasureBox.AllowUserToDeleteRows = false;
-            this.dgvTreasureBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTreasureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTreasureBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvTreasureBox.Name = "dgvTreasureBox";
-            this.dgvTreasureBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvTreasureBox.TabIndex = 0;
-            this.dgvTreasureBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvTreasureBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvTreasureBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabUnrefinedAuxCoreBox
-            // 
-            this.tabUnrefinedAuxCoreBox.Controls.Add(this.dgvEmptyOrbBox);
-            this.tabUnrefinedAuxCoreBox.Location = new System.Drawing.Point(4, 22);
-            this.tabUnrefinedAuxCoreBox.Name = "tabUnrefinedAuxCoreBox";
-            this.tabUnrefinedAuxCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUnrefinedAuxCoreBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabUnrefinedAuxCoreBox.TabIndex = 9;
-            this.tabUnrefinedAuxCoreBox.Text = "Unrefined Aux Cores";
-            this.tabUnrefinedAuxCoreBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvEmptyOrbBox
-            // 
-            this.dgvEmptyOrbBox.AllowUserToAddRows = false;
-            this.dgvEmptyOrbBox.AllowUserToDeleteRows = false;
-            this.dgvEmptyOrbBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmptyOrbBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmptyOrbBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvEmptyOrbBox.Name = "dgvEmptyOrbBox";
-            this.dgvEmptyOrbBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvEmptyOrbBox.TabIndex = 0;
-            this.dgvEmptyOrbBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvEmptyOrbBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvEmptyOrbBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
             // tabPouchItemBox
             // 
             this.tabPouchItemBox.Controls.Add(this.dgvFavoriteBox);
@@ -16309,181 +15791,6 @@
             this.dgvFavoriteBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
             this.dgvFavoriteBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
             this.dgvFavoriteBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabCoreCrystalBox
-            // 
-            this.tabCoreCrystalBox.Controls.Add(this.dgvCrystalListBox);
-            this.tabCoreCrystalBox.Location = new System.Drawing.Point(4, 22);
-            this.tabCoreCrystalBox.Name = "tabCoreCrystalBox";
-            this.tabCoreCrystalBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCoreCrystalBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabCoreCrystalBox.TabIndex = 11;
-            this.tabCoreCrystalBox.Text = "Core Crystals";
-            this.tabCoreCrystalBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvCrystalListBox
-            // 
-            this.dgvCrystalListBox.AllowUserToAddRows = false;
-            this.dgvCrystalListBox.AllowUserToDeleteRows = false;
-            this.dgvCrystalListBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCrystalListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCrystalListBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvCrystalListBox.Name = "dgvCrystalListBox";
-            this.dgvCrystalListBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvCrystalListBox.TabIndex = 0;
-            this.dgvCrystalListBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvCrystalListBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvCrystalListBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabBoosterBox
-            // 
-            this.tabBoosterBox.Controls.Add(this.dgvBoosterBox);
-            this.tabBoosterBox.Location = new System.Drawing.Point(4, 22);
-            this.tabBoosterBox.Name = "tabBoosterBox";
-            this.tabBoosterBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBoosterBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabBoosterBox.TabIndex = 12;
-            this.tabBoosterBox.Text = "Boosters";
-            this.tabBoosterBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvBoosterBox
-            // 
-            this.dgvBoosterBox.AllowUserToAddRows = false;
-            this.dgvBoosterBox.AllowUserToDeleteRows = false;
-            this.dgvBoosterBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBoosterBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBoosterBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvBoosterBox.Name = "dgvBoosterBox";
-            this.dgvBoosterBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvBoosterBox.TabIndex = 0;
-            this.dgvBoosterBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvBoosterBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvBoosterBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabPoppiRoleCPUBox
-            // 
-            this.tabPoppiRoleCPUBox.Controls.Add(this.dgvHanaRoleBox);
-            this.tabPoppiRoleCPUBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPoppiRoleCPUBox.Name = "tabPoppiRoleCPUBox";
-            this.tabPoppiRoleCPUBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiRoleCPUBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabPoppiRoleCPUBox.TabIndex = 13;
-            this.tabPoppiRoleCPUBox.Text = "Poppi Role CPU";
-            this.tabPoppiRoleCPUBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvHanaRoleBox
-            // 
-            this.dgvHanaRoleBox.AllowUserToAddRows = false;
-            this.dgvHanaRoleBox.AllowUserToDeleteRows = false;
-            this.dgvHanaRoleBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanaRoleBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHanaRoleBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvHanaRoleBox.Name = "dgvHanaRoleBox";
-            this.dgvHanaRoleBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvHanaRoleBox.TabIndex = 0;
-            this.dgvHanaRoleBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvHanaRoleBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvHanaRoleBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabPoppiElementCoreBox
-            // 
-            this.tabPoppiElementCoreBox.Controls.Add(this.dgvHanaAtrBox);
-            this.tabPoppiElementCoreBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPoppiElementCoreBox.Name = "tabPoppiElementCoreBox";
-            this.tabPoppiElementCoreBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiElementCoreBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabPoppiElementCoreBox.TabIndex = 14;
-            this.tabPoppiElementCoreBox.Text = "Poppi Element Cores";
-            this.tabPoppiElementCoreBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvHanaAtrBox
-            // 
-            this.dgvHanaAtrBox.AllowUserToAddRows = false;
-            this.dgvHanaAtrBox.AllowUserToDeleteRows = false;
-            this.dgvHanaAtrBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanaAtrBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHanaAtrBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvHanaAtrBox.Name = "dgvHanaAtrBox";
-            this.dgvHanaAtrBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvHanaAtrBox.TabIndex = 0;
-            this.dgvHanaAtrBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvHanaAtrBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvHanaAtrBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabPoppiSpecialsEnhancingRAMBox
-            // 
-            this.tabPoppiSpecialsEnhancingRAMBox.Controls.Add(this.dgvHanaArtsBox);
-            this.tabPoppiSpecialsEnhancingRAMBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPoppiSpecialsEnhancingRAMBox.Name = "tabPoppiSpecialsEnhancingRAMBox";
-            this.tabPoppiSpecialsEnhancingRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSpecialsEnhancingRAMBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabPoppiSpecialsEnhancingRAMBox.TabIndex = 15;
-            this.tabPoppiSpecialsEnhancingRAMBox.Text = "Poppi Specials Enhancing RAM";
-            this.tabPoppiSpecialsEnhancingRAMBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvHanaArtsBox
-            // 
-            this.dgvHanaArtsBox.AllowUserToAddRows = false;
-            this.dgvHanaArtsBox.AllowUserToDeleteRows = false;
-            this.dgvHanaArtsBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanaArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHanaArtsBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvHanaArtsBox.Name = "dgvHanaArtsBox";
-            this.dgvHanaArtsBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvHanaArtsBox.TabIndex = 0;
-            this.dgvHanaArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvHanaArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvHanaArtsBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabPoppiArtsCardBox
-            // 
-            this.tabPoppiArtsCardBox.Controls.Add(this.dgvHanaNArtsBox);
-            this.tabPoppiArtsCardBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPoppiArtsCardBox.Name = "tabPoppiArtsCardBox";
-            this.tabPoppiArtsCardBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiArtsCardBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabPoppiArtsCardBox.TabIndex = 16;
-            this.tabPoppiArtsCardBox.Text = "Poppi Arts Cards";
-            this.tabPoppiArtsCardBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvHanaNArtsBox
-            // 
-            this.dgvHanaNArtsBox.AllowUserToAddRows = false;
-            this.dgvHanaNArtsBox.AllowUserToDeleteRows = false;
-            this.dgvHanaNArtsBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanaNArtsBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHanaNArtsBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvHanaNArtsBox.Name = "dgvHanaNArtsBox";
-            this.dgvHanaNArtsBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvHanaNArtsBox.TabIndex = 0;
-            this.dgvHanaNArtsBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvHanaNArtsBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvHanaNArtsBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
-            // 
-            // tabPoppiSkillRAMBox
-            // 
-            this.tabPoppiSkillRAMBox.Controls.Add(this.dgvHanaAssistBox);
-            this.tabPoppiSkillRAMBox.Location = new System.Drawing.Point(4, 22);
-            this.tabPoppiSkillRAMBox.Name = "tabPoppiSkillRAMBox";
-            this.tabPoppiSkillRAMBox.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPoppiSkillRAMBox.Size = new System.Drawing.Size(1120, 493);
-            this.tabPoppiSkillRAMBox.TabIndex = 17;
-            this.tabPoppiSkillRAMBox.Text = "Poppi Skill RAM";
-            this.tabPoppiSkillRAMBox.UseVisualStyleBackColor = true;
-            // 
-            // dgvHanaAssistBox
-            // 
-            this.dgvHanaAssistBox.AllowUserToAddRows = false;
-            this.dgvHanaAssistBox.AllowUserToDeleteRows = false;
-            this.dgvHanaAssistBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHanaAssistBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHanaAssistBox.Location = new System.Drawing.Point(3, 3);
-            this.dgvHanaAssistBox.Name = "dgvHanaAssistBox";
-            this.dgvHanaAssistBox.Size = new System.Drawing.Size(1114, 487);
-            this.dgvHanaAssistBox.TabIndex = 0;
-            this.dgvHanaAssistBox.CellContextMenuStripNeeded += new System.Windows.Forms.DataGridViewCellContextMenuStripNeededEventHandler(this.dgvItemBox_CellContextMenuStripNeeded);
-            this.dgvHanaAssistBox.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemBox_CellValueChanged);
-            this.dgvHanaAssistBox.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvItemBox_ColumnHeaderMouseDoubleClick);
             // 
             // tabItemsSerials
             // 
@@ -18512,1711 +17819,6 @@
             this.nudMapMapJumpID.TabIndex = 8;
             this.nudMapMapJumpID.ValueChanged += new System.EventHandler(this.nudMapMapJumpID_ValueChanged);
             // 
-            // tabMercGroups
-            // 
-            this.tabMercGroups.Controls.Add(this.gbxMercGroupPresets);
-            this.tabMercGroups.Controls.Add(this.nudMercGroupsCount);
-            this.tabMercGroups.Controls.Add(this.lblMercGroupsUnlocked);
-            this.tabMercGroups.Controls.Add(this.gbxMercGroup3);
-            this.tabMercGroups.Controls.Add(this.gbxMercGroup2);
-            this.tabMercGroups.Controls.Add(this.gbxMercGroup1);
-            this.tabMercGroups.Location = new System.Drawing.Point(4, 22);
-            this.tabMercGroups.Name = "tabMercGroups";
-            this.tabMercGroups.Size = new System.Drawing.Size(1134, 576);
-            this.tabMercGroups.TabIndex = 9;
-            this.tabMercGroups.Text = "Merc Groups";
-            this.tabMercGroups.UseVisualStyleBackColor = true;
-            // 
-            // gbxMercGroupPresets
-            // 
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPreset);
-            this.gbxMercGroupPresets.Controls.Add(this.cbxMercGroupPresets);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember1);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember6);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember2);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember5);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember3);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember1);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember4);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember2);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember6);
-            this.gbxMercGroupPresets.Controls.Add(this.nudMercGroupPresetMember3);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember5);
-            this.gbxMercGroupPresets.Controls.Add(this.lblMercGroupPresetMember4);
-            this.gbxMercGroupPresets.Location = new System.Drawing.Point(733, 44);
-            this.gbxMercGroupPresets.Name = "gbxMercGroupPresets";
-            this.gbxMercGroupPresets.Size = new System.Drawing.Size(140, 188);
-            this.gbxMercGroupPresets.TabIndex = 162;
-            this.gbxMercGroupPresets.TabStop = false;
-            this.gbxMercGroupPresets.Text = "Merc Group Presets";
-            // 
-            // lblMercGroupPreset
-            // 
-            this.lblMercGroupPreset.AutoSize = true;
-            this.lblMercGroupPreset.Location = new System.Drawing.Point(12, 22);
-            this.lblMercGroupPreset.Name = "lblMercGroupPreset";
-            this.lblMercGroupPreset.Size = new System.Drawing.Size(40, 13);
-            this.lblMercGroupPreset.TabIndex = 179;
-            this.lblMercGroupPreset.Text = "Preset:";
-            // 
-            // cbxMercGroupPresets
-            // 
-            this.cbxMercGroupPresets.FormattingEnabled = true;
-            this.cbxMercGroupPresets.Location = new System.Drawing.Point(58, 19);
-            this.cbxMercGroupPresets.Name = "cbxMercGroupPresets";
-            this.cbxMercGroupPresets.Size = new System.Drawing.Size(69, 21);
-            this.cbxMercGroupPresets.TabIndex = 178;
-            this.cbxMercGroupPresets.SelectedIndexChanged += new System.EventHandler(this.cbxMercGroupPresets_SelectedIndexChanged);
-            // 
-            // lblMercGroupPresetMember1
-            // 
-            this.lblMercGroupPresetMember1.AutoSize = true;
-            this.lblMercGroupPresetMember1.Location = new System.Drawing.Point(12, 54);
-            this.lblMercGroupPresetMember1.Name = "lblMercGroupPresetMember1";
-            this.lblMercGroupPresetMember1.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember1.TabIndex = 160;
-            this.lblMercGroupPresetMember1.Text = "Member 1:";
-            // 
-            // nudMercGroupPresetMember6
-            // 
-            this.nudMercGroupPresetMember6.Location = new System.Drawing.Point(75, 152);
-            this.nudMercGroupPresetMember6.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember6.Name = "nudMercGroupPresetMember6";
-            this.nudMercGroupPresetMember6.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember6.TabIndex = 175;
-            this.nudMercGroupPresetMember6.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember6_ValueChanged);
-            // 
-            // lblMercGroupPresetMember2
-            // 
-            this.lblMercGroupPresetMember2.AutoSize = true;
-            this.lblMercGroupPresetMember2.Location = new System.Drawing.Point(12, 74);
-            this.lblMercGroupPresetMember2.Name = "lblMercGroupPresetMember2";
-            this.lblMercGroupPresetMember2.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember2.TabIndex = 161;
-            this.lblMercGroupPresetMember2.Text = "Member 2:";
-            // 
-            // nudMercGroupPresetMember5
-            // 
-            this.nudMercGroupPresetMember5.Location = new System.Drawing.Point(75, 132);
-            this.nudMercGroupPresetMember5.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember5.Name = "nudMercGroupPresetMember5";
-            this.nudMercGroupPresetMember5.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember5.TabIndex = 174;
-            this.nudMercGroupPresetMember5.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember5_ValueChanged);
-            // 
-            // lblMercGroupPresetMember3
-            // 
-            this.lblMercGroupPresetMember3.AutoSize = true;
-            this.lblMercGroupPresetMember3.Location = new System.Drawing.Point(12, 93);
-            this.lblMercGroupPresetMember3.Name = "lblMercGroupPresetMember3";
-            this.lblMercGroupPresetMember3.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember3.TabIndex = 162;
-            this.lblMercGroupPresetMember3.Text = "Member 3:";
-            // 
-            // nudMercGroupPresetMember1
-            // 
-            this.nudMercGroupPresetMember1.Location = new System.Drawing.Point(75, 52);
-            this.nudMercGroupPresetMember1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember1.Name = "nudMercGroupPresetMember1";
-            this.nudMercGroupPresetMember1.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember1.TabIndex = 164;
-            this.nudMercGroupPresetMember1.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember1_ValueChanged);
-            // 
-            // nudMercGroupPresetMember4
-            // 
-            this.nudMercGroupPresetMember4.Location = new System.Drawing.Point(75, 112);
-            this.nudMercGroupPresetMember4.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember4.Name = "nudMercGroupPresetMember4";
-            this.nudMercGroupPresetMember4.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember4.TabIndex = 173;
-            this.nudMercGroupPresetMember4.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember4_ValueChanged);
-            // 
-            // nudMercGroupPresetMember2
-            // 
-            this.nudMercGroupPresetMember2.Location = new System.Drawing.Point(75, 72);
-            this.nudMercGroupPresetMember2.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember2.Name = "nudMercGroupPresetMember2";
-            this.nudMercGroupPresetMember2.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember2.TabIndex = 165;
-            this.nudMercGroupPresetMember2.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember2_ValueChanged);
-            // 
-            // lblMercGroupPresetMember6
-            // 
-            this.lblMercGroupPresetMember6.AutoSize = true;
-            this.lblMercGroupPresetMember6.Location = new System.Drawing.Point(12, 154);
-            this.lblMercGroupPresetMember6.Name = "lblMercGroupPresetMember6";
-            this.lblMercGroupPresetMember6.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember6.TabIndex = 171;
-            this.lblMercGroupPresetMember6.Text = "Member 6:";
-            // 
-            // nudMercGroupPresetMember3
-            // 
-            this.nudMercGroupPresetMember3.Location = new System.Drawing.Point(75, 92);
-            this.nudMercGroupPresetMember3.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroupPresetMember3.Name = "nudMercGroupPresetMember3";
-            this.nudMercGroupPresetMember3.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroupPresetMember3.TabIndex = 166;
-            this.nudMercGroupPresetMember3.ValueChanged += new System.EventHandler(this.nudMercGroupPresetMember3_ValueChanged);
-            // 
-            // lblMercGroupPresetMember5
-            // 
-            this.lblMercGroupPresetMember5.AutoSize = true;
-            this.lblMercGroupPresetMember5.Location = new System.Drawing.Point(12, 134);
-            this.lblMercGroupPresetMember5.Name = "lblMercGroupPresetMember5";
-            this.lblMercGroupPresetMember5.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember5.TabIndex = 170;
-            this.lblMercGroupPresetMember5.Text = "Member 5:";
-            // 
-            // lblMercGroupPresetMember4
-            // 
-            this.lblMercGroupPresetMember4.AutoSize = true;
-            this.lblMercGroupPresetMember4.Location = new System.Drawing.Point(12, 114);
-            this.lblMercGroupPresetMember4.Name = "lblMercGroupPresetMember4";
-            this.lblMercGroupPresetMember4.Size = new System.Drawing.Size(57, 13);
-            this.lblMercGroupPresetMember4.TabIndex = 169;
-            this.lblMercGroupPresetMember4.Text = "Member 4:";
-            // 
-            // nudMercGroupsCount
-            // 
-            this.nudMercGroupsCount.Location = new System.Drawing.Point(134, 18);
-            this.nudMercGroupsCount.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroupsCount.Name = "nudMercGroupsCount";
-            this.nudMercGroupsCount.Size = new System.Drawing.Size(83, 20);
-            this.nudMercGroupsCount.TabIndex = 161;
-            this.nudMercGroupsCount.ValueChanged += new System.EventHandler(this.nudMercGroupsCount_ValueChanged);
-            // 
-            // lblMercGroupsUnlocked
-            // 
-            this.lblMercGroupsUnlocked.AutoSize = true;
-            this.lblMercGroupsUnlocked.Location = new System.Drawing.Point(8, 20);
-            this.lblMercGroupsUnlocked.Name = "lblMercGroupsUnlocked";
-            this.lblMercGroupsUnlocked.Size = new System.Drawing.Size(120, 13);
-            this.lblMercGroupsUnlocked.TabIndex = 160;
-            this.lblMercGroupsUnlocked.Text = "Merc Groups Unlocked:";
-            // 
-            // gbxMercGroup3
-            // 
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3OriginalMissionTimeSec);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3MissionTimeSec);
-            this.gbxMercGroup3.Controls.Add(this.gbxMercGroup3Unk_0x24);
-            this.gbxMercGroup3.Controls.Add(this.gbxMercGroup3Unk_0x0C);
-            this.gbxMercGroup3.Controls.Add(this.gbxMercGroup3Unk_0x18);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3OriginalMissionTime);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3OriginalMissionTime);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3MissionTime);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3MissionTime);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3MissionID);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3MissionID);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3TeamID);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3TeamID);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade6);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade5);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade6);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade5);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade4);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade4);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade6);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade5);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade4);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade3);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade2);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade3);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade2);
-            this.gbxMercGroup3.Controls.Add(this.cbxMercGroup3Blade1);
-            this.gbxMercGroup3.Controls.Add(this.nudMercGroup3Blade1);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade3);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade2);
-            this.gbxMercGroup3.Controls.Add(this.lblMercGroup3Blade1);
-            this.gbxMercGroup3.Location = new System.Drawing.Point(8, 362);
-            this.gbxMercGroup3.Name = "gbxMercGroup3";
-            this.gbxMercGroup3.Size = new System.Drawing.Size(719, 153);
-            this.gbxMercGroup3.TabIndex = 158;
-            this.gbxMercGroup3.TabStop = false;
-            this.gbxMercGroup3.Text = "Merc Group 3";
-            // 
-            // lblMercGroup3OriginalMissionTimeSec
-            // 
-            this.lblMercGroup3OriginalMissionTimeSec.AutoSize = true;
-            this.lblMercGroup3OriginalMissionTimeSec.Location = new System.Drawing.Point(400, 96);
-            this.lblMercGroup3OriginalMissionTimeSec.Name = "lblMercGroup3OriginalMissionTimeSec";
-            this.lblMercGroup3OriginalMissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup3OriginalMissionTimeSec.TabIndex = 158;
-            this.lblMercGroup3OriginalMissionTimeSec.Text = "sec.";
-            // 
-            // lblMercGroup3MissionTimeSec
-            // 
-            this.lblMercGroup3MissionTimeSec.AutoSize = true;
-            this.lblMercGroup3MissionTimeSec.Location = new System.Drawing.Point(400, 70);
-            this.lblMercGroup3MissionTimeSec.Name = "lblMercGroup3MissionTimeSec";
-            this.lblMercGroup3MissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup3MissionTimeSec.TabIndex = 157;
-            this.lblMercGroup3MissionTimeSec.Text = "sec.";
-            // 
-            // gbxMercGroup3Unk_0x24
-            // 
-            this.gbxMercGroup3Unk_0x24.Controls.Add(this.hbxMercGroup3Unk_0x24);
-            this.gbxMercGroup3Unk_0x24.Location = new System.Drawing.Point(573, 80);
-            this.gbxMercGroup3Unk_0x24.Name = "gbxMercGroup3Unk_0x24";
-            this.gbxMercGroup3Unk_0x24.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup3Unk_0x24.TabIndex = 156;
-            this.gbxMercGroup3Unk_0x24.TabStop = false;
-            this.gbxMercGroup3Unk_0x24.Text = "Unk_0x24";
-            // 
-            // hbxMercGroup3Unk_0x24
-            // 
-            this.hbxMercGroup3Unk_0x24.ColumnInfoVisible = true;
-            this.hbxMercGroup3Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup3Unk_0x24.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup3Unk_0x24.Name = "hbxMercGroup3Unk_0x24";
-            this.hbxMercGroup3Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup3Unk_0x24.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup3Unk_0x24.TabIndex = 151;
-            // 
-            // gbxMercGroup3Unk_0x0C
-            // 
-            this.gbxMercGroup3Unk_0x0C.Controls.Add(this.hbxMercGroup3Unk_0x0C);
-            this.gbxMercGroup3Unk_0x0C.Location = new System.Drawing.Point(427, 80);
-            this.gbxMercGroup3Unk_0x0C.Name = "gbxMercGroup3Unk_0x0C";
-            this.gbxMercGroup3Unk_0x0C.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup3Unk_0x0C.TabIndex = 156;
-            this.gbxMercGroup3Unk_0x0C.TabStop = false;
-            this.gbxMercGroup3Unk_0x0C.Text = "Unk_0x0C";
-            // 
-            // hbxMercGroup3Unk_0x0C
-            // 
-            this.hbxMercGroup3Unk_0x0C.ColumnInfoVisible = true;
-            this.hbxMercGroup3Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup3Unk_0x0C.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup3Unk_0x0C.Name = "hbxMercGroup3Unk_0x0C";
-            this.hbxMercGroup3Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup3Unk_0x0C.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup3Unk_0x0C.TabIndex = 151;
-            // 
-            // gbxMercGroup3Unk_0x18
-            // 
-            this.gbxMercGroup3Unk_0x18.Controls.Add(this.hbxMercGroup3Unk_0x18);
-            this.gbxMercGroup3Unk_0x18.Location = new System.Drawing.Point(573, 7);
-            this.gbxMercGroup3Unk_0x18.Name = "gbxMercGroup3Unk_0x18";
-            this.gbxMercGroup3Unk_0x18.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup3Unk_0x18.TabIndex = 156;
-            this.gbxMercGroup3Unk_0x18.TabStop = false;
-            this.gbxMercGroup3Unk_0x18.Text = "Unk_0x18";
-            // 
-            // hbxMercGroup3Unk_0x18
-            // 
-            this.hbxMercGroup3Unk_0x18.ColumnInfoVisible = true;
-            this.hbxMercGroup3Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup3Unk_0x18.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup3Unk_0x18.Name = "hbxMercGroup3Unk_0x18";
-            this.hbxMercGroup3Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup3Unk_0x18.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup3Unk_0x18.TabIndex = 151;
-            // 
-            // nudMercGroup3OriginalMissionTime
-            // 
-            this.nudMercGroup3OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
-            this.nudMercGroup3OriginalMissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup3OriginalMissionTime.Name = "nudMercGroup3OriginalMissionTime";
-            this.nudMercGroup3OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup3OriginalMissionTime.TabIndex = 43;
-            this.nudMercGroup3OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup3OriginalMissionTime_ValueChanged);
-            // 
-            // lblMercGroup3OriginalMissionTime
-            // 
-            this.lblMercGroup3OriginalMissionTime.AutoSize = true;
-            this.lblMercGroup3OriginalMissionTime.Location = new System.Drawing.Point(230, 96);
-            this.lblMercGroup3OriginalMissionTime.Name = "lblMercGroup3OriginalMissionTime";
-            this.lblMercGroup3OriginalMissionTime.Size = new System.Drawing.Size(109, 13);
-            this.lblMercGroup3OriginalMissionTime.TabIndex = 42;
-            this.lblMercGroup3OriginalMissionTime.Text = "Original Mission Time:";
-            // 
-            // nudMercGroup3MissionTime
-            // 
-            this.nudMercGroup3MissionTime.Location = new System.Drawing.Point(345, 68);
-            this.nudMercGroup3MissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup3MissionTime.Name = "nudMercGroup3MissionTime";
-            this.nudMercGroup3MissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup3MissionTime.TabIndex = 41;
-            this.nudMercGroup3MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup3MissionTime_ValueChanged);
-            // 
-            // lblMercGroup3MissionTime
-            // 
-            this.lblMercGroup3MissionTime.AutoSize = true;
-            this.lblMercGroup3MissionTime.Location = new System.Drawing.Point(230, 70);
-            this.lblMercGroup3MissionTime.Name = "lblMercGroup3MissionTime";
-            this.lblMercGroup3MissionTime.Size = new System.Drawing.Size(71, 13);
-            this.lblMercGroup3MissionTime.TabIndex = 40;
-            this.lblMercGroup3MissionTime.Text = "Mission Time:";
-            // 
-            // nudMercGroup3MissionID
-            // 
-            this.nudMercGroup3MissionID.Location = new System.Drawing.Point(345, 42);
-            this.nudMercGroup3MissionID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup3MissionID.Name = "nudMercGroup3MissionID";
-            this.nudMercGroup3MissionID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup3MissionID.TabIndex = 39;
-            this.nudMercGroup3MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup3MissionID_ValueChanged);
-            // 
-            // lblMercGroup3MissionID
-            // 
-            this.lblMercGroup3MissionID.AutoSize = true;
-            this.lblMercGroup3MissionID.Location = new System.Drawing.Point(230, 44);
-            this.lblMercGroup3MissionID.Name = "lblMercGroup3MissionID";
-            this.lblMercGroup3MissionID.Size = new System.Drawing.Size(59, 13);
-            this.lblMercGroup3MissionID.TabIndex = 38;
-            this.lblMercGroup3MissionID.Text = "Mission ID:";
-            // 
-            // nudMercGroup3TeamID
-            // 
-            this.nudMercGroup3TeamID.Location = new System.Drawing.Point(345, 16);
-            this.nudMercGroup3TeamID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup3TeamID.Name = "nudMercGroup3TeamID";
-            this.nudMercGroup3TeamID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup3TeamID.TabIndex = 37;
-            this.nudMercGroup3TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup3TeamID_ValueChanged);
-            // 
-            // lblMercGroup3TeamID
-            // 
-            this.lblMercGroup3TeamID.AutoSize = true;
-            this.lblMercGroup3TeamID.Location = new System.Drawing.Point(230, 18);
-            this.lblMercGroup3TeamID.Name = "lblMercGroup3TeamID";
-            this.lblMercGroup3TeamID.Size = new System.Drawing.Size(51, 13);
-            this.lblMercGroup3TeamID.TabIndex = 36;
-            this.lblMercGroup3TeamID.Text = "Team ID:";
-            // 
-            // cbxMercGroup3Blade6
-            // 
-            this.cbxMercGroup3Blade6.FormattingEnabled = true;
-            this.cbxMercGroup3Blade6.Location = new System.Drawing.Point(103, 114);
-            this.cbxMercGroup3Blade6.Name = "cbxMercGroup3Blade6";
-            this.cbxMercGroup3Blade6.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade6.TabIndex = 35;
-            this.cbxMercGroup3Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade6_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup3Blade5
-            // 
-            this.cbxMercGroup3Blade5.FormattingEnabled = true;
-            this.cbxMercGroup3Blade5.Location = new System.Drawing.Point(103, 94);
-            this.cbxMercGroup3Blade5.Name = "cbxMercGroup3Blade5";
-            this.cbxMercGroup3Blade5.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade5.TabIndex = 34;
-            this.cbxMercGroup3Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade5_SelectionChangeCommitted);
-            // 
-            // nudMercGroup3Blade6
-            // 
-            this.nudMercGroup3Blade6.Location = new System.Drawing.Point(58, 114);
-            this.nudMercGroup3Blade6.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade6.Name = "nudMercGroup3Blade6";
-            this.nudMercGroup3Blade6.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade6.TabIndex = 33;
-            this.nudMercGroup3Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade6_ValueChanged);
-            // 
-            // nudMercGroup3Blade5
-            // 
-            this.nudMercGroup3Blade5.Location = new System.Drawing.Point(58, 94);
-            this.nudMercGroup3Blade5.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade5.Name = "nudMercGroup3Blade5";
-            this.nudMercGroup3Blade5.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade5.TabIndex = 32;
-            this.nudMercGroup3Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade5_ValueChanged);
-            // 
-            // cbxMercGroup3Blade4
-            // 
-            this.cbxMercGroup3Blade4.FormattingEnabled = true;
-            this.cbxMercGroup3Blade4.Location = new System.Drawing.Point(103, 74);
-            this.cbxMercGroup3Blade4.Name = "cbxMercGroup3Blade4";
-            this.cbxMercGroup3Blade4.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade4.TabIndex = 30;
-            this.cbxMercGroup3Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade4_SelectionChangeCommitted);
-            // 
-            // nudMercGroup3Blade4
-            // 
-            this.nudMercGroup3Blade4.Location = new System.Drawing.Point(58, 74);
-            this.nudMercGroup3Blade4.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade4.Name = "nudMercGroup3Blade4";
-            this.nudMercGroup3Blade4.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade4.TabIndex = 31;
-            this.nudMercGroup3Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade4_ValueChanged);
-            // 
-            // lblMercGroup3Blade6
-            // 
-            this.lblMercGroup3Blade6.AutoSize = true;
-            this.lblMercGroup3Blade6.Location = new System.Drawing.Point(6, 116);
-            this.lblMercGroup3Blade6.Name = "lblMercGroup3Blade6";
-            this.lblMercGroup3Blade6.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade6.TabIndex = 29;
-            this.lblMercGroup3Blade6.Text = "Blade 6:";
-            // 
-            // lblMercGroup3Blade5
-            // 
-            this.lblMercGroup3Blade5.AutoSize = true;
-            this.lblMercGroup3Blade5.Location = new System.Drawing.Point(6, 96);
-            this.lblMercGroup3Blade5.Name = "lblMercGroup3Blade5";
-            this.lblMercGroup3Blade5.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade5.TabIndex = 28;
-            this.lblMercGroup3Blade5.Text = "Blade 5:";
-            // 
-            // lblMercGroup3Blade4
-            // 
-            this.lblMercGroup3Blade4.AutoSize = true;
-            this.lblMercGroup3Blade4.Location = new System.Drawing.Point(6, 76);
-            this.lblMercGroup3Blade4.Name = "lblMercGroup3Blade4";
-            this.lblMercGroup3Blade4.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade4.TabIndex = 27;
-            this.lblMercGroup3Blade4.Text = "Blade 4:";
-            // 
-            // cbxMercGroup3Blade3
-            // 
-            this.cbxMercGroup3Blade3.FormattingEnabled = true;
-            this.cbxMercGroup3Blade3.Location = new System.Drawing.Point(103, 54);
-            this.cbxMercGroup3Blade3.Name = "cbxMercGroup3Blade3";
-            this.cbxMercGroup3Blade3.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade3.TabIndex = 26;
-            this.cbxMercGroup3Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade3_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup3Blade2
-            // 
-            this.cbxMercGroup3Blade2.FormattingEnabled = true;
-            this.cbxMercGroup3Blade2.Location = new System.Drawing.Point(103, 34);
-            this.cbxMercGroup3Blade2.Name = "cbxMercGroup3Blade2";
-            this.cbxMercGroup3Blade2.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade2.TabIndex = 25;
-            this.cbxMercGroup3Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade2_SelectionChangeCommitted);
-            // 
-            // nudMercGroup3Blade3
-            // 
-            this.nudMercGroup3Blade3.Location = new System.Drawing.Point(58, 54);
-            this.nudMercGroup3Blade3.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade3.Name = "nudMercGroup3Blade3";
-            this.nudMercGroup3Blade3.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade3.TabIndex = 24;
-            this.nudMercGroup3Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade3_ValueChanged);
-            // 
-            // nudMercGroup3Blade2
-            // 
-            this.nudMercGroup3Blade2.Location = new System.Drawing.Point(58, 34);
-            this.nudMercGroup3Blade2.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade2.Name = "nudMercGroup3Blade2";
-            this.nudMercGroup3Blade2.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade2.TabIndex = 23;
-            this.nudMercGroup3Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade2_ValueChanged);
-            // 
-            // cbxMercGroup3Blade1
-            // 
-            this.cbxMercGroup3Blade1.FormattingEnabled = true;
-            this.cbxMercGroup3Blade1.Location = new System.Drawing.Point(103, 14);
-            this.cbxMercGroup3Blade1.Name = "cbxMercGroup3Blade1";
-            this.cbxMercGroup3Blade1.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup3Blade1.TabIndex = 21;
-            this.cbxMercGroup3Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup3Blade1_SelectionChangeCommitted);
-            // 
-            // nudMercGroup3Blade1
-            // 
-            this.nudMercGroup3Blade1.Location = new System.Drawing.Point(58, 14);
-            this.nudMercGroup3Blade1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup3Blade1.Name = "nudMercGroup3Blade1";
-            this.nudMercGroup3Blade1.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup3Blade1.TabIndex = 22;
-            this.nudMercGroup3Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup3Blade1_ValueChanged);
-            // 
-            // lblMercGroup3Blade3
-            // 
-            this.lblMercGroup3Blade3.AutoSize = true;
-            this.lblMercGroup3Blade3.Location = new System.Drawing.Point(6, 55);
-            this.lblMercGroup3Blade3.Name = "lblMercGroup3Blade3";
-            this.lblMercGroup3Blade3.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade3.TabIndex = 20;
-            this.lblMercGroup3Blade3.Text = "Blade 3:";
-            // 
-            // lblMercGroup3Blade2
-            // 
-            this.lblMercGroup3Blade2.AutoSize = true;
-            this.lblMercGroup3Blade2.Location = new System.Drawing.Point(6, 36);
-            this.lblMercGroup3Blade2.Name = "lblMercGroup3Blade2";
-            this.lblMercGroup3Blade2.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade2.TabIndex = 19;
-            this.lblMercGroup3Blade2.Text = "Blade 2:";
-            // 
-            // lblMercGroup3Blade1
-            // 
-            this.lblMercGroup3Blade1.AutoSize = true;
-            this.lblMercGroup3Blade1.Location = new System.Drawing.Point(6, 16);
-            this.lblMercGroup3Blade1.Name = "lblMercGroup3Blade1";
-            this.lblMercGroup3Blade1.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup3Blade1.TabIndex = 18;
-            this.lblMercGroup3Blade1.Text = "Blade 1:";
-            // 
-            // gbxMercGroup2
-            // 
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2OriginalMissionTimeSec);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2MissionTimeSec);
-            this.gbxMercGroup2.Controls.Add(this.gbxMercGroup2Unk_0x24);
-            this.gbxMercGroup2.Controls.Add(this.gbxMercGroup2Unk_0x0C);
-            this.gbxMercGroup2.Controls.Add(this.gbxMercGroup2Unk_0x18);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2OriginalMissionTime);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2OriginalMissionTime);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2MissionTime);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2MissionTime);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2MissionID);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2MissionID);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2TeamID);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2TeamID);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade6);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade5);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade6);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade5);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade4);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade4);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade6);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade5);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade4);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade3);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade2);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade3);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade2);
-            this.gbxMercGroup2.Controls.Add(this.cbxMercGroup2Blade1);
-            this.gbxMercGroup2.Controls.Add(this.nudMercGroup2Blade1);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade3);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade2);
-            this.gbxMercGroup2.Controls.Add(this.lblMercGroup2Blade1);
-            this.gbxMercGroup2.Location = new System.Drawing.Point(8, 203);
-            this.gbxMercGroup2.Name = "gbxMercGroup2";
-            this.gbxMercGroup2.Size = new System.Drawing.Size(719, 153);
-            this.gbxMercGroup2.TabIndex = 157;
-            this.gbxMercGroup2.TabStop = false;
-            this.gbxMercGroup2.Text = "Merc Group 2";
-            // 
-            // lblMercGroup2OriginalMissionTimeSec
-            // 
-            this.lblMercGroup2OriginalMissionTimeSec.AutoSize = true;
-            this.lblMercGroup2OriginalMissionTimeSec.Location = new System.Drawing.Point(400, 97);
-            this.lblMercGroup2OriginalMissionTimeSec.Name = "lblMercGroup2OriginalMissionTimeSec";
-            this.lblMercGroup2OriginalMissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup2OriginalMissionTimeSec.TabIndex = 158;
-            this.lblMercGroup2OriginalMissionTimeSec.Text = "sec.";
-            // 
-            // lblMercGroup2MissionTimeSec
-            // 
-            this.lblMercGroup2MissionTimeSec.AutoSize = true;
-            this.lblMercGroup2MissionTimeSec.Location = new System.Drawing.Point(400, 70);
-            this.lblMercGroup2MissionTimeSec.Name = "lblMercGroup2MissionTimeSec";
-            this.lblMercGroup2MissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup2MissionTimeSec.TabIndex = 157;
-            this.lblMercGroup2MissionTimeSec.Text = "sec.";
-            // 
-            // gbxMercGroup2Unk_0x24
-            // 
-            this.gbxMercGroup2Unk_0x24.Controls.Add(this.hbxMercGroup2Unk_0x24);
-            this.gbxMercGroup2Unk_0x24.Location = new System.Drawing.Point(573, 80);
-            this.gbxMercGroup2Unk_0x24.Name = "gbxMercGroup2Unk_0x24";
-            this.gbxMercGroup2Unk_0x24.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup2Unk_0x24.TabIndex = 156;
-            this.gbxMercGroup2Unk_0x24.TabStop = false;
-            this.gbxMercGroup2Unk_0x24.Text = "Unk_0x24";
-            // 
-            // hbxMercGroup2Unk_0x24
-            // 
-            this.hbxMercGroup2Unk_0x24.ColumnInfoVisible = true;
-            this.hbxMercGroup2Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup2Unk_0x24.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup2Unk_0x24.Name = "hbxMercGroup2Unk_0x24";
-            this.hbxMercGroup2Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup2Unk_0x24.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup2Unk_0x24.TabIndex = 151;
-            // 
-            // gbxMercGroup2Unk_0x0C
-            // 
-            this.gbxMercGroup2Unk_0x0C.Controls.Add(this.hbxMercGroup2Unk_0x0C);
-            this.gbxMercGroup2Unk_0x0C.Location = new System.Drawing.Point(427, 80);
-            this.gbxMercGroup2Unk_0x0C.Name = "gbxMercGroup2Unk_0x0C";
-            this.gbxMercGroup2Unk_0x0C.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup2Unk_0x0C.TabIndex = 156;
-            this.gbxMercGroup2Unk_0x0C.TabStop = false;
-            this.gbxMercGroup2Unk_0x0C.Text = "Unk_0x0C";
-            // 
-            // hbxMercGroup2Unk_0x0C
-            // 
-            this.hbxMercGroup2Unk_0x0C.ColumnInfoVisible = true;
-            this.hbxMercGroup2Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup2Unk_0x0C.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup2Unk_0x0C.Name = "hbxMercGroup2Unk_0x0C";
-            this.hbxMercGroup2Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup2Unk_0x0C.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup2Unk_0x0C.TabIndex = 151;
-            // 
-            // gbxMercGroup2Unk_0x18
-            // 
-            this.gbxMercGroup2Unk_0x18.Controls.Add(this.hbxMercGroup2Unk_0x18);
-            this.gbxMercGroup2Unk_0x18.Location = new System.Drawing.Point(573, 7);
-            this.gbxMercGroup2Unk_0x18.Name = "gbxMercGroup2Unk_0x18";
-            this.gbxMercGroup2Unk_0x18.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup2Unk_0x18.TabIndex = 156;
-            this.gbxMercGroup2Unk_0x18.TabStop = false;
-            this.gbxMercGroup2Unk_0x18.Text = "Unk_0x18";
-            // 
-            // hbxMercGroup2Unk_0x18
-            // 
-            this.hbxMercGroup2Unk_0x18.ColumnInfoVisible = true;
-            this.hbxMercGroup2Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup2Unk_0x18.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup2Unk_0x18.Name = "hbxMercGroup2Unk_0x18";
-            this.hbxMercGroup2Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup2Unk_0x18.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup2Unk_0x18.TabIndex = 151;
-            // 
-            // nudMercGroup2OriginalMissionTime
-            // 
-            this.nudMercGroup2OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
-            this.nudMercGroup2OriginalMissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup2OriginalMissionTime.Name = "nudMercGroup2OriginalMissionTime";
-            this.nudMercGroup2OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup2OriginalMissionTime.TabIndex = 43;
-            this.nudMercGroup2OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup2OriginalMissionTime_ValueChanged);
-            // 
-            // lblMercGroup2OriginalMissionTime
-            // 
-            this.lblMercGroup2OriginalMissionTime.AutoSize = true;
-            this.lblMercGroup2OriginalMissionTime.Location = new System.Drawing.Point(230, 96);
-            this.lblMercGroup2OriginalMissionTime.Name = "lblMercGroup2OriginalMissionTime";
-            this.lblMercGroup2OriginalMissionTime.Size = new System.Drawing.Size(109, 13);
-            this.lblMercGroup2OriginalMissionTime.TabIndex = 42;
-            this.lblMercGroup2OriginalMissionTime.Text = "Original Mission Time:";
-            // 
-            // nudMercGroup2MissionTime
-            // 
-            this.nudMercGroup2MissionTime.Location = new System.Drawing.Point(345, 68);
-            this.nudMercGroup2MissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup2MissionTime.Name = "nudMercGroup2MissionTime";
-            this.nudMercGroup2MissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup2MissionTime.TabIndex = 41;
-            this.nudMercGroup2MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup2MissionTime_ValueChanged);
-            // 
-            // lblMercGroup2MissionTime
-            // 
-            this.lblMercGroup2MissionTime.AutoSize = true;
-            this.lblMercGroup2MissionTime.Location = new System.Drawing.Point(230, 70);
-            this.lblMercGroup2MissionTime.Name = "lblMercGroup2MissionTime";
-            this.lblMercGroup2MissionTime.Size = new System.Drawing.Size(71, 13);
-            this.lblMercGroup2MissionTime.TabIndex = 40;
-            this.lblMercGroup2MissionTime.Text = "Mission Time:";
-            // 
-            // nudMercGroup2MissionID
-            // 
-            this.nudMercGroup2MissionID.Location = new System.Drawing.Point(345, 42);
-            this.nudMercGroup2MissionID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup2MissionID.Name = "nudMercGroup2MissionID";
-            this.nudMercGroup2MissionID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup2MissionID.TabIndex = 39;
-            this.nudMercGroup2MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup2MissionID_ValueChanged);
-            // 
-            // lblMercGroup2MissionID
-            // 
-            this.lblMercGroup2MissionID.AutoSize = true;
-            this.lblMercGroup2MissionID.Location = new System.Drawing.Point(230, 44);
-            this.lblMercGroup2MissionID.Name = "lblMercGroup2MissionID";
-            this.lblMercGroup2MissionID.Size = new System.Drawing.Size(59, 13);
-            this.lblMercGroup2MissionID.TabIndex = 38;
-            this.lblMercGroup2MissionID.Text = "Mission ID:";
-            // 
-            // nudMercGroup2TeamID
-            // 
-            this.nudMercGroup2TeamID.Location = new System.Drawing.Point(345, 16);
-            this.nudMercGroup2TeamID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup2TeamID.Name = "nudMercGroup2TeamID";
-            this.nudMercGroup2TeamID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup2TeamID.TabIndex = 37;
-            this.nudMercGroup2TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup2TeamID_ValueChanged);
-            // 
-            // lblMercGroup2TeamID
-            // 
-            this.lblMercGroup2TeamID.AutoSize = true;
-            this.lblMercGroup2TeamID.Location = new System.Drawing.Point(230, 18);
-            this.lblMercGroup2TeamID.Name = "lblMercGroup2TeamID";
-            this.lblMercGroup2TeamID.Size = new System.Drawing.Size(51, 13);
-            this.lblMercGroup2TeamID.TabIndex = 36;
-            this.lblMercGroup2TeamID.Text = "Team ID:";
-            // 
-            // cbxMercGroup2Blade6
-            // 
-            this.cbxMercGroup2Blade6.FormattingEnabled = true;
-            this.cbxMercGroup2Blade6.Location = new System.Drawing.Point(103, 114);
-            this.cbxMercGroup2Blade6.Name = "cbxMercGroup2Blade6";
-            this.cbxMercGroup2Blade6.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade6.TabIndex = 35;
-            this.cbxMercGroup2Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade6_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup2Blade5
-            // 
-            this.cbxMercGroup2Blade5.FormattingEnabled = true;
-            this.cbxMercGroup2Blade5.Location = new System.Drawing.Point(103, 94);
-            this.cbxMercGroup2Blade5.Name = "cbxMercGroup2Blade5";
-            this.cbxMercGroup2Blade5.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade5.TabIndex = 34;
-            this.cbxMercGroup2Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade5_SelectionChangeCommitted);
-            // 
-            // nudMercGroup2Blade6
-            // 
-            this.nudMercGroup2Blade6.Location = new System.Drawing.Point(58, 114);
-            this.nudMercGroup2Blade6.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade6.Name = "nudMercGroup2Blade6";
-            this.nudMercGroup2Blade6.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade6.TabIndex = 33;
-            this.nudMercGroup2Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade6_ValueChanged);
-            // 
-            // nudMercGroup2Blade5
-            // 
-            this.nudMercGroup2Blade5.Location = new System.Drawing.Point(58, 94);
-            this.nudMercGroup2Blade5.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade5.Name = "nudMercGroup2Blade5";
-            this.nudMercGroup2Blade5.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade5.TabIndex = 32;
-            this.nudMercGroup2Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade5_ValueChanged);
-            // 
-            // cbxMercGroup2Blade4
-            // 
-            this.cbxMercGroup2Blade4.FormattingEnabled = true;
-            this.cbxMercGroup2Blade4.Location = new System.Drawing.Point(103, 74);
-            this.cbxMercGroup2Blade4.Name = "cbxMercGroup2Blade4";
-            this.cbxMercGroup2Blade4.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade4.TabIndex = 30;
-            this.cbxMercGroup2Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade4_SelectionChangeCommitted);
-            // 
-            // nudMercGroup2Blade4
-            // 
-            this.nudMercGroup2Blade4.Location = new System.Drawing.Point(58, 74);
-            this.nudMercGroup2Blade4.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade4.Name = "nudMercGroup2Blade4";
-            this.nudMercGroup2Blade4.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade4.TabIndex = 31;
-            this.nudMercGroup2Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade4_ValueChanged);
-            // 
-            // lblMercGroup2Blade6
-            // 
-            this.lblMercGroup2Blade6.AutoSize = true;
-            this.lblMercGroup2Blade6.Location = new System.Drawing.Point(6, 116);
-            this.lblMercGroup2Blade6.Name = "lblMercGroup2Blade6";
-            this.lblMercGroup2Blade6.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade6.TabIndex = 29;
-            this.lblMercGroup2Blade6.Text = "Blade 6:";
-            // 
-            // lblMercGroup2Blade5
-            // 
-            this.lblMercGroup2Blade5.AutoSize = true;
-            this.lblMercGroup2Blade5.Location = new System.Drawing.Point(6, 96);
-            this.lblMercGroup2Blade5.Name = "lblMercGroup2Blade5";
-            this.lblMercGroup2Blade5.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade5.TabIndex = 28;
-            this.lblMercGroup2Blade5.Text = "Blade 5:";
-            // 
-            // lblMercGroup2Blade4
-            // 
-            this.lblMercGroup2Blade4.AutoSize = true;
-            this.lblMercGroup2Blade4.Location = new System.Drawing.Point(6, 76);
-            this.lblMercGroup2Blade4.Name = "lblMercGroup2Blade4";
-            this.lblMercGroup2Blade4.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade4.TabIndex = 27;
-            this.lblMercGroup2Blade4.Text = "Blade 4:";
-            // 
-            // cbxMercGroup2Blade3
-            // 
-            this.cbxMercGroup2Blade3.FormattingEnabled = true;
-            this.cbxMercGroup2Blade3.Location = new System.Drawing.Point(103, 54);
-            this.cbxMercGroup2Blade3.Name = "cbxMercGroup2Blade3";
-            this.cbxMercGroup2Blade3.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade3.TabIndex = 26;
-            this.cbxMercGroup2Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade3_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup2Blade2
-            // 
-            this.cbxMercGroup2Blade2.FormattingEnabled = true;
-            this.cbxMercGroup2Blade2.Location = new System.Drawing.Point(103, 34);
-            this.cbxMercGroup2Blade2.Name = "cbxMercGroup2Blade2";
-            this.cbxMercGroup2Blade2.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade2.TabIndex = 25;
-            this.cbxMercGroup2Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade2_SelectionChangeCommitted);
-            // 
-            // nudMercGroup2Blade3
-            // 
-            this.nudMercGroup2Blade3.Location = new System.Drawing.Point(58, 54);
-            this.nudMercGroup2Blade3.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade3.Name = "nudMercGroup2Blade3";
-            this.nudMercGroup2Blade3.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade3.TabIndex = 24;
-            this.nudMercGroup2Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade3_ValueChanged);
-            // 
-            // nudMercGroup2Blade2
-            // 
-            this.nudMercGroup2Blade2.Location = new System.Drawing.Point(58, 34);
-            this.nudMercGroup2Blade2.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade2.Name = "nudMercGroup2Blade2";
-            this.nudMercGroup2Blade2.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade2.TabIndex = 23;
-            this.nudMercGroup2Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade2_ValueChanged);
-            // 
-            // cbxMercGroup2Blade1
-            // 
-            this.cbxMercGroup2Blade1.FormattingEnabled = true;
-            this.cbxMercGroup2Blade1.Location = new System.Drawing.Point(103, 14);
-            this.cbxMercGroup2Blade1.Name = "cbxMercGroup2Blade1";
-            this.cbxMercGroup2Blade1.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup2Blade1.TabIndex = 21;
-            this.cbxMercGroup2Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup2Blade1_SelectionChangeCommitted);
-            // 
-            // nudMercGroup2Blade1
-            // 
-            this.nudMercGroup2Blade1.Location = new System.Drawing.Point(58, 14);
-            this.nudMercGroup2Blade1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup2Blade1.Name = "nudMercGroup2Blade1";
-            this.nudMercGroup2Blade1.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup2Blade1.TabIndex = 22;
-            this.nudMercGroup2Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup2Blade1_ValueChanged);
-            // 
-            // lblMercGroup2Blade3
-            // 
-            this.lblMercGroup2Blade3.AutoSize = true;
-            this.lblMercGroup2Blade3.Location = new System.Drawing.Point(6, 55);
-            this.lblMercGroup2Blade3.Name = "lblMercGroup2Blade3";
-            this.lblMercGroup2Blade3.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade3.TabIndex = 20;
-            this.lblMercGroup2Blade3.Text = "Blade 3:";
-            // 
-            // lblMercGroup2Blade2
-            // 
-            this.lblMercGroup2Blade2.AutoSize = true;
-            this.lblMercGroup2Blade2.Location = new System.Drawing.Point(6, 36);
-            this.lblMercGroup2Blade2.Name = "lblMercGroup2Blade2";
-            this.lblMercGroup2Blade2.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade2.TabIndex = 19;
-            this.lblMercGroup2Blade2.Text = "Blade 2:";
-            // 
-            // lblMercGroup2Blade1
-            // 
-            this.lblMercGroup2Blade1.AutoSize = true;
-            this.lblMercGroup2Blade1.Location = new System.Drawing.Point(6, 16);
-            this.lblMercGroup2Blade1.Name = "lblMercGroup2Blade1";
-            this.lblMercGroup2Blade1.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup2Blade1.TabIndex = 18;
-            this.lblMercGroup2Blade1.Text = "Blade 1:";
-            // 
-            // gbxMercGroup1
-            // 
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1OriginalMissionTimeSec);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1MissionTimeSec);
-            this.gbxMercGroup1.Controls.Add(this.gbxMercGroup1Unk_0x24);
-            this.gbxMercGroup1.Controls.Add(this.gbxMercGroup1Unk_0x0C);
-            this.gbxMercGroup1.Controls.Add(this.gbxMercGroup1Unk_0x18);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1OriginalMissionTime);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1OriginalMissionTime);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1MissionTime);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1MissionTime);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1MissionID);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1MissionID);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1TeamID);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1TeamID);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade6);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade5);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade6);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade5);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade4);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade4);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade6);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade5);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade4);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade3);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade2);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade3);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade2);
-            this.gbxMercGroup1.Controls.Add(this.cbxMercGroup1Blade1);
-            this.gbxMercGroup1.Controls.Add(this.nudMercGroup1Blade1);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade3);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade2);
-            this.gbxMercGroup1.Controls.Add(this.lblMercGroup1Blade1);
-            this.gbxMercGroup1.Location = new System.Drawing.Point(8, 44);
-            this.gbxMercGroup1.Name = "gbxMercGroup1";
-            this.gbxMercGroup1.Size = new System.Drawing.Size(719, 153);
-            this.gbxMercGroup1.TabIndex = 0;
-            this.gbxMercGroup1.TabStop = false;
-            this.gbxMercGroup1.Text = "Merc Group 1";
-            // 
-            // lblMercGroup1OriginalMissionTimeSec
-            // 
-            this.lblMercGroup1OriginalMissionTimeSec.AutoSize = true;
-            this.lblMercGroup1OriginalMissionTimeSec.Location = new System.Drawing.Point(400, 99);
-            this.lblMercGroup1OriginalMissionTimeSec.Name = "lblMercGroup1OriginalMissionTimeSec";
-            this.lblMercGroup1OriginalMissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup1OriginalMissionTimeSec.TabIndex = 159;
-            this.lblMercGroup1OriginalMissionTimeSec.Text = "sec.";
-            // 
-            // lblMercGroup1MissionTimeSec
-            // 
-            this.lblMercGroup1MissionTimeSec.AutoSize = true;
-            this.lblMercGroup1MissionTimeSec.Location = new System.Drawing.Point(400, 70);
-            this.lblMercGroup1MissionTimeSec.Name = "lblMercGroup1MissionTimeSec";
-            this.lblMercGroup1MissionTimeSec.Size = new System.Drawing.Size(27, 13);
-            this.lblMercGroup1MissionTimeSec.TabIndex = 159;
-            this.lblMercGroup1MissionTimeSec.Text = "sec.";
-            // 
-            // gbxMercGroup1Unk_0x24
-            // 
-            this.gbxMercGroup1Unk_0x24.Controls.Add(this.hbxMercGroup1Unk_0x24);
-            this.gbxMercGroup1Unk_0x24.Location = new System.Drawing.Point(573, 80);
-            this.gbxMercGroup1Unk_0x24.Name = "gbxMercGroup1Unk_0x24";
-            this.gbxMercGroup1Unk_0x24.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup1Unk_0x24.TabIndex = 156;
-            this.gbxMercGroup1Unk_0x24.TabStop = false;
-            this.gbxMercGroup1Unk_0x24.Text = "Unk_0x24";
-            // 
-            // hbxMercGroup1Unk_0x24
-            // 
-            this.hbxMercGroup1Unk_0x24.ColumnInfoVisible = true;
-            this.hbxMercGroup1Unk_0x24.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup1Unk_0x24.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup1Unk_0x24.Name = "hbxMercGroup1Unk_0x24";
-            this.hbxMercGroup1Unk_0x24.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup1Unk_0x24.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup1Unk_0x24.TabIndex = 151;
-            // 
-            // gbxMercGroup1Unk_0x0C
-            // 
-            this.gbxMercGroup1Unk_0x0C.Controls.Add(this.hbxMercGroup1Unk_0x0C);
-            this.gbxMercGroup1Unk_0x0C.Location = new System.Drawing.Point(427, 80);
-            this.gbxMercGroup1Unk_0x0C.Name = "gbxMercGroup1Unk_0x0C";
-            this.gbxMercGroup1Unk_0x0C.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup1Unk_0x0C.TabIndex = 156;
-            this.gbxMercGroup1Unk_0x0C.TabStop = false;
-            this.gbxMercGroup1Unk_0x0C.Text = "Unk_0x0C";
-            // 
-            // hbxMercGroup1Unk_0x0C
-            // 
-            this.hbxMercGroup1Unk_0x0C.ColumnInfoVisible = true;
-            this.hbxMercGroup1Unk_0x0C.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup1Unk_0x0C.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup1Unk_0x0C.Name = "hbxMercGroup1Unk_0x0C";
-            this.hbxMercGroup1Unk_0x0C.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup1Unk_0x0C.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup1Unk_0x0C.TabIndex = 151;
-            // 
-            // gbxMercGroup1Unk_0x18
-            // 
-            this.gbxMercGroup1Unk_0x18.Controls.Add(this.hbxMercGroup1Unk_0x18);
-            this.gbxMercGroup1Unk_0x18.Location = new System.Drawing.Point(573, 7);
-            this.gbxMercGroup1Unk_0x18.Name = "gbxMercGroup1Unk_0x18";
-            this.gbxMercGroup1Unk_0x18.Size = new System.Drawing.Size(140, 67);
-            this.gbxMercGroup1Unk_0x18.TabIndex = 156;
-            this.gbxMercGroup1Unk_0x18.TabStop = false;
-            this.gbxMercGroup1Unk_0x18.Text = "Unk_0x18";
-            // 
-            // hbxMercGroup1Unk_0x18
-            // 
-            this.hbxMercGroup1Unk_0x18.ColumnInfoVisible = true;
-            this.hbxMercGroup1Unk_0x18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxMercGroup1Unk_0x18.Location = new System.Drawing.Point(6, 19);
-            this.hbxMercGroup1Unk_0x18.Name = "hbxMercGroup1Unk_0x18";
-            this.hbxMercGroup1Unk_0x18.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxMercGroup1Unk_0x18.Size = new System.Drawing.Size(128, 41);
-            this.hbxMercGroup1Unk_0x18.TabIndex = 151;
-            // 
-            // nudMercGroup1OriginalMissionTime
-            // 
-            this.nudMercGroup1OriginalMissionTime.Location = new System.Drawing.Point(345, 94);
-            this.nudMercGroup1OriginalMissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup1OriginalMissionTime.Name = "nudMercGroup1OriginalMissionTime";
-            this.nudMercGroup1OriginalMissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup1OriginalMissionTime.TabIndex = 43;
-            this.nudMercGroup1OriginalMissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup1OriginalMissionTime_ValueChanged);
-            // 
-            // lblMercGroup1OriginalMissionTime
-            // 
-            this.lblMercGroup1OriginalMissionTime.AutoSize = true;
-            this.lblMercGroup1OriginalMissionTime.Location = new System.Drawing.Point(230, 96);
-            this.lblMercGroup1OriginalMissionTime.Name = "lblMercGroup1OriginalMissionTime";
-            this.lblMercGroup1OriginalMissionTime.Size = new System.Drawing.Size(109, 13);
-            this.lblMercGroup1OriginalMissionTime.TabIndex = 42;
-            this.lblMercGroup1OriginalMissionTime.Text = "Original Mission Time:";
-            // 
-            // nudMercGroup1MissionTime
-            // 
-            this.nudMercGroup1MissionTime.Location = new System.Drawing.Point(345, 68);
-            this.nudMercGroup1MissionTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup1MissionTime.Name = "nudMercGroup1MissionTime";
-            this.nudMercGroup1MissionTime.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup1MissionTime.TabIndex = 41;
-            this.nudMercGroup1MissionTime.ValueChanged += new System.EventHandler(this.nudMercGroup1MissionTime_ValueChanged);
-            // 
-            // lblMercGroup1MissionTime
-            // 
-            this.lblMercGroup1MissionTime.AutoSize = true;
-            this.lblMercGroup1MissionTime.Location = new System.Drawing.Point(230, 70);
-            this.lblMercGroup1MissionTime.Name = "lblMercGroup1MissionTime";
-            this.lblMercGroup1MissionTime.Size = new System.Drawing.Size(71, 13);
-            this.lblMercGroup1MissionTime.TabIndex = 40;
-            this.lblMercGroup1MissionTime.Text = "Mission Time:";
-            // 
-            // nudMercGroup1MissionID
-            // 
-            this.nudMercGroup1MissionID.Location = new System.Drawing.Point(345, 42);
-            this.nudMercGroup1MissionID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup1MissionID.Name = "nudMercGroup1MissionID";
-            this.nudMercGroup1MissionID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup1MissionID.TabIndex = 39;
-            this.nudMercGroup1MissionID.ValueChanged += new System.EventHandler(this.nudMercGroup1MissionID_ValueChanged);
-            // 
-            // lblMercGroup1MissionID
-            // 
-            this.lblMercGroup1MissionID.AutoSize = true;
-            this.lblMercGroup1MissionID.Location = new System.Drawing.Point(230, 44);
-            this.lblMercGroup1MissionID.Name = "lblMercGroup1MissionID";
-            this.lblMercGroup1MissionID.Size = new System.Drawing.Size(59, 13);
-            this.lblMercGroup1MissionID.TabIndex = 38;
-            this.lblMercGroup1MissionID.Text = "Mission ID:";
-            // 
-            // nudMercGroup1TeamID
-            // 
-            this.nudMercGroup1TeamID.Location = new System.Drawing.Point(345, 16);
-            this.nudMercGroup1TeamID.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudMercGroup1TeamID.Name = "nudMercGroup1TeamID";
-            this.nudMercGroup1TeamID.Size = new System.Drawing.Size(54, 20);
-            this.nudMercGroup1TeamID.TabIndex = 37;
-            this.nudMercGroup1TeamID.ValueChanged += new System.EventHandler(this.nudMercGroup1TeamID_ValueChanged);
-            // 
-            // lblMercGroup1TeamID
-            // 
-            this.lblMercGroup1TeamID.AutoSize = true;
-            this.lblMercGroup1TeamID.Location = new System.Drawing.Point(230, 18);
-            this.lblMercGroup1TeamID.Name = "lblMercGroup1TeamID";
-            this.lblMercGroup1TeamID.Size = new System.Drawing.Size(51, 13);
-            this.lblMercGroup1TeamID.TabIndex = 36;
-            this.lblMercGroup1TeamID.Text = "Team ID:";
-            // 
-            // cbxMercGroup1Blade6
-            // 
-            this.cbxMercGroup1Blade6.FormattingEnabled = true;
-            this.cbxMercGroup1Blade6.Location = new System.Drawing.Point(103, 114);
-            this.cbxMercGroup1Blade6.Name = "cbxMercGroup1Blade6";
-            this.cbxMercGroup1Blade6.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade6.TabIndex = 35;
-            this.cbxMercGroup1Blade6.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade6_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup1Blade5
-            // 
-            this.cbxMercGroup1Blade5.FormattingEnabled = true;
-            this.cbxMercGroup1Blade5.Location = new System.Drawing.Point(103, 94);
-            this.cbxMercGroup1Blade5.Name = "cbxMercGroup1Blade5";
-            this.cbxMercGroup1Blade5.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade5.TabIndex = 34;
-            this.cbxMercGroup1Blade5.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade5_SelectionChangeCommitted);
-            // 
-            // nudMercGroup1Blade6
-            // 
-            this.nudMercGroup1Blade6.Location = new System.Drawing.Point(58, 114);
-            this.nudMercGroup1Blade6.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade6.Name = "nudMercGroup1Blade6";
-            this.nudMercGroup1Blade6.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade6.TabIndex = 33;
-            this.nudMercGroup1Blade6.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade6_ValueChanged);
-            // 
-            // nudMercGroup1Blade5
-            // 
-            this.nudMercGroup1Blade5.Location = new System.Drawing.Point(58, 94);
-            this.nudMercGroup1Blade5.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade5.Name = "nudMercGroup1Blade5";
-            this.nudMercGroup1Blade5.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade5.TabIndex = 32;
-            this.nudMercGroup1Blade5.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade5_ValueChanged);
-            // 
-            // cbxMercGroup1Blade4
-            // 
-            this.cbxMercGroup1Blade4.FormattingEnabled = true;
-            this.cbxMercGroup1Blade4.Location = new System.Drawing.Point(103, 74);
-            this.cbxMercGroup1Blade4.Name = "cbxMercGroup1Blade4";
-            this.cbxMercGroup1Blade4.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade4.TabIndex = 30;
-            this.cbxMercGroup1Blade4.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade4_SelectionChangeCommitted);
-            // 
-            // nudMercGroup1Blade4
-            // 
-            this.nudMercGroup1Blade4.Location = new System.Drawing.Point(58, 74);
-            this.nudMercGroup1Blade4.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade4.Name = "nudMercGroup1Blade4";
-            this.nudMercGroup1Blade4.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade4.TabIndex = 31;
-            this.nudMercGroup1Blade4.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade4_ValueChanged);
-            // 
-            // lblMercGroup1Blade6
-            // 
-            this.lblMercGroup1Blade6.AutoSize = true;
-            this.lblMercGroup1Blade6.Location = new System.Drawing.Point(6, 116);
-            this.lblMercGroup1Blade6.Name = "lblMercGroup1Blade6";
-            this.lblMercGroup1Blade6.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade6.TabIndex = 29;
-            this.lblMercGroup1Blade6.Text = "Blade 6:";
-            // 
-            // lblMercGroup1Blade5
-            // 
-            this.lblMercGroup1Blade5.AutoSize = true;
-            this.lblMercGroup1Blade5.Location = new System.Drawing.Point(6, 96);
-            this.lblMercGroup1Blade5.Name = "lblMercGroup1Blade5";
-            this.lblMercGroup1Blade5.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade5.TabIndex = 28;
-            this.lblMercGroup1Blade5.Text = "Blade 5:";
-            // 
-            // lblMercGroup1Blade4
-            // 
-            this.lblMercGroup1Blade4.AutoSize = true;
-            this.lblMercGroup1Blade4.Location = new System.Drawing.Point(6, 76);
-            this.lblMercGroup1Blade4.Name = "lblMercGroup1Blade4";
-            this.lblMercGroup1Blade4.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade4.TabIndex = 27;
-            this.lblMercGroup1Blade4.Text = "Blade 4:";
-            // 
-            // cbxMercGroup1Blade3
-            // 
-            this.cbxMercGroup1Blade3.FormattingEnabled = true;
-            this.cbxMercGroup1Blade3.Location = new System.Drawing.Point(103, 54);
-            this.cbxMercGroup1Blade3.Name = "cbxMercGroup1Blade3";
-            this.cbxMercGroup1Blade3.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade3.TabIndex = 26;
-            this.cbxMercGroup1Blade3.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade3_SelectionChangeCommitted);
-            // 
-            // cbxMercGroup1Blade2
-            // 
-            this.cbxMercGroup1Blade2.FormattingEnabled = true;
-            this.cbxMercGroup1Blade2.Location = new System.Drawing.Point(103, 34);
-            this.cbxMercGroup1Blade2.Name = "cbxMercGroup1Blade2";
-            this.cbxMercGroup1Blade2.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade2.TabIndex = 25;
-            this.cbxMercGroup1Blade2.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade2_SelectionChangeCommitted);
-            // 
-            // nudMercGroup1Blade3
-            // 
-            this.nudMercGroup1Blade3.Location = new System.Drawing.Point(58, 54);
-            this.nudMercGroup1Blade3.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade3.Name = "nudMercGroup1Blade3";
-            this.nudMercGroup1Blade3.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade3.TabIndex = 24;
-            this.nudMercGroup1Blade3.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade3_ValueChanged);
-            // 
-            // nudMercGroup1Blade2
-            // 
-            this.nudMercGroup1Blade2.Location = new System.Drawing.Point(58, 34);
-            this.nudMercGroup1Blade2.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade2.Name = "nudMercGroup1Blade2";
-            this.nudMercGroup1Blade2.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade2.TabIndex = 23;
-            this.nudMercGroup1Blade2.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade2_ValueChanged);
-            // 
-            // cbxMercGroup1Blade1
-            // 
-            this.cbxMercGroup1Blade1.FormattingEnabled = true;
-            this.cbxMercGroup1Blade1.Location = new System.Drawing.Point(103, 14);
-            this.cbxMercGroup1Blade1.Name = "cbxMercGroup1Blade1";
-            this.cbxMercGroup1Blade1.Size = new System.Drawing.Size(121, 21);
-            this.cbxMercGroup1Blade1.TabIndex = 21;
-            this.cbxMercGroup1Blade1.SelectionChangeCommitted += new System.EventHandler(this.cbxMercGroup1Blade1_SelectionChangeCommitted);
-            // 
-            // nudMercGroup1Blade1
-            // 
-            this.nudMercGroup1Blade1.Location = new System.Drawing.Point(58, 14);
-            this.nudMercGroup1Blade1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudMercGroup1Blade1.Name = "nudMercGroup1Blade1";
-            this.nudMercGroup1Blade1.Size = new System.Drawing.Size(48, 20);
-            this.nudMercGroup1Blade1.TabIndex = 22;
-            this.nudMercGroup1Blade1.ValueChanged += new System.EventHandler(this.nudMercGroup1Blade1_ValueChanged);
-            // 
-            // lblMercGroup1Blade3
-            // 
-            this.lblMercGroup1Blade3.AutoSize = true;
-            this.lblMercGroup1Blade3.Location = new System.Drawing.Point(6, 55);
-            this.lblMercGroup1Blade3.Name = "lblMercGroup1Blade3";
-            this.lblMercGroup1Blade3.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade3.TabIndex = 20;
-            this.lblMercGroup1Blade3.Text = "Blade 3:";
-            // 
-            // lblMercGroup1Blade2
-            // 
-            this.lblMercGroup1Blade2.AutoSize = true;
-            this.lblMercGroup1Blade2.Location = new System.Drawing.Point(6, 36);
-            this.lblMercGroup1Blade2.Name = "lblMercGroup1Blade2";
-            this.lblMercGroup1Blade2.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade2.TabIndex = 19;
-            this.lblMercGroup1Blade2.Text = "Blade 2:";
-            // 
-            // lblMercGroup1Blade1
-            // 
-            this.lblMercGroup1Blade1.AutoSize = true;
-            this.lblMercGroup1Blade1.Location = new System.Drawing.Point(6, 16);
-            this.lblMercGroup1Blade1.Name = "lblMercGroup1Blade1";
-            this.lblMercGroup1Blade1.Size = new System.Drawing.Size(46, 13);
-            this.lblMercGroup1Blade1.TabIndex = 18;
-            this.lblMercGroup1Blade1.Text = "Blade 1:";
-            // 
-            // tabTigerTiger
-            // 
-            this.tabTigerTiger.Controls.Add(this.gbxTigerTigerUnk_0x30);
-            this.tabTigerTiger.Controls.Add(this.gbxTigerTigerUnk_0x00);
-            this.tabTigerTiger.Controls.Add(this.gbxTigerTigerHighScores);
-            this.tabTigerTiger.Location = new System.Drawing.Point(4, 22);
-            this.tabTigerTiger.Name = "tabTigerTiger";
-            this.tabTigerTiger.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTigerTiger.Size = new System.Drawing.Size(1134, 576);
-            this.tabTigerTiger.TabIndex = 4;
-            this.tabTigerTiger.Text = "Tiger! Tiger!";
-            this.tabTigerTiger.UseVisualStyleBackColor = true;
-            // 
-            // gbxTigerTigerUnk_0x30
-            // 
-            this.gbxTigerTigerUnk_0x30.Controls.Add(this.hbxTigerTigerUnk_0x30);
-            this.gbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(8, 224);
-            this.gbxTigerTigerUnk_0x30.Name = "gbxTigerTigerUnk_0x30";
-            this.gbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(487, 276);
-            this.gbxTigerTigerUnk_0x30.TabIndex = 156;
-            this.gbxTigerTigerUnk_0x30.TabStop = false;
-            this.gbxTigerTigerUnk_0x30.Text = "Unk_0x30";
-            // 
-            // hbxTigerTigerUnk_0x30
-            // 
-            this.hbxTigerTigerUnk_0x30.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x30.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x30.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x30.Name = "hbxTigerTigerUnk_0x30";
-            this.hbxTigerTigerUnk_0x30.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x30.Size = new System.Drawing.Size(475, 252);
-            this.hbxTigerTigerUnk_0x30.TabIndex = 151;
-            // 
-            // gbxTigerTigerUnk_0x00
-            // 
-            this.gbxTigerTigerUnk_0x00.Controls.Add(this.hbxTigerTigerUnk_0x00);
-            this.gbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(8, 150);
-            this.gbxTigerTigerUnk_0x00.Name = "gbxTigerTigerUnk_0x00";
-            this.gbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(313, 67);
-            this.gbxTigerTigerUnk_0x00.TabIndex = 155;
-            this.gbxTigerTigerUnk_0x00.TabStop = false;
-            this.gbxTigerTigerUnk_0x00.Text = "Unk_0x00";
-            // 
-            // hbxTigerTigerUnk_0x00
-            // 
-            this.hbxTigerTigerUnk_0x00.ColumnInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxTigerTigerUnk_0x00.LineInfoVisible = true;
-            this.hbxTigerTigerUnk_0x00.Location = new System.Drawing.Point(6, 19);
-            this.hbxTigerTigerUnk_0x00.Name = "hbxTigerTigerUnk_0x00";
-            this.hbxTigerTigerUnk_0x00.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxTigerTigerUnk_0x00.Size = new System.Drawing.Size(302, 41);
-            this.hbxTigerTigerUnk_0x00.TabIndex = 151;
-            // 
-            // gbxTigerTigerHighScores
-            // 
-            this.gbxTigerTigerHighScores.Controls.Add(this.chkTigerTigerStage5IsEasyMode);
-            this.gbxTigerTigerHighScores.Controls.Add(this.txtTigerTigerStage5Initials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.nudTigerTigerStage5Score);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerStage5);
-            this.gbxTigerTigerHighScores.Controls.Add(this.chkTigerTigerStage4IsEasyMode);
-            this.gbxTigerTigerHighScores.Controls.Add(this.txtTigerTigerStage4Initials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.nudTigerTigerStage4Score);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerStage4);
-            this.gbxTigerTigerHighScores.Controls.Add(this.chkTigerTigerStage3IsEasyMode);
-            this.gbxTigerTigerHighScores.Controls.Add(this.txtTigerTigerStage3Initials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.nudTigerTigerStage3Score);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerStage3);
-            this.gbxTigerTigerHighScores.Controls.Add(this.chkTigerTigerStage2IsEasyMode);
-            this.gbxTigerTigerHighScores.Controls.Add(this.txtTigerTigerStage2Initials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.nudTigerTigerStage2Score);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerStage2);
-            this.gbxTigerTigerHighScores.Controls.Add(this.chkTigerTigerStage1IsEasyMode);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerInitials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTIgerTigerScore);
-            this.gbxTigerTigerHighScores.Controls.Add(this.txtTigerTigerStage1Initials);
-            this.gbxTigerTigerHighScores.Controls.Add(this.nudTigerTigerStage1Score);
-            this.gbxTigerTigerHighScores.Controls.Add(this.lblTigerTigerStage1);
-            this.gbxTigerTigerHighScores.Location = new System.Drawing.Point(8, 6);
-            this.gbxTigerTigerHighScores.Name = "gbxTigerTigerHighScores";
-            this.gbxTigerTigerHighScores.Size = new System.Drawing.Size(328, 138);
-            this.gbxTigerTigerHighScores.TabIndex = 0;
-            this.gbxTigerTigerHighScores.TabStop = false;
-            this.gbxTigerTigerHighScores.Text = "Tiger! Tiger! High Scores";
-            // 
-            // chkTigerTigerStage5IsEasyMode
-            // 
-            this.chkTigerTigerStage5IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage5IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage5IsEasyMode.Location = new System.Drawing.Point(211, 114);
-            this.chkTigerTigerStage5IsEasyMode.Name = "chkTigerTigerStage5IsEasyMode";
-            this.chkTigerTigerStage5IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage5IsEasyMode.TabIndex = 21;
-            this.chkTigerTigerStage5IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage5IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage5IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage5IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage5Initials
-            // 
-            this.txtTigerTigerStage5Initials.Location = new System.Drawing.Point(158, 112);
-            this.txtTigerTigerStage5Initials.MaxLength = 3;
-            this.txtTigerTigerStage5Initials.Name = "txtTigerTigerStage5Initials";
-            this.txtTigerTigerStage5Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage5Initials.TabIndex = 20;
-            this.txtTigerTigerStage5Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage5Initials_TextChanged);
-            // 
-            // nudTigerTigerStage5Score
-            // 
-            this.nudTigerTigerStage5Score.Location = new System.Drawing.Point(61, 112);
-            this.nudTigerTigerStage5Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage5Score.Name = "nudTigerTigerStage5Score";
-            this.nudTigerTigerStage5Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage5Score.TabIndex = 19;
-            this.nudTigerTigerStage5Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage5Score_ValueChanged);
-            // 
-            // lblTigerTigerStage5
-            // 
-            this.lblTigerTigerStage5.AutoSize = true;
-            this.lblTigerTigerStage5.Location = new System.Drawing.Point(8, 114);
-            this.lblTigerTigerStage5.Name = "lblTigerTigerStage5";
-            this.lblTigerTigerStage5.Size = new System.Drawing.Size(47, 13);
-            this.lblTigerTigerStage5.TabIndex = 18;
-            this.lblTigerTigerStage5.Text = "Stage 5:";
-            // 
-            // chkTigerTigerStage4IsEasyMode
-            // 
-            this.chkTigerTigerStage4IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage4IsEasyMode.Location = new System.Drawing.Point(211, 94);
-            this.chkTigerTigerStage4IsEasyMode.Name = "chkTigerTigerStage4IsEasyMode";
-            this.chkTigerTigerStage4IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage4IsEasyMode.TabIndex = 17;
-            this.chkTigerTigerStage4IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage4IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage4IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage4IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage4Initials
-            // 
-            this.txtTigerTigerStage4Initials.Location = new System.Drawing.Point(158, 92);
-            this.txtTigerTigerStage4Initials.MaxLength = 3;
-            this.txtTigerTigerStage4Initials.Name = "txtTigerTigerStage4Initials";
-            this.txtTigerTigerStage4Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage4Initials.TabIndex = 16;
-            this.txtTigerTigerStage4Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage4Initials_TextChanged);
-            // 
-            // nudTigerTigerStage4Score
-            // 
-            this.nudTigerTigerStage4Score.Location = new System.Drawing.Point(61, 92);
-            this.nudTigerTigerStage4Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage4Score.Name = "nudTigerTigerStage4Score";
-            this.nudTigerTigerStage4Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage4Score.TabIndex = 15;
-            this.nudTigerTigerStage4Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage4Score_ValueChanged);
-            // 
-            // lblTigerTigerStage4
-            // 
-            this.lblTigerTigerStage4.AutoSize = true;
-            this.lblTigerTigerStage4.Location = new System.Drawing.Point(8, 94);
-            this.lblTigerTigerStage4.Name = "lblTigerTigerStage4";
-            this.lblTigerTigerStage4.Size = new System.Drawing.Size(47, 13);
-            this.lblTigerTigerStage4.TabIndex = 14;
-            this.lblTigerTigerStage4.Text = "Stage 4:";
-            // 
-            // chkTigerTigerStage3IsEasyMode
-            // 
-            this.chkTigerTigerStage3IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage3IsEasyMode.Location = new System.Drawing.Point(211, 74);
-            this.chkTigerTigerStage3IsEasyMode.Name = "chkTigerTigerStage3IsEasyMode";
-            this.chkTigerTigerStage3IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage3IsEasyMode.TabIndex = 13;
-            this.chkTigerTigerStage3IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage3IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage3IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage3IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage3Initials
-            // 
-            this.txtTigerTigerStage3Initials.Location = new System.Drawing.Point(158, 72);
-            this.txtTigerTigerStage3Initials.MaxLength = 3;
-            this.txtTigerTigerStage3Initials.Name = "txtTigerTigerStage3Initials";
-            this.txtTigerTigerStage3Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage3Initials.TabIndex = 12;
-            this.txtTigerTigerStage3Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage3Initials_TextChanged);
-            // 
-            // nudTigerTigerStage3Score
-            // 
-            this.nudTigerTigerStage3Score.Location = new System.Drawing.Point(61, 72);
-            this.nudTigerTigerStage3Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage3Score.Name = "nudTigerTigerStage3Score";
-            this.nudTigerTigerStage3Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage3Score.TabIndex = 11;
-            this.nudTigerTigerStage3Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage3Score_ValueChanged);
-            // 
-            // lblTigerTigerStage3
-            // 
-            this.lblTigerTigerStage3.AutoSize = true;
-            this.lblTigerTigerStage3.Location = new System.Drawing.Point(8, 74);
-            this.lblTigerTigerStage3.Name = "lblTigerTigerStage3";
-            this.lblTigerTigerStage3.Size = new System.Drawing.Size(47, 13);
-            this.lblTigerTigerStage3.TabIndex = 10;
-            this.lblTigerTigerStage3.Text = "Stage 3:";
-            // 
-            // chkTigerTigerStage2IsEasyMode
-            // 
-            this.chkTigerTigerStage2IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage2IsEasyMode.Location = new System.Drawing.Point(211, 54);
-            this.chkTigerTigerStage2IsEasyMode.Name = "chkTigerTigerStage2IsEasyMode";
-            this.chkTigerTigerStage2IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage2IsEasyMode.TabIndex = 9;
-            this.chkTigerTigerStage2IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage2IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage2IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage2IsEasyMode_CheckedChanged);
-            // 
-            // txtTigerTigerStage2Initials
-            // 
-            this.txtTigerTigerStage2Initials.Location = new System.Drawing.Point(158, 52);
-            this.txtTigerTigerStage2Initials.MaxLength = 3;
-            this.txtTigerTigerStage2Initials.Name = "txtTigerTigerStage2Initials";
-            this.txtTigerTigerStage2Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage2Initials.TabIndex = 8;
-            this.txtTigerTigerStage2Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage2Initials_TextChanged);
-            // 
-            // nudTigerTigerStage2Score
-            // 
-            this.nudTigerTigerStage2Score.Location = new System.Drawing.Point(61, 52);
-            this.nudTigerTigerStage2Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage2Score.Name = "nudTigerTigerStage2Score";
-            this.nudTigerTigerStage2Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage2Score.TabIndex = 7;
-            this.nudTigerTigerStage2Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage2Score_ValueChanged);
-            // 
-            // lblTigerTigerStage2
-            // 
-            this.lblTigerTigerStage2.AutoSize = true;
-            this.lblTigerTigerStage2.Location = new System.Drawing.Point(8, 54);
-            this.lblTigerTigerStage2.Name = "lblTigerTigerStage2";
-            this.lblTigerTigerStage2.Size = new System.Drawing.Size(47, 13);
-            this.lblTigerTigerStage2.TabIndex = 6;
-            this.lblTigerTigerStage2.Text = "Stage 2:";
-            // 
-            // chkTigerTigerStage1IsEasyMode
-            // 
-            this.chkTigerTigerStage1IsEasyMode.AutoSize = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkTigerTigerStage1IsEasyMode.Location = new System.Drawing.Point(211, 34);
-            this.chkTigerTigerStage1IsEasyMode.Name = "chkTigerTigerStage1IsEasyMode";
-            this.chkTigerTigerStage1IsEasyMode.Size = new System.Drawing.Size(110, 17);
-            this.chkTigerTigerStage1IsEasyMode.TabIndex = 5;
-            this.chkTigerTigerStage1IsEasyMode.Text = "Easy Mode Score";
-            this.chkTigerTigerStage1IsEasyMode.UseVisualStyleBackColor = true;
-            this.chkTigerTigerStage1IsEasyMode.CheckedChanged += new System.EventHandler(this.chkTigerTigerStage1IsEasyMode_CheckedChanged);
-            // 
-            // lblTigerTigerInitials
-            // 
-            this.lblTigerTigerInitials.AutoSize = true;
-            this.lblTigerTigerInitials.Location = new System.Drawing.Point(155, 16);
-            this.lblTigerTigerInitials.Name = "lblTigerTigerInitials";
-            this.lblTigerTigerInitials.Size = new System.Drawing.Size(39, 13);
-            this.lblTigerTigerInitials.TabIndex = 4;
-            this.lblTigerTigerInitials.Text = "Initials:";
-            // 
-            // lblTIgerTigerScore
-            // 
-            this.lblTIgerTigerScore.AutoSize = true;
-            this.lblTIgerTigerScore.Location = new System.Drawing.Point(58, 16);
-            this.lblTIgerTigerScore.Name = "lblTIgerTigerScore";
-            this.lblTIgerTigerScore.Size = new System.Drawing.Size(38, 13);
-            this.lblTIgerTigerScore.TabIndex = 3;
-            this.lblTIgerTigerScore.Text = "Score:";
-            // 
-            // txtTigerTigerStage1Initials
-            // 
-            this.txtTigerTigerStage1Initials.Location = new System.Drawing.Point(158, 32);
-            this.txtTigerTigerStage1Initials.MaxLength = 3;
-            this.txtTigerTigerStage1Initials.Name = "txtTigerTigerStage1Initials";
-            this.txtTigerTigerStage1Initials.Size = new System.Drawing.Size(47, 20);
-            this.txtTigerTigerStage1Initials.TabIndex = 2;
-            this.txtTigerTigerStage1Initials.TextChanged += new System.EventHandler(this.txtTigerTigerStage1Initials_TextChanged);
-            // 
-            // nudTigerTigerStage1Score
-            // 
-            this.nudTigerTigerStage1Score.Location = new System.Drawing.Point(61, 32);
-            this.nudTigerTigerStage1Score.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-            this.nudTigerTigerStage1Score.Name = "nudTigerTigerStage1Score";
-            this.nudTigerTigerStage1Score.Size = new System.Drawing.Size(91, 20);
-            this.nudTigerTigerStage1Score.TabIndex = 1;
-            this.nudTigerTigerStage1Score.ValueChanged += new System.EventHandler(this.nudTigerTigerStage1Score_ValueChanged);
-            // 
-            // lblTigerTigerStage1
-            // 
-            this.lblTigerTigerStage1.AutoSize = true;
-            this.lblTigerTigerStage1.Location = new System.Drawing.Point(8, 34);
-            this.lblTigerTigerStage1.Name = "lblTigerTigerStage1";
-            this.lblTigerTigerStage1.Size = new System.Drawing.Size(47, 13);
-            this.lblTigerTigerStage1.TabIndex = 0;
-            this.lblTigerTigerStage1.Text = "Stage 1:";
-            // 
             // tabEvents
             // 
             this.tabEvents.Controls.Add(this.nudEventsCount);
@@ -21642,8 +19244,8 @@
             // 
             // ofdSaveFile
             // 
-            this.ofdSaveFile.FileName = "bf2savefile.sav";
-            this.ofdSaveFile.Filter = "Xenoblade Chronicles 2 Save Files|*.sav|All FIles|*.*";
+            this.ofdSaveFile.FileName = "irasavefile.sav";
+            this.ofdSaveFile.Filter = "XC2 Torna Golden Country Save Files|*.sav|All FIles|*.*";
             // 
             // btnSave
             // 
@@ -21658,8 +19260,8 @@
             // 
             // sfdSaveFile
             // 
-            this.sfdSaveFile.FileName = "bf2savefile.sav";
-            this.sfdSaveFile.Filter = "Xenoblade Chronicles 2 Save Files|*.sav|All FIles|*.*";
+            this.sfdSaveFile.FileName = "irasavefile.sav";
+            this.sfdSaveFile.Filter = "XC2 Torna Golden Country Save Files|*.sav|All FIles|*.*";
             // 
             // splitContainer3
             // 
@@ -21730,6 +19332,45 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem,
+            this.languageToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // allowEditingOfReadOnlyValuesToolStripMenuItem
+            // 
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Name = "allowEditingOfReadOnlyValuesToolStripMenuItem";
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Text = "Allow Editing of Read-Only Values";
+            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Click += new System.EventHandler(this.allowEditingOfReadOnlyValuesToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.chineseToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.chineseToolStripMenuItem.Text = "Chinese";
+            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -21743,7 +19384,7 @@
             // 
             this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
             this.fAQToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.fAQToolStripMenuItem.Text = "FAQ";
             this.fAQToolStripMenuItem.Click += new System.EventHandler(this.fAQToolStripMenuItem_Click);
             // 
@@ -21751,7 +19392,7 @@
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -21794,45 +19435,6 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem,
-            this.languageToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // allowEditingOfReadOnlyValuesToolStripMenuItem
-            // 
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Name = "allowEditingOfReadOnlyValuesToolStripMenuItem";
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Text = "Allow Editing of Read-Only Values";
-            this.allowEditingOfReadOnlyValuesToolStripMenuItem.Click += new System.EventHandler(this.allowEditingOfReadOnlyValuesToolStripMenuItem_Click);
-            // 
-            // languageToolStripMenuItem
-            // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.chineseToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.languageToolStripMenuItem.Text = "Language";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.englishToolStripMenuItem.Text = "English";
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // chineseToolStripMenuItem
-            // 
-            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
-            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.chineseToolStripMenuItem.Text = "Chinese";
-            this.chineseToolStripMenuItem.Click += new System.EventHandler(this.chineseToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -21843,7 +19445,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1158, 698);
             this.Name = "frmMain";
-            this.Text = "XC2SaveNETThingy";
+            this.Text = "XC2IraSaveNETThingy";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.gbxTimeData.ResumeLayout(false);
             this.gbxTotalPlayTime.ResumeLayout(false);
@@ -21884,8 +19486,6 @@
             this.gbxContentVersions.ResumeLayout(false);
             this.gbxContentVersions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudContentVersion)).EndInit();
-            this.gbxAegisForme.ResumeLayout(false);
-            this.gbxAegisForme.PerformLayout();
             this.gbxOther.ResumeLayout(false);
             this.gbxOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAutoEventAfterLoad)).EndInit();
@@ -21907,9 +19507,6 @@
             this.gbxQuestIDs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuestCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuestID)).EndInit();
-            this.gbxCommonBladeIDs.ResumeLayout(false);
-            this.gbxCommonBladeIDs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCommonBladeID)).EndInit();
             this.gbxWeatherInfo.ResumeLayout(false);
             this.gbxWeatherInfo.PerformLayout();
             this.gbxWeatherInfoUnk_0x04.ResumeLayout(false);
@@ -21918,7 +19515,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAchievementTaskCount)).EndInit();
             this.gbxMoney.ResumeLayout(false);
             this.gbxMoney.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEtherCrystals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMoney)).EndInit();
             this.gbxParty.ResumeLayout(false);
             this.gbxParty.PerformLayout();
@@ -22478,36 +20074,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPcEquipBox)).EndInit();
             this.tabAuxCoreBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipOrbBox)).EndInit();
-            this.tabCylinderBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSalvageBox)).EndInit();
             this.tabKeyItemBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreciousBox)).EndInit();
             this.tabInfoItemBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoBox)).EndInit();
-            this.tabEventItemBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEventBox)).EndInit();
             this.tabCollectibleBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionListBox)).EndInit();
-            this.tabTreasureBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTreasureBox)).EndInit();
-            this.tabUnrefinedAuxCoreBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmptyOrbBox)).EndInit();
             this.tabPouchItemBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriteBox)).EndInit();
-            this.tabCoreCrystalBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCrystalListBox)).EndInit();
-            this.tabBoosterBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBoosterBox)).EndInit();
-            this.tabPoppiRoleCPUBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaRoleBox)).EndInit();
-            this.tabPoppiElementCoreBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAtrBox)).EndInit();
-            this.tabPoppiSpecialsEnhancingRAMBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaArtsBox)).EndInit();
-            this.tabPoppiArtsCardBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaNArtsBox)).EndInit();
-            this.tabPoppiSkillRAMBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHanaAssistBox)).EndInit();
             this.tabItemsSerials.ResumeLayout(false);
             this.gbxItemBoxSerials.ResumeLayout(false);
             this.gbxItemBoxSerials.PerformLayout();
@@ -22608,72 +20182,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver2PosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapDriver1PosX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMapMapJumpID)).EndInit();
-            this.tabMercGroups.ResumeLayout(false);
-            this.tabMercGroups.PerformLayout();
-            this.gbxMercGroupPresets.ResumeLayout(false);
-            this.gbxMercGroupPresets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupPresetMember3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroupsCount)).EndInit();
-            this.gbxMercGroup3.ResumeLayout(false);
-            this.gbxMercGroup3.PerformLayout();
-            this.gbxMercGroup3Unk_0x24.ResumeLayout(false);
-            this.gbxMercGroup3Unk_0x0C.ResumeLayout(false);
-            this.gbxMercGroup3Unk_0x18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3OriginalMissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3MissionID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3TeamID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup3Blade1)).EndInit();
-            this.gbxMercGroup2.ResumeLayout(false);
-            this.gbxMercGroup2.PerformLayout();
-            this.gbxMercGroup2Unk_0x24.ResumeLayout(false);
-            this.gbxMercGroup2Unk_0x0C.ResumeLayout(false);
-            this.gbxMercGroup2Unk_0x18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2OriginalMissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2MissionID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2TeamID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup2Blade1)).EndInit();
-            this.gbxMercGroup1.ResumeLayout(false);
-            this.gbxMercGroup1.PerformLayout();
-            this.gbxMercGroup1Unk_0x24.ResumeLayout(false);
-            this.gbxMercGroup1Unk_0x0C.ResumeLayout(false);
-            this.gbxMercGroup1Unk_0x18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1OriginalMissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1MissionID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1TeamID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMercGroup1Blade1)).EndInit();
-            this.tabTigerTiger.ResumeLayout(false);
-            this.gbxTigerTigerUnk_0x30.ResumeLayout(false);
-            this.gbxTigerTigerUnk_0x00.ResumeLayout(false);
-            this.gbxTigerTigerHighScores.ResumeLayout(false);
-            this.gbxTigerTigerHighScores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage5Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage4Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage3Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage2Score)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTigerTigerStage1Score)).EndInit();
             this.tabEvents.ResumeLayout(false);
             this.tabEvents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEventsCount)).EndInit();
@@ -22790,37 +20298,15 @@
         private System.Windows.Forms.TabPage tabAccessoryBox;
         private System.Windows.Forms.DataGridView dgvPcEquipBox;
         private System.Windows.Forms.TabPage tabAuxCoreBox;
-        private System.Windows.Forms.TabPage tabCylinderBox;
         private System.Windows.Forms.TabPage tabKeyItemBox;
         private System.Windows.Forms.TabPage tabInfoItemBox;
-        private System.Windows.Forms.TabPage tabEventItemBox;
         private System.Windows.Forms.TabPage tabCollectibleBox;
-        private System.Windows.Forms.TabPage tabTreasureBox;
-        private System.Windows.Forms.TabPage tabUnrefinedAuxCoreBox;
         private System.Windows.Forms.TabPage tabPouchItemBox;
-        private System.Windows.Forms.TabPage tabCoreCrystalBox;
-        private System.Windows.Forms.TabPage tabBoosterBox;
-        private System.Windows.Forms.TabPage tabPoppiRoleCPUBox;
-        private System.Windows.Forms.TabPage tabPoppiElementCoreBox;
-        private System.Windows.Forms.TabPage tabPoppiSpecialsEnhancingRAMBox;
-        private System.Windows.Forms.TabPage tabPoppiArtsCardBox;
-        private System.Windows.Forms.TabPage tabPoppiSkillRAMBox;
         private System.Windows.Forms.DataGridView dgvEquipOrbBox;
-        private System.Windows.Forms.DataGridView dgvSalvageBox;
         private System.Windows.Forms.DataGridView dgvPreciousBox;
         private System.Windows.Forms.DataGridView dgvInfoBox;
-        private System.Windows.Forms.DataGridView dgvEventBox;
         private System.Windows.Forms.DataGridView dgvCollectionListBox;
-        private System.Windows.Forms.DataGridView dgvTreasureBox;
-        private System.Windows.Forms.DataGridView dgvEmptyOrbBox;
         private System.Windows.Forms.DataGridView dgvFavoriteBox;
-        private System.Windows.Forms.DataGridView dgvCrystalListBox;
-        private System.Windows.Forms.DataGridView dgvBoosterBox;
-        private System.Windows.Forms.DataGridView dgvHanaRoleBox;
-        private System.Windows.Forms.DataGridView dgvHanaAtrBox;
-        private System.Windows.Forms.DataGridView dgvHanaArtsBox;
-        private System.Windows.Forms.DataGridView dgvHanaNArtsBox;
-        private System.Windows.Forms.DataGridView dgvHanaAssistBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.SaveFileDialog sfdSaveFile;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -23849,34 +21335,6 @@
         private Be.Windows.Forms.HexBox hbxPartyUnk_0x44;
         private System.Windows.Forms.GroupBox gbxPartyUnk_0x3C;
         private Be.Windows.Forms.HexBox hbxPartyUnk_0x3C;
-        private System.Windows.Forms.TabPage tabTigerTiger;
-        private System.Windows.Forms.GroupBox gbxTigerTigerHighScores;
-        private System.Windows.Forms.NumericUpDown nudTigerTigerStage1Score;
-        private System.Windows.Forms.Label lblTigerTigerStage1;
-        private System.Windows.Forms.CheckBox chkTigerTigerStage5IsEasyMode;
-        private System.Windows.Forms.TextBox txtTigerTigerStage5Initials;
-        private System.Windows.Forms.NumericUpDown nudTigerTigerStage5Score;
-        private System.Windows.Forms.Label lblTigerTigerStage5;
-        private System.Windows.Forms.CheckBox chkTigerTigerStage4IsEasyMode;
-        private System.Windows.Forms.TextBox txtTigerTigerStage4Initials;
-        private System.Windows.Forms.NumericUpDown nudTigerTigerStage4Score;
-        private System.Windows.Forms.Label lblTigerTigerStage4;
-        private System.Windows.Forms.CheckBox chkTigerTigerStage3IsEasyMode;
-        private System.Windows.Forms.TextBox txtTigerTigerStage3Initials;
-        private System.Windows.Forms.NumericUpDown nudTigerTigerStage3Score;
-        private System.Windows.Forms.Label lblTigerTigerStage3;
-        private System.Windows.Forms.CheckBox chkTigerTigerStage2IsEasyMode;
-        private System.Windows.Forms.TextBox txtTigerTigerStage2Initials;
-        private System.Windows.Forms.NumericUpDown nudTigerTigerStage2Score;
-        private System.Windows.Forms.Label lblTigerTigerStage2;
-        private System.Windows.Forms.CheckBox chkTigerTigerStage1IsEasyMode;
-        private System.Windows.Forms.Label lblTigerTigerInitials;
-        private System.Windows.Forms.Label lblTIgerTigerScore;
-        private System.Windows.Forms.TextBox txtTigerTigerStage1Initials;
-        private System.Windows.Forms.GroupBox gbxTigerTigerUnk_0x30;
-        private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x30;
-        private System.Windows.Forms.GroupBox gbxTigerTigerUnk_0x00;
-        private Be.Windows.Forms.HexBox hbxTigerTigerUnk_0x00;
         private System.Windows.Forms.TabPage tabMapLocation;
         private System.Windows.Forms.Label lblMapMapJumpID;
         private System.Windows.Forms.NumericUpDown nudMapMapJumpID;
@@ -24010,130 +21468,7 @@
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x117A4C;
         private Be.Windows.Forms.HexBox hbx150RawDataUnk_0x1186DC;
         private System.Windows.Forms.TabPage tabFlags;
-        private System.Windows.Forms.TabPage tabMercGroups;
-        private System.Windows.Forms.GroupBox gbxMercGroup1;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade6;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade5;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade6;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade5;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade4;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade4;
-        private System.Windows.Forms.Label lblMercGroup1Blade6;
-        private System.Windows.Forms.Label lblMercGroup1Blade5;
-        private System.Windows.Forms.Label lblMercGroup1Blade4;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade3;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade2;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade3;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade2;
-        private System.Windows.Forms.ComboBox cbxMercGroup1Blade1;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1Blade1;
-        private System.Windows.Forms.Label lblMercGroup1Blade3;
-        private System.Windows.Forms.Label lblMercGroup1Blade2;
-        private System.Windows.Forms.Label lblMercGroup1Blade1;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1MissionID;
-        private System.Windows.Forms.Label lblMercGroup1MissionID;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1TeamID;
-        private System.Windows.Forms.Label lblMercGroup1TeamID;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1OriginalMissionTime;
-        private System.Windows.Forms.Label lblMercGroup1OriginalMissionTime;
-        private System.Windows.Forms.NumericUpDown nudMercGroup1MissionTime;
-        private System.Windows.Forms.Label lblMercGroup1MissionTime;
-        private System.Windows.Forms.GroupBox gbxMercGroup1Unk_0x24;
-        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x24;
-        private System.Windows.Forms.GroupBox gbxMercGroup1Unk_0x0C;
-        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x0C;
-        private System.Windows.Forms.GroupBox gbxMercGroup1Unk_0x18;
-        private Be.Windows.Forms.HexBox hbxMercGroup1Unk_0x18;
-        private System.Windows.Forms.GroupBox gbxMercGroup3;
-        private System.Windows.Forms.GroupBox gbxMercGroup3Unk_0x24;
-        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x24;
-        private System.Windows.Forms.GroupBox gbxMercGroup3Unk_0x0C;
-        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x0C;
-        private System.Windows.Forms.GroupBox gbxMercGroup3Unk_0x18;
-        private Be.Windows.Forms.HexBox hbxMercGroup3Unk_0x18;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3OriginalMissionTime;
-        private System.Windows.Forms.Label lblMercGroup3OriginalMissionTime;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3MissionTime;
-        private System.Windows.Forms.Label lblMercGroup3MissionTime;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3MissionID;
-        private System.Windows.Forms.Label lblMercGroup3MissionID;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3TeamID;
-        private System.Windows.Forms.Label lblMercGroup3TeamID;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade6;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade5;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade6;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade5;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade4;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade4;
-        private System.Windows.Forms.Label lblMercGroup3Blade6;
-        private System.Windows.Forms.Label lblMercGroup3Blade5;
-        private System.Windows.Forms.Label lblMercGroup3Blade4;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade3;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade2;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade3;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade2;
-        private System.Windows.Forms.ComboBox cbxMercGroup3Blade1;
-        private System.Windows.Forms.NumericUpDown nudMercGroup3Blade1;
-        private System.Windows.Forms.Label lblMercGroup3Blade3;
-        private System.Windows.Forms.Label lblMercGroup3Blade2;
-        private System.Windows.Forms.Label lblMercGroup3Blade1;
-        private System.Windows.Forms.GroupBox gbxMercGroup2;
-        private System.Windows.Forms.GroupBox gbxMercGroup2Unk_0x24;
-        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x24;
-        private System.Windows.Forms.GroupBox gbxMercGroup2Unk_0x0C;
-        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x0C;
-        private System.Windows.Forms.GroupBox gbxMercGroup2Unk_0x18;
-        private Be.Windows.Forms.HexBox hbxMercGroup2Unk_0x18;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2OriginalMissionTime;
-        private System.Windows.Forms.Label lblMercGroup2OriginalMissionTime;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2MissionTime;
-        private System.Windows.Forms.Label lblMercGroup2MissionTime;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2MissionID;
-        private System.Windows.Forms.Label lblMercGroup2MissionID;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2TeamID;
-        private System.Windows.Forms.Label lblMercGroup2TeamID;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade6;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade5;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade6;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade5;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade4;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade4;
-        private System.Windows.Forms.Label lblMercGroup2Blade6;
-        private System.Windows.Forms.Label lblMercGroup2Blade5;
-        private System.Windows.Forms.Label lblMercGroup2Blade4;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade3;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade2;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade3;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade2;
-        private System.Windows.Forms.ComboBox cbxMercGroup2Blade1;
-        private System.Windows.Forms.NumericUpDown nudMercGroup2Blade1;
-        private System.Windows.Forms.Label lblMercGroup2Blade3;
-        private System.Windows.Forms.Label lblMercGroup2Blade2;
-        private System.Windows.Forms.Label lblMercGroup2Blade1;
         private System.Windows.Forms.ComboBox cbxBladeRareNameID;
-        private System.Windows.Forms.Label lblMercGroup3OriginalMissionTimeSec;
-        private System.Windows.Forms.Label lblMercGroup3MissionTimeSec;
-        private System.Windows.Forms.Label lblMercGroup2OriginalMissionTimeSec;
-        private System.Windows.Forms.Label lblMercGroup2MissionTimeSec;
-        private System.Windows.Forms.Label lblMercGroup1OriginalMissionTimeSec;
-        private System.Windows.Forms.Label lblMercGroup1MissionTimeSec;
-        private System.Windows.Forms.NumericUpDown nudMercGroupsCount;
-        private System.Windows.Forms.Label lblMercGroupsUnlocked;
-        private System.Windows.Forms.GroupBox gbxMercGroupPresets;
-        private System.Windows.Forms.Label lblMercGroupPresetMember1;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember6;
-        private System.Windows.Forms.Label lblMercGroupPresetMember2;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember5;
-        private System.Windows.Forms.Label lblMercGroupPresetMember3;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember1;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember4;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember2;
-        private System.Windows.Forms.Label lblMercGroupPresetMember6;
-        private System.Windows.Forms.NumericUpDown nudMercGroupPresetMember3;
-        private System.Windows.Forms.Label lblMercGroupPresetMember5;
-        private System.Windows.Forms.Label lblMercGroupPresetMember4;
-        private System.Windows.Forms.Label lblMercGroupPreset;
-        private System.Windows.Forms.ComboBox cbxMercGroupPresets;
         private System.Windows.Forms.NumericUpDown nudTimeSavedDay;
         private System.Windows.Forms.NumericUpDown nudTimeSavedMonth;
         private System.Windows.Forms.NumericUpDown nudTimeSavedYear;
@@ -24183,8 +21518,6 @@
         private System.Windows.Forms.Label label443;
         private System.Windows.Forms.Label label444;
         private System.Windows.Forms.GroupBox gbxMoney;
-        private System.Windows.Forms.NumericUpDown nudEtherCrystals;
-        private System.Windows.Forms.Label lblEtherCrystals;
         private System.Windows.Forms.GroupBox gbxAchievementTasks;
         private System.Windows.Forms.ComboBox cbxAchievementTasks;
         private System.Windows.Forms.Label lblSelectedAchievementTask;
@@ -24290,11 +21623,6 @@
         private System.Windows.Forms.Label lblCurrentQuest;
         private System.Windows.Forms.NumericUpDown nudScenarioQuest;
         private System.Windows.Forms.Label lblScenarioQuest;
-        private System.Windows.Forms.GroupBox gbxCommonBladeIDs;
-        private System.Windows.Forms.NumericUpDown nudCommonBladeID;
-        private System.Windows.Forms.Label lblCommonBladeIDID;
-        private System.Windows.Forms.ComboBox cbxCommonBladeIDs;
-        private System.Windows.Forms.Label lblCommonBladeIDSelectedID;
         private System.Windows.Forms.Label lblMapCameraPlayerCameraDistance;
         private System.Windows.Forms.NumericUpDown nudPlayerCameraDistance;
         private System.Windows.Forms.NumericUpDown nudGameClearCount;
@@ -24334,9 +21662,6 @@
         private System.Windows.Forms.Label lblMapCameraHeight;
         private System.Windows.Forms.NumericUpDown nudCameraFreeMode;
         private System.Windows.Forms.Label lblMapCameraFreeMode;
-        private System.Windows.Forms.GroupBox gbxAegisForme;
-        private System.Windows.Forms.RadioButton radAegisFormeMythra;
-        private System.Windows.Forms.RadioButton radAegisFormePyra;
         private System.Windows.Forms.CheckBox chkIsClearDataSave;
         private System.Windows.Forms.CheckBox chkIsCollectFlagNewVersion;
         private System.Windows.Forms.Label lblAutoEventAfterLoad;
@@ -24399,8 +21724,6 @@
         private System.Windows.Forms.GroupBox gbxBladeImportExport;
         private System.Windows.Forms.Label lblBladeImportExportNote;
         private System.Windows.Forms.GroupBox gbxExpSkillPoints;
-        private System.Windows.Forms.Label lblAegisFormeMythra;
-        private System.Windows.Forms.Label lblAegisFormePyra;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkDriverInParty;
         private System.Windows.Forms.GroupBox gbxItemCheat;

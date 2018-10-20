@@ -9,9 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XC2SaveNETThingy;
 using static XC2SaveNETThingy.DataGridViewColumnFactory;
 
-namespace XC2SaveNETThingy
+namespace XC2Bf2SaveNETThingy
 {
     public partial class frmMain : Form
     {
@@ -36,7 +37,7 @@ namespace XC2SaveNETThingy
         #region Constructor
         public frmMain()
         {
-            if (!(File.Exists(@"db\XC2Data.db")))
+            if (!(File.Exists(@"XC2Data.db")))
             {
                 string title = "";
                 string message = "";
@@ -48,7 +49,7 @@ namespace XC2SaveNETThingy
                         title = "Database Error!";
                         message =
                             "ERROR: XC2Data.db not found!" + Environment.NewLine +
-                            "Please ensure that XC2Data.db exists in this program's \"db\" subfolder!" + Environment.NewLine +
+                            "Please ensure that XC2Data.db exists in same folder as this program!" + Environment.NewLine +
                             Environment.NewLine +
                             "Program will now exit.";
                         break;

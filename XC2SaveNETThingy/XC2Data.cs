@@ -22,7 +22,7 @@ namespace XC2SaveNETThingy
             //{ LANG.CN, "CN" }
         };
 
-        private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=db\XC2Data.db; Read Only=True;");
+        private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=XC2Data.db; Read Only=True;");
         private static SQLiteDataAdapter dbAdapter;
         private static DataSet ds;
 

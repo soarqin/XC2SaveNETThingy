@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC2SaveNETThingy", "XC2SaveNETThingy\XC2SaveNETThingy.csproj", "{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC2Bf2SaveNETThingy", "XC2Bf2SaveNETThingy\XC2Bf2SaveNETThingy.csproj", "{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC2IraSaveNETThingy", "XC2IraSaveNETThingy\XC2IraSaveNETThingy.csproj", "{D5423B1E-65F6-45DF-BFE1-6BCBC715DA48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XC2SaveNETThingy", "XC2SaveNETThingy\XC2SaveNETThingy.csproj", "{2C9873EE-434D-4921-ADED-735E08FC2921}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5423B1E-65F6-45DF-BFE1-6BCBC715DA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5423B1E-65F6-45DF-BFE1-6BCBC715DA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5423B1E-65F6-45DF-BFE1-6BCBC715DA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5423B1E-65F6-45DF-BFE1-6BCBC715DA48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C9873EE-434D-4921-ADED-735E08FC2921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C9873EE-434D-4921-ADED-735E08FC2921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C9873EE-434D-4921-ADED-735E08FC2921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C9873EE-434D-4921-ADED-735E08FC2921}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
