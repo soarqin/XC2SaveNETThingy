@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Compression;
+using System.IO;
 
 namespace XC2SaveNETThingy
 {
@@ -30,11 +32,6 @@ namespace XC2SaveNETThingy
             { "Party", 0xE9894 },
             { "ItemBox", 0xE98E8 },
             { "Flags", 0xFBBD4 },
-            //{ "Flags_2Bit", 0xFDBD4 },
-            //{ "Flags_4Bit", 0x101BD4 },
-            //{ "Flags_8Bit", 0x102BD4 },
-            //{ "Flags_16Bit", 0x104BD4 },
-            //{ "Flags_32Bit", 0x1063D4 },
             { "ScenarioQuest", 0x1097F4 },
             { "CurrentQuest", 0x1097F8 },
             { "field_1097FC", 0x1097FC },
@@ -477,10 +474,26 @@ namespace XC2SaveNETThingy
         }
     }
 
+    public class XC2SaveIra : XC2Save150, IXC2SaveObject
+    {
+        public new const int SIZE = 0x137B10;
+        public XC2SaveIra(byte[] data) : base(data)
+        {
+
+        }
+    }
+
     public static class XC2SaveDeserializer
     {
         public static XC2Save Deserialize(Byte[] data)
         {
+            Byte[] comp_header = new Byte[] { 0x7E, 0xC0, 0xE2, 0xC9, 0x45, 0x98, 0xCE, 0x03, 0xA7, 0x98, 0xF1, 0x33, 0x6A, 0xE7, 0x25, 0x80 };
+
+            if (data.GetByteSubArray(0, 16).SequenceEqual(comp_header))
+            {
+                data = Decompress(data);
+            }
+
             Byte[] magic = data.GetByteSubArray(0, 4);
 
             if (!(magic.SequenceEqual(XC2Save.CORRECT_MAGIC)))
@@ -513,7 +526,19 @@ namespace XC2SaveNETThingy
                         String.Format("0x{0:X} for ver 1.5.0 save data.", XC2Save150.SIZE) + Environment.NewLine +
                         Environment.NewLine +
                         "Actual Size: 0x" + data.Length.ToString("X");
+                    File.WriteAllBytes("derp.sav", data);
                     throw new Exception(message);
+            }
+        }
+
+        private static Byte[] Decompress(Byte[] data)
+        {
+            using (DeflateStream ds = new DeflateStream(new MemoryStream(data, 18, data.Length - 22), CompressionMode.Decompress))
+            {
+                MemoryStream output = new MemoryStream();
+                ds.CopyTo(output);
+                
+                return output.ToArray();
             }
         }
     }
