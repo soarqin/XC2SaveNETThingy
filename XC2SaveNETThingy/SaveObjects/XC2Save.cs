@@ -11,6 +11,12 @@ namespace XC2SaveNETThingy
 {
     public class XC2Save : IXC2SaveObject
     {
+        public const int SIZE = 0x1176A0;
+        public static readonly Byte[] CORRECT_MAGIC = new Byte[] { 0x5B, 0xA1, 0x03, 0x00 };
+        public const int COMMON_BLADE_IDS_COUNT = 192;
+        public const int QUEST_ID_COUNT = 256;
+        public const int CONTENT_VERSION_COUNT = 5;
+
         private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
             { "Magic", 0x0},
@@ -149,12 +155,6 @@ namespace XC2SaveNETThingy
         public Byte[] Unk_0x1171E8 { get; set; }
         public UInt32[] ContentVersions { get; set; }
         public Byte[] Unk_0x117390 { get; set; }
-
-        public const int SIZE = 0x1176A0;
-        public static readonly Byte[] CORRECT_MAGIC = new Byte[] { 0x5B, 0xA1, 0x03, 0x00 };
-        public const int COMMON_BLADE_IDS_COUNT = 192;
-        public const int QUEST_ID_COUNT = 256;
-        public const int CONTENT_VERSION_COUNT = 5;
 
         public XC2Save(Byte[] data)
         {
@@ -378,88 +378,49 @@ namespace XC2SaveNETThingy
     public class XC2Save150 : XC2Save, IXC2SaveObject
     {
         public new const int SIZE = 0x126D90;
+        public static int DRIVER150EXTS_COUNT = 16;
+        
 
-        // ALL PROVISIONAL, SUPER HACKY
-        // 1.5.0+ DATA NEEDS TO BE FIGURED OUT
-        public Byte[] Unk_0x1176A0 { get; set; }
-        public Weapon[] Driver1Weapons150 { get; set; }
-        public Byte[] Unk_0x117728 { get; set; }
-        public Weapon[] Driver2Weapons150 { get; set; }
-        public Byte[] Unk_0x117A4C { get; set; }
-        public Weapon[] Driver3Weapons150 { get; set; }
-        public Byte[] Unk_0x117D70 { get; set; }
-        public Weapon[] Driver6Weapons150 { get; set; }
-        public Byte[] Unk_0x1186DC { get; set; }
+        public Driver150Ext[] Driver150Exts { get; set; }
+        public Byte[] Unk_0x118ADC { get; set; }
 
         private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
-            { "Unk_0x1176A0", 0x1176A0 },
-            { "Driver1Weapons150", 0x117700 },
-            { "Unk_0x117750", 0x117750 },
-            { "Driver2Weapons150", 0x117A24 },
-            { "Unk_0x117A74", 0x117A74 },
-            { "Driver3Weapons150", 0x117D48 },
-            { "Unk_0x117D98", 0x117D98 },
-            { "Driver6Weapons150", 0x1186B4 },
-            { "Unk_0x118704", 0x118704 }
+            { "Driver150Exts", 0x11769C },
+            { "Unk_0x11A8DC", 0x11A8DC },
         };
 
         public XC2Save150(Byte[] data) : base(data)
         {
-            Unk_0x1176A0 = data.GetByteSubArray(LOC["Unk_0x1176A0"], 0x60);
+            Driver150Exts = new Driver150Ext[16];
+            for (int i = 0; i < Driver150Exts.Length; i++)
+            {
+                Driver150Exts[i] = new Driver150Ext(data.GetByteSubArray(LOC["Driver150Exts"] + (i * Driver150Ext.SIZE), Driver150Ext.SIZE));
+                Drivers[i].Weapons.AddRange(Driver150Exts[i].Weapons150);
+                Drivers[i].DriverArtLevels.AddRange(Driver150Exts[i].DriverArtsLevels150);
+            }
 
-            Driver1Weapons150 = new Weapon[4];
-            for (int i = 0; i < Driver1Weapons150.Length; i++)
-                Driver1Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver1Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
-
-            Unk_0x117728 = data.GetByteSubArray(LOC["Unk_0x117750"], 0x2D4);
-
-            Driver2Weapons150 = new Weapon[4];
-            for (int i = 0; i < Driver2Weapons150.Length; i++)
-                Driver2Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver2Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
-
-            Unk_0x117A4C = data.GetByteSubArray(LOC["Unk_0x117A74"], 0x2D4);
-
-            Driver3Weapons150 = new Weapon[4];
-            for (int i = 0; i < Driver3Weapons150.Length; i++)
-                Driver3Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver3Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
-
-            Unk_0x117D70 = data.GetByteSubArray(LOC["Unk_0x117D98"], 0x91C);
-
-            Driver6Weapons150 = new Weapon[4];
-            for (int i = 0; i < Driver6Weapons150.Length; i++)
-                Driver6Weapons150[i] = new Weapon(data.GetByteSubArray(LOC["Driver6Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE));
-
-            Unk_0x1186DC = data.GetByteSubArray(LOC["Unk_0x118704"], 0xE68C);
+            Unk_0x118ADC = data.GetByteSubArray(LOC["Unk_0x11A8DC"], 0xC4B4);
         }
 
         public override Byte[] ToRawData()
-        {
-            
+        {   
             List<Byte> result = new List<Byte>();
 
             result.AddRange(base.ToRawData());
-            result.AddRange(Unk_0x1176A0);
+            result.RemoveRange(0x11769C, 4);
 
-            foreach (Weapon w in Driver1Weapons150)
-                result.AddRange(w.ToRawData());
+            for (int i = 0; i < Drivers.Length; i++)
+            {
+                Driver150Exts[i].Weapons150 = Drivers[i].Weapons.GetRange(Driver.WEAPONS_COUNT, Driver150Ext.WEAPONS_COUNT);
+                Driver150Exts[i].DriverArtsLevels150 = Drivers[i].DriverArtLevels.GetRange(Driver.DRIVER_ARTS_COUNT, Driver150Ext.DRIVER_ARTS_COUNT);
+            }
 
-            result.AddRange(Unk_0x117728);
+            foreach (Driver150Ext de in Driver150Exts)
+                result.AddRange(de.ToRawData());
 
-            foreach (Weapon w in Driver2Weapons150)
-                result.AddRange(w.ToRawData());
+            result.AddRange(Unk_0x118ADC);
 
-            result.AddRange(Unk_0x117A4C);
-
-            foreach (Weapon w in Driver3Weapons150)
-                result.AddRange(w.ToRawData());
-
-            result.AddRange(Unk_0x117D70);
-
-            foreach (Weapon w in Driver6Weapons150)
-                result.AddRange(w.ToRawData());
-
-            result.AddRange(Unk_0x1186DC);
 
             if (result.Count != SIZE)
             {
@@ -477,11 +438,23 @@ namespace XC2SaveNETThingy
     public class XC2SaveIra : XC2Save150, IXC2SaveObject
     {
         public new const int SIZE = 0x137B10;
+        private static readonly Dictionary<string, int> LOC = new Dictionary<string, int>()
+        {
+            { "DriversIra", 0x126D90 },
+            { "Unk_0x134850", 0x134850 },
+        };
 
-        Byte[] Unk_0x126D90;
+        public DriverIra[] DriversIra { get; set; }
+        public Byte[] Unk_0x134850 { get; set; }
+        
         public XC2SaveIra(byte[] data) : base(data)
         {
-            Unk_0x126D90 = data.GetByteSubArray(0x126D90, SIZE - 0x126D90);
+            DriversIra = new DriverIra[16];
+            for (int i = 0; i < DriversIra.Length; i++)
+                DriversIra[i] = new DriverIra(data.GetByteSubArray(LOC["DriversIra"] + (i * DriverIra.SIZE), DriverIra.SIZE));
+
+            Unk_0x134850 = data.GetByteSubArray(0x134850, SIZE - 0x134850);
+
         }
 
         public override Byte[] ToRawData()
@@ -489,7 +462,11 @@ namespace XC2SaveNETThingy
             List<Byte> result = new List<Byte>();
 
             result.AddRange(base.ToRawData());
-            result.AddRange(Unk_0x126D90);
+
+            foreach (DriverIra d in DriversIra)
+                result.AddRange(d.ToRawData());
+
+            result.AddRange(Unk_0x134850);
 
             return result.ToArray();
         }
@@ -532,6 +509,7 @@ namespace XC2SaveNETThingy
 
                 case XC2SaveIra.SIZE:
                     Console.WriteLine("XC2SaveIra detected.");
+                    File.WriteAllBytes("IraDec.sav", data);
                     return new XC2SaveIra(data);
 
                 default:
@@ -543,7 +521,6 @@ namespace XC2SaveNETThingy
                         String.Format("0x{0:X} for Torna Golden Country DLC save data.", XC2SaveIra.SIZE) + Environment.NewLine +
                         Environment.NewLine +
                         "Actual Size: 0x" + data.Length.ToString("X");
-                    //File.WriteAllBytes("derp.sav", data);
                     throw new Exception(message);
             }
         }

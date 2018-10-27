@@ -424,7 +424,7 @@
             this.gbxDriverUnk_0x057A = new System.Windows.Forms.GroupBox();
             this.hbxDriverUnk_0x057A = new Be.Windows.Forms.HexBox();
             this.gbxDriverUnk_0x0536 = new System.Windows.Forms.GroupBox();
-            this.hbxDriverUnk_0x04FE = new Be.Windows.Forms.HexBox();
+            this.hbxDriverUnk_0x0536 = new Be.Windows.Forms.HexBox();
             this.gbxDriverUnk_0x02EA = new System.Windows.Forms.GroupBox();
             this.hbxDriverUnk_0x02EA = new Be.Windows.Forms.HexBox();
             this.gbxDriverUnk_0x02DC = new System.Windows.Forms.GroupBox();
@@ -4585,7 +4585,7 @@
             // 
             this.nudDriverArtID.Location = new System.Drawing.Point(63, 14);
             this.nudDriverArtID.Maximum = new decimal(new int[] {
-            581,
+            640,
             0,
             0,
             0});
@@ -6765,7 +6765,7 @@
             // 
             // gbxDriverUnk_0x0536
             // 
-            this.gbxDriverUnk_0x0536.Controls.Add(this.hbxDriverUnk_0x04FE);
+            this.gbxDriverUnk_0x0536.Controls.Add(this.hbxDriverUnk_0x0536);
             this.gbxDriverUnk_0x0536.Location = new System.Drawing.Point(6, 298);
             this.gbxDriverUnk_0x0536.Name = "gbxDriverUnk_0x0536";
             this.gbxDriverUnk_0x0536.Size = new System.Drawing.Size(483, 117);
@@ -6773,16 +6773,16 @@
             this.gbxDriverUnk_0x0536.TabStop = false;
             this.gbxDriverUnk_0x0536.Text = "Unk_0x0536";
             // 
-            // hbxDriverUnk_0x04FE
+            // hbxDriverUnk_0x0536
             // 
-            this.hbxDriverUnk_0x04FE.ColumnInfoVisible = true;
-            this.hbxDriverUnk_0x04FE.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxDriverUnk_0x04FE.LineInfoVisible = true;
-            this.hbxDriverUnk_0x04FE.Location = new System.Drawing.Point(6, 19);
-            this.hbxDriverUnk_0x04FE.Name = "hbxDriverUnk_0x04FE";
-            this.hbxDriverUnk_0x04FE.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxDriverUnk_0x04FE.Size = new System.Drawing.Size(470, 89);
-            this.hbxDriverUnk_0x04FE.TabIndex = 151;
+            this.hbxDriverUnk_0x0536.ColumnInfoVisible = true;
+            this.hbxDriverUnk_0x0536.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriverUnk_0x0536.LineInfoVisible = true;
+            this.hbxDriverUnk_0x0536.Location = new System.Drawing.Point(6, 19);
+            this.hbxDriverUnk_0x0536.Name = "hbxDriverUnk_0x0536";
+            this.hbxDriverUnk_0x0536.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriverUnk_0x0536.Size = new System.Drawing.Size(470, 89);
+            this.hbxDriverUnk_0x0536.TabIndex = 151;
             // 
             // gbxDriverUnk_0x02EA
             // 
@@ -19441,7 +19441,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1142, 659);
             this.Controls.Add(this.splitContainer3);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1158, 698);
             this.Name = "frmMain";
@@ -20521,7 +20520,7 @@
         private System.Windows.Forms.GroupBox gbxDriverUnk_0x02EA;
         private Be.Windows.Forms.HexBox hbxDriverUnk_0x02EA;
         private System.Windows.Forms.GroupBox gbxDriverUnk_0x0536;
-        private Be.Windows.Forms.HexBox hbxDriverUnk_0x04FE;
+        private Be.Windows.Forms.HexBox hbxDriverUnk_0x0536;
         private System.Windows.Forms.GroupBox gbxDriverUnk_0x057A;
         private Be.Windows.Forms.HexBox hbxDriverUnk_0x057A;
         private System.Windows.Forms.GroupBox groupBox42;

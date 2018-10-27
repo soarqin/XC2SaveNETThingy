@@ -9,7 +9,8 @@ namespace XC2SaveNETThingy
     public class Driver : IXC2SaveObject
     {
         public static int SIZE = 0x5A0;
-        public const int DRIVER_ARTS_COUNT = 526;
+        public const int DRIVER_ARTS_COUNT = 640;
+        public const int WEAPONS_COUNT = 27;
 
         private static Dictionary<string, int> LOC = new Dictionary<string, int>()
         {
@@ -52,7 +53,7 @@ namespace XC2SaveNETThingy
             { "gap_2EA", 0x2EA },
             { "AccessoryHandle2", 0x2EC },
             { "DriverArtLevels", 0x2F0 },
-            { "gap_536", 0x536 },
+            { "Unk_0x0570", 0x570 },
             { "AccessoryHandle0", 0x574 },
             { "AccessoryId0", 0x578 },
             { "gap_57A", 0x57A },
@@ -95,13 +96,15 @@ namespace XC2SaveNETThingy
         public UInt32 BattleExp { get; set; }
         public UInt32 CurrentSkillPoints { get; set; }
         public UInt32 TotalSkillPoints { get; set; }
-        public Weapon[] Weapons { get; set; }
+        //public Weapon[] Weapons { get; set; }
+        public List<Weapon> Weapons { get; set; }
         public Byte[] Unk_0x02DC { get; set; }
         public UInt16 AccessoryId2 { get; set; }
         public Byte[] Unk_0x02EA { get; set; }
         public ItemHandle AccessoryHandle2 { get; set; }
-        public Byte[] DriverArtLevels { get; set; }
-        public Byte[] Unk_0x0536 { get; set; }
+        //public Byte[] DriverArtLevels { get; set; }
+        public List<Byte> DriverArtLevels { get; set; }
+        public Byte[] Unk_0x0570 { get; set; }
         public ItemHandle AccessoryHandle0 { get; set; }
         public UInt16 AccessoryId0 { get; set; }
         public Byte[] Unk_0x057A { get; set; }
@@ -173,16 +176,17 @@ namespace XC2SaveNETThingy
             CurrentSkillPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SkillPoints"], 4), 0);
             TotalSkillPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["TotalSkillPoints"], 4), 0);
 
-            Weapons = new Weapon[27];
-            for (int i = 0; i < Weapons.Length; i++)
-                Weapons[i] = new Weapon(data.GetByteSubArray(LOC["Weapons"] + (i * Weapon.SIZE), Weapon.SIZE));
+            Weapons = new List<Weapon>();
+            for (int i = 0; i < WEAPONS_COUNT; i++)
+                Weapons.Add(new Weapon(data.GetByteSubArray(LOC["Weapons"] + (i * Weapon.SIZE), Weapon.SIZE)));
 
             Unk_0x02DC = data.GetByteSubArray(LOC["gap_2DC"], 12);
             AccessoryId2 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId2"], 2), 0);
             Unk_0x02EA = data.GetByteSubArray(LOC["gap_2EA"], 2);
             AccessoryHandle2 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle2"], ItemHandle32.SIZE));
-            DriverArtLevels = data.GetByteSubArray(LOC["DriverArtLevels"], 582);
-            Unk_0x0536 = data.GetByteSubArray(LOC["gap_536"], 62);
+            DriverArtLevels = new List<Byte>();
+            DriverArtLevels.AddRange(data.GetByteSubArray(LOC["DriverArtLevels"], DRIVER_ARTS_COUNT));
+            Unk_0x0570 = data.GetByteSubArray(LOC["Unk_0x0570"], 4);
             AccessoryHandle0 = new ItemHandle32(data.GetByteSubArray(LOC["AccessoryHandle0"], ItemHandle32.SIZE));
             AccessoryId0 = BitConverter.ToUInt16(data.GetByteSubArray(LOC["AccessoryId0"], 2), 0);
             Unk_0x057A = data.GetByteSubArray(LOC["gap_57A"], 2);
@@ -197,7 +201,7 @@ namespace XC2SaveNETThingy
             Unk_0x059C = data.GetByteSubArray(LOC["gap_field_59C"], 4);
         }
 
-        public Byte[] ToRawData()
+        public virtual Byte[] ToRawData()
         {
             List<Byte> result = new List<Byte>();
 
@@ -242,15 +246,15 @@ namespace XC2SaveNETThingy
             result.AddRange(BitConverter.GetBytes(CurrentSkillPoints));
             result.AddRange(BitConverter.GetBytes(TotalSkillPoints));
 
-            foreach (Weapon w in Weapons)
-                result.AddRange(w.ToRawData());
+            for (int i = 0; i < WEAPONS_COUNT; i++)
+                result.AddRange(Weapons[i].ToRawData());
 
             result.AddRange(Unk_0x02DC);
             result.AddRange(BitConverter.GetBytes(AccessoryId2));
             result.AddRange(Unk_0x02EA);
             result.AddRange(AccessoryHandle2.ToRawData());
-            result.AddRange(DriverArtLevels);
-            result.AddRange(Unk_0x0536);
+            result.AddRange(DriverArtLevels.GetRange(0, DRIVER_ARTS_COUNT));
+            result.AddRange(Unk_0x0570);
             result.AddRange(AccessoryHandle0.ToRawData());
             result.AddRange(BitConverter.GetBytes(AccessoryId0));
             result.AddRange(Unk_0x057A);
@@ -286,6 +290,129 @@ namespace XC2SaveNETThingy
         public override string ToString()
         {
             return ToString(XC2Data.LANG.EN);
+        }
+    }
+
+    public class Driver150Ext : IXC2SaveObject
+    {
+        public static int SIZE = 0x324;
+        public const int WEAPONS_COUNT = 9;
+        public const int DRIVER_ARTS_COUNT = 103;
+        private static Dictionary<string, int> LOC = new Dictionary<string, int>()
+        {
+            { "Weapons150", 0x0000 },
+            { "Unk_0x00B4", 0x00B4 },
+            { "DriverArtLevels150", 0x01E0 },
+            { "Unk_0x0247", 0x0247 }
+        };
+
+        public List<Weapon> Weapons150 { get; set; }
+        public Byte[] Unk_0x00B4 { get; set; }
+        public List<Byte> DriverArtsLevels150 { get; set; }
+        public Byte[] Unk_0x0247 { get; set; }
+
+        public Driver150Ext(Byte[] data)
+        {
+            Weapons150 = new List<Weapon>();
+            for(int i = 0; i < WEAPONS_COUNT; i++)
+                Weapons150.Add(new Weapon(data.GetByteSubArray(LOC["Weapons150"] + (i * Weapon.SIZE), Weapon.SIZE)));
+
+            Unk_0x00B4 = data.GetByteSubArray(LOC["Unk_0x00B4"], 0x12C);
+
+            DriverArtsLevels150 = new List<Byte>();
+            DriverArtsLevels150.AddRange(data.GetByteSubArray(LOC["DriverArtLevels150"], DRIVER_ARTS_COUNT));
+
+            Unk_0x0247 = data.GetByteSubArray(LOC["Unk_0x0247"], 0xDD);
+        }
+
+        public byte[] ToRawData()
+        {
+            List<Byte> result = new List<Byte>();
+
+            foreach (Weapon w in Weapons150)
+                result.AddRange(w.ToRawData());
+            result.AddRange(Unk_0x00B4);
+            result.AddRange(DriverArtsLevels150);
+            result.AddRange(Unk_0x0247);
+
+            return result.ToArray();
+        }
+    }
+
+    public class DriverIra : Driver, IXC2SaveObject
+    {
+        public static new int SIZE = 0xDAC;
+        public static new int WEAPONS_COUNT = 37;
+        private static Dictionary<string, int> LOC = new Dictionary<string, int>()
+        {
+            { "WeaponAccessoryHandle", 0x05A0 },
+            { "WeaponAccessoryID", 0x05A4 },
+            { "Unk_0x05A6", 0x05A6 },
+            { "RearGuardWeapons", 0x05B0 },
+            { "Unk_0x0894", 0x0894 },
+            { "SwitchTalentWeapons", 0x09AC },
+            { "Unk_0x0C90", 0x0C90 },
+            { "SlotInTeam", 0x0DA8 }
+        };
+
+        public ItemHandle AccessoryWeaponHandle { get; set; }
+        public UInt16 AccessoryWeaponID { get; set; }
+        public Byte[] Unk_0x05A6 { get; set; }
+        public Weapon[] WeaponsRearGuard { get; set; }
+        public Byte[] Unk_0x0894 { get; set; }
+        public Weapon[] WeaponsSwitchTalent { get; set; }
+        public Byte[] Unk_0x0C90 { get; set; }
+        public UInt32 SlotInTeam { get; set; }
+
+        public DriverIra(Byte[] data) : base(data)
+        {
+            AccessoryWeaponHandle = new ItemHandle32(data.GetByteSubArray(LOC["WeaponAccessoryHandle"], ItemHandle32.SIZE));
+            AccessoryWeaponID = BitConverter.ToUInt16(data.GetByteSubArray(LOC["WeaponAccessoryID"], 2), 0);
+            Unk_0x05A6 = data.GetByteSubArray(LOC["Unk_0x05A6"], 0xA);
+
+            WeaponsRearGuard = new Weapon[WEAPONS_COUNT];
+            for (int i = 0; i < WeaponsRearGuard.Length; i++)
+                WeaponsRearGuard[i] = new Weapon(data.GetByteSubArray(LOC["RearGuardWeapons"] + (i * Weapon.SIZE), Weapon.SIZE));
+
+            Unk_0x0894 = data.GetByteSubArray(LOC["Unk_0x0894"], 0x118);
+
+            WeaponsSwitchTalent = new Weapon[WEAPONS_COUNT];
+            for (int i = 0; i < WeaponsSwitchTalent.Length; i++)
+                WeaponsSwitchTalent[i] = new Weapon(data.GetByteSubArray(LOC["SwitchTalentWeapons"] + (i * Weapon.SIZE), Weapon.SIZE));
+
+            Unk_0x0C90 = data.GetByteSubArray(LOC["Unk_0x0C90"], 0x118);
+            SlotInTeam = BitConverter.ToUInt32(data.GetByteSubArray(LOC["SlotInTeam"], 4), 0);
+        }
+
+        public override Byte[] ToRawData()
+        {
+            List<Byte> result = new List<Byte>();
+            result.AddRange(base.ToRawData());
+
+            result.AddRange(AccessoryWeaponHandle.ToRawData());
+            result.AddRange(BitConverter.GetBytes(AccessoryWeaponID));
+            result.AddRange(Unk_0x05A6);
+
+            foreach (Weapon w in WeaponsRearGuard)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x0894);
+
+            foreach (Weapon w in WeaponsSwitchTalent)
+                result.AddRange(w.ToRawData());
+
+            result.AddRange(Unk_0x0C90);
+            result.AddRange(BitConverter.GetBytes(SlotInTeam));
+
+            return result.ToArray();
+        }
+    }
+
+    public class DriverIraExt : IXC2SaveObject
+    {
+        public byte[] ToRawData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

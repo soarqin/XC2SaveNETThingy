@@ -78,11 +78,14 @@ namespace XC2SaveNETThingy
 
             string query = "";
 
-            query +=
-                viewDriverArts + " " +
-                "WHERE ID = 0";
+            if ((args_bits & 1) == 1) // get (none) placeholder art
+            {
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID = 0";
+            }
 
-            if ((args_bits & 1) == 1) // get 1.5.1 and lower arts
+            if ((args_bits & 2) >> 1 == 1) // get 1.5.1 and lower arts
             {
                 if (query != "")
                     query += " UNION ";
@@ -91,13 +94,40 @@ namespace XC2SaveNETThingy
                     "WHERE ID >= 1 AND ID < 582";
             }
 
-            if ((args_bits & 2) >> 1 == 1) // get higher than 1.5.1 arts
+            if ((args_bits & 4) >> 2 == 1) // get Torna DLC arts
             {
                 if (query != "")
                     query += " UNION ";
                 query +=
                     viewDriverArts + " " +
-                    "WHERE ID >= 582 AND ID < 743";
+                    "WHERE ID >= 582 AND ID < 672";
+            }
+
+            if ((args_bits & 8) >> 3 == 1) // get Jin (Challenge Mode) arts
+            {
+                if (query != "")
+                    query += " UNION ";
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID >= 672 AND ID < 678";
+            }
+
+            if ((args_bits & 16) >> 4 == 1) // get Torna DLC Talent arts
+            {
+                if (query != "")
+                    query += " UNION ";
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID >= 678 AND ID < 687";
+            }
+
+            if ((args_bits & 32) >> 5 == 1) // get Dual Swords/Uchigatana arts
+            {
+                if (query != "")
+                    query += " UNION ";
+                query +=
+                    viewDriverArts + " " +
+                    "WHERE ID >= 687";
             }
 
             return GetDataSet(query).Tables[0];
@@ -132,24 +162,34 @@ namespace XC2SaveNETThingy
                     "FROM WeaponTypes WHERE ID >= 1 AND ID < 27";
             }
 
-            if ((args_bits & 2) >> 1 == 1) // get 1.5.0 unknown weapons
+            if ((args_bits & 2) >> 1 == 1) // get Torna DLC unused Aegis Sword
             {
                 if (query != "")
                     query += " UNION ";
                 query +=
                     "SELECT ID, " +
                     "Name_" + LANG_STR[l] + " AS Name " +
-                    "FROM WeaponTypes WHERE ID >= 27 AND ID < 33";
+                    "FROM WeaponTypes WHERE ID = 27";
             }
 
-            if ((args_bits & 4) >> 2 == 1) // get 1.5.0+ weapons
+            if ((args_bits & 4) >> 2 == 1) // get Torna DLC Weapons
             {
                 if (query != "")
                     query += " UNION ";
                 query +=
                     "SELECT ID, " +
                     "Name_" + LANG_STR[l] + " AS Name " +
-                    "FROM WeaponTypes WHERE ID >= 33 AND ID < 37";
+                    "FROM WeaponTypes WHERE ID >= 28 AND ID < 33";
+            }
+
+            if ((args_bits & 8) >> 3 == 1) // get 1.5.0+ (non-Torna) DLC Weapons
+            {
+                if (query != "")
+                    query += " UNION ";
+                query +=
+                    "SELECT ID, " +
+                    "Name_" + LANG_STR[l] + " AS Name " +
+                    "FROM WeaponTypes WHERE ID >= 33";
             }
 
             return GetDataSet(query).Tables[0];

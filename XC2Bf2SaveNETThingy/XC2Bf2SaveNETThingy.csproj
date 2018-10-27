@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DEF62145-1D22-4FDA-968C-0FF20ADEDC4F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>XC2BF2SaveNETThingy</RootNamespace>
-    <AssemblyName>XC2BF2SaveNETThingy</AssemblyName>
+    <RootNamespace>XC2Bf2SaveNETThingy</RootNamespace>
+    <AssemblyName>XC2Bf2SaveNETThingy</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

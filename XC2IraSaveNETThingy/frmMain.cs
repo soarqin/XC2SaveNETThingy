@@ -120,7 +120,7 @@ namespace XC2IraSaveNETThingy
             cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
             cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
 
-            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1, lang), "FriendlyName");
+            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(2, lang), "FriendlyName");
             cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1, lang));
 
             cbxDriverPouchesItemID.BindDataTable(XC2Data.Items(lang));
@@ -241,35 +241,19 @@ namespace XC2IraSaveNETThingy
             {
                 SAVEDATA = XC2SaveDeserializer.Deserialize(File.ReadAllBytes(path));
 
+                if (SAVEDATA.GetType() != typeof(XC2SaveIra))
+                {
+                    string message = FrmMainInternalText["BaseSavInTornaEditor"];
+                    throw new Exception(message);
+                }
+
                 #region 1.5.0+ Raw Data
-                if (SAVEDATA.GetType() == typeof(XC2Save150))
-                {
-                    Console.WriteLine("Save File Type: 1.5.0+");
-                    if (!tbcMain.TabPages.Contains(tab150RawData))
-                        tbcMain.TabPages.Add(tab150RawData);
-                    if (!tbcDrivers.TabPages.Contains(tabDrivers150))
-                        tbcDrivers.TabPages.Add(tabDrivers150);
-                    hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
-                    hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117728);
-                    hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117A4C);
-                    hbx150RawDataUnk_0x117D70.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117D70);
-                    hbx150RawDataUnk_0x1186DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1186DC);
-                    gbxDriverWeapons150.Visible = true;
-                }
-                else
-                {
-                    Console.WriteLine("Save File Type: Pre-1.5.0 or Unknown");
-                    if (tbcMain.TabPages.Contains(tab150RawData))
-                        tbcMain.TabPages.Remove(tab150RawData);
-                    if (tbcDrivers.TabPages.Contains(tabDrivers150))
-                        tbcDrivers.TabPages.Remove(tabDrivers150);
-                    hbx150RawDataUnk_0x1176A0.ByteProvider = null;
-                    hbx150RawDataUnk_0x117728.ByteProvider = null;
-                    hbx150RawDataUnk_0x117A4C.ByteProvider = null;
-                    hbx150RawDataUnk_0x117D70.ByteProvider = null;
-                    hbx150RawDataUnk_0x1186DC.ByteProvider = null;
-                    gbxDriverWeapons150.Visible = false;
-                }
+                //hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2SaveIra)SAVEDATA).Unk_0x1176A0);
+                //hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2SaveIra)SAVEDATA).Unk_0x117728);
+                //hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2SaveIra)SAVEDATA).Unk_0x117A4C);
+                //hbx150RawDataUnk_0x117D70.ByteProvider = new FixedLengthByteProvider(((XC2SaveIra)SAVEDATA).Unk_0x117D70);
+                //hbx150RawDataUnk_0x1186DC.ByteProvider = new FixedLengthByteProvider(((XC2SaveIra)SAVEDATA).Unk_0x1186DC);
+                gbxDriverWeapons150.Visible = true;
                 #endregion
 
                 #region Main
@@ -341,7 +325,7 @@ namespace XC2IraSaveNETThingy
                 #region Drivers                
                 lbxDrivers.DataSource = null;
                 lbxDrivers.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                lbxDrivers.DataSource = SAVEDATA.Drivers;
+                lbxDrivers.DataSource = ((XC2SaveIra)SAVEDATA).DriversIra;
 
                 RefreshDriverList();
                 #endregion Drivers
@@ -580,10 +564,11 @@ namespace XC2IraSaveNETThingy
         }
         private Dictionary<string, string> CreateNewConfig()
         {
-            Dictionary<string, string> conf = new Dictionary<string, string>();
-
-            conf.Add("Language", "EN");
-            conf.Add("EditReadOnlyData", "false");
+            Dictionary<string, string> conf = new Dictionary<string, string>
+            {
+                { "Language", "EN" },
+                { "EditReadOnlyData", "false" }
+            };
 
             return conf;
         }
@@ -659,7 +644,7 @@ namespace XC2IraSaveNETThingy
 
             lbxDrivers.DataSource = null;
             lbxDrivers.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-            lbxDrivers.DataSource = SAVEDATA.Drivers;
+            lbxDrivers.DataSource = ((XC2SaveIra)SAVEDATA).DriversIra;
 
             if (lbxDrivers.SelectedIndex != index)
                 lbxDrivers.SelectedIndex = index;
@@ -685,7 +670,7 @@ namespace XC2IraSaveNETThingy
         }
         private void LoadDriver(int index)
         {
-            Driver d = SAVEDATA.Drivers[index];
+            DriverIra d = ((XC2SaveIra)SAVEDATA).DriversIra[index];
 
             #region Driver ID
             nudDriverID.Value = d.ID;
@@ -743,7 +728,7 @@ namespace XC2IraSaveNETThingy
 
             #region Driver Arts
             cbxDriverWeapons.SelectedValue = 0;
-            nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[0];
+            nudDriverArtLevel.Value = d.DriverArtLevels[0];
             nudDriverArtID.Value = 0;
             #endregion Driver Arts
 
@@ -751,112 +736,112 @@ namespace XC2IraSaveNETThingy
             foreach (ComboBox b in gbxDriverOvertSkills.Controls.OfType<ComboBox>())
                 CreateDriverSkillComboBox(b);
 
-            nudDriverOvertSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0];
-            nudDriverOvertSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1];
-            nudDriverOvertSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2];
+            nudDriverOvertSkill_c1r1.Value = d.OvertSkills[0].IDs[0];
+            nudDriverOvertSkill_c1r2.Value = d.OvertSkills[0].IDs[1];
+            nudDriverOvertSkill_c1r3.Value = d.OvertSkills[0].IDs[2];
 
-            nudDriverOvertSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0];
-            nudDriverOvertSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1];
-            nudDriverOvertSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2];
+            nudDriverOvertSkill_c2r1.Value = d.OvertSkills[1].IDs[0];
+            nudDriverOvertSkill_c2r2.Value = d.OvertSkills[1].IDs[1];
+            nudDriverOvertSkill_c2r3.Value = d.OvertSkills[1].IDs[2];
 
-            nudDriverOvertSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0];
-            nudDriverOvertSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1];
-            nudDriverOvertSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2];
+            nudDriverOvertSkill_c3r1.Value = d.OvertSkills[2].IDs[0];
+            nudDriverOvertSkill_c3r2.Value = d.OvertSkills[2].IDs[1];
+            nudDriverOvertSkill_c3r3.Value = d.OvertSkills[2].IDs[2];
 
-            nudDriverOvertSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0];
-            nudDriverOvertSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1];
-            nudDriverOvertSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2];
+            nudDriverOvertSkill_c4r1.Value = d.OvertSkills[3].IDs[0];
+            nudDriverOvertSkill_c4r2.Value = d.OvertSkills[3].IDs[1];
+            nudDriverOvertSkill_c4r3.Value = d.OvertSkills[3].IDs[2];
 
-            nudDriverOvertSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0];
-            nudDriverOvertSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1];
-            nudDriverOvertSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2];
+            nudDriverOvertSkill_c5r1.Value = d.OvertSkills[4].IDs[0];
+            nudDriverOvertSkill_c5r2.Value = d.OvertSkills[4].IDs[1];
+            nudDriverOvertSkill_c5r3.Value = d.OvertSkills[4].IDs[2];
 
-            cbxDriverOvertSkill_c1r1.SelectedValue = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[0];
-            cbxDriverOvertSkill_c1r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[1];
-            cbxDriverOvertSkill_c1r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].IDs[2];
+            cbxDriverOvertSkill_c1r1.SelectedValue = d.OvertSkills[0].IDs[0];
+            cbxDriverOvertSkill_c1r2.SelectedIndex = d.OvertSkills[0].IDs[1];
+            cbxDriverOvertSkill_c1r3.SelectedIndex = d.OvertSkills[0].IDs[2];
 
-            cbxDriverOvertSkill_c2r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[0];
-            cbxDriverOvertSkill_c2r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[1];
-            cbxDriverOvertSkill_c2r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].IDs[2];
+            cbxDriverOvertSkill_c2r1.SelectedIndex = d.OvertSkills[1].IDs[0];
+            cbxDriverOvertSkill_c2r2.SelectedIndex = d.OvertSkills[1].IDs[1];
+            cbxDriverOvertSkill_c2r3.SelectedIndex = d.OvertSkills[1].IDs[2];
 
-            cbxDriverOvertSkill_c3r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[0];
-            cbxDriverOvertSkill_c3r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[1];
-            cbxDriverOvertSkill_c3r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].IDs[2];
+            cbxDriverOvertSkill_c3r1.SelectedIndex = d.OvertSkills[2].IDs[0];
+            cbxDriverOvertSkill_c3r2.SelectedIndex = d.OvertSkills[2].IDs[1];
+            cbxDriverOvertSkill_c3r3.SelectedIndex = d.OvertSkills[2].IDs[2];
 
-            cbxDriverOvertSkill_c4r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[0];
-            cbxDriverOvertSkill_c4r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[1];
-            cbxDriverOvertSkill_c4r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].IDs[2];
+            cbxDriverOvertSkill_c4r1.SelectedIndex = d.OvertSkills[3].IDs[0];
+            cbxDriverOvertSkill_c4r2.SelectedIndex = d.OvertSkills[3].IDs[1];
+            cbxDriverOvertSkill_c4r3.SelectedIndex = d.OvertSkills[3].IDs[2];
 
-            cbxDriverOvertSkill_c5r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[0];
-            cbxDriverOvertSkill_c5r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[1];
-            cbxDriverOvertSkill_c5r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].IDs[2];
+            cbxDriverOvertSkill_c5r1.SelectedIndex = d.OvertSkills[4].IDs[0];
+            cbxDriverOvertSkill_c5r2.SelectedIndex = d.OvertSkills[4].IDs[1];
+            cbxDriverOvertSkill_c5r3.SelectedIndex = d.OvertSkills[4].IDs[2];
 
-            nudDriverOvertSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].ColumnNo;
-            nudDriverOvertSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].ColumnNo;
-            nudDriverOvertSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].ColumnNo;
-            nudDriverOvertSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].ColumnNo;
-            nudDriverOvertSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].ColumnNo;
+            nudDriverOvertSkill_c1_ColumnNo.Value = d.OvertSkills[0].ColumnNo;
+            nudDriverOvertSkill_c2_ColumnNo.Value = d.OvertSkills[1].ColumnNo;
+            nudDriverOvertSkill_c3_ColumnNo.Value = d.OvertSkills[2].ColumnNo;
+            nudDriverOvertSkill_c4_ColumnNo.Value = d.OvertSkills[3].ColumnNo;
+            nudDriverOvertSkill_c5_ColumnNo.Value = d.OvertSkills[4].ColumnNo;
 
-            nudDriverOvertSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[0].Level;
-            nudDriverOvertSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[1].Level;
-            nudDriverOvertSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[2].Level;
-            nudDriverOvertSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[3].Level;
-            nudDriverOvertSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].OvertSkills[4].Level;
+            nudDriverOvertSkill_c1_Level.Value = d.OvertSkills[0].Level;
+            nudDriverOvertSkill_c2_Level.Value = d.OvertSkills[1].Level;
+            nudDriverOvertSkill_c3_Level.Value = d.OvertSkills[2].Level;
+            nudDriverOvertSkill_c4_Level.Value = d.OvertSkills[3].Level;
+            nudDriverOvertSkill_c5_Level.Value = d.OvertSkills[4].Level;
 
             foreach (ComboBox b in gbxDriverHiddenSkills.Controls.OfType<ComboBox>())
                 CreateDriverSkillComboBox(b);
 
-            nudDriverHiddenSkill_c1r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0];
-            nudDriverHiddenSkill_c1r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1];
-            nudDriverHiddenSkill_c1r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2];
+            nudDriverHiddenSkill_c1r1.Value = d.HiddenSkills[0].IDs[0];
+            nudDriverHiddenSkill_c1r2.Value = d.HiddenSkills[0].IDs[1];
+            nudDriverHiddenSkill_c1r3.Value = d.HiddenSkills[0].IDs[2];
 
-            nudDriverHiddenSkill_c2r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0];
-            nudDriverHiddenSkill_c2r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1];
-            nudDriverHiddenSkill_c2r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2];
+            nudDriverHiddenSkill_c2r1.Value = d.HiddenSkills[1].IDs[0];
+            nudDriverHiddenSkill_c2r2.Value = d.HiddenSkills[1].IDs[1];
+            nudDriverHiddenSkill_c2r3.Value = d.HiddenSkills[1].IDs[2];
 
-            nudDriverHiddenSkill_c3r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0];
-            nudDriverHiddenSkill_c3r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1];
-            nudDriverHiddenSkill_c3r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2];
+            nudDriverHiddenSkill_c3r1.Value = d.HiddenSkills[2].IDs[0];
+            nudDriverHiddenSkill_c3r2.Value = d.HiddenSkills[2].IDs[1];
+            nudDriverHiddenSkill_c3r3.Value = d.HiddenSkills[2].IDs[2];
 
-            nudDriverHiddenSkill_c4r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0];
-            nudDriverHiddenSkill_c4r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1];
-            nudDriverHiddenSkill_c4r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2];
+            nudDriverHiddenSkill_c4r1.Value = d.HiddenSkills[3].IDs[0];
+            nudDriverHiddenSkill_c4r2.Value = d.HiddenSkills[3].IDs[1];
+            nudDriverHiddenSkill_c4r3.Value = d.HiddenSkills[3].IDs[2];
 
-            nudDriverHiddenSkill_c5r1.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0];
-            nudDriverHiddenSkill_c5r2.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1];
-            nudDriverHiddenSkill_c5r3.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2];
+            nudDriverHiddenSkill_c5r1.Value = d.HiddenSkills[4].IDs[0];
+            nudDriverHiddenSkill_c5r2.Value = d.HiddenSkills[4].IDs[1];
+            nudDriverHiddenSkill_c5r3.Value = d.HiddenSkills[4].IDs[2];
 
-            cbxDriverHiddenSkill_c1r1.SelectedValue = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[0];
-            cbxDriverHiddenSkill_c1r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[1];
-            cbxDriverHiddenSkill_c1r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].IDs[2];
+            cbxDriverHiddenSkill_c1r1.SelectedValue = d.HiddenSkills[0].IDs[0];
+            cbxDriverHiddenSkill_c1r2.SelectedIndex = d.HiddenSkills[0].IDs[1];
+            cbxDriverHiddenSkill_c1r3.SelectedIndex = d.HiddenSkills[0].IDs[2];
 
-            cbxDriverHiddenSkill_c2r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[0];
-            cbxDriverHiddenSkill_c2r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[1];
-            cbxDriverHiddenSkill_c2r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].IDs[2];
+            cbxDriverHiddenSkill_c2r1.SelectedIndex = d.HiddenSkills[1].IDs[0];
+            cbxDriverHiddenSkill_c2r2.SelectedIndex = d.HiddenSkills[1].IDs[1];
+            cbxDriverHiddenSkill_c2r3.SelectedIndex = d.HiddenSkills[1].IDs[2];
 
-            cbxDriverHiddenSkill_c3r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[0];
-            cbxDriverHiddenSkill_c3r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[1];
-            cbxDriverHiddenSkill_c3r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].IDs[2];
+            cbxDriverHiddenSkill_c3r1.SelectedIndex = d.HiddenSkills[2].IDs[0];
+            cbxDriverHiddenSkill_c3r2.SelectedIndex = d.HiddenSkills[2].IDs[1];
+            cbxDriverHiddenSkill_c3r3.SelectedIndex = d.HiddenSkills[2].IDs[2];
 
-            cbxDriverHiddenSkill_c4r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[0];
-            cbxDriverHiddenSkill_c4r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[1];
-            cbxDriverHiddenSkill_c4r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].IDs[2];
+            cbxDriverHiddenSkill_c4r1.SelectedIndex = d.HiddenSkills[3].IDs[0];
+            cbxDriverHiddenSkill_c4r2.SelectedIndex = d.HiddenSkills[3].IDs[1];
+            cbxDriverHiddenSkill_c4r3.SelectedIndex = d.HiddenSkills[3].IDs[2];
 
-            cbxDriverHiddenSkill_c5r1.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[0];
-            cbxDriverHiddenSkill_c5r2.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[1];
-            cbxDriverHiddenSkill_c5r3.SelectedIndex = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].IDs[2];
+            cbxDriverHiddenSkill_c5r1.SelectedIndex = d.HiddenSkills[4].IDs[0];
+            cbxDriverHiddenSkill_c5r2.SelectedIndex = d.HiddenSkills[4].IDs[1];
+            cbxDriverHiddenSkill_c5r3.SelectedIndex = d.HiddenSkills[4].IDs[2];
 
-            nudDriverHiddenSkill_c1_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].ColumnNo;
-            nudDriverHiddenSkill_c2_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].ColumnNo;
-            nudDriverHiddenSkill_c3_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].ColumnNo;
-            nudDriverHiddenSkill_c4_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].ColumnNo;
-            nudDriverHiddenSkill_c5_ColumnNo.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].ColumnNo;
+            nudDriverHiddenSkill_c1_ColumnNo.Value = d.HiddenSkills[0].ColumnNo;
+            nudDriverHiddenSkill_c2_ColumnNo.Value = d.HiddenSkills[1].ColumnNo;
+            nudDriverHiddenSkill_c3_ColumnNo.Value = d.HiddenSkills[2].ColumnNo;
+            nudDriverHiddenSkill_c4_ColumnNo.Value = d.HiddenSkills[3].ColumnNo;
+            nudDriverHiddenSkill_c5_ColumnNo.Value = d.HiddenSkills[4].ColumnNo;
 
-            nudDriverHiddenSkill_c1_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[0].Level;
-            nudDriverHiddenSkill_c2_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[1].Level;
-            nudDriverHiddenSkill_c3_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[2].Level;
-            nudDriverHiddenSkill_c4_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[3].Level;
-            nudDriverHiddenSkill_c5_Level.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].HiddenSkills[4].Level;
+            nudDriverHiddenSkill_c1_Level.Value = d.HiddenSkills[0].Level;
+            nudDriverHiddenSkill_c2_Level.Value = d.HiddenSkills[1].Level;
+            nudDriverHiddenSkill_c3_Level.Value = d.HiddenSkills[2].Level;
+            nudDriverHiddenSkill_c4_Level.Value = d.HiddenSkills[3].Level;
+            nudDriverHiddenSkill_c5_Level.Value = d.HiddenSkills[4].Level;
             #endregion Driver Skills
 
             #region Driver Pouch Items
@@ -866,28 +851,28 @@ namespace XC2IraSaveNETThingy
             #endregion Driver Pouch Items
 
             #region Driver Accessories
-            nudDriverAccessory1ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId0;
-            nudDriverAccessory1Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Type;
-            nudDriverAccessory1Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle0.Serial;
+            nudDriverAccessory1ID.Value = d.AccessoryId0;
+            nudDriverAccessory1Type.Value = d.AccessoryHandle0.Type;
+            nudDriverAccessory1Serial.Value = d.AccessoryHandle0.Serial;
 
-            nudDriverAccessory2ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId1;
-            nudDriverAccessory2Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle1.Type;
-            nudDriverAccessory2Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle1.Serial;
+            nudDriverAccessory2ID.Value = d.AccessoryId1;
+            nudDriverAccessory2Type.Value = d.AccessoryHandle1.Type;
+            nudDriverAccessory2Serial.Value = d.AccessoryHandle1.Serial;
 
-            nudDriverAccessory3ID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryId2;
-            nudDriverAccessory3Type.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Type;
-            nudDriverAccessory3Serial.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].AccessoryHandle2.Serial;
+            nudDriverAccessory3ID.Value = d.AccessoryWeaponID;
+            nudDriverAccessory3Type.Value = d.AccessoryWeaponHandle.Type;
+            nudDriverAccessory3Serial.Value = d.AccessoryWeaponHandle.Serial;
             #endregion Driver Accessories
 
             #region Driver Unknown
-            hbxDriverUnk_0x002C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x002C);
-            hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x00A8);
-            hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02DC);
-            hbxDriverUnk_0x02EA.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02EA);
-            hbxDriverUnk_0x04FE.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0536);
-            hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x057A);
-            hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0582);
-            hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
+            hbxDriverUnk_0x002C.ByteProvider = new FixedLengthByteProvider(d.Unk_0x002C);
+            hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(d.Unk_0x00A8);
+            hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(d.Unk_0x02DC);
+            hbxDriverUnk_0x02EA.ByteProvider = new FixedLengthByteProvider(d.Unk_0x02EA);
+            //hbxDriverUnk_0x0536.ByteProvider = new FixedLengthByteProvider(d.DriverArtLevelsIra);
+            hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(d.Unk_0x057A);
+            hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(d.Unk_0x0582);
+            hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(d.Unk_0x059C);
             #endregion Driver Unknown
 
             #region Driver 1.5.0
@@ -2014,11 +1999,6 @@ namespace XC2IraSaveNETThingy
             }
             ReloadLanguage();
 
-            // hide 1.5.0+ related tabs
-            tbcMain.TabPages.Remove(tab150RawData);
-            tbcDrivers.TabPages.Remove(tabDrivers150);
-            gbxDriverWeapons150.Enabled = false;
-
             // disable Language drop down menu until it is done
             settingsToolStripMenuItem.DropDownItems.Remove(languageToolStripMenuItem);
         }
@@ -2243,10 +2223,10 @@ namespace XC2IraSaveNETThingy
         private void nudDriverArtID_ValueChanged(object sender, EventArgs e)
         {
             cbxDriverArtID.SelectedValue = (UInt16)nudDriverArtID.Value;
-            nudDriverArtLevel.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value];
+            nudDriverArtLevel.Value = ((XC2SaveIra)SAVEDATA).DriversIra[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value];
         }
         private void cbxDriverArt_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverArtID.Value = Convert.ToUInt16(cbxDriverArtID.SelectedValue);
-        private void nudDriverArtLevel_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value] = (Byte)nudDriverArtLevel.Value;
+        private void nudDriverArtLevel_ValueChanged(object sender, EventArgs e) => ((XC2SaveIra)SAVEDATA).DriversIra[lbxDrivers.SelectedIndex].DriverArtLevels[(int)nudDriverArtID.Value] = (Byte)nudDriverArtLevel.Value;
         #endregion Driver Arts Levels
 
         #region Driver Pouches
@@ -2519,196 +2499,196 @@ namespace XC2IraSaveNETThingy
         // 1.5.0+ DATA NEEDS TO BE FIGURED OUT
         private void cbxDriverWeapons150_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if ((i < 0))
-            {
-                nudDriverWeaponArt150Id1.Value = 0;
-                cbxDriverWeaponArt150Id1.SelectedValue = 0;
-                nudDriverWeaponArt150Id2.Value = 0;
-                cbxDriverWeaponArt150Id2.SelectedValue = 0;
-                nudDriverWeaponArt150Id3.Value = 0;
-                cbxDriverWeaponArt150Id3.SelectedValue = 0;
-                nudDriverWeaponPoints150.Value = 0;
-                nudDriverTotalWeaponPoints150.Value = 0;
-            }
-            else
-            {
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if ((i < 0))
+            //{
+            //    nudDriverWeaponArt150Id1.Value = 0;
+            //    cbxDriverWeaponArt150Id1.SelectedValue = 0;
+            //    nudDriverWeaponArt150Id2.Value = 0;
+            //    cbxDriverWeaponArt150Id2.SelectedValue = 0;
+            //    nudDriverWeaponArt150Id3.Value = 0;
+            //    cbxDriverWeaponArt150Id3.SelectedValue = 0;
+            //    nudDriverWeaponPoints150.Value = 0;
+            //    nudDriverTotalWeaponPoints150.Value = 0;
+            //}
+            //else
+            //{
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
+            //            cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
+            //            nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
+            //            cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
+            //            nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
+            //            cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
+            //            nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints;
+            //            nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints;
+            //            break;
 
-                    case 1:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints;
-                        break;
+            //        case 1:
+            //            nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
+            //            cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
+            //            nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
+            //            cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
+            //            nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
+            //            cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
+            //            nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints;
+            //            nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints;
+            //            break;
 
-                    case 2:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints;
-                        break;
+            //        case 2:
+            //            nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
+            //            cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
+            //            nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
+            //            cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
+            //            nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
+            //            cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
+            //            nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints;
+            //            nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints;
+            //            break;
 
-                    case 5:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints;
-                        break;
-                }
-            }
+            //        case 5:
+            //            nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
+            //            cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
+            //            nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
+            //            cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
+            //            nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
+            //            cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
+            //            nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints;
+            //            nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints;
+            //            break;
+            //    }
+            //}
 
 
         }
         private void nudDriverWeaponArt150Id1_ValueChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if (!(i < 0))
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            break;
 
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
+            //        case 1:
+            //            ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            break;
 
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
+            //        case 2:
+            //            ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            break;
 
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
-                }
+            //        case 5:
+            //            ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
+            //            break;
+            //    }
         }
         private void nudDriverWeaponArt150Id2_ValueChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if (!(i < 0))
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            break;
 
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
+            //        case 1:
+            //            ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            break;
 
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
+            //        case 2:
+            //            ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            break;
 
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
-                }
+            //        case 5:
+            //            ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
+            //            break;
+            //    }
         }
         private void nudDriverWeaponArt150Id3_ValueChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if (!(i < 0))
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            break;
 
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
+            //        case 1:
+            //            ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            break;
 
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
+            //        case 2:
+            //            ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            break;
 
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
-                }
+            //        case 5:
+            //            ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
+            //            break;
+            //    }
         }
         private void nudDriverWeaponPoints150_ValueChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if (!(i < 0))
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+            //            break;
 
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
+            //        case 1:
+            //            ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+            //            break;
 
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
+            //        case 2:
+            //            ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+            //            break;
 
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
-                }
+            //        case 5:
+            //            ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
+            //            break;
+            //    }
         }
         private void nudDriverTotalWeaponPoints150_ValueChanged(object sender, EventArgs e)
         {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
+            //int i = cbxDriverWeapons150.SelectedIndex - 1;
+            //if (!(i < 0))
+            //    switch (lbxDrivers.SelectedIndex)
+            //    {
+            //        case 0:
+            //            ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+            //            break;
 
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
+            //        case 1:
+            //            ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+            //            break;
 
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
+            //        case 2:
+            //            ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+            //            break;
 
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
-                }
+            //        case 5:
+            //            ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
+            //            break;
+            //    }
         }
         private void cbxDriverWeaponArt150Id1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id1.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id1.SelectedValue);
         private void cbxDriverWeaponArt150Id2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id2.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id2.SelectedValue);
