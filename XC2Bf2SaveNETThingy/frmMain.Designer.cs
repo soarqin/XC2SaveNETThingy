@@ -188,12 +188,8 @@
             this.lbxDrivers = new System.Windows.Forms.ListBox();
             this.tbcDrivers = new System.Windows.Forms.TabControl();
             this.tabDriversMisc = new System.Windows.Forms.TabPage();
-            this.gbxExpSkillPoints = new System.Windows.Forms.GroupBox();
+            this.gbxDriverExp = new System.Windows.Forms.GroupBox();
             this.nudDriverBonusExp = new System.Windows.Forms.NumericUpDown();
-            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
-            this.lblDriverTotalSkillPoints = new System.Windows.Forms.Label();
-            this.lblDriverCurrentSkillPoints = new System.Windows.Forms.Label();
-            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
             this.lblDriverBattleExp = new System.Windows.Forms.Label();
             this.lblDriverBonusExp = new System.Windows.Forms.Label();
             this.nudDriverBattleExp = new System.Windows.Forms.NumericUpDown();
@@ -320,6 +316,11 @@
             this.lblDriverIdeasTruthLevel = new System.Windows.Forms.Label();
             this.lblDriverIdeasTruthPoints = new System.Windows.Forms.Label();
             this.tabDriversSkills = new System.Windows.Forms.TabPage();
+            this.gbxDriverSkillPoints = new System.Windows.Forms.GroupBox();
+            this.lblDriverCurrentSkillPoints = new System.Windows.Forms.Label();
+            this.nudDriverCurrentSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.nudDriverTotalSkillPoints = new System.Windows.Forms.NumericUpDown();
+            this.lblDriverTotalSkillPoints = new System.Windows.Forms.Label();
             this.gbxDriverHiddenSkills = new System.Windows.Forms.GroupBox();
             this.nudDriverHiddenSkill_c5_Level = new System.Windows.Forms.NumericUpDown();
             this.lblDriverHiddenSkillsColumn5Level = new System.Windows.Forms.Label();
@@ -446,6 +447,11 @@
             this.gbxDriverUnk_0x002C = new System.Windows.Forms.GroupBox();
             this.hbxDriverUnk_0x002C = new Be.Windows.Forms.HexBox();
             this.tabDrivers150 = new System.Windows.Forms.TabPage();
+            this.tbcDriver150Ext = new System.Windows.Forms.TabControl();
+            this.tabDriver150ExtUnk_0x00B4 = new System.Windows.Forms.TabPage();
+            this.hbxDriver150ExtUnk_0x00B4 = new Be.Windows.Forms.HexBox();
+            this.tabDriver150ExtUnk_0x0247 = new System.Windows.Forms.TabPage();
+            this.hbxDriver150ExtUnk_0x0247 = new Be.Windows.Forms.HexBox();
             this.tabBlades = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbxBlades = new System.Windows.Forms.ListBox();
@@ -1664,11 +1670,6 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.hbxDriver150ExtUnk_0x00B4 = new Be.Windows.Forms.HexBox();
-            this.hbxDriver150ExtUnk_0x0247 = new Be.Windows.Forms.HexBox();
-            this.tbcDriver150Ext = new System.Windows.Forms.TabControl();
-            this.tabDriver150ExtUnk_0x00B4 = new System.Windows.Forms.TabPage();
-            this.tabDriver150ExtUnk_0x0247 = new System.Windows.Forms.TabPage();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -1748,10 +1749,8 @@
             this.splitContainer2.SuspendLayout();
             this.tbcDrivers.SuspendLayout();
             this.tabDriversMisc.SuspendLayout();
-            this.gbxExpSkillPoints.SuspendLayout();
+            this.gbxDriverExp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).BeginInit();
             this.gbxDriver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverID)).BeginInit();
@@ -1811,6 +1810,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).BeginInit();
             this.tabDriversSkills.SuspendLayout();
+            this.gbxDriverSkillPoints.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).BeginInit();
             this.gbxDriverHiddenSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_Level)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_ColumnNo)).BeginInit();
@@ -1873,6 +1875,9 @@
             this.gbxDriverUnk_0x00A8.SuspendLayout();
             this.gbxDriverUnk_0x002C.SuspendLayout();
             this.tabDrivers150.SuspendLayout();
+            this.tbcDriver150Ext.SuspendLayout();
+            this.tabDriver150ExtUnk_0x00B4.SuspendLayout();
+            this.tabDriver150ExtUnk_0x0247.SuspendLayout();
             this.tabBlades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -2466,9 +2471,6 @@
             this.splitContainer3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.cmsItems.SuspendLayout();
-            this.tbcDriver150Ext.SuspendLayout();
-            this.tabDriver150ExtUnk_0x00B4.SuspendLayout();
-            this.tabDriver150ExtUnk_0x0247.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -4304,7 +4306,7 @@
             // 
             // tabDriversMisc
             // 
-            this.tabDriversMisc.Controls.Add(this.gbxExpSkillPoints);
+            this.tabDriversMisc.Controls.Add(this.gbxDriverExp);
             this.tabDriversMisc.Controls.Add(this.gbxDriver);
             this.tabDriversMisc.Controls.Add(this.gbxDriverPouches);
             this.tabDriversMisc.Controls.Add(this.gbxDriverAccessories);
@@ -4321,22 +4323,18 @@
             this.tabDriversMisc.Text = "Misc";
             this.tabDriversMisc.UseVisualStyleBackColor = true;
             // 
-            // gbxExpSkillPoints
+            // gbxDriverExp
             // 
-            this.gbxExpSkillPoints.Controls.Add(this.nudDriverBonusExp);
-            this.gbxExpSkillPoints.Controls.Add(this.nudDriverTotalSkillPoints);
-            this.gbxExpSkillPoints.Controls.Add(this.lblDriverTotalSkillPoints);
-            this.gbxExpSkillPoints.Controls.Add(this.lblDriverCurrentSkillPoints);
-            this.gbxExpSkillPoints.Controls.Add(this.nudDriverCurrentSkillPoints);
-            this.gbxExpSkillPoints.Controls.Add(this.lblDriverBattleExp);
-            this.gbxExpSkillPoints.Controls.Add(this.lblDriverBonusExp);
-            this.gbxExpSkillPoints.Controls.Add(this.nudDriverBattleExp);
-            this.gbxExpSkillPoints.Location = new System.Drawing.Point(6, 336);
-            this.gbxExpSkillPoints.Name = "gbxExpSkillPoints";
-            this.gbxExpSkillPoints.Size = new System.Drawing.Size(195, 98);
-            this.gbxExpSkillPoints.TabIndex = 46;
-            this.gbxExpSkillPoints.TabStop = false;
-            this.gbxExpSkillPoints.Text = "Exp/Skill Points";
+            this.gbxDriverExp.Controls.Add(this.nudDriverBonusExp);
+            this.gbxDriverExp.Controls.Add(this.lblDriverBattleExp);
+            this.gbxDriverExp.Controls.Add(this.lblDriverBonusExp);
+            this.gbxDriverExp.Controls.Add(this.nudDriverBattleExp);
+            this.gbxDriverExp.Location = new System.Drawing.Point(6, 336);
+            this.gbxDriverExp.Name = "gbxDriverExp";
+            this.gbxDriverExp.Size = new System.Drawing.Size(195, 58);
+            this.gbxDriverExp.TabIndex = 46;
+            this.gbxDriverExp.TabStop = false;
+            this.gbxDriverExp.Text = "Exp";
             // 
             // nudDriverBonusExp
             // 
@@ -4350,50 +4348,6 @@
             this.nudDriverBonusExp.Size = new System.Drawing.Size(76, 20);
             this.nudDriverBonusExp.TabIndex = 35;
             this.nudDriverBonusExp.ValueChanged += new System.EventHandler(this.nudDriverBonusExp_ValueChanged);
-            // 
-            // nudDriverTotalSkillPoints
-            // 
-            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(108, 72);
-            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
-            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverTotalSkillPoints.TabIndex = 38;
-            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
-            // 
-            // lblDriverTotalSkillPoints
-            // 
-            this.lblDriverTotalSkillPoints.AutoSize = true;
-            this.lblDriverTotalSkillPoints.Location = new System.Drawing.Point(8, 74);
-            this.lblDriverTotalSkillPoints.Name = "lblDriverTotalSkillPoints";
-            this.lblDriverTotalSkillPoints.Size = new System.Drawing.Size(88, 13);
-            this.lblDriverTotalSkillPoints.TabIndex = 20;
-            this.lblDriverTotalSkillPoints.Text = "Total Skill Points:";
-            // 
-            // lblDriverCurrentSkillPoints
-            // 
-            this.lblDriverCurrentSkillPoints.AutoSize = true;
-            this.lblDriverCurrentSkillPoints.Location = new System.Drawing.Point(8, 54);
-            this.lblDriverCurrentSkillPoints.Name = "lblDriverCurrentSkillPoints";
-            this.lblDriverCurrentSkillPoints.Size = new System.Drawing.Size(98, 13);
-            this.lblDriverCurrentSkillPoints.TabIndex = 19;
-            this.lblDriverCurrentSkillPoints.Text = "Current Skill Points:";
-            // 
-            // nudDriverCurrentSkillPoints
-            // 
-            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(108, 52);
-            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
-            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
-            this.nudDriverCurrentSkillPoints.TabIndex = 37;
-            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
             // 
             // lblDriverBattleExp
             // 
@@ -5824,6 +5778,7 @@
             // 
             // tabDriversSkills
             // 
+            this.tabDriversSkills.Controls.Add(this.gbxDriverSkillPoints);
             this.tabDriversSkills.Controls.Add(this.gbxDriverHiddenSkills);
             this.tabDriversSkills.Controls.Add(this.gbxDriverOvertSkills);
             this.tabDriversSkills.Location = new System.Drawing.Point(4, 22);
@@ -5833,6 +5788,63 @@
             this.tabDriversSkills.TabIndex = 1;
             this.tabDriversSkills.Text = "Skills";
             this.tabDriversSkills.UseVisualStyleBackColor = true;
+            // 
+            // gbxDriverSkillPoints
+            // 
+            this.gbxDriverSkillPoints.Controls.Add(this.lblDriverCurrentSkillPoints);
+            this.gbxDriverSkillPoints.Controls.Add(this.nudDriverCurrentSkillPoints);
+            this.gbxDriverSkillPoints.Controls.Add(this.nudDriverTotalSkillPoints);
+            this.gbxDriverSkillPoints.Controls.Add(this.lblDriverTotalSkillPoints);
+            this.gbxDriverSkillPoints.Location = new System.Drawing.Point(6, 306);
+            this.gbxDriverSkillPoints.Name = "gbxDriverSkillPoints";
+            this.gbxDriverSkillPoints.Size = new System.Drawing.Size(195, 58);
+            this.gbxDriverSkillPoints.TabIndex = 47;
+            this.gbxDriverSkillPoints.TabStop = false;
+            this.gbxDriverSkillPoints.Text = "Skill Points";
+            // 
+            // lblDriverCurrentSkillPoints
+            // 
+            this.lblDriverCurrentSkillPoints.AutoSize = true;
+            this.lblDriverCurrentSkillPoints.Location = new System.Drawing.Point(8, 14);
+            this.lblDriverCurrentSkillPoints.Name = "lblDriverCurrentSkillPoints";
+            this.lblDriverCurrentSkillPoints.Size = new System.Drawing.Size(98, 13);
+            this.lblDriverCurrentSkillPoints.TabIndex = 19;
+            this.lblDriverCurrentSkillPoints.Text = "Current Skill Points:";
+            // 
+            // nudDriverCurrentSkillPoints
+            // 
+            this.nudDriverCurrentSkillPoints.Location = new System.Drawing.Point(108, 12);
+            this.nudDriverCurrentSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverCurrentSkillPoints.Name = "nudDriverCurrentSkillPoints";
+            this.nudDriverCurrentSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverCurrentSkillPoints.TabIndex = 37;
+            this.nudDriverCurrentSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverCurrentSkillPoints_ValueChanged);
+            // 
+            // nudDriverTotalSkillPoints
+            // 
+            this.nudDriverTotalSkillPoints.Location = new System.Drawing.Point(108, 32);
+            this.nudDriverTotalSkillPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudDriverTotalSkillPoints.Name = "nudDriverTotalSkillPoints";
+            this.nudDriverTotalSkillPoints.Size = new System.Drawing.Size(76, 20);
+            this.nudDriverTotalSkillPoints.TabIndex = 38;
+            this.nudDriverTotalSkillPoints.ValueChanged += new System.EventHandler(this.nudDriverTotalSkillPoints_ValueChanged);
+            // 
+            // lblDriverTotalSkillPoints
+            // 
+            this.lblDriverTotalSkillPoints.AutoSize = true;
+            this.lblDriverTotalSkillPoints.Location = new System.Drawing.Point(8, 34);
+            this.lblDriverTotalSkillPoints.Name = "lblDriverTotalSkillPoints";
+            this.lblDriverTotalSkillPoints.Size = new System.Drawing.Size(88, 13);
+            this.lblDriverTotalSkillPoints.TabIndex = 20;
+            this.lblDriverTotalSkillPoints.Text = "Total Skill Points:";
             // 
             // gbxDriverHiddenSkills
             // 
@@ -7259,6 +7271,69 @@
             this.tabDrivers150.TabIndex = 3;
             this.tabDrivers150.Text = "1.5.0+";
             this.tabDrivers150.UseVisualStyleBackColor = true;
+            // 
+            // tbcDriver150Ext
+            // 
+            this.tbcDriver150Ext.Controls.Add(this.tabDriver150ExtUnk_0x00B4);
+            this.tbcDriver150Ext.Controls.Add(this.tabDriver150ExtUnk_0x0247);
+            this.tbcDriver150Ext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcDriver150Ext.Location = new System.Drawing.Point(3, 3);
+            this.tbcDriver150Ext.Name = "tbcDriver150Ext";
+            this.tbcDriver150Ext.SelectedIndex = 0;
+            this.tbcDriver150Ext.Size = new System.Drawing.Size(942, 538);
+            this.tbcDriver150Ext.TabIndex = 157;
+            // 
+            // tabDriver150ExtUnk_0x00B4
+            // 
+            this.tabDriver150ExtUnk_0x00B4.Controls.Add(this.hbxDriver150ExtUnk_0x00B4);
+            this.tabDriver150ExtUnk_0x00B4.Location = new System.Drawing.Point(4, 22);
+            this.tabDriver150ExtUnk_0x00B4.Name = "tabDriver150ExtUnk_0x00B4";
+            this.tabDriver150ExtUnk_0x00B4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriver150ExtUnk_0x00B4.Size = new System.Drawing.Size(934, 512);
+            this.tabDriver150ExtUnk_0x00B4.TabIndex = 0;
+            this.tabDriver150ExtUnk_0x00B4.Text = "Unk_0x00B4";
+            this.tabDriver150ExtUnk_0x00B4.UseVisualStyleBackColor = true;
+            // 
+            // hbxDriver150ExtUnk_0x00B4
+            // 
+            this.hbxDriver150ExtUnk_0x00B4.ColumnInfoVisible = true;
+            this.hbxDriver150ExtUnk_0x00B4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxDriver150ExtUnk_0x00B4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriver150ExtUnk_0x00B4.LineInfoVisible = true;
+            this.hbxDriver150ExtUnk_0x00B4.Location = new System.Drawing.Point(3, 3);
+            this.hbxDriver150ExtUnk_0x00B4.Name = "hbxDriver150ExtUnk_0x00B4";
+            this.hbxDriver150ExtUnk_0x00B4.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriver150ExtUnk_0x00B4.Size = new System.Drawing.Size(928, 506);
+            this.hbxDriver150ExtUnk_0x00B4.StringViewVisible = true;
+            this.hbxDriver150ExtUnk_0x00B4.TabIndex = 151;
+            this.hbxDriver150ExtUnk_0x00B4.UseFixedBytesPerLine = true;
+            this.hbxDriver150ExtUnk_0x00B4.VScrollBarVisible = true;
+            // 
+            // tabDriver150ExtUnk_0x0247
+            // 
+            this.tabDriver150ExtUnk_0x0247.Controls.Add(this.hbxDriver150ExtUnk_0x0247);
+            this.tabDriver150ExtUnk_0x0247.Location = new System.Drawing.Point(4, 22);
+            this.tabDriver150ExtUnk_0x0247.Name = "tabDriver150ExtUnk_0x0247";
+            this.tabDriver150ExtUnk_0x0247.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDriver150ExtUnk_0x0247.Size = new System.Drawing.Size(934, 512);
+            this.tabDriver150ExtUnk_0x0247.TabIndex = 1;
+            this.tabDriver150ExtUnk_0x0247.Text = "Unk_0x0247";
+            this.tabDriver150ExtUnk_0x0247.UseVisualStyleBackColor = true;
+            // 
+            // hbxDriver150ExtUnk_0x0247
+            // 
+            this.hbxDriver150ExtUnk_0x0247.ColumnInfoVisible = true;
+            this.hbxDriver150ExtUnk_0x0247.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hbxDriver150ExtUnk_0x0247.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hbxDriver150ExtUnk_0x0247.LineInfoVisible = true;
+            this.hbxDriver150ExtUnk_0x0247.Location = new System.Drawing.Point(3, 3);
+            this.hbxDriver150ExtUnk_0x0247.Name = "hbxDriver150ExtUnk_0x0247";
+            this.hbxDriver150ExtUnk_0x0247.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+            this.hbxDriver150ExtUnk_0x0247.Size = new System.Drawing.Size(928, 506);
+            this.hbxDriver150ExtUnk_0x0247.StringViewVisible = true;
+            this.hbxDriver150ExtUnk_0x0247.TabIndex = 151;
+            this.hbxDriver150ExtUnk_0x0247.UseFixedBytesPerLine = true;
+            this.hbxDriver150ExtUnk_0x0247.VScrollBarVisible = true;
             // 
             // tabBlades
             // 
@@ -15436,7 +15511,7 @@
             // gbxBladeUnk_0x067E
             // 
             this.gbxBladeUnk_0x067E.Controls.Add(this.hbxBladeUnk_0x067E);
-            this.gbxBladeUnk_0x067E.Location = new System.Drawing.Point(6, 298);
+            this.gbxBladeUnk_0x067E.Location = new System.Drawing.Point(501, 6);
             this.gbxBladeUnk_0x067E.Name = "gbxBladeUnk_0x067E";
             this.gbxBladeUnk_0x067E.Size = new System.Drawing.Size(170, 67);
             this.gbxBladeUnk_0x067E.TabIndex = 157;
@@ -15457,7 +15532,7 @@
             // lblBladeUnk_0x0827
             // 
             this.lblBladeUnk_0x0827.AutoSize = true;
-            this.lblBladeUnk_0x0827.Location = new System.Drawing.Point(13, 372);
+            this.lblBladeUnk_0x0827.Location = new System.Drawing.Point(328, 107);
             this.lblBladeUnk_0x0827.Name = "lblBladeUnk_0x0827";
             this.lblBladeUnk_0x0827.Size = new System.Drawing.Size(71, 13);
             this.lblBladeUnk_0x0827.TabIndex = 158;
@@ -15466,7 +15541,7 @@
             // gbxBladeUnk_0x08A2
             // 
             this.gbxBladeUnk_0x08A2.Controls.Add(this.hbxBladeUnk_0x08A2);
-            this.gbxBladeUnk_0x08A2.Location = new System.Drawing.Point(6, 469);
+            this.gbxBladeUnk_0x08A2.Location = new System.Drawing.Point(501, 152);
             this.gbxBladeUnk_0x08A2.Name = "gbxBladeUnk_0x08A2";
             this.gbxBladeUnk_0x08A2.Size = new System.Drawing.Size(170, 67);
             this.gbxBladeUnk_0x08A2.TabIndex = 154;
@@ -15487,7 +15562,7 @@
             // gbxBladeUnk_0x084E
             // 
             this.gbxBladeUnk_0x084E.Controls.Add(this.hbxBladeUnk_0x084E);
-            this.gbxBladeUnk_0x084E.Location = new System.Drawing.Point(6, 396);
+            this.gbxBladeUnk_0x084E.Location = new System.Drawing.Point(325, 152);
             this.gbxBladeUnk_0x084E.Name = "gbxBladeUnk_0x084E";
             this.gbxBladeUnk_0x084E.Size = new System.Drawing.Size(170, 67);
             this.gbxBladeUnk_0x084E.TabIndex = 154;
@@ -15508,7 +15583,7 @@
             // nudBladeUnk_0x0827
             // 
             this.nudBladeUnk_0x0827.Hexadecimal = true;
-            this.nudBladeUnk_0x0827.Location = new System.Drawing.Point(91, 370);
+            this.nudBladeUnk_0x0827.Location = new System.Drawing.Point(406, 105);
             this.nudBladeUnk_0x0827.Maximum = new decimal(new int[] {
             255,
             0,
@@ -15522,7 +15597,7 @@
             // gbxBladeUnk_0x0676
             // 
             this.gbxBladeUnk_0x0676.Controls.Add(this.hbxBladeUnk_0x0676);
-            this.gbxBladeUnk_0x0676.Location = new System.Drawing.Point(6, 225);
+            this.gbxBladeUnk_0x0676.Location = new System.Drawing.Point(325, 6);
             this.gbxBladeUnk_0x0676.Name = "gbxBladeUnk_0x0676";
             this.gbxBladeUnk_0x0676.Size = new System.Drawing.Size(170, 67);
             this.gbxBladeUnk_0x0676.TabIndex = 156;
@@ -21511,69 +21586,6 @@
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
             // 
-            // hbxDriver150ExtUnk_0x00B4
-            // 
-            this.hbxDriver150ExtUnk_0x00B4.ColumnInfoVisible = true;
-            this.hbxDriver150ExtUnk_0x00B4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbxDriver150ExtUnk_0x00B4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxDriver150ExtUnk_0x00B4.LineInfoVisible = true;
-            this.hbxDriver150ExtUnk_0x00B4.Location = new System.Drawing.Point(3, 3);
-            this.hbxDriver150ExtUnk_0x00B4.Name = "hbxDriver150ExtUnk_0x00B4";
-            this.hbxDriver150ExtUnk_0x00B4.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxDriver150ExtUnk_0x00B4.Size = new System.Drawing.Size(928, 506);
-            this.hbxDriver150ExtUnk_0x00B4.StringViewVisible = true;
-            this.hbxDriver150ExtUnk_0x00B4.TabIndex = 151;
-            this.hbxDriver150ExtUnk_0x00B4.UseFixedBytesPerLine = true;
-            this.hbxDriver150ExtUnk_0x00B4.VScrollBarVisible = true;
-            // 
-            // hbxDriver150ExtUnk_0x0247
-            // 
-            this.hbxDriver150ExtUnk_0x0247.ColumnInfoVisible = true;
-            this.hbxDriver150ExtUnk_0x0247.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hbxDriver150ExtUnk_0x0247.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hbxDriver150ExtUnk_0x0247.LineInfoVisible = true;
-            this.hbxDriver150ExtUnk_0x0247.Location = new System.Drawing.Point(3, 3);
-            this.hbxDriver150ExtUnk_0x0247.Name = "hbxDriver150ExtUnk_0x0247";
-            this.hbxDriver150ExtUnk_0x0247.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.hbxDriver150ExtUnk_0x0247.Size = new System.Drawing.Size(928, 506);
-            this.hbxDriver150ExtUnk_0x0247.StringViewVisible = true;
-            this.hbxDriver150ExtUnk_0x0247.TabIndex = 151;
-            this.hbxDriver150ExtUnk_0x0247.UseFixedBytesPerLine = true;
-            this.hbxDriver150ExtUnk_0x0247.VScrollBarVisible = true;
-            // 
-            // tbcDriver150Ext
-            // 
-            this.tbcDriver150Ext.Controls.Add(this.tabDriver150ExtUnk_0x00B4);
-            this.tbcDriver150Ext.Controls.Add(this.tabDriver150ExtUnk_0x0247);
-            this.tbcDriver150Ext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcDriver150Ext.Location = new System.Drawing.Point(3, 3);
-            this.tbcDriver150Ext.Name = "tbcDriver150Ext";
-            this.tbcDriver150Ext.SelectedIndex = 0;
-            this.tbcDriver150Ext.Size = new System.Drawing.Size(942, 538);
-            this.tbcDriver150Ext.TabIndex = 157;
-            // 
-            // tabDriver150ExtUnk_0x00B4
-            // 
-            this.tabDriver150ExtUnk_0x00B4.Controls.Add(this.hbxDriver150ExtUnk_0x00B4);
-            this.tabDriver150ExtUnk_0x00B4.Location = new System.Drawing.Point(4, 22);
-            this.tabDriver150ExtUnk_0x00B4.Name = "tabDriver150ExtUnk_0x00B4";
-            this.tabDriver150ExtUnk_0x00B4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriver150ExtUnk_0x00B4.Size = new System.Drawing.Size(934, 512);
-            this.tabDriver150ExtUnk_0x00B4.TabIndex = 0;
-            this.tabDriver150ExtUnk_0x00B4.Text = "Unk_0x00B4";
-            this.tabDriver150ExtUnk_0x00B4.UseVisualStyleBackColor = true;
-            // 
-            // tabDriver150ExtUnk_0x0247
-            // 
-            this.tabDriver150ExtUnk_0x0247.Controls.Add(this.hbxDriver150ExtUnk_0x0247);
-            this.tabDriver150ExtUnk_0x0247.Location = new System.Drawing.Point(4, 22);
-            this.tabDriver150ExtUnk_0x0247.Name = "tabDriver150ExtUnk_0x0247";
-            this.tabDriver150ExtUnk_0x0247.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDriver150ExtUnk_0x0247.Size = new System.Drawing.Size(934, 512);
-            this.tabDriver150ExtUnk_0x0247.TabIndex = 1;
-            this.tabDriver150ExtUnk_0x0247.Text = "Unk_0x0247";
-            this.tabDriver150ExtUnk_0x0247.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -21679,11 +21691,9 @@
             this.splitContainer2.ResumeLayout(false);
             this.tbcDrivers.ResumeLayout(false);
             this.tabDriversMisc.ResumeLayout(false);
-            this.gbxExpSkillPoints.ResumeLayout(false);
-            this.gbxExpSkillPoints.PerformLayout();
+            this.gbxDriverExp.ResumeLayout(false);
+            this.gbxDriverExp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverBonusExp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverBattleExp)).EndInit();
             this.gbxDriver.ResumeLayout(false);
             this.gbxDriver.PerformLayout();
@@ -21756,6 +21766,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverTruthLevel)).EndInit();
             this.tabDriversSkills.ResumeLayout(false);
+            this.gbxDriverSkillPoints.ResumeLayout(false);
+            this.gbxDriverSkillPoints.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverCurrentSkillPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDriverTotalSkillPoints)).EndInit();
             this.gbxDriverHiddenSkills.ResumeLayout(false);
             this.gbxDriverHiddenSkills.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDriverHiddenSkill_c5_Level)).EndInit();
@@ -21820,6 +21834,9 @@
             this.gbxDriverUnk_0x00A8.ResumeLayout(false);
             this.gbxDriverUnk_0x002C.ResumeLayout(false);
             this.tabDrivers150.ResumeLayout(false);
+            this.tbcDriver150Ext.ResumeLayout(false);
+            this.tabDriver150ExtUnk_0x00B4.ResumeLayout(false);
+            this.tabDriver150ExtUnk_0x0247.ResumeLayout(false);
             this.tabBlades.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -22486,9 +22503,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.cmsItems.ResumeLayout(false);
-            this.tbcDriver150Ext.ResumeLayout(false);
-            this.tabDriver150ExtUnk_0x00B4.ResumeLayout(false);
-            this.tabDriver150ExtUnk_0x0247.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -24105,7 +24119,7 @@
         private System.Windows.Forms.NumericUpDown nudItemAddNewID;
         private System.Windows.Forms.GroupBox gbxBladeImportExport;
         private System.Windows.Forms.Label lblBladeImportExportNote;
-        private System.Windows.Forms.GroupBox gbxExpSkillPoints;
+        private System.Windows.Forms.GroupBox gbxDriverExp;
         private System.Windows.Forms.Label lblAegisFormeMythra;
         private System.Windows.Forms.Label lblAegisFormePyra;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -24134,6 +24148,7 @@
         private System.Windows.Forms.TabControl tbcDriver150Ext;
         private System.Windows.Forms.TabPage tabDriver150ExtUnk_0x00B4;
         private System.Windows.Forms.TabPage tabDriver150ExtUnk_0x0247;
+        private System.Windows.Forms.GroupBox gbxDriverSkillPoints;
     }
 }
 

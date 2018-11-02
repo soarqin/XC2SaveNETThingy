@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.lblAbout = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDesc = new System.Windows.Forms.Label();
@@ -51,6 +50,8 @@
             this.lblRepo = new System.Windows.Forms.Label();
             this.lblForum = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblAbout
@@ -154,7 +155,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 214);
+            this.label6.Location = new System.Drawing.Point(9, 263);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 13);
             this.label6.TabIndex = 10;
@@ -163,7 +164,7 @@
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(9, 240);
+            this.linkLabel5.Location = new System.Drawing.Point(9, 289);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(203, 13);
             this.linkLabel5.TabIndex = 11;
@@ -174,7 +175,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 227);
+            this.label7.Location = new System.Drawing.Point(9, 276);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(156, 13);
             this.label7.TabIndex = 12;
@@ -183,7 +184,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 273);
+            this.label8.Location = new System.Drawing.Point(9, 322);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(209, 13);
             this.label8.TabIndex = 13;
@@ -192,7 +193,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 286);
+            this.label9.Location = new System.Drawing.Point(9, 335);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(247, 13);
             this.label9.TabIndex = 14;
@@ -201,7 +202,7 @@
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(9, 299);
+            this.linkLabel6.Location = new System.Drawing.Point(9, 348);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(321, 13);
             this.linkLabel6.TabIndex = 15;
@@ -229,7 +230,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(168, 331);
+            this.btnOK.Location = new System.Drawing.Point(172, 382);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 18;
@@ -267,11 +268,32 @@
     "or.512217/";
             this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 218);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Ionic.Zlib";
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(9, 231);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(220, 13);
+            this.linkLabel8.TabIndex = 23;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "https://www.nuget.org/packages/Ionic.Zlib/";
+            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 366);
+            this.ClientSize = new System.Drawing.Size(422, 417);
+            this.Controls.Add(this.linkLabel8);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.lblForum);
             this.Controls.Add(this.lblRepo);
@@ -295,7 +317,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAbout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAbout";
@@ -330,5 +351,7 @@
         private System.Windows.Forms.Label lblRepo;
         private System.Windows.Forms.Label lblForum;
         private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel8;
     }
 }

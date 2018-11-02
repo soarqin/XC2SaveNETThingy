@@ -266,7 +266,7 @@ namespace XC2Bf2SaveNETThingy
         {
             try
             {
-                SAVEDATA = XC2SaveDeserializer.Deserialize(File.ReadAllBytes(path));
+                SAVEDATA = XC2SaveSerialization.Deserialize(File.ReadAllBytes(path));
                 
                 if (SAVEDATA.GetType() == typeof(XC2SaveIra))
                 {
@@ -284,7 +284,7 @@ namespace XC2Bf2SaveNETThingy
                         tbcMain.TabPages.Add(tab150RawData);
                     if (!tbcDrivers.TabPages.Contains(tabDrivers150))
                         tbcDrivers.TabPages.Add(tabDrivers150);
-                    hbx150RawDataUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x118ADC);
+                    hbx150RawDataUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x11A8DC);
                 }
                 else
                 {
@@ -702,7 +702,7 @@ namespace XC2Bf2SaveNETThingy
             {
                 try
                 {
-                    File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
+                    File.WriteAllBytes(sfdSaveFile.FileName, XC2SaveSerialization.Serialize(SAVEDATA));
                 }
                 catch (Exception ex)
                 {
@@ -1528,7 +1528,7 @@ namespace XC2Bf2SaveNETThingy
                 nudBladeCreateEventID.Value = b.CreateEventID;
                 nudBladeEyeRot.Value = b.EyeRot;
                 nudBladeFootStep.Value = b.FootStep;
-                nudBladeFootStepEffect.Value = b.FootStep;
+                nudBladeFootStepEffect.Value = b.FootStepEffect;
                 nudBladeIsUnselect.Value = b.IsUnselect;
                 nudBladeKizunaLinkSet.Value = b.KizunaLinkSet;
                 nudBladeLandingHeight.Value = b.LandingHeight;
@@ -2207,12 +2207,12 @@ namespace XC2Bf2SaveNETThingy
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAbout frmAbout = new frmAbout(lang);
+            frmAbout frmAbout = new frmAbout(FrmMainInternalText["AppDescBf2"], this.Icon, lang);
             frmAbout.ShowDialog();
         }
         private void fAQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmFAQ frmFAQ = new frmFAQ(lang);
+            frmFAQ frmFAQ = new frmFAQ(this.Icon, lang);
             frmFAQ.ShowDialog();
         }
         private void loadSaveFileToolStripMenuItem_Click(object sender, EventArgs e) => LoadFile();

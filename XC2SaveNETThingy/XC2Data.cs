@@ -46,6 +46,17 @@ namespace XC2SaveNETThingy
             return GetDataSet(query).Tables[0];
         }
 
+        public static DataTable DriversIra(LANG l = LANG.EN)
+        {
+            string query =
+                "SELECT ID, " +
+                "Name_" + LANG_STR[l] + " AS Name " +
+                "FROM Drivers " +
+                "WHERE ID >= 17";
+
+            return GetDataSet(query).Tables[0];
+        }
+
         public static bool ContainsDriver(UInt16 id)
         {
             DataTable dr = GetDataSet("SELECT ID FROM Drivers").Tables[0];
