@@ -52,6 +52,7 @@
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblAbout
@@ -155,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 263);
+            this.label6.Location = new System.Drawing.Point(9, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 13);
             this.label6.TabIndex = 10;
@@ -164,7 +165,7 @@
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(9, 289);
+            this.linkLabel5.Location = new System.Drawing.Point(9, 295);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(203, 13);
             this.linkLabel5.TabIndex = 11;
@@ -175,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 276);
+            this.label7.Location = new System.Drawing.Point(9, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(156, 13);
             this.label7.TabIndex = 12;
@@ -195,9 +196,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(9, 335);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(247, 13);
+            this.label9.Size = new System.Drawing.Size(193, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "Copyright © 2005 Régis Brid, Microsoft Corporation";
+            this.label9.Text = "Copyright © 2005 Microsoft Corporation";
             // 
             // linkLabel6
             // 
@@ -271,27 +272,37 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 218);
+            this.label2.Location = new System.Drawing.Point(9, 212);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Ionic.Zlib";
+            this.label2.Text = "ZLIB.dll";
             // 
             // linkLabel8
             // 
             this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Location = new System.Drawing.Point(9, 231);
+            this.linkLabel8.Location = new System.Drawing.Point(9, 238);
             this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(220, 13);
+            this.linkLabel8.Size = new System.Drawing.Size(340, 13);
             this.linkLabel8.TabIndex = 23;
             this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "https://www.nuget.org/packages/Ionic.Zlib/";
+            this.linkLabel8.Text = "https://www.codeproject.com/Tips/830793/NET-ZLib-Implementation";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 225);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Copyright © 2018 Alberto M.";
             // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 417);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel7);
@@ -353,5 +364,6 @@
         private System.Windows.Forms.LinkLabel linkLabel7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.Label label3;
     }
 }

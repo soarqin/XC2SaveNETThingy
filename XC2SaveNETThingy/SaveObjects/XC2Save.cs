@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using Ionic.Zlib;
+using ZLIB;
+using System.IO.Compression;
 
 namespace XC2SaveNETThingy
 {
@@ -545,11 +546,21 @@ namespace XC2SaveNETThingy
         {
             Byte[] result;
 
-            using (ZlibStream compStream = new ZlibStream(new MemoryStream(data, CMP_HEADER.Length, data.Length - CMP_HEADER.Length), CompressionMode.Decompress))
-            using (MemoryStream decStream = new MemoryStream())
+            using (MemoryStream cmpStr = new MemoryStream(data, CMP_HEADER.Length, data.Length - CMP_HEADER.Length))
             {
-                compStream.CopyTo(decStream);
-                result = decStream.ToArray();
+                using (ZLIBStream zStr = new ZLIBStream(cmpStr, CompressionMode.Decompress, true))
+                {
+                    using (MemoryStream decStr = new MemoryStream())
+                    {
+                        int bytesReadCount = 0;
+                        byte[] buf = new byte[1024];
+
+                        while ((bytesReadCount = zStr.Read(buf, 0, buf.Length)) > 0)
+                            decStr.Write(buf, 0, bytesReadCount);
+
+                        result = decStr.ToArray();
+                    }
+                }
             }
 
             return result;
@@ -559,11 +570,20 @@ namespace XC2SaveNETThingy
             List<Byte> result = new List<Byte>();
             result.AddRange(CMP_HEADER);
 
-            using (ZlibStream decStream = new ZlibStream(new MemoryStream(data, 0, data.Length), CompressionMode.Compress))
-            using (MemoryStream compStream = new MemoryStream())
+            using (MemoryStream decStr = new MemoryStream(data, 0, data.Length))
             {
-                decStream.CopyTo(compStream);
-                result.AddRange(compStream.ToArray());
+                using (MemoryStream cmpStr = new MemoryStream())
+                {
+                    using (ZLIBStream zStr = new ZLIBStream(cmpStr, CompressionLevel.Optimal, true))
+                    {
+                        int bytesReadCount = 0;
+                        byte[] buf = new byte[1024];
+
+                        while ((bytesReadCount = decStr.Read(buf, 0, buf.Length)) > 0)
+                            zStr.Write(buf, 0, bytesReadCount);
+                    }
+                    result.AddRange(cmpStr.ToArray());
+                }
             }
 
             return result.ToArray();

@@ -5050,9 +5050,9 @@
             this.lblDriverWeapon.AutoSize = true;
             this.lblDriverWeapon.Location = new System.Drawing.Point(6, 16);
             this.lblDriverWeapon.Name = "lblDriverWeapon";
-            this.lblDriverWeapon.Size = new System.Drawing.Size(51, 13);
+            this.lblDriverWeapon.Size = new System.Drawing.Size(84, 13);
             this.lblDriverWeapon.TabIndex = 11;
-            this.lblDriverWeapon.Text = "Weapon:";
+            this.lblDriverWeapon.Text = "Select Weapon:";
             // 
             // lblDriverWeaponTotalWeaponPoints
             // 
@@ -5084,7 +5084,7 @@
             // cbxDriverWeapons
             // 
             this.cbxDriverWeapons.FormattingEnabled = true;
-            this.cbxDriverWeapons.Location = new System.Drawing.Point(63, 13);
+            this.cbxDriverWeapons.Location = new System.Drawing.Point(117, 12);
             this.cbxDriverWeapons.Name = "cbxDriverWeapons";
             this.cbxDriverWeapons.Size = new System.Drawing.Size(155, 21);
             this.cbxDriverWeapons.TabIndex = 0;

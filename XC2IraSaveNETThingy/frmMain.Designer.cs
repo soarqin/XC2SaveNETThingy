@@ -1221,6 +1221,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadSaveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -6207,7 +6208,7 @@
             // cbxDriverWeapons
             // 
             this.cbxDriverWeapons.FormattingEnabled = true;
-            this.cbxDriverWeapons.Location = new System.Drawing.Point(63, 13);
+            this.cbxDriverWeapons.Location = new System.Drawing.Point(123, 13);
             this.cbxDriverWeapons.Name = "cbxDriverWeapons";
             this.cbxDriverWeapons.Size = new System.Drawing.Size(155, 21);
             this.cbxDriverWeapons.TabIndex = 0;
@@ -6375,11 +6376,11 @@
             // lblDriverWeapon
             // 
             this.lblDriverWeapon.AutoSize = true;
-            this.lblDriverWeapon.Location = new System.Drawing.Point(6, 16);
+            this.lblDriverWeapon.Location = new System.Drawing.Point(12, 16);
             this.lblDriverWeapon.Name = "lblDriverWeapon";
-            this.lblDriverWeapon.Size = new System.Drawing.Size(51, 13);
+            this.lblDriverWeapon.Size = new System.Drawing.Size(84, 13);
             this.lblDriverWeapon.TabIndex = 11;
-            this.lblDriverWeapon.Text = "Weapon:";
+            this.lblDriverWeapon.Text = "Select Weapon:";
             // 
             // gbxCharacterArtLevels
             // 
@@ -15897,6 +15898,7 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.label1);
             this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
             this.splitContainer3.Panel1.Controls.Add(this.btnSave);
             this.splitContainer3.Panel1.Controls.Add(this.menuStrip1);
@@ -15907,6 +15909,19 @@
             this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
             this.splitContainer3.SplitterDistance = 53;
             this.splitContainer3.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(186, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(813, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "PRERELEASE TEST VERSION 2: FOR TESTERS ONLY. THIS VERSION IS UNTESTED AND COULD P" +
+    "OTENTIALLY CORRUPT SAVE DATA.";
             // 
             // menuStrip1
             // 
@@ -17964,6 +17979,7 @@
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID3;
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID1;
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
