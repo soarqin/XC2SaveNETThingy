@@ -9,9 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XC2SaveNETThingy;
 using static XC2SaveNETThingy.DataGridViewColumnFactory;
 
-namespace XC2SaveNETThingy
+namespace XC2Bf2SaveNETThingy
 {
     public partial class frmMain : Form
     {
@@ -36,7 +37,7 @@ namespace XC2SaveNETThingy
         #region Constructor
         public frmMain()
         {
-            if (!(File.Exists(@"db\XC2Data.db")))
+            if (!(File.Exists(@"XC2Data.db")))
             {
                 string title = "";
                 string message = "";
@@ -48,7 +49,7 @@ namespace XC2SaveNETThingy
                         title = "Database Error!";
                         message =
                             "ERROR: XC2Data.db not found!" + Environment.NewLine +
-                            "Please ensure that XC2Data.db exists in this program's \"db\" subfolder!" + Environment.NewLine +
+                            "Please ensure that XC2Data.db exists in same folder as this program!" + Environment.NewLine +
                             Environment.NewLine +
                             "Program will now exit.";
                         break;
@@ -127,13 +128,6 @@ namespace XC2SaveNETThingy
             cbxDriverID.BindDataTable(XC2Data.Drivers(lang));
             cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(lang), "Desc");
 
-            cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
-            cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
-            cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
-
-            cbxDriverArtID.BindDataTable(XC2Data.DriverArts(1, lang), "FriendlyName");
-            cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(0b1, lang));
-
             cbxDriverPouchesItemID.BindDataTable(XC2Data.Items(lang));
 
             cbxDriverAccessory1ID.BindDataTable(XC2Data.GetAccessories(lang));
@@ -144,10 +138,7 @@ namespace XC2SaveNETThingy
             cbxDriverAccessory3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
             #region 1.5.0
-            cbxDriverWeapons150.BindDataTable(XC2Data.WeaponTypes(4, lang));
-            cbxDriverWeaponArt150Id1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
-            cbxDriverWeaponArt150Id2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
-            cbxDriverWeaponArt150Id3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+
             #endregion 1.5.0
 
             #endregion Driver
@@ -155,7 +146,7 @@ namespace XC2SaveNETThingy
             #region Blade
             cbxBladeCreator.BindDataTable(XC2Data.Drivers(lang));
             cbxBladeSetDriver.BindDataTable(XC2Data.Drivers(lang));
-            cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(7, lang));
+            //cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(7, lang));
             cbxBladeDefWeapon.BindDataTable(XC2Data.Weapons(lang), "FriendlyName");
             cbxBladeElement.BindDataTable(XC2Data.Elements(lang));
             cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames(lang));
@@ -246,11 +237,44 @@ namespace XC2SaveNETThingy
             UpdateNewItemComboBox();
             #endregion Items
         }
+        private void SetupDLCDependantComboBoxes(Type savetype)
+        {
+            if (savetype == typeof(XC2Save150))
+            {
+                cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(63, lang), "FriendlyName");
+                cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(63, lang), "FriendlyName");
+                cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(63, lang), "FriendlyName");
+
+                cbxDriverArtID.BindDataTable(XC2Data.DriverArts(63, lang), "FriendlyName");
+                cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(13, lang));
+
+                cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(15, lang));
+            }
+            else
+            {
+                cbxDriverWeaponArtId1.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+                cbxDriverWeaponArtId2.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+                cbxDriverWeaponArtId3.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+
+                cbxDriverArtID.BindDataTable(XC2Data.DriverArts(3, lang), "FriendlyName");
+                cbxDriverWeapons.BindDataTable(XC2Data.WeaponTypes(1, lang));
+
+                cbxBladeWeaponType.BindDataTable(XC2Data.WeaponTypes(1, lang));
+            }
+        }
         private void LoadSaveData(string path)
         {
             try
             {
-                SAVEDATA = XC2SaveDeserializer.Deserialize(File.ReadAllBytes(path));
+                SAVEDATA = XC2SaveSerialization.Deserialize(File.ReadAllBytes(path));
+                
+                if (SAVEDATA.GetType() == typeof(XC2SaveIra))
+                {
+                    string message = FrmMainInternalText["TornaSavInBaseEditor"];
+                    throw new Exception(message);
+                }
+
+                SetupDLCDependantComboBoxes(SAVEDATA.GetType());
 
                 #region 1.5.0+ Raw Data
                 if (SAVEDATA.GetType() == typeof(XC2Save150))
@@ -260,12 +284,7 @@ namespace XC2SaveNETThingy
                         tbcMain.TabPages.Add(tab150RawData);
                     if (!tbcDrivers.TabPages.Contains(tabDrivers150))
                         tbcDrivers.TabPages.Add(tabDrivers150);
-                    hbx150RawDataUnk_0x1176A0.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1176A0);
-                    hbx150RawDataUnk_0x117728.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117728);
-                    hbx150RawDataUnk_0x117A4C.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117A4C);
-                    hbx150RawDataUnk_0x117D70.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x117D70);
-                    hbx150RawDataUnk_0x1186DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x1186DC);
-                    gbxDriverWeapons150.Visible = true;
+                    hbx150RawDataUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(((XC2Save150)SAVEDATA).Unk_0x11A8DC);
                 }
                 else
                 {
@@ -274,12 +293,7 @@ namespace XC2SaveNETThingy
                         tbcMain.TabPages.Remove(tab150RawData);
                     if (tbcDrivers.TabPages.Contains(tabDrivers150))
                         tbcDrivers.TabPages.Remove(tabDrivers150);
-                    hbx150RawDataUnk_0x1176A0.ByteProvider = null;
-                    hbx150RawDataUnk_0x117728.ByteProvider = null;
-                    hbx150RawDataUnk_0x117A4C.ByteProvider = null;
-                    hbx150RawDataUnk_0x117D70.ByteProvider = null;
-                    hbx150RawDataUnk_0x1186DC.ByteProvider = null;
-                    gbxDriverWeapons150.Visible = false;
+                    hbx150RawDataUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(null);
                 }
                 #endregion
 
@@ -358,11 +372,9 @@ namespace XC2SaveNETThingy
                 #endregion Main
 
                 #region Drivers                
-                lbxDrivers.DataSource = null;
-                lbxDrivers.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                lbxDrivers.DataSource = SAVEDATA.Drivers;
-
                 RefreshDriverList();
+                lbxDrivers.SelectedIndex = 0;
+                LoadDriver(lbxDrivers.SelectedIndex);
                 #endregion Drivers
 
                 #region Blades
@@ -690,7 +702,7 @@ namespace XC2SaveNETThingy
             {
                 try
                 {
-                    File.WriteAllBytes(sfdSaveFile.FileName, SAVEDATA.ToRawData());
+                    File.WriteAllBytes(sfdSaveFile.FileName, XC2SaveSerialization.Serialize(SAVEDATA));
                 }
                 catch (Exception ex)
                 {
@@ -762,10 +774,11 @@ namespace XC2SaveNETThingy
         }
         private Dictionary<string, string> CreateNewConfig()
         {
-            Dictionary<string, string> conf = new Dictionary<string, string>();
-
-            conf.Add("Language", "EN");
-            conf.Add("EditReadOnlyData", "false");
+            Dictionary<string, string> conf = new Dictionary<string, string>
+            {
+                { "Language", "EN" },
+                { "EditReadOnlyData", "false" }
+            };
 
             return conf;
         }
@@ -1066,7 +1079,7 @@ namespace XC2SaveNETThingy
             hbxDriverUnk_0x00A8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x00A8);
             hbxDriverUnk_0x02DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02DC);
             hbxDriverUnk_0x02EA.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x02EA);
-            hbxDriverUnk_0x04FE.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0536);
+            hbxDriverUnk_0x0570.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0570);
             hbxDriverUnk_0x057A.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x057A);
             hbxDriverUnk_0x0582.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x0582);
             hbxDriverUnk_0x059C.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Unk_0x059C);
@@ -1075,20 +1088,9 @@ namespace XC2SaveNETThingy
             #region Driver 1.5.0
             if (SAVEDATA.GetType() == typeof(XC2Save150))
             {
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 5:
-                        gbxDriverWeapons150.Enabled = true;
-                        cbxDriverWeapons150.SelectedIndex = 0;
-                        break;
-
-                    default:
-                        gbxDriverWeapons150.Enabled = false;
-                        break;
-                }
+                Driver150Ext de = ((XC2Save150)SAVEDATA).Driver150Exts[index];
+                hbxDriver150ExtUnk_0x00B4.ByteProvider = new FixedLengthByteProvider(de.Unk_0x00B4);
+                hbxDriver150ExtUnk_0x0247.ByteProvider = new FixedLengthByteProvider(de.Unk_0x0247);
             }
             #endregion Driver 1.5.0
 
@@ -1526,7 +1528,7 @@ namespace XC2SaveNETThingy
                 nudBladeCreateEventID.Value = b.CreateEventID;
                 nudBladeEyeRot.Value = b.EyeRot;
                 nudBladeFootStep.Value = b.FootStep;
-                nudBladeFootStepEffect.Value = b.FootStep;
+                nudBladeFootStepEffect.Value = b.FootStepEffect;
                 nudBladeIsUnselect.Value = b.IsUnselect;
                 nudBladeKizunaLinkSet.Value = b.KizunaLinkSet;
                 nudBladeLandingHeight.Value = b.LandingHeight;
@@ -2199,19 +2201,18 @@ namespace XC2SaveNETThingy
             // hide 1.5.0+ related tabs
             tbcMain.TabPages.Remove(tab150RawData);
             tbcDrivers.TabPages.Remove(tabDrivers150);
-            gbxDriverWeapons150.Enabled = false;
 
             // disable Language drop down menu until it is done
             settingsToolStripMenuItem.DropDownItems.Remove(languageToolStripMenuItem);
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAbout frmAbout = new frmAbout(lang);
+            frmAbout frmAbout = new frmAbout(FrmMainInternalText["AppDescBf2"], this.Icon, lang);
             frmAbout.ShowDialog();
         }
         private void fAQToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmFAQ frmFAQ = new frmFAQ(lang);
+            frmFAQ frmFAQ = new frmFAQ(this.Icon, lang);
             frmFAQ.ShowDialog();
         }
         private void loadSaveFileToolStripMenuItem_Click(object sender, EventArgs e) => LoadFile();
@@ -2396,10 +2397,6 @@ namespace XC2SaveNETThingy
             nudDriverWeaponArtId1.Value = w.ArtIds[0];
             nudDriverWeaponArtId2.Value = w.ArtIds[1];
             nudDriverWeaponArtId3.Value = w.ArtIds[2];
-
-            cbxDriverWeaponArt150Id1.SelectedValue = Convert.ToUInt32(w.ArtIds[0]);
-            cbxDriverWeaponArt150Id2.SelectedValue = Convert.ToUInt32(w.ArtIds[1]);
-            cbxDriverWeaponArt150Id3.SelectedValue = Convert.ToUInt32(w.ArtIds[2]);
 
             nudDriverWeaponPoints.Value = w.WeaponPoints;
             nudDriverTotalWeaponPoints.Value = w.TotalWeaponPoints;
@@ -2702,204 +2699,7 @@ namespace XC2SaveNETThingy
         #endregion Driver Hidden Skills
 
         #region 1.5.0
-        // ALL PROVISIONAL, SUPER HACKY
-        // 1.5.0+ DATA NEEDS TO BE FIGURED OUT
-        private void cbxDriverWeapons150_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if ((i < 0))
-            {
-                nudDriverWeaponArt150Id1.Value = 0;
-                cbxDriverWeaponArt150Id1.SelectedValue = 0;
-                nudDriverWeaponArt150Id2.Value = 0;
-                cbxDriverWeaponArt150Id2.SelectedValue = 0;
-                nudDriverWeaponArt150Id3.Value = 0;
-                cbxDriverWeaponArt150Id3.SelectedValue = 0;
-                nudDriverWeaponPoints150.Value = 0;
-                nudDriverTotalWeaponPoints150.Value = 0;
-            }
-            else
-            {
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints;
-                        break;
 
-                    case 1:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints;
-                        break;
-
-                    case 2:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints;
-                        break;
-
-                    case 5:
-                        nudDriverWeaponArt150Id1.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
-                        cbxDriverWeaponArt150Id1.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0];
-                        nudDriverWeaponArt150Id2.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
-                        cbxDriverWeaponArt150Id2.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1];
-                        nudDriverWeaponArt150Id3.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
-                        cbxDriverWeaponArt150Id3.SelectedValue = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2];
-                        nudDriverWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints;
-                        nudDriverTotalWeaponPoints150.Value = ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints;
-                        break;
-                }
-            }
-
-
-        }
-        private void nudDriverWeaponArt150Id1_ValueChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
-
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
-
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
-
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[0] = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        cbxDriverWeaponArt150Id1.SelectedValue = (UInt32)nudDriverWeaponArt150Id1.Value;
-                        break;
-                }
-        }
-        private void nudDriverWeaponArt150Id2_ValueChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
-
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
-
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
-
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[1] = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        cbxDriverWeaponArt150Id2.SelectedValue = (UInt32)nudDriverWeaponArt150Id2.Value;
-                        break;
-                }
-        }
-        private void nudDriverWeaponArt150Id3_ValueChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
-
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
-
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
-
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].ArtIds[2] = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        cbxDriverWeaponArt150Id3.SelectedValue = (UInt32)nudDriverWeaponArt150Id3.Value;
-                        break;
-                }
-        }
-        private void nudDriverWeaponPoints150_ValueChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
-
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
-
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
-
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].WeaponPoints = (UInt32)nudDriverWeaponPoints150.Value;
-                        break;
-                }
-        }
-        private void nudDriverTotalWeaponPoints150_ValueChanged(object sender, EventArgs e)
-        {
-            int i = cbxDriverWeapons150.SelectedIndex - 1;
-            if (!(i < 0))
-                switch (lbxDrivers.SelectedIndex)
-                {
-                    case 0:
-                        ((XC2Save150)SAVEDATA).Driver1Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
-
-                    case 1:
-                        ((XC2Save150)SAVEDATA).Driver2Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
-
-                    case 2:
-                        ((XC2Save150)SAVEDATA).Driver3Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
-
-                    case 5:
-                        ((XC2Save150)SAVEDATA).Driver6Weapons150[i].TotalWeaponPoints = (UInt32)nudDriverTotalWeaponPoints150.Value;
-                        break;
-                }
-        }
-        private void cbxDriverWeaponArt150Id1_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id1.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id1.SelectedValue);
-        private void cbxDriverWeaponArt150Id2_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id2.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id2.SelectedValue);
-        private void cbxDriverWeaponArt150Id3_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverWeaponArt150Id3.Value = Convert.ToUInt32(cbxDriverWeaponArt150Id3.SelectedValue);
         #endregion 1.5.0
 
         #endregion Driver

@@ -15,9 +15,12 @@ namespace XC2SaveNETThingy
     {
         private Dictionary<string, string> FrmAboutText;
 
-        public frmAbout() => InitializeComponent();
-        public frmAbout(XC2Data.LANG l) : this()
+        public frmAbout(string appDesc, Icon icon, XC2Data.LANG l)
         {
+            InitializeComponent();
+
+            this.Icon = icon;
+            lblDesc.Text = appDesc;
             FrmAboutText = XC2Data.GetFrmAboutText(l);
 
             UpdateControlText(this);

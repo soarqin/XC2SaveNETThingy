@@ -14,9 +14,11 @@ namespace XC2SaveNETThingy
     {
         private Dictionary<string, string> FrmFAQText;
 
-        public frmFAQ() => InitializeComponent();
-        public frmFAQ(XC2Data.LANG l) : this()
+        public frmFAQ(Icon icon, XC2Data.LANG l)
         {
+            InitializeComponent();
+            this.Icon = icon;
+
             FrmFAQText = XC2Data.GetFrmFAQText(l);
             UpdateControlText(this);
         }

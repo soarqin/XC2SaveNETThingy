@@ -330,8 +330,6 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < AuxCoreItemHandles.Length; i++)
                 AuxCoreItemHandles[i] = new ItemHandle32(data.GetByteSubArray(LOC["AuxCoreItemHandles"] + (i * ItemHandle32.SIZE), ItemHandle32.SIZE));
 
-            
-
             Poppiswap = new PoppiSwapData(data.GetByteSubArray(LOC["HanaEquip"], PoppiSwapData.SIZE));
             Race = data[LOC["Race"]];
             Gender = data[LOC["Gender"]];
@@ -541,22 +539,6 @@ namespace XC2SaveNETThingy
 
             return result.ToArray();
         }
-
-        //public override string ToString()
-        //{
-        //    string name = "";
-
-        //    if (CommonNameId > 0)
-        //        name = (string)XC2Data.BladeCommonNames().Select("ID = " + CommonNameId)[0]["Name"];
-
-        //    if (RareNameId > 0)
-        //        name = (string)XC2Data.BladeRareNames().Select("ID = " + RareNameId)[0]["Name"];
-
-        //    if (name == "")
-        //        name = Encoding.UTF8.GetString(Name.GetByteSubArray(0, (int)NameLength));
-
-        //    return ID + ": " + name;
-        //}
 
         public string ToString(XC2Data.LANG l)
         {
