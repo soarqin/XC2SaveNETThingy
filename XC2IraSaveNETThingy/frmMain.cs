@@ -794,6 +794,8 @@ namespace XC2IraSaveNETThingy
                 chkBladeFavoriteItem1Unlocked.Visible = false;
                 chkBladeFavoriteItem2Unlocked.Visible = false;
                 gbxBladeFavoriteStuff.Width = 351;
+
+                gbxDriverPouches.Visible = true;
             }
             else
             {
@@ -808,6 +810,8 @@ namespace XC2IraSaveNETThingy
                 chkBladeFavoriteItem1Unlocked.Visible = true;
                 chkBladeFavoriteItem2Unlocked.Visible = true;
                 gbxBladeFavoriteStuff.Width = 427;
+
+                gbxDriverPouches.Visible = false;
             }
             LoadDriver(index);
             LoadBlade(index + BLADELIST_OFFSET);

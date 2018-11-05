@@ -1221,7 +1221,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadSaveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1242,6 +1241,11 @@
             this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiItemGetNewSerial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItemUpdateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.gbxTimeData.SuspendLayout();
             this.gbxTotalPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalPlayTimeSecond)).BeginInit();
@@ -6476,6 +6480,7 @@
             // 
             // gbxPartyBladeSpecial4Alt
             // 
+            this.gbxPartyBladeSpecial4Alt.Controls.Add(this.label9);
             this.gbxPartyBladeSpecial4Alt.Controls.Add(this.cbxBladeSpecial4AltID);
             this.gbxPartyBladeSpecial4Alt.Controls.Add(this.nudBladeSpecial4AltH);
             this.gbxPartyBladeSpecial4Alt.Controls.Add(this.nudBladeSpecial4AltID);
@@ -6535,14 +6540,15 @@
             // lblBladeBladeArtsEx2H
             // 
             this.lblBladeBladeArtsEx2H.AutoSize = true;
-            this.lblBladeBladeArtsEx2H.Location = new System.Drawing.Point(6, 39);
+            this.lblBladeBladeArtsEx2H.Location = new System.Drawing.Point(6, 31);
             this.lblBladeBladeArtsEx2H.Name = "lblBladeBladeArtsEx2H";
-            this.lblBladeBladeArtsEx2H.Size = new System.Drawing.Size(81, 13);
+            this.lblBladeBladeArtsEx2H.Size = new System.Drawing.Size(51, 26);
             this.lblBladeBladeArtsEx2H.TabIndex = 246;
-            this.lblBladeBladeArtsEx2H.Text = "BladeArtsEx2H:";
+            this.lblBladeBladeArtsEx2H.Text = "Damage\r\nMultiplier:";
             // 
             // gbxPartyBladeSpecial4
             // 
+            this.gbxPartyBladeSpecial4.Controls.Add(this.label7);
             this.gbxPartyBladeSpecial4.Controls.Add(this.cbxBladeSpecial4ID);
             this.gbxPartyBladeSpecial4.Controls.Add(this.nudBladeSpecial4H);
             this.gbxPartyBladeSpecial4.Controls.Add(this.nudBladeSpecial4ID);
@@ -6602,14 +6608,15 @@
             // lblBladeBladeArtsExH
             // 
             this.lblBladeBladeArtsExH.AutoSize = true;
-            this.lblBladeBladeArtsExH.Location = new System.Drawing.Point(6, 39);
+            this.lblBladeBladeArtsExH.Location = new System.Drawing.Point(6, 31);
             this.lblBladeBladeArtsExH.Name = "lblBladeBladeArtsExH";
-            this.lblBladeBladeArtsExH.Size = new System.Drawing.Size(75, 13);
+            this.lblBladeBladeArtsExH.Size = new System.Drawing.Size(51, 26);
             this.lblBladeBladeArtsExH.TabIndex = 246;
-            this.lblBladeBladeArtsExH.Text = "BladeArtsExH:";
+            this.lblBladeBladeArtsExH.Text = "Damage\r\nMultiplier:";
             // 
             // gbxPartyBladeSpecial3
             // 
+            this.gbxPartyBladeSpecial3.Controls.Add(this.label2);
             this.gbxPartyBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x09);
             this.gbxPartyBladeSpecial3.Controls.Add(this.gbxBladeBladeSpecial3Unk_0x04);
             this.gbxPartyBladeSpecial3.Controls.Add(this.cbxBladeSpecial3ID);
@@ -6720,15 +6727,15 @@
             // lblBladeBladeSpecial3RecastRev
             // 
             this.lblBladeBladeSpecial3RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial3RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial3RecastRev.Location = new System.Drawing.Point(154, 45);
             this.lblBladeBladeSpecial3RecastRev.Name = "lblBladeBladeSpecial3RecastRev";
-            this.lblBladeBladeSpecial3RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial3RecastRev.Size = new System.Drawing.Size(51, 26);
             this.lblBladeBladeSpecial3RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial3RecastRev.Text = "Recast Rev:";
+            this.lblBladeBladeSpecial3RecastRev.Text = "Damage\r\nMultiplier:";
             // 
             // nudBladeSpecial3RecastRev
             // 
-            this.nudBladeSpecial3RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial3RecastRev.Location = new System.Drawing.Point(211, 53);
             this.nudBladeSpecial3RecastRev.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -6767,6 +6774,7 @@
             // 
             // gbxPartyBladeSpecial2
             // 
+            this.gbxPartyBladeSpecial2.Controls.Add(this.label6);
             this.gbxPartyBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x09);
             this.gbxPartyBladeSpecial2.Controls.Add(this.gbxBladeBladeSpecial2Unk_0x04);
             this.gbxPartyBladeSpecial2.Controls.Add(this.cbxBladeSpecial2ID);
@@ -6877,15 +6885,15 @@
             // lblBladeBladeSpecial2RecastRev
             // 
             this.lblBladeBladeSpecial2RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial2RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial2RecastRev.Location = new System.Drawing.Point(154, 45);
             this.lblBladeBladeSpecial2RecastRev.Name = "lblBladeBladeSpecial2RecastRev";
-            this.lblBladeBladeSpecial2RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial2RecastRev.Size = new System.Drawing.Size(51, 26);
             this.lblBladeBladeSpecial2RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial2RecastRev.Text = "Recast Rev:";
+            this.lblBladeBladeSpecial2RecastRev.Text = "Damage\r\nMultiplier:";
             // 
             // nudBladeSpecial2RecastRev
             // 
-            this.nudBladeSpecial2RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial2RecastRev.Location = new System.Drawing.Point(211, 53);
             this.nudBladeSpecial2RecastRev.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -6924,6 +6932,7 @@
             // 
             // gbxPartyBladeSpecial1
             // 
+            this.gbxPartyBladeSpecial1.Controls.Add(this.label4);
             this.gbxPartyBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x09);
             this.gbxPartyBladeSpecial1.Controls.Add(this.gbxBladeBladeSpecial1Unk_0x04);
             this.gbxPartyBladeSpecial1.Controls.Add(this.cbxBladeSpecial1ID);
@@ -7034,15 +7043,15 @@
             // lblBladeBladeSpecial1RecastRev
             // 
             this.lblBladeBladeSpecial1RecastRev.AutoSize = true;
-            this.lblBladeBladeSpecial1RecastRev.Location = new System.Drawing.Point(162, 53);
+            this.lblBladeBladeSpecial1RecastRev.Location = new System.Drawing.Point(154, 45);
             this.lblBladeBladeSpecial1RecastRev.Name = "lblBladeBladeSpecial1RecastRev";
-            this.lblBladeBladeSpecial1RecastRev.Size = new System.Drawing.Size(67, 13);
+            this.lblBladeBladeSpecial1RecastRev.Size = new System.Drawing.Size(51, 26);
             this.lblBladeBladeSpecial1RecastRev.TabIndex = 15;
-            this.lblBladeBladeSpecial1RecastRev.Text = "Recast Rev:";
+            this.lblBladeBladeSpecial1RecastRev.Text = "Damage\r\nMultiplier:";
             // 
             // nudBladeSpecial1RecastRev
             // 
-            this.nudBladeSpecial1RecastRev.Location = new System.Drawing.Point(235, 51);
+            this.nudBladeSpecial1RecastRev.Location = new System.Drawing.Point(211, 53);
             this.nudBladeSpecial1RecastRev.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -15898,7 +15907,6 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.label1);
             this.splitContainer3.Panel1.Controls.Add(this.btnLoad);
             this.splitContainer3.Panel1.Controls.Add(this.btnSave);
             this.splitContainer3.Panel1.Controls.Add(this.menuStrip1);
@@ -15909,19 +15917,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(1142, 659);
             this.splitContainer3.SplitterDistance = 53;
             this.splitContainer3.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(186, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(813, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "PRERELEASE TEST VERSION 2: FOR TESTERS ONLY. THIS VERSION IS UNTESTED AND COULD P" +
-    "OTENTIALLY CORRUPT SAVE DATA.";
             // 
             // menuStrip1
             // 
@@ -16072,6 +16067,51 @@
             this.tsmiItemUpdateTime.Size = new System.Drawing.Size(258, 22);
             this.tsmiItemUpdateTime.Text = "Set Time Acquired to Current Time";
             this.tsmiItemUpdateTime.Click += new System.EventHandler(this.tsmiItemUpdateTime_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(286, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 105;
+            this.label2.Text = "%";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(286, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 156;
+            this.label4.Text = "%";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(286, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 157;
+            this.label6.Text = "%";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(154, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 13);
+            this.label7.TabIndex = 156;
+            this.label7.Text = "%";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(154, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(15, 13);
+            this.label9.TabIndex = 247;
+            this.label9.Text = "%";
             // 
             // frmMain
             // 
@@ -17979,7 +18019,11 @@
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID3;
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID1;
         private System.Windows.Forms.Label lblDriverIraRearGuardWeaponArtID2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
     }
 }
 
