@@ -293,7 +293,7 @@ namespace XC2Bf2SaveNETThingy
                         tbcMain.TabPages.Remove(tab150RawData);
                     if (tbcDrivers.TabPages.Contains(tabDrivers150))
                         tbcDrivers.TabPages.Remove(tabDrivers150);
-                    hbx150RawDataUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(null);
+                    hbx150RawDataUnk_0x11A8DC.ByteProvider = null;
                 }
                 #endregion
 
