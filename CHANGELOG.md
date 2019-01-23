@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Release 6.1
+### XC2Bf2SaveNETThingy v1.5.1
+Fixed loading of pre-v1.5.0 save files
+- BUGFIX: Loading of older pre-v1.5.0 save files was broken
+
 ## Release 6 (Release versioning changed due to conversion to multi-component package)
 ### XC2SaveNETThingy Core v1.0
 Separated all the core backend stuff into a separate .dll file
