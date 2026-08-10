@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel;
+using XC2SaveNETThingy;
 
 namespace XC2SaveRoundTrip
 {
@@ -20,6 +22,27 @@ namespace XC2SaveRoundTrip
             second = (byte[])first.Clone();
             second[0x11737C] = 1;
             AssertContains(RawSaveInspector.CompareKeyRegions(first, second), "ContentVersions", "content version change");
+
+            BindingListAddRangeProducesOneResetNotification();
+        }
+
+        private static void BindingListAddRangeProducesOneResetNotification()
+        {
+            BindingList<int> values = new BindingList<int>();
+            int notificationCount = 0;
+            ListChangedType lastChangeType = ListChangedType.ItemAdded;
+            values.ListChanged += (sender, e) =>
+            {
+                notificationCount++;
+                lastChangeType = e.ListChangedType;
+            };
+
+            values.AddRange(new[] { 10, 20, 30 });
+
+            AssertEqual(3, values.Count, "batch list item count");
+            AssertEqual(1, notificationCount, "batch list notification count");
+            if (lastChangeType != ListChangedType.Reset)
+                throw new InvalidOperationException("batch list notification was not Reset.");
         }
 
         private static void AssertContains(System.Collections.Generic.IReadOnlyList<string> values, string expected, string description)

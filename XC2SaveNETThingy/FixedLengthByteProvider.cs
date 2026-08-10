@@ -26,7 +26,11 @@ namespace XC2SaveNETThingy
         }
 
         public event EventHandler Changed;
-        public event EventHandler LengthChanged;
+        public event EventHandler LengthChanged
+        {
+            add { }
+            remove { }
+        }
 
         public byte ReadByte(long index)
         {
@@ -35,7 +39,13 @@ namespace XC2SaveNETThingy
 
         public void WriteByte(long index, byte value)
         {
+            if (Data[index] == value)
+            {
+                return;
+            }
+
             Data[index] = value;
+            Changed?.Invoke(this, EventArgs.Empty);
         }
 
         public void InsertBytes(long index, byte[] bs)

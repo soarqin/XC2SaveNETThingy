@@ -23,6 +23,7 @@ namespace XC2Bf2SaveNETThingy
         private bool IsReloadingBlades = false;
         private bool CurrentlyLoadingBlade = false;
         private bool dgvIsEditing = false;
+        private bool IsLoadingFlagEditors = false;
 
         private bool BladeAffinityRewardEditorIsLoading = false;
         private Point BladeAffinityRewardCurrentlyEditingPoint = new Point(0, 0);
@@ -2126,35 +2127,43 @@ namespace XC2Bf2SaveNETThingy
         #region Game Flag Data
         private void SetupFlagEditors()
         {
-            BindingList<FlagData.Flag_1> Flags_1Bit_bl = new BindingList<FlagData.Flag_1>();
-            foreach (FlagData.Flag_1 f in SAVEDATA.Flags.Flags_1Bit)
-                Flags_1Bit_bl.Add(f);
-            dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, Flags_1Bit_bl, "Value", "Set", true, 30);
+            IsLoadingFlagEditors = true;
+            try
+            {
+                BindingList<FlagData.Flag_1> Flags_1Bit_bl = new BindingList<FlagData.Flag_1>();
+                Flags_1Bit_bl.AddRange(SAVEDATA.Flags.Flags_1Bit);
+                dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, Flags_1Bit_bl, "Value", "Set", true, 30);
 
-            BindingList<FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_2Bit)
-                Flags_2Bit_bl.Add(f);
-            dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, Flags_2Bit_bl, "Value", "Value", false, 40, 3);
+                BindingList<FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+                Flags_2Bit_bl.AddRange(SAVEDATA.Flags.Flags_2Bit);
+                dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, Flags_2Bit_bl, "Value", "Value", false, 40, 3);
 
-            BindingList<FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_4Bit)
-                Flags_4Bit_bl.Add(f);
-            dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, Flags_4Bit_bl, "Value", "Value", false, 40, 15);
+                BindingList<FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+                Flags_4Bit_bl.AddRange(SAVEDATA.Flags.Flags_4Bit);
+                dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, Flags_4Bit_bl, "Value", "Value", false, 40, 15);
 
-            BindingList<FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-            foreach (FlagData.Flag_2_4_8 f in SAVEDATA.Flags.Flags_8Bit)
-                Flags_8Bit_bl.Add(f);
-            dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, Flags_8Bit_bl, "Value", "Value", false, 40, 255);
+                BindingList<FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
+                Flags_8Bit_bl.AddRange(SAVEDATA.Flags.Flags_8Bit);
+                dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, Flags_8Bit_bl, "Value", "Value", false, 40, 255);
 
-            BindingList<FlagData.Flag_16> Flags_16Bit_bl = new BindingList<FlagData.Flag_16>();
-            foreach (FlagData.Flag_16 f in SAVEDATA.Flags.Flags_16Bit)
-                Flags_16Bit_bl.Add(f);
-            dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, Flags_16Bit_bl, "Value", "Value", false, 55, 65535);
+                BindingList<FlagData.Flag_16> Flags_16Bit_bl = new BindingList<FlagData.Flag_16>();
+                Flags_16Bit_bl.AddRange(SAVEDATA.Flags.Flags_16Bit);
+                dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, Flags_16Bit_bl, "Value", "Value", false, 55, 65535);
 
-            BindingList<FlagData.Flag_32> Flags_32Bit_bl = new BindingList<FlagData.Flag_32>();
-            foreach (FlagData.Flag_32 f in SAVEDATA.Flags.Flags_32Bit)
-                Flags_32Bit_bl.Add(f);
-            dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
+                BindingList<FlagData.Flag_32> Flags_32Bit_bl = new BindingList<FlagData.Flag_32>();
+                Flags_32Bit_bl.AddRange(SAVEDATA.Flags.Flags_32Bit);
+                dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
+            }
+            finally
+            {
+                IsLoadingFlagEditors = false;
+                FlagEditorRowHeaderSet(dgvFlags1Bit, XC2Data.Flags1Bit());
+                FlagEditorRowHeaderSet(dgvFlags2Bit);
+                FlagEditorRowHeaderSet(dgvFlags4Bit);
+                FlagEditorRowHeaderSet(dgvFlags8Bit, XC2Data.Flags8Bit());
+                FlagEditorRowHeaderSet(dgvFlags16Bit, XC2Data.Flags16Bit());
+                FlagEditorRowHeaderSet(dgvFlags32Bit, XC2Data.Flags32Bit());
+            }
         }
         private DataGridView SetupFlagEditor(DataGridView dgv, IBindingList bl, string dataMemberValue, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal = 0)
         {
@@ -4312,22 +4321,54 @@ namespace XC2Bf2SaveNETThingy
         #endregion Items
 
         #region Game Flag Data
-        private void FlagEditorRowHeaderSet(DataGridView dgv, Dictionary<int, string> flagNames = null)
+        private void FlagEditorRowHeaderSet(
+            DataGridView dgv,
+            Dictionary<int, string> flagNames = null,
+            int firstRowIndex = 0,
+            int rowCount = -1)
         {
-            foreach (DataGridViewRow r in dgv.Rows)
+            int first = Math.Max(0, firstRowIndex);
+            int count = rowCount < 0 ? dgv.Rows.Count - first : rowCount;
+            int last = Math.Min(dgv.Rows.Count, first + Math.Max(0, count));
+            for (int index = first; index < last; index++)
             {
-                if (flagNames == null || !flagNames.ContainsKey(r.Index))
-                    r.HeaderCell.Value = String.Format("{0}", r.Index + 1);
+                DataGridViewRow row = dgv.Rows[index];
+                if (flagNames == null || !flagNames.ContainsKey(index))
+                    row.HeaderCell.Value = String.Format("{0}", index + 1);
                 else
-                    r.HeaderCell.Value = String.Format("{0}: {1}", r.Index + 1, flagNames[r.Index]);
+                    row.HeaderCell.Value = String.Format("{0}: {1}", index + 1, flagNames[index]);
             }
         }
-        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags1Bit());
-        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
-        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender);
-        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags8Bit());
-        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags16Bit());
-        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) => FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags32Bit());
+        private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags1Bit(), e.RowIndex, e.RowCount);
+        }
+        private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, null, e.RowIndex, e.RowCount);
+        }
+        private void dgvFlags4Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, null, e.RowIndex, e.RowCount);
+        }
+        private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags8Bit(), e.RowIndex, e.RowCount);
+        }
+        private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags16Bit(), e.RowIndex, e.RowCount);
+        }
+        private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!IsLoadingFlagEditors)
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags32Bit(), e.RowIndex, e.RowCount);
+        }
         #endregion Game Flag Data
 
         #region Party
