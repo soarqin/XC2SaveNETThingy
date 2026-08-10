@@ -3,4 +3,5 @@
   <Project Path="XC2IraSaveNETThingy/XC2IraSaveNETThingy.csproj" />
   <Project Path="XC2SaveNETThingy/XC2SaveNETThingy.csproj" />
   <Project Path="tools/XC2BdatImporter/XC2BdatImporter.csproj" />
+  <Project Path="tools/XC2SaveRoundTrip/XC2SaveRoundTrip.csproj" />
 </Solution>

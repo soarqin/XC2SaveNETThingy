@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>XC2SaveRoundTrip</RootNamespace>
+    <AssemblyName>XC2SaveRoundTrip</AssemblyName>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\XC2SaveNETThingy\XC2SaveNETThingy.csproj" />
+    <Reference Include="ZLIB">
+      <HintPath>..\..\external\ZLIB.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
