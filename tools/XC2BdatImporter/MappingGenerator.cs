@@ -19,6 +19,14 @@ namespace XC2BdatImporter
 
     internal static class MappingGenerator
     {
+        internal static long ComputeWeaponCoreChipId(long weaponId)
+        {
+            if (weaponId == 0) return 0;
+            long relative = weaponId - 5001;
+            if (relative < 0) throw new ArgumentOutOfRangeException(nameof(weaponId));
+            return 10001 + (relative % 60);
+        }
+
         internal static GeneratedCsvSet Generate(
             MappingConfig config,
             string commonExtractDirectory,
@@ -113,7 +121,7 @@ namespace XC2BdatImporter
             if (string.Equals(mapping.TargetTable, "DriverSkills", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeArts", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeSkills", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeFieldSkills", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "BladeSpecials", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeSpecialsLv4", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "WeaponTypes", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnBaseID", targetId), name, string.Empty };
-            if (string.Equals(mapping.TargetTable, "Weapons", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), (row.Id == 0 ? 0 : row.Id + 5000).ToString(CultureInfo.InvariantCulture), name, string.Empty };
+            if (string.Equals(mapping.TargetTable, "Weapons", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), ComputeWeaponCoreChipId(row.Id).ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "DriverArts", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), GetIntField(row, "Driver", 0), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "Elements", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "FavCategories", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "FavCategoriesIra", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "BladeTrustRanks", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name };

@@ -135,13 +135,42 @@ namespace XC2BdatImporter
 
             string candidateDatabase = Path.Combine(outputPaths.OutputDirectory, "XC2Data.db");
             DatabaseBuilder.Build(ddlDirectory, outputDataDirectory, candidateDatabase);
-            File.WriteAllText(outputPaths.ReportPath,
-                "XC2 BDAT candidate generated\r\n" +
-                "verifyOnly=" + options.VerifyOnly + "\r\n" +
-                "replace=" + options.Replace + "\r\n" +
-                "candidate=" + candidateDatabase + "\r\n");
+            string projectDatabase = Path.Combine(projectRoot, "XC2SaveNETThingy", "XC2Data.db");
+            int baselineForeignKeys = Verifier.CountForeignKeys(projectDatabase);
+            VerificationResult verification = Verifier.Verify(candidateDatabase, outputDataDirectory, baselineForeignKeys);
+            IReadOnlyList<TableDiff> diffs = DiffReportWriter.CompareDirectories(dataDirectory, outputDataDirectory);
+            string jsonReport = Path.ChangeExtension(outputPaths.ReportPath, ".json");
+            DiffReportWriter.WriteJson(jsonReport, diffs, baselineForeignKeys, verification.ForeignKeyViolations);
+            DiffReportWriter.WriteMarkdown(outputPaths.ReportPath, diffs, baselineForeignKeys, verification.ForeignKeyViolations);
+            if (!verification.Passed)
+            {
+                throw new InvalidDataException("Candidate verification failed: " + string.Join("; ", verification.Errors));
+            }
+
+            if (options.Replace)
+            {
+                ReplaceProjectData(dataDirectory, projectDatabase, outputDataDirectory, candidateDatabase);
+            }
+
             Console.WriteLine("Candidate generated: " + candidateDatabase);
             Console.WriteLine("Report path: " + outputPaths.ReportPath);
+        }
+
+        private static void ReplaceProjectData(string projectDataDirectory, string projectDatabase, string candidateDataDirectory, string candidateDatabase)
+        {
+            string backupRoot = Path.Combine(Path.GetDirectoryName(candidateDatabase), "backup-" + DateTime.UtcNow.ToString("yyyyMMdd-HHmmss", System.Globalization.CultureInfo.InvariantCulture));
+            Directory.CreateDirectory(backupRoot);
+            foreach (string candidate in Directory.GetFiles(candidateDataDirectory, "*.csv"))
+            {
+                string target = Path.Combine(projectDataDirectory, Path.GetFileName(candidate));
+                if (File.Exists(target)) File.Copy(target, Path.Combine(backupRoot, Path.GetFileName(target)), true);
+                File.Copy(candidate, target, true);
+            }
+            if (File.Exists(projectDatabase)) File.Copy(projectDatabase, Path.Combine(backupRoot, "XC2Data.db"), true);
+            string temporaryTarget = projectDatabase + ".new";
+            File.Copy(candidateDatabase, temporaryTarget, true);
+            File.Move(temporaryTarget, projectDatabase, true);
+            Console.WriteLine("Project data replaced; backup: " + backupRoot);
         }
 
         private static void ValidateDirectory(string path, string optionName)

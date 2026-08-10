@@ -143,6 +143,9 @@ namespace XC2BdatImporter
             AssertEqual(58001L, config.GetMapping("Items", "Items_POPPI_SPECIALS_ENHANCING_RAM.csv").ComputeTargetId(58001), "Poppi special target ID preserves BDAT ID");
             AssertEqual(0L, config.GetMapping("Elements").ComputeTargetId(1), "element target ID subtracts one");
             AssertEqual(12L, config.GetMapping("FavCategories").ComputeTargetId(1), "favorite category target ID adds eleven");
+            AssertEqual(10001L, MappingGenerator.ComputeWeaponCoreChipId(5001), "first weapon core chip");
+            AssertEqual(10060L, MappingGenerator.ComputeWeaponCoreChipId(5060), "last weapon core chip");
+            AssertEqual(10001L, MappingGenerator.ComputeWeaponCoreChipId(5061), "weapon core chip wraps per type");
 
             string invalidIdExpressionPath = System.IO.Path.Combine(
                 TemporaryExtractionDirectory.Create(), "invalid-mapping.json");
