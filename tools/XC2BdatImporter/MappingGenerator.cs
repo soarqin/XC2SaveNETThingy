@@ -146,6 +146,11 @@ namespace XC2BdatImporter
             return BdatJsonReader.ReadTable(path);
         }
 
+        internal static BdatTable ReadExtractedTableForAnalysis(string root, string tableName)
+        {
+            return ReadExtractedTable(root, tableName);
+        }
+
         private static bool ShouldInclude(BdatRow row, string filter)
         {
             if (string.IsNullOrWhiteSpace(filter)) return true;

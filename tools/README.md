@@ -10,6 +10,9 @@ The importer accepts either a language directory or a version directory. When a 
 dotnet run --project .\tools\XC2BdatImporter -- `
   --base-bdat .\romdata\3.0\bdat `
   --base-gb .\romdata\3.0U\bdat `
+  --base-cn .\romdata\3.0\bdat\cn `
+  --base-jp .\romdata\3.0\bdat\jp `
+  --base-tw .\romdata\3.0\bdat\tw `
   --torna-bdat .\romdata\3.0\bdat_torna `
   --torna-gb .\romdata\3.0U\bdat_torna `
   --toolset .\romdata\bdat-toolset-win64.exe `
@@ -22,7 +25,7 @@ Only an explicit `--replace` updates project CSV files and `XC2SaveNETThingy/XC2
 
 Run `--self-test` for parser, mapping, database, and verification checks. The verifier requires SQLite integrity, primary-key, CSV/database, and foreign-key-baseline checks; the existing 1,811 foreign-key violations must not increase.
 
-The project data also contains `ItemStatus.csv`, loaded by `Items_ItemStatus.sql`. It records the 19 confirmed `Reserved` item IDs separately from `Items`, preserving the generated item schema. Reserved entries remain selectable; the editors display `[Reserved]` and a red warning so the metadata does not silently change save-writing behavior.
+When `--base-cn`, `--base-jp`, and `--base-tw` are supplied together, the importer also regenerates `ItemStatus.csv` from the `common.bdat` `Name` pointers and all four localized tables. The current data contains 142 `Reserved` IDs. A record is selected when the English name is empty or `UNKNOWN_*`, the English table retains CJK/Hangul characters, or any language retains an explicit internal/provisional marker. The `ItemStatus` table is loaded by `Items_ItemStatus.sql`; reserved entries remain selectable, while the editors display `[Reserved]` and a red warning so metadata does not silently change save-writing behavior.
 
 ## Save round-trip verifier
 

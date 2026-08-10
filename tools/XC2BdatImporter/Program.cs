@@ -131,6 +131,41 @@ namespace XC2BdatImporter
                     localized.OutputDirectory,
                     dataDirectory);
                 MappingGenerator.WriteAll(generated, outputDataDirectory);
+
+                if (HasAllAsianLanguageOptions(options))
+                {
+                    using (BdatExtractionResult chinese = runner.Extract(options.GetValue("base-cn")))
+                    using (BdatExtractionResult japanese = runner.Extract(options.GetValue("base-jp")))
+                    using (BdatExtractionResult traditionalChinese = runner.Extract(options.GetValue("base-tw")))
+                    {
+                        Dictionary<string, BdatTable> sourceTables = new Dictionary<string, BdatTable>(StringComparer.Ordinal);
+                        foreach (MappingDefinition mapping in config.Mappings)
+                        {
+                            if (!sourceTables.ContainsKey(mapping.SourceTable))
+                            {
+                                sourceTables.Add(
+                                    mapping.SourceTable,
+                                    MappingGenerator.ReadExtractedTableForAnalysis(common.OutputDirectory, mapping.SourceTable));
+                            }
+                        }
+
+                        Dictionary<string, IReadOnlyDictionary<string, BdatTable>> localizedTables = new Dictionary<string, IReadOnlyDictionary<string, BdatTable>>(StringComparer.OrdinalIgnoreCase)
+                        {
+                            ["gb"] = ReadLocalizedTables(config, localized.OutputDirectory),
+                            ["cn"] = ReadLocalizedTables(config, chinese.OutputDirectory),
+                            ["jp"] = ReadLocalizedTables(config, japanese.OutputDirectory),
+                            ["tw"] = ReadLocalizedTables(config, traditionalChinese.OutputDirectory)
+                        };
+                        ProjectCsvDocument generatedItems = ProjectDataWriter.ReadCsv(Path.Combine(outputDataDirectory, "Items.csv"));
+                        IReadOnlyList<ReservedItemRecord> statuses = ReservedItemAnalyzer.AnalyzeProjectItems(
+                            generatedItems,
+                            config,
+                            sourceTables,
+                            localizedTables);
+                        ReservedItemAnalyzer.WriteStatusCsv(Path.Combine(outputDataDirectory, "ItemStatus.csv"), statuses);
+                        Console.WriteLine("Reserved item statuses generated: " + statuses.Count);
+                    }
+                }
             }
 
             string candidateDatabase = Path.Combine(outputPaths.OutputDirectory, "XC2Data.db");
@@ -161,6 +196,36 @@ namespace XC2BdatImporter
             string fullPath = Path.GetFullPath(path);
             string gbDirectory = Path.Combine(fullPath, "gb");
             return Directory.Exists(gbDirectory) ? gbDirectory : fullPath;
+        }
+
+        private static bool HasAllAsianLanguageOptions(ImporterArguments options)
+        {
+            bool any = !string.IsNullOrWhiteSpace(options.GetValue("base-cn")) ||
+                !string.IsNullOrWhiteSpace(options.GetValue("base-jp")) ||
+                !string.IsNullOrWhiteSpace(options.GetValue("base-tw"));
+            if (!any) return false;
+            if (string.IsNullOrWhiteSpace(options.GetValue("base-cn")) ||
+                string.IsNullOrWhiteSpace(options.GetValue("base-jp")) ||
+                string.IsNullOrWhiteSpace(options.GetValue("base-tw")))
+            {
+                throw new ArgumentException("--base-cn, --base-jp, and --base-tw must be supplied together.");
+            }
+
+            return true;
+        }
+
+        private static IReadOnlyDictionary<string, BdatTable> ReadLocalizedTables(MappingConfig config, string root)
+        {
+            Dictionary<string, BdatTable> tables = new Dictionary<string, BdatTable>(StringComparer.Ordinal);
+            foreach (MappingDefinition mapping in config.Mappings)
+            {
+                if (!tables.ContainsKey(mapping.LocalizedTable))
+                {
+                    tables.Add(mapping.LocalizedTable, MappingGenerator.ReadExtractedTableForAnalysis(root, mapping.LocalizedTable));
+                }
+            }
+
+            return tables;
         }
 
         private static void ReplaceProjectData(string projectDataDirectory, string projectDatabase, string candidateDataDirectory, string candidateDatabase)
@@ -231,6 +296,7 @@ namespace XC2BdatImporter
             writer.WriteLine("Usage:");
             writer.WriteLine("  XC2BdatImporter --base-bdat <dir> --base-gb <dir> --torna-bdat <dir>");
             writer.WriteLine("    --torna-gb <dir> --toolset <file> --output <dir> --report <file>");
+            writer.WriteLine("    [--base-cn <dir> --base-jp <dir> --base-tw <dir>]");
             writer.WriteLine("    [--verify-only] [--replace]");
             writer.WriteLine("  XC2BdatImporter --read-table <json>");
             writer.WriteLine("  XC2BdatImporter --self-test");
@@ -245,6 +311,9 @@ namespace XC2BdatImporter
             "base-gb",
             "torna-bdat",
             "torna-gb",
+            "base-cn",
+            "base-jp",
+            "base-tw",
             "toolset",
             "output",
             "report",

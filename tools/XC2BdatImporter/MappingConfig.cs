@@ -231,6 +231,28 @@ namespace XC2BdatImporter
             return result;
         }
 
+        internal long ComputeSourceId(long targetId)
+        {
+            if (targetId < 0) throw new ArgumentOutOfRangeException(nameof(targetId));
+            IdExpressionParts parts = ParseIdExpression(IdExpression, TargetTable);
+            long result;
+            try
+            {
+                result = checked(targetId - parts.Offset);
+            }
+            catch (OverflowException ex)
+            {
+                throw new InvalidDataException("Mapping '" + TargetTable + "' produced an overflowing source ID.", ex);
+            }
+
+            if (result < 0 || result > uint.MaxValue)
+            {
+                throw new InvalidDataException("Mapping '" + TargetTable + "' produced an out-of-range source ID " + result + ".");
+            }
+
+            return result;
+        }
+
         private static IdExpressionParts ParseIdExpression(string expression, string targetTable)
         {
             string value = (expression ?? string.Empty).Trim();

@@ -4,7 +4,7 @@
 - UPDATE: Refresh project CSV and SQLite data from XC2 3.0 BDAT resources, including the 426-record auxiliary-core expansion and corrected weapon core-chip reverse mapping.
 - UPDATE: Preserve ambiguous Guest/Challenge and Torna favorite-category labels where the 3.0 language tables do not distinguish project-specific variants.
 - NEW: Add `XC2SaveRoundTrip` for raw/compressed save round-trip checks and expose the 784-byte `SaveVersion` region in both editors.
-- NEW: Add an `ItemStatus` table for 19 confirmed provisional or invalid item records; both editors mark these selectable entries with `[Reserved]` and a red warning style.
+- UPDATE: Expand `ItemStatus` from 19 to 142 records using four-language BDAT evidence. Empty names, `UNKNOWN_*` placeholders, untranslated CJK/Hangul names in the English table, and explicit internal/provisional markers are now marked `Reserved`; both editors mark these selectable entries with `[Reserved]` and a red warning style.
 - NOTE: No real 3.0 save sample is included; round-trip coverage is structural until an external sample directory is provided.
 
 ## Release 6.1
