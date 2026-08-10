@@ -1,0 +1,154 @@
+[
+  {
+    "id": 20005,
+    "itemTypeId": 5,
+    "sourceTable": "ITM_SalvageList",
+    "status": "Reserved",
+    "names": { "en": "Special Cylinder (Prov.)", "cn": "クエスト用ボンベ（仮）", "jp": "クエスト用ボンベ（仮）", "tw": "クエスト用ボンベ（仮）" },
+    "reason": "Quest-only provisional cylinder; English uses Prov. and Asian names retain 仮."
+  },
+  {
+    "id": 20006,
+    "itemTypeId": 5,
+    "sourceTable": "ITM_SalvageList",
+    "status": "Reserved",
+    "names": { "en": "Special Cylinder (Prov.)", "cn": "クエスト用ボンベ（仮）", "jp": "クエスト用ボンベ（仮）", "tw": "クエスト用ボンベ（仮）" },
+    "reason": "Quest-only provisional cylinder; English uses Prov. and Asian names retain 仮."
+  },
+  {
+    "id": 20007,
+    "itemTypeId": 5,
+    "sourceTable": "ITM_SalvageList",
+    "status": "Reserved",
+    "names": { "en": "Special Cylinder (Prov.)", "cn": "クエスト用ボンベ（仮）", "jp": "クエスト用ボンベ（仮）", "tw": "クエスト用ボンベ（仮）" },
+    "reason": "Quest-only provisional cylinder; English uses Prov. and Asian names retain 仮."
+  },
+  {
+    "id": 20008,
+    "itemTypeId": 5,
+    "sourceTable": "ITM_SalvageList",
+    "status": "Reserved",
+    "names": { "en": "Special Cylinder (Prov.)", "cn": "クエスト用ボンベ（仮）", "jp": "クエスト用ボンベ（仮）", "tw": "クエスト用ボンベ（仮）" },
+    "reason": "Quest-only provisional cylinder; English uses Prov. and Asian names retain 仮."
+  },
+  {
+    "id": 20009,
+    "itemTypeId": 5,
+    "sourceTable": "ITM_SalvageList",
+    "status": "Reserved",
+    "names": { "en": "Special Cylinder (Prov.)", "cn": "クエスト用ボンベ（仮）", "jp": "クエスト用ボンベ（仮）", "tw": "クエスト用ボンベ（仮）" },
+    "reason": "Quest-only provisional cylinder; English uses Prov. and Asian names retain 仮."
+  },
+  {
+    "id": 25148,
+    "itemTypeId": 6,
+    "sourceTable": "ITM_PreciousList",
+    "status": "Reserved",
+    "names": { "en": "ウマのタテガミ(仮)", "cn": "ウマのタテガミ(仮)", "jp": "ウマのタテガミ(仮)", "tw": "ウマのタテガミ(仮)" },
+    "reason": "All extracted language names retain the provisional marker 仮."
+  },
+  {
+    "id": 25160,
+    "itemTypeId": 6,
+    "sourceTable": "ITM_PreciousList",
+    "status": "Reserved",
+    "names": { "en": "ジゾーの大切な何か（仮）", "cn": "ジゾーの大切な何か（仮）", "jp": "ジゾーの大切な何か（仮）", "tw": "ジゾーの大切な何か（仮）" },
+    "reason": "All extracted language names retain the provisional marker 仮."
+  },
+  {
+    "id": 25166,
+    "itemTypeId": 6,
+    "sourceTable": "ITM_PreciousList",
+    "status": "Reserved",
+    "names": { "en": "修理用木材(仮)", "cn": "修理用木材(仮)", "jp": "修理用木材(仮)", "tw": "修理用木材(仮)" },
+    "reason": "All extracted language names retain the provisional marker 仮."
+  },
+  {
+    "id": 25231,
+    "itemTypeId": 6,
+    "sourceTable": "ITM_PreciousList",
+    "status": "Reserved",
+    "names": { "en": "謎の合体パーツ(仮)", "cn": "謎の合体パーツ(仮)", "jp": "謎の合体パーツ(仮)", "tw": "謎の合体パーツ(仮)" },
+    "reason": "All extracted language names retain the provisional marker 仮."
+  },
+  {
+    "id": 30231,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "Gorilla Hair Bristle", "cn": "ゴリラの剛毛(仮)", "jp": "ゴリラの剛毛(仮)", "tw": "ゴリラの剛毛(仮)" },
+    "reason": "Three Asian language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30232,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "海トカゲの鱗(仮)", "cn": "海トカゲの鱗(仮)", "jp": "海トカゲの鱗(仮)", "tw": "海トカゲの鱗(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30233,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "海鳥の羽根(仮)", "cn": "海鳥の羽根(仮)", "jp": "海鳥の羽根(仮)", "tw": "海鳥の羽根(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30235,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "Giant Frog Meat", "cn": "巨大カエルの肉(仮)", "jp": "巨大カエルの肉(仮)", "tw": "巨大カエルの肉(仮)" },
+    "reason": "Three Asian language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30236,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "海トカゲの爪(仮)", "cn": "海トカゲの爪(仮)", "jp": "海トカゲの爪(仮)", "tw": "海トカゲの爪(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30237,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "中型ヘビの尾(仮)", "cn": "中型ヘビの尾(仮)", "jp": "中型ヘビの尾(仮)", "tw": "中型ヘビの尾(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30243,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "ウマのタテガミ(仮)", "cn": "ウマのタテガミ(仮)", "jp": "ウマのタテガミ(仮)", "tw": "ウマのタテガミ(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30244,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "浮遊生物の皮(仮)", "cn": "浮遊生物の皮(仮)", "jp": "浮遊生物の皮(仮)", "tw": "浮遊生物の皮(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30245,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "雲海魚の尾ひれ(仮)", "cn": "雲海魚の尾ひれ(仮)", "jp": "雲海魚の尾ひれ(仮)", "tw": "雲海魚の尾ひれ(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  },
+  {
+    "id": 30246,
+    "itemTypeId": 7,
+    "sourceTable": "ITM_CollectionList",
+    "status": "Reserved",
+    "names": { "en": "飛びエイの棘(仮)", "cn": "飛びエイの棘(仮)", "jp": "飛びエイの棘(仮)", "tw": "飛びエイの棘(仮)" },
+    "reason": "All extracted language names retain the provisional marker （仮）."
+  }
+]
