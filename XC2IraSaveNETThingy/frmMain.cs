@@ -3063,6 +3063,7 @@ namespace XC2IraSaveNETThingy
                 int rowIndex = e.RowIndex;
 
                 DataGridView dgv = (DataGridView)sender;
+                ApplyReservedItemStyle(dgv, rowIndex);
 
                 switch (columnIndex)
                 {

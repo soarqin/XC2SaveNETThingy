@@ -3974,6 +3974,7 @@ namespace XC2Bf2SaveNETThingy
                 int rowIndex = e.RowIndex;
 
                 DataGridView dgv = (DataGridView)sender;
+                ApplyReservedItemStyle(dgv, rowIndex);
 
                 switch (columnIndex)
                 {
