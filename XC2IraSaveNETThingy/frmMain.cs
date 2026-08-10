@@ -148,8 +148,8 @@ namespace XC2IraSaveNETThingy
             cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories(lang));
-            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories(lang));
+            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategoriesIra(lang));
+            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategoriesIra(lang));
             cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang));
             cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang));
 
