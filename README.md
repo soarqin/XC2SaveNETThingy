@@ -16,6 +16,9 @@ The shared save model accepts the 2.x/3.0 base-game and Torna save sizes without
 
 Project data is generated from the 3.0 Asian gameplay BDAT resources and the 3.0U English `gb` language tables. Torna event, quest, camp-event, battle-text, and dialogue BDAT files are retained as inputs for verification but are not imported because the current applications do not consume them. See [`tools/README.md`](tools/README.md) for reproducible generation and round-trip commands.
 
+### Reserved item warnings
+The shared database includes an `ItemStatus` table for 19 confirmed provisional or invalid item records identified by the 3.0 multi-language BDAT comparison. These records remain selectable and writable so existing save-editing workflows are unchanged, but both editors append `[Reserved]`, use a red row warning, and show a tooltip explaining that the entry is retained game data that should be edited with care. The status is metadata only; it does not prove that the game accepts the item ID.
+
 
 ## Links:
 Gitlab Repo - [https://gitlab.com/damysteryman/XC2SaveNETThingy]

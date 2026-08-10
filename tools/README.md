@@ -22,6 +22,8 @@ Only an explicit `--replace` updates project CSV files and `XC2SaveNETThingy/XC2
 
 Run `--self-test` for parser, mapping, database, and verification checks. The verifier requires SQLite integrity, primary-key, CSV/database, and foreign-key-baseline checks; the existing 1,811 foreign-key violations must not increase.
 
+The project data also contains `ItemStatus.csv`, loaded by `Items_ItemStatus.sql`. It records the 19 confirmed `Reserved` item IDs separately from `Items`, preserving the generated item schema. Reserved entries remain selectable; the editors display `[Reserved]` and a red warning so the metadata does not silently change save-writing behavior.
+
 ## Save round-trip verifier
 
 `XC2SaveRoundTrip` reads raw or compressed saves from an external directory, deserializes and serializes each one, then compares the decompressed length, header, Drivers, Blades, ItemBox, ContentVersions, and SaveVersion regions. It writes a diagnostic round-trip file for each sample.
