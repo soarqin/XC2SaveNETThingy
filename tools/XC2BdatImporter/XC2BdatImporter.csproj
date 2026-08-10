@@ -10,5 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.109.2" />
+    <None Update="mappings.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

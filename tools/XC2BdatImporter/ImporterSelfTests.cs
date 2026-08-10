@@ -16,6 +16,7 @@ namespace XC2BdatImporter
                 DuplicateIdIsRejected(fixtureDirectory);
                 NullStringIsAccepted(fixtureDirectory);
                 InconsistentFieldTypeIsRejected(fixtureDirectory);
+                MappingSelfTests.Run();
             }
             finally
             {
