@@ -19,14 +19,6 @@ namespace XC2BdatImporter
 
     internal static class MappingGenerator
     {
-        internal static long ComputeWeaponCoreChipId(long weaponId)
-        {
-            if (weaponId == 0) return 0;
-            long relative = weaponId - 5001;
-            if (relative < 0) throw new ArgumentOutOfRangeException(nameof(weaponId));
-            return 10001 + (relative % 60);
-        }
-
         internal static long ResolveWeaponCoreChipId(long weaponId, IReadOnlyDictionary<long, long> index)
         {
             if (weaponId == 0) return 0;
