@@ -157,6 +157,7 @@ namespace XC2BdatImporter
         public string TargetTable { get; set; }
         public string KeyColumn { get; set; }
         public string LocalizedKeyColumn { get; set; }
+        public int SourceKeyOffset { get; set; }
         public string IdExpression { get; set; }
         public int? ItemTypeId { get; set; }
         public bool PreserveExistingRows { get; set; }
@@ -177,6 +178,11 @@ namespace XC2BdatImporter
             if (IdOffset < 0)
             {
                 throw new InvalidDataException("Mapping '" + TargetTable + "' has a negative idOffset.");
+            }
+
+            if (SourceKeyOffset < -ushort.MaxValue || SourceKeyOffset > ushort.MaxValue)
+            {
+                throw new InvalidDataException("Mapping '" + TargetTable + "' has an out-of-range sourceKeyOffset.");
             }
 
             ParseIdExpression(IdExpression, TargetTable);

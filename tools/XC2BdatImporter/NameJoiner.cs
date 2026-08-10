@@ -57,7 +57,8 @@ namespace XC2BdatImporter
         internal static string ResolveName(
             BdatRow sourceRow,
             string sourceKeyColumn,
-            IReadOnlyDictionary<ulong, string> localizedIndex)
+            IReadOnlyDictionary<ulong, string> localizedIndex,
+            int sourceKeyOffset = 0)
         {
             if (sourceRow == null || localizedIndex == null)
             {
@@ -67,12 +68,29 @@ namespace XC2BdatImporter
             ulong key;
             if (string.Equals(sourceKeyColumn, "$id", StringComparison.Ordinal))
             {
-                key = checked((ulong)sourceRow.Id);
+                long adjusted = checked(sourceRow.Id + sourceKeyOffset);
+                if (adjusted < 0)
+                {
+                    throw new NameJoinException("Source row " + sourceRow.Id + " produced a negative adjusted name index.");
+                }
+
+                key = checked((ulong)adjusted);
             }
             else if (!sourceRow.Fields.TryGetValue(sourceKeyColumn, out JsonElement value) ||
                 value.ValueKind != JsonValueKind.Number || !value.TryGetUInt64(out key))
             {
                 throw new NameJoinException("Source row " + sourceRow.Id + " has no unsigned-short name index in '" + sourceKeyColumn + "'.");
+            }
+
+            if (!string.Equals(sourceKeyColumn, "$id", StringComparison.Ordinal) && sourceKeyOffset != 0)
+            {
+                long adjusted = checked((long)key + sourceKeyOffset);
+                if (adjusted < 0)
+                {
+                    throw new NameJoinException("Source row " + sourceRow.Id + " produced a negative adjusted name index.");
+                }
+
+                key = checked((ulong)adjusted);
             }
 
             if (key > ushort.MaxValue)

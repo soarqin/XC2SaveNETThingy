@@ -67,9 +67,7 @@ namespace XC2BdatImporter
                 }
 
                 ValidatedOutputPaths outputPaths = ValidateInputs(options);
-                Console.WriteLine("Arguments validated. The BDAT import stages will be added in subsequent tasks.");
-                Console.WriteLine("Output directory: " + outputPaths.OutputDirectory);
-                Console.WriteLine("Report path: " + outputPaths.ReportPath);
+                RunImport(options, outputPaths);
                 return 0;
             }
             catch (ArgumentException ex)
@@ -101,6 +99,49 @@ namespace XC2BdatImporter
             return ValidatedOutputPaths.Create(
                 options.GetValue("output"),
                 options.GetValue("report"));
+        }
+
+        private static void RunImport(ImporterArguments options, ValidatedOutputPaths outputPaths)
+        {
+            string projectRoot = Directory.GetCurrentDirectory();
+            string dataDirectory = Path.Combine(projectRoot, "XC2SaveNETThingy", "data");
+            string ddlDirectory = Path.Combine(projectRoot, "XC2SaveNETThingy", "db");
+            if (!Directory.Exists(dataDirectory) || !Directory.Exists(ddlDirectory))
+            {
+                throw new DirectoryNotFoundException(
+                    "Run the importer from the repository root containing XC2SaveNETThingy/data and XC2SaveNETThingy/db.");
+            }
+
+            string mappingPath = Path.Combine(AppContext.BaseDirectory, "mappings.json");
+            MappingConfig config = MappingConfig.Load(mappingPath);
+            string outputDataDirectory = Path.Combine(outputPaths.OutputDirectory, "data");
+            Directory.CreateDirectory(outputDataDirectory);
+            foreach (string existingCsv in Directory.GetFiles(dataDirectory, "*.csv"))
+            {
+                File.Copy(existingCsv, Path.Combine(outputDataDirectory, Path.GetFileName(existingCsv)), true);
+            }
+
+            BdatToolsetRunner runner = new BdatToolsetRunner(options.GetValue("toolset"));
+            using (BdatExtractionResult common = runner.Extract(Path.Combine(options.GetValue("base-bdat"), "common.bdat")))
+            using (BdatExtractionResult localized = runner.Extract(options.GetValue("base-gb")))
+            {
+                GeneratedCsvSet generated = MappingGenerator.Generate(
+                    config,
+                    common.OutputDirectory,
+                    localized.OutputDirectory,
+                    dataDirectory);
+                MappingGenerator.WriteAll(generated, outputDataDirectory);
+            }
+
+            string candidateDatabase = Path.Combine(outputPaths.OutputDirectory, "XC2Data.db");
+            DatabaseBuilder.Build(ddlDirectory, outputDataDirectory, candidateDatabase);
+            File.WriteAllText(outputPaths.ReportPath,
+                "XC2 BDAT candidate generated\r\n" +
+                "verifyOnly=" + options.VerifyOnly + "\r\n" +
+                "replace=" + options.Replace + "\r\n" +
+                "candidate=" + candidateDatabase + "\r\n");
+            Console.WriteLine("Candidate generated: " + candidateDatabase);
+            Console.WriteLine("Report path: " + outputPaths.ReportPath);
         }
 
         private static void ValidateDirectory(string path, string optionName)

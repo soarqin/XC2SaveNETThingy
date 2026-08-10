@@ -43,9 +43,9 @@ namespace XC2BdatImporter
             }
 
             string fullInputPath = Path.GetFullPath(inputPath);
-            if (!File.Exists(fullInputPath))
+            if (!File.Exists(fullInputPath) && !Directory.Exists(fullInputPath))
             {
-                throw new FileNotFoundException("BDAT input file was not found.", fullInputPath);
+                throw new FileNotFoundException("BDAT input file or directory was not found.", fullInputPath);
             }
 
             string outputDirectory = TemporaryExtractionDirectory.Create();
