@@ -666,7 +666,7 @@ namespace XC2Bf2SaveNETThingy
                 hbxUnk_0x10AD74.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD74);
                 nudUnk_0x10AE93.Value = SAVEDATA.Unk_0x10AE93;
                 hbxUnk_0x1171E8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1171E8);
-                hbxUnk_0x117390.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x117390);
+                hbxSaveVersion.ByteProvider = new FixedLengthByteProvider(SAVEDATA.SaveVersion);
                 #endregion Unknownm
 
                 tbcMain.Enabled = true;

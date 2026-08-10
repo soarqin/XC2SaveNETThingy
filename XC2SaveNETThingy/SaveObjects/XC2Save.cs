@@ -155,7 +155,24 @@ namespace XC2SaveNETThingy
         public UInt32 EventsCount { get; set; }
         public Byte[] Unk_0x1171E8 { get; set; }
         public UInt32[] ContentVersions { get; set; }
-        public Byte[] Unk_0x117390 { get; set; }
+        public Byte[] SaveVersion { get; set; }
+
+        [Obsolete("Use SaveVersion instead.")]
+        public Byte[] Unk_0x117390
+        {
+            get { return SaveVersion; }
+            set { SaveVersion = value; }
+        }
+
+        public UInt16 SaveVersionValue
+        {
+            get
+            {
+                if (SaveVersion == null || SaveVersion.Length < 2)
+                    throw new InvalidDataException("SaveVersion must contain at least 2 bytes.");
+                return BitConverter.ToUInt16(SaveVersion, 0);
+            }
+        }
 
         public XC2Save(Byte[] data)
         {
@@ -261,7 +278,7 @@ namespace XC2SaveNETThingy
             for (int i = 0; i < ContentVersions.Length; i++)
                 ContentVersions[i] = BitConverter.ToUInt32(data.GetByteSubArray(LOC["ContentVersions"] + (i * 4), 4), 0);
             
-            Unk_0x117390 = data.GetByteSubArray(LOC["sg_gap_117390"], 784);
+            SaveVersion = data.GetByteSubArray(LOC["sg_gap_117390"], 784);
         }
         public virtual byte[] ToRawData()
         {
@@ -360,7 +377,9 @@ namespace XC2SaveNETThingy
             foreach (UInt32 u in ContentVersions)
                 result.AddRange(BitConverter.GetBytes(u));
 
-            result.AddRange(Unk_0x117390);
+            if (SaveVersion == null || SaveVersion.Length != 784)
+                throw new InvalidDataException("SaveVersion must be exactly 784 bytes.");
+            result.AddRange(SaveVersion);
 
             if (result.Count != SIZE)
             {
@@ -492,8 +511,14 @@ namespace XC2SaveNETThingy
 
         public static XC2Save Deserialize(Byte[] data)
         {
+            if (data == null || data.Length < CMP_HEADER.Length)
+                throw new InvalidDataException("Save data is too short to contain the 16-byte compression header: actual 0x" + (data == null ? 0 : data.Length).ToString("X"));
+
             if (data.GetByteSubArray(0, CMP_HEADER.Length).SequenceEqual(CMP_HEADER))
                 data = Decompress(data);
+
+            if (data.Length < 4)
+                throw new InvalidDataException("Decompressed save data is too short to contain the 4-byte magic: actual 0x" + data.Length.ToString("X"));
 
             Byte[] magic = data.GetByteSubArray(0, 4);
 

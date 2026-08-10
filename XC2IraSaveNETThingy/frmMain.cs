@@ -398,7 +398,7 @@ namespace XC2IraSaveNETThingy
                 hbxUnk_0x10AD74.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x10AD74);
                 nudUnk_0x10AE93.Value = SAVEDATA.Unk_0x10AE93;
                 hbxUnk_0x1171E8.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x1171E8);
-                hbxUnk_0x117390.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x117390);
+                hbxSaveVersion.ByteProvider = new FixedLengthByteProvider(SAVEDATA.SaveVersion);
                 hbxUnk_0x11A8DC.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x11A8DC);
                 hbxUnk_0x137A90.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Unk_0x137A90);
                 #endregion Unknownm
