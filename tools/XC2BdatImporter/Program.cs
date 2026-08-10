@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace XC2BdatImporter
 {
@@ -32,6 +33,28 @@ namespace XC2BdatImporter
                 if (options.SelfTest)
                 {
                     return RunSelfTest();
+                }
+
+                string readTablePath = options.GetValue("read-table");
+                if (!string.IsNullOrWhiteSpace(readTablePath))
+                {
+                    BdatTable table = BdatJsonReader.ReadTable(readTablePath);
+                    StringBuilder columns = new StringBuilder();
+                    for (int index = 0; index < table.Schema.Count; index++)
+                    {
+                        if (index != 0)
+                        {
+                            columns.Append(',');
+                        }
+
+                        columns.Append(table.Schema[index].Name);
+                    }
+
+                    Console.WriteLine(
+                        "TABLE_OK table=" + table.TableName +
+                        " rows=" + table.Rows.Count +
+                        " columns=" + columns);
+                    return 0;
                 }
 
                 IReadOnlyList<string> missingOptions = options.GetMissingValues(RequiredOptions);
@@ -121,6 +144,7 @@ namespace XC2BdatImporter
                 throw new InvalidOperationException("Unsafe temporary deletion target was accepted.");
             }
 
+            ImporterSelfTests.Run();
             Console.WriteLine("SELF_TEST_OK");
             return 0;
         }
@@ -131,6 +155,7 @@ namespace XC2BdatImporter
             writer.WriteLine("  XC2BdatImporter --base-bdat <dir> --base-gb <dir> --torna-bdat <dir>");
             writer.WriteLine("    --torna-gb <dir> --toolset <file> --output <dir> --report <file>");
             writer.WriteLine("    [--verify-only] [--replace]");
+            writer.WriteLine("  XC2BdatImporter --read-table <json>");
             writer.WriteLine("  XC2BdatImporter --self-test");
         }
     }
@@ -145,7 +170,8 @@ namespace XC2BdatImporter
             "torna-gb",
             "toolset",
             "output",
-            "report"
+            "report",
+            "read-table"
         };
 
         private static readonly HashSet<string> FlagOptions = new HashSet<string>(StringComparer.Ordinal)
