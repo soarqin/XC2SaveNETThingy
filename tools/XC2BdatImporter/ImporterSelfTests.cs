@@ -18,6 +18,7 @@ namespace XC2BdatImporter
                 InconsistentFieldTypeIsRejected(fixtureDirectory);
                 MappingSelfTests.Run();
                 DatabaseSelfTests.Run();
+                VerifySelfTests.Run();
             }
             finally
             {

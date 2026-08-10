@@ -27,6 +27,51 @@ namespace XC2BdatImporter
             return 10001 + (relative % 60);
         }
 
+        internal static long ResolveWeaponCoreChipId(long weaponId, IReadOnlyDictionary<long, long> index)
+        {
+            if (weaponId == 0) return 0;
+            long chipId;
+            return index != null && index.TryGetValue(weaponId, out chipId) ? chipId : 0;
+        }
+
+        internal static IReadOnlyDictionary<long, long> BuildWeaponCoreChipIndex(BdatTable chipTable)
+        {
+            if (chipTable == null) throw new ArgumentNullException(nameof(chipTable));
+            Dictionary<long, long> result = new Dictionary<long, long>();
+            foreach (BdatRow chip in chipTable.Rows)
+            {
+                foreach (KeyValuePair<string, JsonElement> field in chip.Fields)
+                {
+                    if (!field.Key.StartsWith("CreateWpn", StringComparison.Ordinal)) continue;
+                    if (field.Value.ValueKind != JsonValueKind.Number) continue;
+                    long weaponId = field.Value.GetInt64();
+                    if (weaponId == 0) continue;
+                    long previousChip;
+                    if (result.TryGetValue(weaponId, out previousChip) && previousChip != chip.Id)
+                    {
+                        throw new InvalidDataException(
+                            "Weapon " + weaponId + " is assigned to multiple core chips " + previousChip + " and " + chip.Id + ".");
+                    }
+
+                    result[weaponId] = chip.Id;
+                }
+            }
+
+            return result;
+        }
+
+        internal static string ComputeWeaponTypeBaseId(BdatRow row, long fallback)
+        {
+            if (row == null) throw new ArgumentNullException(nameof(row));
+            JsonElement motion;
+            if (row.Fields.TryGetValue("Motion", out motion) && motion.ValueKind == JsonValueKind.Number)
+            {
+                return motion.GetInt64().ToString(CultureInfo.InvariantCulture);
+            }
+
+            return GetIntField(row, "WpnBaseID", fallback);
+        }
+
         internal static GeneratedCsvSet Generate(
             MappingConfig config,
             string commonExtractDirectory,
@@ -36,6 +81,8 @@ namespace XC2BdatImporter
             if (config == null) throw new ArgumentNullException(nameof(config));
             Dictionary<string, ProjectCsvDocument> output = new Dictionary<string, ProjectCsvDocument>(StringComparer.OrdinalIgnoreCase);
             Dictionary<string, ProjectCsvDocument> existing = ReadExisting(existingCsvDirectory);
+            BdatTable coreChipTable = ReadExtractedTable(commonExtractDirectory, "ITM_PcWpnChip");
+            IReadOnlyDictionary<long, long> weaponCoreChipIndex = BuildWeaponCoreChipIndex(coreChipTable);
 
             foreach (MappingDefinition mapping in config.Mappings)
             {
@@ -59,7 +106,7 @@ namespace XC2BdatImporter
                             "' row " + row.Id + ": " + ex.Message);
                     }
                     long targetId = mapping.ComputeTargetId(row.Id);
-                    generatedRows.Add(CreateTargetRow(mapping, row, targetId, name));
+                    generatedRows.Add(CreateTargetRow(mapping, row, targetId, name, weaponCoreChipIndex));
                 }
 
                 ProjectCsvDocument generated = MergeRows(mapping, generatedRows, existing, output);
@@ -115,13 +162,13 @@ namespace XC2BdatImporter
             throw new InvalidDataException("Unsupported mapping filter: " + filter);
         }
 
-        private static IReadOnlyList<string> CreateTargetRow(MappingDefinition mapping, BdatRow row, long targetId, string name)
+        private static IReadOnlyList<string> CreateTargetRow(MappingDefinition mapping, BdatRow row, long targetId, string name, IReadOnlyDictionary<long, long> weaponCoreChipIndex)
         {
             if (string.Equals(mapping.TargetTable, "Drivers", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "DriverSkills", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeArts", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeSkills", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeFieldSkills", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "BladeSpecials", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "BladeSpecialsLv4", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), name, string.Empty };
-            if (string.Equals(mapping.TargetTable, "WeaponTypes", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnBaseID", targetId), name, string.Empty };
-            if (string.Equals(mapping.TargetTable, "Weapons", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), ComputeWeaponCoreChipId(row.Id).ToString(CultureInfo.InvariantCulture), name, string.Empty };
+            if (string.Equals(mapping.TargetTable, "WeaponTypes", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), ComputeWeaponTypeBaseId(row, targetId), name, string.Empty };
+            if (string.Equals(mapping.TargetTable, "Weapons", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), ResolveWeaponCoreChipId(row.Id, weaponCoreChipIndex).ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "DriverArts", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), GetIntField(row, "WpnType", 0), GetIntField(row, "Driver", 0), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "Elements", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "FavCategories", StringComparison.Ordinal) || string.Equals(mapping.TargetTable, "FavCategoriesIra", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name, string.Empty };
             if (string.Equals(mapping.TargetTable, "BladeTrustRanks", StringComparison.Ordinal)) return new[] { targetId.ToString(CultureInfo.InvariantCulture), name };

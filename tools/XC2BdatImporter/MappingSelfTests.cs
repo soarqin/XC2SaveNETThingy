@@ -147,6 +147,31 @@ namespace XC2BdatImporter
             AssertEqual(10060L, MappingGenerator.ComputeWeaponCoreChipId(5060), "last weapon core chip");
             AssertEqual(10001L, MappingGenerator.ComputeWeaponCoreChipId(5061), "weapon core chip wraps per type");
 
+            BdatTable chipTable = new BdatTable(
+                "chips.json",
+                "ITM_PcWpnChip",
+                new[] { new BdatColumn("CreateWpn1", 1), new BdatColumn("CreateWpn33", 1) },
+                new[]
+                {
+                    new BdatRow(10001, new Dictionary<string, JsonElement>(StringComparer.Ordinal)
+                    {
+                        { "CreateWpn1", JsonDocument.Parse("5001").RootElement.Clone() },
+                        { "CreateWpn33", JsonDocument.Parse("5990").RootElement.Clone() }
+                    })
+                });
+            IReadOnlyDictionary<long, long> coreChipIndex = MappingGenerator.BuildWeaponCoreChipIndex(chipTable);
+            AssertEqual(10001L, MappingGenerator.ResolveWeaponCoreChipId(5001, coreChipIndex), "weapon core chip lookup");
+            AssertEqual(10001L, MappingGenerator.ResolveWeaponCoreChipId(5990, coreChipIndex), "sparse weapon core chip lookup");
+            AssertEqual(0L, MappingGenerator.ResolveWeaponCoreChipId(5961, coreChipIndex), "unmapped weapon core chip lookup");
+
+            BdatRow weaponType = new BdatRow(
+                17,
+                new Dictionary<string, JsonElement>(StringComparer.Ordinal)
+                {
+                    { "Motion", JsonDocument.Parse("1").RootElement.Clone() }
+                });
+            AssertEqual("1", MappingGenerator.ComputeWeaponTypeBaseId(weaponType, 17), "weapon type motion base ID");
+
             string invalidIdExpressionPath = System.IO.Path.Combine(
                 TemporaryExtractionDirectory.Create(), "invalid-mapping.json");
             try
