@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Unreleased
+- UPDATE: Refresh project CSV and SQLite data from XC2 3.0 BDAT resources, including the 426-record auxiliary-core expansion and corrected weapon core-chip reverse mapping.
+- UPDATE: Preserve ambiguous Guest/Challenge and Torna favorite-category labels where the 3.0 language tables do not distinguish project-specific variants.
+- NEW: Add `XC2SaveRoundTrip` for raw/compressed save round-trip checks and expose the 784-byte `SaveVersion` region in both editors.
+- NOTE: No real 3.0 save sample is included; round-trip coverage is structural until an external sample directory is provided.
+
 ## Release 6.1
 ### XC2Bf2SaveNETThingy v1.5.1
 Fixed loading of pre-v1.5.0 save files
