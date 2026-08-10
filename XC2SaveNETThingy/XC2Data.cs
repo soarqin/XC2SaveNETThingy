@@ -25,6 +25,49 @@ namespace XC2SaveNETThingy
         private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=XC2Data.db; Read Only=True;");
         private static SQLiteDataAdapter dbAdapter;
         private static DataSet ds;
+        private static bool? itemStatusTableAvailable;
+
+        private static bool HasItemStatusTable()
+        {
+            if (itemStatusTableAvailable.HasValue)
+                return itemStatusTableAvailable.Value;
+
+            try
+            {
+                DataTable tables = GetDataSet(
+                    "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'ItemStatus'").Tables[0];
+                itemStatusTableAvailable = tables.Rows.Count != 0;
+            }
+            catch
+            {
+                // Keep older databases usable while the optional metadata table is absent.
+                itemStatusTableAvailable = false;
+            }
+
+            return itemStatusTableAvailable.Value;
+        }
+
+        private static string ItemReservedSelectExpression()
+        {
+            return HasItemStatusTable()
+                ? "CASE WHEN EXISTS (SELECT 1 FROM ItemStatus WHERE ItemID = Items.ID AND Status = 'Reserved') THEN 1 ELSE 0 END"
+                : "0";
+        }
+
+        private static string ItemReservedMarkerExpression()
+        {
+            return HasItemStatusTable()
+                ? "CASE WHEN EXISTS (SELECT 1 FROM ItemStatus WHERE ItemID = Items.ID AND Status = 'Reserved') THEN ' [Reserved]' ELSE '' END"
+                : "''";
+        }
+
+        private static string ItemNameExpression(LANG l, string idExpression = null)
+        {
+            string expression = "Name_" + LANG_STR[l] + " || " + ItemReservedMarkerExpression();
+            if (idExpression != null)
+                expression += " || ' [' || (" + idExpression + ") || ']'";
+            return expression;
+        }
 
         public static DataTable Elements(LANG l = LANG.EN)
         {
@@ -297,7 +340,8 @@ namespace XC2SaveNETThingy
         {
             string query =
                 "SELECT ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
+                ItemNameExpression(l, "ID") + " AS Name, " +
+                ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items";
 
             return GetDataSet(query).Tables[0];
@@ -336,10 +380,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetCoreChips(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID -10000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 10000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 10000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 1";
 
             return GetDataSet(query).Tables[0];
@@ -348,10 +392,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetAccessories(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || ID || ']' AS Name " +
+                ItemNameExpression(l, "ID") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 2";
 
             return GetDataSet(query).Tables[0];
@@ -360,10 +404,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetAuxCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 17000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 17000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 17000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 3";
 
             return GetDataSet(query).Tables[0];
@@ -372,10 +416,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetCylinders(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 20000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 20000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 20000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 5";
 
             return GetDataSet(query).Tables[0];
@@ -384,10 +428,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetKeyItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 25000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 25000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 25000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 6";
 
             return GetDataSet(query).Tables[0];
@@ -396,10 +440,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetCollectibles(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 30000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 30000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 30000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 7";
 
             return GetDataSet(query).Tables[0];
@@ -408,10 +452,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetTreasure(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 35000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 35000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 35000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 8";
 
             return GetDataSet(query).Tables[0];
@@ -420,10 +464,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetUnrefinedAuxCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 15000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 15000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 15000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 9";
 
             return GetDataSet(query).Tables[0];
@@ -432,10 +476,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPouchItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 40000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 40000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 40000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 10";
 
             return GetDataSet(query).Tables[0];
@@ -444,10 +488,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetCoreCrystals(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 45000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 45000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 45000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 11";
 
             return GetDataSet(query).Tables[0];
@@ -456,10 +500,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetBoosters(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 50000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 50000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 50000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 12";
 
             return GetDataSet(query).Tables[0];
@@ -468,10 +512,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetInfoItems(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 26000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 26000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 26000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 14";
 
             return GetDataSet(query).Tables[0];
@@ -480,10 +524,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPoppiRoleCPU(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 56000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 56000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 56000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 16";
 
             return GetDataSet(query).Tables[0];
@@ -492,10 +536,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPoppiElementCores(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 57000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 57000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 57000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 17";
 
             return GetDataSet(query).Tables[0];
@@ -504,10 +548,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPoppiSpecialsEnhancingRAM(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 58000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 58000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 58000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 18";
 
             return GetDataSet(query).Tables[0];
@@ -516,10 +560,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPoppiArtsCards(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 59000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 59000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 59000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 19";
 
             return GetDataSet(query).Tables[0];
@@ -528,10 +572,10 @@ namespace XC2SaveNETThingy
         public static DataTable GetPoppiSkillRAM(LANG l = LANG.EN)
         {
             string query =
-                "SELECT ID, Name_" + LANG_STR[l] + " AS Name FROM Items WHERE ItemTypeID = 0 " +
+                "SELECT ID, " + ItemNameExpression(l) + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved FROM Items WHERE ItemTypeID = 0 " +
                 "UNION ALL " +
                 "SELECT REPLACE(ID, ID, ID - 60000) AS ID, " +
-                "Name_" + LANG_STR[l] + " || ' [' || REPLACE(ID, ID, ID - 60000) || ']' AS Name " +
+                ItemNameExpression(l, "ID - 60000") + " AS Name, " + ItemReservedSelectExpression() + " AS Reserved " +
                 "FROM Items WHERE ItemTypeID = 20";
 
             return GetDataSet(query).Tables[0];

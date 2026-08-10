@@ -1,4 +1,5 @@
 using System;
+using System.Data.SQLite;
 using System.IO;
 using System.Text;
 
@@ -14,6 +15,7 @@ namespace XC2BdatImporter
                 CsvRoundTripPreservesCommentsAndUnicode(directory);
                 DatabaseBuildUsesParameterizedValues(directory);
                 FailedBuildDoesNotLeaveCandidate(directory);
+                ItemStatusIsPersisted(directory);
             }
             finally
             {
@@ -77,6 +79,44 @@ namespace XC2BdatImporter
             if (File.Exists(database))
             {
                 throw new InvalidOperationException("Failed database build left a candidate file.");
+            }
+        }
+
+        private static void ItemStatusIsPersisted(string directory)
+        {
+            string itemStatusDirectory = Path.Combine(directory, "item-status");
+            Directory.CreateDirectory(itemStatusDirectory);
+            string ddl = Path.Combine(itemStatusDirectory, "Items.sql");
+            string csv = Path.Combine(itemStatusDirectory, "Items.csv");
+            string statusDdl = Path.Combine(itemStatusDirectory, "Items_ItemStatus.sql");
+            string statusCsv = Path.Combine(itemStatusDirectory, "ItemStatus.csv");
+            string database = Path.Combine(itemStatusDirectory, "item-status.db");
+            File.WriteAllText(ddl,
+                "DROP TABLE IF EXISTS [Items];\n" +
+                "CREATE TABLE [Items] ([ID] INTEGER NOT NULL PRIMARY KEY, [ItemTypeID] INTEGER NOT NULL, [Name_EN] text NOT NULL, [Name_CN] text NOT NULL);\n",
+                Encoding.UTF8);
+            File.WriteAllText(csv,
+                "ID\tItemTypeID\tName_EN\tName_CN\r\n" +
+                "1\t6\tTEST\tテスト\r\n",
+                Encoding.Unicode);
+            File.WriteAllText(statusDdl,
+                "DROP TABLE IF EXISTS [ItemStatus];\n" +
+                "CREATE TABLE [ItemStatus] ([ItemID] INTEGER NOT NULL PRIMARY KEY, [Status] text NOT NULL, [Reason_EN] text NOT NULL, [Reason_CN] text NOT NULL, [Evidence] text NOT NULL, FOREIGN KEY ([ItemID]) REFERENCES [Items] ([ID]));\n",
+                Encoding.UTF8);
+            File.WriteAllText(statusCsv,
+                "ItemID\tStatus\tReason_EN\tReason_CN\tEvidence\r\n" +
+                "1\tReserved\ttest item\t测试道具\tfixture\r\n",
+                Encoding.Unicode);
+
+            DatabaseBuilder.Build(itemStatusDirectory, itemStatusDirectory, database);
+            using (SQLiteConnection connection = new SQLiteConnection("Data Source=" + database + ";Read Only=True;"))
+            {
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT [Status] FROM [ItemStatus] WHERE [ItemID] = 1";
+                    AssertEqual("Reserved", Convert.ToString(command.ExecuteScalar()), "ItemStatus value");
+                }
             }
         }
 
