@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="XC2Bf2SaveNETThingy/XC2Bf2SaveNETThingy.csproj" />
+  <Project Path="XC2IraSaveNETThingy/XC2IraSaveNETThingy.csproj" />
+  <Project Path="XC2SaveNETThingy/XC2SaveNETThingy.csproj" />
+  <Project Path="tools/XC2BdatImporter/XC2BdatImporter.csproj" />
+</Solution>
