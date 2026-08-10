@@ -123,7 +123,7 @@ namespace XC2BdatImporter
 
             BdatToolsetRunner runner = new BdatToolsetRunner(options.GetValue("toolset"));
             using (BdatExtractionResult common = runner.Extract(Path.Combine(options.GetValue("base-bdat"), "common.bdat")))
-            using (BdatExtractionResult localized = runner.Extract(options.GetValue("base-gb")))
+            using (BdatExtractionResult localized = runner.Extract(ResolveEnglishDirectory(options.GetValue("base-gb"))))
             {
                 GeneratedCsvSet generated = MappingGenerator.Generate(
                     config,
@@ -154,6 +154,13 @@ namespace XC2BdatImporter
 
             Console.WriteLine("Candidate generated: " + candidateDatabase);
             Console.WriteLine("Report path: " + outputPaths.ReportPath);
+        }
+
+        private static string ResolveEnglishDirectory(string path)
+        {
+            string fullPath = Path.GetFullPath(path);
+            string gbDirectory = Path.Combine(fullPath, "gb");
+            return Directory.Exists(gbDirectory) ? gbDirectory : fullPath;
         }
 
         private static void ReplaceProjectData(string projectDataDirectory, string projectDatabase, string candidateDataDirectory, string candidateDatabase)

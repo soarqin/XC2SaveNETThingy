@@ -127,6 +127,9 @@ namespace XC2BdatImporter
             AssertEqual(60000, config.GetMapping("Items", "Items_POPPI_SKILL_RAM.csv").IdOffset, "Poppi skill RAM offset");
             AssertEqual("source.id", config.GetMapping("Items", "Items_CORE_CHIPS.csv").IdExpression, "core chip source ID");
             AssertEqual("source.id", config.GetMapping("Weapons").IdExpression, "weapon source ID");
+            AssertEqual(6, config.GetMapping("Drivers").PreserveExistingIds.Count, "ambiguous driver IDs are preserved");
+            AssertEqual(1, config.GetMapping("WeaponTypes").PreserveExistingIds.Count, "ambiguous weapon type ID is preserved");
+            AssertEqual(4, config.GetMapping("FavCategoriesIra").PreserveExistingIds.Count, "Torna favorite IDs are preserved");
             AssertEqual("BTL_Buff", config.GetMapping("BladeArts").SourceTable, "blade arts source table");
             AssertEqual("btl_buff_ms", config.GetMapping("BladeArts").LocalizedTable, "blade arts localized table");
             AssertEqual("BTL_Arts_Bl", config.GetMapping("BladeSpecials").SourceTable, "blade specials source table");

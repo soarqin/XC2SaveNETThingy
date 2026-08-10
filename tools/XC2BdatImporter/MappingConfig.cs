@@ -161,6 +161,7 @@ namespace XC2BdatImporter
         public string IdExpression { get; set; }
         public int? ItemTypeId { get; set; }
         public bool PreserveExistingRows { get; set; }
+        public List<long> PreserveExistingIds { get; set; }
         public string Filter { get; set; }
         public int IdOffset { get; set; }
 
@@ -190,6 +191,15 @@ namespace XC2BdatImporter
             if (ItemTypeId.HasValue && (ItemTypeId.Value < 0 || ItemTypeId.Value > ushort.MaxValue))
             {
                 throw new InvalidDataException("Mapping '" + TargetTable + "' has an out-of-range itemTypeId.");
+            }
+
+            if (PreserveExistingIds != null)
+            {
+                foreach (long id in PreserveExistingIds)
+                {
+                    if (id < 0 || id > uint.MaxValue)
+                        throw new InvalidDataException("Mapping '" + TargetTable + "' has an out-of-range preserveExistingIds value.");
+                }
             }
         }
 

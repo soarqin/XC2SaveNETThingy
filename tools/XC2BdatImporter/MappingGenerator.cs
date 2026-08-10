@@ -141,7 +141,12 @@ namespace XC2BdatImporter
         private static BdatTable ReadExtractedTable(string root, string tableName)
         {
             string fileName = tableName + ".json";
-            string path = Directory.GetFiles(root, fileName, SearchOption.AllDirectories).FirstOrDefault();
+            string path = Directory.GetFiles(root, fileName, SearchOption.AllDirectories)
+                .FirstOrDefault(candidate => string.Equals(Path.GetFileName(candidate), fileName, StringComparison.Ordinal));
+            if (path == null)
+            {
+                path = Directory.GetFiles(root, fileName, SearchOption.AllDirectories).FirstOrDefault();
+            }
             if (path == null)
             {
                 throw new FileNotFoundException("Extracted BDAT table was not found.", Path.Combine(root, fileName));
@@ -200,11 +205,22 @@ namespace XC2BdatImporter
             }
             foreach (IReadOnlyList<string> row in rows)
             {
+                if (mapping.PreserveExistingIds != null && mapping.PreserveExistingIds.Contains(ParseRowId(row[0])) && byId.ContainsKey(row[0]))
+                {
+                    continue;
+                }
+
                 if (byId.ContainsKey(row[0]) || !mapping.PreserveExistingRows) byId[row[0]] = row;
                 else byId.Add(row[0], row);
             }
             List<IReadOnlyList<string>> merged = byId.Values.OrderBy(row => row[0], StringComparer.Ordinal).ToList();
             return new ProjectCsvDocument(baseDocument.Preamble, baseDocument.Columns, merged, baseDocument.Postamble);
+        }
+
+        private static long ParseRowId(string value)
+        {
+            long result;
+            return long.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out result) ? result : long.MinValue;
         }
 
         private static IReadOnlyList<string> TargetColumns(MappingDefinition mapping)
