@@ -31,8 +31,7 @@ namespace XC2BdatImporter
 
                 if (options.SelfTest)
                 {
-                    Console.WriteLine("SELF_TEST_PLACEHOLDER");
-                    return 0;
+                    return RunSelfTest();
                 }
 
                 IReadOnlyList<string> missingOptions = options.GetMissingValues(RequiredOptions);
@@ -44,8 +43,10 @@ namespace XC2BdatImporter
                     return 2;
                 }
 
-                ValidateInputs(options);
+                ValidatedOutputPaths outputPaths = ValidateInputs(options);
                 Console.WriteLine("Arguments validated. The BDAT import stages will be added in subsequent tasks.");
+                Console.WriteLine("Output directory: " + outputPaths.OutputDirectory);
+                Console.WriteLine("Report path: " + outputPaths.ReportPath);
                 return 0;
             }
             catch (ArgumentException ex)
@@ -61,7 +62,7 @@ namespace XC2BdatImporter
             }
         }
 
-        private static void ValidateInputs(ImporterArguments options)
+        private static ValidatedOutputPaths ValidateInputs(ImporterArguments options)
         {
             ValidateDirectory(options.GetValue("base-bdat"), "--base-bdat");
             ValidateDirectory(options.GetValue("base-gb"), "--base-gb");
@@ -73,6 +74,10 @@ namespace XC2BdatImporter
             {
                 throw new FileNotFoundException("BDAT toolset executable was not found.", toolsetPath);
             }
+
+            return ValidatedOutputPaths.Create(
+                options.GetValue("output"),
+                options.GetValue("report"));
         }
 
         private static void ValidateDirectory(string path, string optionName)
@@ -82,6 +87,42 @@ namespace XC2BdatImporter
                 throw new DirectoryNotFoundException(
                     optionName + " directory was not found: " + Path.GetFullPath(path));
             }
+        }
+
+        private static int RunSelfTest()
+        {
+            string outputDirectory = TemporaryExtractionDirectory.Create();
+            File.WriteAllText(Path.Combine(outputDirectory, "cleanup-check.txt"), "cleanup");
+            using (BdatExtractionResult result = new BdatExtractionResult(
+                0,
+                string.Empty,
+                string.Empty,
+                outputDirectory))
+            {
+            }
+
+            if (Directory.Exists(outputDirectory))
+            {
+                throw new InvalidOperationException("Temporary extraction output was not deleted.");
+            }
+
+            bool unsafePathRejected = false;
+            try
+            {
+                TemporaryExtractionDirectory.ValidateExactChild(Path.GetTempPath());
+            }
+            catch (InvalidOperationException)
+            {
+                unsafePathRejected = true;
+            }
+
+            if (!unsafePathRejected)
+            {
+                throw new InvalidOperationException("Unsafe temporary deletion target was accepted.");
+            }
+
+            Console.WriteLine("SELF_TEST_OK");
+            return 0;
         }
 
         private static void WriteUsage(TextWriter writer)
@@ -191,6 +232,11 @@ namespace XC2BdatImporter
                 values.Add(optionName, args[++index]);
             }
 
+            if (flags.Contains("verify-only") && flags.Contains("replace"))
+            {
+                throw new ArgumentException("Options --verify-only and --replace cannot be used together.");
+            }
+
             return new ImporterArguments(values, flags);
         }
 
@@ -213,6 +259,95 @@ namespace XC2BdatImporter
             }
 
             return missing;
+        }
+    }
+
+    internal sealed class ValidatedOutputPaths
+    {
+        private ValidatedOutputPaths(string outputDirectory, string reportPath)
+        {
+            OutputDirectory = outputDirectory;
+            ReportPath = reportPath;
+        }
+
+        internal string OutputDirectory { get; }
+
+        internal string ReportPath { get; }
+
+        internal static ValidatedOutputPaths Create(string outputDirectory, string reportPath)
+        {
+            if (Path.EndsInDirectorySeparator(reportPath))
+            {
+                throw new IOException("--report must name a file, not a directory.");
+            }
+
+            string fullOutputDirectory = Path.GetFullPath(outputDirectory);
+            string fullReportPath = Path.GetFullPath(reportPath);
+            string outputRoot = Path.GetPathRoot(fullOutputDirectory);
+            if (string.Equals(
+                    Path.TrimEndingDirectorySeparator(fullOutputDirectory),
+                    Path.TrimEndingDirectorySeparator(outputRoot),
+                    PathComparison))
+            {
+                throw new IOException("--output cannot be a filesystem root.");
+            }
+
+            if (File.Exists(fullOutputDirectory))
+            {
+                throw new IOException("--output points to an existing file: " + fullOutputDirectory);
+            }
+
+            if (Directory.Exists(fullReportPath))
+            {
+                throw new IOException("--report points to an existing directory: " + fullReportPath);
+            }
+
+            if (string.Equals(fullOutputDirectory, fullReportPath, PathComparison))
+            {
+                throw new IOException("--output and --report must resolve to different paths.");
+            }
+
+            ValidateExistingAncestor(fullOutputDirectory, "--output");
+            string reportDirectory = Path.GetDirectoryName(fullReportPath);
+            if (string.IsNullOrWhiteSpace(reportDirectory))
+            {
+                throw new IOException("--report must have a parent directory.");
+            }
+
+            ValidateExistingAncestor(reportDirectory, "--report");
+            return new ValidatedOutputPaths(fullOutputDirectory, fullReportPath);
+        }
+
+        private static StringComparison PathComparison
+        {
+            get
+            {
+                return OperatingSystem.IsWindows()
+                    ? StringComparison.OrdinalIgnoreCase
+                    : StringComparison.Ordinal;
+            }
+        }
+
+        private static void ValidateExistingAncestor(string path, string optionName)
+        {
+            string currentPath = path;
+            while (!string.IsNullOrWhiteSpace(currentPath))
+            {
+                if (Directory.Exists(currentPath))
+                {
+                    return;
+                }
+
+                if (File.Exists(currentPath))
+                {
+                    throw new IOException(
+                        optionName + " has a file where a parent directory is required: " + currentPath);
+                }
+
+                currentPath = Path.GetDirectoryName(currentPath);
+            }
+
+            throw new IOException(optionName + " has no existing parent directory: " + path);
         }
     }
 }
