@@ -1496,15 +1496,10 @@ namespace XC2IraSaveNETThingy
                 e.CellStyle.SelectionForeColor = Color.White;
             }
 
-            if (binding == null || e.ColumnIndex == 0 || e.ColumnIndex == 2)
+            if (binding == null || !binding.TryGetDisplayValue(e.RowIndex, e.ColumnIndex, out string displayName))
                 return;
 
-            UInt32 lookupId = e.ColumnIndex == 1 ? binding.Items[e.RowIndex].ID : binding.Items[e.RowIndex].Type;
-            Dictionary<UInt32, string> lookup = e.ColumnIndex == 1 ? binding.ItemNameLookup : binding.ItemTypeLookup;
-            if (lookup.TryGetValue(lookupId, out string displayName))
-                e.Value = displayName;
-            else
-                e.Value = string.Empty;
+            e.Value = displayName;
             e.FormattingApplied = true;
         }
         private void UpdateNewItemComboBox()

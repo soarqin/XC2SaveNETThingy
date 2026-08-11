@@ -36,6 +36,9 @@ namespace XC2SaveRoundTrip
             byte[] serializedRaw = XC2SaveSerialization.Serialize(first, false);
             XC2Save second = XC2SaveSerialization.Deserialize(serializedRaw);
             List<string> differences = new List<string>(CompareKeyRegions(rawSource, serializedRaw));
+            string payloadDifference = CompareAllBytes(rawSource, serializedRaw);
+            if (payloadDifference != null)
+                differences.Add(payloadDifference);
 
             if (first.GetType() != second.GetType())
                 differences.Add("ModelType: " + first.GetType().Name + " -> " + second.GetType().Name);
@@ -57,6 +60,12 @@ namespace XC2SaveRoundTrip
             };
         }
 
+        internal static byte[] ReadRawData(string inputPath)
+        {
+            byte[] source = File.ReadAllBytes(inputPath);
+            return ToRawData(source, HasCompressionHeader(source));
+        }
+
         internal static IReadOnlyList<string> CompareKeyRegions(byte[] expected, byte[] actual)
         {
             if (expected == null) throw new ArgumentNullException(nameof(expected));
@@ -74,6 +83,38 @@ namespace XC2SaveRoundTrip
             return differences;
         }
 
+        internal static string CompareAllBytes(byte[] expected, byte[] actual)
+        {
+            if (expected == null) throw new ArgumentNullException(nameof(expected));
+            if (actual == null) throw new ArgumentNullException(nameof(actual));
+
+            int sharedLength = Math.Min(expected.Length, actual.Length);
+            int mismatchCount = 0;
+            int firstMismatch = -1;
+            List<string> mismatchSamples = new List<string>();
+            for (int index = 0; index < sharedLength; index++)
+            {
+                if (expected[index] != actual[index])
+                {
+                    mismatchCount++;
+                    if (firstMismatch < 0) firstMismatch = index;
+                    if (mismatchSamples.Count < 16)
+                        mismatchSamples.Add("0x" + index.ToString("X6") + ":0x" + expected[index].ToString("X2") + "->0x" + actual[index].ToString("X2"));
+                }
+            }
+
+            if (expected.Length != actual.Length)
+                return "Payload: length 0x" + expected.Length.ToString("X") + " -> 0x" + actual.Length.ToString("X") +
+                    ", " + mismatchCount + " shared byte(s) differ";
+
+            if (mismatchCount == 0)
+                return null;
+
+            return "Payload: " + mismatchCount + " byte(s) differ; first at 0x" + firstMismatch.ToString("X6") +
+                " (0x" + expected[firstMismatch].ToString("X2") + " -> 0x" + actual[firstMismatch].ToString("X2") + "); " +
+                String.Join(", ", mismatchSamples);
+        }
+
         private static void CompareRegion(List<string> differences, string name, byte[] expected, byte[] actual, int offset, int length)
         {
             if (offset < 0 || offset + length > expected.Length || offset + length > actual.Length)
@@ -83,13 +124,23 @@ namespace XC2SaveRoundTrip
             }
 
             int mismatchCount = 0;
+            int firstMismatch = -1;
             for (int index = 0; index < length; index++)
             {
-                if (expected[offset + index] != actual[offset + index]) mismatchCount++;
+                if (expected[offset + index] != actual[offset + index])
+                {
+                    mismatchCount++;
+                    if (firstMismatch < 0) firstMismatch = index;
+                }
             }
 
             if (mismatchCount != 0)
-                differences.Add(name + ": " + mismatchCount + " byte(s) differ");
+            {
+                int absoluteOffset = offset + firstMismatch;
+                differences.Add(
+                    name + ": " + mismatchCount + " byte(s) differ; first at 0x" + absoluteOffset.ToString("X6") +
+                    " (0x" + expected[absoluteOffset].ToString("X2") + " -> 0x" + actual[absoluteOffset].ToString("X2") + ")");
+            }
         }
 
         private static bool HasCompressionHeader(byte[] data)

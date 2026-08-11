@@ -8,21 +8,36 @@ namespace XC2SaveNETThingy
 {
     public abstract class PaddedString : IXC2SaveObject
     {
+        private readonly Byte[] OriginalData;
+        private readonly string OriginalString;
+        private readonly int OriginalLength;
+
         public string Str { get; set; }
         public int Length { get; set; }
 
         public PaddedString(Byte[] data, int size)
         {
+            OriginalData = (Byte[])data.Clone();
             Str = "";
             Length = data[data.Length - 4];
             for (int i = 0; i < Length; i++)
                 Str += (char)data[i];
+
+            OriginalString = Str;
+            OriginalLength = Length;
         }
 
         public abstract Byte[] ToRawData();
 
         public Byte[] ToRawData(int size)
         {
+            if (size == OriginalData.Length &&
+                Length == OriginalLength &&
+                String.Equals(Str, OriginalString, StringComparison.Ordinal))
+            {
+                return (Byte[])OriginalData.Clone();
+            }
+
             Length = Str.Length;
 
             Byte[] bytes = new Byte[size];

@@ -7,6 +7,7 @@ namespace XC2SaveRoundTrip
 {
     internal static class Program
     {
+        [STAThread]
         private static int Main(string[] args)
         {
             try

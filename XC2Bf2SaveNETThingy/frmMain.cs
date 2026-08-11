@@ -23,6 +23,7 @@ namespace XC2Bf2SaveNETThingy
         private bool IsReloadingDrivers = false;
         private bool IsReloadingBlades = false;
         private bool CurrentlyLoadingBlade = false;
+        private bool IsLoadingSaveData = false;
         private bool dgvIsEditing = false;
         private bool IsLoadingFlagEditors = false;
         private bool IsWarmingUpTabs = false;
@@ -220,17 +221,7 @@ namespace XC2Bf2SaveNETThingy
 
         private void MarkVisibleTabPathReady(Control parent)
         {
-            if (parent == null)
-                return;
-
-            if (parent is TabPage page)
-                DeferredTabPages.Remove(page);
-
-            if (parent is TabControl nestedTabControl && nestedTabControl.SelectedTab != null)
-                DeferredTabPages.Remove(nestedTabControl.SelectedTab);
-
-            foreach (Control child in parent.Controls)
-                MarkVisibleTabPathReady(child);
+            DeferredTabPageState.MarkVisiblePathReady(parent, DeferredTabPages);
         }
 
         private static void SetControlTreeVisible(Control control, bool visible)
@@ -461,6 +452,7 @@ namespace XC2Bf2SaveNETThingy
         }
         private void LoadSaveData(string path)
         {
+            IsLoadingSaveData = true;
             try
             {
                 SAVEDATA = XC2SaveSerialization.Deserialize(File.ReadAllBytes(path));
@@ -892,6 +884,18 @@ namespace XC2Bf2SaveNETThingy
 
                 //throw ex;
             }
+            finally
+            {
+                IsLoadingSaveData = false;
+            }
+        }
+
+        private void ApplyFloatValue(NumericUpDown control, Action<float> setter)
+        {
+            if (IsLoadingSaveData)
+                return;
+
+            setter((float)control.Value);
         }
         private void LoadFile()
         {
@@ -2234,15 +2238,10 @@ namespace XC2Bf2SaveNETThingy
                 e.CellStyle.SelectionForeColor = Color.White;
             }
 
-            if (binding == null || e.ColumnIndex == 0 || e.ColumnIndex == 2)
+            if (binding == null || !binding.TryGetDisplayValue(e.RowIndex, e.ColumnIndex, out string displayName))
                 return;
 
-            UInt32 lookupId = e.ColumnIndex == 1 ? binding.Items[e.RowIndex].ID : binding.Items[e.RowIndex].Type;
-            Dictionary<UInt32, string> lookup = e.ColumnIndex == 1 ? binding.ItemNameLookup : binding.ItemTypeLookup;
-            if (lookup.TryGetValue(lookupId, out string displayName))
-                e.Value = displayName;
-            else
-                e.Value = string.Empty;
+            e.Value = displayName;
             e.FormattingApplied = true;
         }
         private void UpdateNewItemComboBox()
@@ -2690,8 +2689,8 @@ namespace XC2Bf2SaveNETThingy
         private void nudCoinCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.CoinCount = (UInt32)nudCoinCount.Value;
         private void nudCurrentQuest_ValueChanged(object sender, EventArgs e) => SAVEDATA.CurrentQuest = (UInt32)nudCurrentQuest.Value;
         private void nudGameClearCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.GameClearCount = (UInt32)nudGameClearCount.Value;
-        private void nudMoveDistance_ValueChanged(object sender, EventArgs e) => SAVEDATA.MoveDistance = (float)nudMoveDistance.Value;
-        private void nudMoveDistanceB_ValueChanged(object sender, EventArgs e) => SAVEDATA.MoveDistanceB = (float)nudMoveDistanceB.Value;
+        private void nudMoveDistance_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMoveDistance, value => SAVEDATA.MoveDistance = value);
+        private void nudMoveDistanceB_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMoveDistanceB, value => SAVEDATA.MoveDistanceB = value);
         private void nudRareBladeAppearType_ValueChanged(object sender, EventArgs e) => SAVEDATA.RareBladeAppearType = (UInt16)nudRareBladeAppearType.Value;
         private void nudSavedEnemyHP1_ValueChanged(object sender, EventArgs e) => SAVEDATA.SavedEnemyHp[0] = (UInt32)nudSavedEnemyHP1.Value;
         private void nudSavedEnemyHP2_ValueChanged(object sender, EventArgs e) => SAVEDATA.SavedEnemyHp[1] = (UInt32)nudSavedEnemyHP2.Value;
@@ -2863,7 +2862,7 @@ namespace XC2Bf2SaveNETThingy
             cbxDriverPouchesItemID.SelectedValue = (UInt16)nudDriverPouchesItemID.Value;
         }
         private void cbxDriverPouchesItemID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverPouchesItemID.Value = Convert.ToUInt16(cbxDriverPouchesItemID.SelectedValue);
-        private void nudDriverPouchesTime_ValueChanged(object sender, EventArgs e) => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time = (float)nudDriverPouchesTime.Value;
+        private void nudDriverPouchesTime_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudDriverPouchesTime, value => SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time = value);
         #endregion Driver Pouches
 
         #region Driver Accessories
@@ -3557,6 +3556,9 @@ namespace XC2Bf2SaveNETThingy
         }
         private void nudBladeFavoriteCategory1_ValueChanged(object sender, EventArgs e)
         {
+            if (IsLoadingSaveData)
+                return;
+
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1 = (UInt16)nudBladeFavoriteCategory1.Value;
             cbxBladeFavoriteCategory1.SelectedValue = (UInt16)nudBladeFavoriteCategory1.Value;
         }
@@ -4802,56 +4804,56 @@ namespace XC2Bf2SaveNETThingy
         #region Map
         private void nudMapMapJumpID_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.MapJumpID = (UInt32)nudMapMapJumpID.Value;
 
-        private void nudMapDriver1PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[0].X = (float)nudMapDriver1PosX.Value;
-        private void nudMapDriver1PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[0].Y = (float)nudMapDriver1PosY.Value;
-        private void nudMapDriver1PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[0].Z = (float)nudMapDriver1PosZ.Value;
-        private void nudMapDriver2PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[1].X = (float)nudMapDriver2PosX.Value;
-        private void nudMapDriver2PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[1].Y = (float)nudMapDriver2PosY.Value;
-        private void nudMapDriver2PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[1].Z = (float)nudMapDriver2PosZ.Value;
-        private void nudMapDriver3PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[2].X = (float)nudMapDriver3PosX.Value;
-        private void nudMapDriver3PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[2].Y = (float)nudMapDriver3PosY.Value;
-        private void nudMapDriver3PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverPositions[2].Z = (float)nudMapDriver3PosZ.Value;
+        private void nudMapDriver1PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1PosX, value => SAVEDATA.Map.DriverPositions[0].X = value);
+        private void nudMapDriver1PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1PosY, value => SAVEDATA.Map.DriverPositions[0].Y = value);
+        private void nudMapDriver1PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1PosZ, value => SAVEDATA.Map.DriverPositions[0].Z = value);
+        private void nudMapDriver2PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2PosX, value => SAVEDATA.Map.DriverPositions[1].X = value);
+        private void nudMapDriver2PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2PosY, value => SAVEDATA.Map.DriverPositions[1].Y = value);
+        private void nudMapDriver2PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2PosZ, value => SAVEDATA.Map.DriverPositions[1].Z = value);
+        private void nudMapDriver3PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3PosX, value => SAVEDATA.Map.DriverPositions[2].X = value);
+        private void nudMapDriver3PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3PosY, value => SAVEDATA.Map.DriverPositions[2].Y = value);
+        private void nudMapDriver3PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3PosZ, value => SAVEDATA.Map.DriverPositions[2].Z = value);
 
-        private void nudMapBlade1PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[0].X = (float)nudMapBlade1PosX.Value;
-        private void nudMapBlade1PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[0].Y = (float)nudMapBlade1PosY.Value;
-        private void nudMapBlade1PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[0].Z = (float)nudMapBlade1PosZ.Value;
-        private void nudMapBlade2PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[1].X = (float)nudMapBlade2PosX.Value;
-        private void nudMapBlade2PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[1].Y = (float)nudMapBlade2PosY.Value;
-        private void nudMapBlade2PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[1].Z = (float)nudMapBlade2PosZ.Value;
-        private void nudMapBlade3PosX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[2].X = (float)nudMapBlade3PosX.Value;
-        private void nudMapBlade3PosY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[2].Y = (float)nudMapBlade3PosY.Value;
-        private void nudMapBlade3PosZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladePositions[2].Z = (float)nudMapBlade3PosZ.Value;
+        private void nudMapBlade1PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1PosX, value => SAVEDATA.Map.BladePositions[0].X = value);
+        private void nudMapBlade1PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1PosY, value => SAVEDATA.Map.BladePositions[0].Y = value);
+        private void nudMapBlade1PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1PosZ, value => SAVEDATA.Map.BladePositions[0].Z = value);
+        private void nudMapBlade2PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2PosX, value => SAVEDATA.Map.BladePositions[1].X = value);
+        private void nudMapBlade2PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2PosY, value => SAVEDATA.Map.BladePositions[1].Y = value);
+        private void nudMapBlade2PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2PosZ, value => SAVEDATA.Map.BladePositions[1].Z = value);
+        private void nudMapBlade3PosX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3PosX, value => SAVEDATA.Map.BladePositions[2].X = value);
+        private void nudMapBlade3PosY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3PosY, value => SAVEDATA.Map.BladePositions[2].Y = value);
+        private void nudMapBlade3PosZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3PosZ, value => SAVEDATA.Map.BladePositions[2].Z = value);
 
-        private void nudMapDriver1RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[0].X = (float)nudMapDriver1RotX.Value;
-        private void nudMapDriver1RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[0].Y = (float)nudMapDriver1RotY.Value;
-        private void nudMapDriver1RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[0].Z = (float)nudMapDriver1RotZ.Value;
-        private void nudMapDriver2RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[1].X = (float)nudMapDriver2RotX.Value;
-        private void nudMapDriver2RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[1].Y = (float)nudMapDriver2RotY.Value;
-        private void nudMapDriver2RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[1].Z = (float)nudMapDriver2RotZ.Value;
-        private void nudMapDriver3RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[2].X = (float)nudMapDriver3RotX.Value;
-        private void nudMapDriver3RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[2].Y = (float)nudMapDriver3RotY.Value;
-        private void nudMapDriver3RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.DriverRotations[2].Z = (float)nudMapDriver3RotZ.Value;
+        private void nudMapDriver1RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1RotX, value => SAVEDATA.Map.DriverRotations[0].X = value);
+        private void nudMapDriver1RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1RotY, value => SAVEDATA.Map.DriverRotations[0].Y = value);
+        private void nudMapDriver1RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver1RotZ, value => SAVEDATA.Map.DriverRotations[0].Z = value);
+        private void nudMapDriver2RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2RotX, value => SAVEDATA.Map.DriverRotations[1].X = value);
+        private void nudMapDriver2RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2RotY, value => SAVEDATA.Map.DriverRotations[1].Y = value);
+        private void nudMapDriver2RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver2RotZ, value => SAVEDATA.Map.DriverRotations[1].Z = value);
+        private void nudMapDriver3RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3RotX, value => SAVEDATA.Map.DriverRotations[2].X = value);
+        private void nudMapDriver3RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3RotY, value => SAVEDATA.Map.DriverRotations[2].Y = value);
+        private void nudMapDriver3RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapDriver3RotZ, value => SAVEDATA.Map.DriverRotations[2].Z = value);
 
-        private void nudMapBlade1RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[0].X = (float)nudMapBlade1RotX.Value;
-        private void nudMapBlade1RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[0].Y = (float)nudMapBlade1RotY.Value;
-        private void nudMapBlade1RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[0].Z = (float)nudMapBlade1RotZ.Value;
-        private void nudMapBlade2RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[1].X = (float)nudMapBlade2RotX.Value;
-        private void nudMapBlade2RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[1].Y = (float)nudMapBlade2RotY.Value;
-        private void nudMapBlade2RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[1].Z = (float)nudMapBlade2RotZ.Value;
-        private void nudMapBlade3RotX_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[2].X = (float)nudMapBlade3RotX.Value;
-        private void nudMapBlade3RotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[2].Y = (float)nudMapBlade3RotY.Value;
-        private void nudMapBlade3RotZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.Map.BladeRotations[2].Z = (float)nudMapBlade3RotZ.Value;
+        private void nudMapBlade1RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1RotX, value => SAVEDATA.Map.BladeRotations[0].X = value);
+        private void nudMapBlade1RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1RotY, value => SAVEDATA.Map.BladeRotations[0].Y = value);
+        private void nudMapBlade1RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade1RotZ, value => SAVEDATA.Map.BladeRotations[0].Z = value);
+        private void nudMapBlade2RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2RotX, value => SAVEDATA.Map.BladeRotations[1].X = value);
+        private void nudMapBlade2RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2RotY, value => SAVEDATA.Map.BladeRotations[1].Y = value);
+        private void nudMapBlade2RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade2RotZ, value => SAVEDATA.Map.BladeRotations[1].Z = value);
+        private void nudMapBlade3RotX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3RotX, value => SAVEDATA.Map.BladeRotations[2].X = value);
+        private void nudMapBlade3RotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3RotY, value => SAVEDATA.Map.BladeRotations[2].Y = value);
+        private void nudMapBlade3RotZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudMapBlade3RotZ, value => SAVEDATA.Map.BladeRotations[2].Z = value);
 
         private void nudMapJumpID_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapJumpId = (UInt32)nudLastVisitedLandmarkMapJumpID.Value;
-        private void nudMapPositionX_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.X = (float)nudLastVisitedLandmarkMapPositionX.Value;
-        private void nudMapPositionY_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.Y = (float)nudLastVisitedLandmarkMapPositionY.Value;
-        private void nudMapPositionZ_ValueChanged(object sender, EventArgs e) => SAVEDATA.LastVisitedLandmarkMapPosition.Z = (float)nudLastVisitedLandmarkMapPositionZ.Value;
-        private void nudLastVisitedLandmarkRotY_ValueChanged(object sender, EventArgs e) => SAVEDATA.LandmarkRotY = (float)nudLastVisitedLandmarkRotY.Value;
+        private void nudMapPositionX_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudLastVisitedLandmarkMapPositionX, value => SAVEDATA.LastVisitedLandmarkMapPosition.X = value);
+        private void nudMapPositionY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudLastVisitedLandmarkMapPositionY, value => SAVEDATA.LastVisitedLandmarkMapPosition.Y = value);
+        private void nudMapPositionZ_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudLastVisitedLandmarkMapPositionZ, value => SAVEDATA.LastVisitedLandmarkMapPosition.Z = value);
+        private void nudLastVisitedLandmarkRotY_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudLastVisitedLandmarkRotY, value => SAVEDATA.LandmarkRotY = value);
 
-        private void nudPlayerCameraDistance_ValueChanged(object sender, EventArgs e) => SAVEDATA.PlayerCameraDistance = (float)nudPlayerCameraDistance.Value;
-        private void nudCameraHeight_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraHeight = (float)nudCameraHeight.Value;
-        private void nudCameraYaw_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraYaw = (float)nudCameraYaw.Value;
-        private void nudCameraPitch_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraPitch = (float)nudCameraPitch.Value;
+        private void nudPlayerCameraDistance_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudPlayerCameraDistance, value => SAVEDATA.PlayerCameraDistance = value);
+        private void nudCameraHeight_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudCameraHeight, value => SAVEDATA.CameraHeight = value);
+        private void nudCameraYaw_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudCameraYaw, value => SAVEDATA.CameraYaw = value);
+        private void nudCameraPitch_ValueChanged(object sender, EventArgs e) => ApplyFloatValue(nudCameraPitch, value => SAVEDATA.CameraPitch = value);
         private void nudCameraFreeMode_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraFreeMode = (Byte)nudCameraFreeMode.Value;
         private void nudCameraSide_ValueChanged(object sender, EventArgs e) => SAVEDATA.CameraSide = (Byte)nudCameraSide.Value;
         #endregion Map

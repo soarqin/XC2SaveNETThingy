@@ -75,6 +75,34 @@ namespace XC2SaveNETThingy
             }
         }
 
+        public bool TryGetDisplayValue(int rowIndex, int columnIndex, out string displayValue)
+        {
+            displayValue = null;
+            if (rowIndex < 0 || rowIndex >= Items.Length)
+                return false;
+
+            UInt32 lookupId;
+            Dictionary<UInt32, string> lookup;
+            switch (columnIndex)
+            {
+                case 1:
+                    lookupId = Items[rowIndex].ID;
+                    lookup = ItemNameLookup;
+                    break;
+
+                case 3:
+                    lookupId = Items[rowIndex].Type;
+                    lookup = ItemTypeLookup;
+                    break;
+
+                default:
+                    return false;
+            }
+
+            displayValue = lookup.TryGetValue(lookupId, out string name) ? name : String.Empty;
+            return true;
+        }
+
         public void SetValue(int rowIndex, string propertyName, object value)
         {
             if (value == null || value == DBNull.Value)
