@@ -86,6 +86,11 @@ namespace XC2SaveNETThingy
 
         public static void BindDataTable(this ComboBox cbx, DataTable dataSource, string displayMember = "Name", string valueMember = "ID")
         {
+            if (ReferenceEquals(cbx.DataSource, dataSource) &&
+                String.Equals(cbx.DisplayMember, displayMember, StringComparison.Ordinal) &&
+                String.Equals(cbx.ValueMember, valueMember, StringComparison.Ordinal))
+                return;
+
             cbx.DataSource = dataSource;
             cbx.DisplayMember = displayMember;
             cbx.ValueMember = valueMember;

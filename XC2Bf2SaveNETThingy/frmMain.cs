@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,10 @@ namespace XC2Bf2SaveNETThingy
         private bool CurrentlyLoadingBlade = false;
         private bool dgvIsEditing = false;
         private bool IsLoadingFlagEditors = false;
+        private bool IsWarmingUpTabs = false;
+        private bool IsActivatingTab = false;
+        private readonly DeferredComboBindingManager DeferredComboBindings = new DeferredComboBindingManager();
+        private readonly HashSet<TabPage> DeferredTabPages = new HashSet<TabPage>();
 
         private bool BladeAffinityRewardEditorIsLoading = false;
         private Point BladeAffinityRewardCurrentlyEditingPoint = new Point(0, 0);
@@ -38,7 +43,7 @@ namespace XC2Bf2SaveNETThingy
         #region Constructor
         public frmMain()
         {
-            if (!(File.Exists(@"XC2Data.db")))
+            if (!(File.Exists(RuntimePaths.DatabaseFile)))
             {
                 string title = "";
                 string message = "";
@@ -62,12 +67,203 @@ namespace XC2Bf2SaveNETThingy
             }
 
             InitializeComponent();
+            TabControlPerformance.Configure(this);
+            tbcMain.SelectedIndexChanged += tbcMain_SelectedIndexChanged;
+            tbcFlagData.SelectedIndexChanged += tbcFlagData_SelectedIndexChanged;
         }
         #endregion Constructor
 
         #region Methods
 
         #region Main
+        private void tbcMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (IsWarmingUpTabs || IsActivatingTab)
+                return;
+
+            ScheduleDeferredTabActivation(tbcMain);
+        }
+
+        private void tbcFlagData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // DeferredTabControl_SelectedIndexChanged performs the actual
+            // activation after the selected page has become stable.
+        }
+
+        private void CompleteTabActivation()
+        {
+            ActivateDeferredTabPage(tbcMain.SelectedTab);
+        }
+
+        private void ConfigureDeferredTabPages()
+        {
+            List<TabControl> tabControls = new List<TabControl>();
+            CollectTabControls(this, tabControls);
+
+            foreach (TabControl tabControl in tabControls)
+            {
+                if (!ReferenceEquals(tabControl, tbcMain))
+                    tabControl.SelectedIndexChanged += DeferredTabControl_SelectedIndexChanged;
+
+                foreach (TabPage page in tabControl.TabPages)
+                {
+                    if (ReferenceEquals(tabControl, tbcMain) && ReferenceEquals(page, tabMain))
+                        continue;
+
+                    DeferredTabPages.Add(page);
+                    SetTabPageContentVisible(page, false);
+                }
+            }
+        }
+
+        private void DeferredTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (IsWarmingUpTabs || IsActivatingTab)
+                return;
+
+            ScheduleDeferredTabActivation((TabControl)sender);
+        }
+
+        private void ScheduleDeferredTabActivation(TabControl tabControl)
+        {
+            if (tabControl == null || IsActivatingTab)
+                return;
+
+            IsActivatingTab = true;
+            BeginInvoke(new Action(() =>
+            {
+                try
+                {
+                    if (ReferenceEquals(tabControl, tbcMain))
+                        CompleteTabActivation();
+                    else
+                        ActivateDeferredTabPage(tabControl.SelectedTab);
+                }
+                finally
+                {
+                    IsActivatingTab = false;
+                }
+            }));
+        }
+
+        private void ActivateDeferredTabPage(TabPage page)
+        {
+            if (page == null || !DeferredTabPages.Contains(page))
+                return;
+
+            page.SuspendLayout();
+            try
+            {
+                SetTabPageContentVisible(page, false);
+
+                if (IsPageOwnedBy(page, tbcItems) || ReferenceEquals(page, tabItems))
+                {
+                    EnsureSelectedItemGridRows();
+                    UpdateNewItemComboBox();
+                }
+                else if (IsPageOwnedBy(page, tbcFlagData) || ReferenceEquals(page, tabFlags))
+                {
+                    EnsureSelectedFlagGridRows();
+                }
+
+                CreateVisibleControlTree(page);
+                page.PerformLayout();
+                SetTabPageContentVisible(page, true);
+                MarkVisibleTabPathReady(page);
+                DeferredTabPages.Remove(page);
+            }
+            finally
+            {
+                page.ResumeLayout(true);
+            }
+        }
+
+        private static bool IsPageOwnedBy(TabPage page, TabControl tabControl)
+        {
+            Control current = page?.Parent;
+            while (current != null)
+            {
+                if (ReferenceEquals(current, tabControl))
+                    return true;
+                current = current.Parent;
+            }
+
+            return false;
+        }
+
+        private static void CreateVisibleControlTree(Control control)
+        {
+            if (control == null)
+                return;
+
+            control.CreateControl();
+
+            if (control is TabControl nestedTabControl)
+            {
+                if (nestedTabControl.SelectedTab != null)
+                    CreateVisibleControlTree(nestedTabControl.SelectedTab);
+                return;
+            }
+
+            foreach (Control child in control.Controls)
+                CreateVisibleControlTree(child);
+        }
+
+        private static void SetTabPageContentVisible(TabPage page, bool visible)
+        {
+            if (page == null)
+                return;
+
+            foreach (Control child in page.Controls)
+                SetControlTreeVisible(child, visible);
+        }
+
+        private void MarkVisibleTabPathReady(Control parent)
+        {
+            if (parent == null)
+                return;
+
+            if (parent is TabPage page)
+                DeferredTabPages.Remove(page);
+
+            if (parent is TabControl nestedTabControl && nestedTabControl.SelectedTab != null)
+                DeferredTabPages.Remove(nestedTabControl.SelectedTab);
+
+            foreach (Control child in parent.Controls)
+                MarkVisibleTabPathReady(child);
+        }
+
+        private static void SetControlTreeVisible(Control control, bool visible)
+        {
+            if (control is TabControl nestedTabControl)
+            {
+                control.Visible = visible;
+                foreach (TabPage nestedPage in nestedTabControl.TabPages)
+                    SetTabPageContentVisible(nestedPage, visible && ReferenceEquals(nestedPage, nestedTabControl.SelectedTab));
+                return;
+            }
+
+            control.Visible = visible;
+            foreach (Control child in control.Controls)
+                SetControlTreeVisible(child, visible);
+        }
+
+        private static void CollectTabControls(Control parent, List<TabControl> result)
+        {
+            foreach (Control child in parent.Controls)
+            {
+                if (child is TabControl tabControl)
+                {
+                    result.Add(tabControl);
+                    CollectTabControls(tabControl, result);
+                }
+                else
+                {
+                    CollectTabControls(child, result);
+                }
+            }
+        }
+
         private void SetupComboBoxes()
         {
             #region Misc
@@ -129,7 +325,7 @@ namespace XC2Bf2SaveNETThingy
             cbxDriverID.BindDataTable(XC2Data.Drivers(lang));
             cbxDriverSetBlade.BindDataTable(XC2Data.DriverBladeSetStatus(lang), "Desc");
 
-            cbxDriverPouchesItemID.BindDataTable(XC2Data.Items(lang));
+            cbxDriverPouchesItemID.BindDataTable(XC2Data.GetPouchItems(lang));
 
             cbxDriverAccessory1ID.BindDataTable(XC2Data.GetAccessories(lang));
             cbxDriverAccessory2ID.BindDataTable(XC2Data.GetAccessories(lang));
@@ -153,17 +349,17 @@ namespace XC2Bf2SaveNETThingy
             cbxBladeRareNameID.BindDataTable(XC2Data.BladeRareNames(lang));
             cbxBladeCommonNameID.BindDataTable(XC2Data.BladeCommonNames(lang));
 
-            cbxBladeAuxCore1ID.BindDataTable(XC2Data.Items(lang));
-            cbxBladeAuxCore2ID.BindDataTable(XC2Data.Items(lang));
-            cbxBladeAuxCore3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladeAuxCore1ID.BindDataTable(XC2Data.GetAuxCores(lang));
+            cbxBladeAuxCore2ID.BindDataTable(XC2Data.GetAuxCores(lang));
+            cbxBladeAuxCore3ID.BindDataTable(XC2Data.GetAuxCores(lang));
             cbxBladeAuxCore1Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
             cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories(lang));
             cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories(lang));
-            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang));
-            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang));
+            cbxBladeFavoriteItem0.BindDataTable(XC2Data.GetPouchItems(lang));
+            cbxBladeFavoriteItem1.BindDataTable(XC2Data.GetPouchItems(lang));
 
             cbxBladeTrustRank.BindDataTable(XC2Data.BladeTrustRanks(lang));
 
@@ -185,39 +381,39 @@ namespace XC2Bf2SaveNETThingy
             cbxBladeFieldSkill2ID.BindDataTable(XC2Data.BladeFieldSkills(lang));
             cbxBladeFieldSkill3ID.BindDataTable(XC2Data.BladeFieldSkills(lang));
 
-            cbxBladePoppiswapRoleCPUID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapRoleCPUID.BindDataTable(XC2Data.GetPoppiRoleCPU(lang));
             cbxBladePoppiswapRoleCPUType.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapElementCoreID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapElementCoreID.BindDataTable(XC2Data.GetPoppiElementCores(lang));
             cbxBladePoppiswapElementCoreType.BindDataTable(XC2Data.ItemTypes(lang));
 
             cbxBladePoppiswapNArts1ID.BindDataTable(XC2Data.BladeArts(lang));
-            cbxBladePoppiswapNArts1ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts1ItemID.BindDataTable(XC2Data.GetPoppiArtsCards(lang));
             cbxBladePoppiswapNArts1ItemType.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladePoppiswapNArts2ID.BindDataTable(XC2Data.BladeArts(lang));
-            cbxBladePoppiswapNArts2ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts2ItemID.BindDataTable(XC2Data.GetPoppiArtsCards(lang));
             cbxBladePoppiswapNArts2ItemType.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladePoppiswapNArts3ID.BindDataTable(XC2Data.BladeArts(lang));
-            cbxBladePoppiswapNArts3ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapNArts3ItemID.BindDataTable(XC2Data.GetPoppiArtsCards(lang));
             cbxBladePoppiswapNArts3ItemType.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapBArtsEnhance1ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance1ItemID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
             cbxBladePoppiswapBArtsEnhance1ItemType.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapBArtsEnhance2ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance2ItemID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
             cbxBladePoppiswapBArtsEnhance2ItemType.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapBArtsEnhance3ItemID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapBArtsEnhance3ItemID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
             cbxBladePoppiswapBArtsEnhance3ItemType.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladePoppiswapSkillRAM1ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM1ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillRAM1Type.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapSkillRAM2ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM2ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillRAM2Type.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapSkillRAM3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillRAM3ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillRAM3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladePoppiswapSkillUpgrade1ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade1ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillUpgrade1Type.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapSkillUpgrade2ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade2ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillUpgrade2Type.BindDataTable(XC2Data.ItemTypes(lang));
-            cbxBladePoppiswapSkillUpgrade3ID.BindDataTable(XC2Data.Items(lang));
+            cbxBladePoppiswapSkillUpgrade3ID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
             cbxBladePoppiswapSkillUpgrade3Type.BindDataTable(XC2Data.ItemTypes(lang));
             #endregion Blade
 
@@ -403,6 +599,7 @@ namespace XC2Bf2SaveNETThingy
                 SetupItemBox(dgvHanaArtsBox, SAVEDATA.ItemBox.PoppiSpecialsEnhancingRAMBox, XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
                 SetupItemBox(dgvHanaNArtsBox, SAVEDATA.ItemBox.PoppiArtsCardBox, XC2Data.GetPoppiArtsCards(lang));
                 SetupItemBox(dgvHanaAssistBox, SAVEDATA.ItemBox.PoppiSkillRAMBox, XC2Data.GetPoppiSkillRAM(lang));
+                EnsureSelectedItemGridRows();
 
                 nudItemsSerial1.Value = SAVEDATA.ItemBox.Serials[0];
                 nudItemsSerial2.Value = SAVEDATA.ItemBox.Serials[1];
@@ -526,32 +723,32 @@ namespace XC2Bf2SaveNETThingy
                 #region Merc Group 1
                 nudMercGroup1Blade1.Value = SAVEDATA.MercGroup1.TeamMemberIDs[0];
                 cbxMercGroup1Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade1.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[0]);
 
                 nudMercGroup1Blade2.Value = SAVEDATA.MercGroup1.TeamMemberIDs[1];
                 cbxMercGroup1Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade2.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[1]);
 
                 nudMercGroup1Blade3.Value = SAVEDATA.MercGroup1.TeamMemberIDs[2];
                 cbxMercGroup1Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade3.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[2]);
 
                 nudMercGroup1Blade4.Value = SAVEDATA.MercGroup1.TeamMemberIDs[3];
                 cbxMercGroup1Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade4.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[3]);
 
                 nudMercGroup1Blade5.Value = SAVEDATA.MercGroup1.TeamMemberIDs[4];
                 cbxMercGroup1Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade5.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[4]);
 
                 nudMercGroup1Blade6.Value = SAVEDATA.MercGroup1.TeamMemberIDs[5];
                 cbxMercGroup1Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup1Blade6.DataSource = SAVEDATA.Blades;
                 cbxMercGroup1Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup1.TeamMemberIDs[5]);
 
                 nudMercGroup1TeamID.Value = SAVEDATA.MercGroup1.TeamID;
@@ -566,32 +763,32 @@ namespace XC2Bf2SaveNETThingy
                 #region Merc Group 2
                 nudMercGroup2Blade1.Value = SAVEDATA.MercGroup2.TeamMemberIDs[0];
                 cbxMercGroup2Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade1.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[0]);
 
                 nudMercGroup2Blade2.Value = SAVEDATA.MercGroup2.TeamMemberIDs[1];
                 cbxMercGroup2Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade2.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[1]);
 
                 nudMercGroup2Blade3.Value = SAVEDATA.MercGroup2.TeamMemberIDs[2];
                 cbxMercGroup2Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade3.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[2]);
 
                 nudMercGroup2Blade4.Value = SAVEDATA.MercGroup2.TeamMemberIDs[3];
                 cbxMercGroup2Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade4.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[3]);
 
                 nudMercGroup2Blade5.Value = SAVEDATA.MercGroup2.TeamMemberIDs[4];
                 cbxMercGroup2Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade5.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[4]);
 
                 nudMercGroup2Blade6.Value = SAVEDATA.MercGroup2.TeamMemberIDs[5];
                 cbxMercGroup2Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup2Blade6.DataSource = SAVEDATA.Blades;
                 cbxMercGroup2Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup2.TeamMemberIDs[5]);
 
                 nudMercGroup2TeamID.Value = SAVEDATA.MercGroup2.TeamID;
@@ -606,32 +803,32 @@ namespace XC2Bf2SaveNETThingy
                 #region Merc Group 3
                 nudMercGroup3Blade1.Value = SAVEDATA.MercGroup3.TeamMemberIDs[0];
                 cbxMercGroup3Blade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade1.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade1.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[0]);
 
                 nudMercGroup3Blade2.Value = SAVEDATA.MercGroup3.TeamMemberIDs[1];
                 cbxMercGroup3Blade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade2.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade2.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[1]);
 
                 nudMercGroup3Blade3.Value = SAVEDATA.MercGroup3.TeamMemberIDs[2];
                 cbxMercGroup3Blade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade3.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade3.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[2]);
 
                 nudMercGroup3Blade4.Value = SAVEDATA.MercGroup3.TeamMemberIDs[3];
                 cbxMercGroup3Blade4.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade4.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade4.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[3]);
 
                 nudMercGroup3Blade5.Value = SAVEDATA.MercGroup3.TeamMemberIDs[4];
                 cbxMercGroup3Blade5.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade5.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade5.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[4]);
 
                 nudMercGroup3Blade6.Value = SAVEDATA.MercGroup3.TeamMemberIDs[5];
                 cbxMercGroup3Blade6.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-                cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades.ToList();
+                cbxMercGroup3Blade6.DataSource = SAVEDATA.Blades;
                 cbxMercGroup3Blade6.SelectedItem = SAVEDATA.Blades.FirstOrDefault(b => b.ID == SAVEDATA.MercGroup3.TeamMemberIDs[5]);
 
                 nudMercGroup3TeamID.Value = SAVEDATA.MercGroup3.TeamID;
@@ -671,12 +868,19 @@ namespace XC2Bf2SaveNETThingy
                 #endregion Unknownm
 
                 tbcMain.Enabled = true;
+                ConfigureDeferredTabPages();
+                DeferredComboBindings.DeferLargeBindings(tabDrivers, 20, ShouldSkipDeferredComboBinding);
+                DeferredComboBindings.DeferLargeBindings(tabBlades, 20, ShouldSkipDeferredComboBinding);
+                DeferredComboBindings.DeferLargeBindings(tabMercGroups, 20, ShouldSkipDeferredComboBinding);
                 saveFileToolStripMenuItem.Enabled = true;
                 btnSave.Enabled = true;
                 Console.WriteLine("File Loaded.");
             }
             catch (Exception ex)
             {
+                if (Environment.GetEnvironmentVariable("XC2_PERF_THROW_LOAD_ERRORS") == "1")
+                    throw;
+
                 string message =
                     FrmMainInternalText["UnableToLoadSaveFile"] + Environment.NewLine + 
                     Environment.NewLine + 
@@ -788,7 +992,7 @@ namespace XC2Bf2SaveNETThingy
             try
             {
                 Dictionary<string, string> conf = new Dictionary<string, string>();
-                string[] data = File.ReadAllLines(path);
+                string[] data = File.ReadAllLines(RuntimePaths.Resolve(path));
 
                 foreach (string line in data)
                 {
@@ -831,7 +1035,7 @@ namespace XC2Bf2SaveNETThingy
 
             try
             {
-                File.WriteAllText(path, output);
+                File.WriteAllText(RuntimePaths.Resolve(path), output);
             }
             catch (Exception ex)
             {
@@ -872,15 +1076,19 @@ namespace XC2Bf2SaveNETThingy
             cbxDriverBlade1.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
             cbxDriverBlade2.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
             cbxDriverBlade3.DisplayMember = "Name_" + XC2Data.LANG_STR[lang];
-            cbxDriverBlade1.DataSource = SAVEDATA.Blades.ToList();
-            cbxDriverBlade2.DataSource = SAVEDATA.Blades.ToList();
-            cbxDriverBlade3.DataSource = SAVEDATA.Blades.ToList();
+            if (!ReferenceEquals(cbxDriverBlade1.DataSource, SAVEDATA.Blades))
+                cbxDriverBlade1.DataSource = SAVEDATA.Blades;
+            if (!ReferenceEquals(cbxDriverBlade2.DataSource, SAVEDATA.Blades))
+                cbxDriverBlade2.DataSource = SAVEDATA.Blades;
+            if (!ReferenceEquals(cbxDriverBlade3.DataSource, SAVEDATA.Blades))
+                cbxDriverBlade3.DataSource = SAVEDATA.Blades;
             cbxDriverBlade1.SelectedIndex = i1;
             cbxDriverBlade2.SelectedIndex = i2;
             cbxDriverBlade3.SelectedIndex = i3;
         }
         private void LoadDriver(int index)
         {
+            Stopwatch perfWatch = Environment.GetEnvironmentVariable("XC2_PERF_TRACE_EVENTS") == "1" ? Stopwatch.StartNew() : null;
             Driver d = SAVEDATA.Drivers[index];
 
             #region Driver ID
@@ -1096,12 +1304,18 @@ namespace XC2Bf2SaveNETThingy
             #endregion Driver 1.5.0
 
             ToggleDriverEditControls(allowEditingOfReadOnlyValuesToolStripMenuItem.Checked);
+            if (perfWatch != null)
+                Console.WriteLine("TRACE LoadDriver index=" + index + " ms=" + perfWatch.Elapsed.TotalMilliseconds.ToString("F1"));
         }
         private void CreateDriverSkillComboBox(ComboBox box, int value = 0)
         {
-            box.DataSource = XC2Data.DriverSkills(lang);
-            box.DisplayMember = "Name";
-            box.ValueMember = "ID";
+            DataTable driverSkills = XC2Data.DriverSkills(lang);
+            if (!ReferenceEquals(box.DataSource, driverSkills))
+            {
+                box.DataSource = driverSkills;
+                box.DisplayMember = "Name";
+                box.ValueMember = "ID";
+            }
             box.SelectedValue = value;
         }
         private void ToggleDriverEditControls(bool enabled)
@@ -1123,6 +1337,7 @@ namespace XC2Bf2SaveNETThingy
         #region Blades
         private void LoadBlade(int index)
         {
+            Stopwatch perfWatch = Environment.GetEnvironmentVariable("XC2_PERF_TRACE_EVENTS") == "1" ? Stopwatch.StartNew() : null;
             if (SAVEDATA != null)
             {
                 CurrentlyLoadingBlade = true;
@@ -1568,6 +1783,9 @@ namespace XC2Bf2SaveNETThingy
 
                 CurrentlyLoadingBlade = false;
             }
+
+            if (perfWatch != null)
+                Console.WriteLine("TRACE LoadBlade index=" + index + " ms=" + perfWatch.Elapsed.TotalMilliseconds.ToString("F1"));
         }
         private void LoadBladeAffinityReward(Point affRewardChartLoc)
         {
@@ -1902,103 +2120,212 @@ namespace XC2Bf2SaveNETThingy
         #region Items
         private DataGridView SetupItemBox(DataGridView dgv, Item[] items, DataTable ItemIDs)
         {
-            dgv.CellFormatting += new DataGridViewCellFormattingEventHandler(Dgv_CellFormatting);
+            dgv.CellValueNeeded -= dgvItemBox_CellValueNeeded;
+            dgv.CellValuePushed -= dgvItemBox_CellValuePushed;
+            dgv.CellFormatting -= dgvItemBox_CellFormatting;
+            dgv.VirtualMode = false;
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = null;
 
-            BindingList<Item> ds = new BindingList<Item>(items);
+            DataTable itemTypes = XC2Data.ItemTypes(lang);
 
             dgv.Columns.Clear();
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", FrmMainInternalText["ItemColumnID"], "UInt16", null, 50, 0, 8191));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "ID", FrmMainInternalText["ItemColumnName"], null, ItemIDs, 175));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", FrmMainInternalText["ItemColumnType"], "Byte", null, 50, 0, 63));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.ComboBox, "Type", FrmMainInternalText["ItemColumnTypeName"], null, XC2Data.ItemTypes(lang), 175));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", FrmMainInternalText["ItemColumnQty"], "UInt16", null, 50, 0, 1023));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", FrmMainInternalText["ItemColumnEquipped"], null, null, 55));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", FrmMainInternalText["ItemColumnTimeAcquiredHour"], "UInt32", null, 50, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", FrmMainInternalText["ItemColumnTimeAcquiredMinute"], "Byte", null, 50, 0, 59));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", FrmMainInternalText["ItemColumnTimeAcquiredSecond"], "Byte", null, 50, 0, 59));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", FrmMainInternalText["ItemColumnSerial"], "UInt32", null, 75, 0, 67108863));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", FrmMainInternalText["ItemColumnUnk1"], null, null, 50));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", FrmMainInternalText["ItemColumnUnk2"], null, null, 50));
-            dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", FrmMainInternalText["ItemColumnUnk3"], "Byte", null, 50, 0, 63));
-            dgv.DataSource = ds;
+
+            dgv.Tag = new ItemGridBinding(items, ItemIDs, itemTypes);
+            dgv.AllowUserToAddRows = false;
+            dgv.VirtualMode = true;
+            dgv.RowCount = 0;
+            dgv.CellValueNeeded += dgvItemBox_CellValueNeeded;
+            dgv.CellValuePushed += dgvItemBox_CellValuePushed;
+            dgv.CellFormatting += dgvItemBox_CellFormatting;
 
             return dgv;
         }
+        private void ConfigureItemGrid(DataGridView dgv, ItemGridBinding binding)
+        {
+            if (dgv.Columns.Count != 0)
+                return;
+
+            bool wasVisible = dgv.Visible;
+            dgv.Visible = false;
+            dgv.SuspendLayout();
+            try
+            {
+                dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "ID", FrmMainInternalText["ItemColumnID"], "UInt16", null, 50, 0, 8191));
+                DataGridViewColumn itemNameColumn = CreateDgvColumn(DgvColumnType.TextBox, "ID", FrmMainInternalText["ItemColumnName"], null, null, 175);
+                itemNameColumn.ReadOnly = true;
+                dgv.Columns.Add(itemNameColumn);
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Type", FrmMainInternalText["ItemColumnType"], "Byte", null, 50, 0, 63));
+                DataGridViewColumn itemTypeColumn = CreateDgvColumn(DgvColumnType.TextBox, "Type", FrmMainInternalText["ItemColumnTypeName"], null, null, 175);
+                itemTypeColumn.ReadOnly = true;
+                dgv.Columns.Add(itemTypeColumn);
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Qty", FrmMainInternalText["ItemColumnQty"], "UInt16", null, 50, 0, 1023));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Equipped", FrmMainInternalText["ItemColumnEquipped"], null, null, 55));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Hours", FrmMainInternalText["ItemColumnTimeAcquiredHour"], "UInt32", null, 50, 0, 67108863));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Minutes", FrmMainInternalText["ItemColumnTimeAcquiredMinute"], "Byte", null, 50, 0, 59));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Time_Seconds", FrmMainInternalText["ItemColumnTimeAcquiredSecond"], "Byte", null, 50, 0, 59));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Serial", FrmMainInternalText["ItemColumnSerial"], "UInt32", null, 75, 0, 67108863));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk1", FrmMainInternalText["ItemColumnUnk1"], null, null, 50));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Unk2", FrmMainInternalText["ItemColumnUnk2"], null, null, 50));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Unk3", FrmMainInternalText["ItemColumnUnk3"], "Byte", null, 50, 0, 63));
+                dgv.RowCount = binding.Items.Length;
+            }
+            finally
+            {
+                dgv.ResumeLayout(false);
+                if (wasVisible)
+                    dgv.Visible = true;
+            }
+        }
+        private void EnsureSelectedItemGridRows()
+        {
+            if (tbcItems.SelectedTab == null)
+                return;
+
+            DataGridView dgv = tbcItems.SelectedTab.Controls.OfType<DataGridView>().FirstOrDefault();
+            if (dgv == null)
+                return;
+
+            ItemGridBinding binding = dgv.Tag as ItemGridBinding;
+            if (binding != null)
+                ConfigureItemGrid(dgv, binding);
+        }
+        private void dgvItemBox_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridView dgv = (DataGridView)sender;
+            ItemGridBinding binding = dgv.Tag as ItemGridBinding;
+            if (binding == null || e.RowIndex >= binding.Items.Length || e.ColumnIndex >= dgv.Columns.Count)
+                return;
+
+            e.Value = binding.GetValue(e.RowIndex, dgv.Columns[e.ColumnIndex].DataPropertyName);
+        }
+        private void dgvItemBox_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridView dgv = (DataGridView)sender;
+            ItemGridBinding binding = dgv.Tag as ItemGridBinding;
+            if (binding == null || e.RowIndex >= binding.Items.Length || e.ColumnIndex >= dgv.Columns.Count)
+                return;
+
+            binding.SetValue(e.RowIndex, dgv.Columns[e.ColumnIndex].DataPropertyName, e.Value);
+        }
+        private void dgvItemBox_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridView dgv = (DataGridView)sender;
+            ItemGridBinding binding = dgv.Tag as ItemGridBinding;
+            if (binding != null && e.RowIndex < binding.Items.Length &&
+                IsReservedItem(binding.ItemNames, binding.Items[e.RowIndex].ID))
+            {
+                e.CellStyle.BackColor = Color.MistyRose;
+                e.CellStyle.ForeColor = Color.Maroon;
+                e.CellStyle.SelectionBackColor = Color.IndianRed;
+                e.CellStyle.SelectionForeColor = Color.White;
+            }
+
+            if (binding == null || e.ColumnIndex == 0 || e.ColumnIndex == 2)
+                return;
+
+            UInt32 lookupId = e.ColumnIndex == 1 ? binding.Items[e.RowIndex].ID : binding.Items[e.RowIndex].Type;
+            Dictionary<UInt32, string> lookup = e.ColumnIndex == 1 ? binding.ItemNameLookup : binding.ItemTypeLookup;
+            if (lookup.TryGetValue(lookupId, out string displayName))
+                e.Value = displayName;
+            else
+                e.Value = string.Empty;
+            e.FormattingApplied = true;
+        }
         private void UpdateNewItemComboBox()
         {
-            cbxItemAddNewID.DataSource = null;
+            DataTable dataSource = null;
             switch (tbcItems.SelectedIndex)
             {
                 case 0:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreChips(lang));
+                    dataSource = XC2Data.GetCoreChips(lang);
                     break;
 
                 case 1:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAccessories(lang));
+                    dataSource = XC2Data.GetAccessories(lang);
                     break;
 
                 case 2:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetAuxCores(lang));
+                    dataSource = XC2Data.GetAuxCores(lang);
                     break;
 
                 case 3:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCylinders(lang));
+                    dataSource = XC2Data.GetCylinders(lang);
                     break;
 
                 case 4:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetKeyItems(lang));
+                    dataSource = XC2Data.GetKeyItems(lang);
                     break;
 
                 case 5:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetInfoItems(lang));
+                    dataSource = XC2Data.GetInfoItems(lang);
                     break;
 
                 case 7:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCollectibles(lang));
+                    dataSource = XC2Data.GetCollectibles(lang);
                     break;
 
                 case 8:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetTreasure(lang));
+                    dataSource = XC2Data.GetTreasure(lang);
                     break;
 
                 case 9:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetUnrefinedAuxCores(lang));
+                    dataSource = XC2Data.GetUnrefinedAuxCores(lang);
                     break;
 
                 case 10:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPouchItems(lang));
+                    dataSource = XC2Data.GetPouchItems(lang);
                     break;
 
                 case 11:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetCoreCrystals(lang));
+                    dataSource = XC2Data.GetCoreCrystals(lang);
                     break;
 
                 case 12:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetBoosters(lang));
+                    dataSource = XC2Data.GetBoosters(lang);
                     break;
 
                 case 13:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiRoleCPU(lang));
+                    dataSource = XC2Data.GetPoppiRoleCPU(lang);
                     break;
 
                 case 14:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiElementCores(lang));
+                    dataSource = XC2Data.GetPoppiElementCores(lang);
                     break;
 
                 case 15:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSpecialsEnhancingRAM(lang));
+                    dataSource = XC2Data.GetPoppiSpecialsEnhancingRAM(lang);
                     break;
 
                 case 16:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiArtsCards(lang));
+                    dataSource = XC2Data.GetPoppiArtsCards(lang);
                     break;
 
                 case 17:
-                    cbxItemAddNewID.BindDataTable(XC2Data.GetPoppiSkillRAM(lang));
+                    dataSource = XC2Data.GetPoppiSkillRAM(lang);
                     break;
             }
+
+            if (dataSource == null)
+            {
+                if (cbxItemAddNewID.DataSource != null)
+                    cbxItemAddNewID.DataSource = null;
+            }
+            else
+                cbxItemAddNewID.BindDataTable(dataSource);
 
             cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
         }
@@ -2124,61 +2451,124 @@ namespace XC2Bf2SaveNETThingy
         }
         #endregion Items
 
+        private bool ShouldSkipDeferredComboBinding(ComboBox combo)
+        {
+            switch (combo.Name)
+            {
+                case "cbxAchievementTasks":
+                case "cbxWeatherInfo":
+                case "cbxCommonBladeIDs":
+                case "cbxQuestIDs":
+                case "cbxContentVersions":
+                case "cbxPartyMembers":
+                case "cbxMercGroupPresets":
+                case "cbxEvents":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         #region Game Flag Data
         private void SetupFlagEditors()
         {
-            IsLoadingFlagEditors = true;
-            try
-            {
-                BindingList<FlagData.Flag_1> Flags_1Bit_bl = new BindingList<FlagData.Flag_1>();
-                Flags_1Bit_bl.AddRange(SAVEDATA.Flags.Flags_1Bit);
-                dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, Flags_1Bit_bl, "Value", "Set", true, 30);
-
-                BindingList<FlagData.Flag_2_4_8> Flags_2Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-                Flags_2Bit_bl.AddRange(SAVEDATA.Flags.Flags_2Bit);
-                dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, Flags_2Bit_bl, "Value", "Value", false, 40, 3);
-
-                BindingList<FlagData.Flag_2_4_8> Flags_4Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-                Flags_4Bit_bl.AddRange(SAVEDATA.Flags.Flags_4Bit);
-                dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, Flags_4Bit_bl, "Value", "Value", false, 40, 15);
-
-                BindingList<FlagData.Flag_2_4_8> Flags_8Bit_bl = new BindingList<FlagData.Flag_2_4_8>();
-                Flags_8Bit_bl.AddRange(SAVEDATA.Flags.Flags_8Bit);
-                dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, Flags_8Bit_bl, "Value", "Value", false, 40, 255);
-
-                BindingList<FlagData.Flag_16> Flags_16Bit_bl = new BindingList<FlagData.Flag_16>();
-                Flags_16Bit_bl.AddRange(SAVEDATA.Flags.Flags_16Bit);
-                dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, Flags_16Bit_bl, "Value", "Value", false, 55, 65535);
-
-                BindingList<FlagData.Flag_32> Flags_32Bit_bl = new BindingList<FlagData.Flag_32>();
-                Flags_32Bit_bl.AddRange(SAVEDATA.Flags.Flags_32Bit);
-                dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, Flags_32Bit_bl, "Value", "Value", false, 80, 4294967295);
-            }
-            finally
-            {
-                IsLoadingFlagEditors = false;
-                FlagEditorRowHeaderSet(dgvFlags1Bit, XC2Data.Flags1Bit());
-                FlagEditorRowHeaderSet(dgvFlags2Bit);
-                FlagEditorRowHeaderSet(dgvFlags4Bit);
-                FlagEditorRowHeaderSet(dgvFlags8Bit, XC2Data.Flags8Bit());
-                FlagEditorRowHeaderSet(dgvFlags16Bit, XC2Data.Flags16Bit());
-                FlagEditorRowHeaderSet(dgvFlags32Bit, XC2Data.Flags32Bit());
-            }
+            dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, SAVEDATA.Flags.Flags_1Bit, "Set", true, 30, 1, XC2Data.Flags1Bit());
+            dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, SAVEDATA.Flags.Flags_2Bit, "Value", false, 40, 3);
+            dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, SAVEDATA.Flags.Flags_4Bit, "Value", false, 40, 15);
+            dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, SAVEDATA.Flags.Flags_8Bit, "Value", false, 40, 255, XC2Data.Flags8Bit());
+            dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, SAVEDATA.Flags.Flags_16Bit, "Value", false, 55, 65535, XC2Data.Flags16Bit());
+            dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, SAVEDATA.Flags.Flags_32Bit, "Value", false, 80, UInt32.MaxValue, XC2Data.Flags32Bit());
         }
-        private DataGridView SetupFlagEditor(DataGridView dgv, IBindingList bl, string dataMemberValue, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal = 0)
+
+        private DataGridView SetupFlagEditor(DataGridView dgv, Array values, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal, Dictionary<int, string> names = null)
         {
+            dgv.CellValueNeeded -= dgvFlags_CellValueNeeded;
+            dgv.CellValuePushed -= dgvFlags_CellValuePushed;
+            dgv.RowPostPaint -= dgvFlags_RowPostPaint;
+            dgv.VirtualMode = false;
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = null;
             dgv.Columns.Clear();
+
             if (isCheckBox)
-                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, dataMemberValue, columnHeaderText, null, null, 30));
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.CheckBox, "Value", columnHeaderText, null, null, valueColumnWidth));
             else
-                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, dataMemberValue, columnHeaderText, null, null, valueColumnWidth, 0, maxVal));
-            dgv.DataSource = bl;
+                dgv.Columns.Add(CreateDgvColumn(DgvColumnType.NumericUpDown, "Value", columnHeaderText, null, null, valueColumnWidth, 0, maxVal));
+
+            dgv.Tag = new FlagGridBinding(values, names);
+            dgv.VirtualMode = true;
+            dgv.RowCount = 0;
+            dgv.CellValueNeeded += dgvFlags_CellValueNeeded;
+            dgv.CellValuePushed += dgvFlags_CellValuePushed;
+            dgv.RowPostPaint += dgvFlags_RowPostPaint;
             dgv.RowHeadersWidth = dgv.Width - dgv.Columns[0].Width - 20;
             dgv.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 
             return dgv;
+        }
+
+        private void EnsureSelectedFlagGridRows()
+        {
+            if (tbcFlagData.SelectedTab == null)
+                return;
+
+            EnsureFlagGridRows(tbcFlagData.SelectedTab);
+        }
+
+        private void EnsureFlagGridRows(Control parent)
+        {
+            if (parent is DataGridView dgv && dgv.Tag is FlagGridBinding binding)
+            {
+                if (dgv.RowCount != binding.Count)
+                    dgv.RowCount = binding.Count;
+                return;
+            }
+
+            foreach (Control child in parent.Controls)
+                EnsureFlagGridRows(child);
+        }
+
+        private void dgvFlags_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                return;
+
+            FlagGridBinding binding = ((DataGridView)sender).Tag as FlagGridBinding;
+            if (binding != null)
+                e.Value = binding.GetValue(e.RowIndex);
+        }
+
+        private void dgvFlags_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+                return;
+
+            FlagGridBinding binding = ((DataGridView)sender).Tag as FlagGridBinding;
+            if (binding == null || e.Value == null)
+                return;
+
+            binding.SetValue(e.RowIndex, e.Value);
+        }
+
+        private void dgvFlags_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            FlagGridBinding binding = dgv.Tag as FlagGridBinding;
+            if (binding == null)
+                return;
+
+            if (binding.Names == null || !binding.Names.TryGetValue(e.RowIndex, out string name))
+                return;
+
+            string label = (e.RowIndex + 1) + ": " + name;
+
+            TextRenderer.DrawText(
+                e.Graphics,
+                label,
+                dgv.RowHeadersDefaultCellStyle.Font ?? dgv.Font,
+                new Rectangle(e.RowBounds.Left, e.RowBounds.Top, dgv.RowHeadersWidth, e.RowBounds.Height),
+                dgv.RowHeadersDefaultCellStyle.ForeColor,
+                TextFormatFlags.Right | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPrefix);
         }
         #endregion Game Flag Data
 
@@ -2213,6 +2603,7 @@ namespace XC2Bf2SaveNETThingy
 
             // disable Language drop down menu until it is done
             settingsToolStripMenuItem.DropDownItems.Remove(languageToolStripMenuItem);
+
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2319,8 +2710,12 @@ namespace XC2Bf2SaveNETThingy
         #region Driver Main
         private void lbxDrivers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!(IsReloadingDrivers))
+            if (!(IsReloadingDrivers) && !IsActivatingTab)
+            {
+                if (tbcMain.SelectedTab == tabDrivers)
+                    DeferredComboBindings.EnsureBound(tbcDrivers.SelectedTab ?? tabDrivers);
                 LoadDriver(lbxDrivers.SelectedIndex);
+            }
         }
         #endregion Driver Main
 
@@ -2401,6 +2796,12 @@ namespace XC2Bf2SaveNETThingy
         #region Driver Arts
         private void cbxDriverWeapons_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (SAVEDATA == null ||
+                lbxDrivers.SelectedIndex < 0 || lbxDrivers.SelectedIndex >= SAVEDATA.Drivers.Length ||
+                cbxDriverWeapons.SelectedIndex < 0 ||
+                cbxDriverWeapons.SelectedIndex >= SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons.Count)
+                return;
+
             Weapon w = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].Weapons[cbxDriverWeapons.SelectedIndex];
 
             nudDriverWeaponArtId1.Value = w.ArtIds[0];
@@ -2445,6 +2846,12 @@ namespace XC2Bf2SaveNETThingy
         #region Driver Pouches
         private void cbxDriverPouches_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (SAVEDATA == null ||
+                lbxDrivers.SelectedIndex < 0 || lbxDrivers.SelectedIndex >= SAVEDATA.Drivers.Length ||
+                cbxDriverPouches.SelectedIndex < 0 ||
+                cbxDriverPouches.SelectedIndex >= SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo.Length)
+                return;
+
             nudDriverPouchesTime.Value = (decimal)SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].Time;
             nudDriverPouchesItemID.Value = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].ItemId;
             chkDriverPouchesIsUnlocked.Checked = SAVEDATA.Drivers[lbxDrivers.SelectedIndex].PouchInfo[cbxDriverPouches.SelectedIndex].IsEnabled;
@@ -2718,8 +3125,12 @@ namespace XC2Bf2SaveNETThingy
         #region Blade Main
         private void lbxBlades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!(IsReloadingBlades))
+            if (!(IsReloadingBlades) && !IsActivatingTab)
+            {
+                if (tbcMain.SelectedTab == tabBlades)
+                    DeferredComboBindings.EnsureBound(tbcBlades.SelectedTab ?? tabBlades);
                 LoadBlade(lbxBlades.SelectedIndex);
+            }
         }
         private void btnBladeImport_Click(object sender, EventArgs e) => ImportBlade();
         private void btnBladeExport_Click(object sender, EventArgs e) => ExportBlade();
@@ -3973,32 +4384,12 @@ namespace XC2Bf2SaveNETThingy
         #endregion Blades
 
         #region Items
-        private void tbcItems_SelectedIndexChanged(object sender, EventArgs e) => UpdateNewItemComboBox();
-        private void Dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void tbcItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!dgvIsEditing)
-            {
-                dgvIsEditing = true;
-                int columnIndex = e.ColumnIndex;
-                int rowIndex = e.RowIndex;
+            Stopwatch perfWatch = Environment.GetEnvironmentVariable("XC2_PERF_TRACE_EVENTS") == "1" ? Stopwatch.StartNew() : null;
 
-                DataGridView dgv = (DataGridView)sender;
-                ApplyReservedItemStyle(dgv, rowIndex);
-
-                switch (columnIndex)
-                {
-                    case 0:
-                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items.Count)
-                            dgv.Rows[rowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[0].Value)])[0];
-                        break;
-
-                    case 2:
-                        if (Convert.ToUInt32(dgv.Rows[rowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items.Count)
-                            dgv.Rows[rowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[rowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[rowIndex].Cells[2].Value)])[0];
-                        break;
-                }
-                dgvIsEditing = false;
-            }
+            if (perfWatch != null)
+                Console.WriteLine("TRACE tbcItems_SelectedIndexChanged index=" + tbcItems.SelectedIndex + " ms=" + perfWatch.Elapsed.TotalMilliseconds.ToString("F1"));
         }
         private void dgvItemBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -4010,24 +4401,17 @@ namespace XC2Bf2SaveNETThingy
 
                 switch (e.ColumnIndex)
                 {
-                    case 0:
-                        if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[0].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items.Count)
-                            dgv.Rows[e.RowIndex].Cells[1].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[1]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value)])[0];
-                        break;
-
                     case 1:
                         dgv.Rows[e.RowIndex].Cells[0].Value = dgv.Rows[e.RowIndex].Cells[1].Value;
-                        break;
-
-                    case 2:
-                        if (Convert.ToUInt32(dgv.Rows[e.RowIndex].Cells[2].Value) < ((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items.Count)
-                            dgv.Rows[e.RowIndex].Cells[3].Value = ((DataRowView)((DataGridViewComboBoxCell)dgv.Rows[e.RowIndex].Cells[3]).Items[Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[2].Value)])[0];
                         break;
 
                     case 3:
                         dgv.Rows[e.RowIndex].Cells[2].Value = dgv.Rows[e.RowIndex].Cells[3].Value;
                         break;
                 }
+
+                if (e.ColumnIndex == 0 || e.ColumnIndex == 1)
+                    ApplyReservedItemStyle(dgv, e.RowIndex);
 
                 dgvIsEditing = false;
             }
@@ -4136,12 +4520,10 @@ namespace XC2Bf2SaveNETThingy
                     break;
 
                 case 1:
+                    ItemGridBinding binding = dgv.Tag as ItemGridBinding;
                     string[] names = new string[box.Length];
                     for (int i = 0; i < names.Length; i++)
-                    {
-                        DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell)dgv.Rows[i].Cells[1];
-                        names[i] = (string)((DataRowView)cell.Items[Convert.ToInt32(cell.Value)]).Row[1];
-                    }
+                        names[i] = binding != null && binding.ItemNameLookup.TryGetValue(box[i].ID, out string itemName) ? itemName : string.Empty;
 
                     Array.Sort(names, box, Item.GetComparer(Item.CMP_FIELD.NAME, (bool)dgv.Columns[c].Tag));
                     break;
@@ -4167,7 +4549,7 @@ namespace XC2Bf2SaveNETThingy
             }
             dgv.Columns[c].Tag = !(bool)dgv.Columns[c].Tag;
 
-            ((BindingList<Item>)dgv.DataSource).ResetBindings();
+            dgv.Invalidate();
         }
         private void tsmiItemGetNewSerial_Click(object sender, EventArgs e)
         {
@@ -4290,13 +4672,16 @@ namespace XC2Bf2SaveNETThingy
         {
             if (tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0].GetType() == typeof(DataGridView))
             {
-                BindingList<Item> items = ((BindingList<Item>)((DataGridView)tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0]).DataSource);
+                DataGridView dgv = (DataGridView)tbcItems.TabPages[tbcItems.SelectedIndex].Controls[0];
+                ItemGridBinding binding = dgv.Tag as ItemGridBinding;
+                if (binding == null)
+                    return;
 
-                foreach (Item i in items)
+                foreach (Item i in binding.Items)
                     if (!i.IsEmptyItem())
                         i.Qty = 1023;
 
-                items.ResetBindings();
+                dgv.Invalidate();
             }
         }
         private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
@@ -4606,12 +4991,22 @@ namespace XC2Bf2SaveNETThingy
         #region Merc Group Presets
         private void cbxMercGroupPresets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Stopwatch perfWatch = Environment.GetEnvironmentVariable("XC2_PERF_TRACE_EVENTS") == "1" ? Stopwatch.StartNew() : null;
+            if (IsActivatingTab)
+                return;
+
+            if (tbcMain.SelectedTab == tabMercGroups)
+                DeferredComboBindings.EnsureBound(tabMercGroups);
+
             nudMercGroupPresetMember1.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[0];
             nudMercGroupPresetMember2.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[1];
             nudMercGroupPresetMember3.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[2];
             nudMercGroupPresetMember4.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[3];
             nudMercGroupPresetMember5.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[4];
             nudMercGroupPresetMember6.Value = SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[5];
+
+            if (perfWatch != null)
+                Console.WriteLine("TRACE cbxMercGroupPresets_SelectedIndexChanged index=" + cbxMercGroupPresets.SelectedIndex + " ms=" + perfWatch.Elapsed.TotalMilliseconds.ToString("F1"));
         }
         private void nudMercGroupPresetMember1_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[0] = (UInt16)nudMercGroupPresetMember1.Value;
         private void nudMercGroupPresetMember2_ValueChanged(object sender, EventArgs e) => SAVEDATA.MercGroupPresets[cbxMercGroupPresets.SelectedIndex].Members[1] = (UInt16)nudMercGroupPresetMember2.Value;
@@ -4626,6 +5021,10 @@ namespace XC2Bf2SaveNETThingy
         #region XC2Save Events
         private void cbxEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Stopwatch perfWatch = Environment.GetEnvironmentVariable("XC2_PERF_TRACE_EVENTS") == "1" ? Stopwatch.StartNew() : null;
+            if (IsActivatingTab)
+                return;
+
             Event ev = SAVEDATA.Events[cbxEvents.SelectedIndex];
 
             nudEventID.Value = ev.EventID;
@@ -4668,6 +5067,9 @@ namespace XC2Bf2SaveNETThingy
             hbxEventUnk_0x22.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x22);
             hbxEventUnk_0x42.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x42);
             hbxEventUnk_0x54.ByteProvider = new FixedLengthByteProvider(SAVEDATA.Events[cbxEvents.SelectedIndex].Unk_0x54);
+
+            if (perfWatch != null)
+                Console.WriteLine("TRACE cbxEvents_SelectedIndexChanged index=" + cbxEvents.SelectedIndex + " ms=" + perfWatch.Elapsed.TotalMilliseconds.ToString("F1"));
         }
         private void nudEventsCount_ValueChanged(object sender, EventArgs e) => SAVEDATA.EventsCount = (UInt32)nudEventsCount.Value;
 

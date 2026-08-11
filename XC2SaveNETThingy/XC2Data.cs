@@ -22,9 +22,12 @@ namespace XC2SaveNETThingy
             //{ LANG.CN, "CN" }
         };
 
-        private static SQLiteConnection dbConn = new SQLiteConnection(@"Data Source=XC2Data.db; Read Only=True;");
+        private static SQLiteConnection dbConn = new SQLiteConnection(
+            @"Data Source=" + RuntimePaths.DatabaseFile + @"; Read Only=True;");
         private static SQLiteDataAdapter dbAdapter;
         private static DataSet ds;
+        private static readonly Dictionary<string, DataSet> dataSetCache = new Dictionary<string, DataSet>();
+        private static readonly object dataSetCacheLock = new object();
         private static bool? itemStatusTableAvailable;
 
         private static bool HasItemStatusTable()
@@ -699,14 +702,27 @@ namespace XC2SaveNETThingy
         /// <param name="query">SQL query to send to the database</param>
         public static DataSet GetDataSet(string query)
         {
-            ds = new DataSet();                             // Make new DataSet
-            dbAdapter = new SQLiteDataAdapter(query, dbConn);  // Make new DbAdapter using supplied query
+            lock (dataSetCacheLock)
+            {
+                if (dataSetCache.TryGetValue(query, out DataSet cachedDataSet))
+                    return cachedDataSet;
 
-            dbConn.Open();                                  // Open connection to database
-            dbAdapter.Fill(ds);                             // Fill the DataSet with obtained data
-            dbConn.Close();                                 // Close connection to database
+                ds = new DataSet();
+                dbAdapter = new SQLiteDataAdapter(query, dbConn);
 
-            return ds;
+                dbConn.Open();
+                try
+                {
+                    dbAdapter.Fill(ds);
+                }
+                finally
+                {
+                    dbConn.Close();
+                }
+
+                dataSetCache.Add(query, ds);
+                return ds;
+            }
         }
     }
 }

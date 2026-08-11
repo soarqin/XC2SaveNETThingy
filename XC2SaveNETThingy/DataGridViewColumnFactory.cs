@@ -12,6 +12,8 @@ namespace XC2SaveNETThingy
 {
     public static class DataGridViewColumnFactory
     {
+        private const string ReservedLookupPropertyName = "XC2SaveNETThingy.ReservedLookup";
+
         public enum DgvColumnType
         {
             TextBox,
@@ -33,6 +35,9 @@ namespace XC2SaveNETThingy
             DataGridViewRow row = dgv.Rows[rowIndex];
             bool reserved = TryGetReservedItem(dgv, rowIndex);
 
+            if (!reserved && !row.HasDefaultCellStyle && row.Cells[1].ToolTipText == null)
+                return;
+
             if (reserved)
             {
                 row.DefaultCellStyle.BackColor = Color.MistyRose;
@@ -52,6 +57,38 @@ namespace XC2SaveNETThingy
             }
         }
 
+        /// <summary>
+        /// Applies the initial warning style only to rows that are actually
+        /// marked as reserved. Ordinary rows remain shared and are not touched
+        /// during the initial bind.
+        /// </summary>
+        public static void InitializeReservedItemStyles(DataGridView dgv, DataTable itemTable)
+        {
+            if (dgv == null || itemTable == null)
+                return;
+
+            Dictionary<UInt32, bool> reservedLookup = GetReservedLookup(itemTable);
+            if (reservedLookup == null)
+                return;
+
+            for (int rowIndex = 0; rowIndex < dgv.Rows.Count; rowIndex++)
+            {
+                DataGridViewRow row = dgv.Rows[rowIndex];
+                if (row.IsNewRow || !UInt32.TryParse(Convert.ToString(row.Cells[0].Value), out UInt32 id))
+                    continue;
+
+                if (reservedLookup.TryGetValue(id, out bool reserved) && reserved)
+                    ApplyReservedItemStyle(dgv, rowIndex);
+            }
+        }
+
+        public static bool IsReservedItem(DataTable itemTable, UInt32 id)
+        {
+            Dictionary<UInt32, bool> reservedLookup = GetReservedLookup(itemTable);
+            return reservedLookup != null &&
+                reservedLookup.TryGetValue(id, out bool reserved) && reserved;
+        }
+
         private static bool TryGetReservedItem(DataGridView dgv, int rowIndex)
         {
             if (dgv.Columns.Count < 2 || dgv.Rows[rowIndex].Cells.Count < 2)
@@ -63,28 +100,47 @@ namespace XC2SaveNETThingy
 
             DataGridViewComboBoxColumn nameColumn = dgv.Columns[1] as DataGridViewComboBoxColumn;
             DataTable itemTable = nameColumn?.DataSource as DataTable;
-            if (itemTable == null || !itemTable.Columns.Contains("ID") || !itemTable.Columns.Contains("Reserved"))
+            if (itemTable == null && dgv.Tag is ItemGridBinding itemGridBinding)
+                itemTable = itemGridBinding.ItemNames;
+            Dictionary<UInt32, bool> reservedLookup = GetReservedLookup(itemTable);
+            if (reservedLookup == null)
                 return false;
 
-            foreach (DataRow itemRow in itemTable.Rows)
+            return reservedLookup.TryGetValue(id, out bool reserved) && reserved;
+        }
+
+        private static Dictionary<UInt32, bool> GetReservedLookup(DataTable table)
+        {
+            if (table == null || !table.Columns.Contains("ID") || !table.Columns.Contains("Reserved"))
+                return null;
+
+            Dictionary<UInt32, bool> lookup = table.ExtendedProperties[ReservedLookupPropertyName] as Dictionary<UInt32, bool>;
+            if (lookup != null)
+                return lookup;
+
+            lookup = new Dictionary<UInt32, bool>();
+            foreach (DataRow row in table.Rows)
             {
-                if (!UInt32.TryParse(Convert.ToString(itemRow["ID"]), out UInt32 itemId) || itemId != id)
+                if (!UInt32.TryParse(Convert.ToString(row["ID"]), out UInt32 id))
                     continue;
 
-                object reservedValue = itemRow["Reserved"];
-                if (reservedValue == DBNull.Value || reservedValue == null)
-                    return false;
+                object reservedValue = row["Reserved"];
+                bool reserved = false;
+                if (reservedValue != DBNull.Value && reservedValue != null)
+                {
+                    if (reservedValue is bool boolValue)
+                        reserved = boolValue;
+                    else if (Int64.TryParse(Convert.ToString(reservedValue), out Int64 integerValue))
+                        reserved = integerValue != 0;
+                    else
+                        reserved = string.Equals(Convert.ToString(reservedValue), "true", StringComparison.OrdinalIgnoreCase);
+                }
 
-                if (reservedValue is bool boolValue)
-                    return boolValue;
-
-                if (Int64.TryParse(Convert.ToString(reservedValue), out Int64 integerValue))
-                    return integerValue != 0;
-
-                return string.Equals(Convert.ToString(reservedValue), "true", StringComparison.OrdinalIgnoreCase);
+                lookup[id] = reserved;
             }
 
-            return false;
+            table.ExtendedProperties[ReservedLookupPropertyName] = lookup;
+            return lookup;
         }
 
         public static DataGridViewColumn CreateDgvColumn(DgvColumnType columnType, string dataPropertyName, string headerText, string dataType = null, object dataSource = null, int width = 0, int minimum = 0, UInt32 maximum = 100)
@@ -118,8 +174,9 @@ namespace XC2SaveNETThingy
             }
             if (col != null)
             {
-                if (!(col.GetType() == typeof(DataGridViewComboBoxColumn)))
-                    col.DataPropertyName = dataPropertyName;
+                col.DataPropertyName = dataPropertyName;
+                if (dataType != null && col is DataGridViewComboBoxColumn)
+                    col.ValueType = Type.GetType(dataType);
                 col.HeaderText = headerText;
                 if (width != 0)
                     col.Width = width;
