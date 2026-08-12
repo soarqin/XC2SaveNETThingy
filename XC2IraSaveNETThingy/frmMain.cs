@@ -35,6 +35,9 @@ namespace XC2IraSaveNETThingy
         private Dictionary<string, string> FrmMainText;
         private Dictionary<string, string> FrmMainInternalText;
 
+        private Button btnItemRemoveReserved;
+        private Button btnItemAddAllCategory;
+
         private const int BLADELIST_OFFSET = 130;
         #endregion Globals
 
@@ -65,6 +68,7 @@ namespace XC2IraSaveNETThingy
             }
 
             InitializeComponent();
+            InitializeItemBatchControls();
             TabControlPerformance.Configure(this);
             tbcMain.SelectedIndexChanged += tbcMain_SelectedIndexChanged;
             tbcFlagData.SelectedIndexChanged += tbcFlagData_SelectedIndexChanged;
@@ -72,6 +76,42 @@ namespace XC2IraSaveNETThingy
         #endregion Constructor
 
         #region Methods
+
+        private void InitializeItemBatchControls()
+        {
+            splitContainer5.SplitterDistance = 100;
+            lblItemSortTip.Location = new Point(5, 50);
+
+            gbxItemCheat.Size = new Size(365, 88);
+            btnItemCheatMaxQty.Location = new Point(6, 12);
+            btnItemCheatMaxQty.Size = new Size(353, 23);
+
+            btnItemRemoveReserved = new Button
+            {
+                Location = new Point(6, 36),
+                Name = "btnItemRemoveReserved",
+                Size = new Size(353, 23),
+                TabIndex = 8,
+                Text = "Remove All Reserved Items",
+                UseVisualStyleBackColor = true
+            };
+            btnItemRemoveReserved.Click += btnItemRemoveReserved_Click;
+
+            btnItemAddAllCategory = new Button
+            {
+                Location = new Point(6, 60),
+                Name = "btnItemAddAllCategory",
+                Size = new Size(353, 23),
+                TabIndex = 9,
+                Text = "Add All Items (Current Category)",
+                Enabled = false,
+                UseVisualStyleBackColor = true
+            };
+            btnItemAddAllCategory.Click += btnItemAddAllCategory_Click;
+
+            gbxItemCheat.Controls.Add(btnItemAddAllCategory);
+            gbxItemCheat.Controls.Add(btnItemRemoveReserved);
+        }
 
         #region Main
         private void tbcMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -1585,6 +1625,57 @@ namespace XC2IraSaveNETThingy
                 cbxItemAddNewID.BindDataTable(dataSource);
 
             cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
+            UpdateItemBatchButtons();
+        }
+        private DataGridView GetSelectedItemGrid()
+        {
+            if (tbcItems.SelectedTab == null)
+                return null;
+
+            return tbcItems.SelectedTab.Controls.OfType<DataGridView>().FirstOrDefault();
+        }
+        private DataGridView[] GetItemGridViews()
+        {
+            return new DataGridView[]
+            {
+                dgvPcWpnChipBox,
+                dgvPcEquipBox,
+                dgvEquipOrbBox,
+                dgvPreciousBox,
+                dgvInfoBox,
+                dgvCollectionListBox,
+                dgvFavoriteBox
+            };
+        }
+
+        private IEnumerable<ItemGridBinding> GetItemGridBindings()
+        {
+            foreach (DataGridView grid in GetItemGridViews())
+                if (grid.Tag is ItemGridBinding binding)
+                    yield return binding;
+        }
+        private int GetSelectedItemType()
+        {
+            switch (tbcItems.SelectedIndex)
+            {
+                case 0: return 1;
+                case 1: return 2;
+                case 2: return 3;
+                case 3: return 6;
+                case 4: return 14;
+                case 5: return 7;
+                case 6: return 10;
+                default: return -1;
+            }
+        }
+        private void UpdateItemBatchButtons()
+        {
+            if (btnItemAddAllCategory == null)
+                return;
+
+            DataGridView dgv = GetSelectedItemGrid();
+            ItemGridBinding binding = dgv?.Tag as ItemGridBinding;
+            btnItemAddAllCategory.Enabled = binding != null && binding.ItemNames != null && GetSelectedItemType() >= 0;
         }
         private UInt32 ItemGetNewSerial(DataGridView dgv)
         {
@@ -3366,6 +3457,7 @@ namespace XC2IraSaveNETThingy
             {
                 EnsureSelectedItemGridRows();
                 UpdateNewItemComboBox();
+                UpdateItemBatchButtons();
             }
         }
         private void dgvItemBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -3580,6 +3672,100 @@ namespace XC2IraSaveNETThingy
 
                 dgv.Invalidate();
             }
+        }
+        private void btnItemRemoveReserved_Click(object sender, EventArgs e)
+        {
+            if (SAVEDATA == null)
+                return;
+
+            int removed = 0;
+            foreach (ItemGridBinding binding in GetItemGridBindings())
+            {
+                if (binding.ItemNames == null)
+                    continue;
+
+                foreach (Item item in binding.Items)
+                {
+                    if (IsReservedItem(binding.ItemNames, item.ID))
+                    {
+                        item.Clear();
+                        removed++;
+                    }
+                }
+            }
+
+            foreach (DataGridView grid in GetItemGridViews())
+                grid.Invalidate();
+            MessageBox.Show(
+                "Removed " + removed + " Reserved item(s) from all Item Boxes.",
+                "Reserved Items Removed",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+        private void btnItemAddAllCategory_Click(object sender, EventArgs e)
+        {
+            if (SAVEDATA == null)
+                return;
+
+            DataGridView dgv = GetSelectedItemGrid();
+            ItemGridBinding binding = dgv?.Tag as ItemGridBinding;
+            int itemType = GetSelectedItemType();
+            if (binding == null || binding.ItemNames == null || itemType < 0)
+            {
+                MessageBox.Show(
+                    "The selected Item page does not have a supported item category.",
+                    "Add All Items",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            List<UInt16> itemIDs = new List<UInt16>();
+            HashSet<UInt16> seenItemIDs = new HashSet<UInt16>();
+            foreach (DataRow row in binding.ItemNames.Rows)
+            {
+                if (!UInt16.TryParse(Convert.ToString(row["ID"]), out UInt16 id) || id == 0)
+                    continue;
+
+                if (!IsReservedItem(binding.ItemNames, id) && seenItemIDs.Add(id))
+                    itemIDs.Add(id);
+            }
+
+            int added = 0;
+            int updated = 0;
+            foreach (UInt16 id in itemIDs)
+            {
+                Item existing = binding.Items.FirstOrDefault(item => !item.IsEmptyItem() && item.ID == id && item.Type == itemType);
+                if (existing != null)
+                {
+                    existing.Qty = 1;
+                    updated++;
+                    continue;
+                }
+
+                Item target = binding.Items.FirstOrDefault(item => item.IsEmptyItem());
+                if (target == null)
+                    break;
+
+                target.ID = id;
+                target.Type = (Byte)itemType;
+                target.Qty = 1;
+                target.Time.Hours = SAVEDATA.PlayTime.Hours;
+                target.Time.Minutes = SAVEDATA.PlayTime.Minutes;
+                target.Time.Seconds = SAVEDATA.PlayTime.Seconds;
+                target.Serial = ItemGetNewSerial(dgv);
+                added++;
+            }
+
+            dgv.Invalidate();
+
+            int notAdded = itemIDs.Count - added - updated;
+            string message =
+                "Added " + added + " item(s) and set " + updated + " existing item(s) to quantity 1.";
+            if (notAdded > 0)
+                message += Environment.NewLine + notAdded + " item(s) could not be added because the ItemBox is full.";
+
+            MessageBox.Show(message, "Add All Items", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
         private void nudItemsSerial2_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[1] = (UInt32)nudItemsSerial2.Value;

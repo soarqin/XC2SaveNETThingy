@@ -140,6 +140,19 @@ namespace XC2SaveNETThingy
                 );
         }
 
+        public void Clear()
+        {
+            ID = 0;
+            Type = 0;
+            Qty = 0;
+            Unk1 = false;
+            Equipped = false;
+            Unk2 = false;
+            Time = new ElapseTime();
+            Serial = 0;
+            Unk3 = 0;
+        }
+
         public enum CMP_FIELD
         {
             ID,
