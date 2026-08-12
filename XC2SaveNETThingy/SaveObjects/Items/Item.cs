@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,8 @@ namespace XC2SaveNETThingy
 
         public UInt16 Qty { get; set; }
         private const int QTY_BITS = 10;
+        private static readonly Lazy<Dictionary<UInt16, UInt16>> QuantityLimits =
+            new Lazy<Dictionary<UInt16, UInt16>>(LoadQuantityLimits);
 
         public bool Unk1 { get; set; }
         private const int UNK1_BITS = 1;
@@ -138,6 +142,32 @@ namespace XC2SaveNETThingy
                 Serial == 0 &&
                 Unk3 == 0
                 );
+        }
+
+        public static UInt16 GetMaxQty(UInt16 id)
+        {
+            return QuantityLimits.Value.TryGetValue(id, out UInt16 maxQty) ? maxQty : (UInt16)1023;
+        }
+
+        private static Dictionary<UInt16, UInt16> LoadQuantityLimits()
+        {
+            Dictionary<UInt16, UInt16> result = new Dictionary<UInt16, UInt16>();
+            string path = Path.Combine(AppContext.BaseDirectory, "data", "ItemQuantityLimits.csv");
+            if (!File.Exists(path))
+                return result;
+
+            foreach (string line in File.ReadAllLines(path))
+            {
+                string[] fields = line.Split('\t');
+                if (fields.Length != 2 ||
+                    !UInt16.TryParse(fields[0], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 id) ||
+                    !UInt16.TryParse(fields[1], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 maxQty))
+                    continue;
+
+                result[id] = maxQty;
+            }
+
+            return result;
         }
 
         public void Clear()

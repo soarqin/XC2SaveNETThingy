@@ -36,6 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="..\XC2SaveNETThingy\XC2SaveNETThingy.csproj" />
     <None Update="icon_ira.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\XC2SaveNETThingy\data\ItemQuantityLimits.csv" Link="data\ItemQuantityLimits.csv" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\XC2SaveNETThingy\XC2Data.db" Link="XC2Data.db" CopyToOutputDirectory="Always" />
   </ItemGroup>
 </Project>

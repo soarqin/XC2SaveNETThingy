@@ -4795,7 +4795,7 @@ namespace XC2Bf2SaveNETThingy
 
                 foreach (Item i in binding.Items)
                     if (!i.IsEmptyItem())
-                        i.Qty = 1023;
+                        i.Qty = Item.GetMaxQty(i.ID);
 
                 dgv.Invalidate();
             }
