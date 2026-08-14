@@ -84,11 +84,11 @@ namespace XC2SaveNETThingy
                 return value;
         }
 
-        public static void BindDataTable(this ComboBox cbx, DataTable dataSource, string displayMember = "Name", string valueMember = "ID", bool independentView = false)
+        public static void BindDataTable(this ComboBox cbx, DataTable dataSource, string displayMember = "Name", string valueMember = "ID")
         {
-            cbx.DataSource = independentView ? new DataView(dataSource) : (object)dataSource;
             cbx.DisplayMember = displayMember;
             cbx.ValueMember = valueMember;
+            cbx.DataSource = new DataView(dataSource);
         }
     }
 }

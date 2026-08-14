@@ -130,9 +130,9 @@ namespace XC2SaveNETThingy
             object desiredValue = GetDesiredValue(state);
             object desiredItem = FindItem(state, desiredValue);
 
+            combo.DataSource = state.DataSource;
             combo.DisplayMember = state.DisplayMember;
             combo.ValueMember = state.ValueMember;
-            combo.DataSource = state.DataSource;
 
             if (!String.IsNullOrEmpty(state.ValueMember))
                 combo.SelectedValue = desiredValue ?? state.SelectedValue;
@@ -185,6 +185,20 @@ namespace XC2SaveNETThingy
                 {
                     object candidate = String.IsNullOrEmpty(state.ValueMember)
                         ? row
+                        : row[state.ValueMember];
+                    if (ValuesEqual(candidate, desiredValue))
+                        return row;
+                }
+
+                return state.SelectedItem;
+            }
+
+            if (state.DataSource is DataView view)
+            {
+                foreach (DataRowView row in view)
+                {
+                    object candidate = String.IsNullOrEmpty(state.ValueMember)
+                        ? row.Row
                         : row[state.ValueMember];
                     if (ValuesEqual(candidate, desiredValue))
                         return row;
@@ -258,6 +272,9 @@ namespace XC2SaveNETThingy
         {
             if (source is DataTable table)
                 return table.Rows.Count;
+
+            if (source is DataView view)
+                return view.Count;
 
             if (source is ICollection collection)
                 return collection.Count;

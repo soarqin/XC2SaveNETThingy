@@ -169,6 +169,9 @@ namespace XC2IraSaveNETThingy
             combo.SelectedValue = value;
         }
 
+        private static UInt16 ToAuxCoreUiId(UInt16 value) => value >= 17000 ? (UInt16)(value - 17000) : value;
+        private static UInt16 ToAuxCoreSaveId(UInt16 value) => value == 0 ? (UInt16)0 : (UInt16)(value + 17000);
+
         private void SetupComboBoxes()
         {
             #region Misc
@@ -251,10 +254,10 @@ namespace XC2IraSaveNETThingy
             cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategoriesIra(lang), independentView: true);
-            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategoriesIra(lang), independentView: true);
-            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang), independentView: true);
-            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang), independentView: true);
+            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategoriesIra(lang));
+            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategoriesIra(lang));
+            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang));
+            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang));
 
             cbxBladeTrustRank.BindDataTable(XC2Data.BladeTrustRanks(lang));
 
@@ -1069,20 +1072,20 @@ namespace XC2IraSaveNETThingy
                 #endregion Blade Misc
 
                 #region Blade Aux Cores
-                nudBladeAuxCore1ID.Value = b.AuxCores[0];
-                cbxBladeAuxCore1ID.SelectedValue = b.AuxCores[0];
+                nudBladeAuxCore1ID.Value = ToAuxCoreUiId(b.AuxCores[0]);
+                cbxBladeAuxCore1ID.SelectedValue = ToAuxCoreUiId(b.AuxCores[0]);
                 nudBladeAuxCore1Type.Value = b.AuxCoreItemHandles[0].Type;
                 cbxBladeAuxCore1Type.SelectedValue = b.AuxCoreItemHandles[0].Type;
                 nudBladeAuxCore1Serial.Value = b.AuxCoreItemHandles[0].Serial;
 
-                nudBladeAuxCore2ID.Value = b.AuxCores[1];
-                cbxBladeAuxCore2ID.SelectedValue = b.AuxCores[1];
+                nudBladeAuxCore2ID.Value = ToAuxCoreUiId(b.AuxCores[1]);
+                cbxBladeAuxCore2ID.SelectedValue = ToAuxCoreUiId(b.AuxCores[1]);
                 nudBladeAuxCore2Type.Value = b.AuxCoreItemHandles[1].Type;
                 cbxBladeAuxCore2Type.SelectedValue = b.AuxCoreItemHandles[1].Type;
                 nudBladeAuxCore2Serial.Value = b.AuxCoreItemHandles[1].Serial;
 
-                nudBladeAuxCore3ID.Value = b.AuxCores[2];
-                cbxBladeAuxCore3ID.SelectedValue = b.AuxCores[2];
+                nudBladeAuxCore3ID.Value = ToAuxCoreUiId(b.AuxCores[2]);
+                cbxBladeAuxCore3ID.SelectedValue = ToAuxCoreUiId(b.AuxCores[2]);
                 nudBladeAuxCore3Type.Value = b.AuxCoreItemHandles[2].Type;
                 cbxBladeAuxCore3Type.SelectedValue = b.AuxCoreItemHandles[2].Type;
                 nudBladeAuxCore3Serial.Value = b.AuxCoreItemHandles[2].Serial;
@@ -2429,7 +2432,7 @@ namespace XC2IraSaveNETThingy
             SAVEDATA.DriversIra[lbxDrivers.SelectedIndex].AccessoryWeaponID = (UInt16)nudDriverAccessory3ID.Value;
             cbxDriverAccessory3ID.SelectedValue = (UInt16)nudDriverAccessory3ID.Value;
         }
-        private void cbxDriverAccessory3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverAccessory2ID.Value = Convert.ToUInt16(cbxDriverAccessory2ID.SelectedValue);
+        private void cbxDriverAccessory3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudDriverAccessory3ID.Value = Convert.ToUInt16(cbxDriverAccessory3ID.SelectedValue);
         private void nudDriverAccessory3Type_ValueChanged(object sender, EventArgs e)
         {
             SAVEDATA.DriversIra[lbxDrivers.SelectedIndex].AccessoryWeaponHandle.Type = (Byte)nudDriverAccessory3Type.Value;
@@ -2707,7 +2710,7 @@ namespace XC2IraSaveNETThingy
         #region Blade Aux Cores
         private void nudBladeAuxCore1ID_ValueChanged(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[0] = (UInt16)nudBladeAuxCore1ID.Value;
+            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[0] = ToAuxCoreSaveId((UInt16)nudBladeAuxCore1ID.Value);
             cbxBladeAuxCore1ID.SelectedValue = (UInt16)nudBladeAuxCore1ID.Value;
         }
         private void cbxBladeAuxCore1ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore1ID.Value = Convert.ToUInt16(cbxBladeAuxCore1ID.SelectedValue);
@@ -2721,7 +2724,7 @@ namespace XC2IraSaveNETThingy
 
         private void nudBladeAuxCore2ID_ValueChanged(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[1] = (UInt16)nudBladeAuxCore2ID.Value;
+            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[1] = ToAuxCoreSaveId((UInt16)nudBladeAuxCore2ID.Value);
             cbxBladeAuxCore2ID.SelectedValue = (UInt16)nudBladeAuxCore2ID.Value;
         }
         private void cbxBladeAuxCore2ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore2ID.Value = Convert.ToUInt16(cbxBladeAuxCore2ID.SelectedValue);
@@ -2735,7 +2738,7 @@ namespace XC2IraSaveNETThingy
 
         private void nudBladeAuxCore3ID_ValueChanged(object sender, EventArgs e)
         {
-            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[2] = (UInt16)nudBladeAuxCore3ID.Value;
+            SAVEDATA.Blades[lbxDrivers.SelectedIndex + BLADELIST_OFFSET].AuxCores[2] = ToAuxCoreSaveId((UInt16)nudBladeAuxCore3ID.Value);
             cbxBladeAuxCore3ID.SelectedValue = (UInt16)nudBladeAuxCore3ID.Value;
         }
         private void cbxBladeAuxCore3ID_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeAuxCore3ID.Value = Convert.ToUInt16(cbxBladeAuxCore3ID.SelectedValue);
