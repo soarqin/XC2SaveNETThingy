@@ -146,6 +146,16 @@ namespace XC2Bf2SaveNETThingy
             ActivateDeferredTabPage(tbcMain.SelectedTab);
         }
 
+        private static void SelectFavoriteCategory(ComboBox combo, UInt16 value)
+        {
+            combo.SelectedValue = value;
+        }
+
+        private static void SelectPouchItem(ComboBox combo, UInt16 value)
+        {
+            combo.SelectedValue = value;
+        }
+
         private void ConfigureDeferredTabPages()
         {
             List<TabControl> tabControls = new List<TabControl>();
@@ -216,6 +226,9 @@ namespace XC2Bf2SaveNETThingy
                 {
                     EnsureSelectedFlagGridRows();
                 }
+
+                if (ReferenceEquals(page, tabBlades) || IsPageOwnedBy(page, tbcBlades))
+                    DeferredComboBindings.EnsureBound(tbcBlades);
 
                 CreateVisibleControlTree(page);
                 page.PerformLayout();
@@ -397,10 +410,10 @@ namespace XC2Bf2SaveNETThingy
             cbxBladeAuxCore2Type.BindDataTable(XC2Data.ItemTypes(lang));
             cbxBladeAuxCore3Type.BindDataTable(XC2Data.ItemTypes(lang));
 
-            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories(lang));
-            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories(lang));
-            cbxBladeFavoriteItem0.BindDataTable(XC2Data.GetPouchItems(lang));
-            cbxBladeFavoriteItem1.BindDataTable(XC2Data.GetPouchItems(lang));
+            cbxBladeFavoriteCategory0.BindDataTable(XC2Data.FavCategories(lang), independentView: true);
+            cbxBladeFavoriteCategory1.BindDataTable(XC2Data.FavCategories(lang), independentView: true);
+            cbxBladeFavoriteItem0.BindDataTable(XC2Data.Items(lang), independentView: true);
+            cbxBladeFavoriteItem1.BindDataTable(XC2Data.Items(lang), independentView: true);
 
             cbxBladeTrustRank.BindDataTable(XC2Data.BladeTrustRanks(lang));
 
@@ -914,6 +927,10 @@ namespace XC2Bf2SaveNETThingy
                 DeferredComboBindings.DeferLargeBindings(tabDrivers, 20, ShouldSkipDeferredComboBinding);
                 DeferredComboBindings.DeferLargeBindings(tabBlades, 20, ShouldSkipDeferredComboBinding);
                 DeferredComboBindings.DeferLargeBindings(tabMercGroups, 20, ShouldSkipDeferredComboBinding);
+                if (IsHandleCreated)
+                    BeginInvoke(new Action(CompleteTabActivation));
+                else
+                    CompleteTabActivation();
                 saveFileToolStripMenuItem.Enabled = true;
                 btnSave.Enabled = true;
                 Console.WriteLine("File Loaded.");
@@ -1560,19 +1577,19 @@ namespace XC2Bf2SaveNETThingy
 
                 #region Blade Favorite Pouch Stuff
                 nudBladeFavoriteCategory0.Value = b.FavoriteCategory0;
-                cbxBladeFavoriteCategory0.SelectedValue = b.FavoriteCategory0;
+                SelectFavoriteCategory(cbxBladeFavoriteCategory0, b.FavoriteCategory0);
                 chkBladeFavoriteCategory1Unlocked.Checked = b.FavoriteCategory0Unlocked;
 
                 nudBladeFavoriteCategory1.Value = b.FavoriteCategory1;
-                cbxBladeFavoriteCategory1.SelectedValue = b.FavoriteCategory1;
+                SelectFavoriteCategory(cbxBladeFavoriteCategory1, b.FavoriteCategory1);
                 chkBladeFavoriteCategory2Unlocked.Checked = b.FavoriteCategory1Unlocked;
 
                 nudBladeFavoriteItem0.Value = b.FavoriteItem0;
-                cbxBladeFavoriteItem0.SelectedValue = b.FavoriteItem0;
+                SelectPouchItem(cbxBladeFavoriteItem0, b.FavoriteItem0);
                 chkBladeFavoriteItem1Unlocked.Checked = b.FavoriteItem0Unlocked;
 
                 nudBladeFavoriteItem1.Value = b.FavoriteItem1;
-                cbxBladeFavoriteItem1.SelectedValue = b.FavoriteItem1;
+                SelectPouchItem(cbxBladeFavoriteItem1, b.FavoriteItem1);
                 chkBladeFavoriteItem2Unlocked.Checked = b.FavoriteItem1Unlocked;
                 #endregion Blade Favorite Pouch Stuff
 
@@ -2664,6 +2681,10 @@ namespace XC2Bf2SaveNETThingy
                 case "cbxPartyMembers":
                 case "cbxMercGroupPresets":
                 case "cbxEvents":
+                case "cbxBladeFavoriteCategory0":
+                case "cbxBladeFavoriteCategory1":
+                case "cbxBladeFavoriteItem0":
+                case "cbxBladeFavoriteItem1":
                     return true;
                 default:
                     return false;
@@ -3735,28 +3756,53 @@ namespace XC2Bf2SaveNETThingy
         #endregion Blade Poppiswap
 
         #region Blade Fav Pouch Stuff
-        private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
-        private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem1Unlocked.Checked;
-        private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory2Unlocked.Checked;
-        private void chkBladeFavoriteItem1Unlocked_CheckedChanged(object sender, EventArgs e) => SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1Unlocked = chkBladeFavoriteItem2Unlocked.Checked;
+        private void chkBladeFavoriteCategory0Unlocked_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!IsLoadingSaveData)
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0Unlocked = chkBladeFavoriteCategory1Unlocked.Checked;
+        }
+        private void chkBladeFavoriteItem0Unlocked_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!IsLoadingSaveData)
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0Unlocked = chkBladeFavoriteItem1Unlocked.Checked;
+        }
+        private void chkBladeFavoriteCategory1Unlocked_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!IsLoadingSaveData)
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1Unlocked = chkBladeFavoriteCategory2Unlocked.Checked;
+        }
+        private void chkBladeFavoriteItem1Unlocked_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!IsLoadingSaveData)
+                SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1Unlocked = chkBladeFavoriteItem2Unlocked.Checked;
+        }
 
         private void nudBladeFavoriteItem0_ValueChanged(object sender, EventArgs e)
         {
+            if (IsLoadingSaveData)
+                return;
+
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem0 = (UInt16)nudBladeFavoriteItem0.Value;
-            cbxBladeFavoriteItem0.SelectedValue = (UInt16)nudBladeFavoriteItem0.Value;
+            SelectPouchItem(cbxBladeFavoriteItem0, (UInt16)nudBladeFavoriteItem0.Value);
         }
         private void nudBladeFavoriteItem1_ValueChanged(object sender, EventArgs e)
         {
+            if (IsLoadingSaveData)
+                return;
+
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteItem1 = (UInt16)nudBladeFavoriteItem1.Value;
-            cbxBladeFavoriteItem1.SelectedValue = (UInt16)nudBladeFavoriteItem1.Value;
+            SelectPouchItem(cbxBladeFavoriteItem1, (UInt16)nudBladeFavoriteItem1.Value);
         }
         private void cbxBladeFavoriteItem0_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFavoriteItem0.Value = Convert.ToUInt16(cbxBladeFavoriteItem0.SelectedValue);
         private void cbxBladeFavoriteItem1_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFavoriteItem1.Value = Convert.ToUInt16(cbxBladeFavoriteItem1.SelectedValue);
 
         private void nudBladeFavoriteCategory0_ValueChanged(object sender, EventArgs e)
         {
+            if (IsLoadingSaveData)
+                return;
+
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory0 = (UInt16)nudBladeFavoriteCategory0.Value;
-            cbxBladeFavoriteCategory0.SelectedValue = (UInt16)nudBladeFavoriteCategory0.Value;
+            SelectFavoriteCategory(cbxBladeFavoriteCategory0, (UInt16)nudBladeFavoriteCategory0.Value);
         }
         private void nudBladeFavoriteCategory1_ValueChanged(object sender, EventArgs e)
         {
@@ -3764,7 +3810,7 @@ namespace XC2Bf2SaveNETThingy
                 return;
 
             SAVEDATA.Blades[lbxBlades.SelectedIndex].FavoriteCategory1 = (UInt16)nudBladeFavoriteCategory1.Value;
-            cbxBladeFavoriteCategory1.SelectedValue = (UInt16)nudBladeFavoriteCategory1.Value;
+            SelectFavoriteCategory(cbxBladeFavoriteCategory1, (UInt16)nudBladeFavoriteCategory1.Value);
         }
         private XC2Data.LANG GetAvailableLanguage(string code)
         {
@@ -3772,7 +3818,7 @@ namespace XC2Bf2SaveNETThingy
             return XC2Data.IsLanguageAvailable(requested) ? requested : XC2Data.LANG.EN;
         }
         private void cbxBladeFavoriteCategory0_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFavoriteCategory0.Value = Convert.ToUInt16(cbxBladeFavoriteCategory0.SelectedValue);
-        private void cbxBladeFavoriteCategory1_SelectedIndexChanged(object sender, EventArgs e) => nudBladeFavoriteCategory1.Value = Convert.ToUInt16(cbxBladeFavoriteCategory1.SelectedValue);
+        private void cbxBladeFavoriteCategory1_SelectionChangeCommitted(object sender, EventArgs e) => nudBladeFavoriteCategory1.Value = Convert.ToUInt16(cbxBladeFavoriteCategory1.SelectedValue);
         #endregion Blade Fav Pouch Stuff
 
         #region Blade Specials
@@ -5420,4 +5466,3 @@ namespace XC2Bf2SaveNETThingy
         #endregion Events
     }
 }
-

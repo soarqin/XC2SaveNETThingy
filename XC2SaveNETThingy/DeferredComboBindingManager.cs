@@ -130,9 +130,9 @@ namespace XC2SaveNETThingy
             object desiredValue = GetDesiredValue(state);
             object desiredItem = FindItem(state, desiredValue);
 
-            combo.DataSource = state.DataSource;
             combo.DisplayMember = state.DisplayMember;
             combo.ValueMember = state.ValueMember;
+            combo.DataSource = state.DataSource;
 
             if (!String.IsNullOrEmpty(state.ValueMember))
                 combo.SelectedValue = desiredValue ?? state.SelectedValue;
