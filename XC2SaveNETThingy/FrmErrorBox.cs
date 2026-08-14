@@ -17,6 +17,9 @@ namespace XC2SaveNETThingy
             InitializeComponent();
 
             pbxError.Image = SystemIcons.Error.ToBitmap();
+            btnOK.Text = Localization.Translate("OK", Localization.CurrentLanguageCode);
+            lblStacktrace.Text = Localization.Translate("Stacktrace for Developer:", Localization.CurrentLanguageCode);
+            lblError.Text = Localization.Translate("Error Message:", Localization.CurrentLanguageCode);
         }
 
         public FrmErrorBox(string message, string title, string boxContents) : this()

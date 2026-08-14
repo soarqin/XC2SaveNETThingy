@@ -24,6 +24,10 @@ namespace XC2BdatImporter
     internal static class ProjectDataWriter
     {
         private static readonly Encoding ProjectEncoding = new UnicodeEncoding(false, true);
+        private static readonly string[] LanguageSuffixes =
+        {
+            "EN", "CN", "JA", "KO", "ZH_HANS", "ZH_HANT", "FR", "DE", "IT", "ES"
+        };
 
         internal static ProjectCsvDocument ReadCsv(string path)
         {
@@ -127,6 +131,79 @@ namespace XC2BdatImporter
             }
 
             File.WriteAllText(fullPath, output.ToString(), ProjectEncoding);
+        }
+
+        internal static ProjectCsvDocument ExpandLanguageColumns(ProjectCsvDocument source)
+        {
+            if (source == null) throw new ArgumentNullException(nameof(source));
+
+            List<string> columns = new List<string>(source.Columns);
+            List<string> prefixes = new List<string>();
+            foreach (string column in source.Columns)
+            {
+                if (!column.EndsWith("_EN", StringComparison.Ordinal)) continue;
+                string prefix = column.Substring(0, column.Length - 2);
+                if (!prefixes.Contains(prefix)) prefixes.Add(prefix);
+                foreach (string suffix in LanguageSuffixes)
+                {
+                    string localized = prefix + suffix;
+                    if (!columns.Contains(localized)) columns.Add(localized);
+                }
+            }
+
+            Dictionary<string, int> sourceIndexes = new Dictionary<string, int>(StringComparer.Ordinal);
+            for (int index = 0; index < source.Columns.Count; index++)
+                sourceIndexes[source.Columns[index]] = index;
+
+            List<IReadOnlyList<string>> rows = new List<IReadOnlyList<string>>();
+            foreach (IReadOnlyList<string> sourceRow in source.Rows)
+            {
+                List<string> row = new List<string>(columns.Count);
+                foreach (string column in columns)
+                {
+                    int index;
+                    row.Add(sourceIndexes.TryGetValue(column, out index) && index < sourceRow.Count
+                        ? sourceRow[index]
+                        : string.Empty);
+                }
+
+                foreach (string prefix in prefixes)
+                {
+                    int englishIndex = columns.IndexOf(prefix + "EN");
+                    if (englishIndex < 0) continue;
+
+                    int legacyChineseIndex = columns.IndexOf(prefix + "CN");
+                    int simplifiedChineseIndex = columns.IndexOf(prefix + "ZH_HANS");
+                    if (legacyChineseIndex >= 0 && simplifiedChineseIndex >= 0 &&
+                        string.IsNullOrWhiteSpace(row[simplifiedChineseIndex]) &&
+                        !string.IsNullOrWhiteSpace(row[legacyChineseIndex]))
+                    {
+                        row[simplifiedChineseIndex] = row[legacyChineseIndex];
+                    }
+
+                    foreach (string suffix in LanguageSuffixes)
+                    {
+                        if (suffix == "EN") continue;
+                        int localizedIndex = columns.IndexOf(prefix + suffix);
+                        if (localizedIndex >= 0 && string.IsNullOrWhiteSpace(row[localizedIndex]))
+                            row[localizedIndex] = row[englishIndex];
+                    }
+
+                    if (legacyChineseIndex >= 0 && simplifiedChineseIndex >= 0)
+                        row[legacyChineseIndex] = row[simplifiedChineseIndex];
+                }
+
+                rows.Add(row);
+            }
+
+            return new ProjectCsvDocument(source.Preamble, columns, rows, source.Postamble);
+        }
+
+        internal static void ExpandLanguageColumns(string directory)
+        {
+            if (!Directory.Exists(directory)) throw new DirectoryNotFoundException(directory);
+            foreach (string path in Directory.GetFiles(directory, "*.csv"))
+                WriteCsv(path, ExpandLanguageColumns(ReadCsv(path)));
         }
 
         private static List<string> SplitLines(string text)

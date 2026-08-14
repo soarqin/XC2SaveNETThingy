@@ -27,7 +27,7 @@ namespace XC2SaveNETThingy
         /// the lookup table. The Reserved column is optional for compatibility with
         /// older data files, so rows remain unchanged when it is not available.
         /// </summary>
-        public static void ApplyReservedItemStyle(DataGridView dgv, int rowIndex)
+        public static void ApplyReservedItemStyle(DataGridView dgv, int rowIndex, string reservedTooltip = null)
         {
             if (dgv == null || rowIndex < 0 || rowIndex >= dgv.Rows.Count)
                 return;
@@ -44,7 +44,7 @@ namespace XC2SaveNETThingy
                 row.DefaultCellStyle.ForeColor = Color.Maroon;
                 row.DefaultCellStyle.SelectionBackColor = Color.IndianRed;
                 row.DefaultCellStyle.SelectionForeColor = Color.White;
-                row.Cells[1].ToolTipText = "Reserved item: retained/invalid game data; edit with care.";
+                row.Cells[1].ToolTipText = reservedTooltip ?? "Reserved item: retained game data; edit with care.";
             }
             else
             {

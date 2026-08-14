@@ -31,6 +31,7 @@ namespace XC2SaveRoundTrip
             BindingListAddRangeProducesOneResetNotification();
             ItemGridDisplayColumnsDoNotFormatNumericCells();
             DeferredTabPathKeepsSiblingPagesDeferred();
+            LanguageCatalogSelfTests.Run();
             PaddedStringPreservesOriginalBytesUntilEdited();
             Bf2FixtureRoundTripsWithoutChangingRawPayload();
             Bf2FormLoadDoesNotMutateRawPayload();

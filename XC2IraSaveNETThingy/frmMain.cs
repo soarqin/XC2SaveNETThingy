@@ -32,11 +32,15 @@ namespace XC2IraSaveNETThingy
         private Dictionary<string, string> config;
 
         private XC2Data.LANG lang = XC2Data.LANG.EN;
+        private XC2Data.LANG uiLang = XC2Data.LANG.EN;
+        private string interfaceLanguageCode = "en";
+        private string dataLanguageCode = "en";
         private Dictionary<string, string> FrmMainText;
         private Dictionary<string, string> FrmMainInternalText;
 
         private Button btnItemRemoveReserved;
         private Button btnItemAddAllCategory;
+        private ToolStripMenuItem dataLanguageToolStripMenuItem;
 
         private const int BLADELIST_OFFSET = 130;
         #endregion Globals
@@ -351,7 +355,11 @@ namespace XC2IraSaveNETThingy
                 #endregion Main
 
                 #region Characters                
-                lbxDrivers.DataSource = XC2Data.DriversIra(lang);
+                 // This list is the character/driver list for Ira.  Bind the
+                 // already localized BDAT-backed projection selected by the
+                 // data-language setting, never the save object's English
+                 // ToString() value.
+                 lbxDrivers.DataSource = XC2Data.DriversIra(lang);
                 lbxDrivers.DisplayMember = "Name";
                 lbxDrivers.ValueMember = "ID";
 
@@ -565,12 +573,33 @@ namespace XC2IraSaveNETThingy
             foreach (ToolStripDropDownItem d in ddi.DropDownItems)
                 UpdateDropDownItemText(d);
         }
+        private void UpdateContextMenuText(ContextMenuStrip menu)
+        {
+            if (menu == null) return;
+            foreach (ToolStripItem item in menu.Items)
+                UpdateToolStripItemText(item);
+        }
+        private void UpdateToolStripItemText(ToolStripItem item)
+        {
+            if (FrmMainText.ContainsKey(item.Name))
+                item.Text = FrmMainText[item.Name].Replace(@"\n", Environment.NewLine);
+            ToolStripDropDownItem dropDown = item as ToolStripDropDownItem;
+            if (dropDown == null) return;
+            foreach (ToolStripItem child in dropDown.DropDownItems)
+                UpdateToolStripItemText(child);
+        }
         private void ReloadLanguage()
         {
-            FrmMainText = XC2Data.GetFrmMainText(lang);
-            FrmMainInternalText = XC2Data.GetFrmMainInternalText(lang);
+            Localization.SetCurrentLanguage(interfaceLanguageCode);
+            // UI translations are complete, per-string database resources.  Do not
+            // derive them by replacing words in the English text: that approach
+            // misses strings and can corrupt technical names.
+            XC2Data.LANG interfaceLanguage = LanguageCatalog.ToCurrentDataLanguage(interfaceLanguageCode);
+            FrmMainText = XC2Data.GetFrmMainText(interfaceLanguage);
+            FrmMainInternalText = XC2Data.GetFrmMainInternalText(interfaceLanguage);
             UpdateControlText(this);
             UpdateMenuStripText(menuStrip1);
+            UpdateContextMenuText(cmsItems);
 
             SetupComboBoxes();
 
@@ -581,9 +610,72 @@ namespace XC2IraSaveNETThingy
             ofdBladeAffChart.Filter = FrmMainInternalText["XC2BladeAffChartFileDesc"] + "|*.x2bac|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
             sfdBladeAffChart.Filter = FrmMainInternalText["XC2BladeAffChartFileDesc"] + "|*.x2bac|" + FrmMainInternalText["AllFilesDesc"] + "|*.*";
         }
+        private void ConfigureLanguageMenu()
+        {
+            languageToolStripMenuItem.DropDownItems.Clear();
+            foreach (LanguageDefinition definition in LanguageCatalog.All)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(definition.NativeName)
+                {
+                    Tag = definition.Code,
+                    Checked = string.Equals(interfaceLanguageCode, definition.Code, StringComparison.OrdinalIgnoreCase)
+                };
+                item.Click += languageSelectionToolStripMenuItem_Click;
+                languageToolStripMenuItem.DropDownItems.Add(item);
+            }
+
+            if (dataLanguageToolStripMenuItem == null)
+            {
+                dataLanguageToolStripMenuItem = new ToolStripMenuItem(FrmMainInternalText["DataLanguage"]);
+                settingsToolStripMenuItem.DropDownItems.Add(dataLanguageToolStripMenuItem);
+            }
+            dataLanguageToolStripMenuItem.Text = FrmMainInternalText["DataLanguage"];
+            dataLanguageToolStripMenuItem.DropDownItems.Clear();
+            foreach (LanguageDefinition definition in LanguageCatalog.All)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(definition.NativeName)
+                {
+                    Tag = definition.Code,
+                    Checked = string.Equals(dataLanguageCode, definition.Code, StringComparison.OrdinalIgnoreCase)
+                };
+                item.Click += dataLanguageSelectionToolStripMenuItem_Click;
+                dataLanguageToolStripMenuItem.DropDownItems.Add(item);
+            }
+        }
+        private void languageSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            if (item == null || !(item.Tag is string)) return;
+            ConfigLanguageUpdate((string)item.Tag);
+        }
+        private void dataLanguageSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            if (item == null || !(item.Tag is string)) return;
+            config[EditorSettings.DataLanguageKey] = LanguageCatalog.Normalize((string)item.Tag);
+            SaveConfig(config, "settings.cfg");
+            MessageBox.Show(FrmMainInternalText["LanguageSettingHasBeenChanged"], FrmMainInternalText["InfoLanguageSettingChanged"], MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void ConfigLanguageUpdate(XC2Data.LANG l)
         {
-            config["Language"] = XC2Data.LANG_STR.FirstOrDefault(kv => kv.Key == l).Value;
+            switch (l)
+            {
+                case XC2Data.LANG.CN:
+                case XC2Data.LANG.ZH_HANS: ConfigLanguageUpdate("zh-Hans"); break;
+                case XC2Data.LANG.ZH_HANT: ConfigLanguageUpdate("zh-Hant"); break;
+                case XC2Data.LANG.JA: ConfigLanguageUpdate("ja"); break;
+                case XC2Data.LANG.KO: ConfigLanguageUpdate("ko"); break;
+                case XC2Data.LANG.FR: ConfigLanguageUpdate("fr"); break;
+                case XC2Data.LANG.DE: ConfigLanguageUpdate("de"); break;
+                case XC2Data.LANG.IT: ConfigLanguageUpdate("it"); break;
+                case XC2Data.LANG.ES: ConfigLanguageUpdate("es"); break;
+                default: ConfigLanguageUpdate("en"); break;
+            }
+        }
+        private void ConfigLanguageUpdate(string code)
+        {
+            config[EditorSettings.InterfaceLanguageKey] = LanguageCatalog.Normalize(code);
+            config[EditorSettings.LegacyLanguageKey] = config[EditorSettings.InterfaceLanguageKey] == "zh-Hans" ? "CN" : "EN";
             SaveConfig(config, "settings.cfg");
             MessageBox.Show(FrmMainInternalText["LanguageSettingHasBeenChanged"], FrmMainInternalText["InfoLanguageSettingChanged"], MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -594,11 +686,7 @@ namespace XC2IraSaveNETThingy
         }
         private Dictionary<string, string> CreateNewConfig()
         {
-            return new Dictionary<string, string>
-            {
-                { "Language", "EN" },
-                { "EditReadOnlyData", "false" }
-            };
+            return EditorSettings.CreateDefaults();
         }
         private Dictionary<string, string> LoadConfig(string path)
         {
@@ -611,11 +699,12 @@ namespace XC2IraSaveNETThingy
                 {
                     if (line.Contains("="))
                     {
-                        string[] setting = line.Split('=');
-                        conf.Add(setting[0], setting[1]);
+                        string[] setting = line.Split(new[] { '=' }, 2);
+                        conf[setting[0].Trim()] = setting[1].Trim();
                     }
                 }
 
+                EditorSettings.Migrate(conf);
                 return conf;
             }
             catch (FileNotFoundException)
@@ -1704,71 +1793,71 @@ namespace XC2IraSaveNETThingy
             switch (tbcItems.SelectedIndex)
             {
                 case 0:
-                    items = XC2Data.GetCoreChips();
+                    items = XC2Data.GetCoreChips(lang);
                     break;
 
                 case 1:
-                    items = XC2Data.GetAccessories();
+                    items = XC2Data.GetAccessories(lang);
                     break;
 
                 case 2:
-                    items = XC2Data.GetAuxCores();
+                    items = XC2Data.GetAuxCores(lang);
                     break;
 
                 case 3:
-                    items = XC2Data.GetCylinders();
+                    items = XC2Data.GetCylinders(lang);
                     break;
 
                 case 4:
-                    items = XC2Data.GetKeyItems();
+                    items = XC2Data.GetKeyItems(lang);
                     break;
 
                 case 5:
-                    items = XC2Data.GetInfoItems();
+                    items = XC2Data.GetInfoItems(lang);
                     break;
 
                 case 7:
-                    items = XC2Data.GetCollectibles();
+                    items = XC2Data.GetCollectibles(lang);
                     break;
 
                 case 8:
-                    items = XC2Data.GetTreasure();
+                    items = XC2Data.GetTreasure(lang);
                     break;
 
                 case 9:
-                    items = XC2Data.GetUnrefinedAuxCores();
+                    items = XC2Data.GetUnrefinedAuxCores(lang);
                     break;
 
                 case 10:
-                    items = XC2Data.GetPouchItems();
+                    items = XC2Data.GetPouchItems(lang);
                     break;
 
                 case 11:
-                    items = XC2Data.GetCoreCrystals();
+                    items = XC2Data.GetCoreCrystals(lang);
                     break;
 
                 case 12:
-                    items = XC2Data.GetBoosters();
+                    items = XC2Data.GetBoosters(lang);
                     break;
 
                 case 13:
-                    items = XC2Data.GetPoppiRoleCPU();
+                    items = XC2Data.GetPoppiRoleCPU(lang);
                     break;
 
                 case 14:
-                    items = XC2Data.GetPoppiElementCores();
+                    items = XC2Data.GetPoppiElementCores(lang);
                     break;
 
                 case 15:
-                    items = XC2Data.GetPoppiSpecialsEnhancingRAM();
+                    items = XC2Data.GetPoppiSpecialsEnhancingRAM(lang);
                     break;
 
                 case 16:
-                    items = XC2Data.GetPoppiArtsCards();
+                    items = XC2Data.GetPoppiArtsCards(lang);
                     break;
 
                 case 17:
-                    items = XC2Data.GetPoppiSkillRAM();
+                    items = XC2Data.GetPoppiSkillRAM(lang);
                     break;
 
                 case 6:
@@ -1885,12 +1974,12 @@ namespace XC2IraSaveNETThingy
         #region Game Flag Data
         private void SetupFlagEditors()
         {
-            dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, SAVEDATA.Flags.Flags_1Bit, "Set", true, 30, 1, XC2Data.Flags1Bit());
+            dgvFlags1Bit = SetupFlagEditor(dgvFlags1Bit, SAVEDATA.Flags.Flags_1Bit, FrmMainInternalText["FlagColumnSet"], true, 30, 1, XC2Data.Flags1Bit(lang));
             dgvFlags2Bit = SetupFlagEditor(dgvFlags2Bit, SAVEDATA.Flags.Flags_2Bit, "Value", false, 40, 3);
             dgvFlags4Bit = SetupFlagEditor(dgvFlags4Bit, SAVEDATA.Flags.Flags_4Bit, "Value", false, 40, 15);
-            dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, SAVEDATA.Flags.Flags_8Bit, "Value", false, 40, 255, XC2Data.Flags8Bit());
-            dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, SAVEDATA.Flags.Flags_16Bit, "Value", false, 55, 65535, XC2Data.Flags16Bit());
-            dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, SAVEDATA.Flags.Flags_32Bit, "Value", false, 80, UInt32.MaxValue, XC2Data.Flags32Bit());
+            dgvFlags8Bit = SetupFlagEditor(dgvFlags8Bit, SAVEDATA.Flags.Flags_8Bit, FrmMainInternalText["FlagColumnValue"], false, 40, 255, XC2Data.Flags8Bit(lang));
+            dgvFlags16Bit = SetupFlagEditor(dgvFlags16Bit, SAVEDATA.Flags.Flags_16Bit, FrmMainInternalText["FlagColumnValue"], false, 55, 65535, XC2Data.Flags16Bit(lang));
+            dgvFlags32Bit = SetupFlagEditor(dgvFlags32Bit, SAVEDATA.Flags.Flags_32Bit, FrmMainInternalText["FlagColumnValue"], false, 80, UInt32.MaxValue, XC2Data.Flags32Bit(lang));
         }
 
         private DataGridView SetupFlagEditor(DataGridView dgv, Array values, string columnHeaderText, bool isCheckBox, int valueColumnWidth, UInt32 maxVal, Dictionary<int, string> names = null)
@@ -1996,7 +2085,10 @@ namespace XC2IraSaveNETThingy
 
             ReloadLanguage();   // have to do twice to have SOME default text
             config = LoadConfig("settings.cfg");
-            lang = XC2Data.LANG_STR.FirstOrDefault(l => l.Value == config["Language"]).Key;
+            interfaceLanguageCode = LanguageCatalog.Normalize(config[EditorSettings.InterfaceLanguageKey]);
+            dataLanguageCode = LanguageCatalog.Normalize(config[EditorSettings.DataLanguageKey]);
+            uiLang = GetAvailableLanguage(interfaceLanguageCode);
+            lang = GetAvailableLanguage(dataLanguageCode);
 
             bool editReadOnlyData = false;
             if (!config.ContainsKey("EditReadOnlyData") || !Boolean.TryParse(config["EditReadOnlyData"], out editReadOnlyData))
@@ -2010,8 +2102,7 @@ namespace XC2IraSaveNETThingy
             }
             ReloadLanguage();
 
-            // disable Language drop down menu until it is done
-            settingsToolStripMenuItem.DropDownItems.Remove(languageToolStripMenuItem);
+            ConfigureLanguageMenu();
 
             WarmUpStartupTabs();
         }
@@ -3460,6 +3551,11 @@ namespace XC2IraSaveNETThingy
                 UpdateItemBatchButtons();
             }
         }
+        private XC2Data.LANG GetAvailableLanguage(string code)
+        {
+            XC2Data.LANG requested = LanguageCatalog.ToCurrentDataLanguage(code);
+            return XC2Data.IsLanguageAvailable(requested) ? requested : XC2Data.LANG.EN;
+        }
         private void dgvItemBox_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (!dgvIsEditing)
@@ -3655,7 +3751,7 @@ namespace XC2IraSaveNETThingy
             string message =
                 "Unable to add New Item to " + tbcItems.TabPages[tbcItems.SelectedIndex].Text + ", ItemBox is full.";
 
-            MessageBox.Show(message, "Add New Item Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(message, FrmMainInternalText["ErrorAddNewItem"], MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void btnItemCheatMaxQty_Click(object sender, EventArgs e)
         {
@@ -3697,8 +3793,8 @@ namespace XC2IraSaveNETThingy
             foreach (DataGridView grid in GetItemGridViews())
                 grid.Invalidate();
             MessageBox.Show(
-                "Removed " + removed + " Reserved item(s) from all Item Boxes.",
-                "Reserved Items Removed",
+                string.Format("Removed {0} Reserved item(s) from all Item Boxes.", removed),
+                FrmMainInternalText["InfoReservedItemsRemovedTitle"],
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
@@ -3713,8 +3809,8 @@ namespace XC2IraSaveNETThingy
             if (binding == null || binding.ItemNames == null || itemType < 0)
             {
                 MessageBox.Show(
-                    "The selected Item page does not have a supported item category.",
-                    "Add All Items",
+                    FrmMainInternalText["ErrorInvalidItemCategory"],
+                    FrmMainInternalText["InfoAddAllItemsTitle"],
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return;
@@ -3765,7 +3861,7 @@ namespace XC2IraSaveNETThingy
             if (notAdded > 0)
                 message += Environment.NewLine + notAdded + " item(s) could not be added because the ItemBox is full.";
 
-            MessageBox.Show(message, "Add All Items", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, FrmMainInternalText["InfoAddAllItemsTitle"], MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void nudItemsSerial1_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[0] = (UInt32)nudItemsSerial1.Value;
         private void nudItemsSerial2_ValueChanged(object sender, EventArgs e) => SAVEDATA.ItemBox.Serials[1] = (UInt32)nudItemsSerial2.Value;
@@ -3810,7 +3906,7 @@ namespace XC2IraSaveNETThingy
         private void dgvFlags1Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (!IsLoadingFlagEditors)
-                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags1Bit(), e.RowIndex, e.RowCount);
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags1Bit(lang), e.RowIndex, e.RowCount);
         }
         private void dgvFlags2Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -3825,17 +3921,17 @@ namespace XC2IraSaveNETThingy
         private void dgvFlags8Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (!IsLoadingFlagEditors)
-                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags8Bit(), e.RowIndex, e.RowCount);
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags8Bit(lang), e.RowIndex, e.RowCount);
         }
         private void dgvFlags16Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (!IsLoadingFlagEditors)
-                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags16Bit(), e.RowIndex, e.RowCount);
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags16Bit(lang), e.RowIndex, e.RowCount);
         }
         private void dgvFlags32Bit_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (!IsLoadingFlagEditors)
-                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags32Bit(), e.RowIndex, e.RowCount);
+                FlagEditorRowHeaderSet((DataGridView)sender, XC2Data.Flags32Bit(lang), e.RowIndex, e.RowCount);
         }
         #endregion Game Flag Data
 

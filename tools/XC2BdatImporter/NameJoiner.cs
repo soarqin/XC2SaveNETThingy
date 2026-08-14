@@ -124,12 +124,14 @@ namespace XC2BdatImporter
                 }
 
                 string marker = value.Substring(markerStart, markerEnd - markerStart + 1);
-                if (!string.Equals(marker, "[ML:Space]", StringComparison.Ordinal))
-                {
-                    throw new NameJoinException("Unknown localization marker '" + marker + "' in '" + value + "'.");
-                }
-
-                value = value.Remove(markerStart, marker.Length).Insert(markerStart, " ");
+                string markerName = marker.Substring(4, marker.Length - 5).Trim();
+                string replacement;
+                if (string.Equals(markerName, "Space", StringComparison.OrdinalIgnoreCase)) replacement = " ";
+                else if (string.Equals(markerName, "Dash", StringComparison.OrdinalIgnoreCase)) replacement = "-";
+                else if (string.Equals(markerName, "Ellipsis", StringComparison.OrdinalIgnoreCase)) replacement = "...";
+                else if (string.Equals(markerName, "LineBreak", StringComparison.OrdinalIgnoreCase)) replacement = Environment.NewLine;
+                else throw new NameJoinException("Unknown localization marker '" + marker + "' in '" + value + "'.");
+                value = value.Remove(markerStart, marker.Length).Insert(markerStart, replacement);
                 markerStart = value.IndexOf("[ML:", StringComparison.Ordinal);
             }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
 using System.Text;
@@ -13,6 +14,7 @@ namespace XC2BdatImporter
             try
             {
                 CsvRoundTripPreservesCommentsAndUnicode(directory);
+                LanguageColumnsUseEnglishFallback(directory);
                 DatabaseBuildUsesParameterizedValues(directory);
                 FailedBuildDoesNotLeaveCandidate(directory);
                 ItemStatusIsPersisted(directory);
@@ -62,6 +64,33 @@ namespace XC2BdatImporter
             DatabaseQueryResult result = DatabaseBuilder.ReadSingleTextAndInteger(database, "Demo", 1);
             AssertEqual("O'Neil", result.Text, "SQLite apostrophe value");
             AssertEqual(7L, result.Number, "SQLite integer value");
+        }
+
+        private static void LanguageColumnsUseEnglishFallback(string directory)
+        {
+            ProjectCsvDocument source = new ProjectCsvDocument(
+                Array.Empty<string>(),
+                new[] { "ID", "Name_EN", "Name_CN", "Name_ZH_HANS", "Name_JA" },
+                new IReadOnlyList<string>[]
+                {
+                    new[] { "1", "English", "简体", string.Empty, "日本語" }
+                },
+                Array.Empty<string>());
+
+            ProjectCsvDocument expanded = ProjectDataWriter.ExpandLanguageColumns(source);
+            IReadOnlyList<string> row = expanded.Rows[0];
+            AssertEqual("简体", row[IndexOf(expanded.Columns, "Name_CN")], "legacy Chinese value");
+            AssertEqual("简体", row[IndexOf(expanded.Columns, "Name_ZH_HANS")], "simplified Chinese alias");
+            AssertEqual("English", row[IndexOf(expanded.Columns, "Name_ZH_HANT")], "traditional Chinese fallback");
+            AssertEqual("日本語", row[IndexOf(expanded.Columns, "Name_JA")], "localized value preservation");
+            AssertEqual("English", row[IndexOf(expanded.Columns, "Name_FR")], "French fallback");
+        }
+
+        private static int IndexOf(System.Collections.Generic.IReadOnlyList<string> values, string value)
+        {
+            for (int index = 0; index < values.Count; index++)
+                if (values[index] == value) return index;
+            return -1;
         }
 
         private static void FailedBuildDoesNotLeaveCandidate(string directory)

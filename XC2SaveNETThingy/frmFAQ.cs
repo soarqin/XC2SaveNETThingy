@@ -19,7 +19,7 @@ namespace XC2SaveNETThingy
             InitializeComponent();
             this.Icon = icon;
 
-            FrmFAQText = XC2Data.GetFrmFAQText(l);
+            FrmFAQText = XC2Data.GetFrmFAQText(LanguageCatalog.ToCurrentDataLanguage(Localization.CurrentLanguageCode));
             UpdateControlText(this);
         }
         private void btnOK_Click(object sender, EventArgs e) => Close();

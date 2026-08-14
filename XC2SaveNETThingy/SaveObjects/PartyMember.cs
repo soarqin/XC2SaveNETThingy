@@ -38,9 +38,14 @@ namespace XC2SaveNETThingy
             return result.ToArray();
         }
 
+        public string ToString(XC2Data.LANG language)
+        {
+            return (string)XC2Data.Drivers(language).Select("Name WHERE ID = " + DriverId)[0][0];
+        }
+
         public override string ToString()
         {
-            return (string)XC2Data.Drivers().Select("Name WHERE ID = " + DriverId)[0][0];
+            return ToString(XC2Data.LANG.EN);
         }
     }
 }

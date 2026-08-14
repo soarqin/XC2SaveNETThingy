@@ -9,7 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\XC2Bf2SaveNETThingy\XC2Bf2SaveNETThingy.csproj" />
+    <ProjectReference Include="..\..\XC2Bf2SaveNETThingy\XC2Bf2SaveNETThingy.csproj" Condition="'$(XC2_PERF_TORNA)' != '1'" />
+    <ProjectReference Include="..\..\XC2IraSaveNETThingy\XC2IraSaveNETThingy.csproj" Condition="'$(XC2_PERF_TORNA)' == '1'" />
     <ProjectReference Include="..\..\XC2SaveNETThingy\XC2SaveNETThingy.csproj" />
     <Content Include="..\..\XC2SaveNETThingy\XC2Data.db" Link="XC2Data.db" CopyToOutputDirectory="Always" />
     <None Update="settings.cfg" CopyToOutputDirectory="Always" />

@@ -19,6 +19,7 @@ namespace XC2BdatImporter
                 MappingSelfTests.Run();
                 ReservedItemSelfTests.Run();
                 DatabaseSelfTests.Run();
+                LocalizationSelfTests.Run();
                 VerifySelfTests.Run();
             }
             finally

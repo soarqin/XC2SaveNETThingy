@@ -116,13 +116,14 @@ namespace XC2BdatImporter
                 throw new DatabaseBuildException("CSV for table '" + tableName + "' was not found: " + csvPath);
             }
 
-            ProjectCsvDocument document = ProjectDataWriter.ReadCsv(csvPath);
+            ProjectCsvDocument document = ProjectDataWriter.ExpandLanguageColumns(ProjectDataWriter.ReadCsv(csvPath));
             using (SQLiteCommand ddlCommand = connection.CreateCommand())
             {
                 ddlCommand.Transaction = transaction;
                 ddlCommand.CommandText = sql;
                 ddlCommand.ExecuteNonQuery();
             }
+            AddMissingColumns(connection, transaction, tableName, sql, document.Columns);
 
             string columnList = string.Join(", ", EscapeColumns(document.Columns));
             string parameterList = string.Join(", ", ParameterNames(document.Columns.Count));
@@ -153,6 +154,20 @@ namespace XC2BdatImporter
                             "; row=" + string.Join(" | ", row),
                             ex);
                     }
+                }
+            }
+        }
+
+        private static void AddMissingColumns(SQLiteConnection connection, SQLiteTransaction transaction, string tableName, string sql, IReadOnlyList<string> columns)
+        {
+            foreach (string column in columns)
+            {
+                if (Regex.IsMatch(sql, "\\[" + Regex.Escape(column) + "\\]", RegexOptions.IgnoreCase)) continue;
+                using (SQLiteCommand alter = connection.CreateCommand())
+                {
+                    alter.Transaction = transaction;
+                    alter.CommandText = "ALTER TABLE [" + tableName.Replace("]", "]]", StringComparison.Ordinal) + "] ADD COLUMN [" + column.Replace("]", "]]", StringComparison.Ordinal) + "] text NOT NULL DEFAULT ''";
+                    alter.ExecuteNonQuery();
                 }
             }
         }

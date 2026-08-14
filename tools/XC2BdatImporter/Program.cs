@@ -123,17 +123,22 @@ namespace XC2BdatImporter
 
             BdatToolsetRunner runner = new BdatToolsetRunner(options.GetValue("toolset"));
             using (BdatExtractionResult common = runner.Extract(Path.Combine(options.GetValue("base-bdat"), "common.bdat")))
-            using (BdatExtractionResult localized = runner.Extract(ResolveEnglishDirectory(options.GetValue("base-gb"))))
             {
-                GeneratedCsvSet generated = MappingGenerator.Generate(
-                    config,
-                    common.OutputDirectory,
-                    localized.OutputDirectory,
-                    dataDirectory);
-                MappingGenerator.WriteAll(generated, outputDataDirectory);
-
-                if (HasAllAsianLanguageOptions(options))
+                Dictionary<string, BdatExtractionResult> localizedResults = new Dictionary<string, BdatExtractionResult>(StringComparer.OrdinalIgnoreCase);
+                try
                 {
+                    foreach (KeyValuePair<string, string> language in ResolveLanguageDirectories(options))
+                        localizedResults[language.Key] = runner.Extract(language.Value);
+
+                    Dictionary<string, string> extractedDirectories = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+                    foreach (KeyValuePair<string, BdatExtractionResult> pair in localizedResults)
+                        extractedDirectories[pair.Key] = pair.Value.OutputDirectory;
+                    GeneratedCsvSet generated = MappingGenerator.GenerateAllLanguages(config, common.OutputDirectory, extractedDirectories, dataDirectory);
+                    MappingGenerator.WriteAll(generated, outputDataDirectory);
+                    ProjectDataWriter.ExpandLanguageColumns(outputDataDirectory);
+
+                    if (HasAllAsianLanguageOptions(options))
+                    {
                     using (BdatExtractionResult chinese = runner.Extract(options.GetValue("base-cn")))
                     using (BdatExtractionResult japanese = runner.Extract(options.GetValue("base-jp")))
                     using (BdatExtractionResult traditionalChinese = runner.Extract(options.GetValue("base-tw")))
@@ -151,7 +156,7 @@ namespace XC2BdatImporter
 
                         Dictionary<string, IReadOnlyDictionary<string, BdatTable>> localizedTables = new Dictionary<string, IReadOnlyDictionary<string, BdatTable>>(StringComparer.OrdinalIgnoreCase)
                         {
-                            ["gb"] = ReadLocalizedTables(config, localized.OutputDirectory),
+                            ["gb"] = ReadLocalizedTables(config, localizedResults["en"].OutputDirectory),
                             ["cn"] = ReadLocalizedTables(config, chinese.OutputDirectory),
                             ["jp"] = ReadLocalizedTables(config, japanese.OutputDirectory),
                             ["tw"] = ReadLocalizedTables(config, traditionalChinese.OutputDirectory)
@@ -163,8 +168,15 @@ namespace XC2BdatImporter
                             sourceTables,
                             localizedTables);
                         ReservedItemAnalyzer.WriteStatusCsv(Path.Combine(outputDataDirectory, "ItemStatus.csv"), statuses);
+                        ProjectDataWriter.ExpandLanguageColumns(outputDataDirectory);
                         Console.WriteLine("Reserved item statuses generated: " + statuses.Count);
                     }
+                    }
+                }
+                finally
+                {
+                    foreach (BdatExtractionResult result in localizedResults.Values)
+                        result.Dispose();
                 }
             }
 
@@ -182,6 +194,8 @@ namespace XC2BdatImporter
                 throw new InvalidDataException("Candidate verification failed: " + string.Join("; ", verification.Errors));
             }
 
+            Console.WriteLine("Torna BDAT inputs validated but intentionally not imported: current editors consume shared common.bdat gameplay tables, not Torna story/dialogue tables.");
+
             if (options.Replace)
             {
                 ReplaceProjectData(dataDirectory, projectDatabase, outputDataDirectory, candidateDatabase);
@@ -196,6 +210,27 @@ namespace XC2BdatImporter
             string fullPath = Path.GetFullPath(path);
             string gbDirectory = Path.Combine(fullPath, "gb");
             return Directory.Exists(gbDirectory) ? gbDirectory : fullPath;
+        }
+
+        private static IReadOnlyDictionary<string, string> ResolveLanguageDirectories(ImporterArguments options)
+        {
+            string asian = Path.GetFullPath(options.GetValue("base-bdat"));
+            string western = Path.GetFullPath(options.GetValue("base-gb"));
+            Dictionary<string, string> result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            {
+                ["en"] = ResolveEnglishDirectory(western)
+            };
+            string[] codes = { "ja", "ko", "zh-Hans", "zh-Hant", "fr", "de", "it", "es" };
+            string[] directories = { "jp", "kr", "cn", "tw", "fr", "ge", "it", "sp" };
+            for (int index = 0; index < codes.Length; index++)
+            {
+                string candidate = Path.Combine(asian, directories[index]);
+                if (!Directory.Exists(candidate)) candidate = Path.Combine(western, directories[index]);
+                if (!Directory.Exists(candidate))
+                    throw new DirectoryNotFoundException("BDAT language directory was not found: " + directories[index]);
+                result[codes[index]] = candidate;
+            }
+            return result;
         }
 
         private static bool HasAllAsianLanguageOptions(ImporterArguments options)

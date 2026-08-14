@@ -21,7 +21,7 @@ dotnet run --project .\tools\XC2BdatImporter -- `
   --verify-only
 ```
 
-Only an explicit `--replace` updates project CSV files and `XC2SaveNETThingy/XC2Data.db`. The command creates a timestamped backup beside the candidate database before replacement. The Torna directories are validated as inputs, but Torna event, quest, camp-event, battle-text, and dialogue tables are not imported because the current editors do not read them.
+Only an explicit `--replace` updates project CSV files and `XC2SaveNETThingy/XC2Data.db`. The command creates a timestamped backup beside the candidate database before replacement. The Torna directories are validated as inputs, and the importer reports this boundary explicitly: Torna event, quest, camp-event, battle-text, and dialogue tables are not imported because the current editors do not read them. `--verify-only` means generate and verify without replacement; `--replace` is mutually exclusive with it.
 
 Run `--self-test` for parser, mapping, database, and verification checks. The verifier requires SQLite integrity, primary-key, CSV/database, and foreign-key-baseline checks; the existing 1,811 foreign-key violations must not increase.
 

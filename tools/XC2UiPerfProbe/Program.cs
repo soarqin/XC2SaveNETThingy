@@ -8,7 +8,6 @@ using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using XC2Bf2SaveNETThingy;
 using XC2SaveNETThingy;
 
 namespace XC2UiPerfProbe
@@ -64,11 +63,11 @@ namespace XC2UiPerfProbe
                 };
 
                 string savePath = Path.Combine(Path.GetTempPath(), "XC2UiPerfProbe.sav");
-                byte[] saveData = new byte[XC2Save.SIZE];
+                byte[] saveData = new byte[Environment.GetEnvironmentVariable("XC2_PERF_TORNA") == "1" ? XC2SaveIra.SIZE : XC2Save.SIZE];
                 Buffer.BlockCopy(XC2Save.CORRECT_MAGIC, 0, saveData, 0, XC2Save.CORRECT_MAGIC.Length);
                 File.WriteAllBytes(savePath, saveData);
 
-                using (frmMain form = new frmMain())
+                using (Form form = CreateEditorForm())
                 {
                     if (Environment.GetEnvironmentVariable("XC2_PERF_DISABLE_AUTOSCALE") == "1")
                         DisableAutoScale(form);
@@ -501,6 +500,13 @@ namespace XC2UiPerfProbe
                 Log(ex.ToString());
                 return 2;
             }
+        }
+
+        private static Form CreateEditorForm()
+        {
+            if (Environment.GetEnvironmentVariable("XC2_PERF_TORNA") == "1")
+                return (Form)Activator.CreateInstance(Type.GetType("XC2IraSaveNETThingy.frmMain, XC2IraSaveNETThingy"));
+            return (Form)Activator.CreateInstance(Type.GetType("XC2Bf2SaveNETThingy.frmMain, XC2Bf2SaveNETThingy"));
         }
 
         private static void Log(string message)

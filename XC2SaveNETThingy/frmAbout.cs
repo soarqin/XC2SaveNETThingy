@@ -21,7 +21,7 @@ namespace XC2SaveNETThingy
 
             this.Icon = icon;
             lblDesc.Text = appDesc;
-            FrmAboutText = XC2Data.GetFrmAboutText(l);
+            FrmAboutText = XC2Data.GetFrmAboutText(LanguageCatalog.ToCurrentDataLanguage(Localization.CurrentLanguageCode));
 
             UpdateControlText(this);
         }

@@ -13,14 +13,67 @@ namespace XC2SaveNETThingy
         public enum LANG
         {
             EN,
-            CN
+            CN,
+            JA,
+            KO,
+            ZH_HANS,
+            ZH_HANT,
+            FR,
+            DE,
+            IT,
+            ES
+        }
+
+        public static readonly Dictionary<string, string> LANGUAGE_COLUMNS = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "en", "EN" }, { "ja", "JA" }, { "ko", "KO" }, { "zh-Hans", "ZH_HANS" }, { "zh-Hant", "ZH_HANT" },
+            { "fr", "FR" }, { "de", "DE" }, { "it", "IT" }, { "es", "ES" }
+        };
+
+        public static string DataColumnSuffix(string code)
+        {
+            string suffix;
+            return LANGUAGE_COLUMNS.TryGetValue(code ?? "", out suffix) ? suffix : "EN";
+        }
+
+        public static LANG ParseLanguage(string code)
+        {
+            switch (LanguageCatalog.Normalize(code))
+            {
+                case "zh-Hans": return LANG.ZH_HANS;
+                case "zh-Hant": return LANG.ZH_HANT;
+                case "ja": return LANG.JA;
+                case "ko": return LANG.KO;
+                case "fr": return LANG.FR;
+                case "de": return LANG.DE;
+                case "it": return LANG.IT;
+                case "es": return LANG.ES;
+                default: return LANG.EN;
+            }
         }
 
         public static readonly Dictionary<LANG, string> LANG_STR = new Dictionary<LANG, string>()
         {
             { LANG.EN, "EN" },
-            //{ LANG.CN, "CN" }
+            { LANG.CN, "CN" }, { LANG.JA, "JA" }, { LANG.KO, "KO" }, { LANG.ZH_HANS, "ZH_HANS" },
+            { LANG.ZH_HANT, "ZH_HANT" }, { LANG.FR, "FR" }, { LANG.DE, "DE" }, { LANG.IT, "IT" }, { LANG.ES, "ES" }
         };
+
+        public static bool IsLanguageAvailable(LANG language)
+        {
+            if (language == LANG.EN)
+                return true;
+
+            string suffix;
+            if (!LANG_STR.TryGetValue(language, out suffix))
+                return false;
+
+            string query = "SELECT COUNT(*) FROM Items WHERE TRIM(Name_" + suffix + ") <> '' AND TRIM(Name_" + suffix + ") IS NOT NULL";
+            DataTable table = GetDataSet(query).Tables[0];
+            int populated = Convert.ToInt32(table.Rows[0][0]);
+            int total = Convert.ToInt32(GetDataSet("SELECT COUNT(*) FROM Items").Tables[0].Rows[0][0]);
+            return total != 0 && populated == total;
+        }
 
         private static SQLiteConnection dbConn = new SQLiteConnection(
             @"Data Source=" + RuntimePaths.DatabaseFile + @"; Read Only=True;");
@@ -693,7 +746,26 @@ namespace XC2SaveNETThingy
             foreach (DataRow r in dt.Rows)
                 dict.Add(r[0].ToString(), r[1].ToString());
 
+            AddTextFallbacks(dict, new Dictionary<string, string>
+            {
+                { "DataLanguage", "Data Language" },
+                { "ErrorAddNewItem", "Add New Item Error!" },
+                { "ErrorInvalidItemCategory", "The selected Item page does not have a supported item category." },
+                { "InfoReservedItemsRemovedTitle", "Reserved Items Removed" },
+                { "InfoAddAllItemsTitle", "Add All Items" },
+                { "FlagColumnSet", "Set" },
+                { "FlagColumnValue", "Value" },
+                { "ReservedItemTooltip", "Reserved item: retained game data; edit with care." }
+            });
+
             return dict;
+        }
+
+        private static void AddTextFallbacks(Dictionary<string, string> text, Dictionary<string, string> fallbacks)
+        {
+            foreach (KeyValuePair<string, string> fallback in fallbacks)
+                if (!text.ContainsKey(fallback.Key) || string.IsNullOrWhiteSpace(text[fallback.Key]))
+                    text[fallback.Key] = fallback.Value;
         }
 
         /// <summary>

@@ -127,6 +127,15 @@ namespace XC2SaveNETThingy
             }
         }
 
+        public string Name_JA { get { return ToString(XC2Data.LANG.JA); } }
+        public string Name_KO { get { return ToString(XC2Data.LANG.KO); } }
+        public string Name_ZH_HANS { get { return ToString(XC2Data.LANG.ZH_HANS); } }
+        public string Name_ZH_HANT { get { return ToString(XC2Data.LANG.ZH_HANT); } }
+        public string Name_FR { get { return ToString(XC2Data.LANG.FR); } }
+        public string Name_DE { get { return ToString(XC2Data.LANG.DE); } }
+        public string Name_IT { get { return ToString(XC2Data.LANG.IT); } }
+        public string Name_ES { get { return ToString(XC2Data.LANG.ES); } }
+
         public Driver(Byte[] data)
         {
             BraveryPoints = BitConverter.ToUInt32(data.GetByteSubArray(LOC["BraveryPoints"], 4), 0);
@@ -276,10 +285,8 @@ namespace XC2SaveNETThingy
 
         public string ToString(XC2Data.LANG l)
         {
-            if (XC2Data.ContainsDriver(ID))
-                return ID + ": " + XC2Data.Drivers(l).Select("ID = " + ID)[0]["Name"];
-            else
-                return "INVALID ID";
+            if (!XC2Data.ContainsDriver(ID)) return ID + ": INVALID ID";
+            return ID + ": " + XC2Data.Drivers(l).Select("ID = " + ID)[0]["Name"];
         }
 
         public override string ToString()

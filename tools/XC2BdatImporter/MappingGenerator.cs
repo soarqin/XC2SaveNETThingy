@@ -110,6 +110,152 @@ namespace XC2BdatImporter
             return new GeneratedCsvSet(output);
         }
 
+        internal static GeneratedCsvSet GenerateAllLanguages(
+            MappingConfig config,
+            string commonExtractDirectory,
+            IReadOnlyDictionary<string, string> localizedExtractDirectories,
+            string existingCsvDirectory)
+        {
+            string[] codes = { "en", "ja", "ko", "zh-Hans", "zh-Hant", "fr", "de", "it", "es" };
+            string[] suffixes = { "EN", "JA", "KO", "ZH_HANS", "ZH_HANT", "FR", "DE", "IT", "ES" };
+            Dictionary<string, GeneratedCsvSet> generated = new Dictionary<string, GeneratedCsvSet>(StringComparer.OrdinalIgnoreCase);
+            foreach (string code in codes)
+            {
+                string directory;
+                if (!localizedExtractDirectories.TryGetValue(code, out directory))
+                    throw new DirectoryNotFoundException("Missing localized extraction for " + code + ".");
+                generated[code] = Generate(config, commonExtractDirectory, directory, existingCsvDirectory);
+            }
+
+            Dictionary<string, ProjectCsvDocument> result = new Dictionary<string, ProjectCsvDocument>(StringComparer.OrdinalIgnoreCase);
+            foreach (string fileName in generated["en"].Documents.Keys)
+            {
+                ProjectCsvDocument english = generated["en"].Documents[fileName];
+                List<string> columns = new List<string>(english.Columns);
+                foreach (string suffix in suffixes.Skip(1))
+                    foreach (string column in english.Columns.Where(c => c.EndsWith("_EN", StringComparison.Ordinal)))
+                        columns.Add(column.Substring(0, column.Length - 2) + suffix);
+                columns = columns.Distinct(StringComparer.Ordinal).ToList();
+                Dictionary<string, List<string>> rows = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+                foreach (IReadOnlyList<string> row in english.Rows)
+                    rows[row[0]] = NormalizeRow(english.Columns, row, columns).ToList();
+
+                for (int languageIndex = 1; languageIndex < codes.Length; languageIndex++)
+                {
+                    ProjectCsvDocument localized = generated[codes[languageIndex]].Documents[fileName];
+                string suffix = suffixes[languageIndex];
+                    foreach (IReadOnlyList<string> row in localized.Rows)
+                    {
+                        List<string> target = rows.ContainsKey(row[0]) ? rows[row[0]] : NormalizeRow(localized.Columns, row, columns).ToList();
+                        for (int columnIndex = 0; columnIndex < localized.Columns.Count; columnIndex++)
+                        {
+                            string column = localized.Columns[columnIndex];
+                            if (!column.EndsWith("_EN", StringComparison.Ordinal)) continue;
+                            int targetIndex = columns.IndexOf(column.Substring(0, column.Length - 2) + suffix);
+                            if (targetIndex >= 0 && columnIndex < row.Count) target[targetIndex] = row[columnIndex];
+                        }
+                        rows[row[0]] = target;
+                    }
+                }
+                int legacyCnIndex = columns.IndexOf("Name_CN");
+                int simplifiedIndex = columns.IndexOf("Name_ZH_HANS");
+                if (legacyCnIndex >= 0 && simplifiedIndex >= 0)
+                    foreach (List<string> row in rows.Values)
+                        row[legacyCnIndex] = row[simplifiedIndex];
+                result[fileName] = new ProjectCsvDocument(english.Preamble, columns, rows.Values.OrderBy(r => r[0], StringComparer.Ordinal).ToList(), english.Postamble);
+            }
+
+            MergeLocalizedMessageTable(result, localizedExtractDirectories, existingCsvDirectory, "bld_bladename", "BladeCommonNames.csv");
+            MergeLocalizedMessageTable(result, localizedExtractDirectories, existingCsvDirectory, "chr_bl_ms", "BladeRareNames.csv");
+            RestoreExistingLocalizedColumns(result, existingCsvDirectory);
+            return new GeneratedCsvSet(result);
+        }
+
+        private static void RestoreExistingLocalizedColumns(Dictionary<string, ProjectCsvDocument> result, string existingDirectory)
+        {
+            foreach (string fileName in result.Keys.ToList())
+            {
+                if (string.Equals(fileName, "BladeCommonNames.csv", StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(fileName, "BladeRareNames.csv", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                string path = Path.Combine(existingDirectory, fileName);
+                if (!File.Exists(path)) continue;
+                ProjectCsvDocument existing = ProjectDataWriter.ReadCsv(path);
+                ProjectCsvDocument generated = result[fileName];
+                List<string> columns = new List<string>(generated.Columns);
+                Dictionary<string, IReadOnlyList<string>> existingRows = new Dictionary<string, IReadOnlyList<string>>(StringComparer.Ordinal);
+                foreach (IReadOnlyList<string> row in existing.Rows)
+                    if (row.Count > 0) existingRows[row[0]] = row;
+
+                List<IReadOnlyList<string>> rows = new List<IReadOnlyList<string>>();
+                foreach (IReadOnlyList<string> generatedRow in generated.Rows)
+                {
+                    List<string> row = generatedRow.ToList();
+                    IReadOnlyList<string> oldRow;
+                    if (existingRows.TryGetValue(generatedRow[0], out oldRow))
+                    {
+                        for (int index = 0; index < columns.Count; index++)
+                        {
+                            string column = columns[index];
+                            if (column.EndsWith("_EN", StringComparison.Ordinal) ||
+                                column.EndsWith("_CN", StringComparison.Ordinal) ||
+                                column.EndsWith("_JA", StringComparison.Ordinal) ||
+                                column.EndsWith("_KO", StringComparison.Ordinal) ||
+                                column.EndsWith("_ZH_HANS", StringComparison.Ordinal) ||
+                                column.EndsWith("_ZH_HANT", StringComparison.Ordinal) ||
+                                column.EndsWith("_FR", StringComparison.Ordinal) ||
+                                column.EndsWith("_DE", StringComparison.Ordinal) ||
+                                column.EndsWith("_IT", StringComparison.Ordinal) ||
+                                column.EndsWith("_ES", StringComparison.Ordinal)) continue;
+                            int oldIndex = existing.Columns.ToList().IndexOf(column);
+                            if (oldIndex >= 0 && oldIndex < oldRow.Count) row[index] = oldRow[oldIndex];
+                        }
+                    }
+                    int cn = columns.IndexOf("Name_CN");
+                    int hans = columns.IndexOf("Name_ZH_HANS");
+                    if (cn >= 0 && hans >= 0) row[cn] = row[hans];
+                    rows.Add(row);
+                }
+                result[fileName] = new ProjectCsvDocument(generated.Preamble, columns, rows, generated.Postamble);
+            }
+        }
+
+        private static void MergeLocalizedMessageTable(Dictionary<string, ProjectCsvDocument> result, IReadOnlyDictionary<string, string> directories, string existingDirectory, string sourceTable, string targetCsv)
+        {
+            string existingPath = Path.Combine(existingDirectory, targetCsv);
+            ProjectCsvDocument document = File.Exists(existingPath) ? ProjectDataWriter.ReadCsv(existingPath) : result[targetCsv];
+            string[] codes = { "en", "ja", "ko", "zh-Hans", "zh-Hant", "fr", "de", "it", "es" };
+            string[] suffixes = { "EN", "JA", "KO", "ZH_HANS", "ZH_HANT", "FR", "DE", "IT", "ES" };
+            List<string> columns = new List<string> { "ID", "Name_EN" };
+            foreach (string suffix in suffixes.Skip(1)) columns.Add("Name_" + suffix);
+            Dictionary<string, List<string>> rows = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+            foreach (IReadOnlyList<string> sourceRow in document.Rows)
+                rows[sourceRow[0]] = NormalizeRow(document.Columns, sourceRow, columns).ToList();
+            for (int languageIndex = 0; languageIndex < codes.Length; languageIndex++)
+            {
+                string directory;
+                if (!directories.TryGetValue(codes[languageIndex], out directory)) continue;
+                string path = Directory.GetFiles(directory, sourceTable + ".json", SearchOption.AllDirectories).FirstOrDefault();
+                if (path == null) continue;
+                BdatTable table = BdatJsonReader.ReadTable(path);
+                int targetIndex = columns.IndexOf("Name_" + suffixes[languageIndex]);
+                foreach (BdatRow sourceRow in table.Rows)
+                {
+                    string id = sourceRow.Id.ToString(CultureInfo.InvariantCulture);
+                    List<string> target;
+                    if (!rows.TryGetValue(id, out target)) continue;
+                    JsonElement value;
+                    if (sourceRow.Fields.TryGetValue("name", out value) && value.ValueKind == JsonValueKind.String)
+                        target[targetIndex] = value.GetString();
+                }
+            }
+            int cn = columns.IndexOf("Name_CN");
+            int hans = columns.IndexOf("Name_ZH_HANS");
+            if (cn >= 0 && hans >= 0) foreach (List<string> row in rows.Values) row[cn] = row[hans];
+            result[targetCsv] = new ProjectCsvDocument(document.Preamble, columns, rows.Values.OrderBy(row => row[0], StringComparer.Ordinal).ToList(), document.Postamble);
+        }
+
         internal static void WriteAll(GeneratedCsvSet set, string outputDirectory)
         {
             Directory.CreateDirectory(outputDirectory);
@@ -162,6 +308,19 @@ namespace XC2BdatImporter
                 return row.Fields.TryGetValue(column, out value) && value.ValueKind == JsonValueKind.Number && value.GetInt64() != 0;
             }
             throw new InvalidDataException("Unsupported mapping filter: " + filter);
+        }
+
+        private static IReadOnlyList<string> NormalizeRow(IReadOnlyList<string> sourceColumns, IReadOnlyList<string> sourceRow, IReadOnlyList<string> targetColumns)
+        {
+            List<string> row = new List<string>();
+            foreach (string column in targetColumns)
+            {
+                int index = -1;
+                for (int i = 0; i < sourceColumns.Count; i++)
+                    if (sourceColumns[i] == column) { index = i; break; }
+                row.Add(index >= 0 && index < sourceRow.Count ? sourceRow[index] : string.Empty);
+            }
+            return row;
         }
 
         private static IReadOnlyList<string> CreateTargetRow(MappingDefinition mapping, BdatRow row, long targetId, string name, IReadOnlyDictionary<long, long> weaponCoreChipIndex)
