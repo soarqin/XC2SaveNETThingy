@@ -82,6 +82,12 @@ namespace XC2Bf2SaveNETThingy
         }
         #endregion Constructor
 
+        private string GetAffinityChartRowText(int row)
+        {
+            string key = "lblBladeAffinityChartEditRow" + row;
+            return FrmMainText.ContainsKey(key) ? FrmMainText[key] : row.ToString();
+        }
+
         #region Methods
 
         private void InitializeItemBatchControls()
@@ -1948,52 +1954,52 @@ namespace XC2Bf2SaveNETThingy
                 {
                     case 1: // Key Affinity Reward
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].KeyAchievement.AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["KeyAffinityReward"] + " -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["KeyAffinityReward"] + " -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 2: // Blade Special 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "1 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 3: // Blade Special 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "2 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 4: // Blade Special 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BArtsAchieve[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BladeSpecial"] + "3 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 5: // Battle Skill 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "1 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 6: // Battle Skill 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "2 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 7: // Battle Skill 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].BSkillsAchievement[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["BattleSkill"] + "3 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 8: // Field Skill 1
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[0].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "1 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "1 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 9: // Field Skill 2
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[1].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "2 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "2 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
 
                     case 10: // Field Skill 3
                         aq = SAVEDATA.Blades[lbxBlades.SelectedIndex].FSkillsAchievement[2].AchieveQuests[affRewardChartLoc.Y - 1];
-                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "3 -> " + FrmMainInternalText["AffinityChartRow"] + affRewardChartLoc.Y;
+                        lblBladeAffCurrentRewardEdit.Text = FrmMainInternalText["FieldSkill"] + "3 -> " + GetAffinityChartRowText(affRewardChartLoc.Y);
                         break;
                 }
                 if (aq != null)
