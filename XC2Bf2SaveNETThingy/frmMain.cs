@@ -1111,7 +1111,7 @@ namespace XC2Bf2SaveNETThingy
         }
         private Dictionary<string, string> CreateNewConfig()
         {
-            Dictionary<string, string> conf = EditorSettings.CreateDefaults();
+            Dictionary<string, string> conf = EditorSettings.CreateDefaults(LanguageCatalog.DetectOperatingSystemLanguage());
             return conf;
         }
         private Dictionary<string, string> LoadConfig(string path)

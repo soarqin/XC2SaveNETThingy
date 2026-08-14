@@ -686,7 +686,7 @@ namespace XC2IraSaveNETThingy
         }
         private Dictionary<string, string> CreateNewConfig()
         {
-            return EditorSettings.CreateDefaults();
+            return EditorSettings.CreateDefaults(LanguageCatalog.DetectOperatingSystemLanguage());
         }
         private Dictionary<string, string> LoadConfig(string path)
         {

@@ -25,6 +25,11 @@ namespace XC2SaveRoundTrip
             AssertEqual("en", LanguageCatalog.Normalize("not-a-language"), "unknown language fallback");
             AssertEqual(XC2Data.LANG.ZH_HANS, LanguageCatalog.ToCurrentDataLanguage("zh-Hans"), "current Chinese data mapping");
             AssertEqual(XC2Data.LANG.JA, LanguageCatalog.ToCurrentDataLanguage("ja"), "current Japanese data mapping");
+            AssertEqual("zh-Hans", LanguageCatalog.Normalize("zh-CN"), "simplified Chinese normalization");
+            AssertEqual("zh-Hant", LanguageCatalog.Normalize("zh-TW"), "traditional Chinese normalization");
+            Dictionary<string, string> defaults = EditorSettings.CreateDefaults("ja");
+            AssertEqual("ja", defaults[EditorSettings.InterfaceLanguageKey], "default interface language");
+            AssertEqual("ja", defaults[EditorSettings.DataLanguageKey], "default data language");
         }
 
         private static void AssertEqual<T>(T expected, T actual, string description)

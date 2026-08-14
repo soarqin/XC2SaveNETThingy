@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace XC2SaveNETThingy
@@ -50,6 +51,13 @@ namespace XC2SaveNETThingy
 
         public static string Normalize(string code)
         {
+            if (string.Equals(code, "zh-CN", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(code, "zh-SG", StringComparison.OrdinalIgnoreCase))
+                return "zh-Hans";
+            if (string.Equals(code, "zh-TW", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(code, "zh-HK", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(code, "zh-MO", StringComparison.OrdinalIgnoreCase))
+                return "zh-Hant";
             return Find(code).Code;
         }
 
@@ -64,6 +72,24 @@ namespace XC2SaveNETThingy
             if (string.Equals(code, "CN", StringComparison.OrdinalIgnoreCase)) return "zh-Hans";
             return Normalize(code);
         }
+
+        public static string DetectOperatingSystemLanguage()
+        {
+            CultureInfo culture = CultureInfo.CurrentUICulture;
+            string name = culture.Name.Replace('_', '-');
+
+            if (name.StartsWith("zh-", StringComparison.OrdinalIgnoreCase))
+            {
+                if (name.EndsWith("-TW", StringComparison.OrdinalIgnoreCase) ||
+                    name.EndsWith("-HK", StringComparison.OrdinalIgnoreCase) ||
+                    name.EndsWith("-MO", StringComparison.OrdinalIgnoreCase))
+                    return "zh-Hant";
+                return "zh-Hans";
+            }
+
+            string language = name.Split('-')[0].ToLowerInvariant();
+            return IsKnown(language) ? language : "en";
+        }
     }
 
     public static class EditorSettings
@@ -73,12 +99,13 @@ namespace XC2SaveNETThingy
         public const string LegacyLanguageKey = "Language";
         public const string EditReadOnlyDataKey = "EditReadOnlyData";
 
-        public static Dictionary<string, string> CreateDefaults()
+        public static Dictionary<string, string> CreateDefaults(string languageCode = "en")
         {
+            string language = LanguageCatalog.Normalize(languageCode);
             return new Dictionary<string, string>
             {
-                { InterfaceLanguageKey, "en" },
-                { DataLanguageKey, "en" },
+                { InterfaceLanguageKey, language },
+                { DataLanguageKey, language },
                 { EditReadOnlyDataKey, "false" }
             };
         }
