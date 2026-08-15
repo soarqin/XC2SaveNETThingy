@@ -330,3 +330,9 @@ ASALocalRun/
 
 # Project specific
 0x0100E95004038000\ Xenoblade\ Chronicles\ 2
+
+/romdata/
+/reports/
+*.sav
+/docs/superpowers/
+/.opencode/
