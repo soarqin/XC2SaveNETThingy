@@ -1663,6 +1663,8 @@ namespace XC2IraSaveNETThingy
         }
         private void UpdateNewItemComboBox()
         {
+            cbxItemAddNewID.DataSource = null;
+
             DataTable dataSource = null;
             switch (tbcItems.SelectedIndex)
             {
@@ -1735,12 +1737,7 @@ namespace XC2IraSaveNETThingy
                     break;
             }
 
-            if (dataSource == null)
-            {
-                if (cbxItemAddNewID.DataSource != null)
-                    cbxItemAddNewID.DataSource = null;
-            }
-            else
+            if (dataSource != null)
                 cbxItemAddNewID.BindDataTable(dataSource);
 
             cbxItemAddNewID.SelectedValue = (UInt16)nudItemAddNewID.Value;
@@ -1772,6 +1769,23 @@ namespace XC2IraSaveNETThingy
             foreach (DataGridView grid in GetItemGridViews())
                 if (grid.Tag is ItemGridBinding binding)
                     yield return binding;
+        }
+        private bool ItemCategoryAllowsDuplicates()
+        {
+            switch (GetSelectedItemType())
+            {
+                case 2:
+                case 3:
+                case 7:
+                case 10:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+        private bool ShouldAddNewItemAsSeparateEntries()
+        {
+            return ItemCategoryAllowsDuplicates();
         }
         private int GetSelectedItemType()
         {
@@ -3586,10 +3600,11 @@ namespace XC2IraSaveNETThingy
         #region Items
         private void tbcItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!IsWarmingUpTabs && !IsActivatingTab)
+            if (!IsWarmingUpTabs)
             {
-                EnsureSelectedItemGridRows();
                 UpdateNewItemComboBox();
+                if (!IsActivatingTab)
+                    EnsureSelectedItemGridRows();
                 UpdateItemBatchButtons();
             }
         }
@@ -3739,55 +3754,53 @@ namespace XC2IraSaveNETThingy
         private void btnItemAddNew_Click(object sender, EventArgs e)
         {
             DataGridView dgv = ((DataGridView)tbcItems.SelectedTab.Controls[0]);
+            UInt16 itemID = (UInt16)nudItemAddNewID.Value;
+            UInt16 itemQty = (UInt16)nudItemAddNewQty.Value;
+            bool addAsSeparateEntries = ShouldAddNewItemAsSeparateEntries();
+            int entriesToAdd = addAsSeparateEntries ? itemQty : 1;
+            int addedEntries = 0;
+            int lastAddedRow = -1;
 
-            for (int i = 0; i < dgv.Rows.Count; i++)
+            Byte itemType = (Byte)Math.Max(GetSelectedItemType(), 0);
+
+            for (int entry = 0; entry < entriesToAdd; entry++)
             {
-                if ((UInt16)dgv.Rows[i].Cells[0].Value == 0)
+                int rowIndex = -1;
+                for (int i = 0; i < dgv.Rows.Count; i++)
                 {
-                    dgv.Rows[i].Cells[0].Value = nudItemAddNewID.Value;
-
-                    switch (tbcItems.SelectedIndex)
+                    if ((UInt16)dgv.Rows[i].Cells[0].Value == 0)
                     {
-                        case 0:
-                            dgv.Rows[i].Cells[2].Value = 1;
-                            break;
-
-                        case 1:
-                            dgv.Rows[i].Cells[2].Value = 2;
-                            break;
-
-                        case 2:
-                            dgv.Rows[i].Cells[2].Value = 3;
-                            break;
-
-                        case 3:
-                            dgv.Rows[i].Cells[2].Value = 6;
-                            break;
-
-                        case 4:
-                            dgv.Rows[i].Cells[2].Value = 14;
-                            break;
-
-                        case 5:
-                            dgv.Rows[i].Cells[2].Value = 7;
-                            break;
-
-                        case 6:
-                            dgv.Rows[i].Cells[2].Value = 10;
-                            break;
+                        rowIndex = i;
+                        break;
                     }
-
-
-                    dgv.Rows[i].Cells[4].Value = nudItemAddNewQty.Value;
-                    ItemSetTimeToNow(dgv, i);
-                    dgv.Rows[i].Cells[9].Value = ItemGetNewSerial(dgv);
-
-                    dgv.ClearSelection();
-                    dgv.CurrentCell = dgv.Rows[i].Cells[0];
-                    dgv.Rows[i].Selected = true;
-
-                    return;
                 }
+
+                if (rowIndex < 0)
+                    break;
+
+                dgv.Rows[rowIndex].Cells[0].Value = itemID;
+                dgv.Rows[rowIndex].Cells[2].Value = itemType;
+                dgv.Rows[rowIndex].Cells[4].Value = addAsSeparateEntries ? (UInt16)1 : itemQty;
+                ItemSetTimeToNow(dgv, rowIndex);
+                dgv.Rows[rowIndex].Cells[9].Value = ItemGetNewSerial(dgv);
+                addedEntries++;
+                lastAddedRow = rowIndex;
+            }
+
+            dgv.Invalidate();
+            if (lastAddedRow >= 0)
+            {
+                dgv.ClearSelection();
+                dgv.CurrentCell = dgv.Rows[lastAddedRow].Cells[0];
+                dgv.Rows[lastAddedRow].Selected = true;
+
+                if (addedEntries < entriesToAdd)
+                    MessageBox.Show(
+                        "Only " + addedEntries + " of " + entriesToAdd + " item(s) were added because the ItemBox is full.",
+                        FrmMainInternalText["ErrorAddNewItem"],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                return;
             }
 
             string message =

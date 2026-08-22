@@ -161,7 +161,7 @@ namespace XC2SaveNETThingy
                 string[] fields = line.Split('\t');
                 if (fields.Length != 2 ||
                     !UInt16.TryParse(fields[0], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 id) ||
-                    !UInt16.TryParse(fields[1], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 maxQty))
+                    !UInt16.TryParse(fields[1].Trim().Trim('"'), NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 maxQty))
                     continue;
 
                 result[id] = maxQty;
