@@ -21,7 +21,7 @@ namespace XC2SaveNETThingy
         {
             ("Load File As...", "另存存档..."), ("Load File...", "加载存档..."), ("Save File As...", "另存存档..."),
             ("Game Flag Data", "游戏标志数据"), ("Map Location", "地图位置"), ("Merc Groups", "佣兵团"),
-            ("Affinity Chart", "牵绊环"), ("Battle Skills", "战斗技能"), ("Field Skills", "场景技能"),
+            ("Affinity Chart", "牵绊圆环"), ("Battle Skills", "战斗技能"), ("Field Skills", "场景技能"),
             ("Blade Arts", "异刃战技"), ("Blade Specials", "异刃必杀技"), ("Driver Arts", "御刃者战技"),
             ("Aux Cores", "辅助核心"), ("Core Chips", "核心晶片"), ("Core Crystals", "核心水晶"),
             ("Pouch Items", "收纳包道具"), ("Key Items", "贵重品"), ("Treasure", "宝箱"),
@@ -39,7 +39,7 @@ namespace XC2SaveNETThingy
             ("Agility", "敏捷"), ("Luck", "幸运"), ("Physical Def.", "物理防御"), ("Ether Def.", "以太防御"),
             ("Critical Rate", "暴击率"), ("Guard Rate", "格挡率"), ("Trust Points", "信赖度"),
             ("Trust Rank", "信赖等级"), ("Weapon Type", "武器类型"), ("Element", "属性"),
-            ("Weapon Equipped", "装备武器"), ("Favorite Category", "喜欢的类别"), ("Is Unlocked", "已解锁"),
+            ("Weapon Equipped", "已装备武器"), ("Favorite Category", "喜好类别"), ("Is Unlocked", "已解锁"),
             ("Item ID", "道具 ID"), ("Serial", "序列号"), ("Time Acquired", "获得时间"),
             ("Quantity", "数量"), ("Type", "类型"), ("Name", "名称"), ("Value", "数值"), ("Set", "设置"),
             ("Unknown", "未知"), ("Read Only", "只读"), ("Current", "当前"), ("Total", "总计"),
