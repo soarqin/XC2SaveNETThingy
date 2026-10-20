@@ -30,6 +30,7 @@ namespace XC2SaveRoundTrip
 
             BindingListAddRangeProducesOneResetNotification();
             ItemGridDisplayColumnsDoNotFormatNumericCells();
+            MaxItemQuantityButtonsUseGameLimits();
             DeferredTabPathKeepsSiblingPagesDeferred();
             LanguageCatalogSelfTests.Run();
             PaddedStringPreservesOriginalBytesUntilEdited();
@@ -104,6 +105,15 @@ namespace XC2SaveRoundTrip
                     if (difference != null)
                         throw new InvalidOperationException("Bf2 form load changed the save payload: " + difference);
 
+                    Button maxQuantityButton = (Button)typeof(frmMain).GetField("btnItemCheatMaxQty", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(form);
+                    typeof(Button).GetMethod("OnClick", BindingFlags.Instance | BindingFlags.NonPublic)
+                        .Invoke(maxQuantityButton, new object[] { EventArgs.Empty });
+                    difference = RawSaveInspector.CompareAllBytes(
+                        RawSaveInspector.ReadRawData(fixturePath),
+                        XC2SaveSerialization.Serialize(loadedSave, false));
+                    if (difference != null)
+                        throw new InvalidOperationException("Max core chips changed the already-maxed fixture: " + difference);
+
                     FieldInfo mapPositionXField = typeof(frmMain).GetField("nudLastVisitedLandmarkMapPositionX", BindingFlags.Instance | BindingFlags.NonPublic);
                     NumericUpDown mapPositionX = mapPositionXField == null ? null : mapPositionXField.GetValue(form) as NumericUpDown;
                     if (mapPositionX == null)
@@ -145,6 +155,90 @@ namespace XC2SaveRoundTrip
             AssertDisplayValue(binding, 1, "Core Chip", "item name column");
             AssertDisplayValue(binding, 3, "Weapon", "item type name column");
             AssertNoDisplayValue(binding, 4, "quantity column");
+        }
+
+        private static void MaxItemQuantityButtonsUseGameLimits()
+        {
+            XC2SaveIra save = new XC2SaveIra(new byte[XC2SaveIra.SIZE]);
+            AssertEqual(10, Item.GetMaxQty(1, 10, save).Value, "base pouch quantity");
+            AssertEqual(5, Item.GetMaxQty(1, 12, save).Value, "base booster quantity");
+            AssertEqual(6, Item.GetMaxQty(305, 6, save).Value, "base pouch expansion kit quantity");
+
+            UInt16[] bonusItems = { 255, 279, 280, 289, 293, 505, 526 };
+            int[] pouchLimits = { 20, 20, 20, 30, 40, 40, 40 };
+            int[] boosterLimits = { 5, 15, 25, 25, 25, 25, 25 };
+            for (int index = 0; index < bonusItems.Length; index++)
+            {
+                Item key = save.ItemBox.KeyItemBox[index];
+                key.ID = bonusItems[index];
+                key.Type = 6;
+                key.Qty = 99; // Ownership contributes once, not once per quantity.
+                AssertEqual(pouchLimits[index], Item.GetMaxQty(1, 10, save).Value, "owned pouch bonuses");
+                AssertEqual(boosterLimits[index], Item.GetMaxQty(1, 12, save).Value, "owned booster bonuses");
+            }
+            for (int index = 0; index < 5; index++)
+                save.ItemBox.KeyItemBox[index].Clear();
+            AssertEqual(30, Item.GetMaxQty(1, 10, save).Value, "Torna-only pouch bonuses");
+            AssertEqual(5, Item.GetMaxQty(1, 12, save).Value, "no booster bonuses without deeds");
+            for (int index = 0; index < 5; index++)
+            {
+                save.ItemBox.KeyItemBox[index].ID = bonusItems[index];
+                save.ItemBox.KeyItemBox[index].Type = 6;
+                save.ItemBox.KeyItemBox[index].Qty = 1;
+            }
+            save.Flags.Flags_1Bit[55392].Value = true;
+
+            (UInt16 ID, Byte Type, int Expected)[] cases =
+            {
+                (1, 1, 99), (60, 1, 99), (1, 2, 1), (1, 3, 1), (1, 5, 99),
+                (1, 6, 1), (305, 6, 3), (501, 6, 1), (1, 7, 999), (1, 8, 99),
+                (1, 9, 99), (1, 10, 40), (40, 10, 33), (1, 11, 99), (2, 11, 1),
+                (16, 11, 1), (1, 12, 25), (1, 14, 1), (1, 15, 1), (1, 16, 1), (1, 17, 1),
+                (1, 18, 1), (1, 19, 1), (1, 20, 1), (8191, 20, 2), (1, 63, 2), (0, 0, 0)
+            };
+
+            foreach (Form form in new Form[] { new frmMain(), new XC2IraSaveNETThingy.frmMain() })
+            {
+                using (form)
+                {
+                    Item[] items = Array.ConvertAll(cases, value => new Item(new byte[Item.SIZE])
+                    {
+                        ID = value.ID, Type = value.Type, Qty = value.ID == 0 ? (UInt16)0 : (UInt16)2
+                    });
+                    Type formType = form.GetType();
+                    formType.GetField("SAVEDATA", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(form, save);
+                    TabControl tabs = (TabControl)formType.GetField("tbcItems", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(form);
+                    DataGridView grid = (DataGridView)tabs.SelectedTab.Controls[0];
+                    grid.Tag = new ItemGridBinding(items, null, null);
+                    Button button = (Button)formType.GetField("btnItemCheatMaxQty", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(form);
+                    typeof(Button).GetMethod("OnClick", BindingFlags.Instance | BindingFlags.NonPublic)
+                        .Invoke(button, new object[] { EventArgs.Empty });
+                    for (int index = 0; index < items.Length; index++)
+                    {
+                        AssertEqual(cases[index].Expected, items[index].Qty, formType.Namespace + " max quantity for type " + items[index].Type + ", ID " + items[index].ID);
+                        AssertEqual(cases[index].Expected, new Item(items[index].ToRawData()).Qty, "serialized max quantity");
+                    }
+                }
+            }
+
+            for (UInt16 id = 1; id <= 60; id++)
+                AssertEqual(99, Item.GetMaxQty(id, 1).Value, "core chip quantity limit, ID " + id);
+
+            int count = 0;
+            foreach (string line in System.IO.File.ReadLines(RuntimePaths.Resolve("data/ItemQuantityLimits.csv")))
+            {
+                string[] fields = line.Split('\t');
+                if (!UInt16.TryParse(fields[0], out UInt16 id))
+                    continue;
+                Byte type = Byte.Parse(fields[1]);
+                UInt16 expected = UInt16.Parse(fields[2]);
+                UInt16 quantity = Item.GetMaxQty(id, type).Value;
+                AssertEqual(expected, quantity, "all-record base quantity check");
+                Item item = new Item(new byte[Item.SIZE]) { ID = id, Type = type, Qty = quantity };
+                AssertEqual(expected, new Item(item.ToRawData()).Qty, "all-record quantity serialization");
+                count++;
+            }
+            AssertEqual(4013, count, "ELF/BDAT-backed quantity rule count");
         }
 
         private static void AssertDisplayValue(ItemGridBinding binding, int columnIndex, string expected, string description)

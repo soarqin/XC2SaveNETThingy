@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\XC2SaveNETThingy\XC2SaveNETThingy.csproj" />
     <ProjectReference Include="..\..\XC2Bf2SaveNETThingy\XC2Bf2SaveNETThingy.csproj" />
+    <ProjectReference Include="..\..\XC2IraSaveNETThingy\XC2IraSaveNETThingy.csproj" />
     <None Include="..\..\XC2SaveNETThingy\XC2Data.db" Link="XC2Data.db" CopyToOutputDirectory="Always" />
     <Reference Include="ZLIB">
       <HintPath>..\..\external\ZLIB.dll</HintPath>

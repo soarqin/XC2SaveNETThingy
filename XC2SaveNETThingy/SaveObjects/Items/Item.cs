@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuantityLimit = (ushort MaxQty, byte BonusType, ushort BonusValue, ushort BonusMax);
 
 namespace XC2SaveNETThingy
 {
@@ -21,8 +22,8 @@ namespace XC2SaveNETThingy
 
         public UInt16 Qty { get; set; }
         private const int QTY_BITS = 10;
-        private static readonly Lazy<Dictionary<UInt16, UInt16>> QuantityLimits =
-            new Lazy<Dictionary<UInt16, UInt16>>(LoadQuantityLimits);
+        private static readonly Lazy<Dictionary<(UInt16 ID, Byte Type), QuantityLimit>> QuantityLimits =
+            new Lazy<Dictionary<(UInt16 ID, Byte Type), QuantityLimit>>(LoadQuantityLimits);
 
         public bool Unk1 { get; set; }
         private const int UNK1_BITS = 1;
@@ -144,14 +145,31 @@ namespace XC2SaveNETThingy
                 );
         }
 
-        public static UInt16 GetMaxQty(UInt16 id)
+        public static UInt16? GetMaxQty(UInt16 id, Byte type, XC2Save save = null)
         {
-            return QuantityLimits.Value.TryGetValue(id, out UInt16 maxQty) ? maxQty : (UInt16)1023;
+            if (!QuantityLimits.Value.TryGetValue((id, type), out QuantityLimit limit))
+                return null;
+
+            // main.elf 0x2FABA4: this flag overrides the Pouch Expansion Kit cap.
+            if (type == 6 && id == 305 && save != null && save.Flags.Flags_1Bit[55392].Value)
+                return 3;
+
+            int bonus = 0;
+            if ((type == 10 || type == 12) && save != null)
+            {
+                // 0x2E0888: each owned key-item entry contributes once, not per Qty.
+                foreach (Item item in save.ItemBox.KeyItemBox)
+                    if (item.Type == 6 && QuantityLimits.Value.TryGetValue((item.ID, item.Type), out QuantityLimit owned) &&
+                        owned.BonusType == limit.BonusType)
+                        bonus = Math.Min(bonus + owned.BonusValue, limit.BonusMax);
+            }
+
+            return (UInt16)(limit.MaxQty + bonus);
         }
 
-        private static Dictionary<UInt16, UInt16> LoadQuantityLimits()
+        private static Dictionary<(UInt16 ID, Byte Type), QuantityLimit> LoadQuantityLimits()
         {
-            Dictionary<UInt16, UInt16> result = new Dictionary<UInt16, UInt16>();
+            Dictionary<(UInt16 ID, Byte Type), QuantityLimit> result = new Dictionary<(UInt16 ID, Byte Type), QuantityLimit>();
             string path = Path.Combine(AppContext.BaseDirectory, "data", "ItemQuantityLimits.csv");
             if (!File.Exists(path))
                 return result;
@@ -159,12 +177,17 @@ namespace XC2SaveNETThingy
             foreach (string line in File.ReadAllLines(path))
             {
                 string[] fields = line.Split('\t');
-                if (fields.Length != 2 ||
+                if (fields.Length != 6 ||
                     !UInt16.TryParse(fields[0], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 id) ||
-                    !UInt16.TryParse(fields[1].Trim().Trim('"'), NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 maxQty))
+                    !Byte.TryParse(fields[1], NumberStyles.None, CultureInfo.InvariantCulture, out Byte type) ||
+                    !UInt16.TryParse(fields[2], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 maxQty) ||
+                    !Byte.TryParse(fields[3], NumberStyles.None, CultureInfo.InvariantCulture, out Byte bonusType) ||
+                    !UInt16.TryParse(fields[4], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 bonusValue) ||
+                    !UInt16.TryParse(fields[5], NumberStyles.None, CultureInfo.InvariantCulture, out UInt16 bonusMax) ||
+                    id == 0 || id > 8191 || type > 63 || maxQty == 0 || maxQty + bonusMax > 1023)
                     continue;
 
-                result[id] = maxQty;
+                result[(id, type)] = (maxQty, bonusType, bonusValue, bonusMax);
             }
 
             return result;

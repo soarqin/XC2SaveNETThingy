@@ -3818,8 +3818,8 @@ namespace XC2IraSaveNETThingy
                     return;
 
                 foreach (Item i in binding.Items)
-                    if (!i.IsEmptyItem())
-                        i.Qty = Item.GetMaxQty(i.ID);
+                    if (!i.IsEmptyItem() && Item.GetMaxQty(i.ID, i.Type, SAVEDATA) is UInt16 maxQty)
+                        i.Qty = maxQty;
 
                 dgv.Invalidate();
             }

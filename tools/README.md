@@ -27,6 +27,10 @@ Run `--self-test` for parser, mapping, database, and verification checks. The ve
 
 When `--base-cn`, `--base-jp`, and `--base-tw` are supplied together, the importer also regenerates `ItemStatus.csv` from the `common.bdat` `Name` pointers and all four localized tables. The current data contains 142 `Reserved` IDs. A record is selected when the English name is empty or `UNKNOWN_*`, the English table retains CJK/Hangul characters, or any language retains an explicit internal/provisional marker. The `ItemStatus` table is loaded by `Items_ItemStatus.sql`; reserved entries remain selectable, while the editors display `[Reserved]` and a red warning so metadata does not silently change save-writing behavior.
 
+## Item quantity rules
+
+`python .\tools\generate_item_quantity_limits.py --check` reconstructs all 4,013 inventory records from the verified 3.0 `main.elf` and `common.bdat`, including current-save ownership bonuses. Use `--write` only to replace `ItemQuantityLimits.csv`. The script validates the ELF hash before decoding inventory initialization arguments and bonus indices; it uses only Python's standard library and the existing BDAT toolset. See [`docs/xc2-item-quantity-limits.md`](../docs/xc2-item-quantity-limits.md) for the per-category limits, code addresses, dynamic rules, and verification scope.
+
 ## Save round-trip verifier
 
 `XC2SaveRoundTrip` reads raw or compressed saves from an external directory, deserializes and serializes each one, then compares the decompressed length, header, Drivers, Blades, ItemBox, ContentVersions, and SaveVersion regions. It writes a diagnostic round-trip file for each sample.
